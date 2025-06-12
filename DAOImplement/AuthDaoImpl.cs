@@ -31,7 +31,7 @@ namespace DAOImplement
                     StringContent content = new StringContent(dataLogin, Encoding.UTF8, "application/json");
 
                     // Enviar la solicitud HTTP POST
-                    HttpResponseMessage httpResponse = await httpClient.PostAsync(url_base + "/auth/login-restriccion", content);
+                    HttpResponseMessage httpResponse = await httpClient.PostAsync(url_base + "/auth/login-judiciales", content);
 
                     if (httpResponse.IsSuccessStatusCode)
                     {

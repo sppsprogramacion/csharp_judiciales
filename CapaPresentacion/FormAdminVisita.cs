@@ -139,20 +139,20 @@ namespace CapaPresentacion
                 };
 
                 var validator = new ProhibicionValidator();
-                var result = validator.Validate(datosFormulario);
+                //var result = validator.Validate(datosFormulario);
 
-                if (!result.IsValid)
-                {
-                    enviar = false;
-                    MessageBox.Show("Complete correctamente los campos del formulario","Restriccion Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    foreach (var failure in result.Errors)
-                    {
+                //if (!result.IsValid)
+                //{
+                //    enviar = false;
+                //    MessageBox.Show("Complete correctamente los campos del formulario","Restriccion Visitas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    foreach (var failure in result.Errors)
+                //    {
                         
-                        Control control = Controls.Find(failure.PropertyName, true)[0];
-                        errorProvider.SetError(control, failure.ErrorMessage);
-                    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-                    return;
-                }
+                //        Control control = Controls.Find(failure.PropertyName, true)[0];
+                //        errorProvider.SetError(control, failure.ErrorMessage);
+                //    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+                //    return;
+                //}
 
                 //enviar datos si son correctos
                 var data = new

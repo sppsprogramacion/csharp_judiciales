@@ -48,6 +48,7 @@
     <Compile Include="CiudadanoDaoImpl.cs" />
     <Compile Include="EstadoCivilDaoImpl.cs" />
     <Compile Include="AuthDaoImpl.cs" />
+    <Compile Include="InternoDaoImplement.cs" />
     <Compile Include="OrganismoDaoImpl.cs" />
     <Compile Include="ParentescoDaoImpl.cs" />
     <Compile Include="ProhibicinVisitaDaoImpl.cs" />

@@ -45,6 +45,7 @@
     <Compile Include="NBitacoraProhibicionVisita.cs" />
     <Compile Include="NCiudadano.cs" />
     <Compile Include="NEstadoCivil.cs" />
+    <Compile Include="NInterno.cs" />
     <Compile Include="NParentesco.cs" />
     <Compile Include="NProhibicionVisita.cs" />
     <Compile Include="NProvincia.cs" />
