@@ -48,9 +48,7 @@ namespace CapaPresentacion
                 CurrentUser currentUser = CurrentUser.Instance;
 
                 MessageBox.Show("Bienvenido " + currentUser.nombre + " " + currentUser.apellido, "Accesso concedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MessageBox.Show("Roles " + currentUser.roles[1]);
-                MessageBox.Show("Token: " + SessionManager.Token);
-                //FormVisitas formVisitas = new FormVisitas();
+                
                 FormPrincipal formPrincipal = new FormPrincipal();
 
                 this.Hide();
