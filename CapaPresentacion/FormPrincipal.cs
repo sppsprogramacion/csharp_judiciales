@@ -28,5 +28,12 @@ namespace CapaPresentacion
         {
             Application.Exit();
         }
+
+        private void btnVerInternos_Click(object sender, EventArgs e)
+        {
+            FormInternos formInternos = new FormInternos();
+
+            formInternos.ShowDialog();
+        }
     }
 }

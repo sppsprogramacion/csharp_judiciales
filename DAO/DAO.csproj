@@ -45,6 +45,7 @@
     <Compile Include="ICiudadanoDao.cs" />
     <Compile Include="IEstadoCivilDao.cs" />
     <Compile Include="IAuthDao.cs" />
+    <Compile Include="IInternosDao.cs" />
     <Compile Include="IOrganismoDao.cs" />
     <Compile Include="IParentescoDao.cs" />
     <Compile Include="IProhibicionVisitaDao.cs" />

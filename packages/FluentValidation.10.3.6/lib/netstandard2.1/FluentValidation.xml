@@ -12,73 +12,7 @@
         </member>
         <member name="P:FluentValidation.AbstractValidator`1.CascadeMode">
             <summary>
-            <para>
-            Gets a single <see cref="P:FluentValidation.AbstractValidator`1.CascadeMode"/> mode value representing the default values of
-            <see cref="P:FluentValidation.AbstractValidator`1.ClassLevelCascadeMode"/>
-            and <see cref="P:FluentValidation.AbstractValidator`1.RuleLevelCascadeMode"/>., based on the same logic as used when setting
-            this property as described below.
-            </para>
-            <para>
-            Sets the values of <see cref="P:FluentValidation.AbstractValidator`1.ClassLevelCascadeMode"/>
-            and <see cref="P:FluentValidation.AbstractValidator`1.RuleLevelCascadeMode"/>.
-            </para>
-            <para>
-            If set to <see cref="F:FluentValidation.CascadeMode.Continue"/> or <see cref="F:FluentValidation.CascadeMode.Stop"/>, then both properties are set
-            to that value.
-            </para>
-            <para>
-            If set to the deprecated <see cref="F:FluentValidation.CascadeMode.StopOnFirstFailure"/>,
-            then <see cref="P:FluentValidation.AbstractValidator`1.ClassLevelCascadeMode"/>
-            is set to <see cref="F:FluentValidation.CascadeMode.Continue"/>, and <see cref="P:FluentValidation.AbstractValidator`1.RuleLevelCascadeMode"/>
-            is set to <see cref="F:FluentValidation.CascadeMode.Stop"/>.
-            This results in the same behaviour as before this property was deprecated.
-            </para>
-            </summary>
-        </member>
-        <member name="P:FluentValidation.AbstractValidator`1.ClassLevelCascadeMode">
-            <summary>
-            <para>
-            Sets the cascade behaviour <i>in between</i> rules in this validator.
-            This overrides the default value set in <see cref="P:FluentValidation.ValidatorConfiguration.DefaultClassLevelCascadeMode"/>.
-            </para>
-            <para>
-            If set to <see cref="F:FluentValidation.CascadeMode.Continue"/> then all rules in the class will execute regardless of failures.
-            </para>
-            <para>
-            If set to <see cref="F:FluentValidation.CascadeMode.Stop"/> then execution of the validator will stop after any rule fails.
-            </para>
-            <para>
-            Note that cascade behaviour <i>within</i> individual rules is controlled by
-            <see cref="P:FluentValidation.AbstractValidator`1.RuleLevelCascadeMode"/>.
-            </para>
-            <para>
-            This cannot be set to the deprecated <see cref="F:FluentValidation.CascadeMode.StopOnFirstFailure"/>.
-            <see cref="F:FluentValidation.CascadeMode.StopOnFirstFailure"/>. Attempting to do so will actually
-            result in <see cref="F:FluentValidation.CascadeMode.Stop"/> being used.
-            </para>
-            </summary>
-        </member>
-        <member name="P:FluentValidation.AbstractValidator`1.RuleLevelCascadeMode">
-            <summary>
-            <para>
-            Sets the default cascade behaviour <i>within</i> each rule in this validator.
-            </para>
-            <para>
-            This overrides the default value set in <see cref="P:FluentValidation.ValidatorConfiguration.DefaultRuleLevelCascadeMode"/>.
-            </para>
-            <para>
-            It can be further overridden for specific rules by calling
-            <see cref="M:FluentValidation.DefaultValidatorOptions.Cascade``2(FluentValidation.IRuleBuilderInitial{``0,``1},FluentValidation.CascadeMode)"/>.
-            <seealso cref="P:FluentValidation.Internal.RuleBase`3.CascadeMode"/>.
-            </para>
-            <para>
-            Note that cascade behaviour <i>between</i> rules is controlled by <see cref="P:FluentValidation.AbstractValidator`1.ClassLevelCascadeMode"/>.
-            </para>
-            <para>
-            This cannot be set to the deprecated <see cref="F:FluentValidation.CascadeMode.StopOnFirstFailure"/>.
-            <see cref="F:FluentValidation.CascadeMode.StopOnFirstFailure"/>. Attempting to do so it will actually
-            result in <see cref="F:FluentValidation.CascadeMode.Stop"/> being used.
-            </para>
+            Sets the cascade mode for all rules within this validator.
             </summary>
         </member>
         <member name="M:FluentValidation.AbstractValidator`1.Validate(`0)">
@@ -118,7 +52,7 @@
         </member>
         <member name="M:FluentValidation.AbstractValidator`1.RuleFor``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
             <summary>
-            Defines a validation rule for a specific property.
+            Defines a validation rule for a specify property.
             </summary>
             <example>
             RuleFor(x => x.Surname)...
@@ -291,13 +225,6 @@
             <param name="result"></param>
             <exception cref="T:FluentValidation.ValidationException"></exception>
         </member>
-        <member name="M:FluentValidation.AbstractValidator`1.OnRuleAdded(FluentValidation.IValidationRule{`0})">
-            <summary>
-            This method is invoked when a rule has been created (via RuleFor/RuleForEach) and has been added to the validator.
-            You can override this method to provide customizations to all rule instances.
-            </summary>
-            <param name="rule"></param>
-        </member>
         <member name="T:FluentValidation.AssemblyScanner">
             <summary>
             Class that can be used to find all the validators from a collection of types.
@@ -315,12 +242,23 @@
             <param name="assembly">The assembly to scan</param>
             <param name="includeInternalTypes">Whether to include internal validators in the search as well as public validators. The default is false.</param>
         </member>
+        <member name="M:FluentValidation.AssemblyScanner.FindValidatorsInAssembly(System.Reflection.Assembly)">
+            <summary>
+            Finds all public validators in the specified assembly.
+            </summary>
+        </member>
         <member name="M:FluentValidation.AssemblyScanner.FindValidatorsInAssemblies(System.Collections.Generic.IEnumerable{System.Reflection.Assembly},System.Boolean)">
             <summary>
             Finds all the validators in the specified assemblies.
             </summary>
             <param name="assemblies">The assemblies to scan</param>
             <param name="includeInternalTypes">Whether to include internal validators as well as public validators. The default is false.</param>
+        </member>
+        <member name="M:FluentValidation.AssemblyScanner.FindValidatorsInAssemblies(System.Collections.Generic.IEnumerable{System.Reflection.Assembly})">
+            <summary>
+            Finds all public validators in the specified assemblies
+            </summary>
+            <param name="assemblies">The assemblies to scan</param>
         </member>
         <member name="M:FluentValidation.AssemblyScanner.FindValidatorsInAssemblyContaining``1">
             <summary>
@@ -366,11 +304,6 @@
             Concrete type that implements the InterfaceType, eg FooValidator.
             </summary>
         </member>
-        <member name="T:FluentValidation.AsyncValidatorInvokedSynchronouslyException">
-            <summary>
-            This exception is thrown when an asynchronous validator is executed synchronously.
-            </summary>
-        </member>
         <member name="T:FluentValidation.DefaultValidatorExtensions">
             <summary>
             Extension methods that provide the default set of validators.
@@ -392,6 +325,14 @@
             </summary>
             <param name="ruleBuilder"></param>
             <param name="validator">The validator to set</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentValidation.DefaultValidatorExtensions.SetValidator``2(FluentValidation.IRuleBuilder{``0,``1},FluentValidation.Validators.PropertyValidator)">
+            <summary>
+            Associates a legacy property validator with this rule.
+            </summary>
+            <param name="rule"></param>
+            <param name="legacyPropertyValidator">The validator to set</param>
             <returns></returns>
         </member>
         <member name="M:FluentValidation.DefaultValidatorExtensions.NotNull``2(FluentValidation.IRuleBuilder{``0,``1})">
@@ -938,7 +879,7 @@
         </member>
         <member name="M:FluentValidation.DefaultValidatorExtensions.GreaterThan``2(FluentValidation.IRuleBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
             <summary>
-            Defines a 'greater than' validator on the current rule builder using a lambda expression.
+            Defines a 'less than' validator on the current rule builder using a lambda expression.
             The validation will succeed if the property value is greater than the specified value.
             The validation will fail if the property value is less than or equal to the specified value.
             </summary>
@@ -950,7 +891,7 @@
         </member>
         <member name="M:FluentValidation.DefaultValidatorExtensions.GreaterThan``2(FluentValidation.IRuleBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Nullable{``1}}})">
             <summary>
-            Defines a 'greater than' validator on the current rule builder using a lambda expression.
+            Defines a 'less than' validator on the current rule builder using a lambda expression.
             The validation will succeed if the property value is greater than the specified value.
             The validation will fail if the property value is less than or equal to the specified value.
             </summary>
@@ -962,7 +903,7 @@
         </member>
         <member name="M:FluentValidation.DefaultValidatorExtensions.GreaterThan``2(FluentValidation.IRuleBuilder{``0,System.Nullable{``1}},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
             <summary>
-            Defines a 'greater than' validator on the current rule builder using a lambda expression.
+            Defines a 'less than' validator on the current rule builder using a lambda expression.
             The validation will succeed if the property value is greater than the specified value.
             The validation will fail if the property value is less than or equal to the specified value.
             </summary>
@@ -974,7 +915,7 @@
         </member>
         <member name="M:FluentValidation.DefaultValidatorExtensions.GreaterThan``2(FluentValidation.IRuleBuilder{``0,System.Nullable{``1}},System.Linq.Expressions.Expression{System.Func{``0,System.Nullable{``1}}})">
             <summary>
-            Defines a 'greater than' validator on the current rule builder using a lambda expression.
+            Defines a 'less than' validator on the current rule builder using a lambda expression.
             The validation will succeed if the property value is greater than the specified value.
             The validation will fail if the property value is less than or equal to the specified value.
             </summary>
@@ -986,7 +927,7 @@
         </member>
         <member name="M:FluentValidation.DefaultValidatorExtensions.GreaterThanOrEqualTo``2(FluentValidation.IRuleBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
             <summary>
-            Defines a 'greater than or equal to' validator on the current rule builder using a lambda expression.
+            Defines a 'greater than' validator on the current rule builder using a lambda expression.
             The validation will succeed if the property value is greater than or equal the specified value.
             The validation will fail if the property value is less than the specified value.
             </summary>
@@ -998,7 +939,7 @@
         </member>
         <member name="M:FluentValidation.DefaultValidatorExtensions.GreaterThanOrEqualTo``2(FluentValidation.IRuleBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Nullable{``1}}})">
             <summary>
-            Defines a 'greater than or equal to' validator on the current rule builder using a lambda expression.
+            Defines a 'greater than' validator on the current rule builder using a lambda expression.
             The validation will succeed if the property value is greater than or equal the specified value.
             The validation will fail if the property value is less than the specified value.
             </summary>
@@ -1140,28 +1081,6 @@
             <param name="scale">Allowed scale of the value</param>
             <param name="precision">Allowed precision of the value</param>
             <param name="ignoreTrailingZeros">Whether the validator will ignore trailing zeros.</param>
-            <returns></returns>
-        </member>
-        <member name="M:FluentValidation.DefaultValidatorExtensions.PrecisionScale``1(FluentValidation.IRuleBuilder{``0,System.Decimal},System.Int32,System.Int32,System.Boolean)">
-            <summary>
-            Defines a scale precision validator on the current rule builder that ensures a decimal the specified precision and scale. It permits up to <b><paramref name="precision"/> - <paramref name="scale"/></b> digits to the left of the decimal point and up to <b><paramref name="scale"/></b> digits to the right.
-            </summary>
-            <typeparam name="T">Type of object being validated</typeparam>
-            <param name="ruleBuilder">The rule builder on which the validator should be defined</param>
-            <param name="scale">Allowed scale of the value</param>
-            <param name="precision">Allowed precision of the value</param>
-            <param name="ignoreTrailingZeros">Whether the validator will ignore trailing zeros after the decimal point. For example, when set to true the decimal 123.4500 will be considered to have a precision of 5 and scale of 2. When set to false, it will be considered to have a precision of 7 and scale of 4.</param>
-            <returns></returns>
-        </member>
-        <member name="M:FluentValidation.DefaultValidatorExtensions.PrecisionScale``1(FluentValidation.IRuleBuilder{``0,System.Nullable{System.Decimal}},System.Int32,System.Int32,System.Boolean)">
-            <summary>
-            Defines a scale precision validator on the current rule builder that ensures a decimal the specified precision and scale. It permits up to <b><paramref name="precision"/> - <paramref name="scale"/></b> digits to the left of the decimal point and up to <b><paramref name="scale"/></b> digits to the right.
-            </summary>
-            <typeparam name="T">Type of object being validated</typeparam>
-            <param name="ruleBuilder">The rule builder on which the validator should be defined</param>
-            <param name="scale">Allowed scale of the value</param>
-            <param name="precision">Allowed precision of the value</param>
-            <param name="ignoreTrailingZeros">Whether the validator will ignore trailing zeros after the decimal point. For example, when set to true the decimal 123.4500 will be considered to have a precision of 5 and scale of 2. When set to false, it will be considered to have a precision of 7 and scale of 4.</param>
             <returns></returns>
         </member>
         <member name="M:FluentValidation.DefaultValidatorExtensions.Custom``2(FluentValidation.IRuleBuilder{``0,``1},System.Action{``1,FluentValidation.ValidationContext{``0}})">
@@ -1308,35 +1227,37 @@
         </member>
         <member name="M:FluentValidation.DefaultValidatorOptions.Cascade``2(FluentValidation.IRuleBuilderInitial{``0,``1},FluentValidation.CascadeMode)">
             <summary>
-            <para>
             Specifies the cascade mode for failures.
-            </para>
-            <para>
-            If set to <see cref="F:FluentValidation.CascadeMode.Stop"/> then execution of the rule will stop once the first validator in the chain fails.
-            </para>
-            <para>
-            If set to <see cref="F:FluentValidation.CascadeMode.Continue"/> then all validators in the chain will execute regardless of failures.
-            </para>
-            <para>
-            If set to the deprecated <see cref="F:FluentValidation.CascadeMode.StopOnFirstFailure"/>, behavior is as with <see cref="F:FluentValidation.CascadeMode.Stop"/>.
-            </para>
+            If set to 'Stop' then execution of the rule will stop once the first validator in the chain fails.
+            If set to 'Continue' then all validators in the chain will execute regardless of failures.
             </summary>
         </member>
         <member name="M:FluentValidation.DefaultValidatorOptions.Cascade``2(FluentValidation.IRuleBuilderInitialCollection{``0,``1},FluentValidation.CascadeMode)">
             <summary>
-            <para>
             Specifies the cascade mode for failures.
-            </para>
-            <para>
-            If set to <see cref="F:FluentValidation.CascadeMode.Stop"/> then execution of the rule will stop once the first validator in the chain fails.
-            </para>
-            <para>
-            If set to <see cref="F:FluentValidation.CascadeMode.Continue"/> then all validators in the chain will execute regardless of failures.
-            </para>
-            <para>
-            If set to the deprecated <see cref="F:FluentValidation.CascadeMode.StopOnFirstFailure"/>, behaviour is as with <see cref="F:FluentValidation.CascadeMode.Stop"/>.
-            </para>
+            If set to 'Stop' then execution of the rule will stop once the first validator in the chain fails.
+            If set to 'Continue' then all validators in the chain will execute regardless of failures.
             </summary>
+        </member>
+        <member name="M:FluentValidation.DefaultValidatorOptions.OnAnyFailure``2(FluentValidation.IRuleBuilderOptions{``0,``1},System.Action{``0})">
+            <summary>
+            Specifies a custom action to be invoked when the validator fails.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="onFailure"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentValidation.DefaultValidatorOptions.OnAnyFailure``2(FluentValidation.IRuleBuilderOptions{``0,``1},System.Action{``0,System.Collections.Generic.IEnumerable{FluentValidation.Results.ValidationFailure}})">
+            <summary>
+            Specifies a custom action to be invoked when the validator fails.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="onFailure"></param>
+            <returns></returns>
         </member>
         <member name="M:FluentValidation.DefaultValidatorOptions.WithMessage``2(FluentValidation.IRuleBuilderOptions{``0,``1},System.String)">
             <summary>
@@ -1538,14 +1459,6 @@
             <param name="predicate">The condition</param>
             <returns></returns>
         </member>
-        <member name="M:FluentValidation.DefaultValidatorOptions.WhereAsync``2(FluentValidation.IRuleBuilderInitialCollection{``0,``1},System.Func{``1,System.Threading.Tasks.Task{System.Boolean}})">
-            <summary>
-            Applies an asynchronous filter to a collection property.
-            </summary>
-            <param name="rule">The current rule</param>
-            <param name="predicate">The condition</param>
-            <returns></returns>
-        </member>
         <member name="M:FluentValidation.DefaultValidatorOptions.WithName``2(FluentValidation.IRuleBuilderOptions{``0,``1},System.String)">
             <summary>
             Specifies a custom property name to use within the error message.
@@ -1600,16 +1513,6 @@
             <param name="stateProvider"></param>
             <returns></returns>
         </member>
-        <member name="M:FluentValidation.DefaultValidatorOptions.WithState``2(FluentValidation.IRuleBuilderOptions{``0,``1},System.Func{``0,``1,FluentValidation.ValidationContext{``0},System.Object})">
-            <summary>
-            Specifies custom state that should be stored alongside the validation message when validation fails for this rule.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <typeparam name="TProperty"></typeparam>
-            <param name="rule"></param>
-            <param name="stateProvider"></param>
-            <returns></returns>
-        </member>
         <member name="M:FluentValidation.DefaultValidatorOptions.WithSeverity``2(FluentValidation.IRuleBuilderOptions{``0,``1},FluentValidation.Severity)">
             <summary>
              Specifies custom severity that should be stored alongside the validation message when validation fails for this rule.
@@ -1640,14 +1543,34 @@
             <param name="severityProvider"></param>
             <returns></returns>
         </member>
-        <member name="M:FluentValidation.DefaultValidatorOptions.WithSeverity``2(FluentValidation.IRuleBuilderOptions{``0,``1},System.Func{``0,``1,FluentValidation.ValidationContext{``0},FluentValidation.Severity})">
+        <member name="M:FluentValidation.DefaultValidatorOptions.OnFailure``2(FluentValidation.IRuleBuilderOptions{``0,``1},System.Action{``0})">
             <summary>
-            Specifies custom severity that should be stored alongside the validation message when validation fails for this rule.
+            Specifies custom method that will be called when specific rule fails
             </summary>
             <typeparam name="T"></typeparam>
             <typeparam name="TProperty"></typeparam>
             <param name="rule"></param>
-            <param name="severityProvider"></param>
+            <param name="onFailure"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentValidation.DefaultValidatorOptions.OnFailure``2(FluentValidation.IRuleBuilderOptions{``0,``1},System.Action{``0,FluentValidation.ValidationContext{``0},``1})">
+            <summary>
+            Specifies custom method that will be called when specific rule fails
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="onFailure"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentValidation.DefaultValidatorOptions.OnFailure``2(FluentValidation.IRuleBuilderOptions{``0,``1},System.Action{``0,FluentValidation.ValidationContext{``0},``1,System.String})">
+            <summary>
+            Specifies custom method that will be called when specific rule fails
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="onFailure"></param>
             <returns></returns>
         </member>
         <member name="M:FluentValidation.DefaultValidatorOptions.OverrideIndexer``2(FluentValidation.IRuleBuilderInitialCollection{``0,``1},System.Func{``0,System.Collections.Generic.IEnumerable{``1},``1,System.Int32,System.String})">
@@ -1665,19 +1588,17 @@
         </member>
         <member name="F:FluentValidation.CascadeMode.Continue">
             <summary>
-            When a rule/validator fails, execution continues to the next rule/validator.
-            For more information, see the methods/properties that accept this enum as a parameter.
+            When a rule fails, execution continues to the next rule.
             </summary>
         </member>
         <member name="F:FluentValidation.CascadeMode.StopOnFirstFailure">
             <summary>
-            For more information, see the methods/properties that accept this enum as a parameter.
+            When a rule fails, validation is stopped and all other rules in the chain will not be executed.
             </summary>
         </member>
         <member name="F:FluentValidation.CascadeMode.Stop">
             <summary>
-            When a rule/validator fails, validation is stopped for the current rule/validator.
-            For more information, see the methods/properties that accept this enum as a parameter.
+            When a rule fails, validation is immediately halted.
             </summary>
         </member>
         <member name="T:FluentValidation.ApplyConditionTo">
@@ -1774,19 +1695,6 @@
             <param name="cachePrefix">Cache prefix</param>
             <returns>Accessor func</returns>
         </member>
-        <member name="T:FluentValidation.Internal.ChildRulesContainer`1">
-            <summary>
-            AbstractValidator implementation for containing child rules.
-            </summary>
-            <typeparam name="T"></typeparam>
-        </member>
-        <member name="F:FluentValidation.Internal.ChildRulesContainer`1.RuleSetsToApplyToChildRules">
-            <summary>
-            Used to keep track of rulesets from parent that need to be applied
-            to child rules in the case of multiple nested child rules.
-            </summary>
-            <see cref="M:FluentValidation.DefaultValidatorExtensions.ChildRules``2(FluentValidation.IRuleBuilder{``0,``1},System.Action{FluentValidation.InlineValidator{``1}})"/>
-        </member>
         <member name="T:FluentValidation.Internal.CollectionPropertyRule`2">
             <summary>
             Rule definition for collection properties
@@ -1802,11 +1710,6 @@
         <member name="P:FluentValidation.Internal.CollectionPropertyRule`2.Filter">
             <summary>
             Filter that should include/exclude items in the collection.
-            </summary>
-        </member>
-        <member name="P:FluentValidation.Internal.CollectionPropertyRule`2.AsyncFilter">
-            <summary>
-            Asynchronous filter that should be used to include/exclude items in the collection.
             </summary>
         </member>
         <member name="P:FluentValidation.Internal.CollectionPropertyRule`2.IndexBuilder">
@@ -1973,6 +1876,11 @@
             Sets the overridden error message template for this validator.
             </summary>
             <param name="errorMessage">The error message to set</param>
+        </member>
+        <member name="P:FluentValidation.Internal.IRuleComponent`2.OnFailure">
+            <summary>
+            Sets the on failure callback.
+            </summary>
         </member>
         <member name="T:FluentValidation.Internal.IRuleComponent">
             <summary>
@@ -2164,7 +2072,7 @@
             <param name="parentChain">The parent chain to compare</param>
             <returns>True if the current chain is the child of the other chain, otherwise false</returns>
         </member>
-        <member name="M:FluentValidation.Internal.PropertyChain.BuildPropertyPath(System.String)">
+        <member name="M:FluentValidation.Internal.PropertyChain.BuildPropertyName(System.String)">
             <summary>
             Builds a property path.
             </summary>
@@ -2194,19 +2102,20 @@
             Creates a new property rule from a lambda expression.
             </summary>
         </member>
-        <member name="M:FluentValidation.Internal.PropertyRule`2.ValidateAsync(FluentValidation.ValidationContext{`0},System.Boolean,System.Threading.CancellationToken)">
+        <member name="M:FluentValidation.Internal.PropertyRule`2.Validate(FluentValidation.ValidationContext{`0})">
             <summary>
-            Performs validation using a validation context and adds collected validation failures to the Context.
+            Performs validation using a validation context and returns a collection of Validation Failures.
             </summary>
             <param name="context">Validation Context</param>
-            <param name="useAsync">
-            Whether asynchronous components are allowed to execute.
-            This will be set to True when ValidateAsync is called on the root validator.
-            This will be set to False when Validate is called on the root validator.
-            When set to True, asynchronous components and asynchronous conditions will be executed.
-            When set to False, an exception will be thrown if a component can only be executed asynchronously or if a component has an async condition associated with it.
-            </param>
+            <returns>A collection of validation failures</returns>
+        </member>
+        <member name="M:FluentValidation.Internal.PropertyRule`2.ValidateAsync(FluentValidation.ValidationContext{`0},System.Threading.CancellationToken)">
+            <summary>
+            Performs asynchronous validation using a validation context and returns a collection of Validation Failures.
+            </summary>
+            <param name="context">Validation Context</param>
             <param name="cancellation"></param>
+            <returns>A collection of validation failures</returns>
         </member>
         <member name="P:FluentValidation.Internal.RuleBase`3.FluentValidation#IValidationRule#Components">
             <inheritdoc />
@@ -2251,6 +2160,16 @@
         <member name="P:FluentValidation.Internal.RuleBase`3.RuleSets">
             <summary>
             Rule set that this rule belongs to (if specified)
+            </summary>
+        </member>
+        <member name="P:FluentValidation.Internal.RuleBase`3.OnFailure">
+            <summary>
+            Function that will be invoked if any of the validators associated with this rule fail.
+            </summary>
+        </member>
+        <member name="P:FluentValidation.Internal.RuleBase`3.CurrentValidator">
+            <summary>
+            The current validator being configured by this rule.
             </summary>
         </member>
         <member name="P:FluentValidation.Internal.RuleBase`3.Current">
@@ -2551,12 +2470,6 @@
             Whether this context is async.
             </summary>
         </member>
-        <member name="P:FluentValidation.IValidationContext.ThrowOnFailures">
-            <summary>
-            Whether the validator should throw an exception if validation fails.
-            The default is false.
-            </summary>
-        </member>
         <member name="T:FluentValidation.ValidationContext`1">
             <summary>
             Validation context
@@ -2684,15 +2597,64 @@
             Gets the display name for the current property being validated.
             </summary>
         </member>
-        <member name="P:FluentValidation.ValidationContext`1.PropertyPath">
+        <member name="P:FluentValidation.ValidationContext`1.PropertyName">
             <summary>
-            The full path of the current property being validated.
+            The full name of the current property being validated.
             If accessed inside a child validator, this will include the parent's path too.
+            </summary>
+        </member>
+        <member name="P:FluentValidation.IValidationRuleConfigurable`2.CascadeMode">
+            <summary>
+            Cascade mode for this rule.
+            </summary>
+        </member>
+        <member name="P:FluentValidation.IValidationRuleConfigurable`2.OnFailure">
+            <summary>
+            Function that will be invoked if any of the validators associated with this rule fail.
+            </summary>
+        </member>
+        <member name="M:FluentValidation.IValidationRuleConfigurable`2.SetDisplayName(System.String)">
+            <summary>
+            Sets the display name for the property.
+            </summary>
+            <param name="name">The property's display name</param>
+        </member>
+        <member name="M:FluentValidation.IValidationRuleConfigurable`2.SetDisplayName(System.Func{FluentValidation.ValidationContext{`0},System.String})">
+            <summary>
+            Sets the display name for the property using a function.
+            </summary>
+            <param name="factory">The function for building the display name</param>
+        </member>
+        <member name="M:FluentValidation.IValidationRuleConfigurable`2.AddValidator(FluentValidation.Validators.IPropertyValidator{`0,`1})">
+            <summary>
+            Adds a validator to this rule.
+            </summary>
+        </member>
+        <member name="M:FluentValidation.IValidationRuleConfigurable`2.AddAsyncValidator(FluentValidation.Validators.IAsyncPropertyValidator{`0,`1},FluentValidation.Validators.IPropertyValidator{`0,`1})">
+            <summary>
+            Adds an async validator to this rule.
+            </summary>
+            <param name="asyncValidator">The async property validator to invoke</param>
+            <param name="fallback">A synchronous property validator to use as a fallback if executed synchronously. This parameter is optional. If omitted, the async validator will be called synchronously if needed.</param>
+        </member>
+        <member name="P:FluentValidation.IValidationRuleConfigurable`2.Current">
+            <summary>
+            The current rule component.
+            </summary>
+        </member>
+        <member name="P:FluentValidation.IValidationRuleConfigurable`2.MessageBuilder">
+            <summary>
+            Allows custom creation of an error message
             </summary>
         </member>
         <member name="P:FluentValidation.IValidationRule`2.CascadeMode">
             <summary>
             Cascade mode for this rule.
+            </summary>
+        </member>
+        <member name="P:FluentValidation.IValidationRule`2.OnFailure">
+            <summary>
+            Function that will be invoked if any of the validators associated with this rule fail.
             </summary>
         </member>
         <member name="M:FluentValidation.IValidationRule`2.SetDisplayName(System.String)">
@@ -2987,11 +2949,6 @@
             Defines a validation failure
             </summary>
         </member>
-        <member name="M:FluentValidation.Results.ValidationFailure.#ctor">
-            <summary>
-            Creates a new validation failure.
-            </summary>
-        </member>
         <member name="M:FluentValidation.Results.ValidationFailure.#ctor(System.String,System.String)">
             <summary>
             Creates a new validation failure.
@@ -3057,31 +3014,19 @@
             A collection of errors
             </summary>
         </member>
-        <member name="P:FluentValidation.Results.ValidationResult.RuleSetsExecuted">
-            <summary>
-            The RuleSets that were executed during the validation run.
-            </summary>
-        </member>
         <member name="M:FluentValidation.Results.ValidationResult.#ctor">
             <summary>
-            Creates a new ValidationResult
+            Creates a new validationResult
             </summary>
         </member>
         <member name="M:FluentValidation.Results.ValidationResult.#ctor(System.Collections.Generic.IEnumerable{FluentValidation.Results.ValidationFailure})">
             <summary>
             Creates a new ValidationResult from a collection of failures
             </summary>
-            <param name="failures">Collection of <see cref="T:FluentValidation.Results.ValidationFailure"/> instances which is later available through the <see cref="P:FluentValidation.Results.ValidationResult.Errors"/> property.</param>
+            <param name="failures">List of <see cref="T:FluentValidation.Results.ValidationFailure"/> which is later available through <see cref="P:FluentValidation.Results.ValidationResult.Errors"/>. This list get's copied.</param>
             <remarks>
-            Any nulls will be excluded.
-            The list is copied.
+            Every caller is responsible for not adding <c>null</c> to the list.
             </remarks>
-        </member>
-        <member name="M:FluentValidation.Results.ValidationResult.#ctor(System.Collections.Generic.IEnumerable{FluentValidation.Results.ValidationResult})">
-            <summary>
-            Creates a new ValidationResult by combining several other ValidationResults.
-            </summary>
-            <param name="otherResults"></param>
         </member>
         <member name="M:FluentValidation.Results.ValidationResult.ToString">
             <summary>
@@ -3095,14 +3040,6 @@
             </summary>
             <param name="separator">The character to separate the error messages.</param>
             <returns></returns>
-        </member>
-        <member name="M:FluentValidation.Results.ValidationResult.ToDictionary">
-            <summary>
-            Converts the ValidationResult's errors collection into a simple dictionary representation.
-            </summary>
-            <returns>A dictionary keyed by property name
-            where each value is an array of error messages associated with that property.
-            </returns>
         </member>
         <member name="T:FluentValidation.IRuleBuilderInitial`2">
             <summary>
@@ -3195,17 +3132,7 @@
             Performs validation, returning a TestValidationResult which allows assertions to be performed.
             </summary>
         </member>
-        <member name="M:FluentValidation.TestHelper.ValidationTestExtension.TestValidate``1(FluentValidation.IValidator{``0},FluentValidation.ValidationContext{``0})">
-            <summary>
-            Performs validation, returning a TestValidationResult which allows assertions to be performed.
-            </summary>
-        </member>
         <member name="M:FluentValidation.TestHelper.ValidationTestExtension.TestValidateAsync``1(FluentValidation.IValidator{``0},``0,System.Action{FluentValidation.Internal.ValidationStrategy{``0}},System.Threading.CancellationToken)">
-            <summary>
-            Performs async validation, returning a TestValidationResult which allows assertions to be performed.
-            </summary>
-        </member>
-        <member name="M:FluentValidation.TestHelper.ValidationTestExtension.TestValidateAsync``1(FluentValidation.IValidator{``0},FluentValidation.ValidationContext{``0},System.Threading.CancellationToken)">
             <summary>
             Performs async validation, returning a TestValidationResult which allows assertions to be performed.
             </summary>
@@ -3297,6 +3224,14 @@
             <param name="propertyExpression"></param>
             <returns></returns>
         </member>
+        <member name="M:FluentValidation.ValidatorDescriptor`1.GetValidatorsForMember``1(FluentValidation.Internal.MemberAccessor{`0,``0})">
+            <summary>
+            Gets validators for a member
+            </summary>
+            <typeparam name="TValue"></typeparam>
+            <param name="accessor"></param>
+            <returns></returns>
+        </member>
         <member name="M:FluentValidation.ValidatorDescriptor`1.GetRulesByRuleset">
             <summary>
             Gets rules grouped by ruleset
@@ -3358,57 +3293,7 @@
         </member>
         <member name="P:FluentValidation.ValidatorConfiguration.CascadeMode">
             <summary>
-            <para>
-            Gets a single <see cref="P:FluentValidation.ValidatorConfiguration.CascadeMode"/> mode value representing the default values of
-            <see cref="P:FluentValidation.AbstractValidator`1.ClassLevelCascadeMode"/>
-            and <see cref="P:FluentValidation.AbstractValidator`1.RuleLevelCascadeMode"/>., based on the same logic as used when setting
-            this property as described below.
-            </para>
-            <para>
-            Sets the default values of <see cref="P:FluentValidation.AbstractValidator`1.ClassLevelCascadeMode"/>
-            and <see cref="P:FluentValidation.AbstractValidator`1.RuleLevelCascadeMode"/>.
-            </para>
-            <para>
-            If set to <see cref="F:FluentValidation.CascadeMode.Continue"/> or <see cref="F:FluentValidation.CascadeMode.Stop"/>, then both properties are set
-            to that value by default.
-            </para>
-            <para>
-            If set to the deprecated <see cref="F:FluentValidation.CascadeMode.StopOnFirstFailure"/>,
-            then <see cref="P:FluentValidation.AbstractValidator`1.ClassLevelCascadeMode"/>
-            is set to <see cref="F:FluentValidation.CascadeMode.Continue"/> by default, and <see cref="P:FluentValidation.AbstractValidator`1.RuleLevelCascadeMode"/>
-            is set to <see cref="F:FluentValidation.CascadeMode.Stop"/> by default.
-            This results in the same behaviour as before this property was deprecated.
-            </para>
-            <para>
-            Note that cascade mode behaviour <i>within</i> individual rules is controlled by
-            <see cref="P:FluentValidation.AbstractValidator`1.RuleLevelCascadeMode"/>.
-            </para>
-            </summary>
-        </member>
-        <member name="P:FluentValidation.ValidatorConfiguration.DefaultClassLevelCascadeMode">
-            <summary>
-            <para>
-            Sets the default value for <see cref="P:FluentValidation.AbstractValidator`1.ClassLevelCascadeMode"/>.
-            Defaults to <see cref="F:FluentValidation.CascadeMode.Continue"/> if not set.
-            </para>
-            <para>
-            This cannot be set to the deprecated <see cref="F:FluentValidation.CascadeMode.StopOnFirstFailure"/>.
-            <see cref="F:FluentValidation.CascadeMode.StopOnFirstFailure"/>. Attempting to do so it will actually
-            result in <see cref="F:FluentValidation.CascadeMode.Stop"/> being used.
-            </para>
-            </summary>
-        </member>
-        <member name="P:FluentValidation.ValidatorConfiguration.DefaultRuleLevelCascadeMode">
-            <summary>
-            <para>
-            Sets the default value for <see cref="P:FluentValidation.AbstractValidator`1.RuleLevelCascadeMode"/>
-            Defaults to <see cref="F:FluentValidation.CascadeMode.Continue"/> if not set.
-            </para>
-            <para>
-            This cannot be set to the deprecated <see cref="F:FluentValidation.CascadeMode.StopOnFirstFailure"/>.
-            <see cref="F:FluentValidation.CascadeMode.StopOnFirstFailure"/>. Attempting to do so it will actually
-            result in <see cref="F:FluentValidation.CascadeMode.Stop"/> being used.
-            </para>
+            Default cascade mode
             </summary>
         </member>
         <member name="P:FluentValidation.ValidatorConfiguration.Severity">
@@ -3456,11 +3341,6 @@
             Pluggable resolver for default error codes
             </summary>
         </member>
-        <member name="P:FluentValidation.ValidatorConfiguration.OnFailureCreated">
-            <summary>
-            Defines a hook that runs when a <see cref="T:FluentValidation.Results.ValidationFailure"/> is created.
-            </summary>
-        </member>
         <member name="T:FluentValidation.ValidatorOptions">
             <summary>
             Validator runtime options
@@ -3489,11 +3369,6 @@
         <member name="P:FluentValidation.ValidatorSelectorOptions.RulesetValidatorSelectorFactory">
             <summary>
             Factory func for creating the ruleset validator selector
-            </summary>
-        </member>
-        <member name="P:FluentValidation.ValidatorSelectorOptions.CompositeValidatorSelectorFactory">
-            <summary>
-            Factory func for creating the composite validator selector
             </summary>
         </member>
         <member name="T:FluentValidation.Validators.AbstractComparisonValidator`2">
@@ -3641,11 +3516,6 @@
             Uses the simplified ASP.NET Core logic for checking an email address, which just checks for the presence of an @ sign.
             </summary>
         </member>
-        <member name="P:FluentValidation.Validators.IEnumValidator.EnumType">
-            <summary>
-            Enum type being validated.
-            </summary>
-        </member>
         <member name="T:FluentValidation.Validators.ExclusiveBetweenValidator`2">
             <summary>
             Performs range validation where the property value must be between the two specified values (exclusive).
@@ -3778,9 +3648,6 @@
              Allows a decimal to be validated for scale and precision.
              Scale would be the number of digits to the right of the decimal point.
              Precision would be the number of digits. This number includes both the left and the right sides of the decimal point.
-            
-             It implies certain range of values that will be accepted by the validator.
-             It permits up to Precision - Scale digits to the left of the decimal point and up to Scale digits to the right.
             
              It can be configured to use the effective scale and precision
              (i.e. ignore trailing zeros) if required.
