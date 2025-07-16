@@ -16,13 +16,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
-
-        private void btnVerVisitas_Click(object sender, EventArgs e)
-        {
-            FormVisitas formVisitas = new FormVisitas();
-
-            formVisitas.ShowDialog();
-        }
+              
 
         private void btnCerrarSistema_Click(object sender, EventArgs e)
         {

@@ -28,26 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnVerInternosX = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
             this.btnCerrarSistema = new System.Windows.Forms.Button();
             this.btnVerInternos = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnVerInternosX
-            // 
-            this.btnVerInternosX.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnVerInternosX.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnVerInternosX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerInternosX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerInternosX.ForeColor = System.Drawing.Color.White;
-            this.btnVerInternosX.Location = new System.Drawing.Point(23, 49);
-            this.btnVerInternosX.Name = "btnVerInternosX";
-            this.btnVerInternosX.Size = new System.Drawing.Size(93, 45);
-            this.btnVerInternosX.TabIndex = 0;
-            this.btnVerInternosX.Text = "Internos";
-            this.btnVerInternosX.UseVisualStyleBackColor = false;
-            this.btnVerInternosX.Click += new System.EventHandler(this.btnVerVisitas_Click);
             // 
             // label28
             // 
@@ -83,7 +67,7 @@
             this.btnVerInternos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerInternos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerInternos.ForeColor = System.Drawing.Color.White;
-            this.btnVerInternos.Location = new System.Drawing.Point(122, 49);
+            this.btnVerInternos.Location = new System.Drawing.Point(12, 47);
             this.btnVerInternos.Name = "btnVerInternos";
             this.btnVerInternos.Size = new System.Drawing.Size(93, 45);
             this.btnVerInternos.TabIndex = 78;
@@ -100,7 +84,6 @@
             this.Controls.Add(this.btnVerInternos);
             this.Controls.Add(this.btnCerrarSistema);
             this.Controls.Add(this.label28);
-            this.Controls.Add(this.btnVerInternosX);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
@@ -109,8 +92,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnVerInternosX;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button btnCerrarSistema;
         private System.Windows.Forms.Button btnVerInternos;
