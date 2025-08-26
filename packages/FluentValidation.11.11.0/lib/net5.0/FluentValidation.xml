@@ -53,7 +53,7 @@
             </para>
             <para>
             This cannot be set to the deprecated <see cref="F:FluentValidation.CascadeMode.StopOnFirstFailure"/>.
-            <see cref="F:FluentValidation.CascadeMode.StopOnFirstFailure"/>. Attempting to do so it will actually
+            <see cref="F:FluentValidation.CascadeMode.StopOnFirstFailure"/>. Attempting to do so will actually
             result in <see cref="F:FluentValidation.CascadeMode.Stop"/> being used.
             </para>
             </summary>
@@ -118,7 +118,7 @@
         </member>
         <member name="M:FluentValidation.AbstractValidator`1.RuleFor``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
             <summary>
-            Defines a validation rule for a specify property.
+            Defines a validation rule for a specific property.
             </summary>
             <example>
             RuleFor(x => x.Surname)...
@@ -275,7 +275,7 @@
         </member>
         <member name="M:FluentValidation.AbstractValidator`1.PreValidate(FluentValidation.ValidationContext{`0},FluentValidation.Results.ValidationResult)">
             <summary>
-            Determines if validation should occtur and provides a means to modify the context and ValidationResult prior to execution.
+            Determines if validation should occur and provides a means to modify the context and ValidationResult prior to execution.
             If this method returns false, then the ValidationResult is immediately returned from Validate/ValidateAsync.
             </summary>
             <param name="context"></param>
@@ -290,6 +290,13 @@
             <param name="context"></param>
             <param name="result"></param>
             <exception cref="T:FluentValidation.ValidationException"></exception>
+        </member>
+        <member name="M:FluentValidation.AbstractValidator`1.OnRuleAdded(FluentValidation.IValidationRule{`0})">
+            <summary>
+            This method is invoked when a rule has been created (via RuleFor/RuleForEach) and has been added to the validator.
+            You can override this method to provide customizations to all rule instances.
+            </summary>
+            <param name="rule"></param>
         </member>
         <member name="T:FluentValidation.AssemblyScanner">
             <summary>
@@ -931,7 +938,7 @@
         </member>
         <member name="M:FluentValidation.DefaultValidatorExtensions.GreaterThan``2(FluentValidation.IRuleBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
             <summary>
-            Defines a 'less than' validator on the current rule builder using a lambda expression.
+            Defines a 'greater than' validator on the current rule builder using a lambda expression.
             The validation will succeed if the property value is greater than the specified value.
             The validation will fail if the property value is less than or equal to the specified value.
             </summary>
@@ -943,7 +950,7 @@
         </member>
         <member name="M:FluentValidation.DefaultValidatorExtensions.GreaterThan``2(FluentValidation.IRuleBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Nullable{``1}}})">
             <summary>
-            Defines a 'less than' validator on the current rule builder using a lambda expression.
+            Defines a 'greater than' validator on the current rule builder using a lambda expression.
             The validation will succeed if the property value is greater than the specified value.
             The validation will fail if the property value is less than or equal to the specified value.
             </summary>
@@ -955,7 +962,7 @@
         </member>
         <member name="M:FluentValidation.DefaultValidatorExtensions.GreaterThan``2(FluentValidation.IRuleBuilder{``0,System.Nullable{``1}},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
             <summary>
-            Defines a 'less than' validator on the current rule builder using a lambda expression.
+            Defines a 'greater than' validator on the current rule builder using a lambda expression.
             The validation will succeed if the property value is greater than the specified value.
             The validation will fail if the property value is less than or equal to the specified value.
             </summary>
@@ -967,7 +974,7 @@
         </member>
         <member name="M:FluentValidation.DefaultValidatorExtensions.GreaterThan``2(FluentValidation.IRuleBuilder{``0,System.Nullable{``1}},System.Linq.Expressions.Expression{System.Func{``0,System.Nullable{``1}}})">
             <summary>
-            Defines a 'less than' validator on the current rule builder using a lambda expression.
+            Defines a 'greater than' validator on the current rule builder using a lambda expression.
             The validation will succeed if the property value is greater than the specified value.
             The validation will fail if the property value is less than or equal to the specified value.
             </summary>
@@ -979,7 +986,7 @@
         </member>
         <member name="M:FluentValidation.DefaultValidatorExtensions.GreaterThanOrEqualTo``2(FluentValidation.IRuleBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
             <summary>
-            Defines a 'greater than' validator on the current rule builder using a lambda expression.
+            Defines a 'greater than or equal to' validator on the current rule builder using a lambda expression.
             The validation will succeed if the property value is greater than or equal the specified value.
             The validation will fail if the property value is less than the specified value.
             </summary>
@@ -991,7 +998,7 @@
         </member>
         <member name="M:FluentValidation.DefaultValidatorExtensions.GreaterThanOrEqualTo``2(FluentValidation.IRuleBuilder{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Nullable{``1}}})">
             <summary>
-            Defines a 'greater than' validator on the current rule builder using a lambda expression.
+            Defines a 'greater than or equal to' validator on the current rule builder using a lambda expression.
             The validation will succeed if the property value is greater than or equal the specified value.
             The validation will fail if the property value is less than the specified value.
             </summary>
@@ -1133,6 +1140,28 @@
             <param name="scale">Allowed scale of the value</param>
             <param name="precision">Allowed precision of the value</param>
             <param name="ignoreTrailingZeros">Whether the validator will ignore trailing zeros.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentValidation.DefaultValidatorExtensions.PrecisionScale``1(FluentValidation.IRuleBuilder{``0,System.Decimal},System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Defines a scale precision validator on the current rule builder that ensures a decimal the specified precision and scale. It permits up to <b><paramref name="precision"/> - <paramref name="scale"/></b> digits to the left of the decimal point and up to <b><paramref name="scale"/></b> digits to the right.
+            </summary>
+            <typeparam name="T">Type of object being validated</typeparam>
+            <param name="ruleBuilder">The rule builder on which the validator should be defined</param>
+            <param name="scale">Allowed scale of the value</param>
+            <param name="precision">Allowed precision of the value</param>
+            <param name="ignoreTrailingZeros">Whether the validator will ignore trailing zeros after the decimal point. For example, when set to true the decimal 123.4500 will be considered to have a precision of 5 and scale of 2. When set to false, it will be considered to have a precision of 7 and scale of 4.</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentValidation.DefaultValidatorExtensions.PrecisionScale``1(FluentValidation.IRuleBuilder{``0,System.Nullable{System.Decimal}},System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Defines a scale precision validator on the current rule builder that ensures a decimal the specified precision and scale. It permits up to <b><paramref name="precision"/> - <paramref name="scale"/></b> digits to the left of the decimal point and up to <b><paramref name="scale"/></b> digits to the right.
+            </summary>
+            <typeparam name="T">Type of object being validated</typeparam>
+            <param name="ruleBuilder">The rule builder on which the validator should be defined</param>
+            <param name="scale">Allowed scale of the value</param>
+            <param name="precision">Allowed precision of the value</param>
+            <param name="ignoreTrailingZeros">Whether the validator will ignore trailing zeros after the decimal point. For example, when set to true the decimal 123.4500 will be considered to have a precision of 5 and scale of 2. When set to false, it will be considered to have a precision of 7 and scale of 4.</param>
             <returns></returns>
         </member>
         <member name="M:FluentValidation.DefaultValidatorExtensions.Custom``2(FluentValidation.IRuleBuilder{``0,``1},System.Action{``1,FluentValidation.ValidationContext{``0}})">
@@ -1509,6 +1538,14 @@
             <param name="predicate">The condition</param>
             <returns></returns>
         </member>
+        <member name="M:FluentValidation.DefaultValidatorOptions.WhereAsync``2(FluentValidation.IRuleBuilderInitialCollection{``0,``1},System.Func{``1,System.Threading.Tasks.Task{System.Boolean}})">
+            <summary>
+            Applies an asynchronous filter to a collection property.
+            </summary>
+            <param name="rule">The current rule</param>
+            <param name="predicate">The condition</param>
+            <returns></returns>
+        </member>
         <member name="M:FluentValidation.DefaultValidatorOptions.WithName``2(FluentValidation.IRuleBuilderOptions{``0,``1},System.String)">
             <summary>
             Specifies a custom property name to use within the error message.
@@ -1563,6 +1600,16 @@
             <param name="stateProvider"></param>
             <returns></returns>
         </member>
+        <member name="M:FluentValidation.DefaultValidatorOptions.WithState``2(FluentValidation.IRuleBuilderOptions{``0,``1},System.Func{``0,``1,FluentValidation.ValidationContext{``0},System.Object})">
+            <summary>
+            Specifies custom state that should be stored alongside the validation message when validation fails for this rule.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="stateProvider"></param>
+            <returns></returns>
+        </member>
         <member name="M:FluentValidation.DefaultValidatorOptions.WithSeverity``2(FluentValidation.IRuleBuilderOptions{``0,``1},FluentValidation.Severity)">
             <summary>
              Specifies custom severity that should be stored alongside the validation message when validation fails for this rule.
@@ -1584,6 +1631,16 @@
             <returns></returns>
         </member>
         <member name="M:FluentValidation.DefaultValidatorOptions.WithSeverity``2(FluentValidation.IRuleBuilderOptions{``0,``1},System.Func{``0,``1,FluentValidation.Severity})">
+            <summary>
+            Specifies custom severity that should be stored alongside the validation message when validation fails for this rule.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="rule"></param>
+            <param name="severityProvider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentValidation.DefaultValidatorOptions.WithSeverity``2(FluentValidation.IRuleBuilderOptions{``0,``1},System.Func{``0,``1,FluentValidation.ValidationContext{``0},FluentValidation.Severity})">
             <summary>
             Specifies custom severity that should be stored alongside the validation message when validation fails for this rule.
             </summary>
@@ -1717,6 +1774,19 @@
             <param name="cachePrefix">Cache prefix</param>
             <returns>Accessor func</returns>
         </member>
+        <member name="T:FluentValidation.Internal.ChildRulesContainer`1">
+            <summary>
+            AbstractValidator implementation for containing child rules.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="F:FluentValidation.Internal.ChildRulesContainer`1.RuleSetsToApplyToChildRules">
+            <summary>
+            Used to keep track of rulesets from parent that need to be applied
+            to child rules in the case of multiple nested child rules.
+            </summary>
+            <see cref="M:FluentValidation.DefaultValidatorExtensions.ChildRules``2(FluentValidation.IRuleBuilder{``0,``1},System.Action{FluentValidation.InlineValidator{``1}})"/>
+        </member>
         <member name="T:FluentValidation.Internal.CollectionPropertyRule`2">
             <summary>
             Rule definition for collection properties
@@ -1732,6 +1802,11 @@
         <member name="P:FluentValidation.Internal.CollectionPropertyRule`2.Filter">
             <summary>
             Filter that should include/exclude items in the collection.
+            </summary>
+        </member>
+        <member name="P:FluentValidation.Internal.CollectionPropertyRule`2.AsyncFilter">
+            <summary>
+            Asynchronous filter that should be used to include/exclude items in the collection.
             </summary>
         </member>
         <member name="P:FluentValidation.Internal.CollectionPropertyRule`2.IndexBuilder">
@@ -2089,7 +2164,7 @@
             <param name="parentChain">The parent chain to compare</param>
             <returns>True if the current chain is the child of the other chain, otherwise false</returns>
         </member>
-        <member name="M:FluentValidation.Internal.PropertyChain.BuildPropertyName(System.String)">
+        <member name="M:FluentValidation.Internal.PropertyChain.BuildPropertyPath(System.String)">
             <summary>
             Builds a property path.
             </summary>
@@ -2609,9 +2684,9 @@
             Gets the display name for the current property being validated.
             </summary>
         </member>
-        <member name="P:FluentValidation.ValidationContext`1.PropertyName">
+        <member name="P:FluentValidation.ValidationContext`1.PropertyPath">
             <summary>
-            The full name of the current property being validated.
+            The full path of the current property being validated.
             If accessed inside a child validator, this will include the parent's path too.
             </summary>
         </member>
@@ -2989,7 +3064,7 @@
         </member>
         <member name="M:FluentValidation.Results.ValidationResult.#ctor">
             <summary>
-            Creates a new validationResult
+            Creates a new ValidationResult
             </summary>
         </member>
         <member name="M:FluentValidation.Results.ValidationResult.#ctor(System.Collections.Generic.IEnumerable{FluentValidation.Results.ValidationFailure})">
@@ -3001,6 +3076,12 @@
             Any nulls will be excluded.
             The list is copied.
             </remarks>
+        </member>
+        <member name="M:FluentValidation.Results.ValidationResult.#ctor(System.Collections.Generic.IEnumerable{FluentValidation.Results.ValidationResult})">
+            <summary>
+            Creates a new ValidationResult by combining several other ValidationResults.
+            </summary>
+            <param name="otherResults"></param>
         </member>
         <member name="M:FluentValidation.Results.ValidationResult.ToString">
             <summary>
@@ -3114,7 +3195,17 @@
             Performs validation, returning a TestValidationResult which allows assertions to be performed.
             </summary>
         </member>
+        <member name="M:FluentValidation.TestHelper.ValidationTestExtension.TestValidate``1(FluentValidation.IValidator{``0},FluentValidation.ValidationContext{``0})">
+            <summary>
+            Performs validation, returning a TestValidationResult which allows assertions to be performed.
+            </summary>
+        </member>
         <member name="M:FluentValidation.TestHelper.ValidationTestExtension.TestValidateAsync``1(FluentValidation.IValidator{``0},``0,System.Action{FluentValidation.Internal.ValidationStrategy{``0}},System.Threading.CancellationToken)">
+            <summary>
+            Performs async validation, returning a TestValidationResult which allows assertions to be performed.
+            </summary>
+        </member>
+        <member name="M:FluentValidation.TestHelper.ValidationTestExtension.TestValidateAsync``1(FluentValidation.IValidator{``0},FluentValidation.ValidationContext{``0},System.Threading.CancellationToken)">
             <summary>
             Performs async validation, returning a TestValidationResult which allows assertions to be performed.
             </summary>
@@ -3365,6 +3456,11 @@
             Pluggable resolver for default error codes
             </summary>
         </member>
+        <member name="P:FluentValidation.ValidatorConfiguration.OnFailureCreated">
+            <summary>
+            Defines a hook that runs when a <see cref="T:FluentValidation.Results.ValidationFailure"/> is created.
+            </summary>
+        </member>
         <member name="T:FluentValidation.ValidatorOptions">
             <summary>
             Validator runtime options
@@ -3393,6 +3489,11 @@
         <member name="P:FluentValidation.ValidatorSelectorOptions.RulesetValidatorSelectorFactory">
             <summary>
             Factory func for creating the ruleset validator selector
+            </summary>
+        </member>
+        <member name="P:FluentValidation.ValidatorSelectorOptions.CompositeValidatorSelectorFactory">
+            <summary>
+            Factory func for creating the composite validator selector
             </summary>
         </member>
         <member name="T:FluentValidation.Validators.AbstractComparisonValidator`2">
@@ -3540,6 +3641,11 @@
             Uses the simplified ASP.NET Core logic for checking an email address, which just checks for the presence of an @ sign.
             </summary>
         </member>
+        <member name="P:FluentValidation.Validators.IEnumValidator.EnumType">
+            <summary>
+            Enum type being validated.
+            </summary>
+        </member>
         <member name="T:FluentValidation.Validators.ExclusiveBetweenValidator`2">
             <summary>
             Performs range validation where the property value must be between the two specified values (exclusive).
@@ -3672,6 +3778,9 @@
              Allows a decimal to be validated for scale and precision.
              Scale would be the number of digits to the right of the decimal point.
              Precision would be the number of digits. This number includes both the left and the right sides of the decimal point.
+            
+             It implies certain range of values that will be accepted by the validator.
+             It permits up to Precision - Scale digits to the left of the decimal point and up to Scale digits to the right.
             
              It can be configured to use the effective scale and precision
              (i.e. ignore trailing zeros) if required.
