@@ -99,6 +99,12 @@
     <Compile Include="FormAdminVisita.Designer.cs">
       <DependentUpon>FormAdminVisita.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormInternoNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInternoNuevo.Designer.cs">
+      <DependentUpon>FormInternoNuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInternos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     <Compile Include="Validaciones\ProhibicionValidator.cs" />
     <EmbeddedResource Include="FormAdminVisita.resx">
       <DependentUpon>FormAdminVisita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInternoNuevo.resx">
+      <DependentUpon>FormInternoNuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInternos.resx">
       <DependentUpon>FormInternos.cs</DependentUpon>
