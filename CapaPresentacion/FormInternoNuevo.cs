@@ -16,5 +16,35 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //HABILITAR CONTROLES
+        private void HabilitarControlesNuevo(bool habilitar)
+        {
+            txtApellido.Enabled = habilitar;
+            txtApellido.Text = "";
+            txtNombre.Enabled = habilitar;
+            txtNombre.Text = "";
+            txtProntuario.Enabled = habilitar;
+            txtProntuario.Text = "";
+            txtDni.Enabled = habilitar;
+            txtDni.Text = "";
+            cmbSexo.Enabled = habilitar;
+            dtpFechaNscimiento.Enabled = habilitar;
+            dtpFechaNscimiento.ResetText();
+            txtTelefono.Enabled = habilitar;
+            txtTelefono.Text = "";
+            cmbEstadoCivil.Enabled = habilitar;
+            cmbNacionalidad.Enabled = habilitar;
+
+            btnGuardar.Enabled = habilitar;
+            btnCancelar.Enabled = habilitar;
+        }
+
+        //FIN HABILITAR CONTROLES...............................................
     }
 }

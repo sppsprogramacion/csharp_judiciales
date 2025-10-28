@@ -21,12 +21,11 @@ namespace CapaPresentacion
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            this.HabilitarControlesNuevo(true);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.HabilitarControlesNuevo(false);
+
         }
 
         private async void btnBuscarApellido_Click(object sender, EventArgs e)
@@ -71,32 +70,7 @@ namespace CapaPresentacion
         }
 
 
-        //HABILITAR CONTROLES
-        private void HabilitarControlesNuevo(bool habilitar)
-        {
-            txtApellido.Enabled = habilitar;
-            txtApellido.Text = "";
-            txtNombre.Enabled = habilitar;
-            txtNombre.Text = "";
-            txtProntuario.Enabled = habilitar;
-            txtProntuario.Text = "";
-            txtDni.Enabled = habilitar;
-            txtDni.Text = "";
-            cmbSexo.Enabled = habilitar;
-            dtpFechaNscimiento.Enabled = habilitar;
-            dtpFechaNscimiento.ResetText();
-            txtTelefono.Enabled = habilitar;
-            txtTelefono.Text = "";
-            cmbEstadoCivil.Enabled = habilitar;
-            cmbNacionalidad.Enabled = habilitar;
-
-            btnNuevo.Enabled = !habilitar;
-            btnGuardar.Enabled = habilitar;
-            btnCancelar.Enabled = habilitar;
-            btnBuscarApellido.Enabled = !habilitar;
-        }
-
-        //FIN HABILITAR CONTROLES...............................................
+        
     }
 
 }
