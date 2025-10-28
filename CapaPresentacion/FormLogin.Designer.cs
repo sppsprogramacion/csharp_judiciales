@@ -32,7 +32,7 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtContrasenia = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnCerrarSistema = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -86,16 +86,16 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Contraseña";
             // 
-            // txtContrasenia
+            // txtPassword
             // 
-            this.txtContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtContrasenia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasenia.Location = new System.Drawing.Point(248, 211);
-            this.txtContrasenia.Multiline = true;
-            this.txtContrasenia.Name = "txtContrasenia";
-            this.txtContrasenia.Size = new System.Drawing.Size(195, 30);
-            this.txtContrasenia.TabIndex = 3;
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(248, 211);
+            this.txtPassword.Multiline = true;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(195, 30);
+            this.txtPassword.TabIndex = 3;
             // 
             // btnCerrarSistema
             // 
@@ -157,7 +157,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCerrarSistema);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtContrasenia);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.btnLogin);
@@ -178,7 +178,7 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtContrasenia;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnCerrarSistema;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

@@ -129,8 +129,11 @@
     <Compile Include="FormVisitas.Designer.cs">
       <DependentUpon>FormVisitas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FuncionesGenerales\FormularioAyudas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validaciones\Login\Datos\LoginDatos.cs" />
+    <Compile Include="Validaciones\Login\Validacion\LoginValidator.cs" />
     <Compile Include="Validaciones\ProhibicionDatos.cs" />
     <Compile Include="Validaciones\ProhibicionValidator.cs" />
     <EmbeddedResource Include="FormAdminVisita.resx">
@@ -209,6 +212,8 @@
     <None Include="Resources\logo_spps2.png" />
     <Content Include="restriccion-logo.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Validaciones\Interno\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

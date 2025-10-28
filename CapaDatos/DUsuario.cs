@@ -23,5 +23,7 @@ namespace CapaDatos
         public DOrganismo organismo { get; set; }
         public bool activo { get; set; }
         public string[] roles { get; set; }
+
+        
     }
 }

@@ -49,6 +49,7 @@
     <Compile Include="DLoginResponse.cs" />
     <Compile Include="DMunicipio.cs" />
     <Compile Include="DNacionalidad.cs" />
+    <Compile Include="DOjoColor.cs" />
     <Compile Include="DOrganismo.cs" />
     <Compile Include="DPais.cs" />
     <Compile Include="DParentesco.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="DSexo.cs" />
     <Compile Include="DEstadoCivil.cs" />
     <Compile Include="DUsuario.cs" />
+    <Compile Include="NarizForma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DVisitaInterno.cs" />
   </ItemGroup>
