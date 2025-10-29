@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    public class NarizForma
+    public class DNarizForma
     {
-        public int id_ojo_color { get; set; }
+        public string id_nariz_forma { get; set; }
         public string nariz_forma { get; set; }
-        public string tipo_caracteristica { get; set; }
     }
 }

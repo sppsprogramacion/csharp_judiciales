@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace DAO
 {
-    public interface IEstadoCivilDao
+    public interface IListasGenerales
     {
-        DEstadoCivil buscarEstadoCivilXId(int id);
-
-        Task<(List<DEstadoCivil>, string error)> retornarListaEstadoCivil();
+        Task<(DCaracteristicasPersonales, string error)> ListaCaracteristicasPersonales();
     }
 }

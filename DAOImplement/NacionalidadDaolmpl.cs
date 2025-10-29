@@ -12,43 +12,46 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace DAOImplement
 {
-    public class EstadoCivilDaoImpl : IEstadoCivilDao
-    {
+    public class NacionalidadDaolmpl: INacionalidadDao
+    {//inicio de clase
         private string url_base = MiConexion.getConexion();
         HttpClient httpClient = new HttpClient();
-
-        public DEstadoCivil buscarEstadoCivilXId(int id)
+        public DNacionalidad buscarNacionalidadXId(int id)
         {
             throw new NotImplementedException();
         }
 
-        async public Task<(List<DEstadoCivil>, string error)> retornarListaEstadoCivil()
+                
+        public async Task<(List<DNacionalidad>, string error)> retornarListaNacionalidad()
         {
             //variable token
             string token = SessionManager.Token;
-            List<DEstadoCivil> listaEstadoCivil = new List<DEstadoCivil>();
+            List<DNacionalidad> listaNacionalidad = new List<DNacionalidad>();
+           
             try
             {
                 //agregar tpken a la cabecera
                 this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-                {
-                    HttpResponseMessage httpResponse = await httpClient.GetAsync(url_base + "/estado-civil/todos");
+                                                       
+                HttpResponseMessage httpResponse = await httpClient.GetAsync(url_base + "/nacionalidades/todos");
 
-                    if (httpResponse.IsSuccessStatusCode)
-                    {
-                        var content = await httpResponse.Content.ReadAsStringAsync();
-                        listaEstadoCivil = JsonConvert.DeserializeObject<List<DEstadoCivil>>(content);
-                        return (listaEstadoCivil, null);
-                    }
-                    else
-                    {
-                        string errorMessage = await httpResponse.Content.ReadAsStringAsync();
-                        var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
-                        return (null, $"Error en la busqueda: {mensaje}");
-                    }
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var contentRespuesta = await httpResponse.Content.ReadAsStringAsync();
+                    listaNacionalidad = JsonConvert.DeserializeObject<List<DNacionalidad>>(contentRespuesta);
+                    return (listaNacionalidad, null);
+
                 }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (null, $"Error en la busqueda: {mensaje}");
+                }
+                
 
             }
             catch (HttpRequestException httpRequestException)
@@ -68,7 +71,8 @@ namespace DAOImplement
                 return (null, $"Error inesperado: {ex.Message}");
             }
 
-        }
 
-    }
+
+        }
+    }//fin d eclase
 }

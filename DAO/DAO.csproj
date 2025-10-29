@@ -41,17 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IBitacoraProhibicionVisitaDao.cs" />
     <Compile Include="ICiudadanoDao.cs" />
+    <Compile Include="IDepartamentoDao.cs" />
     <Compile Include="IEstadoCivilDao.cs" />
     <Compile Include="IAuthDao.cs" />
     <Compile Include="IInternosDao.cs" />
+    <Compile Include="IListasGenerales.cs" />
+    <Compile Include="INacionalidadDao.cs" />
     <Compile Include="IOrganismoDao.cs" />
     <Compile Include="IParentescoDao.cs" />
-    <Compile Include="IProhibicionVisitaDao.cs" />
     <Compile Include="IProvinciaDao.cs" />
     <Compile Include="ISexoDao.cs" />
     <Compile Include="IVisitaInternoDao.cs" />
+    <Compile Include="IZonaResidencia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

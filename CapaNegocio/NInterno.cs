@@ -12,7 +12,7 @@ namespace CapaNegocio
     public class NInterno
     {
         //CREAR INTERNO
-        public async Task<(DInterno, string error)> CrearProhibicion(string interno)
+        public async Task<(DInterno, string error)> CrearInterno(string interno)
         {
             IInternosDao internoDao = new InternoDaoImplement();
 
@@ -21,6 +21,7 @@ namespace CapaNegocio
             return (internoResponse, errorResponse);
         }
         //FIN CREAR INTERNO......................................................
+
 
         //RETORNAR X APELLIDO
         public async Task<(List<DInterno>, string error)> ListaInternosXApellido(string apellido)

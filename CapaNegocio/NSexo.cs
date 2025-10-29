@@ -14,15 +14,16 @@ namespace CapaNegocio
     {
 
         //RETORNAR SEXO TODOS
-        public async Task<List<DSexo>> RetornarListaSexo()
+        public async Task<(List<DSexo>, string error)> RetornarListaSexo()
         {
             ISexoDao sexoDao = new SexoDaoImpl();
 
-            List<DSexo> listaSexo = await sexoDao.retornarListaSexo();
+            (List<DSexo> listaSexo, string errorResponse) = await sexoDao.retornarListaSexo();
 
-            
-            return listaSexo;
-        }       
+
+            return (listaSexo, errorResponse);
+
+        }
         //FIN RETORNAR SEX TODOS..................................
     }
 }

@@ -12,14 +12,14 @@ namespace CapaNegocio
     public class NEstadoCivil
     {
         //RETORNAR ESTADO CIVIL TODOS
-        public async Task<List<DEstadoCivil>> RetornarListaEstadoCivil()
+        public async Task<(List<DEstadoCivil>, string error)> RetornarListaEstadoCivil()
         {
             IEstadoCivilDao estadoCivilDao = new EstadoCivilDaoImpl();
 
-            List<DEstadoCivil> listaEstadoCivil = await estadoCivilDao.retornarListaEstadoCivil();
+            (List<DEstadoCivil> listaEstadoCivil, string errorResponse) = await estadoCivilDao.retornarListaEstadoCivil();
 
 
-            return listaEstadoCivil;
+            return (listaEstadoCivil, errorResponse);
         }
         //FIN RETORNAR ESTADO CIVIL TODOS..................................
     }

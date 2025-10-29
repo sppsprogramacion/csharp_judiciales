@@ -12,14 +12,14 @@ namespace CapaNegocio
     public class NProvincia
     {
         //RETORNAR PROVINCIAS X PAIS TODOS
-        public async Task<List<DProvincia>> RetornarListaProvinciasXPais(string id_pais)
+        public async Task<(List<DProvincia>, string error)> RetornarListaProvinciasXPais(string id_pais)
         {
             IProvinciaDao provinciaDao = new ProvinciaDaoImpl();
 
-            List<DProvincia> listaProvincias = await provinciaDao.retornarListaProvinciasXPais(id_pais);
+            (List<DProvincia> listaProvincia, string errorResponse) = await provinciaDao.retornarListaProvinciasXPais(id_pais);
 
 
-            return listaProvincias;
+            return (listaProvincia, errorResponse);
         }
         //FIN RETORNAR PROVINCIAS X PAIS TODOS..................................
     }

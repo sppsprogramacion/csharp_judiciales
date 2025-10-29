@@ -9,12 +9,9 @@ namespace DAO
 {
     public interface IProvinciaDao
     {
-        int crearProvincia(DProvincia provincia);
-
-        int editarProvincia(DProvincia provincia);
 
         DProvincia buscarProvinciaXId(int id);
 
-        Task<List<DProvincia>> retornarListaProvinciasXPais(string id_pais);
+        Task<(List<DProvincia>, string error)> retornarListaProvinciasXPais(string id_pais);
     }
 }

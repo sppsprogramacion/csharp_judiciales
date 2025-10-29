@@ -21,6 +21,8 @@ namespace CapaPresentacion
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            FormInternoNuevo formInternoNuevo = new FormInternoNuevo();
+            formInternoNuevo.ShowDialog();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

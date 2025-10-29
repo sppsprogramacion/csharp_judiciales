@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBitacoraProhibicionVisita.cs" />
+    <Compile Include="DCaracteristicasPersonales.cs" />
     <Compile Include="DCiudadano.cs" />
     <Compile Include="DDepartamento.cs" />
     <Compile Include="DInterno.cs" />
@@ -49,17 +49,21 @@
     <Compile Include="DLoginResponse.cs" />
     <Compile Include="DMunicipio.cs" />
     <Compile Include="DNacionalidad.cs" />
-    <Compile Include="DOjoColor.cs" />
+    <Compile Include="DNarizForma.cs" />
+    <Compile Include="DOjosColor.cs" />
     <Compile Include="DOrganismo.cs" />
     <Compile Include="DPais.cs" />
     <Compile Include="DParentesco.cs" />
-    <Compile Include="DProhibicionVisita.cs" />
+    <Compile Include="DPeloColor.cs" />
     <Compile Include="DProvincia.cs" />
     <Compile Include="DResponseEditar.cs" />
     <Compile Include="DSexo.cs" />
     <Compile Include="DEstadoCivil.cs" />
+    <Compile Include="DTamanio.cs" />
     <Compile Include="DUsuario.cs" />
-    <Compile Include="NarizForma.cs" />
+    <Compile Include="DPeloTipo.cs" />
+    <Compile Include="DPiel.cs" />
+    <Compile Include="DZonaResidencia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DVisitaInterno.cs" />
   </ItemGroup>

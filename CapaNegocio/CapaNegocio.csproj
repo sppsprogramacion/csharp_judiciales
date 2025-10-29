@@ -42,15 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NAuth.cs" />
-    <Compile Include="NBitacoraProhibicionVisita.cs" />
+    <Compile Include="NDepartamento.cs" />
+    <Compile Include="NListasGenerales.cs" />
     <Compile Include="NCiudadano.cs" />
     <Compile Include="NEstadoCivil.cs" />
     <Compile Include="NInterno.cs" />
+    <Compile Include="NNacionalidad.cs" />
     <Compile Include="NParentesco.cs" />
-    <Compile Include="NProhibicionVisita.cs" />
     <Compile Include="NProvincia.cs" />
     <Compile Include="NSexo.cs" />
     <Compile Include="NVisitaInterno.cs" />
+    <Compile Include="NZonaResidencia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

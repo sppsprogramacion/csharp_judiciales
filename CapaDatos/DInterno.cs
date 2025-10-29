@@ -14,14 +14,39 @@ namespace CapaDatos
         public int dni { get; set; }
         public string apellido { get; set; }
         public string nombre { get; set; }
+        public string alias { get; set; }
         public int sexo_id { get; set; }
         public DSexo sexo { get; set; }
+        public int talla { get; set; }
+        public string ojos_color_id { get; set; }
+        public DOjosColor ojos_color { get; set; }
+        public string ojos_tamanio_id { get; set; }
+        public DTamanio ojos_tamanio { get; set; }
+        public string nariz_tamanio_id { get; set; }
+        public DTamanio nariz_tamanio { get; set; }
+        public string nariz_forma_id { get; set; }
+        public DNarizForma nariz_forma { get; set; }
+        public string pelo_tipo_id { get; set; }
+        public DPeloTipo pelo_tipo { get; set; }
+        public string pelo_color_id { get; set; }
+        public DPeloColor pelo_color { get; set; }
+        public string piel_id { get; set; }
+        public DPiel piel { get; set; }
+        public string nacionalidad_id { get; set; }
+        public DNacionalidad nacionalidad { get; set; }
+        public string provincia_nacimiento_id { get; set; }
+        public DProvincia provincia_nacimiento { get; set; }
+        public string departamento_nacimiento_id { get; set; }
+        public DDepartamento departamento_nacimiento { get; set; }
         public DateTime fecha_nacimiento { get; set; }
-        public string telefono { get; set; }
         public int estado_civil_id { get; set; }
         public DEstadoCivil estado_civil { get; set; }
-        public string nacionalidad_id { get; set; }
-        public DNacionalidad nacionalidad { get; set; }        
+        public int zona_residencia_id { get; set; }
+        public DZonaResidencia zona_residencia { get; set; }
+        public string telefono { get; set; }
+        public string padre { get; set; }
+        public string madre { get; set; }
+        public string parientes { get; set; }
         public int organismo_id { get; set; }
         public DOrganismo organismo { get; set; }        
         public string foto { get; set; }

@@ -14,40 +14,35 @@ using System.Threading.Tasks;
 
 namespace DAOImplement
 {
-    public class EstadoCivilDaoImpl : IEstadoCivilDao
+    public class ListasGeneralesDaoImplement : IListasGenerales
     {
         private string url_base = MiConexion.getConexion();
         HttpClient httpClient = new HttpClient();
 
-        public DEstadoCivil buscarEstadoCivilXId(int id)
+        public async Task<(DCaracteristicasPersonales, string error)> ListaCaracteristicasPersonales()
         {
-            throw new NotImplementedException();
-        }
+            DCaracteristicasPersonales caracteristicasPersonales = new DCaracteristicasPersonales();
 
-        async public Task<(List<DEstadoCivil>, string error)> retornarListaEstadoCivil()
-        {
-            //variable token
-            string token = SessionManager.Token;
-            List<DEstadoCivil> listaEstadoCivil = new List<DEstadoCivil>();
+            string token = SessionManager.Token; // Aquí pones tu token real
+
             try
             {
-                //agregar tpken a la cabecera
+                // Agregar el token en los headers
                 this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-                {
-                    HttpResponseMessage httpResponse = await httpClient.GetAsync(url_base + "/estado-civil/todos");
 
-                    if (httpResponse.IsSuccessStatusCode)
-                    {
-                        var content = await httpResponse.Content.ReadAsStringAsync();
-                        listaEstadoCivil = JsonConvert.DeserializeObject<List<DEstadoCivil>>(content);
-                        return (listaEstadoCivil, null);
-                    }
-                    else
-                    {
-                        string errorMessage = await httpResponse.Content.ReadAsStringAsync();
-                        var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
-                        return (null, $"Error en la busqueda: {mensaje}");
-                    }
+                HttpResponseMessage httpResponse = await this.httpClient.GetAsync(url_base + "/caracteristicas-personales/todos");
+
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var content = await httpResponse.Content.ReadAsStringAsync();
+                    caracteristicasPersonales = JsonConvert.DeserializeObject<DCaracteristicasPersonales>(content);
+                    return (caracteristicasPersonales, null);
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (null, $"Error en la busqueda: {mensaje}");
                 }
 
             }
@@ -67,8 +62,6 @@ namespace DAOImplement
                 Console.WriteLine($"Error: {ex.Message}");
                 return (null, $"Error inesperado: {ex.Message}");
             }
-
         }
-
     }
 }
