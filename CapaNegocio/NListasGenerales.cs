@@ -17,12 +17,24 @@ namespace CapaNegocio
         {
             IListasGenerales listasGeneralesDao = new ListasGeneralesDaoImplement();
 
-            (DCaracteristicasPersonales caracteristicasPersonales, string errorResponse) = await listasGeneralesDao.ListaCaracteristicasPersonales();
+            (DCaracteristicasPersonales caracteristicasPersonales, string errorResponse) = await listasGeneralesDao.ListasCaracteristicasPersonales();
 
 
             return (caracteristicasPersonales, errorResponse);
         }
         //FIN RETORNAR LISTA CARACTERISTICAS GENERALES..................................
+
+        //RETORNAR LISTAS DATOS FILIATORIOS
+        public async Task<(DDatosFiliatorios, string error)> ListasDatosFilistorios()
+        {
+            IListasGenerales listasGeneralesDao = new ListasGeneralesDaoImplement();
+
+            (DDatosFiliatorios datosFiliatorios, string errorResponse) = await listasGeneralesDao.ListasDatosFiliatorios();
+
+
+            return (datosFiliatorios, errorResponse);
+        }
+        //FIN RETORNAR LISTAS DATOS FILIATORIOS..................................
 
     }
 }

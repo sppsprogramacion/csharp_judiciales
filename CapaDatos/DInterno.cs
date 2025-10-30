@@ -36,12 +36,12 @@ namespace CapaDatos
         public DNacionalidad nacionalidad { get; set; }
         public string provincia_nacimiento_id { get; set; }
         public DProvincia provincia_nacimiento { get; set; }
-        public string departamento_nacimiento_id { get; set; }
+        public int departamento_nacimiento_id { get; set; }
         public DDepartamento departamento_nacimiento { get; set; }
         public DateTime fecha_nacimiento { get; set; }
         public int estado_civil_id { get; set; }
         public DEstadoCivil estado_civil { get; set; }
-        public int zona_residencia_id { get; set; }
+        public string zona_residencia_id { get; set; }
         public DZonaResidencia zona_residencia { get; set; }
         public string telefono { get; set; }
         public string padre { get; set; }

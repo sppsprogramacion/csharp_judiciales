@@ -14,5 +14,7 @@ namespace CapaDatos
         public List<DPeloColor> pelo_color { get; set; }
         public List<DPiel> piel { get; set; }
         public List<DTamanio> tamanio { get; set; }
+        public List<DSexo> sexo { get; set; }
+
     }
 }

@@ -61,7 +61,7 @@
             this.groupBox2.Controls.Add(this.dtgvInternos);
             this.groupBox2.Controls.Add(this.btnNuevo);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(8, 297);
+            this.groupBox2.Location = new System.Drawing.Point(8, 281);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(815, 454);
             this.groupBox2.TabIndex = 117;
@@ -83,7 +83,7 @@
             this.groupBox1.Controls.Add(this.btnBuscarApellido);
             this.groupBox1.Controls.Add(this.txtApellidoBusqueda);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(9, 211);
+            this.groupBox1.Location = new System.Drawing.Point(9, 195);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(814, 78);
             this.groupBox1.TabIndex = 116;
@@ -145,6 +145,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label28);
             this.Name = "FormInternos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInternos";
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvInternos)).EndInit();

@@ -122,6 +122,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones\Login\Datos\LoginDatos.cs" />
     <Compile Include="Validaciones\Login\Validacion\LoginValidator.cs" />
+    <Compile Include="Validaciones\NuevoInterno\Datos\NuevoInternoDatos.cs" />
+    <Compile Include="Validaciones\NuevoInterno\Validacion\CrearInternoValidation.cs" />
     <Compile Include="Validaciones\ProhibicionDatos.cs" />
     <Compile Include="Validaciones\ProhibicionValidator.cs" />
     <EmbeddedResource Include="FormInternoNuevo.resx">

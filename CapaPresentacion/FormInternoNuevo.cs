@@ -27,39 +27,6 @@ namespace CapaPresentacion
             FormularioAyudas.AjustarFormulario(this);
 
 
-            
-
-            //Carga de combo nacionalidad
-            NNacionalidad nNacionalidad = new NNacionalidad();
-            cmbNacionalidad.ValueMember = "id_nacionalidad";
-            cmbNacionalidad.DisplayMember = "nacionalidad";
-            (List<DNacionalidad> listaNacionalidad, string errorRespnse) = await nNacionalidad.RetornarListaNacionalidad();
-            cmbNacionalidad.DataSource = listaNacionalidad;
-
-
-            //Carga de combo estado civil
-            NEstadoCivil nEstadoCivil = new NEstadoCivil();
-            cmbEstadoCivil.ValueMember = "id_estado_civil";
-            cmbEstadoCivil.DisplayMember = "estado_civil";
-            (List<DEstadoCivil> listaEstadoCivil, string errorResponseEstadoCivil) = await nEstadoCivil.RetornarListaEstadoCivil();
-            Console.WriteLine(listaEstadoCivil);
-            cmbEstadoCivil.DataSource = listaEstadoCivil;
-
-            //Carga de combo zona residencia
-            NZonaResidencia nZonaResidencia = new NZonaResidencia();
-            cmbZonaResidencia.ValueMember = "id_zona_residencia";
-            cmbZonaResidencia.DisplayMember = "zona_residencia";
-            (List<DZonaResidencia> listaZonaResidencia, string errorResponseZonaResidencia) = await nZonaResidencia.ListaZonaResidencia();
-            Console.WriteLine(listaEstadoCivil);
-            cmbZonaResidencia.DataSource = listaZonaResidencia;
-
-            //Carga de combo sexo 
-            NSexo nSexo = new NSexo();
-            cmbSexo.ValueMember = "id_sexo";
-            cmbSexo.DisplayMember = "sexo";
-            (List<DSexo> listaSexo, string errorResponseSexo) = await nSexo.RetornarListaSexo();
-            cmbSexo.DataSource = listaSexo;
-
             //Carga de combos sobre Caracteristicas generales
             NListasGenerales nListasGenerales = new NListasGenerales();
             (DCaracteristicasPersonales caracteristicasPersonales, string errorResponse) = await nListasGenerales.ListaCaracteristicasGenerales();
@@ -106,10 +73,46 @@ namespace CapaPresentacion
                 cmbPeloTipo.DisplayMember = "pelo_tipo";
                 cmbPeloTipo.DataSource = caracteristicasPersonales.pelo_tipo;
 
+                //SEXO
+                cmbSexo.ValueMember = "id_sexo";
+                cmbSexo.DisplayMember = "sexo";
+                cmbSexo.DataSource = caracteristicasPersonales.sexo;
+
 
             }
 
-            
+
+            //Carga de combos sobre DatosFiliatorios
+            (DDatosFiliatorios datosFiliatorios, string errorResponseDatosFiliatorios) = await nListasGenerales.ListasDatosFilistorios();
+
+            if (datosFiliatorios == null)
+            {
+                MessageBox.Show("Advertencia al cargar los datos filiatorios: " + errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+            else
+            {
+                //Carga de combo nacionalidad
+                cmbNacionalidad.ValueMember = "id_nacionalidad";
+                cmbNacionalidad.DisplayMember = "nacionalidad";
+                cmbNacionalidad.DataSource = datosFiliatorios.nacionalidad;
+
+
+                //Carga de combo estado civil
+                cmbEstadoCivil.ValueMember = "id_estado_civil";
+                cmbEstadoCivil.DisplayMember = "estado_civil";
+                cmbEstadoCivil.DataSource = datosFiliatorios.estado_civil;
+
+                //Carga de combo zona residencia
+                NZonaResidencia nZonaResidencia = new NZonaResidencia();
+                cmbZonaResidencia.ValueMember = "id_zona_residencia";
+                cmbZonaResidencia.DisplayMember = "zona_residencia";
+                cmbZonaResidencia.DataSource = datosFiliatorios.zona_residencia;
+
+
+            }
+
+
         }
 
 
@@ -137,7 +140,7 @@ namespace CapaPresentacion
                 nacionalidad_id = Convert.ToString(cmbNacionalidad.SelectedValue.ToString()),
                 provincia_nacimiento_id = cmbProvinciaNacimiento.SelectedValue.ToString(),
                 departamento_nacimiento_id = Convert.ToInt32(cmbDepartamentoNacimiento.SelectedValue.ToString()),
-                fecha_nacimiento = dtpFechaNscimiento.Value,
+                fecha_nacimiento = dtpFechaNacimiento.Value,
                 estado_civil_id = Convert.ToInt32(cmbEstadoCivil.SelectedValue.ToString()),
                 zona_residencia_id = cmbZonaResidencia.SelectedValue.ToString(),
                 telefono = txtTelefono.Text,
@@ -159,15 +162,12 @@ namespace CapaPresentacion
                 {
 
                     MessageBox.Show("Interno creado correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //this.Limpiar();
-
-
-
+                    this.Close();
                 }
                 else
                 {
-                    //MessageBox.Show("Revisar codigo" + " " + txtIdCioudadanoCategoria.Text + " " + Convert.ToInt32(2));
-                    MessageBox.Show(errorInterno, "Atención al Ciudadano", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    MessageBox.Show(errorInterno, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
             }
@@ -216,8 +216,8 @@ namespace CapaPresentacion
             txtDni.Enabled = habilitar;
             txtDni.Text = "";
             cmbSexo.Enabled = habilitar;
-            dtpFechaNscimiento.Enabled = habilitar;
-            dtpFechaNscimiento.ResetText();
+            dtpFechaNacimiento.Enabled = habilitar;
+            dtpFechaNacimiento.ResetText();
             txtTelefono.Enabled = habilitar;
             txtTelefono.Text = "";
             cmbEstadoCivil.Enabled = habilitar;
@@ -227,6 +227,9 @@ namespace CapaPresentacion
             btnCancelar.Enabled = habilitar;
         }//FIN HABILITAR CONTROLES...............................................
 
-        
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

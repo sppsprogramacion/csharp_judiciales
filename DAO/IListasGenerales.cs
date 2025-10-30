@@ -9,6 +9,8 @@ namespace DAO
 {
     public interface IListasGenerales
     {
-        Task<(DCaracteristicasPersonales, string error)> ListaCaracteristicasPersonales();
+        Task<(DCaracteristicasPersonales, string error)> ListasCaracteristicasPersonales();
+
+        Task<(DDatosFiliatorios, string error)> ListasDatosFiliatorios();
     }
 }

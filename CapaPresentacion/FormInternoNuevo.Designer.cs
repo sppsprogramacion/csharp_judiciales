@@ -74,7 +74,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dtpFechaNscimiento = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label18 = new System.Windows.Forms.Label();
             this.txtProntuario = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -132,7 +132,7 @@
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.dtpFechaNscimiento);
+            this.groupBox3.Controls.Add(this.dtpFechaNacimiento);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.txtProntuario);
             this.groupBox3.Controls.Add(this.txtApellido);
@@ -562,6 +562,7 @@
             this.btnCancelar.TabIndex = 115;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // label4
             // 
@@ -593,14 +594,14 @@
             this.label5.TabIndex = 96;
             this.label5.Text = "NOMBRE";
             // 
-            // dtpFechaNscimiento
+            // dtpFechaNacimiento
             // 
-            this.dtpFechaNscimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaNscimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaNscimiento.Location = new System.Drawing.Point(12, 393);
-            this.dtpFechaNscimiento.Name = "dtpFechaNscimiento";
-            this.dtpFechaNscimiento.Size = new System.Drawing.Size(153, 22);
-            this.dtpFechaNscimiento.TabIndex = 17;
+            this.dtpFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(12, 393);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(153, 22);
+            this.dtpFechaNacimiento.TabIndex = 17;
             // 
             // label18
             // 
@@ -678,6 +679,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label28);
             this.Name = "FormInternoNuevo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInternoNuevo";
             this.Load += new System.EventHandler(this.FormInternoNuevo_Load);
             this.groupBox3.ResumeLayout(false);
@@ -700,7 +702,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dtpFechaNscimiento;
+        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtProntuario;
         private System.Windows.Forms.TextBox txtApellido;

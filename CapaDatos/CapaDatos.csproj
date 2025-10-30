@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DCaracteristicasPersonales.cs" />
     <Compile Include="DCiudadano.cs" />
+    <Compile Include="DDatosFiliatorios.cs" />
     <Compile Include="DDepartamento.cs" />
     <Compile Include="DInterno.cs" />
     <Compile Include="DLogin.cs" />
