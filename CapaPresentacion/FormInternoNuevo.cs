@@ -120,6 +120,7 @@ namespace CapaPresentacion
 
             var data = new
             {
+                prontuario = Convert.ToInt32(txtProntuario.Text),
                 dni = Convert.ToInt32(txtDni.Text),
                 apellido = txtApellido.Text,
                 nombre = txtNombre.Text,
@@ -138,7 +139,7 @@ namespace CapaPresentacion
                 departamento_nacimiento_id = Convert.ToInt32(cmbDepartamentoNacimiento.SelectedValue.ToString()),
                 fecha_nacimiento = dtpFechaNscimiento.Value,
                 estado_civil_id = Convert.ToInt32(cmbEstadoCivil.SelectedValue.ToString()),
-                zona_residencia_id = Convert.ToInt32(cmbZonaResidencia.SelectedValue.ToString()),
+                zona_residencia_id = cmbZonaResidencia.SelectedValue.ToString(),
                 telefono = txtTelefono.Text,
                 padre = txtPadre.Text,
                 madre = txtMadre.Text,

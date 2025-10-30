@@ -165,7 +165,7 @@
             this.txtParientes.Multiline = true;
             this.txtParientes.Name = "txtParientes";
             this.txtParientes.Size = new System.Drawing.Size(787, 63);
-            this.txtParientes.TabIndex = 154;
+            this.txtParientes.TabIndex = 23;
             // 
             // label24
             // 
@@ -194,7 +194,7 @@
             this.txtPadre.Location = new System.Drawing.Point(11, 447);
             this.txtPadre.Name = "txtPadre";
             this.txtPadre.Size = new System.Drawing.Size(385, 21);
-            this.txtPadre.TabIndex = 150;
+            this.txtPadre.TabIndex = 21;
             // 
             // txtMadre
             // 
@@ -203,7 +203,7 @@
             this.txtMadre.Location = new System.Drawing.Point(416, 447);
             this.txtMadre.Name = "txtMadre";
             this.txtMadre.Size = new System.Drawing.Size(385, 21);
-            this.txtMadre.TabIndex = 151;
+            this.txtMadre.TabIndex = 22;
             // 
             // cmbZonaResidencia
             // 
@@ -212,7 +212,7 @@
             this.cmbZonaResidencia.Location = new System.Drawing.Point(336, 393);
             this.cmbZonaResidencia.Name = "cmbZonaResidencia";
             this.cmbZonaResidencia.Size = new System.Drawing.Size(140, 23);
-            this.cmbZonaResidencia.TabIndex = 148;
+            this.cmbZonaResidencia.TabIndex = 19;
             // 
             // label23
             // 
@@ -231,7 +231,7 @@
             this.cmbDepartamentoNacimiento.Location = new System.Drawing.Point(527, 337);
             this.cmbDepartamentoNacimiento.Name = "cmbDepartamentoNacimiento";
             this.cmbDepartamentoNacimiento.Size = new System.Drawing.Size(240, 23);
-            this.cmbDepartamentoNacimiento.TabIndex = 146;
+            this.cmbDepartamentoNacimiento.TabIndex = 16;
             // 
             // label22
             // 
@@ -250,7 +250,7 @@
             this.cmbProvinciaNacimiento.Location = new System.Drawing.Point(269, 337);
             this.cmbProvinciaNacimiento.Name = "cmbProvinciaNacimiento";
             this.cmbProvinciaNacimiento.Size = new System.Drawing.Size(240, 23);
-            this.cmbProvinciaNacimiento.TabIndex = 144;
+            this.cmbProvinciaNacimiento.TabIndex = 15;
             this.cmbProvinciaNacimiento.SelectedIndexChanged += new System.EventHandler(this.cmbProvinciaNacimiento_SelectedIndexChanged);
             // 
             // label21
@@ -282,7 +282,7 @@
             this.cmbOjosTamanio.Location = new System.Drawing.Point(628, 185);
             this.cmbOjosTamanio.Name = "cmbOjosTamanio";
             this.cmbOjosTamanio.Size = new System.Drawing.Size(140, 23);
-            this.cmbOjosTamanio.TabIndex = 141;
+            this.cmbOjosTamanio.TabIndex = 9;
             // 
             // label19
             // 
@@ -301,7 +301,7 @@
             this.cmbPeloColor.Location = new System.Drawing.Point(474, 240);
             this.cmbPeloColor.Name = "cmbPeloColor";
             this.cmbPeloColor.Size = new System.Drawing.Size(140, 23);
-            this.cmbPeloColor.TabIndex = 139;
+            this.cmbPeloColor.TabIndex = 13;
             // 
             // label16
             // 
@@ -320,7 +320,7 @@
             this.cmbPeloTipo.Location = new System.Drawing.Point(320, 240);
             this.cmbPeloTipo.Name = "cmbPeloTipo";
             this.cmbPeloTipo.Size = new System.Drawing.Size(140, 23);
-            this.cmbPeloTipo.TabIndex = 137;
+            this.cmbPeloTipo.TabIndex = 12;
             // 
             // label17
             // 
@@ -339,7 +339,7 @@
             this.cmbNarizTamanio.Location = new System.Drawing.Point(165, 240);
             this.cmbNarizTamanio.Name = "cmbNarizTamanio";
             this.cmbNarizTamanio.Size = new System.Drawing.Size(140, 23);
-            this.cmbNarizTamanio.TabIndex = 135;
+            this.cmbNarizTamanio.TabIndex = 11;
             // 
             // label14
             // 
@@ -358,7 +358,7 @@
             this.cmbNarizForma.Location = new System.Drawing.Point(11, 239);
             this.cmbNarizForma.Name = "cmbNarizForma";
             this.cmbNarizForma.Size = new System.Drawing.Size(140, 23);
-            this.cmbNarizForma.TabIndex = 133;
+            this.cmbNarizForma.TabIndex = 10;
             // 
             // label15
             // 
@@ -377,7 +377,7 @@
             this.cmbOjosColor.Location = new System.Drawing.Point(474, 185);
             this.cmbOjosColor.Name = "cmbOjosColor";
             this.cmbOjosColor.Size = new System.Drawing.Size(140, 23);
-            this.cmbOjosColor.TabIndex = 131;
+            this.cmbOjosColor.TabIndex = 8;
             // 
             // label13
             // 
@@ -396,7 +396,7 @@
             this.cmbPiel.Location = new System.Drawing.Point(320, 185);
             this.cmbPiel.Name = "cmbPiel";
             this.cmbPiel.Size = new System.Drawing.Size(140, 23);
-            this.cmbPiel.TabIndex = 129;
+            this.cmbPiel.TabIndex = 7;
             // 
             // label12
             // 
@@ -425,7 +425,7 @@
             this.txtTalla.Location = new System.Drawing.Point(166, 185);
             this.txtTalla.Name = "txtTalla";
             this.txtTalla.Size = new System.Drawing.Size(135, 21);
-            this.txtTalla.TabIndex = 127;
+            this.txtTalla.TabIndex = 6;
             // 
             // label10
             // 
@@ -456,7 +456,7 @@
             this.txtAlias.Location = new System.Drawing.Point(314, 93);
             this.txtAlias.Name = "txtAlias";
             this.txtAlias.Size = new System.Drawing.Size(385, 21);
-            this.txtAlias.TabIndex = 125;
+            this.txtAlias.TabIndex = 4;
             // 
             // cmbNacionalidad
             // 
@@ -465,7 +465,7 @@
             this.cmbNacionalidad.Location = new System.Drawing.Point(11, 337);
             this.cmbNacionalidad.Name = "cmbNacionalidad";
             this.cmbNacionalidad.Size = new System.Drawing.Size(240, 23);
-            this.cmbNacionalidad.TabIndex = 123;
+            this.cmbNacionalidad.TabIndex = 14;
             this.cmbNacionalidad.SelectedIndexChanged += new System.EventHandler(this.cmbNacionalidad_SelectedIndexChanged);
             // 
             // label8
@@ -485,7 +485,7 @@
             this.cmbEstadoCivil.Location = new System.Drawing.Point(180, 393);
             this.cmbEstadoCivil.Name = "cmbEstadoCivil";
             this.cmbEstadoCivil.Size = new System.Drawing.Size(140, 23);
-            this.cmbEstadoCivil.TabIndex = 121;
+            this.cmbEstadoCivil.TabIndex = 18;
             // 
             // label6
             // 
@@ -514,7 +514,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(493, 393);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(135, 21);
-            this.txtTelefono.TabIndex = 119;
+            this.txtTelefono.TabIndex = 20;
             // 
             // label2
             // 
@@ -533,7 +533,7 @@
             this.txtDni.Location = new System.Drawing.Point(161, 93);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(135, 21);
-            this.txtDni.TabIndex = 117;
+            this.txtDni.TabIndex = 3;
             // 
             // btnGuardar
             // 
@@ -600,7 +600,7 @@
             this.dtpFechaNscimiento.Location = new System.Drawing.Point(12, 393);
             this.dtpFechaNscimiento.Name = "dtpFechaNscimiento";
             this.dtpFechaNscimiento.Size = new System.Drawing.Size(153, 22);
-            this.dtpFechaNscimiento.TabIndex = 110;
+            this.dtpFechaNscimiento.TabIndex = 17;
             // 
             // label18
             // 
@@ -619,7 +619,7 @@
             this.txtProntuario.Location = new System.Drawing.Point(11, 93);
             this.txtProntuario.Name = "txtProntuario";
             this.txtProntuario.Size = new System.Drawing.Size(135, 21);
-            this.txtProntuario.TabIndex = 93;
+            this.txtProntuario.TabIndex = 2;
             // 
             // txtApellido
             // 
@@ -628,7 +628,7 @@
             this.txtApellido.Location = new System.Drawing.Point(9, 41);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(385, 21);
-            this.txtApellido.TabIndex = 91;
+            this.txtApellido.TabIndex = 0;
             // 
             // txtNombre
             // 
@@ -637,7 +637,7 @@
             this.txtNombre.Location = new System.Drawing.Point(414, 41);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(385, 21);
-            this.txtNombre.TabIndex = 92;
+            this.txtNombre.TabIndex = 1;
             // 
             // cmbSexo
             // 
@@ -646,7 +646,7 @@
             this.cmbSexo.Location = new System.Drawing.Point(11, 184);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(140, 23);
-            this.cmbSexo.TabIndex = 99;
+            this.cmbSexo.TabIndex = 5;
             // 
             // label7
             // 
