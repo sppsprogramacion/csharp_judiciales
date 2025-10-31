@@ -1,6 +1,8 @@
 ﻿using CapaDatos;
 using CapaNegocio;
 using CapaPresentacion.FuncionesGenerales;
+using CapaPresentacion.Validaciones.NuevoInterno.Datos;
+using CapaPresentacion.Validaciones.NuevoInterno.Validacion;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,8 @@ namespace CapaPresentacion
 {
     public partial class FormInternoNuevo : Form
     {
+        private ErrorProvider errorProvider = new ErrorProvider();
+
         public FormInternoNuevo()
         {
             InitializeComponent();
@@ -119,6 +123,54 @@ namespace CapaPresentacion
         private async void btnGuardar_Click(object sender, EventArgs e)
         {
             NInterno nInterno = new NInterno();
+
+            //limpiar errores de provider
+            errorProvider.Clear();
+
+            //validacion de formulario
+            var datosFormulario = new NuevoInternoDatos
+            {
+                txtApellido = txtApellido.Text,
+                txtNombre = txtNombre.Text,
+                txtProntuario = txtProntuario.Text,
+                txtDni = txtDni.Text,
+                txtAlias = txtAlias.Text,
+                cmbSexo = cmbSexo.SelectedValue?.ToString() ?? string.Empty,
+                txtTalla = txtTalla.Text,
+                cmbPiel = cmbPiel.SelectedValue?.ToString() ?? string.Empty,
+                cmbOjosColor = cmbOjosColor.SelectedValue?.ToString() ?? string.Empty,
+                cmbOjosTamanio = cmbOjosTamanio.SelectedValue?.ToString() ?? string.Empty,
+                cmbNarizForma = cmbNarizForma.SelectedValue?.ToString() ?? string.Empty,
+                cmbNarizTamanio = cmbNarizTamanio.SelectedValue?.ToString() ?? string.Empty,
+                cmbPeloTipo = cmbPeloTipo.SelectedValue?.ToString() ?? string.Empty,
+                cmbPeloColor = cmbPeloColor.SelectedValue?.ToString() ?? string.Empty,
+                cmbNacionalidad = cmbNacionalidad.SelectedValue?.ToString() ?? string.Empty,
+                cmbProvinciaNacimiento = cmbProvinciaNacimiento.SelectedValue?.ToString() ?? string.Empty,
+                cmbDepartamentoNacimiento = cmbDepartamentoNacimiento.SelectedValue?.ToString() ?? string.Empty,
+                dtpFechaNacimiento = dtpFechaNacimiento.Value,
+                cmbEstadoCivil = cmbEstadoCivil.SelectedValue?.ToString() ?? string.Empty,
+                cmbZonaResidencia = cmbZonaResidencia.SelectedValue?.ToString() ?? string.Empty,
+                txtTelefono = txtTelefono.Text,
+                txtPadre = txtPadre.Text,
+                txtMadre = txtMadre.Text,
+                txtParientes = txtParientes.Text,
+            };
+
+            var validator = new CrearInternoValidation();
+            var result = validator.Validate(datosFormulario);
+
+            if (!result.IsValid)
+            {
+                MessageBox.Show("Complete correctamente los campos del formulario", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                foreach (var failure in result.Errors)
+                {
+
+                    Control control = Controls.Find(failure.PropertyName, true)[0];
+                    errorProvider.SetError(control, failure.ErrorMessage);
+                }
+                return;
+            }
+            //fin validar formulario
 
 
             var data = new
