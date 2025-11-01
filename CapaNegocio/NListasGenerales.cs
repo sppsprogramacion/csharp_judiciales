@@ -12,8 +12,8 @@ namespace CapaNegocio
 {
     public class NListasGenerales
     {
-        //RETORNAR LISTA CARACTERISTICAS GENERALES
-        public async Task<(DCaracteristicasPersonales, string error)> ListaCaracteristicasGenerales()
+        //RETORNAR LISTA CARACTERISTICAS PERSONALES
+        public async Task<(DCaracteristicasPersonales, string error)> ListaCaracteristicasPersonales()
         {
             IListasGenerales listasGeneralesDao = new ListasGeneralesDaoImplement();
 
@@ -22,7 +22,7 @@ namespace CapaNegocio
 
             return (caracteristicasPersonales, errorResponse);
         }
-        //FIN RETORNAR LISTA CARACTERISTICAS GENERALES..................................
+        //FIN RETORNAR LISTA CARACTERISTICAS PERSONALES..................................
 
         //RETORNAR LISTAS DATOS FILIATORIOS
         public async Task<(DDatosFiliatorios, string error)> ListasDatosFilistorios()

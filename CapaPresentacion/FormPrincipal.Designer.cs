@@ -86,7 +86,7 @@
             this.Controls.Add(this.label28);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Principal";
+            this.Text = "Sistema Judiciales";
             this.ResumeLayout(false);
 
         }

@@ -142,7 +142,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(9, 35);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(810, 634);
+            this.groupBox3.Size = new System.Drawing.Size(825, 634);
             this.groupBox3.TabIndex = 120;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Nuevo Interno";
@@ -270,7 +270,7 @@
             this.label20.ForeColor = System.Drawing.Color.White;
             this.label20.Location = new System.Drawing.Point(-1, 284);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(810, 24);
+            this.label20.Size = new System.Drawing.Size(826, 24);
             this.label20.TabIndex = 143;
             this.label20.Text = "Datos filiatorios";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -434,7 +434,7 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(0, 133);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(810, 24);
+            this.label10.Size = new System.Drawing.Size(825, 24);
             this.label10.TabIndex = 121;
             this.label10.Text = "Caracteristicas personales";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -666,7 +666,7 @@
             this.label28.ForeColor = System.Drawing.Color.White;
             this.label28.Location = new System.Drawing.Point(0, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(823, 29);
+            this.label28.Size = new System.Drawing.Size(841, 29);
             this.label28.TabIndex = 119;
             this.label28.Text = "NUEVO INTERNO";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -675,12 +675,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 681);
+            this.ClientSize = new System.Drawing.Size(840, 681);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label28);
             this.Name = "FormInternoNuevo";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormInternoNuevo";
+            this.Text = "Nuevo Interno";
             this.Load += new System.EventHandler(this.FormInternoNuevo_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

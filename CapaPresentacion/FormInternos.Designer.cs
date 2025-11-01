@@ -140,13 +140,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 763);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(841, 749);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label28);
             this.Name = "FormInternos";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormInternos";
+            this.Text = "Internos";
+            this.Load += new System.EventHandler(this.FormInternos_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvInternos)).EndInit();
             this.groupBox1.ResumeLayout(false);

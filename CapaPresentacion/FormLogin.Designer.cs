@@ -164,7 +164,7 @@
             this.MaximizeBox = false;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Logueo de usuario";
+            this.Text = "Sistema Judiciales";
             this.Load += new System.EventHandler(this.FormLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoSpps)).EndInit();
             this.ResumeLayout(false);

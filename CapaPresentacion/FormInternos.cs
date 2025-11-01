@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaNegocio;
+using CapaPresentacion.FuncionesGenerales;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,12 @@ namespace CapaPresentacion
         public FormInternos()
         {
             InitializeComponent();
+        }
+
+        private void FormInternos_Load(object sender, EventArgs e)
+        {
+            //// Ajustar el tamaño del formulario            
+            FormularioAyudas.AjustarFormulario(this);
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -70,7 +77,6 @@ namespace CapaPresentacion
                 dtgvInternos.Columns[4].Width = 90;
             }
         }
-
 
         
     }

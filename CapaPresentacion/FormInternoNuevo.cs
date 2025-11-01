@@ -33,7 +33,7 @@ namespace CapaPresentacion
 
             //Carga de combos sobre Caracteristicas generales
             NListasGenerales nListasGenerales = new NListasGenerales();
-            (DCaracteristicasPersonales caracteristicasPersonales, string errorResponse) = await nListasGenerales.ListaCaracteristicasGenerales();
+            (DCaracteristicasPersonales caracteristicasPersonales, string errorResponse) = await nListasGenerales.ListaCaracteristicasPersonales();
 
             if (caracteristicasPersonales == null)
             {
@@ -112,11 +112,7 @@ namespace CapaPresentacion
                 cmbZonaResidencia.ValueMember = "id_zona_residencia";
                 cmbZonaResidencia.DisplayMember = "zona_residencia";
                 cmbZonaResidencia.DataSource = datosFiliatorios.zona_residencia;
-
-
             }
-
-
         }
 
 
