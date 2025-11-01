@@ -76,6 +76,7 @@
             this.dtgvInternos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvInternos.Size = new System.Drawing.Size(800, 368);
             this.dtgvInternos.TabIndex = 16;
+            this.dtgvInternos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtgvInternos_KeyDown);
             // 
             // groupBox1
             // 
@@ -141,7 +142,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(841, 749);
+            this.ClientSize = new System.Drawing.Size(844, 751);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label28);

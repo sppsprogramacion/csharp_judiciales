@@ -15,6 +15,9 @@ namespace CapaPresentacion
 {
     public partial class FormInternos : Form
     {
+        //variable global id_ciudadano
+        public int idCiudadanoGlobal { get; set; }
+
         public FormInternos()
         {
             InitializeComponent();
@@ -78,7 +81,29 @@ namespace CapaPresentacion
             }
         }
 
-        
+        private void dtgvInternos_KeyDown(object sender, KeyEventArgs e)
+        {
+            //AL PRESIONAR ENTER MOSTRAR EL TRAMITE
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+
+                this.idCiudadanoGlobal = Convert.ToInt32(dtgvInternos.CurrentRow.Cells["ID"].Value.ToString());
+
+                if (dtgvInternos.SelectedRows.Count > 0)
+                {
+                    if (this.idCiudadanoGlobal > 0)
+                    {
+                        FormInternoAdministrar formInternoAdministrar = new FormInternoAdministrar();
+                        formInternoAdministrar.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe seleccionar un interno.");
+                    }
+                }
+            }
+        }
     }
 
 }

@@ -93,6 +93,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormInternoAdministrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInternoAdministrar.Designer.cs">
+      <DependentUpon>FormInternoAdministrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInternoNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     <Compile Include="Validaciones\NuevoInterno\Validacion\CrearInternoValidation.cs" />
     <Compile Include="Validaciones\ProhibicionDatos.cs" />
     <Compile Include="Validaciones\ProhibicionValidator.cs" />
+    <EmbeddedResource Include="FormInternoAdministrar.resx">
+      <DependentUpon>FormInternoAdministrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInternoNuevo.resx">
       <DependentUpon>FormInternoNuevo.cs</DependentUpon>
     </EmbeddedResource>
