@@ -32,6 +32,9 @@
             this.tabInterno = new System.Windows.Forms.TabControl();
             this.pagDatosPrincipales = new System.Windows.Forms.TabPage();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.btnEditarCaracteristicasPersonales = new System.Windows.Forms.Button();
+            this.btnGuardarEditarCaracteristicasPersonales = new System.Windows.Forms.Button();
+            this.btnCancelarEditarCaracteristicasPersonales = new System.Windows.Forms.Button();
             this.cmbNarizForma = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbPeloColor = new System.Windows.Forms.ComboBox();
@@ -51,6 +54,9 @@
             this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.btnEditarDatosFilatorios = new System.Windows.Forms.Button();
+            this.btnGuardarEditarDatosFilatorios = new System.Windows.Forms.Button();
+            this.btnCancelarEditarDatosFilatorios = new System.Windows.Forms.Button();
             this.label94 = new System.Windows.Forms.Label();
             this.txtParientes = new System.Windows.Forms.TextBox();
             this.label93 = new System.Windows.Forms.Label();
@@ -90,20 +96,16 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtIdInterno = new System.Windows.Forms.TextBox();
             this.pictureFoto = new System.Windows.Forms.PictureBox();
-            this.pagProhibiciones = new System.Windows.Forms.TabPage();
+            this.pagDatosProcesales = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnHistorial = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.txtDetalle = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.txtDisposicion = new System.Windows.Forms.TextBox();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.label36 = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.txtOrganismo = new System.Windows.Forms.TextBox();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.chkAnulado = new System.Windows.Forms.CheckBox();
@@ -116,17 +118,8 @@
             this.dtpFechaProhibicion = new System.Windows.Forms.DateTimePicker();
             this.label34 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dtgvProhibiciones = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnAnular = new System.Windows.Forms.Button();
-            this.btnQuitar = new System.Windows.Forms.Button();
-            this.btnCancelarQP = new System.Windows.Forms.Button();
-            this.btnGuardarQP = new System.Windows.Forms.Button();
-            this.label38 = new System.Windows.Forms.Label();
-            this.txtMotivoQP = new System.Windows.Forms.TextBox();
-            this.dtpFechaFinQP = new System.Windows.Forms.DateTimePicker();
-            this.label37 = new System.Windows.Forms.Label();
-            this.btnVerProhibiciones = new System.Windows.Forms.Button();
+            this.dtgvCausas = new System.Windows.Forms.DataGridView();
+            this.btnVerCausas = new System.Windows.Forms.Button();
             this.tabVinculos = new System.Windows.Forms.TabPage();
             this.btnImprimirVinculos = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -235,12 +228,10 @@
             this.tabDatosPersonales = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnEditarCaracteristicasPersonales = new System.Windows.Forms.Button();
-            this.btnGuardarEditarCaracteristicasPersonales = new System.Windows.Forms.Button();
-            this.btnCancelarEditarCaracteristicasPersonales = new System.Windows.Forms.Button();
-            this.btnEditarDatosFilatorios = new System.Windows.Forms.Button();
-            this.btnGuardarEditarDatosFilatorios = new System.Windows.Forms.Button();
-            this.btnCancelarEditarDatosFilatorios = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btnNuevaCausa = new System.Windows.Forms.Button();
             this.tabInterno.SuspendLayout();
             this.pagDatosPrincipales.SuspendLayout();
             this.groupBox15.SuspendLayout();
@@ -249,11 +240,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).BeginInit();
-            this.pagProhibiciones.SuspendLayout();
+            this.pagDatosProcesales.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvProhibiciones)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCausas)).BeginInit();
             this.tabVinculos.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -289,7 +279,7 @@
             // tabInterno
             // 
             this.tabInterno.Controls.Add(this.pagDatosPrincipales);
-            this.tabInterno.Controls.Add(this.pagProhibiciones);
+            this.tabInterno.Controls.Add(this.pagDatosProcesales);
             this.tabInterno.Controls.Add(this.tabVinculos);
             this.tabInterno.Controls.Add(this.tabSabana);
             this.tabInterno.Controls.Add(this.tabNovedades);
@@ -347,6 +337,48 @@
             this.groupBox15.TabIndex = 69;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Caracteristicas personales";
+            // 
+            // btnEditarCaracteristicasPersonales
+            // 
+            this.btnEditarCaracteristicasPersonales.BackColor = System.Drawing.Color.White;
+            this.btnEditarCaracteristicasPersonales.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarCaracteristicasPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarCaracteristicasPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarCaracteristicasPersonales.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarCaracteristicasPersonales.Location = new System.Drawing.Point(10, 171);
+            this.btnEditarCaracteristicasPersonales.Name = "btnEditarCaracteristicasPersonales";
+            this.btnEditarCaracteristicasPersonales.Size = new System.Drawing.Size(98, 40);
+            this.btnEditarCaracteristicasPersonales.TabIndex = 232;
+            this.btnEditarCaracteristicasPersonales.Text = "EDITAR";
+            this.btnEditarCaracteristicasPersonales.UseVisualStyleBackColor = false;
+            // 
+            // btnGuardarEditarCaracteristicasPersonales
+            // 
+            this.btnGuardarEditarCaracteristicasPersonales.BackColor = System.Drawing.Color.White;
+            this.btnGuardarEditarCaracteristicasPersonales.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnGuardarEditarCaracteristicasPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarEditarCaracteristicasPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarEditarCaracteristicasPersonales.ForeColor = System.Drawing.Color.Green;
+            this.btnGuardarEditarCaracteristicasPersonales.Location = new System.Drawing.Point(123, 171);
+            this.btnGuardarEditarCaracteristicasPersonales.Name = "btnGuardarEditarCaracteristicasPersonales";
+            this.btnGuardarEditarCaracteristicasPersonales.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarEditarCaracteristicasPersonales.TabIndex = 230;
+            this.btnGuardarEditarCaracteristicasPersonales.Text = "GUARDAR";
+            this.btnGuardarEditarCaracteristicasPersonales.UseVisualStyleBackColor = false;
+            // 
+            // btnCancelarEditarCaracteristicasPersonales
+            // 
+            this.btnCancelarEditarCaracteristicasPersonales.BackColor = System.Drawing.Color.White;
+            this.btnCancelarEditarCaracteristicasPersonales.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarEditarCaracteristicasPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarEditarCaracteristicasPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarEditarCaracteristicasPersonales.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarEditarCaracteristicasPersonales.Location = new System.Drawing.Point(237, 171);
+            this.btnCancelarEditarCaracteristicasPersonales.Name = "btnCancelarEditarCaracteristicasPersonales";
+            this.btnCancelarEditarCaracteristicasPersonales.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarEditarCaracteristicasPersonales.TabIndex = 231;
+            this.btnCancelarEditarCaracteristicasPersonales.Text = "CANCELAR";
+            this.btnCancelarEditarCaracteristicasPersonales.UseVisualStyleBackColor = false;
             // 
             // cmbNarizForma
             // 
@@ -550,6 +582,48 @@
             this.groupBox14.TabIndex = 214;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Datos filiatorios";
+            // 
+            // btnEditarDatosFilatorios
+            // 
+            this.btnEditarDatosFilatorios.BackColor = System.Drawing.Color.White;
+            this.btnEditarDatosFilatorios.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarDatosFilatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarDatosFilatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarDatosFilatorios.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarDatosFilatorios.Location = new System.Drawing.Point(11, 369);
+            this.btnEditarDatosFilatorios.Name = "btnEditarDatosFilatorios";
+            this.btnEditarDatosFilatorios.Size = new System.Drawing.Size(98, 40);
+            this.btnEditarDatosFilatorios.TabIndex = 232;
+            this.btnEditarDatosFilatorios.Text = "EDITAR";
+            this.btnEditarDatosFilatorios.UseVisualStyleBackColor = false;
+            // 
+            // btnGuardarEditarDatosFilatorios
+            // 
+            this.btnGuardarEditarDatosFilatorios.BackColor = System.Drawing.Color.White;
+            this.btnGuardarEditarDatosFilatorios.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnGuardarEditarDatosFilatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarEditarDatosFilatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarEditarDatosFilatorios.ForeColor = System.Drawing.Color.Green;
+            this.btnGuardarEditarDatosFilatorios.Location = new System.Drawing.Point(124, 369);
+            this.btnGuardarEditarDatosFilatorios.Name = "btnGuardarEditarDatosFilatorios";
+            this.btnGuardarEditarDatosFilatorios.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarEditarDatosFilatorios.TabIndex = 230;
+            this.btnGuardarEditarDatosFilatorios.Text = "GUARDAR";
+            this.btnGuardarEditarDatosFilatorios.UseVisualStyleBackColor = false;
+            // 
+            // btnCancelarEditarDatosFilatorios
+            // 
+            this.btnCancelarEditarDatosFilatorios.BackColor = System.Drawing.Color.White;
+            this.btnCancelarEditarDatosFilatorios.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarEditarDatosFilatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarEditarDatosFilatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarEditarDatosFilatorios.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarEditarDatosFilatorios.Location = new System.Drawing.Point(238, 369);
+            this.btnCancelarEditarDatosFilatorios.Name = "btnCancelarEditarDatosFilatorios";
+            this.btnCancelarEditarDatosFilatorios.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarEditarDatosFilatorios.TabIndex = 231;
+            this.btnCancelarEditarDatosFilatorios.Text = "CANCELAR";
+            this.btnCancelarEditarDatosFilatorios.UseVisualStyleBackColor = false;
             // 
             // label94
             // 
@@ -961,34 +1035,33 @@
             this.pictureFoto.TabIndex = 56;
             this.pictureFoto.TabStop = false;
             // 
-            // pagProhibiciones
+            // pagDatosProcesales
             // 
-            this.pagProhibiciones.Controls.Add(this.groupBox4);
-            this.pagProhibiciones.Controls.Add(this.groupBox3);
-            this.pagProhibiciones.Controls.Add(this.groupBox2);
-            this.pagProhibiciones.Controls.Add(this.btnVerProhibiciones);
-            this.pagProhibiciones.Location = new System.Drawing.Point(4, 25);
-            this.pagProhibiciones.Name = "pagProhibiciones";
-            this.pagProhibiciones.Padding = new System.Windows.Forms.Padding(3);
-            this.pagProhibiciones.Size = new System.Drawing.Size(1072, 666);
-            this.pagProhibiciones.TabIndex = 1;
-            this.pagProhibiciones.Text = "Datos Procesales";
-            this.pagProhibiciones.UseVisualStyleBackColor = true;
+            this.pagDatosProcesales.Controls.Add(this.btnNuevaCausa);
+            this.pagDatosProcesales.Controls.Add(this.groupBox4);
+            this.pagDatosProcesales.Controls.Add(this.groupBox3);
+            this.pagDatosProcesales.Controls.Add(this.btnVerCausas);
+            this.pagDatosProcesales.Location = new System.Drawing.Point(4, 25);
+            this.pagDatosProcesales.Name = "pagDatosProcesales";
+            this.pagDatosProcesales.Padding = new System.Windows.Forms.Padding(3);
+            this.pagDatosProcesales.Size = new System.Drawing.Size(1072, 666);
+            this.pagDatosProcesales.TabIndex = 1;
+            this.pagDatosProcesales.Text = "Datos Procesales";
+            this.pagDatosProcesales.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.button4);
             this.groupBox4.Controls.Add(this.btnHistorial);
+            this.groupBox4.Controls.Add(this.button5);
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Controls.Add(this.txtDetalle);
             this.groupBox4.Controls.Add(this.label19);
-            this.groupBox4.Controls.Add(this.btnEditar);
             this.groupBox4.Controls.Add(this.txtDisposicion);
-            this.groupBox4.Controls.Add(this.btnNuevo);
             this.groupBox4.Controls.Add(this.dtpFechaFin);
             this.groupBox4.Controls.Add(this.label36);
-            this.groupBox4.Controls.Add(this.btnGuardar);
             this.groupBox4.Controls.Add(this.label16);
-            this.groupBox4.Controls.Add(this.btnCancelar);
             this.groupBox4.Controls.Add(this.txtOrganismo);
             this.groupBox4.Controls.Add(this.dtpFechaInicio);
             this.groupBox4.Controls.Add(this.chkAnulado);
@@ -1001,12 +1074,12 @@
             this.groupBox4.Controls.Add(this.dtpFechaProhibicion);
             this.groupBox4.Controls.Add(this.label34);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(9, 312);
+            this.groupBox4.Location = new System.Drawing.Point(9, 365);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(745, 288);
+            this.groupBox4.Size = new System.Drawing.Size(1051, 288);
             this.groupBox4.TabIndex = 92;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Prohibición";
+            this.groupBox4.Text = "Causa";
             // 
             // btnHistorial
             // 
@@ -1015,7 +1088,7 @@
             this.btnHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistorial.ForeColor = System.Drawing.Color.White;
-            this.btnHistorial.Location = new System.Drawing.Point(641, 239);
+            this.btnHistorial.Location = new System.Drawing.Point(745, 239);
             this.btnHistorial.Name = "btnHistorial";
             this.btnHistorial.Size = new System.Drawing.Size(98, 40);
             this.btnHistorial.TabIndex = 12;
@@ -1052,20 +1125,6 @@
             this.label19.TabIndex = 37;
             this.label19.Text = "DETALLE:";
             // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.Indigo;
-            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(641, 65);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(98, 40);
-            this.btnEditar.TabIndex = 4;
-            this.btnEditar.Text = "EDITAR";
-            this.btnEditar.UseVisualStyleBackColor = false;
-            // 
             // txtDisposicion
             // 
             this.txtDisposicion.Enabled = false;
@@ -1074,20 +1133,6 @@
             this.txtDisposicion.Name = "txtDisposicion";
             this.txtDisposicion.Size = new System.Drawing.Size(228, 21);
             this.txtDisposicion.TabIndex = 5;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.Color.Indigo;
-            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(641, 20);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(98, 40);
-            this.btnNuevo.TabIndex = 3;
-            this.btnNuevo.Text = "NUEVO";
-            this.btnNuevo.UseVisualStyleBackColor = false;
             // 
             // dtpFechaFin
             // 
@@ -1109,20 +1154,6 @@
             this.label36.TabIndex = 87;
             this.label36.Text = "ORGANISMO:";
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.Green;
-            this.btnGuardar.Enabled = false;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(641, 148);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardar.TabIndex = 10;
-            this.btnGuardar.Text = "GUARDAR";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -1132,21 +1163,6 @@
             this.label16.Size = new System.Drawing.Size(71, 15);
             this.label16.TabIndex = 42;
             this.label16.Text = "FECHA FIN:";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelar.Enabled = false;
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(641, 192);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelar.TabIndex = 11;
-            this.btnCancelar.Text = "CANCELAR";
-            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // txtOrganismo
             // 
@@ -1262,153 +1278,37 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dtgvProhibiciones);
+            this.groupBox3.Controls.Add(this.dtgvCausas);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(9, 66);
+            this.groupBox3.Location = new System.Drawing.Point(9, 175);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1051, 237);
+            this.groupBox3.Size = new System.Drawing.Size(1051, 191);
             this.groupBox3.TabIndex = 91;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Prohibiciones";
+            this.groupBox3.Text = "Causas";
             // 
-            // dtgvProhibiciones
+            // dtgvCausas
             // 
-            this.dtgvProhibiciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvProhibiciones.Location = new System.Drawing.Point(6, 20);
-            this.dtgvProhibiciones.Name = "dtgvProhibiciones";
-            this.dtgvProhibiciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvProhibiciones.Size = new System.Drawing.Size(1036, 206);
-            this.dtgvProhibiciones.TabIndex = 2;
+            this.dtgvCausas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvCausas.Location = new System.Drawing.Point(6, 20);
+            this.dtgvCausas.Name = "dtgvCausas";
+            this.dtgvCausas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvCausas.Size = new System.Drawing.Size(1036, 161);
+            this.dtgvCausas.TabIndex = 2;
             // 
-            // groupBox2
+            // btnVerCausas
             // 
-            this.groupBox2.Controls.Add(this.btnAnular);
-            this.groupBox2.Controls.Add(this.btnQuitar);
-            this.groupBox2.Controls.Add(this.btnCancelarQP);
-            this.groupBox2.Controls.Add(this.btnGuardarQP);
-            this.groupBox2.Controls.Add(this.label38);
-            this.groupBox2.Controls.Add(this.txtMotivoQP);
-            this.groupBox2.Controls.Add(this.dtpFechaFinQP);
-            this.groupBox2.Controls.Add(this.label37);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(760, 312);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(300, 288);
-            this.groupBox2.TabIndex = 90;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Levantar / Anular";
-            // 
-            // btnAnular
-            // 
-            this.btnAnular.BackColor = System.Drawing.Color.Indigo;
-            this.btnAnular.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnular.ForeColor = System.Drawing.Color.White;
-            this.btnAnular.Location = new System.Drawing.Point(116, 20);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(93, 37);
-            this.btnAnular.TabIndex = 13;
-            this.btnAnular.Text = "ANULAR";
-            this.btnAnular.UseVisualStyleBackColor = false;
-            // 
-            // btnQuitar
-            // 
-            this.btnQuitar.BackColor = System.Drawing.Color.Indigo;
-            this.btnQuitar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitar.ForeColor = System.Drawing.Color.White;
-            this.btnQuitar.Location = new System.Drawing.Point(8, 21);
-            this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(101, 37);
-            this.btnQuitar.TabIndex = 12;
-            this.btnQuitar.Text = "LEVANTAR";
-            this.btnQuitar.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelarQP
-            // 
-            this.btnCancelarQP.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarQP.Enabled = false;
-            this.btnCancelarQP.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCancelarQP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarQP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarQP.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarQP.Location = new System.Drawing.Point(109, 239);
-            this.btnCancelarQP.Name = "btnCancelarQP";
-            this.btnCancelarQP.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelarQP.TabIndex = 14;
-            this.btnCancelarQP.Text = "CANCELAR";
-            this.btnCancelarQP.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardarQP
-            // 
-            this.btnGuardarQP.BackColor = System.Drawing.Color.Green;
-            this.btnGuardarQP.Enabled = false;
-            this.btnGuardarQP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarQP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarQP.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarQP.Location = new System.Drawing.Point(8, 239);
-            this.btnGuardarQP.Name = "btnGuardarQP";
-            this.btnGuardarQP.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarQP.TabIndex = 16;
-            this.btnGuardarQP.Text = "GUARDAR";
-            this.btnGuardarQP.UseVisualStyleBackColor = false;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(5, 122);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(56, 15);
-            this.label38.TabIndex = 78;
-            this.label38.Text = "MOTIVO:";
-            // 
-            // txtMotivoQP
-            // 
-            this.txtMotivoQP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMotivoQP.Enabled = false;
-            this.txtMotivoQP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMotivoQP.Location = new System.Drawing.Point(8, 141);
-            this.txtMotivoQP.Multiline = true;
-            this.txtMotivoQP.Name = "txtMotivoQP";
-            this.txtMotivoQP.Size = new System.Drawing.Size(274, 67);
-            this.txtMotivoQP.TabIndex = 15;
-            // 
-            // dtpFechaFinQP
-            // 
-            this.dtpFechaFinQP.Enabled = false;
-            this.dtpFechaFinQP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaFinQP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaFinQP.Location = new System.Drawing.Point(8, 87);
-            this.dtpFechaFinQP.Name = "dtpFechaFinQP";
-            this.dtpFechaFinQP.Size = new System.Drawing.Size(115, 21);
-            this.dtpFechaFinQP.TabIndex = 14;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(5, 68);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(71, 15);
-            this.label37.TabIndex = 44;
-            this.label37.Text = "FECHA FIN:";
-            // 
-            // btnVerProhibiciones
-            // 
-            this.btnVerProhibiciones.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnVerProhibiciones.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnVerProhibiciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerProhibiciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerProhibiciones.ForeColor = System.Drawing.Color.White;
-            this.btnVerProhibiciones.Location = new System.Drawing.Point(15, 16);
-            this.btnVerProhibiciones.Name = "btnVerProhibiciones";
-            this.btnVerProhibiciones.Size = new System.Drawing.Size(160, 45);
-            this.btnVerProhibiciones.TabIndex = 1;
-            this.btnVerProhibiciones.Text = "VER PROHIBICIONES";
-            this.btnVerProhibiciones.UseVisualStyleBackColor = false;
+            this.btnVerCausas.BackColor = System.Drawing.Color.White;
+            this.btnVerCausas.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnVerCausas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerCausas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerCausas.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnVerCausas.Location = new System.Drawing.Point(15, 130);
+            this.btnVerCausas.Name = "btnVerCausas";
+            this.btnVerCausas.Size = new System.Drawing.Size(160, 40);
+            this.btnVerCausas.TabIndex = 1;
+            this.btnVerCausas.Text = "VER CAUSAS";
+            this.btnVerCausas.UseVisualStyleBackColor = false;
             // 
             // tabVinculos
             // 
@@ -2707,89 +2607,61 @@
             this.button2.Text = "CANCELAR";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // btnEditarCaracteristicasPersonales
+            // button3
             // 
-            this.btnEditarCaracteristicasPersonales.BackColor = System.Drawing.Color.White;
-            this.btnEditarCaracteristicasPersonales.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarCaracteristicasPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarCaracteristicasPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarCaracteristicasPersonales.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarCaracteristicasPersonales.Location = new System.Drawing.Point(10, 171);
-            this.btnEditarCaracteristicasPersonales.Name = "btnEditarCaracteristicasPersonales";
-            this.btnEditarCaracteristicasPersonales.Size = new System.Drawing.Size(98, 40);
-            this.btnEditarCaracteristicasPersonales.TabIndex = 232;
-            this.btnEditarCaracteristicasPersonales.Text = "EDITAR";
-            this.btnEditarCaracteristicasPersonales.UseVisualStyleBackColor = false;
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.DarkCyan;
+            this.button3.Location = new System.Drawing.Point(745, 103);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(98, 40);
+            this.button3.TabIndex = 232;
+            this.button3.Text = "EDITAR";
+            this.button3.UseVisualStyleBackColor = false;
             // 
-            // btnGuardarEditarCaracteristicasPersonales
+            // button4
             // 
-            this.btnGuardarEditarCaracteristicasPersonales.BackColor = System.Drawing.Color.White;
-            this.btnGuardarEditarCaracteristicasPersonales.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnGuardarEditarCaracteristicasPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarEditarCaracteristicasPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarEditarCaracteristicasPersonales.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardarEditarCaracteristicasPersonales.Location = new System.Drawing.Point(123, 171);
-            this.btnGuardarEditarCaracteristicasPersonales.Name = "btnGuardarEditarCaracteristicasPersonales";
-            this.btnGuardarEditarCaracteristicasPersonales.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarEditarCaracteristicasPersonales.TabIndex = 230;
-            this.btnGuardarEditarCaracteristicasPersonales.Text = "GUARDAR";
-            this.btnGuardarEditarCaracteristicasPersonales.UseVisualStyleBackColor = false;
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Green;
+            this.button4.Location = new System.Drawing.Point(745, 147);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(98, 40);
+            this.button4.TabIndex = 230;
+            this.button4.Text = "GUARDAR";
+            this.button4.UseVisualStyleBackColor = false;
             // 
-            // btnCancelarEditarCaracteristicasPersonales
+            // button5
             // 
-            this.btnCancelarEditarCaracteristicasPersonales.BackColor = System.Drawing.Color.White;
-            this.btnCancelarEditarCaracteristicasPersonales.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarEditarCaracteristicasPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarEditarCaracteristicasPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarEditarCaracteristicasPersonales.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarEditarCaracteristicasPersonales.Location = new System.Drawing.Point(237, 171);
-            this.btnCancelarEditarCaracteristicasPersonales.Name = "btnCancelarEditarCaracteristicasPersonales";
-            this.btnCancelarEditarCaracteristicasPersonales.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelarEditarCaracteristicasPersonales.TabIndex = 231;
-            this.btnCancelarEditarCaracteristicasPersonales.Text = "CANCELAR";
-            this.btnCancelarEditarCaracteristicasPersonales.UseVisualStyleBackColor = false;
+            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.DarkOrange;
+            this.button5.Location = new System.Drawing.Point(745, 193);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(98, 40);
+            this.button5.TabIndex = 231;
+            this.button5.Text = "CANCELAR";
+            this.button5.UseVisualStyleBackColor = false;
             // 
-            // btnEditarDatosFilatorios
+            // btnNuevaCausa
             // 
-            this.btnEditarDatosFilatorios.BackColor = System.Drawing.Color.White;
-            this.btnEditarDatosFilatorios.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarDatosFilatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarDatosFilatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarDatosFilatorios.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarDatosFilatorios.Location = new System.Drawing.Point(11, 369);
-            this.btnEditarDatosFilatorios.Name = "btnEditarDatosFilatorios";
-            this.btnEditarDatosFilatorios.Size = new System.Drawing.Size(98, 40);
-            this.btnEditarDatosFilatorios.TabIndex = 232;
-            this.btnEditarDatosFilatorios.Text = "EDITAR";
-            this.btnEditarDatosFilatorios.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardarEditarDatosFilatorios
-            // 
-            this.btnGuardarEditarDatosFilatorios.BackColor = System.Drawing.Color.White;
-            this.btnGuardarEditarDatosFilatorios.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnGuardarEditarDatosFilatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarEditarDatosFilatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarEditarDatosFilatorios.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardarEditarDatosFilatorios.Location = new System.Drawing.Point(124, 369);
-            this.btnGuardarEditarDatosFilatorios.Name = "btnGuardarEditarDatosFilatorios";
-            this.btnGuardarEditarDatosFilatorios.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarEditarDatosFilatorios.TabIndex = 230;
-            this.btnGuardarEditarDatosFilatorios.Text = "GUARDAR";
-            this.btnGuardarEditarDatosFilatorios.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelarEditarDatosFilatorios
-            // 
-            this.btnCancelarEditarDatosFilatorios.BackColor = System.Drawing.Color.White;
-            this.btnCancelarEditarDatosFilatorios.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarEditarDatosFilatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarEditarDatosFilatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarEditarDatosFilatorios.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarEditarDatosFilatorios.Location = new System.Drawing.Point(238, 369);
-            this.btnCancelarEditarDatosFilatorios.Name = "btnCancelarEditarDatosFilatorios";
-            this.btnCancelarEditarDatosFilatorios.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelarEditarDatosFilatorios.TabIndex = 231;
-            this.btnCancelarEditarDatosFilatorios.Text = "CANCELAR";
-            this.btnCancelarEditarDatosFilatorios.UseVisualStyleBackColor = false;
+            this.btnNuevaCausa.BackColor = System.Drawing.Color.White;
+            this.btnNuevaCausa.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnNuevaCausa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaCausa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaCausa.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnNuevaCausa.Location = new System.Drawing.Point(182, 129);
+            this.btnNuevaCausa.Name = "btnNuevaCausa";
+            this.btnNuevaCausa.Size = new System.Drawing.Size(125, 40);
+            this.btnNuevaCausa.TabIndex = 233;
+            this.btnNuevaCausa.Text = "NUEVA CAUSA";
+            this.btnNuevaCausa.UseVisualStyleBackColor = false;
             // 
             // FormInternoAdministrar
             // 
@@ -2812,13 +2684,11 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).EndInit();
-            this.pagProhibiciones.ResumeLayout(false);
+            this.pagDatosProcesales.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvProhibiciones)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCausas)).EndInit();
             this.tabVinculos.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
@@ -2859,20 +2729,16 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtIdInterno;
         private System.Windows.Forms.PictureBox pictureFoto;
-        private System.Windows.Forms.TabPage pagProhibiciones;
+        private System.Windows.Forms.TabPage pagDatosProcesales;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnHistorial;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtDetalle;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.TextBox txtDisposicion;
-        private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.DateTimePicker dtpFechaFin;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtOrganismo;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.CheckBox chkAnulado;
@@ -2885,17 +2751,8 @@
         private System.Windows.Forms.DateTimePicker dtpFechaProhibicion;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dtgvProhibiciones;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnAnular;
-        private System.Windows.Forms.Button btnQuitar;
-        private System.Windows.Forms.Button btnCancelarQP;
-        private System.Windows.Forms.Button btnGuardarQP;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.TextBox txtMotivoQP;
-        private System.Windows.Forms.DateTimePicker dtpFechaFinQP;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Button btnVerProhibiciones;
+        private System.Windows.Forms.DataGridView dtgvCausas;
+        private System.Windows.Forms.Button btnVerCausas;
         private System.Windows.Forms.TabPage tabVinculos;
         private System.Windows.Forms.Button btnImprimirVinculos;
         private System.Windows.Forms.GroupBox groupBox9;
@@ -3065,5 +2922,9 @@
         private System.Windows.Forms.Button btnEditarDatosFilatorios;
         private System.Windows.Forms.Button btnGuardarEditarDatosFilatorios;
         private System.Windows.Forms.Button btnCancelarEditarDatosFilatorios;
+        private System.Windows.Forms.Button btnNuevaCausa;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
