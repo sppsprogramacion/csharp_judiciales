@@ -48,8 +48,8 @@ namespace CapaPresentacion
                 cmbPiel.DataSource = caracteristicasPersonales.piel;
 
                 //OJOS COLOR
-                cmbOjosColor.ValueMember = "id_ojos_color";
-                cmbOjosColor.DisplayMember = "ojos_color";
+                cmbOjosColor.ValueMember = "id_ojo_color";
+                cmbOjosColor.DisplayMember = "ojo_color";
                 cmbOjosColor.DataSource = caracteristicasPersonales.ojos_color;
 
                 //OJOS TAMAÑO

@@ -8,7 +8,7 @@ namespace CapaDatos
 {
     public class DOjosColor
     {
-        public string id_ojos_color { get; set; }
-        public string ojos_color { get; set; }
+        public string id_ojo_color { get; set; }
+        public string ojo_color { get; set; }
     }
 }

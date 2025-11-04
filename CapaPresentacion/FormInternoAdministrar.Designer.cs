@@ -29,54 +29,48 @@
         private void InitializeComponent()
         {
             this.label28 = new System.Windows.Forms.Label();
-            this.tabVisita = new System.Windows.Forms.TabControl();
+            this.tabInterno = new System.Windows.Forms.TabControl();
             this.pagDatosPrincipales = new System.Windows.Forms.TabPage();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.btnEditarCaracteristicasPersonales = new System.Windows.Forms.Button();
-            this.btnGuardarEditarCaracteristicasPersonales = new System.Windows.Forms.Button();
-            this.btnCancelarEditarCaracteristicasPersonales = new System.Windows.Forms.Button();
-            this.comboBox13 = new System.Windows.Forms.ComboBox();
+            this.cmbNarizForma = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.cmbPeloColor = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
+            this.cmbPeloTipo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.cmbNarizTamanio = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.cmbOjosTamanio = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.cmbOjosColor = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.cmbPiel = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.txtTalla = new System.Windows.Forms.TextBox();
+            this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.btnEditarDatosFilatorios = new System.Windows.Forms.Button();
-            this.btnGuardarEditarDatosFilatorios = new System.Windows.Forms.Button();
-            this.btnCancelarEditarDatosFilatorios = new System.Windows.Forms.Button();
             this.label94 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtParientes = new System.Windows.Forms.TextBox();
             this.label93 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtMadre = new System.Windows.Forms.TextBox();
             this.label92 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.txtPadre = new System.Windows.Forms.TextBox();
+            this.cmbZonaResidencia = new System.Windows.Forms.ComboBox();
             this.label90 = new System.Windows.Forms.Label();
             this.label91 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label87 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbEstadoCivil = new System.Windows.Forms.ComboBox();
+            this.cmbNacionalidad = new System.Windows.Forms.ComboBox();
             this.label88 = new System.Windows.Forms.Label();
             this.label86 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.cmbProvinciaNacimiento = new System.Windows.Forms.ComboBox();
             this.label89 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbDepartamentoNacimiento = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -84,15 +78,15 @@
             this.btnGuardarEditarDatosPrincipales = new System.Windows.Forms.Button();
             this.btnCancelarEditarDatosPrincipales = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.txtAlias = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtDni = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txtProntuario = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtIdInterno = new System.Windows.Forms.TextBox();
             this.pictureFoto = new System.Windows.Forms.PictureBox();
@@ -239,59 +233,15 @@
             this.dtpFechaExcepcion = new System.Windows.Forms.DateTimePicker();
             this.label52 = new System.Windows.Forms.Label();
             this.tabDatosPersonales = new System.Windows.Forms.TabPage();
-            this.label58 = new System.Windows.Forms.Label();
-            this.txtParientes = new System.Windows.Forms.TextBox();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label61 = new System.Windows.Forms.Label();
-            this.txtPadre = new System.Windows.Forms.TextBox();
-            this.txtMadre = new System.Windows.Forms.TextBox();
-            this.cmbZonaResidencia = new System.Windows.Forms.ComboBox();
-            this.label62 = new System.Windows.Forms.Label();
-            this.cmbDepartamentoNacimiento = new System.Windows.Forms.ComboBox();
-            this.label63 = new System.Windows.Forms.Label();
-            this.cmbProvinciaNacimiento = new System.Windows.Forms.ComboBox();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.cmbOjosTamanio = new System.Windows.Forms.ComboBox();
-            this.label66 = new System.Windows.Forms.Label();
-            this.cmbPeloColor = new System.Windows.Forms.ComboBox();
-            this.label67 = new System.Windows.Forms.Label();
-            this.cmbPeloTipo = new System.Windows.Forms.ComboBox();
-            this.label68 = new System.Windows.Forms.Label();
-            this.cmbNarizTamanio = new System.Windows.Forms.ComboBox();
-            this.label69 = new System.Windows.Forms.Label();
-            this.cmbNarizForma = new System.Windows.Forms.ComboBox();
-            this.label70 = new System.Windows.Forms.Label();
-            this.cmbOjosColor = new System.Windows.Forms.ComboBox();
-            this.label71 = new System.Windows.Forms.Label();
-            this.cmbPiel = new System.Windows.Forms.ComboBox();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.txtTalla = new System.Windows.Forms.TextBox();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cmbNacionalidad = new System.Windows.Forms.ComboBox();
-            this.label76 = new System.Windows.Forms.Label();
-            this.cmbEstadoCivil = new System.Windows.Forms.ComboBox();
-            this.label77 = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label79 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label80 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
-            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.label83 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.cmbSexo = new System.Windows.Forms.ComboBox();
-            this.label84 = new System.Windows.Forms.Label();
-            this.tabVisita.SuspendLayout();
+            this.btnEditarCaracteristicasPersonales = new System.Windows.Forms.Button();
+            this.btnGuardarEditarCaracteristicasPersonales = new System.Windows.Forms.Button();
+            this.btnCancelarEditarCaracteristicasPersonales = new System.Windows.Forms.Button();
+            this.btnEditarDatosFilatorios = new System.Windows.Forms.Button();
+            this.btnGuardarEditarDatosFilatorios = new System.Windows.Forms.Button();
+            this.btnCancelarEditarDatosFilatorios = new System.Windows.Forms.Button();
+            this.tabInterno.SuspendLayout();
             this.pagDatosPrincipales.SuspendLayout();
             this.groupBox15.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -336,21 +286,21 @@
             this.label28.Text = "ADMINISTRAR INTERNO";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tabVisita
+            // tabInterno
             // 
-            this.tabVisita.Controls.Add(this.pagDatosPrincipales);
-            this.tabVisita.Controls.Add(this.pagProhibiciones);
-            this.tabVisita.Controls.Add(this.tabVinculos);
-            this.tabVisita.Controls.Add(this.tabSabana);
-            this.tabVisita.Controls.Add(this.tabNovedades);
-            this.tabVisita.Controls.Add(this.tabExepcionIngreso);
-            this.tabVisita.Controls.Add(this.tabDatosPersonales);
-            this.tabVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabVisita.Location = new System.Drawing.Point(4, 37);
-            this.tabVisita.Name = "tabVisita";
-            this.tabVisita.SelectedIndex = 0;
-            this.tabVisita.Size = new System.Drawing.Size(1080, 695);
-            this.tabVisita.TabIndex = 121;
+            this.tabInterno.Controls.Add(this.pagDatosPrincipales);
+            this.tabInterno.Controls.Add(this.pagProhibiciones);
+            this.tabInterno.Controls.Add(this.tabVinculos);
+            this.tabInterno.Controls.Add(this.tabSabana);
+            this.tabInterno.Controls.Add(this.tabNovedades);
+            this.tabInterno.Controls.Add(this.tabExepcionIngreso);
+            this.tabInterno.Controls.Add(this.tabDatosPersonales);
+            this.tabInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabInterno.Location = new System.Drawing.Point(4, 31);
+            this.tabInterno.Name = "tabInterno";
+            this.tabInterno.SelectedIndex = 0;
+            this.tabInterno.Size = new System.Drawing.Size(1080, 695);
+            this.tabInterno.TabIndex = 121;
             // 
             // pagDatosPrincipales
             // 
@@ -373,199 +323,159 @@
             this.groupBox15.Controls.Add(this.btnEditarCaracteristicasPersonales);
             this.groupBox15.Controls.Add(this.btnGuardarEditarCaracteristicasPersonales);
             this.groupBox15.Controls.Add(this.btnCancelarEditarCaracteristicasPersonales);
-            this.groupBox15.Controls.Add(this.comboBox13);
+            this.groupBox15.Controls.Add(this.cmbNarizForma);
             this.groupBox15.Controls.Add(this.label10);
-            this.groupBox15.Controls.Add(this.comboBox10);
+            this.groupBox15.Controls.Add(this.cmbPeloColor);
             this.groupBox15.Controls.Add(this.label3);
-            this.groupBox15.Controls.Add(this.comboBox11);
+            this.groupBox15.Controls.Add(this.cmbPeloTipo);
             this.groupBox15.Controls.Add(this.label4);
-            this.groupBox15.Controls.Add(this.comboBox12);
+            this.groupBox15.Controls.Add(this.cmbNarizTamanio);
             this.groupBox15.Controls.Add(this.label9);
-            this.groupBox15.Controls.Add(this.comboBox9);
+            this.groupBox15.Controls.Add(this.cmbOjosTamanio);
             this.groupBox15.Controls.Add(this.label2);
-            this.groupBox15.Controls.Add(this.comboBox6);
+            this.groupBox15.Controls.Add(this.cmbOjosColor);
             this.groupBox15.Controls.Add(this.label5);
-            this.groupBox15.Controls.Add(this.comboBox7);
+            this.groupBox15.Controls.Add(this.cmbPiel);
             this.groupBox15.Controls.Add(this.label6);
             this.groupBox15.Controls.Add(this.label7);
-            this.groupBox15.Controls.Add(this.textBox11);
-            this.groupBox15.Controls.Add(this.comboBox8);
+            this.groupBox15.Controls.Add(this.txtTalla);
+            this.groupBox15.Controls.Add(this.cmbSexo);
             this.groupBox15.Controls.Add(this.label8);
-            this.groupBox15.Location = new System.Drawing.Point(8, 290);
+            this.groupBox15.Location = new System.Drawing.Point(8, 415);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(522, 230);
+            this.groupBox15.Size = new System.Drawing.Size(522, 223);
             this.groupBox15.TabIndex = 69;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Caracteristicas personales";
             // 
-            // btnEditarCaracteristicasPersonales
+            // cmbNarizForma
             // 
-            this.btnEditarCaracteristicasPersonales.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarCaracteristicasPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarCaracteristicasPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarCaracteristicasPersonales.ForeColor = System.Drawing.Color.White;
-            this.btnEditarCaracteristicasPersonales.Location = new System.Drawing.Point(10, 180);
-            this.btnEditarCaracteristicasPersonales.Name = "btnEditarCaracteristicasPersonales";
-            this.btnEditarCaracteristicasPersonales.Size = new System.Drawing.Size(98, 40);
-            this.btnEditarCaracteristicasPersonales.TabIndex = 229;
-            this.btnEditarCaracteristicasPersonales.Text = "EDITAR";
-            this.btnEditarCaracteristicasPersonales.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardarEditarCaracteristicasPersonales
-            // 
-            this.btnGuardarEditarCaracteristicasPersonales.BackColor = System.Drawing.Color.Green;
-            this.btnGuardarEditarCaracteristicasPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarEditarCaracteristicasPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarEditarCaracteristicasPersonales.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarEditarCaracteristicasPersonales.Location = new System.Drawing.Point(123, 180);
-            this.btnGuardarEditarCaracteristicasPersonales.Name = "btnGuardarEditarCaracteristicasPersonales";
-            this.btnGuardarEditarCaracteristicasPersonales.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarEditarCaracteristicasPersonales.TabIndex = 227;
-            this.btnGuardarEditarCaracteristicasPersonales.Text = "GUARDAR";
-            this.btnGuardarEditarCaracteristicasPersonales.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelarEditarCaracteristicasPersonales
-            // 
-            this.btnCancelarEditarCaracteristicasPersonales.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarEditarCaracteristicasPersonales.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCancelarEditarCaracteristicasPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarEditarCaracteristicasPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarEditarCaracteristicasPersonales.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarEditarCaracteristicasPersonales.Location = new System.Drawing.Point(237, 180);
-            this.btnCancelarEditarCaracteristicasPersonales.Name = "btnCancelarEditarCaracteristicasPersonales";
-            this.btnCancelarEditarCaracteristicasPersonales.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelarEditarCaracteristicasPersonales.TabIndex = 228;
-            this.btnCancelarEditarCaracteristicasPersonales.Text = "CANCELAR";
-            this.btnCancelarEditarCaracteristicasPersonales.UseVisualStyleBackColor = false;
-            // 
-            // comboBox13
-            // 
-            this.comboBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox13.FormattingEnabled = true;
-            this.comboBox13.Location = new System.Drawing.Point(319, 91);
-            this.comboBox13.Name = "comboBox13";
-            this.comboBox13.Size = new System.Drawing.Size(140, 23);
-            this.comboBox13.TabIndex = 212;
+            this.cmbNarizForma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNarizForma.FormattingEnabled = true;
+            this.cmbNarizForma.Location = new System.Drawing.Point(319, 87);
+            this.cmbNarizForma.Name = "cmbNarizForma";
+            this.cmbNarizForma.Size = new System.Drawing.Size(140, 23);
+            this.cmbNarizForma.TabIndex = 212;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(316, 72);
+            this.label10.Location = new System.Drawing.Point(316, 68);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(88, 15);
             this.label10.TabIndex = 213;
             this.label10.Text = "NARIZ FORMA";
             // 
-            // comboBox10
+            // cmbPeloColor
             // 
-            this.comboBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(319, 142);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(140, 23);
-            this.comboBox10.TabIndex = 208;
+            this.cmbPeloColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPeloColor.FormattingEnabled = true;
+            this.cmbPeloColor.Location = new System.Drawing.Point(319, 136);
+            this.cmbPeloColor.Name = "cmbPeloColor";
+            this.cmbPeloColor.Size = new System.Drawing.Size(140, 23);
+            this.cmbPeloColor.TabIndex = 208;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(316, 123);
+            this.label3.Location = new System.Drawing.Point(316, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 15);
             this.label3.TabIndex = 211;
             this.label3.Text = "PELO COLOR";
             // 
-            // comboBox11
+            // cmbPeloTipo
             // 
-            this.comboBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(165, 142);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(140, 23);
-            this.comboBox11.TabIndex = 207;
+            this.cmbPeloTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPeloTipo.FormattingEnabled = true;
+            this.cmbPeloTipo.Location = new System.Drawing.Point(165, 136);
+            this.cmbPeloTipo.Name = "cmbPeloTipo";
+            this.cmbPeloTipo.Size = new System.Drawing.Size(140, 23);
+            this.cmbPeloTipo.TabIndex = 207;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(162, 123);
+            this.label4.Location = new System.Drawing.Point(162, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 15);
             this.label4.TabIndex = 210;
             this.label4.Text = "PELO TIPO";
             // 
-            // comboBox12
+            // cmbNarizTamanio
             // 
-            this.comboBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Location = new System.Drawing.Point(10, 142);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(140, 23);
-            this.comboBox12.TabIndex = 206;
+            this.cmbNarizTamanio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNarizTamanio.FormattingEnabled = true;
+            this.cmbNarizTamanio.Location = new System.Drawing.Point(10, 136);
+            this.cmbNarizTamanio.Name = "cmbNarizTamanio";
+            this.cmbNarizTamanio.Size = new System.Drawing.Size(140, 23);
+            this.cmbNarizTamanio.TabIndex = 206;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(7, 122);
+            this.label9.Location = new System.Drawing.Point(7, 116);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(95, 15);
             this.label9.TabIndex = 209;
             this.label9.Text = "NARIZ TAMAÑO";
             // 
-            // comboBox9
+            // cmbOjosTamanio
             // 
-            this.comboBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(165, 91);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(140, 23);
-            this.comboBox9.TabIndex = 204;
+            this.cmbOjosTamanio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbOjosTamanio.FormattingEnabled = true;
+            this.cmbOjosTamanio.Location = new System.Drawing.Point(165, 87);
+            this.cmbOjosTamanio.Name = "cmbOjosTamanio";
+            this.cmbOjosTamanio.Size = new System.Drawing.Size(140, 23);
+            this.cmbOjosTamanio.TabIndex = 204;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(162, 72);
+            this.label2.Location = new System.Drawing.Point(162, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 15);
             this.label2.TabIndex = 205;
             this.label2.Text = "OJOS TAMAÑO";
             // 
-            // comboBox6
+            // cmbOjosColor
             // 
-            this.comboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(10, 90);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(140, 23);
-            this.comboBox6.TabIndex = 199;
+            this.cmbOjosColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbOjosColor.FormattingEnabled = true;
+            this.cmbOjosColor.Location = new System.Drawing.Point(10, 86);
+            this.cmbOjosColor.Name = "cmbOjosColor";
+            this.cmbOjosColor.Size = new System.Drawing.Size(140, 23);
+            this.cmbOjosColor.TabIndex = 199;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(7, 71);
+            this.label5.Location = new System.Drawing.Point(7, 67);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 15);
             this.label5.TabIndex = 203;
             this.label5.Text = "OJOS COLOR";
             // 
-            // comboBox7
+            // cmbPiel
             // 
-            this.comboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(319, 41);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(140, 23);
-            this.comboBox7.TabIndex = 198;
+            this.cmbPiel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPiel.FormattingEnabled = true;
+            this.cmbPiel.Location = new System.Drawing.Point(319, 39);
+            this.cmbPiel.Name = "cmbPiel";
+            this.cmbPiel.Size = new System.Drawing.Size(140, 23);
+            this.cmbPiel.TabIndex = 198;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(316, 22);
+            this.label6.Location = new System.Drawing.Point(316, 20);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 15);
             this.label6.TabIndex = 202;
@@ -575,35 +485,35 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(162, 21);
+            this.label7.Location = new System.Drawing.Point(162, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 15);
             this.label7.TabIndex = 201;
             this.label7.Text = "TALLA";
             // 
-            // textBox11
+            // txtTalla
             // 
-            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(165, 41);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(135, 21);
-            this.textBox11.TabIndex = 197;
+            this.txtTalla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTalla.Location = new System.Drawing.Point(165, 39);
+            this.txtTalla.Name = "txtTalla";
+            this.txtTalla.Size = new System.Drawing.Size(135, 21);
+            this.txtTalla.TabIndex = 197;
             // 
-            // comboBox8
+            // cmbSexo
             // 
-            this.comboBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(10, 40);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(140, 23);
-            this.comboBox8.TabIndex = 196;
+            this.cmbSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSexo.FormattingEnabled = true;
+            this.cmbSexo.Location = new System.Drawing.Point(10, 38);
+            this.cmbSexo.Name = "cmbSexo";
+            this.cmbSexo.Size = new System.Drawing.Size(140, 23);
+            this.cmbSexo.TabIndex = 196;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(7, 21);
+            this.label8.Location = new System.Drawing.Point(7, 19);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 15);
             this.label8.TabIndex = 200;
@@ -615,71 +525,31 @@
             this.groupBox14.Controls.Add(this.btnGuardarEditarDatosFilatorios);
             this.groupBox14.Controls.Add(this.btnCancelarEditarDatosFilatorios);
             this.groupBox14.Controls.Add(this.label94);
-            this.groupBox14.Controls.Add(this.textBox10);
+            this.groupBox14.Controls.Add(this.txtParientes);
             this.groupBox14.Controls.Add(this.label93);
-            this.groupBox14.Controls.Add(this.textBox9);
+            this.groupBox14.Controls.Add(this.txtMadre);
             this.groupBox14.Controls.Add(this.label92);
-            this.groupBox14.Controls.Add(this.textBox8);
-            this.groupBox14.Controls.Add(this.comboBox5);
+            this.groupBox14.Controls.Add(this.txtPadre);
+            this.groupBox14.Controls.Add(this.cmbZonaResidencia);
             this.groupBox14.Controls.Add(this.label90);
             this.groupBox14.Controls.Add(this.label91);
-            this.groupBox14.Controls.Add(this.textBox7);
+            this.groupBox14.Controls.Add(this.txtTelefono);
             this.groupBox14.Controls.Add(this.label87);
-            this.groupBox14.Controls.Add(this.comboBox4);
-            this.groupBox14.Controls.Add(this.comboBox3);
+            this.groupBox14.Controls.Add(this.cmbEstadoCivil);
+            this.groupBox14.Controls.Add(this.cmbNacionalidad);
             this.groupBox14.Controls.Add(this.label88);
             this.groupBox14.Controls.Add(this.label86);
-            this.groupBox14.Controls.Add(this.dateTimePicker1);
-            this.groupBox14.Controls.Add(this.comboBox2);
+            this.groupBox14.Controls.Add(this.dtpFechaNacimiento);
+            this.groupBox14.Controls.Add(this.cmbProvinciaNacimiento);
             this.groupBox14.Controls.Add(this.label89);
             this.groupBox14.Controls.Add(this.label85);
-            this.groupBox14.Controls.Add(this.comboBox1);
-            this.groupBox14.Location = new System.Drawing.Point(544, 225);
+            this.groupBox14.Controls.Add(this.cmbDepartamentoNacimiento);
+            this.groupBox14.Location = new System.Drawing.Point(544, 223);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(519, 416);
             this.groupBox14.TabIndex = 214;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Datos filiatorios";
-            // 
-            // btnEditarDatosFilatorios
-            // 
-            this.btnEditarDatosFilatorios.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarDatosFilatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarDatosFilatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarDatosFilatorios.ForeColor = System.Drawing.Color.White;
-            this.btnEditarDatosFilatorios.Location = new System.Drawing.Point(10, 367);
-            this.btnEditarDatosFilatorios.Name = "btnEditarDatosFilatorios";
-            this.btnEditarDatosFilatorios.Size = new System.Drawing.Size(98, 40);
-            this.btnEditarDatosFilatorios.TabIndex = 226;
-            this.btnEditarDatosFilatorios.Text = "EDITAR";
-            this.btnEditarDatosFilatorios.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardarEditarDatosFilatorios
-            // 
-            this.btnGuardarEditarDatosFilatorios.BackColor = System.Drawing.Color.Green;
-            this.btnGuardarEditarDatosFilatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarEditarDatosFilatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarEditarDatosFilatorios.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarEditarDatosFilatorios.Location = new System.Drawing.Point(123, 367);
-            this.btnGuardarEditarDatosFilatorios.Name = "btnGuardarEditarDatosFilatorios";
-            this.btnGuardarEditarDatosFilatorios.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarEditarDatosFilatorios.TabIndex = 224;
-            this.btnGuardarEditarDatosFilatorios.Text = "GUARDAR";
-            this.btnGuardarEditarDatosFilatorios.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelarEditarDatosFilatorios
-            // 
-            this.btnCancelarEditarDatosFilatorios.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarEditarDatosFilatorios.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCancelarEditarDatosFilatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarEditarDatosFilatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarEditarDatosFilatorios.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarEditarDatosFilatorios.Location = new System.Drawing.Point(237, 367);
-            this.btnCancelarEditarDatosFilatorios.Name = "btnCancelarEditarDatosFilatorios";
-            this.btnCancelarEditarDatosFilatorios.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelarEditarDatosFilatorios.TabIndex = 225;
-            this.btnCancelarEditarDatosFilatorios.Text = "CANCELAR";
-            this.btnCancelarEditarDatosFilatorios.UseVisualStyleBackColor = false;
             // 
             // label94
             // 
@@ -691,15 +561,15 @@
             this.label94.TabIndex = 223;
             this.label94.Text = "PARIENTES";
             // 
-            // textBox10
+            // txtParientes
             // 
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(9, 295);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(498, 63);
-            this.textBox10.TabIndex = 222;
+            this.txtParientes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtParientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtParientes.Location = new System.Drawing.Point(9, 295);
+            this.txtParientes.Multiline = true;
+            this.txtParientes.Name = "txtParientes";
+            this.txtParientes.Size = new System.Drawing.Size(498, 63);
+            this.txtParientes.TabIndex = 222;
             // 
             // label93
             // 
@@ -711,14 +581,14 @@
             this.label93.TabIndex = 221;
             this.label93.Text = "MADRE";
             // 
-            // textBox9
+            // txtMadre
             // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(10, 239);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(385, 21);
-            this.textBox9.TabIndex = 220;
+            this.txtMadre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMadre.Location = new System.Drawing.Point(10, 239);
+            this.txtMadre.Name = "txtMadre";
+            this.txtMadre.Size = new System.Drawing.Size(385, 21);
+            this.txtMadre.TabIndex = 220;
             // 
             // label92
             // 
@@ -730,23 +600,23 @@
             this.label92.TabIndex = 219;
             this.label92.Text = "PADRE";
             // 
-            // textBox8
+            // txtPadre
             // 
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(10, 192);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(385, 21);
-            this.textBox8.TabIndex = 218;
+            this.txtPadre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPadre.Location = new System.Drawing.Point(10, 192);
+            this.txtPadre.Name = "txtPadre";
+            this.txtPadre.Size = new System.Drawing.Size(385, 21);
+            this.txtPadre.TabIndex = 218;
             // 
-            // comboBox5
+            // cmbZonaResidencia
             // 
-            this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(158, 141);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(140, 23);
-            this.comboBox5.TabIndex = 214;
+            this.cmbZonaResidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbZonaResidencia.FormattingEnabled = true;
+            this.cmbZonaResidencia.Location = new System.Drawing.Point(158, 141);
+            this.cmbZonaResidencia.Name = "cmbZonaResidencia";
+            this.cmbZonaResidencia.Size = new System.Drawing.Size(140, 23);
+            this.cmbZonaResidencia.TabIndex = 214;
             // 
             // label90
             // 
@@ -768,14 +638,14 @@
             this.label91.TabIndex = 216;
             this.label91.Text = "TELEFONO";
             // 
-            // textBox7
+            // txtTelefono
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(315, 141);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(135, 21);
-            this.textBox7.TabIndex = 215;
+            this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(315, 141);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(135, 21);
+            this.txtTelefono.TabIndex = 215;
             // 
             // label87
             // 
@@ -787,23 +657,23 @@
             this.label87.TabIndex = 207;
             this.label87.Text = "NACIONALIDAD";
             // 
-            // comboBox4
+            // cmbEstadoCivil
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(9, 141);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(140, 23);
-            this.comboBox4.TabIndex = 211;
+            this.cmbEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEstadoCivil.FormattingEnabled = true;
+            this.cmbEstadoCivil.Location = new System.Drawing.Point(9, 141);
+            this.cmbEstadoCivil.Name = "cmbEstadoCivil";
+            this.cmbEstadoCivil.Size = new System.Drawing.Size(140, 23);
+            this.cmbEstadoCivil.TabIndex = 211;
             // 
-            // comboBox3
+            // cmbNacionalidad
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(9, 41);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(240, 23);
-            this.comboBox3.TabIndex = 204;
+            this.cmbNacionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNacionalidad.FormattingEnabled = true;
+            this.cmbNacionalidad.Location = new System.Drawing.Point(9, 41);
+            this.cmbNacionalidad.Name = "cmbNacionalidad";
+            this.cmbNacionalidad.Size = new System.Drawing.Size(240, 23);
+            this.cmbNacionalidad.TabIndex = 204;
             // 
             // label88
             // 
@@ -825,23 +695,23 @@
             this.label86.TabIndex = 208;
             this.label86.Text = "PROVINCIA NACIMIENTO";
             // 
-            // dateTimePicker1
+            // dtpFechaNacimiento
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(268, 90);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(153, 22);
-            this.dateTimePicker1.TabIndex = 210;
+            this.dtpFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(268, 90);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(153, 22);
+            this.dtpFechaNacimiento.TabIndex = 210;
             // 
-            // comboBox2
+            // cmbProvinciaNacimiento
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(267, 41);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(240, 23);
-            this.comboBox2.TabIndex = 205;
+            this.cmbProvinciaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProvinciaNacimiento.FormattingEnabled = true;
+            this.cmbProvinciaNacimiento.Location = new System.Drawing.Point(267, 41);
+            this.cmbProvinciaNacimiento.Name = "cmbProvinciaNacimiento";
+            this.cmbProvinciaNacimiento.Size = new System.Drawing.Size(240, 23);
+            this.cmbProvinciaNacimiento.TabIndex = 205;
             // 
             // label89
             // 
@@ -863,14 +733,14 @@
             this.label85.TabIndex = 209;
             this.label85.Text = "DEPARTAMENTO NACIMIENTO";
             // 
-            // comboBox1
+            // cmbDepartamentoNacimiento
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(9, 90);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(240, 23);
-            this.comboBox1.TabIndex = 206;
+            this.cmbDepartamentoNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDepartamentoNacimiento.FormattingEnabled = true;
+            this.cmbDepartamentoNacimiento.Location = new System.Drawing.Point(9, 90);
+            this.cmbDepartamentoNacimiento.Name = "cmbDepartamentoNacimiento";
+            this.cmbDepartamentoNacimiento.Size = new System.Drawing.Size(240, 23);
+            this.cmbDepartamentoNacimiento.TabIndex = 206;
             // 
             // pictureBox2
             // 
@@ -900,31 +770,32 @@
             this.groupBox1.Controls.Add(this.btnGuardarEditarDatosPrincipales);
             this.groupBox1.Controls.Add(this.btnCancelarEditarDatosPrincipales);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.textBox16);
+            this.groupBox1.Controls.Add(this.txtAlias);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBox15);
+            this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.textBox14);
+            this.groupBox1.Controls.Add(this.txtApellido);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox12);
+            this.groupBox1.Controls.Add(this.txtDni);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBox13);
+            this.groupBox1.Controls.Add(this.txtProntuario);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.txtIdInterno);
-            this.groupBox1.Location = new System.Drawing.Point(8, 13);
+            this.groupBox1.Location = new System.Drawing.Point(8, 148);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(522, 267);
+            this.groupBox1.Size = new System.Drawing.Size(522, 257);
             this.groupBox1.TabIndex = 68;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Interno";
             // 
             // btnEditarDatosPrincipales
             // 
-            this.btnEditarDatosPrincipales.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarDatosPrincipales.BackColor = System.Drawing.Color.White;
+            this.btnEditarDatosPrincipales.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
             this.btnEditarDatosPrincipales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarDatosPrincipales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarDatosPrincipales.ForeColor = System.Drawing.Color.White;
-            this.btnEditarDatosPrincipales.Location = new System.Drawing.Point(10, 218);
+            this.btnEditarDatosPrincipales.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarDatosPrincipales.Location = new System.Drawing.Point(10, 209);
             this.btnEditarDatosPrincipales.Name = "btnEditarDatosPrincipales";
             this.btnEditarDatosPrincipales.Size = new System.Drawing.Size(98, 40);
             this.btnEditarDatosPrincipales.TabIndex = 229;
@@ -933,11 +804,12 @@
             // 
             // btnGuardarEditarDatosPrincipales
             // 
-            this.btnGuardarEditarDatosPrincipales.BackColor = System.Drawing.Color.Green;
+            this.btnGuardarEditarDatosPrincipales.BackColor = System.Drawing.Color.White;
+            this.btnGuardarEditarDatosPrincipales.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.btnGuardarEditarDatosPrincipales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarEditarDatosPrincipales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarEditarDatosPrincipales.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarEditarDatosPrincipales.Location = new System.Drawing.Point(123, 218);
+            this.btnGuardarEditarDatosPrincipales.ForeColor = System.Drawing.Color.Green;
+            this.btnGuardarEditarDatosPrincipales.Location = new System.Drawing.Point(123, 209);
             this.btnGuardarEditarDatosPrincipales.Name = "btnGuardarEditarDatosPrincipales";
             this.btnGuardarEditarDatosPrincipales.Size = new System.Drawing.Size(98, 40);
             this.btnGuardarEditarDatosPrincipales.TabIndex = 227;
@@ -946,12 +818,12 @@
             // 
             // btnCancelarEditarDatosPrincipales
             // 
-            this.btnCancelarEditarDatosPrincipales.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarEditarDatosPrincipales.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancelarEditarDatosPrincipales.BackColor = System.Drawing.Color.White;
+            this.btnCancelarEditarDatosPrincipales.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
             this.btnCancelarEditarDatosPrincipales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarEditarDatosPrincipales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarEditarDatosPrincipales.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarEditarDatosPrincipales.Location = new System.Drawing.Point(237, 218);
+            this.btnCancelarEditarDatosPrincipales.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarEditarDatosPrincipales.Location = new System.Drawing.Point(237, 209);
             this.btnCancelarEditarDatosPrincipales.Name = "btnCancelarEditarDatosPrincipales";
             this.btnCancelarEditarDatosPrincipales.Size = new System.Drawing.Size(98, 40);
             this.btnCancelarEditarDatosPrincipales.TabIndex = 228;
@@ -962,58 +834,61 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(7, 165);
+            this.label14.Location = new System.Drawing.Point(7, 156);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(39, 15);
             this.label14.TabIndex = 197;
             this.label14.Text = "ALIAS";
             // 
-            // textBox16
+            // txtAlias
             // 
-            this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.Location = new System.Drawing.Point(10, 184);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(449, 21);
-            this.textBox16.TabIndex = 196;
+            this.txtAlias.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAlias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAlias.Location = new System.Drawing.Point(10, 175);
+            this.txtAlias.Name = "txtAlias";
+            this.txtAlias.ReadOnly = true;
+            this.txtAlias.Size = new System.Drawing.Size(449, 21);
+            this.txtAlias.TabIndex = 196;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(7, 117);
+            this.label13.Location = new System.Drawing.Point(7, 110);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(61, 15);
             this.label13.TabIndex = 195;
             this.label13.Text = "NOMBRE";
             // 
-            // textBox15
+            // txtNombre
             // 
-            this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(10, 135);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(449, 21);
-            this.textBox15.TabIndex = 194;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(10, 128);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
+            this.txtNombre.Size = new System.Drawing.Size(449, 21);
+            this.txtNombre.TabIndex = 194;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(7, 67);
+            this.label12.Location = new System.Drawing.Point(7, 64);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(65, 15);
             this.label12.TabIndex = 193;
             this.label12.Text = "APELLIDO";
             // 
-            // textBox14
+            // txtApellido
             // 
-            this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(10, 86);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(449, 21);
-            this.textBox14.TabIndex = 192;
+            this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.Location = new System.Drawing.Point(10, 83);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.ReadOnly = true;
+            this.txtApellido.Size = new System.Drawing.Size(449, 21);
+            this.txtApellido.TabIndex = 192;
             // 
             // label1
             // 
@@ -1025,14 +900,15 @@
             this.label1.TabIndex = 191;
             this.label1.Text = "DNI";
             // 
-            // textBox12
+            // txtDni
             // 
-            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(319, 37);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(140, 21);
-            this.textBox12.TabIndex = 189;
+            this.txtDni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDni.Location = new System.Drawing.Point(319, 37);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.ReadOnly = true;
+            this.txtDni.Size = new System.Drawing.Size(140, 21);
+            this.txtDni.TabIndex = 189;
             // 
             // label11
             // 
@@ -1044,14 +920,15 @@
             this.label11.TabIndex = 190;
             this.label11.Text = "PRONTUARIO";
             // 
-            // textBox13
+            // txtProntuario
             // 
-            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(165, 37);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(140, 21);
-            this.textBox13.TabIndex = 188;
+            this.txtProntuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProntuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProntuario.Location = new System.Drawing.Point(165, 37);
+            this.txtProntuario.Name = "txtProntuario";
+            this.txtProntuario.ReadOnly = true;
+            this.txtProntuario.Size = new System.Drawing.Size(140, 21);
+            this.txtProntuario.TabIndex = 188;
             // 
             // label15
             // 
@@ -1095,7 +972,7 @@
             this.pagProhibiciones.Padding = new System.Windows.Forms.Padding(3);
             this.pagProhibiciones.Size = new System.Drawing.Size(1072, 666);
             this.pagProhibiciones.TabIndex = 1;
-            this.pagProhibiciones.Text = "Prohibiciones";
+            this.pagProhibiciones.Text = "Datos Procesales";
             this.pagProhibiciones.UseVisualStyleBackColor = true;
             // 
             // groupBox4
@@ -2793,58 +2670,8 @@
             // 
             // tabDatosPersonales
             // 
-            this.tabDatosPersonales.Controls.Add(this.label58);
-            this.tabDatosPersonales.Controls.Add(this.txtParientes);
-            this.tabDatosPersonales.Controls.Add(this.label60);
-            this.tabDatosPersonales.Controls.Add(this.label61);
-            this.tabDatosPersonales.Controls.Add(this.txtPadre);
-            this.tabDatosPersonales.Controls.Add(this.txtMadre);
-            this.tabDatosPersonales.Controls.Add(this.cmbZonaResidencia);
-            this.tabDatosPersonales.Controls.Add(this.label62);
-            this.tabDatosPersonales.Controls.Add(this.cmbDepartamentoNacimiento);
-            this.tabDatosPersonales.Controls.Add(this.label63);
-            this.tabDatosPersonales.Controls.Add(this.cmbProvinciaNacimiento);
-            this.tabDatosPersonales.Controls.Add(this.label64);
-            this.tabDatosPersonales.Controls.Add(this.label65);
-            this.tabDatosPersonales.Controls.Add(this.cmbOjosTamanio);
-            this.tabDatosPersonales.Controls.Add(this.label66);
-            this.tabDatosPersonales.Controls.Add(this.cmbPeloColor);
-            this.tabDatosPersonales.Controls.Add(this.label67);
-            this.tabDatosPersonales.Controls.Add(this.cmbPeloTipo);
-            this.tabDatosPersonales.Controls.Add(this.label68);
-            this.tabDatosPersonales.Controls.Add(this.cmbNarizTamanio);
-            this.tabDatosPersonales.Controls.Add(this.label69);
-            this.tabDatosPersonales.Controls.Add(this.cmbNarizForma);
-            this.tabDatosPersonales.Controls.Add(this.label70);
-            this.tabDatosPersonales.Controls.Add(this.cmbOjosColor);
-            this.tabDatosPersonales.Controls.Add(this.label71);
-            this.tabDatosPersonales.Controls.Add(this.cmbPiel);
-            this.tabDatosPersonales.Controls.Add(this.label72);
-            this.tabDatosPersonales.Controls.Add(this.label73);
-            this.tabDatosPersonales.Controls.Add(this.txtTalla);
-            this.tabDatosPersonales.Controls.Add(this.label74);
-            this.tabDatosPersonales.Controls.Add(this.label75);
-            this.tabDatosPersonales.Controls.Add(this.textBox1);
-            this.tabDatosPersonales.Controls.Add(this.cmbNacionalidad);
-            this.tabDatosPersonales.Controls.Add(this.label76);
-            this.tabDatosPersonales.Controls.Add(this.cmbEstadoCivil);
-            this.tabDatosPersonales.Controls.Add(this.label77);
-            this.tabDatosPersonales.Controls.Add(this.label78);
-            this.tabDatosPersonales.Controls.Add(this.textBox2);
-            this.tabDatosPersonales.Controls.Add(this.label79);
-            this.tabDatosPersonales.Controls.Add(this.textBox3);
             this.tabDatosPersonales.Controls.Add(this.button1);
             this.tabDatosPersonales.Controls.Add(this.button2);
-            this.tabDatosPersonales.Controls.Add(this.label80);
-            this.tabDatosPersonales.Controls.Add(this.label81);
-            this.tabDatosPersonales.Controls.Add(this.label82);
-            this.tabDatosPersonales.Controls.Add(this.dtpFechaNacimiento);
-            this.tabDatosPersonales.Controls.Add(this.label83);
-            this.tabDatosPersonales.Controls.Add(this.textBox4);
-            this.tabDatosPersonales.Controls.Add(this.textBox5);
-            this.tabDatosPersonales.Controls.Add(this.textBox6);
-            this.tabDatosPersonales.Controls.Add(this.cmbSexo);
-            this.tabDatosPersonales.Controls.Add(this.label84);
             this.tabDatosPersonales.Location = new System.Drawing.Point(4, 25);
             this.tabDatosPersonales.Name = "tabDatosPersonales";
             this.tabDatosPersonales.Padding = new System.Windows.Forms.Padding(3);
@@ -2852,392 +2679,6 @@
             this.tabDatosPersonales.TabIndex = 6;
             this.tabDatosPersonales.Text = "Datos personales";
             this.tabDatosPersonales.UseVisualStyleBackColor = true;
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.Location = new System.Drawing.Point(9, 471);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(74, 15);
-            this.label58.TabIndex = 207;
-            this.label58.Text = "PARIENTES";
-            // 
-            // txtParientes
-            // 
-            this.txtParientes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtParientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtParientes.Location = new System.Drawing.Point(12, 491);
-            this.txtParientes.Multiline = true;
-            this.txtParientes.Name = "txtParientes";
-            this.txtParientes.Size = new System.Drawing.Size(787, 63);
-            this.txtParientes.TabIndex = 179;
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(8, 418);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(48, 15);
-            this.label60.TabIndex = 205;
-            this.label60.Text = "PADRE";
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.Location = new System.Drawing.Point(413, 418);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(51, 15);
-            this.label61.TabIndex = 206;
-            this.label61.Text = "MADRE";
-            // 
-            // txtPadre
-            // 
-            this.txtPadre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPadre.Location = new System.Drawing.Point(11, 437);
-            this.txtPadre.Name = "txtPadre";
-            this.txtPadre.Size = new System.Drawing.Size(385, 21);
-            this.txtPadre.TabIndex = 177;
-            // 
-            // txtMadre
-            // 
-            this.txtMadre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMadre.Location = new System.Drawing.Point(416, 437);
-            this.txtMadre.Name = "txtMadre";
-            this.txtMadre.Size = new System.Drawing.Size(385, 21);
-            this.txtMadre.TabIndex = 178;
-            // 
-            // cmbZonaResidencia
-            // 
-            this.cmbZonaResidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbZonaResidencia.FormattingEnabled = true;
-            this.cmbZonaResidencia.Location = new System.Drawing.Point(336, 383);
-            this.cmbZonaResidencia.Name = "cmbZonaResidencia";
-            this.cmbZonaResidencia.Size = new System.Drawing.Size(140, 23);
-            this.cmbZonaResidencia.TabIndex = 175;
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label62.Location = new System.Drawing.Point(333, 364);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(114, 15);
-            this.label62.TabIndex = 204;
-            this.label62.Text = "ZONA RESIDENCIA";
-            // 
-            // cmbDepartamentoNacimiento
-            // 
-            this.cmbDepartamentoNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDepartamentoNacimiento.FormattingEnabled = true;
-            this.cmbDepartamentoNacimiento.Location = new System.Drawing.Point(527, 327);
-            this.cmbDepartamentoNacimiento.Name = "cmbDepartamentoNacimiento";
-            this.cmbDepartamentoNacimiento.Size = new System.Drawing.Size(240, 23);
-            this.cmbDepartamentoNacimiento.TabIndex = 172;
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label63.Location = new System.Drawing.Point(524, 308);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(183, 15);
-            this.label63.TabIndex = 203;
-            this.label63.Text = "DEPARTAMENTO NACIMIENTO";
-            // 
-            // cmbProvinciaNacimiento
-            // 
-            this.cmbProvinciaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbProvinciaNacimiento.FormattingEnabled = true;
-            this.cmbProvinciaNacimiento.Location = new System.Drawing.Point(269, 327);
-            this.cmbProvinciaNacimiento.Name = "cmbProvinciaNacimiento";
-            this.cmbProvinciaNacimiento.Size = new System.Drawing.Size(240, 23);
-            this.cmbProvinciaNacimiento.TabIndex = 171;
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.Location = new System.Drawing.Point(266, 308);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(147, 15);
-            this.label64.TabIndex = 202;
-            this.label64.Text = "PROVINCIA NACIMIENTO";
-            // 
-            // label65
-            // 
-            this.label65.BackColor = System.Drawing.Color.CadetBlue;
-            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.ForeColor = System.Drawing.Color.White;
-            this.label65.Location = new System.Drawing.Point(-1, 274);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(826, 24);
-            this.label65.TabIndex = 201;
-            this.label65.Text = "Datos filiatorios";
-            this.label65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cmbOjosTamanio
-            // 
-            this.cmbOjosTamanio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbOjosTamanio.FormattingEnabled = true;
-            this.cmbOjosTamanio.Location = new System.Drawing.Point(628, 175);
-            this.cmbOjosTamanio.Name = "cmbOjosTamanio";
-            this.cmbOjosTamanio.Size = new System.Drawing.Size(140, 23);
-            this.cmbOjosTamanio.TabIndex = 165;
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label66.Location = new System.Drawing.Point(625, 156);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(92, 15);
-            this.label66.TabIndex = 200;
-            this.label66.Text = "OJOS TAMAÑO";
-            // 
-            // cmbPeloColor
-            // 
-            this.cmbPeloColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbPeloColor.FormattingEnabled = true;
-            this.cmbPeloColor.Location = new System.Drawing.Point(474, 230);
-            this.cmbPeloColor.Name = "cmbPeloColor";
-            this.cmbPeloColor.Size = new System.Drawing.Size(140, 23);
-            this.cmbPeloColor.TabIndex = 169;
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label67.Location = new System.Drawing.Point(471, 211);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(84, 15);
-            this.label67.TabIndex = 199;
-            this.label67.Text = "PELO COLOR";
-            // 
-            // cmbPeloTipo
-            // 
-            this.cmbPeloTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbPeloTipo.FormattingEnabled = true;
-            this.cmbPeloTipo.Location = new System.Drawing.Point(320, 230);
-            this.cmbPeloTipo.Name = "cmbPeloTipo";
-            this.cmbPeloTipo.Size = new System.Drawing.Size(140, 23);
-            this.cmbPeloTipo.TabIndex = 168;
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label68.Location = new System.Drawing.Point(317, 211);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(69, 15);
-            this.label68.TabIndex = 198;
-            this.label68.Text = "PELO TIPO";
-            // 
-            // cmbNarizTamanio
-            // 
-            this.cmbNarizTamanio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbNarizTamanio.FormattingEnabled = true;
-            this.cmbNarizTamanio.Location = new System.Drawing.Point(165, 230);
-            this.cmbNarizTamanio.Name = "cmbNarizTamanio";
-            this.cmbNarizTamanio.Size = new System.Drawing.Size(140, 23);
-            this.cmbNarizTamanio.TabIndex = 167;
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label69.Location = new System.Drawing.Point(162, 210);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(95, 15);
-            this.label69.TabIndex = 197;
-            this.label69.Text = "NARIZ TAMAÑO";
-            // 
-            // cmbNarizForma
-            // 
-            this.cmbNarizForma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbNarizForma.FormattingEnabled = true;
-            this.cmbNarizForma.Location = new System.Drawing.Point(11, 229);
-            this.cmbNarizForma.Name = "cmbNarizForma";
-            this.cmbNarizForma.Size = new System.Drawing.Size(140, 23);
-            this.cmbNarizForma.TabIndex = 166;
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label70.Location = new System.Drawing.Point(8, 210);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(88, 15);
-            this.label70.TabIndex = 196;
-            this.label70.Text = "NARIZ FORMA";
-            // 
-            // cmbOjosColor
-            // 
-            this.cmbOjosColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbOjosColor.FormattingEnabled = true;
-            this.cmbOjosColor.Location = new System.Drawing.Point(474, 175);
-            this.cmbOjosColor.Name = "cmbOjosColor";
-            this.cmbOjosColor.Size = new System.Drawing.Size(140, 23);
-            this.cmbOjosColor.TabIndex = 164;
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label71.Location = new System.Drawing.Point(471, 156);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(84, 15);
-            this.label71.TabIndex = 195;
-            this.label71.Text = "OJOS COLOR";
-            // 
-            // cmbPiel
-            // 
-            this.cmbPiel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbPiel.FormattingEnabled = true;
-            this.cmbPiel.Location = new System.Drawing.Point(320, 175);
-            this.cmbPiel.Name = "cmbPiel";
-            this.cmbPiel.Size = new System.Drawing.Size(140, 23);
-            this.cmbPiel.TabIndex = 163;
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label72.Location = new System.Drawing.Point(317, 156);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(33, 15);
-            this.label72.TabIndex = 194;
-            this.label72.Text = "PIEL";
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label73.Location = new System.Drawing.Point(163, 155);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(42, 15);
-            this.label73.TabIndex = 193;
-            this.label73.Text = "TALLA";
-            // 
-            // txtTalla
-            // 
-            this.txtTalla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTalla.Location = new System.Drawing.Point(166, 175);
-            this.txtTalla.Name = "txtTalla";
-            this.txtTalla.Size = new System.Drawing.Size(135, 21);
-            this.txtTalla.TabIndex = 162;
-            // 
-            // label74
-            // 
-            this.label74.BackColor = System.Drawing.Color.CadetBlue;
-            this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label74.ForeColor = System.Drawing.Color.White;
-            this.label74.Location = new System.Drawing.Point(0, 123);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(825, 24);
-            this.label74.TabIndex = 189;
-            this.label74.Text = "Caracteristicas personales";
-            this.label74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label75.Location = new System.Drawing.Point(311, 64);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(39, 15);
-            this.label75.TabIndex = 192;
-            this.label75.Text = "ALIAS";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(314, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(385, 21);
-            this.textBox1.TabIndex = 160;
-            // 
-            // cmbNacionalidad
-            // 
-            this.cmbNacionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbNacionalidad.FormattingEnabled = true;
-            this.cmbNacionalidad.Location = new System.Drawing.Point(11, 327);
-            this.cmbNacionalidad.Name = "cmbNacionalidad";
-            this.cmbNacionalidad.Size = new System.Drawing.Size(240, 23);
-            this.cmbNacionalidad.TabIndex = 170;
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label76.Location = new System.Drawing.Point(8, 308);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(94, 15);
-            this.label76.TabIndex = 191;
-            this.label76.Text = "NACIONALIDAD";
-            // 
-            // cmbEstadoCivil
-            // 
-            this.cmbEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbEstadoCivil.FormattingEnabled = true;
-            this.cmbEstadoCivil.Location = new System.Drawing.Point(180, 383);
-            this.cmbEstadoCivil.Name = "cmbEstadoCivil";
-            this.cmbEstadoCivil.Size = new System.Drawing.Size(140, 23);
-            this.cmbEstadoCivil.TabIndex = 174;
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label77.Location = new System.Drawing.Point(177, 364);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(86, 15);
-            this.label77.TabIndex = 190;
-            this.label77.Text = "ESTADO CIVIL";
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label78.Location = new System.Drawing.Point(490, 364);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(71, 15);
-            this.label78.TabIndex = 188;
-            this.label78.Text = "TELEFONO";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(493, 383);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(135, 21);
-            this.textBox2.TabIndex = 176;
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label79.Location = new System.Drawing.Point(158, 64);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(28, 15);
-            this.label79.TabIndex = 187;
-            this.label79.Text = "DNI";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(161, 83);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(135, 21);
-            this.textBox3.TabIndex = 159;
             // 
             // button1
             // 
@@ -3266,111 +2707,101 @@
             this.button2.Text = "CANCELAR";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // label80
+            // btnEditarCaracteristicasPersonales
             // 
-            this.label80.AutoSize = true;
-            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label80.Location = new System.Drawing.Point(6, 12);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(65, 15);
-            this.label80.TabIndex = 181;
-            this.label80.Text = "APELLIDO";
+            this.btnEditarCaracteristicasPersonales.BackColor = System.Drawing.Color.White;
+            this.btnEditarCaracteristicasPersonales.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarCaracteristicasPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarCaracteristicasPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarCaracteristicasPersonales.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarCaracteristicasPersonales.Location = new System.Drawing.Point(10, 171);
+            this.btnEditarCaracteristicasPersonales.Name = "btnEditarCaracteristicasPersonales";
+            this.btnEditarCaracteristicasPersonales.Size = new System.Drawing.Size(98, 40);
+            this.btnEditarCaracteristicasPersonales.TabIndex = 232;
+            this.btnEditarCaracteristicasPersonales.Text = "EDITAR";
+            this.btnEditarCaracteristicasPersonales.UseVisualStyleBackColor = false;
             // 
-            // label81
+            // btnGuardarEditarCaracteristicasPersonales
             // 
-            this.label81.AutoSize = true;
-            this.label81.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label81.Location = new System.Drawing.Point(8, 64);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(86, 15);
-            this.label81.TabIndex = 180;
-            this.label81.Text = "PRONTUARIO";
+            this.btnGuardarEditarCaracteristicasPersonales.BackColor = System.Drawing.Color.White;
+            this.btnGuardarEditarCaracteristicasPersonales.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnGuardarEditarCaracteristicasPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarEditarCaracteristicasPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarEditarCaracteristicasPersonales.ForeColor = System.Drawing.Color.Green;
+            this.btnGuardarEditarCaracteristicasPersonales.Location = new System.Drawing.Point(123, 171);
+            this.btnGuardarEditarCaracteristicasPersonales.Name = "btnGuardarEditarCaracteristicasPersonales";
+            this.btnGuardarEditarCaracteristicasPersonales.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarEditarCaracteristicasPersonales.TabIndex = 230;
+            this.btnGuardarEditarCaracteristicasPersonales.Text = "GUARDAR";
+            this.btnGuardarEditarCaracteristicasPersonales.UseVisualStyleBackColor = false;
             // 
-            // label82
+            // btnCancelarEditarCaracteristicasPersonales
             // 
-            this.label82.AutoSize = true;
-            this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label82.Location = new System.Drawing.Point(415, 12);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(61, 15);
-            this.label82.TabIndex = 182;
-            this.label82.Text = "NOMBRE";
+            this.btnCancelarEditarCaracteristicasPersonales.BackColor = System.Drawing.Color.White;
+            this.btnCancelarEditarCaracteristicasPersonales.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarEditarCaracteristicasPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarEditarCaracteristicasPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarEditarCaracteristicasPersonales.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarEditarCaracteristicasPersonales.Location = new System.Drawing.Point(237, 171);
+            this.btnCancelarEditarCaracteristicasPersonales.Name = "btnCancelarEditarCaracteristicasPersonales";
+            this.btnCancelarEditarCaracteristicasPersonales.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarEditarCaracteristicasPersonales.TabIndex = 231;
+            this.btnCancelarEditarCaracteristicasPersonales.Text = "CANCELAR";
+            this.btnCancelarEditarCaracteristicasPersonales.UseVisualStyleBackColor = false;
             // 
-            // dtpFechaNacimiento
+            // btnEditarDatosFilatorios
             // 
-            this.dtpFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(12, 383);
-            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(153, 22);
-            this.dtpFechaNacimiento.TabIndex = 173;
+            this.btnEditarDatosFilatorios.BackColor = System.Drawing.Color.White;
+            this.btnEditarDatosFilatorios.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarDatosFilatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarDatosFilatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarDatosFilatorios.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarDatosFilatorios.Location = new System.Drawing.Point(11, 369);
+            this.btnEditarDatosFilatorios.Name = "btnEditarDatosFilatorios";
+            this.btnEditarDatosFilatorios.Size = new System.Drawing.Size(98, 40);
+            this.btnEditarDatosFilatorios.TabIndex = 232;
+            this.btnEditarDatosFilatorios.Text = "EDITAR";
+            this.btnEditarDatosFilatorios.UseVisualStyleBackColor = false;
             // 
-            // label83
+            // btnGuardarEditarDatosFilatorios
             // 
-            this.label83.AutoSize = true;
-            this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label83.Location = new System.Drawing.Point(8, 364);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(123, 15);
-            this.label83.TabIndex = 184;
-            this.label83.Text = "FECHA NACIMIENTO";
+            this.btnGuardarEditarDatosFilatorios.BackColor = System.Drawing.Color.White;
+            this.btnGuardarEditarDatosFilatorios.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnGuardarEditarDatosFilatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarEditarDatosFilatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarEditarDatosFilatorios.ForeColor = System.Drawing.Color.Green;
+            this.btnGuardarEditarDatosFilatorios.Location = new System.Drawing.Point(124, 369);
+            this.btnGuardarEditarDatosFilatorios.Name = "btnGuardarEditarDatosFilatorios";
+            this.btnGuardarEditarDatosFilatorios.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarEditarDatosFilatorios.TabIndex = 230;
+            this.btnGuardarEditarDatosFilatorios.Text = "GUARDAR";
+            this.btnGuardarEditarDatosFilatorios.UseVisualStyleBackColor = false;
             // 
-            // textBox4
+            // btnCancelarEditarDatosFilatorios
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(11, 83);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(135, 21);
-            this.textBox4.TabIndex = 158;
-            // 
-            // textBox5
-            // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(9, 31);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(385, 21);
-            this.textBox5.TabIndex = 156;
-            // 
-            // textBox6
-            // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(414, 31);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(385, 21);
-            this.textBox6.TabIndex = 157;
-            // 
-            // cmbSexo
-            // 
-            this.cmbSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSexo.FormattingEnabled = true;
-            this.cmbSexo.Location = new System.Drawing.Point(11, 174);
-            this.cmbSexo.Name = "cmbSexo";
-            this.cmbSexo.Size = new System.Drawing.Size(140, 23);
-            this.cmbSexo.TabIndex = 161;
-            // 
-            // label84
-            // 
-            this.label84.AutoSize = true;
-            this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label84.Location = new System.Drawing.Point(8, 155);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(40, 15);
-            this.label84.TabIndex = 183;
-            this.label84.Text = "SEXO";
+            this.btnCancelarEditarDatosFilatorios.BackColor = System.Drawing.Color.White;
+            this.btnCancelarEditarDatosFilatorios.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarEditarDatosFilatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarEditarDatosFilatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarEditarDatosFilatorios.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarEditarDatosFilatorios.Location = new System.Drawing.Point(238, 369);
+            this.btnCancelarEditarDatosFilatorios.Name = "btnCancelarEditarDatosFilatorios";
+            this.btnCancelarEditarDatosFilatorios.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarEditarDatosFilatorios.TabIndex = 231;
+            this.btnCancelarEditarDatosFilatorios.Text = "CANCELAR";
+            this.btnCancelarEditarDatosFilatorios.UseVisualStyleBackColor = false;
             // 
             // FormInternoAdministrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1094, 711);
-            this.Controls.Add(this.tabVisita);
+            this.Controls.Add(this.tabInterno);
             this.Controls.Add(this.label28);
             this.Name = "FormInternoAdministrar";
             this.Text = "Administrar Interno";
-            this.tabVisita.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.FormInternoAdministrar_Load);
+            this.tabInterno.ResumeLayout(false);
             this.pagDatosPrincipales.ResumeLayout(false);
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
@@ -3415,7 +2846,6 @@
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.tabDatosPersonales.ResumeLayout(false);
-            this.tabDatosPersonales.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3423,7 +2853,7 @@
         #endregion
 
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TabControl tabVisita;
+        private System.Windows.Forms.TabControl tabInterno;
         private System.Windows.Forms.TabPage pagDatosPrincipales;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label15;
@@ -3574,116 +3004,66 @@
         private System.Windows.Forms.TabPage tabDatosPersonales;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.TextBox txtParientes;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.TextBox txtPadre;
-        private System.Windows.Forms.TextBox txtMadre;
-        private System.Windows.Forms.ComboBox cmbZonaResidencia;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.ComboBox cmbDepartamentoNacimiento;
-        private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.ComboBox cmbProvinciaNacimiento;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.ComboBox cmbOjosTamanio;
-        private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.ComboBox cmbPeloColor;
-        private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.ComboBox cmbPeloTipo;
-        private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.ComboBox cmbNarizTamanio;
-        private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.ComboBox cmbNarizForma;
-        private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.ComboBox cmbOjosColor;
-        private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.ComboBox cmbPiel;
-        private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.TextBox txtTalla;
-        private System.Windows.Forms.Label label74;
-        private System.Windows.Forms.Label label75;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox cmbNacionalidad;
-        private System.Windows.Forms.Label label76;
-        private System.Windows.Forms.ComboBox cmbEstadoCivil;
-        private System.Windows.Forms.Label label77;
-        private System.Windows.Forms.Label label78;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label79;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label80;
-        private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.Label label82;
-        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
-        private System.Windows.Forms.Label label83;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox cmbSexo;
-        private System.Windows.Forms.Label label84;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbDepartamentoNacimiento;
         private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbProvinciaNacimiento;
         private System.Windows.Forms.Label label86;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbNacionalidad;
         private System.Windows.Forms.Label label87;
         private System.Windows.Forms.GroupBox groupBox14;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cmbEstadoCivil;
         private System.Windows.Forms.Label label88;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.Label label89;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox cmbZonaResidencia;
         private System.Windows.Forms.Label label90;
         private System.Windows.Forms.Label label91;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label92;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtPadre;
         private System.Windows.Forms.Label label93;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtMadre;
         private System.Windows.Forms.Label label94;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Button btnEditarDatosFilatorios;
-        private System.Windows.Forms.Button btnGuardarEditarDatosFilatorios;
-        private System.Windows.Forms.Button btnCancelarEditarDatosFilatorios;
+        private System.Windows.Forms.TextBox txtParientes;
         private System.Windows.Forms.GroupBox groupBox15;
-        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.ComboBox cmbOjosTamanio;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox cmbOjosColor;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox cmbPiel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.TextBox txtTalla;
+        private System.Windows.Forms.ComboBox cmbSexo;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox13;
+        private System.Windows.Forms.ComboBox cmbNarizForma;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox10;
+        private System.Windows.Forms.ComboBox cmbPeloColor;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox11;
+        private System.Windows.Forms.ComboBox cmbPeloTipo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox12;
+        private System.Windows.Forms.ComboBox cmbNarizTamanio;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox txtProntuario;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.Button btnEditarCaracteristicasPersonales;
-        private System.Windows.Forms.Button btnGuardarEditarCaracteristicasPersonales;
-        private System.Windows.Forms.Button btnCancelarEditarCaracteristicasPersonales;
+        private System.Windows.Forms.TextBox txtAlias;
         private System.Windows.Forms.Button btnEditarDatosPrincipales;
         private System.Windows.Forms.Button btnGuardarEditarDatosPrincipales;
         private System.Windows.Forms.Button btnCancelarEditarDatosPrincipales;
+        private System.Windows.Forms.Button btnEditarCaracteristicasPersonales;
+        private System.Windows.Forms.Button btnGuardarEditarCaracteristicasPersonales;
+        private System.Windows.Forms.Button btnCancelarEditarCaracteristicasPersonales;
+        private System.Windows.Forms.Button btnEditarDatosFilatorios;
+        private System.Windows.Forms.Button btnGuardarEditarDatosFilatorios;
+        private System.Windows.Forms.Button btnCancelarEditarDatosFilatorios;
     }
 }

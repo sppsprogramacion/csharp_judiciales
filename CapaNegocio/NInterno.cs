@@ -33,5 +33,17 @@ namespace CapaNegocio
             return (listaInternos, error);
         }
         //FIN RETORNAR X APELLIDO..................................
+
+        //RETORNAR  X ID
+        public async Task<(DInterno, string error)> BuscarInternoXID(int id)
+        {
+            IInternosDao internosDao = new InternoDaoImplement();
+
+            (DInterno dInterno, string error) = await internosDao.BuscarInternoXId(id);
+
+
+            return (dInterno, error);
+        }
+        //FIN RETORNAR  XID..................................
     }
 }

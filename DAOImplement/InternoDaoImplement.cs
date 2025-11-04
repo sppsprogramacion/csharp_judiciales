@@ -79,10 +79,53 @@ namespace DAOImplement
         }
         //FIN EDITAR.............................................................
 
-        public Task<(DInterno, string error)> BuscarInternoXId(int idInterno)
+
+        //BUSCAR X ID
+        public async Task<(DInterno, string error)> BuscarInternoXId(int idInterno)
         {
-            throw new NotImplementedException();
+            DInterno dInterno = new DInterno();
+            string token = SessionManager.Token; // Aquí pones tu token real
+
+            try
+            {
+                // Agregar el token en los headers
+                this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                HttpResponseMessage httpResponse = await this.httpClient.GetAsync(url_base + "/internos/" + idInterno);
+
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var content = await httpResponse.Content.ReadAsStringAsync();
+                    dInterno = JsonConvert.DeserializeObject<DInterno>(content);
+                    return (dInterno, null);
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (null, $"Error en la busqueda: {mensaje}");
+                }
+
+
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                // Capturar errores de la solicitud HTTP
+                return (null, $"Error de conexión: {httpRequestException.Message}");
+            }
+            catch (JsonException jsonException)
+            {
+                // Capturar errores en la serialización/deserialización de JSON                
+                return (null, $"Error inesperado");
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores (log, mensaje al usuario, etc.)
+                Console.WriteLine($"Error: {ex.Message}");
+                return (null, $"Error inesperado: {ex.Message}");
+            }
         }
+        //BUSCAR X ID
 
         public Task<(List<DInterno>, string error)> ListaInternosTodos()
         {
