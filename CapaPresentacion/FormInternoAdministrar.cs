@@ -169,5 +169,6 @@ namespace CapaPresentacion
 
             tabInterno.Enabled = true;
         }
+                
     }
 }
