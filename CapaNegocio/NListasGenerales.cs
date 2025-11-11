@@ -36,5 +36,17 @@ namespace CapaNegocio
         }
         //FIN RETORNAR LISTAS DATOS FILIATORIOS..................................
 
+        //RETORNAR TABLAS PARA INGRESO DE INTERNO
+        public async Task<(DTablasIngresoInterno, string error)> ListasTablasIngresoInterno()
+        {
+            IListasGenerales listasGeneralesDao = new ListasGeneralesDaoImplement();
+
+            (DTablasIngresoInterno tablasIngresoInterno, string errorResponse) = await listasGeneralesDao.ListasTablasUngresoInterno();
+
+
+            return (tablasIngresoInterno, errorResponse);
+        }
+        //FIN RETORNAR TABLAS PARA INGRESO DE INTERNO..................................
+
     }
 }

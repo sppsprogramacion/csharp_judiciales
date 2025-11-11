@@ -45,7 +45,9 @@
     <Compile Include="DCiudadano.cs" />
     <Compile Include="DDatosFiliatorios.cs" />
     <Compile Include="DDepartamento.cs" />
+    <Compile Include="DEstadoProcesal.cs" />
     <Compile Include="DInterno.cs" />
+    <Compile Include="DJurisdiccion.cs" />
     <Compile Include="DLogin.cs" />
     <Compile Include="DLoginResponse.cs" />
     <Compile Include="DMunicipio.cs" />
@@ -53,13 +55,16 @@
     <Compile Include="DNarizForma.cs" />
     <Compile Include="DOjosColor.cs" />
     <Compile Include="DOrganismo.cs" />
+    <Compile Include="DOrganismoExterno.cs" />
     <Compile Include="DPais.cs" />
     <Compile Include="DParentesco.cs" />
     <Compile Include="DPeloColor.cs" />
     <Compile Include="DProvincia.cs" />
+    <Compile Include="DReingreso.cs" />
     <Compile Include="DResponseEditar.cs" />
     <Compile Include="DSexo.cs" />
     <Compile Include="DEstadoCivil.cs" />
+    <Compile Include="DTablasIngresoInterno.cs" />
     <Compile Include="DTamanio.cs" />
     <Compile Include="DUsuario.cs" />
     <Compile Include="DPeloTipo.cs" />

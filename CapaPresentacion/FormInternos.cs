@@ -94,8 +94,11 @@ namespace CapaPresentacion
                 {
                     if (this.idInternoGlobal > 0)
                     {
-                        FormInternoAdministrar formInternoAdministrar = new FormInternoAdministrar();
-                        formInternoAdministrar.ShowDialog();
+                        //FormInternoAdministrar formInternoAdministrar = new FormInternoAdministrar();
+                        //formInternoAdministrar.ShowDialog();
+
+                        FormInternoIngresoNuevo formInternoIngresoNuevo = new FormInternoIngresoNuevo();
+                        formInternoIngresoNuevo.ShowDialog();
                     }
                     else
                     {
