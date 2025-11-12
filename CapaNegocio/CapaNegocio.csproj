@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="NAuth.cs" />
     <Compile Include="NDepartamento.cs" />
+    <Compile Include="NIngresoInterno.cs" />
     <Compile Include="NListasGenerales.cs" />
     <Compile Include="NCiudadano.cs" />
     <Compile Include="NEstadoCivil.cs" />

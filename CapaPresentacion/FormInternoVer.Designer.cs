@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class FormInternoIngresoNuevo
+    partial class FormInternoVer
     {
         /// <summary>
         /// Required designer variable.
@@ -41,8 +41,6 @@
             this.label68 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
             this.cmbOrganismoExternoProcedencia = new System.Windows.Forms.ComboBox();
-            this.btnGuardarIngreso = new System.Windows.Forms.Button();
-            this.btnCancelarIngreso = new System.Windows.Forms.Button();
             this.label72 = new System.Windows.Forms.Label();
             this.txtProntuarioPolicial = new System.Windows.Forms.TextBox();
             this.cmbJurisdiccion = new System.Windows.Forms.ComboBox();
@@ -271,6 +269,8 @@
             this.btnCancelarExcepcion = new System.Windows.Forms.Button();
             this.dtpFechaExcepcion = new System.Windows.Forms.DateTimePicker();
             this.label52 = new System.Windows.Forms.Label();
+            this.btnCancelarIngreso = new System.Windows.Forms.Button();
+            this.btnGuardarIngreso = new System.Windows.Forms.Button();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -313,11 +313,11 @@
             this.tabInterno.Controls.Add(this.tabNovedades);
             this.tabInterno.Controls.Add(this.tabExepcionIngreso);
             this.tabInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabInterno.Location = new System.Drawing.Point(2, 4);
+            this.tabInterno.Location = new System.Drawing.Point(7, 8);
             this.tabInterno.Name = "tabInterno";
             this.tabInterno.SelectedIndex = 0;
             this.tabInterno.Size = new System.Drawing.Size(1080, 695);
-            this.tabInterno.TabIndex = 122;
+            this.tabInterno.TabIndex = 123;
             // 
             // tabDatosPrincipales
             // 
@@ -459,35 +459,6 @@
             this.cmbOrganismoExternoProcedencia.Name = "cmbOrganismoExternoProcedencia";
             this.cmbOrganismoExternoProcedencia.Size = new System.Drawing.Size(321, 23);
             this.cmbOrganismoExternoProcedencia.TabIndex = 1;
-            // 
-            // btnGuardarIngreso
-            // 
-            this.btnGuardarIngreso.BackColor = System.Drawing.Color.White;
-            this.btnGuardarIngreso.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnGuardarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarIngreso.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardarIngreso.Location = new System.Drawing.Point(298, 289);
-            this.btnGuardarIngreso.Name = "btnGuardarIngreso";
-            this.btnGuardarIngreso.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarIngreso.TabIndex = 12;
-            this.btnGuardarIngreso.Text = "GUARDAR";
-            this.btnGuardarIngreso.UseVisualStyleBackColor = false;
-            this.btnGuardarIngreso.Click += new System.EventHandler(this.btnGuardarIngreso_Click);
-            // 
-            // btnCancelarIngreso
-            // 
-            this.btnCancelarIngreso.BackColor = System.Drawing.Color.White;
-            this.btnCancelarIngreso.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarIngreso.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarIngreso.Location = new System.Drawing.Point(412, 289);
-            this.btnCancelarIngreso.Name = "btnCancelarIngreso";
-            this.btnCancelarIngreso.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelarIngreso.TabIndex = 13;
-            this.btnCancelarIngreso.Text = "CANCELAR";
-            this.btnCancelarIngreso.UseVisualStyleBackColor = false;
             // 
             // label72
             // 
@@ -3105,16 +3076,42 @@
             this.label52.TabIndex = 44;
             this.label52.Text = "FECHA EXEPCION:";
             // 
-            // FormInternoIngresoNuevo
+            // btnCancelarIngreso
+            // 
+            this.btnCancelarIngreso.BackColor = System.Drawing.Color.White;
+            this.btnCancelarIngreso.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarIngreso.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarIngreso.Location = new System.Drawing.Point(412, 289);
+            this.btnCancelarIngreso.Name = "btnCancelarIngreso";
+            this.btnCancelarIngreso.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarIngreso.TabIndex = 13;
+            this.btnCancelarIngreso.Text = "CANCELAR";
+            this.btnCancelarIngreso.UseVisualStyleBackColor = false;
+            // 
+            // btnGuardarIngreso
+            // 
+            this.btnGuardarIngreso.BackColor = System.Drawing.Color.White;
+            this.btnGuardarIngreso.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnGuardarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarIngreso.ForeColor = System.Drawing.Color.Green;
+            this.btnGuardarIngreso.Location = new System.Drawing.Point(298, 289);
+            this.btnGuardarIngreso.Name = "btnGuardarIngreso";
+            this.btnGuardarIngreso.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarIngreso.TabIndex = 12;
+            this.btnGuardarIngreso.Text = "GUARDAR";
+            this.btnGuardarIngreso.UseVisualStyleBackColor = false;
+            // 
+            // FormInternoVer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1094, 711);
             this.Controls.Add(this.tabInterno);
-            this.Name = "FormInternoIngresoNuevo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nuevo Ingreso";
-            this.Load += new System.EventHandler(this.FormInternoIngresoNuevo_Load);
+            this.Name = "FormInternoVer";
+            this.Text = "Ver interno";
             this.tabInterno.ResumeLayout(false);
             this.tabDatosPrincipales.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -3166,46 +3163,80 @@
 
         private System.Windows.Forms.TabControl tabInterno;
         private System.Windows.Forms.TabPage tabDatosPrincipales;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtTalla;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox txtNumeroReingreso;
+        private System.Windows.Forms.ComboBox cmbReingreso;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.ComboBox cmbOtraJurisdiccion;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.DateTimePicker dtpFechaPrimerIngreso;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.ComboBox cmbOrganismoExternoProcedencia;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.TextBox txtProntuarioPolicial;
+        private System.Windows.Forms.ComboBox cmbJurisdiccion;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.ComboBox cmbEstadoProcesal;
+        private System.Windows.Forms.ComboBox cmbOrganismoSppsProcesencia;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.DateTimePicker dtpFechaAlojamiento;
+        private System.Windows.Forms.Label label77;
         private System.Windows.Forms.GroupBox groupBox14;
-        private System.Windows.Forms.Label label94;
-        private System.Windows.Forms.TextBox txtParientes;
-        private System.Windows.Forms.Label label93;
-        private System.Windows.Forms.TextBox txtMadre;
+        private System.Windows.Forms.TextBox txtDepartamentoNacimiento;
+        private System.Windows.Forms.TextBox txtProvinciaNacimiento;
+        private System.Windows.Forms.TextBox txtNacionalidad;
+        private System.Windows.Forms.TextBox txtEstadoCivil;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtZonaResidencia;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.TextBox txtProntuario;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.TextBox txtTalla;
+        private System.Windows.Forms.TextBox txtPeloColor;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtParientes;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtIdInterno;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtNarizTamanio;
+        private System.Windows.Forms.TextBox txtDni;
+        private System.Windows.Forms.TextBox txtMadre;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtPeloTipo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtAlias;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPadre;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtNarizForma;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.TextBox txtOjosColor;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label91;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.Label label88;
-        private System.Windows.Forms.Label label86;
-        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
-        private System.Windows.Forms.Label label89;
         private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.TextBox txtOjosTamanio;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
+        private System.Windows.Forms.TextBox txtSexo;
+        private System.Windows.Forms.TextBox txtPiel;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtAlias;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtDni;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtProntuario;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtIdInterno;
         private System.Windows.Forms.PictureBox pictureFoto;
         private System.Windows.Forms.TabPage tabDatosIngreso;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -3371,41 +3402,7 @@
         private System.Windows.Forms.Button btnCancelarExcepcion;
         private System.Windows.Forms.DateTimePicker dtpFechaExcepcion;
         private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.TextBox txtPeloColor;
-        private System.Windows.Forms.TextBox txtNarizTamanio;
-        private System.Windows.Forms.TextBox txtPeloTipo;
-        private System.Windows.Forms.TextBox txtNarizForma;
-        private System.Windows.Forms.TextBox txtOjosColor;
-        private System.Windows.Forms.TextBox txtOjosTamanio;
-        private System.Windows.Forms.TextBox txtPiel;
-        private System.Windows.Forms.TextBox txtSexo;
-        private System.Windows.Forms.TextBox txtEstadoCivil;
-        private System.Windows.Forms.TextBox txtZonaResidencia;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox txtNumeroReingreso;
-        private System.Windows.Forms.ComboBox cmbReingreso;
-        private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.ComboBox cmbOtraJurisdiccion;
-        private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.DateTimePicker dtpFechaPrimerIngreso;
-        private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.ComboBox cmbOrganismoExternoProcedencia;
         private System.Windows.Forms.Button btnGuardarIngreso;
         private System.Windows.Forms.Button btnCancelarIngreso;
-        private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.TextBox txtProntuarioPolicial;
-        private System.Windows.Forms.ComboBox cmbJurisdiccion;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Label label74;
-        private System.Windows.Forms.ComboBox cmbEstadoProcesal;
-        private System.Windows.Forms.ComboBox cmbOrganismoSppsProcesencia;
-        private System.Windows.Forms.Label label75;
-        private System.Windows.Forms.DateTimePicker dtpFechaAlojamiento;
-        private System.Windows.Forms.Label label77;
-        private System.Windows.Forms.TextBox txtDepartamentoNacimiento;
-        private System.Windows.Forms.TextBox txtProvinciaNacimiento;
-        private System.Windows.Forms.TextBox txtNacionalidad;
     }
 }
