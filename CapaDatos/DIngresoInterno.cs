@@ -20,7 +20,7 @@ namespace CapaDatos
         public DOrganismo organismo_alojamiento { get; set; }
         public DateTime fecha_alojamiento { get; set; }
         public string estado_procesal_id { get; set; }
-        public DOrganismo estado_procesal { get; set; }
+        public DEstadoProcesal estado_procesal { get; set; }
         public string jurisdiccion_id { get; set; }
         public DJurisdiccion jurisdiccion { get; set; }
         public string otra_jurisdiccion_id { get; set; }

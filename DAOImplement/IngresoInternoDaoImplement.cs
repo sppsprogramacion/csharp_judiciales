@@ -61,7 +61,7 @@ namespace DAOImplement
             catch (JsonException jsonException)
             {
                 // Capturar errores en la serialización/deserialización de JSON                
-                return (null, $"Error inesperado");
+                return (null, $"Error inesperado al confirmar");
             }
             catch (Exception ex)
             {

@@ -31,8 +31,8 @@ namespace CapaPresentacion.Validaciones.NuevoInterno.Validacion
                 .Must(BeAnInteger).WithMessage("El prontuario debe ser un numero entero.");
             RuleFor(x => x.txtDni)
                 .Cascade(CascadeMode.Stop)
-                .NotEmpty().WithMessage("Debe ingresar un valor para dni de visita.")
-                .Must(BeAnInteger).WithMessage("El dni de visita debe ser un numero entero.");
+                .NotEmpty().WithMessage("Debe ingresar un valor para dni.")
+                .Must(BeAnInteger).WithMessage("El dni debe ser un numero entero.");
             RuleFor(x => x.cmbSexo)
                 .Cascade(CascadeMode.Stop)
                 .NotNull().WithMessage("Debe ingresar un valor para sexo.")
