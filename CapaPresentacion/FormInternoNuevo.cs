@@ -19,6 +19,7 @@ namespace CapaPresentacion
     public partial class FormInternoNuevo : Form
     {
         private ErrorProvider errorProvider = new ErrorProvider();
+        DTablasIngresoInterno tablasIngresoInterno = null;
 
         public FormInternoNuevo()
         {
@@ -55,7 +56,7 @@ namespace CapaPresentacion
                 //OJOS TAMAÑO
                 cmbOjosTamanio.ValueMember = "id_tamanio";
                 cmbOjosTamanio.DisplayMember = "tamanio";
-                cmbOjosTamanio.DataSource = caracteristicasPersonales.tamanio;
+                cmbOjosTamanio.DataSource = caracteristicasPersonales.tamanio.ToList();
 
                 //NARIZ FORMA
                 cmbNarizForma.ValueMember = "id_nariz_forma";
@@ -65,7 +66,7 @@ namespace CapaPresentacion
                 //NARIZ TAMAÑO
                 cmbNarizTamanio.ValueMember = "id_tamanio";
                 cmbNarizTamanio.DisplayMember = "tamanio";
-                cmbNarizTamanio.DataSource = caracteristicasPersonales.tamanio;
+                cmbNarizTamanio.DataSource = caracteristicasPersonales.tamanio.ToList();
 
                 //PELO COLOR
                 cmbPeloColor.ValueMember = "id_pelo_color";
@@ -216,9 +217,10 @@ namespace CapaPresentacion
 
                     //Carga de combos sobre listas para ingreso
                     NListasGenerales nListasGenerales = new NListasGenerales();
-                    (DTablasIngresoInterno tablasIngresoInterno, string errorResponse) = await nListasGenerales.ListasTablasIngresoInterno();
+                    (DTablasIngresoInterno tablasIngresoInternoResponse, string errorResponse) = await nListasGenerales.ListasTablasIngresoInterno();
+                    this.tablasIngresoInterno = tablasIngresoInternoResponse;
 
-                    if (tablasIngresoInterno == null)
+                    if (this.tablasIngresoInterno == null)
                     {
                         MessageBox.Show("Advertencia al cargar las listas para el ingreso: " + errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
@@ -228,32 +230,32 @@ namespace CapaPresentacion
                         //ORGANISMOS EXTERNOS
                         cmbOrganismoExternoProcedencia.ValueMember = "id_organismo_externo";
                         cmbOrganismoExternoProcedencia.DisplayMember = "organismo_externo";
-                        cmbOrganismoExternoProcedencia.DataSource = tablasIngresoInterno.organismos_externos;
+                        cmbOrganismoExternoProcedencia.DataSource = this.tablasIngresoInterno.organismos_externos;
 
                         //ORGANISMOS
                         cmbOrganismoSppsProcesencia.ValueMember = "id_organismo";
                         cmbOrganismoSppsProcesencia.DisplayMember = "organismo";
-                        cmbOrganismoSppsProcesencia.DataSource = tablasIngresoInterno.organismos_spps;
+                        cmbOrganismoSppsProcesencia.DataSource = this.tablasIngresoInterno.organismos_spps.ToList();
 
                         //ESTADO PROCESAL
                         cmbEstadoProcesal.ValueMember = "id_estado_procesal";
                         cmbEstadoProcesal.DisplayMember = "estado_procesal";
-                        cmbEstadoProcesal.DataSource = tablasIngresoInterno.estado_procesal;
+                        cmbEstadoProcesal.DataSource = this.tablasIngresoInterno.estado_procesal;
 
                         //JURISDICCION
                         cmbJurisdiccion.ValueMember = "id_jurisdiccion";
                         cmbJurisdiccion.DisplayMember = "jurisdiccion";
-                        cmbJurisdiccion.DataSource = tablasIngresoInterno.jurisdiccion;
+                        cmbJurisdiccion.DataSource = this.tablasIngresoInterno.jurisdiccion;
 
                         //OTRA JURISDICCION
                         cmbOtraJurisdiccion.ValueMember = "id_jurisdiccion";
                         cmbOtraJurisdiccion.DisplayMember = "jurisdiccion";
-                        cmbOtraJurisdiccion.DataSource = tablasIngresoInterno.jurisdiccion;
+                        cmbOtraJurisdiccion.DataSource = this.tablasIngresoInterno.jurisdiccion;
 
                         //REINGRESO
                         cmbReingreso.ValueMember = "id_reingreso";
                         cmbReingreso.DisplayMember = "reingreso";
-                        cmbReingreso.DataSource = tablasIngresoInterno.reingreso;
+                        cmbReingreso.DataSource = this.tablasIngresoInterno.reingreso;
 
                     }
                     //fin Carga de combos sobre  listas para ingreso
@@ -409,8 +411,15 @@ namespace CapaPresentacion
                 {
 
                     MessageBox.Show("Ingreso creado correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //txtOrganismoAlojamiento.Text = ingreso.organismo_alojamiento.organismo;
-                    dtpFechaCarga.Text = ingreso.fecha_carga.ToShortDateString();
+                    
+                    //ORGANISMOS
+                    cmbOrganismoAlojamiento.ValueMember = "id_organismo";
+                    cmbOrganismoAlojamiento.DisplayMember = "organismo";
+                    cmbOrganismoAlojamiento.DataSource = this.tablasIngresoInterno.organismos_spps.ToList();
+
+                    cmbOrganismoAlojamiento.ValueMember = ingreso.organismo_alojamiento_id.ToString();
+                    txtFechaCarga.Text = ingreso.fecha_carga.ToShortDateString();
+
                 }
                 else
                 {

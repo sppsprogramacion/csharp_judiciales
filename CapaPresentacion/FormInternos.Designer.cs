@@ -48,9 +48,9 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(9, 25);
+            this.btnNuevo.Location = new System.Drawing.Point(17, 223);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(98, 40);
+            this.btnNuevo.Size = new System.Drawing.Size(93, 40);
             this.btnNuevo.TabIndex = 116;
             this.btnNuevo.Text = "NUEVO";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -59,7 +59,6 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dtgvInternos);
-            this.groupBox2.Controls.Add(this.btnNuevo);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(8, 281);
             this.groupBox2.Name = "groupBox2";
@@ -71,10 +70,10 @@
             // dtgvInternos
             // 
             this.dtgvInternos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvInternos.Location = new System.Drawing.Point(9, 77);
+            this.dtgvInternos.Location = new System.Drawing.Point(9, 24);
             this.dtgvInternos.Name = "dtgvInternos";
             this.dtgvInternos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvInternos.Size = new System.Drawing.Size(800, 368);
+            this.dtgvInternos.Size = new System.Drawing.Size(800, 416);
             this.dtgvInternos.TabIndex = 16;
             this.dtgvInternos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtgvInternos_KeyDown);
             // 
@@ -84,9 +83,9 @@
             this.groupBox1.Controls.Add(this.btnBuscarApellido);
             this.groupBox1.Controls.Add(this.txtApellidoBusqueda);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(9, 195);
+            this.groupBox1.Location = new System.Drawing.Point(143, 197);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(814, 78);
+            this.groupBox1.Size = new System.Drawing.Size(680, 78);
             this.groupBox1.TabIndex = 116;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busqueda";
@@ -144,6 +143,7 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(844, 751);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label28);
             this.Name = "FormInternos";

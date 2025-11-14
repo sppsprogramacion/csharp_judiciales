@@ -30,7 +30,7 @@ namespace CapaDatos
         public int numero_reingreso { get; set; }
         public string prontuario_policial { get; set; }
         public bool esta_liberado { get; set; }
-        public DateTime fecha_egreso { get; set; }
+        public DateTime? fecha_egreso { get; set; }
         public DateTime fecha_carga { get; set; }
         public int organismo_carga_id { get; set; }
         public DOrganismo organismo_carga { get; set; }
