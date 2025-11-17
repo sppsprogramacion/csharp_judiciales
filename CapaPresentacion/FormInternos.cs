@@ -29,19 +29,22 @@ namespace CapaPresentacion
             //// Ajustar el tamaño del formulario            
             FormularioAyudas.AjustarFormulario(this);
 
-            List<DElegirBusquedaInterno> listaElegir = null;
-            DElegirBusquedaInterno elegirBusquedaInterno = new DElegirBusquedaInterno();
-            elegirBusquedaInterno.id_buqueda = "unidad";
-            elegirBusquedaInterno.texto = "Mi unidad";
-            listaElegir.Add(elegirBusquedaInterno);
+            //List<DElegirBusquedaInterno> listaElegir = new List<DElegirBusquedaInterno>();
+            //DElegirBusquedaInterno elegirBusquedaInterno = new DElegirBusquedaInterno();
+            //elegirBusquedaInterno.id_busqueda = "unidad";
+            //elegirBusquedaInterno.texto = "Mi unidad";
+            //listaElegir.Add(elegirBusquedaInterno);
 
-            elegirBusquedaInterno.id_buqueda = "todas";
-            elegirBusquedaInterno.texto = "Todas las unidades";
-            listaElegir.Add(elegirBusquedaInterno);
+            //elegirBusquedaInterno.id_busqueda = "todas";
+            //elegirBusquedaInterno.texto = "Todas las unidades";
+            //listaElegir.Add(elegirBusquedaInterno.);
 
-            cmbBusqueda.ValueMember = "id_buqueda";    // id
-            cmbBusqueda.DisplayMember = "texto";  // texto
-            cmbBusqueda.DataSource = listaElegir;
+            cmbBusqueda.Items.Add(new DElegirBusquedaInterno { id_busqueda = "unidad", texto = "Mi unidad" });
+            cmbBusqueda.Items.Add(new DElegirBusquedaInterno { id_busqueda = "todas", texto = "Todas las unidades" });
+
+            //cmbBusqueda.ValueMember = "id_buqueda";    // id
+            //cmbBusqueda.DisplayMember = "texto";  // texto
+            //cmbBusqueda.DataSource = listaElegir;
 
             // Seleccionar algo por defecto
             cmbBusqueda.SelectedIndex = 0;
@@ -128,16 +131,20 @@ namespace CapaPresentacion
 
         private void btnBuscarProntuario_Click(object sender, EventArgs e)
         {
-            
-            if (cmbBusqueda.SelectedValue != null)
-            {
-                
-                MessageBox.Show(cmbBusqueda.SelectedValue.ToString());
-            }
-            else
-            {
-                MessageBox.Show("No hay selección.");
-            }
+            var opcion = cmbBusqueda.SelectedItem as DElegirBusquedaInterno;
+            string id = opcion.id_busqueda;  // "unidad" o "todas"
+
+            MessageBox.Show(id);
+
+            //if (cmbBusqueda.SelectedValue != null)
+            //{
+
+            //    MessageBox.Show(cmbBusqueda.SelectedValue.ToString());
+            //}
+            //else
+            //{
+            //    MessageBox.Show("No hay selección.");
+            //}
         }
     }
 

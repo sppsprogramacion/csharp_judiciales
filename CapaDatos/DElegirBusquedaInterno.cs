@@ -8,7 +8,7 @@ namespace CapaDatos
 {
     public class DElegirBusquedaInterno
     {
-        public string id_buqueda { get; set; }
+        public string id_busqueda { get; set; }
         public string texto { get; set; }
     }
 }
