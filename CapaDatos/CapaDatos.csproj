@@ -45,6 +45,7 @@
     <Compile Include="DCiudadano.cs" />
     <Compile Include="DDatosFiliatorios.cs" />
     <Compile Include="DDepartamento.cs" />
+    <Compile Include="DElegirBusquedaInterno.cs" />
     <Compile Include="DEstadoProcesal.cs" />
     <Compile Include="DIngresoInterno.cs" />
     <Compile Include="DInterno.cs" />

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CapaPresentacion
 {
@@ -27,6 +28,23 @@ namespace CapaPresentacion
         {
             //// Ajustar el tamaño del formulario            
             FormularioAyudas.AjustarFormulario(this);
+
+            List<DElegirBusquedaInterno> listaElegir = null;
+            DElegirBusquedaInterno elegirBusquedaInterno = new DElegirBusquedaInterno();
+            elegirBusquedaInterno.id_buqueda = "unidad";
+            elegirBusquedaInterno.texto = "Mi unidad";
+            listaElegir.Add(elegirBusquedaInterno);
+
+            elegirBusquedaInterno.id_buqueda = "todas";
+            elegirBusquedaInterno.texto = "Todas las unidades";
+            listaElegir.Add(elegirBusquedaInterno);
+
+            cmbBusqueda.ValueMember = "id_buqueda";    // id
+            cmbBusqueda.DisplayMember = "texto";  // texto
+            cmbBusqueda.DataSource = listaElegir;
+
+            // Seleccionar algo por defecto
+            cmbBusqueda.SelectedIndex = 0;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -105,6 +123,20 @@ namespace CapaPresentacion
                         MessageBox.Show("Debe seleccionar un interno.");
                     }
                 }
+            }
+        }
+
+        private void btnBuscarProntuario_Click(object sender, EventArgs e)
+        {
+            
+            if (cmbBusqueda.SelectedValue != null)
+            {
+                
+                MessageBox.Show(cmbBusqueda.SelectedValue.ToString());
+            }
+            else
+            {
+                MessageBox.Show("No hay selección.");
             }
         }
     }

@@ -83,6 +83,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.gboxIngresarInterno = new System.Windows.Forms.GroupBox();
+            this.cmbOrganismoAlojamiento = new System.Windows.Forms.ComboBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFechaCarga = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -109,10 +113,6 @@
             this.label75 = new System.Windows.Forms.Label();
             this.dtpFechaAlojamiento = new System.Windows.Forms.DateTimePicker();
             this.label77 = new System.Windows.Forms.Label();
-            this.txtFechaCarga = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cmbOrganismoAlojamiento = new System.Windows.Forms.ComboBox();
             this.gboxDatosInterno.SuspendLayout();
             this.gboxIngresarInterno.SuspendLayout();
             this.SuspendLayout();
@@ -745,6 +745,45 @@
             this.gboxIngresarInterno.TabStop = false;
             this.gboxIngresarInterno.Text = "Ingresar interno";
             // 
+            // cmbOrganismoAlojamiento
+            // 
+            this.cmbOrganismoAlojamiento.Enabled = false;
+            this.cmbOrganismoAlojamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbOrganismoAlojamiento.FormattingEnabled = true;
+            this.cmbOrganismoAlojamiento.Location = new System.Drawing.Point(9, 593);
+            this.cmbOrganismoAlojamiento.Name = "cmbOrganismoAlojamiento";
+            this.cmbOrganismoAlojamiento.Size = new System.Drawing.Size(315, 23);
+            this.cmbOrganismoAlojamiento.TabIndex = 252;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(6, 118);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(149, 15);
+            this.label31.TabIndex = 251;
+            this.label31.Text = "DETALLE PROCEDENCIA";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(9, 137);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(313, 21);
+            this.textBox1.TabIndex = 250;
+            // 
+            // txtFechaCarga
+            // 
+            this.txtFechaCarga.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFechaCarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFechaCarga.Location = new System.Drawing.Point(9, 640);
+            this.txtFechaCarga.Name = "txtFechaCarga";
+            this.txtFechaCarga.ReadOnly = true;
+            this.txtFechaCarga.Size = new System.Drawing.Size(179, 21);
+            this.txtFechaCarga.TabIndex = 249;
+            // 
             // label29
             // 
             this.label29.AutoSize = true;
@@ -1003,49 +1042,11 @@
             this.label77.TabIndex = 212;
             this.label77.Text = "FECHA ALOJAMIENTO";
             // 
-            // txtFechaCarga
-            // 
-            this.txtFechaCarga.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFechaCarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaCarga.Location = new System.Drawing.Point(9, 640);
-            this.txtFechaCarga.Name = "txtFechaCarga";
-            this.txtFechaCarga.ReadOnly = true;
-            this.txtFechaCarga.Size = new System.Drawing.Size(179, 21);
-            this.txtFechaCarga.TabIndex = 249;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(6, 118);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(149, 15);
-            this.label31.TabIndex = 251;
-            this.label31.Text = "DETALLE PROCEDENCIA";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(9, 137);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(313, 21);
-            this.textBox1.TabIndex = 250;
-            // 
-            // cmbOrganismoAlojamiento
-            // 
-            this.cmbOrganismoAlojamiento.Enabled = false;
-            this.cmbOrganismoAlojamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbOrganismoAlojamiento.FormattingEnabled = true;
-            this.cmbOrganismoAlojamiento.Location = new System.Drawing.Point(9, 593);
-            this.cmbOrganismoAlojamiento.Name = "cmbOrganismoAlojamiento";
-            this.cmbOrganismoAlojamiento.Size = new System.Drawing.Size(315, 23);
-            this.cmbOrganismoAlojamiento.TabIndex = 252;
-            // 
             // FormInternoNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1094, 711);
             this.Controls.Add(this.gboxIngresarInterno);
             this.Controls.Add(this.gboxDatosInterno);

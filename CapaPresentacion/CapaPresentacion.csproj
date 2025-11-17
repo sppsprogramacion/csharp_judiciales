@@ -221,6 +221,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo_spps2.png" />
+    <None Include="Resources\usuario-verde.png" />
     <Content Include="restriccion-logo.ico" />
   </ItemGroup>
   <ItemGroup>

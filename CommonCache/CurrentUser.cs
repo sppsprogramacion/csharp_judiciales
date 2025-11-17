@@ -14,6 +14,7 @@ namespace CommonCache
         public int id_usuario { get; private set; }
         public string apellido { get; private set; }
         public string nombre { get; private set; }
+        public string organismo { get; private set; }
         public bool is_active { get; private set; }
         public string[] roles { get; private set; }
         //public DateTime? LastLogin { get; private set; }
@@ -35,11 +36,12 @@ namespace CommonCache
         }
 
         // Método para establecer los datos del usuario
-        public void SetUser(int userId, string apellidox, string nombrex, bool isActivex, string[] rolesx)
+        public void SetUser(int userId, string apellidox, string nombrex, string organismox, bool isActivex, string[] rolesx)
         {
             id_usuario = userId;
             apellido = apellidox;
             nombre = nombrex;
+            organismo = organismox;
             is_active = isActivex;
             roles = rolesx;
         }
@@ -50,6 +52,7 @@ namespace CommonCache
             id_usuario = 0;
             apellido = string.Empty; ;
             nombre = string.Empty; ;
+            organismo= string.Empty;
             is_active = false;
             roles = null;
         }

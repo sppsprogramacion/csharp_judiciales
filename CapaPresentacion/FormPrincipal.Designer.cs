@@ -28,22 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label28 = new System.Windows.Forms.Label();
+            this.lblEncabezado = new System.Windows.Forms.Label();
             this.btnCerrarSistema = new System.Windows.Forms.Button();
             this.btnVerInternos = new System.Windows.Forms.Button();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label28
+            // lblEncabezado
             // 
-            this.label28.BackColor = System.Drawing.Color.DarkCyan;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(1, 1);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(811, 29);
-            this.label28.TabIndex = 76;
-            this.label28.Text = "JUDICIALES";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblEncabezado.BackColor = System.Drawing.Color.DarkCyan;
+            this.lblEncabezado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEncabezado.ForeColor = System.Drawing.Color.White;
+            this.lblEncabezado.Location = new System.Drawing.Point(1, 1);
+            this.lblEncabezado.Name = "lblEncabezado";
+            this.lblEncabezado.Size = new System.Drawing.Size(811, 29);
+            this.lblEncabezado.TabIndex = 76;
+            this.lblEncabezado.Text = "JUDICIALES";
+            this.lblEncabezado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnCerrarSistema
             // 
@@ -75,26 +78,55 @@
             this.btnVerInternos.UseVisualStyleBackColor = false;
             this.btnVerInternos.Click += new System.EventHandler(this.btnVerInternos_Click);
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lblUsuario.Location = new System.Drawing.Point(36, 467);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(50, 16);
+            this.lblUsuario.TabIndex = 80;
+            this.lblUsuario.Text = "label1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = global::CapaPresentacion.Properties.Resources.usuario_verde;
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.usuario_verde;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 462);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 79;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(813, 495);
+            this.Controls.Add(this.lblUsuario);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnVerInternos);
             this.Controls.Add(this.btnCerrarSistema);
-            this.Controls.Add(this.label28);
+            this.Controls.Add(this.lblEncabezado);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema Judiciales";
+            this.Load += new System.EventHandler(this.FormPrincipal_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label lblEncabezado;
         private System.Windows.Forms.Button btnCerrarSistema;
         private System.Windows.Forms.Button btnVerInternos;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

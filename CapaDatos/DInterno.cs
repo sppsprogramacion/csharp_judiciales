@@ -17,7 +17,7 @@ namespace CapaDatos
         public string alias { get; set; }
         public int sexo_id { get; set; }
         public DSexo sexo { get; set; }
-        public int talla { get; set; }
+        public decimal talla { get; set; }
         public string ojos_color_id { get; set; }
         public DOjosColor ojos_color { get; set; }
         public string ojos_tamanio_id { get; set; }

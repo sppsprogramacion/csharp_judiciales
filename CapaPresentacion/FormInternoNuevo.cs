@@ -178,7 +178,7 @@ namespace CapaPresentacion
                 nombre = txtNombre.Text,
                 alias = txtAlias.Text,
                 sexo_id = Convert.ToInt32(cmbSexo.SelectedValue.ToString()),
-                talla = Convert.ToInt32(txtTalla.Text),
+                talla = txtTalla.Text,
                 ojos_color_id = cmbOjosColor.SelectedValue.ToString(),
                 ojos_tamanio_id = cmbOjosTamanio.SelectedValue.ToString(),
                 nariz_tamanio_id = cmbNarizTamanio.SelectedValue.ToString(),
@@ -245,12 +245,12 @@ namespace CapaPresentacion
                         //JURISDICCION
                         cmbJurisdiccion.ValueMember = "id_jurisdiccion";
                         cmbJurisdiccion.DisplayMember = "jurisdiccion";
-                        cmbJurisdiccion.DataSource = this.tablasIngresoInterno.jurisdiccion;
+                        cmbJurisdiccion.DataSource = this.tablasIngresoInterno.jurisdiccion.ToList();
 
                         //OTRA JURISDICCION
                         cmbOtraJurisdiccion.ValueMember = "id_jurisdiccion";
                         cmbOtraJurisdiccion.DisplayMember = "jurisdiccion";
-                        cmbOtraJurisdiccion.DataSource = this.tablasIngresoInterno.jurisdiccion;
+                        cmbOtraJurisdiccion.DataSource = this.tablasIngresoInterno.jurisdiccion.ToList();
 
                         //REINGRESO
                         cmbReingreso.ValueMember = "id_reingreso";
@@ -417,7 +417,7 @@ namespace CapaPresentacion
                     cmbOrganismoAlojamiento.DisplayMember = "organismo";
                     cmbOrganismoAlojamiento.DataSource = this.tablasIngresoInterno.organismos_spps.ToList();
 
-                    cmbOrganismoAlojamiento.ValueMember = ingreso.organismo_alojamiento_id.ToString();
+                    cmbOrganismoAlojamiento.SelectedValue = ingreso.organismo_alojamiento_id;
                     txtFechaCarga.Text = ingreso.fecha_carga.ToShortDateString();
 
                 }

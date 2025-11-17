@@ -36,6 +36,8 @@
             this.btnBuscarApellido = new System.Windows.Forms.Button();
             this.txtApellidoBusqueda = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
+            this.cmbBusqueda = new System.Windows.Forms.ComboBox();
+            this.btnBuscarProntuario = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvInternos)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -62,7 +64,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(8, 281);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(815, 454);
+            this.groupBox2.Size = new System.Drawing.Size(850, 454);
             this.groupBox2.TabIndex = 117;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Internos";
@@ -73,19 +75,21 @@
             this.dtgvInternos.Location = new System.Drawing.Point(9, 24);
             this.dtgvInternos.Name = "dtgvInternos";
             this.dtgvInternos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvInternos.Size = new System.Drawing.Size(800, 416);
+            this.dtgvInternos.Size = new System.Drawing.Size(830, 416);
             this.dtgvInternos.TabIndex = 16;
             this.dtgvInternos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtgvInternos_KeyDown);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnBuscarProntuario);
+            this.groupBox1.Controls.Add(this.cmbBusqueda);
             this.groupBox1.Controls.Add(this.label26);
             this.groupBox1.Controls.Add(this.btnBuscarApellido);
             this.groupBox1.Controls.Add(this.txtApellidoBusqueda);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(143, 197);
+            this.groupBox1.Location = new System.Drawing.Point(116, 197);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(680, 78);
+            this.groupBox1.Size = new System.Drawing.Size(742, 78);
             this.groupBox1.TabIndex = 116;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Busqueda";
@@ -94,22 +98,22 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(8, 19);
+            this.label26.Location = new System.Drawing.Point(161, 19);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(71, 16);
+            this.label26.Size = new System.Drawing.Size(171, 16);
             this.label26.TabIndex = 68;
-            this.label26.Text = "APELLIDO";
+            this.label26.Text = "APELLIDO / PRONTUARIO";
             // 
             // btnBuscarApellido
             // 
-            this.btnBuscarApellido.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnBuscarApellido.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBuscarApellido.BackColor = System.Drawing.Color.White;
+            this.btnBuscarApellido.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
             this.btnBuscarApellido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarApellido.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarApellido.Location = new System.Drawing.Point(259, 21);
+            this.btnBuscarApellido.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnBuscarApellido.Location = new System.Drawing.Point(401, 21);
             this.btnBuscarApellido.Name = "btnBuscarApellido";
-            this.btnBuscarApellido.Size = new System.Drawing.Size(93, 45);
+            this.btnBuscarApellido.Size = new System.Drawing.Size(130, 45);
             this.btnBuscarApellido.TabIndex = 2;
             this.btnBuscarApellido.Text = "Buscar apellido";
             this.btnBuscarApellido.UseVisualStyleBackColor = false;
@@ -119,7 +123,7 @@
             // 
             this.txtApellidoBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtApellidoBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidoBusqueda.Location = new System.Drawing.Point(11, 39);
+            this.txtApellidoBusqueda.Location = new System.Drawing.Point(164, 39);
             this.txtApellidoBusqueda.Name = "txtApellidoBusqueda";
             this.txtApellidoBusqueda.Size = new System.Drawing.Size(227, 22);
             this.txtApellidoBusqueda.TabIndex = 1;
@@ -136,12 +140,38 @@
             this.label28.Text = "INTERNOS";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cmbBusqueda
+            // 
+            this.cmbBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBusqueda.FormattingEnabled = true;
+            this.cmbBusqueda.Location = new System.Drawing.Point(6, 38);
+            this.cmbBusqueda.Name = "cmbBusqueda";
+            this.cmbBusqueda.Size = new System.Drawing.Size(152, 23);
+            this.cmbBusqueda.TabIndex = 69;
+            // 
+            // btnBuscarProntuario
+            // 
+            this.btnBuscarProntuario.BackColor = System.Drawing.Color.White;
+            this.btnBuscarProntuario.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnBuscarProntuario.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnBuscarProntuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarProntuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarProntuario.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnBuscarProntuario.Location = new System.Drawing.Point(537, 21);
+            this.btnBuscarProntuario.Name = "btnBuscarProntuario";
+            this.btnBuscarProntuario.Size = new System.Drawing.Size(142, 45);
+            this.btnBuscarProntuario.TabIndex = 70;
+            this.btnBuscarProntuario.Text = "Buscar prontuario";
+            this.btnBuscarProntuario.UseVisualStyleBackColor = false;
+            this.btnBuscarProntuario.Click += new System.EventHandler(this.btnBuscarProntuario_Click);
+            // 
             // FormInternos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(844, 751);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(865, 749);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.groupBox1);
@@ -168,5 +198,7 @@
         private System.Windows.Forms.Button btnBuscarApellido;
         private System.Windows.Forms.TextBox txtApellidoBusqueda;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ComboBox cmbBusqueda;
+        private System.Windows.Forms.Button btnBuscarProntuario;
     }
 }
