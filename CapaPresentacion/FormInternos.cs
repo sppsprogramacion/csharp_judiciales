@@ -29,22 +29,24 @@ namespace CapaPresentacion
             //// Ajustar el tamaño del formulario            
             FormularioAyudas.AjustarFormulario(this);
 
-            //List<DElegirBusquedaInterno> listaElegir = new List<DElegirBusquedaInterno>();
-            //DElegirBusquedaInterno elegirBusquedaInterno = new DElegirBusquedaInterno();
-            //elegirBusquedaInterno.id_busqueda = "unidad";
-            //elegirBusquedaInterno.texto = "Mi unidad";
-            //listaElegir.Add(elegirBusquedaInterno);
+            
+            List<DElegirBusquedaInterno> listaElegir = new List<DElegirBusquedaInterno>();
 
-            //elegirBusquedaInterno.id_busqueda = "todas";
-            //elegirBusquedaInterno.texto = "Todas las unidades";
-            //listaElegir.Add(elegirBusquedaInterno.);
+            listaElegir.Add(new DElegirBusquedaInterno
+            {
+                id_busqueda = "unidad",
+                texto = "Mi unidad"
+            });
 
-            cmbBusqueda.Items.Add(new DElegirBusquedaInterno { id_busqueda = "unidad", texto = "Mi unidad" });
-            cmbBusqueda.Items.Add(new DElegirBusquedaInterno { id_busqueda = "todas", texto = "Todas las unidades" });
+            listaElegir.Add(new DElegirBusquedaInterno
+            {
+                id_busqueda = "todas",
+                texto = "Todas las unidades"
+            });
 
-            //cmbBusqueda.ValueMember = "id_buqueda";    // id
-            //cmbBusqueda.DisplayMember = "texto";  // texto
-            //cmbBusqueda.DataSource = listaElegir;
+            cmbBusqueda.ValueMember = "id_busqueda";    // id
+            cmbBusqueda.DisplayMember = "texto";  // texto
+            cmbBusqueda.DataSource = listaElegir;
 
             // Seleccionar algo por defecto
             cmbBusqueda.SelectedIndex = 0;
@@ -115,11 +117,21 @@ namespace CapaPresentacion
                 {
                     if (this.idInternoGlobal > 0)
                     {
-                        //FormInternoAdministrar formInternoAdministrar = new FormInternoAdministrar();
-                        //formInternoAdministrar.ShowDialog();
+                        if(cmbBusqueda.SelectedValue.ToString() == "unidad")
+                        {
+                            FormInternoAdministrar forminternoadministrar = new FormInternoAdministrar();
+                            forminternoadministrar.ShowDialog();
 
-                        FormInternoIngresoNuevo formInternoIngresoNuevo = new FormInternoIngresoNuevo();
-                        formInternoIngresoNuevo.ShowDialog();
+                        }
+
+                        if (cmbBusqueda.SelectedValue.ToString() == "todas")
+                        {
+                            FormInternoVer formInternoVer = new FormInternoVer();
+                            formInternoVer.ShowDialog();
+
+                        }
+                        //FormInternoIngresoNuevo formInternoIngresoNuevo = new FormInternoIngresoNuevo();
+                        //formInternoIngresoNuevo.ShowDialog();
                     }
                     else
                     {
