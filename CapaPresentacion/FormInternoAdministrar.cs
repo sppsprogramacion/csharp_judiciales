@@ -17,10 +17,13 @@ namespace CapaPresentacion
     {
         //VARIABLES GLOBALES
         DInterno dInternoGlobal = new DInterno();
+        DIngresoInterno ingresoInternoGlobal = new DIngresoInterno();
 
-        public FormInternoAdministrar()
+        public FormInternoAdministrar(DIngresoInterno ingresoInternox)
         {
+
             InitializeComponent();
+            this.ingresoInternoGlobal = ingresoInternox;
         }
 
         private async void FormInternoAdministrar_Load(object sender, EventArgs e)
@@ -118,13 +121,13 @@ namespace CapaPresentacion
             FormInternos formInternos = Application.OpenForms["FormInternos"] as FormInternos;
             NInterno nInterno = new NInterno();
 
-            //BUSCAR CIUDADANO CON EL ID DEL FORMULARIO DE BUSQUEDA (formVisitas)
+            //BUSCAR INTERNO CON EL ID DEL FORMULARIO DE BUSQUEDA (formVisitas)
             tabInterno.Enabled = false;
-            idInterno = Convert.ToInt32(formInternos.idInternoGlobal);
-            (DInterno dInternoResponse, string errorInternoResponse) = await nInterno.BuscarInternoXID(idInterno);
+            //idInterno = Convert.ToInt32(formInternos.idInternoGlobal);
+            //(DInterno dInternoResponse, string errorInternoResponse) = await nInterno.BuscarInternoXID(idInterno);
 
-
-            this.dInternoGlobal = dInternoResponse;
+            
+            this.dInternoGlobal = this.ingresoInternoGlobal.interno;
 
             if (this.dInternoGlobal == null)
             {
@@ -133,6 +136,14 @@ namespace CapaPresentacion
                 MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            dtpFechaIngresoSppsVer.Text = this.ingresoInternoGlobal.fecha_primer_ingreso.ToShortDateString();
+            txtReingresoVer.Text = this.ingresoInternoGlobal.reingreso.reingreso;
+            txtNumReingresoVer.Text = this.ingresoInternoGlobal.numero_reingreso.ToString();
+            txtOrganismoAlojamientoVer.Text = this.ingresoInternoGlobal.organismo_alojamiento.organismo;
+            dtpFechaAlojamientoVer.Text = this.ingresoInternoGlobal.fecha_alojamiento.ToShortDateString();
+            txtEstadoProcesalVer.Text = this.ingresoInternoGlobal.estado_procesal.estado_procesal;
+            txtJurisdiccionVer.Text = this.ingresoInternoGlobal.jurisdiccion.jurisdiccion;
 
             //CARGAR DATOS DEL INTERNO
             txtIdInterno.Text = this.dInternoGlobal.id_interno.ToString();
@@ -169,6 +180,10 @@ namespace CapaPresentacion
 
             tabInterno.Enabled = true;
         }
-                
+
+        private void btnVerParentescos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -37,7 +37,7 @@ namespace CapaPresentacion
             FormularioAyudas.AjustarFormulario(this);
             this.ControlBox = false;
 
-            lblEncabezado.Text = lblEncabezado.Text + " - " + CurrentUser.Instance.organismo;
+            lblEncabezado.Text = lblEncabezado.Text + " - " + CurrentUser.Instance.organismo.organismo;
             lblUsuario.Text = CurrentUser.Instance.nombre.ToUpper() + " " + CurrentUser.Instance.apellido.ToUpper();
         }
     }

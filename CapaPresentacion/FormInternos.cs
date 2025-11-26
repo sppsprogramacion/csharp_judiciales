@@ -1,6 +1,7 @@
 ﻿using CapaDatos;
 using CapaNegocio;
 using CapaPresentacion.FuncionesGenerales;
+using CommonCache;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -104,7 +105,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void dtgvInternos_KeyDown(object sender, KeyEventArgs e)
+        private async void dtgvInternos_KeyDown(object sender, KeyEventArgs e)
         {
             //AL PRESIONAR ENTER MOSTRAR EL TRAMITE
             if (e.KeyCode == Keys.Enter)
@@ -117,14 +118,22 @@ namespace CapaPresentacion
                 {
                     if (this.idInternoGlobal > 0)
                     {
-                        if(cmbBusqueda.SelectedValue.ToString() == "unidad")
+                        NIngresoInterno nIngreso = new NIngresoInterno();
+                        (DIngresoInterno ingresoInterno, string errorResponse) = await nIngreso.BuscarxInterno(this.idInternoGlobal);
+
+                        if (ingresoInterno == null)
                         {
-                            FormInternoAdministrar forminternoadministrar = new FormInternoAdministrar();
+                            MessageBox.Show("El interno no se encuentra alojado en una unidad", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+
+                        if (ingresoInterno.organismo_alojamiento_id == CurrentUser.Instance.organismo.id_organismo)
+                        {
+                            FormInternoAdministrar forminternoadministrar = new FormInternoAdministrar(ingresoInterno);
                             forminternoadministrar.ShowDialog();
 
                         }
-
-                        if (cmbBusqueda.SelectedValue.ToString() == "todas")
+                        else
                         {
                             FormInternoVer formInternoVer = new FormInternoVer();
                             formInternoVer.ShowDialog();

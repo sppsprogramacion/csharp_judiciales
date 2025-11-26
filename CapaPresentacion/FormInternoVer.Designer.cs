@@ -41,6 +41,8 @@
             this.label68 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
             this.cmbOrganismoExternoProcedencia = new System.Windows.Forms.ComboBox();
+            this.btnGuardarIngreso = new System.Windows.Forms.Button();
+            this.btnCancelarIngreso = new System.Windows.Forms.Button();
             this.label72 = new System.Windows.Forms.Label();
             this.txtProntuarioPolicial = new System.Windows.Forms.TextBox();
             this.cmbJurisdiccion = new System.Windows.Forms.ComboBox();
@@ -164,7 +166,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtgvCausas = new System.Windows.Forms.DataGridView();
             this.btnVerCausas = new System.Windows.Forms.Button();
-            this.tabVinculos = new System.Windows.Forms.TabPage();
+            this.tabTraslados = new System.Windows.Forms.TabPage();
             this.btnImprimirVinculos = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.btnDesvincular = new System.Windows.Forms.Button();
@@ -203,7 +205,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.txtIdVisitaInterno = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.btnVerParentescos = new System.Windows.Forms.Button();
+            this.btnVerParentes = new System.Windows.Forms.Button();
             this.tabSabana = new System.Windows.Forms.TabPage();
             this.btnImprimirSabana = new System.Windows.Forms.Button();
             this.btnVerSabana = new System.Windows.Forms.Button();
@@ -269,8 +271,6 @@
             this.btnCancelarExcepcion = new System.Windows.Forms.Button();
             this.dtpFechaExcepcion = new System.Windows.Forms.DateTimePicker();
             this.label52 = new System.Windows.Forms.Label();
-            this.btnCancelarIngreso = new System.Windows.Forms.Button();
-            this.btnGuardarIngreso = new System.Windows.Forms.Button();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -284,7 +284,7 @@
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCausas)).BeginInit();
-            this.tabVinculos.SuspendLayout();
+            this.tabTraslados.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -308,7 +308,7 @@
             this.tabInterno.Controls.Add(this.tabDatosPrincipales);
             this.tabInterno.Controls.Add(this.tabDatosIngreso);
             this.tabInterno.Controls.Add(this.tabCausas);
-            this.tabInterno.Controls.Add(this.tabVinculos);
+            this.tabInterno.Controls.Add(this.tabTraslados);
             this.tabInterno.Controls.Add(this.tabSabana);
             this.tabInterno.Controls.Add(this.tabNovedades);
             this.tabInterno.Controls.Add(this.tabExepcionIngreso);
@@ -459,6 +459,34 @@
             this.cmbOrganismoExternoProcedencia.Name = "cmbOrganismoExternoProcedencia";
             this.cmbOrganismoExternoProcedencia.Size = new System.Drawing.Size(321, 23);
             this.cmbOrganismoExternoProcedencia.TabIndex = 1;
+            // 
+            // btnGuardarIngreso
+            // 
+            this.btnGuardarIngreso.BackColor = System.Drawing.Color.White;
+            this.btnGuardarIngreso.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnGuardarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarIngreso.ForeColor = System.Drawing.Color.Green;
+            this.btnGuardarIngreso.Location = new System.Drawing.Point(298, 289);
+            this.btnGuardarIngreso.Name = "btnGuardarIngreso";
+            this.btnGuardarIngreso.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarIngreso.TabIndex = 12;
+            this.btnGuardarIngreso.Text = "GUARDAR";
+            this.btnGuardarIngreso.UseVisualStyleBackColor = false;
+            // 
+            // btnCancelarIngreso
+            // 
+            this.btnCancelarIngreso.BackColor = System.Drawing.Color.White;
+            this.btnCancelarIngreso.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarIngreso.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarIngreso.Location = new System.Drawing.Point(412, 289);
+            this.btnCancelarIngreso.Name = "btnCancelarIngreso";
+            this.btnCancelarIngreso.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarIngreso.TabIndex = 13;
+            this.btnCancelarIngreso.Text = "CANCELAR";
+            this.btnCancelarIngreso.UseVisualStyleBackColor = false;
             // 
             // label72
             // 
@@ -1818,22 +1846,22 @@
             this.btnVerCausas.Text = "VER CAUSAS";
             this.btnVerCausas.UseVisualStyleBackColor = false;
             // 
-            // tabVinculos
+            // tabTraslados
             // 
-            this.tabVinculos.Controls.Add(this.btnImprimirVinculos);
-            this.tabVinculos.Controls.Add(this.groupBox9);
-            this.tabVinculos.Controls.Add(this.groupBox6);
-            this.tabVinculos.Controls.Add(this.groupBox8);
-            this.tabVinculos.Controls.Add(this.groupBox7);
-            this.tabVinculos.Controls.Add(this.groupBox5);
-            this.tabVinculos.Controls.Add(this.btnVerParentescos);
-            this.tabVinculos.Location = new System.Drawing.Point(4, 25);
-            this.tabVinculos.Name = "tabVinculos";
-            this.tabVinculos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVinculos.Size = new System.Drawing.Size(1072, 666);
-            this.tabVinculos.TabIndex = 2;
-            this.tabVinculos.Text = "Vinculos";
-            this.tabVinculos.UseVisualStyleBackColor = true;
+            this.tabTraslados.Controls.Add(this.btnImprimirVinculos);
+            this.tabTraslados.Controls.Add(this.groupBox9);
+            this.tabTraslados.Controls.Add(this.groupBox6);
+            this.tabTraslados.Controls.Add(this.groupBox8);
+            this.tabTraslados.Controls.Add(this.groupBox7);
+            this.tabTraslados.Controls.Add(this.groupBox5);
+            this.tabTraslados.Controls.Add(this.btnVerParentes);
+            this.tabTraslados.Location = new System.Drawing.Point(4, 25);
+            this.tabTraslados.Name = "tabTraslados";
+            this.tabTraslados.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTraslados.Size = new System.Drawing.Size(1072, 666);
+            this.tabTraslados.TabIndex = 2;
+            this.tabTraslados.Text = "Traslados";
+            this.tabTraslados.UseVisualStyleBackColor = true;
             // 
             // btnImprimirVinculos
             // 
@@ -2295,19 +2323,19 @@
             this.label25.TabIndex = 72;
             this.label25.Text = "PARENTESCO:";
             // 
-            // btnVerParentescos
+            // btnVerParentes
             // 
-            this.btnVerParentescos.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnVerParentescos.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnVerParentescos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerParentescos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerParentescos.ForeColor = System.Drawing.Color.White;
-            this.btnVerParentescos.Location = new System.Drawing.Point(15, 16);
-            this.btnVerParentescos.Name = "btnVerParentescos";
-            this.btnVerParentescos.Size = new System.Drawing.Size(160, 45);
-            this.btnVerParentescos.TabIndex = 1;
-            this.btnVerParentescos.Text = "VER PARENTESCOS";
-            this.btnVerParentescos.UseVisualStyleBackColor = false;
+            this.btnVerParentes.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnVerParentes.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnVerParentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerParentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerParentes.ForeColor = System.Drawing.Color.White;
+            this.btnVerParentes.Location = new System.Drawing.Point(15, 16);
+            this.btnVerParentes.Name = "btnVerParentes";
+            this.btnVerParentes.Size = new System.Drawing.Size(160, 45);
+            this.btnVerParentes.TabIndex = 1;
+            this.btnVerParentes.Text = "VER PARENTESCOS";
+            this.btnVerParentes.UseVisualStyleBackColor = false;
             // 
             // tabSabana
             // 
@@ -3076,34 +3104,6 @@
             this.label52.TabIndex = 44;
             this.label52.Text = "FECHA EXEPCION:";
             // 
-            // btnCancelarIngreso
-            // 
-            this.btnCancelarIngreso.BackColor = System.Drawing.Color.White;
-            this.btnCancelarIngreso.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarIngreso.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarIngreso.Location = new System.Drawing.Point(412, 289);
-            this.btnCancelarIngreso.Name = "btnCancelarIngreso";
-            this.btnCancelarIngreso.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelarIngreso.TabIndex = 13;
-            this.btnCancelarIngreso.Text = "CANCELAR";
-            this.btnCancelarIngreso.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardarIngreso
-            // 
-            this.btnGuardarIngreso.BackColor = System.Drawing.Color.White;
-            this.btnGuardarIngreso.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnGuardarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarIngreso.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardarIngreso.Location = new System.Drawing.Point(298, 289);
-            this.btnGuardarIngreso.Name = "btnGuardarIngreso";
-            this.btnGuardarIngreso.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarIngreso.TabIndex = 12;
-            this.btnGuardarIngreso.Text = "GUARDAR";
-            this.btnGuardarIngreso.UseVisualStyleBackColor = false;
-            // 
             // FormInternoVer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3129,7 +3129,7 @@
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCausas)).EndInit();
-            this.tabVinculos.ResumeLayout(false);
+            this.tabTraslados.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -3297,7 +3297,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dtgvCausas;
         private System.Windows.Forms.Button btnVerCausas;
-        private System.Windows.Forms.TabPage tabVinculos;
+        private System.Windows.Forms.TabPage tabTraslados;
         private System.Windows.Forms.Button btnImprimirVinculos;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button btnDesvincular;
@@ -3336,7 +3336,7 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtIdVisitaInterno;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Button btnVerParentescos;
+        private System.Windows.Forms.Button btnVerParentes;
         private System.Windows.Forms.TabPage tabSabana;
         private System.Windows.Forms.Button btnImprimirSabana;
         private System.Windows.Forms.Button btnVerSabana;

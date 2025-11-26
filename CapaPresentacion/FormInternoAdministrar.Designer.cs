@@ -98,6 +98,12 @@
             this.pictureFoto = new System.Windows.Forms.PictureBox();
             this.tabDatosIngreso = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.label62 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label38 = new System.Windows.Forms.Label();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label63 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
@@ -149,7 +155,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtgvCausas = new System.Windows.Forms.DataGridView();
             this.btnVerCausas = new System.Windows.Forms.Button();
-            this.tabVinculos = new System.Windows.Forms.TabPage();
+            this.tabTraslados = new System.Windows.Forms.TabPage();
             this.btnImprimirVinculos = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.btnDesvincular = new System.Windows.Forms.Button();
@@ -254,12 +260,20 @@
             this.btnCancelarExcepcion = new System.Windows.Forms.Button();
             this.dtpFechaExcepcion = new System.Windows.Forms.DateTimePicker();
             this.label52 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.dtpFechaAlojamientoVer = new System.Windows.Forms.DateTimePicker();
+            this.label71 = new System.Windows.Forms.Label();
+            this.dtpFechaIngresoSppsVer = new System.Windows.Forms.DateTimePicker();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.txtNumReingresoVer = new System.Windows.Forms.TextBox();
+            this.label72 = new System.Windows.Forms.Label();
+            this.txtReingresoVer = new System.Windows.Forms.TextBox();
+            this.txtOrganismoAlojamientoVer = new System.Windows.Forms.TextBox();
+            this.txtEstadoProcesalVer = new System.Windows.Forms.TextBox();
+            this.txtJurisdiccionVer = new System.Windows.Forms.TextBox();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox15.SuspendLayout();
@@ -274,7 +288,7 @@
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCausas)).BeginInit();
-            this.tabVinculos.SuspendLayout();
+            this.tabTraslados.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -310,7 +324,7 @@
             this.tabInterno.Controls.Add(this.tabDatosPrincipales);
             this.tabInterno.Controls.Add(this.tabDatosIngreso);
             this.tabInterno.Controls.Add(this.tabCausas);
-            this.tabInterno.Controls.Add(this.tabVinculos);
+            this.tabInterno.Controls.Add(this.tabTraslados);
             this.tabInterno.Controls.Add(this.tabSabana);
             this.tabInterno.Controls.Add(this.tabNovedades);
             this.tabInterno.Controls.Add(this.tabExepcionIngreso);
@@ -323,6 +337,20 @@
             // 
             // tabDatosPrincipales
             // 
+            this.tabDatosPrincipales.Controls.Add(this.txtJurisdiccionVer);
+            this.tabDatosPrincipales.Controls.Add(this.txtEstadoProcesalVer);
+            this.tabDatosPrincipales.Controls.Add(this.txtOrganismoAlojamientoVer);
+            this.tabDatosPrincipales.Controls.Add(this.txtReingresoVer);
+            this.tabDatosPrincipales.Controls.Add(this.label68);
+            this.tabDatosPrincipales.Controls.Add(this.txtNumReingresoVer);
+            this.tabDatosPrincipales.Controls.Add(this.label72);
+            this.tabDatosPrincipales.Controls.Add(this.dtpFechaIngresoSppsVer);
+            this.tabDatosPrincipales.Controls.Add(this.label66);
+            this.tabDatosPrincipales.Controls.Add(this.label67);
+            this.tabDatosPrincipales.Controls.Add(this.label69);
+            this.tabDatosPrincipales.Controls.Add(this.label70);
+            this.tabDatosPrincipales.Controls.Add(this.dtpFechaAlojamientoVer);
+            this.tabDatosPrincipales.Controls.Add(this.label71);
             this.tabDatosPrincipales.Controls.Add(this.groupBox15);
             this.tabDatosPrincipales.Controls.Add(this.groupBox14);
             this.tabDatosPrincipales.Controls.Add(this.pictureBox2);
@@ -360,7 +388,7 @@
             this.groupBox15.Controls.Add(this.txtTalla);
             this.groupBox15.Controls.Add(this.cmbSexo);
             this.groupBox15.Controls.Add(this.label8);
-            this.groupBox15.Location = new System.Drawing.Point(8, 415);
+            this.groupBox15.Location = new System.Drawing.Point(8, 426);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(522, 223);
             this.groupBox15.TabIndex = 69;
@@ -605,7 +633,7 @@
             this.groupBox14.Controls.Add(this.label89);
             this.groupBox14.Controls.Add(this.label85);
             this.groupBox14.Controls.Add(this.cmbDepartamentoNacimiento);
-            this.groupBox14.Location = new System.Drawing.Point(544, 223);
+            this.groupBox14.Location = new System.Drawing.Point(544, 230);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(519, 416);
             this.groupBox14.TabIndex = 214;
@@ -884,7 +912,7 @@
             this.groupBox1.Controls.Add(this.txtProntuario);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.txtIdInterno);
-            this.groupBox1.Location = new System.Drawing.Point(8, 148);
+            this.groupBox1.Location = new System.Drawing.Point(8, 159);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(522, 257);
             this.groupBox1.TabIndex = 68;
@@ -1113,6 +1141,63 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos filiatorios";
             // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.Location = new System.Drawing.Point(174, 217);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(137, 15);
+            this.label65.TabIndex = 242;
+            this.label65.Text = "NUMERO REINGRESO";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(177, 236);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(155, 21);
+            this.textBox4.TabIndex = 241;
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(11, 236);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(155, 23);
+            this.comboBox7.TabIndex = 239;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label62.Location = new System.Drawing.Point(8, 217);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(79, 15);
+            this.label62.TabIndex = 240;
+            this.label62.Text = "REINGRESO";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(345, 185);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(155, 23);
+            this.comboBox5.TabIndex = 237;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(342, 166);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(126, 15);
+            this.label38.TabIndex = 238;
+            this.label38.Text = "OTRA JURISDICCION";
+            // 
             // dateTimePicker4
             // 
             this.dateTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1128,9 +1213,9 @@
             this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label63.Location = new System.Drawing.Point(266, 19);
             this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(155, 15);
+            this.label63.Size = new System.Drawing.Size(139, 15);
             this.label63.TabIndex = 236;
-            this.label63.Text = "FECHA PRIMER INGRESO";
+            this.label63.Text = "FECHA INGRESO SPPS";
             // 
             // label64
             // 
@@ -1677,22 +1762,22 @@
             this.btnVerCausas.Text = "VER CAUSAS";
             this.btnVerCausas.UseVisualStyleBackColor = false;
             // 
-            // tabVinculos
+            // tabTraslados
             // 
-            this.tabVinculos.Controls.Add(this.btnImprimirVinculos);
-            this.tabVinculos.Controls.Add(this.groupBox9);
-            this.tabVinculos.Controls.Add(this.groupBox6);
-            this.tabVinculos.Controls.Add(this.groupBox8);
-            this.tabVinculos.Controls.Add(this.groupBox7);
-            this.tabVinculos.Controls.Add(this.groupBox5);
-            this.tabVinculos.Controls.Add(this.btnVerParentescos);
-            this.tabVinculos.Location = new System.Drawing.Point(4, 25);
-            this.tabVinculos.Name = "tabVinculos";
-            this.tabVinculos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVinculos.Size = new System.Drawing.Size(1072, 666);
-            this.tabVinculos.TabIndex = 2;
-            this.tabVinculos.Text = "Vinculos";
-            this.tabVinculos.UseVisualStyleBackColor = true;
+            this.tabTraslados.Controls.Add(this.btnImprimirVinculos);
+            this.tabTraslados.Controls.Add(this.groupBox9);
+            this.tabTraslados.Controls.Add(this.groupBox6);
+            this.tabTraslados.Controls.Add(this.groupBox8);
+            this.tabTraslados.Controls.Add(this.groupBox7);
+            this.tabTraslados.Controls.Add(this.groupBox5);
+            this.tabTraslados.Controls.Add(this.btnVerParentescos);
+            this.tabTraslados.Location = new System.Drawing.Point(4, 25);
+            this.tabTraslados.Name = "tabTraslados";
+            this.tabTraslados.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTraslados.Size = new System.Drawing.Size(1072, 666);
+            this.tabTraslados.TabIndex = 2;
+            this.tabTraslados.Text = "Traslados";
+            this.tabTraslados.UseVisualStyleBackColor = true;
             // 
             // btnImprimirVinculos
             // 
@@ -2167,6 +2252,7 @@
             this.btnVerParentescos.TabIndex = 1;
             this.btnVerParentescos.Text = "VER PARENTESCOS";
             this.btnVerParentescos.UseVisualStyleBackColor = false;
+            this.btnVerParentescos.Click += new System.EventHandler(this.btnVerParentescos_Click);
             // 
             // tabSabana
             // 
@@ -2935,62 +3021,145 @@
             this.label52.TabIndex = 44;
             this.label52.Text = "FECHA EXEPCION:";
             // 
-            // comboBox5
+            // label67
             // 
-            this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(345, 185);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(155, 23);
-            this.comboBox5.TabIndex = 237;
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label67.Location = new System.Drawing.Point(181, 106);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(91, 15);
+            this.label67.TabIndex = 229;
+            this.label67.Text = "JURISDICCION";
             // 
-            // label38
+            // label69
             // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(342, 166);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(126, 15);
-            this.label38.TabIndex = 238;
-            this.label38.Text = "OTRA JURISDICCION";
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label69.Location = new System.Drawing.Point(13, 106);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(122, 15);
+            this.label69.TabIndex = 227;
+            this.label69.Text = "ESTADO PROCESAL";
             // 
-            // comboBox7
+            // label70
             // 
-            this.comboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(11, 236);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(155, 23);
-            this.comboBox7.TabIndex = 239;
+            this.label70.AutoSize = true;
+            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label70.Location = new System.Drawing.Point(15, 59);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(167, 15);
+            this.label70.TabIndex = 223;
+            this.label70.Text = "ORGANISMO ALOJAMIENTO";
             // 
-            // label62
+            // dtpFechaAlojamientoVer
             // 
-            this.label62.AutoSize = true;
-            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label62.Location = new System.Drawing.Point(8, 217);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(79, 15);
-            this.label62.TabIndex = 240;
-            this.label62.Text = "REINGRESO";
+            this.dtpFechaAlojamientoVer.Enabled = false;
+            this.dtpFechaAlojamientoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaAlojamientoVer.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaAlojamientoVer.Location = new System.Drawing.Point(292, 78);
+            this.dtpFechaAlojamientoVer.Name = "dtpFechaAlojamientoVer";
+            this.dtpFechaAlojamientoVer.Size = new System.Drawing.Size(153, 22);
+            this.dtpFechaAlojamientoVer.TabIndex = 224;
             // 
-            // label65
+            // label71
             // 
-            this.label65.AutoSize = true;
-            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.Location = new System.Drawing.Point(174, 217);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(137, 15);
-            this.label65.TabIndex = 242;
-            this.label65.Text = "NUMERO REINGRESO";
+            this.label71.AutoSize = true;
+            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label71.Location = new System.Drawing.Point(288, 59);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(132, 15);
+            this.label71.TabIndex = 226;
+            this.label71.Text = "FECHA ALOJAMIENTO";
             // 
-            // textBox4
+            // dtpFechaIngresoSppsVer
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(177, 236);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(155, 21);
-            this.textBox4.TabIndex = 241;
+            this.dtpFechaIngresoSppsVer.Enabled = false;
+            this.dtpFechaIngresoSppsVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaIngresoSppsVer.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaIngresoSppsVer.Location = new System.Drawing.Point(19, 31);
+            this.dtpFechaIngresoSppsVer.Name = "dtpFechaIngresoSppsVer";
+            this.dtpFechaIngresoSppsVer.Size = new System.Drawing.Size(153, 22);
+            this.dtpFechaIngresoSppsVer.TabIndex = 237;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label66.Location = new System.Drawing.Point(15, 12);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(139, 15);
+            this.label66.TabIndex = 238;
+            this.label66.Text = "FECHA INGRESO SPPS";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label68.Location = new System.Drawing.Point(350, 12);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(96, 15);
+            this.label68.TabIndex = 247;
+            this.label68.Text = "N° REINGRESO";
+            // 
+            // txtNumReingresoVer
+            // 
+            this.txtNumReingresoVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumReingresoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumReingresoVer.Location = new System.Drawing.Point(353, 31);
+            this.txtNumReingresoVer.Name = "txtNumReingresoVer";
+            this.txtNumReingresoVer.ReadOnly = true;
+            this.txtNumReingresoVer.Size = new System.Drawing.Size(93, 21);
+            this.txtNumReingresoVer.TabIndex = 246;
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label72.Location = new System.Drawing.Point(184, 12);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(79, 15);
+            this.label72.TabIndex = 245;
+            this.label72.Text = "REINGRESO";
+            // 
+            // txtReingresoVer
+            // 
+            this.txtReingresoVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtReingresoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReingresoVer.Location = new System.Drawing.Point(185, 31);
+            this.txtReingresoVer.Name = "txtReingresoVer";
+            this.txtReingresoVer.ReadOnly = true;
+            this.txtReingresoVer.Size = new System.Drawing.Size(155, 21);
+            this.txtReingresoVer.TabIndex = 248;
+            // 
+            // txtOrganismoAlojamientoVer
+            // 
+            this.txtOrganismoAlojamientoVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOrganismoAlojamientoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrganismoAlojamientoVer.Location = new System.Drawing.Point(16, 77);
+            this.txtOrganismoAlojamientoVer.Name = "txtOrganismoAlojamientoVer";
+            this.txtOrganismoAlojamientoVer.ReadOnly = true;
+            this.txtOrganismoAlojamientoVer.Size = new System.Drawing.Size(256, 21);
+            this.txtOrganismoAlojamientoVer.TabIndex = 249;
+            // 
+            // txtEstadoProcesalVer
+            // 
+            this.txtEstadoProcesalVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEstadoProcesalVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstadoProcesalVer.Location = new System.Drawing.Point(17, 127);
+            this.txtEstadoProcesalVer.Name = "txtEstadoProcesalVer";
+            this.txtEstadoProcesalVer.ReadOnly = true;
+            this.txtEstadoProcesalVer.Size = new System.Drawing.Size(155, 21);
+            this.txtEstadoProcesalVer.TabIndex = 250;
+            // 
+            // txtJurisdiccionVer
+            // 
+            this.txtJurisdiccionVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtJurisdiccionVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJurisdiccionVer.Location = new System.Drawing.Point(184, 125);
+            this.txtJurisdiccionVer.Name = "txtJurisdiccionVer";
+            this.txtJurisdiccionVer.ReadOnly = true;
+            this.txtJurisdiccionVer.Size = new System.Drawing.Size(155, 21);
+            this.txtJurisdiccionVer.TabIndex = 251;
             // 
             // FormInternoAdministrar
             // 
@@ -3004,6 +3173,7 @@
             this.Load += new System.EventHandler(this.FormInternoAdministrar_Load);
             this.tabInterno.ResumeLayout(false);
             this.tabDatosPrincipales.ResumeLayout(false);
+            this.tabDatosPrincipales.PerformLayout();
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
             this.groupBox14.ResumeLayout(false);
@@ -3021,7 +3191,7 @@
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCausas)).EndInit();
-            this.tabVinculos.ResumeLayout(false);
+            this.tabTraslados.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -3084,7 +3254,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dtgvCausas;
         private System.Windows.Forms.Button btnVerCausas;
-        private System.Windows.Forms.TabPage tabVinculos;
+        private System.Windows.Forms.TabPage tabTraslados;
         private System.Windows.Forms.Button btnImprimirVinculos;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button btnDesvincular;
@@ -3285,5 +3455,19 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.TextBox txtEstadoProcesalVer;
+        private System.Windows.Forms.TextBox txtOrganismoAlojamientoVer;
+        private System.Windows.Forms.TextBox txtReingresoVer;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.TextBox txtNumReingresoVer;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.DateTimePicker dtpFechaIngresoSppsVer;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.DateTimePicker dtpFechaAlojamientoVer;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.TextBox txtJurisdiccionVer;
     }
 }

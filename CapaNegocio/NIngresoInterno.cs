@@ -22,6 +22,19 @@ namespace CapaNegocio
         }
         //FIN CREAR INTERNO......................................................
 
+        //RETORNAR  X ID INTERNO
+        public async Task<(DIngresoInterno, string error)> BuscarxInterno(int id_interno)
+        {
+            IIngresoInernoDao ingresoInernoDao = new IngresoInternoDaoImplement();
+
+            (DIngresoInterno dIngreso, string error) = await ingresoInernoDao.BuscarIngresoXInterno(id_interno);
+
+
+            return (dIngreso, error);
+        }
+
+
+        //FIN RETORNAR  XID..................................
 
         //RETORNAR X APELLIDO
         //public async Task<(List<DInterno>, string error)> ListaInternosXApellido(string apellido)
