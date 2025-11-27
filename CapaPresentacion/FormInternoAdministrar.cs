@@ -146,8 +146,7 @@ namespace CapaPresentacion
             txtJurisdiccionVer.Text = this.ingresoInternoGlobal.jurisdiccion.jurisdiccion;
 
             //CARGAR DATOS DEL INTERNO
-            txtIdInterno.Text = this.dInternoGlobal.id_interno.ToString();
-           
+            txtIdInterno.Text = this.dInternoGlobal.id_interno.ToString();           
             txtApellido.Text = this.dInternoGlobal.apellido;
             txtNombre.Text = this.dInternoGlobal.nombre;
             txtProntuario.Text = this.dInternoGlobal.prontuario.ToString();

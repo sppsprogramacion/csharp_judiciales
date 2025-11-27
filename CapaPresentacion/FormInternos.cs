@@ -124,23 +124,25 @@ namespace CapaPresentacion
                         if (ingresoInterno == null)
                         {
                             MessageBox.Show("El interno no se encuentra alojado en una unidad", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return;
-                        }
-
-                        if (ingresoInterno.organismo_alojamiento_id == CurrentUser.Instance.organismo.id_organismo)
-                        {
-                            FormInternoAdministrar forminternoadministrar = new FormInternoAdministrar(ingresoInterno);
-                            forminternoadministrar.ShowDialog();
-
+                            FormInternoVer formInternoVer = new FormInternoVer(null, this.idInternoGlobal, "consulta");
+                            formInternoVer.ShowDialog();
                         }
                         else
                         {
-                            FormInternoVer formInternoVer = new FormInternoVer();
-                            formInternoVer.ShowDialog();
+                            if (ingresoInterno.organismo_alojamiento_id == CurrentUser.Instance.organismo.id_organismo)
+                            {
+                                FormInternoAdministrar forminternoadministrar = new FormInternoAdministrar(ingresoInterno);
+                                forminternoadministrar.ShowDialog();
 
+                            }
+                            else
+                            {
+                                FormInternoVer formInternoVer = new FormInternoVer(ingresoInterno, ingresoInterno.interno_id, "consulta");
+                                formInternoVer.ShowDialog();
+
+                            }
                         }
-                        //FormInternoIngresoNuevo formInternoIngresoNuevo = new FormInternoIngresoNuevo();
-                        //formInternoIngresoNuevo.ShowDialog();
+                        
                     }
                     else
                     {
