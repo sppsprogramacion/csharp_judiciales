@@ -52,6 +52,7 @@
     <Compile Include="NParentesco.cs" />
     <Compile Include="NProvincia.cs" />
     <Compile Include="NSexo.cs" />
+    <Compile Include="NTrasladoInterno.cs" />
     <Compile Include="NVisitaInterno.cs" />
     <Compile Include="NZonaResidencia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

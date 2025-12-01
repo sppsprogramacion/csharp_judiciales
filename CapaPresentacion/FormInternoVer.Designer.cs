@@ -33,7 +33,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkIngresarMiunidad = new System.Windows.Forms.CheckBox();
             this.dtpFechaAlojamientoMiUnidad = new System.Windows.Forms.DateTimePicker();
-            this.label70 = new System.Windows.Forms.Label();
+            this.lblFechaAlojamientoMiUnidad = new System.Windows.Forms.Label();
             this.btnDarIngresar = new System.Windows.Forms.Button();
             this.lblMensajeIngreso = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -343,7 +343,7 @@
             // 
             this.groupBox1.Controls.Add(this.chkIngresarMiunidad);
             this.groupBox1.Controls.Add(this.dtpFechaAlojamientoMiUnidad);
-            this.groupBox1.Controls.Add(this.label70);
+            this.groupBox1.Controls.Add(this.lblFechaAlojamientoMiUnidad);
             this.groupBox1.Controls.Add(this.btnDarIngresar);
             this.groupBox1.Controls.Add(this.lblMensajeIngreso);
             this.groupBox1.Controls.Add(this.label28);
@@ -368,7 +368,7 @@
             this.groupBox1.Controls.Add(this.label75);
             this.groupBox1.Controls.Add(this.dtpFechaAlojamiento);
             this.groupBox1.Controls.Add(this.label77);
-            this.groupBox1.Location = new System.Drawing.Point(544, 215);
+            this.groupBox1.Location = new System.Drawing.Point(526, 215);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(519, 429);
             this.groupBox1.TabIndex = 216;
@@ -379,7 +379,7 @@
             // 
             this.chkIngresarMiunidad.AutoSize = true;
             this.chkIngresarMiunidad.Enabled = false;
-            this.chkIngresarMiunidad.Location = new System.Drawing.Point(11, 277);
+            this.chkIngresarMiunidad.Location = new System.Drawing.Point(11, 284);
             this.chkIngresarMiunidad.Name = "chkIngresarMiunidad";
             this.chkIngresarMiunidad.Size = new System.Drawing.Size(234, 20);
             this.chkIngresarMiunidad.TabIndex = 248;
@@ -391,21 +391,22 @@
             // 
             this.dtpFechaAlojamientoMiUnidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaAlojamientoMiUnidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaAlojamientoMiUnidad.Location = new System.Drawing.Point(252, 280);
+            this.dtpFechaAlojamientoMiUnidad.Location = new System.Drawing.Point(252, 287);
             this.dtpFechaAlojamientoMiUnidad.Name = "dtpFechaAlojamientoMiUnidad";
             this.dtpFechaAlojamientoMiUnidad.Size = new System.Drawing.Size(153, 22);
             this.dtpFechaAlojamientoMiUnidad.TabIndex = 246;
             this.dtpFechaAlojamientoMiUnidad.Visible = false;
             // 
-            // label70
+            // lblFechaAlojamientoMiUnidad
             // 
-            this.label70.AutoSize = true;
-            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label70.Location = new System.Drawing.Point(248, 261);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(135, 15);
-            this.label70.TabIndex = 247;
-            this.label70.Text = "FECHA ALOJAMIENTO ";
+            this.lblFechaAlojamientoMiUnidad.AutoSize = true;
+            this.lblFechaAlojamientoMiUnidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaAlojamientoMiUnidad.Location = new System.Drawing.Point(248, 268);
+            this.lblFechaAlojamientoMiUnidad.Name = "lblFechaAlojamientoMiUnidad";
+            this.lblFechaAlojamientoMiUnidad.Size = new System.Drawing.Size(135, 15);
+            this.lblFechaAlojamientoMiUnidad.TabIndex = 247;
+            this.lblFechaAlojamientoMiUnidad.Text = "FECHA ALOJAMIENTO ";
+            this.lblFechaAlojamientoMiUnidad.Visible = false;
             // 
             // btnDarIngresar
             // 
@@ -424,7 +425,7 @@
             // 
             // lblMensajeIngreso
             // 
-            this.lblMensajeIngreso.BackColor = System.Drawing.Color.LightSlateGray;
+            this.lblMensajeIngreso.BackColor = System.Drawing.Color.DarkOrange;
             this.lblMensajeIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensajeIngreso.ForeColor = System.Drawing.Color.White;
             this.lblMensajeIngreso.Location = new System.Drawing.Point(2, 226);
@@ -716,7 +717,7 @@
             this.groupBox14.Controls.Add(this.txtNombre);
             this.groupBox14.Location = new System.Drawing.Point(6, 6);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(519, 638);
+            this.groupBox14.Size = new System.Drawing.Size(510, 638);
             this.groupBox14.TabIndex = 214;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Datos del interno";
@@ -728,17 +729,17 @@
             this.txtDepartamentoNacimiento.Location = new System.Drawing.Point(10, 420);
             this.txtDepartamentoNacimiento.Name = "txtDepartamentoNacimiento";
             this.txtDepartamentoNacimiento.ReadOnly = true;
-            this.txtDepartamentoNacimiento.Size = new System.Drawing.Size(241, 21);
+            this.txtDepartamentoNacimiento.Size = new System.Drawing.Size(238, 21);
             this.txtDepartamentoNacimiento.TabIndex = 18;
             // 
             // txtProvinciaNacimiento
             // 
             this.txtProvinciaNacimiento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProvinciaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProvinciaNacimiento.Location = new System.Drawing.Point(264, 370);
+            this.txtProvinciaNacimiento.Location = new System.Drawing.Point(260, 370);
             this.txtProvinciaNacimiento.Name = "txtProvinciaNacimiento";
             this.txtProvinciaNacimiento.ReadOnly = true;
-            this.txtProvinciaNacimiento.Size = new System.Drawing.Size(243, 21);
+            this.txtProvinciaNacimiento.Size = new System.Drawing.Size(238, 21);
             this.txtProvinciaNacimiento.TabIndex = 17;
             // 
             // txtNacionalidad
@@ -748,7 +749,7 @@
             this.txtNacionalidad.Location = new System.Drawing.Point(10, 370);
             this.txtNacionalidad.Name = "txtNacionalidad";
             this.txtNacionalidad.ReadOnly = true;
-            this.txtNacionalidad.Size = new System.Drawing.Size(241, 21);
+            this.txtNacionalidad.Size = new System.Drawing.Size(238, 21);
             this.txtNacionalidad.TabIndex = 16;
             // 
             // txtEstadoCivil
@@ -859,7 +860,7 @@
             this.txtParientes.Multiline = true;
             this.txtParientes.Name = "txtParientes";
             this.txtParientes.ReadOnly = true;
-            this.txtParientes.Size = new System.Drawing.Size(498, 52);
+            this.txtParientes.Size = new System.Drawing.Size(488, 52);
             this.txtParientes.TabIndex = 25;
             // 
             // label7
@@ -936,10 +937,10 @@
             // 
             this.txtMadre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMadre.Location = new System.Drawing.Point(263, 522);
+            this.txtMadre.Location = new System.Drawing.Point(259, 522);
             this.txtMadre.Name = "txtMadre";
             this.txtMadre.ReadOnly = true;
-            this.txtMadre.Size = new System.Drawing.Size(243, 21);
+            this.txtMadre.Size = new System.Drawing.Size(238, 21);
             this.txtMadre.TabIndex = 24;
             // 
             // label5
@@ -999,7 +1000,7 @@
             this.txtPadre.Location = new System.Drawing.Point(9, 522);
             this.txtPadre.Name = "txtPadre";
             this.txtPadre.ReadOnly = true;
-            this.txtPadre.Size = new System.Drawing.Size(241, 21);
+            this.txtPadre.Size = new System.Drawing.Size(238, 21);
             this.txtPadre.TabIndex = 23;
             // 
             // label9
@@ -1226,7 +1227,7 @@
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.persona_icono;
-            this.pictureBox2.Location = new System.Drawing.Point(894, 22);
+            this.pictureBox2.Location = new System.Drawing.Point(883, 22);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(150, 170);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1237,7 +1238,7 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.persona_icono;
-            this.pictureBox1.Location = new System.Drawing.Point(719, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(708, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(150, 170);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1248,7 +1249,7 @@
             // 
             this.pictureFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureFoto.Image = global::CapaPresentacion.Properties.Resources.persona_icono;
-            this.pictureFoto.Location = new System.Drawing.Point(544, 22);
+            this.pictureFoto.Location = new System.Drawing.Point(533, 22);
             this.pictureFoto.Name = "pictureFoto";
             this.pictureFoto.Size = new System.Drawing.Size(150, 170);
             this.pictureFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -3488,7 +3489,7 @@
         private System.Windows.Forms.Label lblMensajeIngreso;
         private System.Windows.Forms.Button btnDarIngresar;
         private System.Windows.Forms.DateTimePicker dtpFechaAlojamientoMiUnidad;
-        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label lblFechaAlojamientoMiUnidad;
         private System.Windows.Forms.CheckBox chkIngresarMiunidad;
     }
 }

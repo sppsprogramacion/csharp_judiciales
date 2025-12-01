@@ -68,6 +68,7 @@
     <Compile Include="DEstadoCivil.cs" />
     <Compile Include="DTablasIngresoInterno.cs" />
     <Compile Include="DTamanio.cs" />
+    <Compile Include="DTrasladoInterno.cs" />
     <Compile Include="DUsuario.cs" />
     <Compile Include="DPeloTipo.cs" />
     <Compile Include="DPiel.cs" />

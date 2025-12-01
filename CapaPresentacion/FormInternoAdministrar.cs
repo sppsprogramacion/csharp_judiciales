@@ -137,6 +137,7 @@ namespace CapaPresentacion
                 return;
             }
 
+            txtIdIngresoVer.Text = this.ingresoInternoGlobal.id_ingreso_interno.ToString();
             dtpFechaIngresoSppsVer.Text = this.ingresoInternoGlobal.fecha_primer_ingreso.ToShortDateString();
             txtReingresoVer.Text = this.ingresoInternoGlobal.reingreso.reingreso;
             txtNumReingresoVer.Text = this.ingresoInternoGlobal.numero_reingreso.ToString();
@@ -180,9 +181,108 @@ namespace CapaPresentacion
             tabInterno.Enabled = true;
         }
 
-        private void btnVerParentescos_Click(object sender, EventArgs e)
+        private void btnTrasladar_Click(object sender, EventArgs e)
         {
+            if(txtIdIngresoVer.Text == null || txtIdIngresoVer.Text == "")
+            {
+                MessageBox.Show("El interno no tiene un ingreso valido", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            FormTrasladoNuevo formTrasladoNuevo = new FormTrasladoNuevo(Convert.ToInt32(txtIdIngresoVer.Text));
+            formTrasladoNuevo.ShowDialog();
+        }
 
+        private void btnVerTraslados_Click(object sender, EventArgs e)
+        {
+            this.CargarDataGridTraslados();
+        }
+
+        //METODO PARA OBTENER LA LISTA DE TRASLADOS Y CARGARLO EN UN DATA GRID 
+        async private void CargarDataGridTraslados()
+        {
+            NTrasladoInterno nTrasladoInterno = new NTrasladoInterno();
+
+            if (txtIdIngresoVer.Text == null || txtIdIngresoVer.Text == "")
+            {
+                MessageBox.Show("El interno no tiene un ingreso valido", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            (List<DTrasladoInterno> listaTraslados, string errorResponse) = await nTrasladoInterno.ListaTrasladosXIngreso(Convert.ToInt32(txtIdIngresoVer.Text));
+
+            if (listaTraslados == null)
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            var datosfiltrados = listaTraslados
+                .Select(c => new
+                {
+                    Id = c.id_traslado_interno,
+                    Origen = c.organismo_origen.organismo,
+                    FechaTraslado = c.fecha_egreso_origen,
+                    DetalleTrasaldo = c.detalle_traslado,
+                    Destino = c.organismo_destino.organismo,
+                    FechaIngreso = c.fecha_ingreso_destino,
+                    Estado = c.estado_traslado,
+                    ObsTraslado = c.obs_traslado,
+                    FechaCarga = c.fecha_carga,
+                    HoraCarga = c.hora_carga,
+                    Usuario = c.usuario.apellido + " " + c.usuario.nombre,
+
+                })
+                .ToList();
+
+            dtgvTraslados.DataSource = datosfiltrados;
+
+            if (listaTraslados.Count == 0)
+            {
+                MessageBox.Show("No se encontraron registros.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+
+                dtgvTraslados.Columns[1].Width = 200;
+                dtgvTraslados.Columns[4].Width = 200;
+            }
+
+        } //FIN METODO PARA OBTENER LA LISTA DE PARENTESCOS EN UN DATA GRID ...........
+
+        private void dtgvTraslados_KeyDown(object sender, KeyEventArgs e)
+        {
+            //AL PRESIONAR ENTER MOSTRAR
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+
+                if (dtgvTraslados.SelectedRows.Count > 0)
+                {
+                    int idTraslado;
+                    idTraslado = Convert.ToInt32(dtgvTraslados.CurrentRow.Cells["ID"].Value.ToString());
+
+                    
+                    if (idTraslado > 0)
+                    {
+                        txtIdTraslado.Text = idTraslado.ToString();
+                        txtOrganismoOrigenTraslado.Text = dtgvTraslados.CurrentRow.Cells["Origen"].Value.ToString();
+                        txtFechaTraslado.Text = Convert.ToDateTime(dtgvTraslados.CurrentRow.Cells["FechaTraslado"].Value).ToString("dd/MM/yyyy");
+                        txtDetalleTraslado.Text = dtgvTraslados.CurrentRow.Cells["DetalleTrasaldo"].Value?.ToString();
+                        txtOrganismoDestinoTraslado.Text = dtgvTraslados.CurrentRow.Cells["Destino"].Value?.ToString();
+                        txtFechaIngresoTraslado.Text = Convert.ToDateTime(dtgvTraslados.CurrentRow.Cells["FechaIngreso"].Value).ToString("dd/MM/yyyy");
+                        txtEstadoTraslado.Text = dtgvTraslados.CurrentRow.Cells["Estado"].Value?.ToString();
+                        txtObsTraslado.Text = dtgvTraslados.CurrentRow.Cells["ObsTraslado"].Value?.ToString();
+                        txtFechaCargaTraslado.Text = Convert.ToDateTime(dtgvTraslados.CurrentRow.Cells["FechaCarga"].Value).ToString("dd/MM/yyyy");
+                        txtHoraCargaTraslado.Text = dtgvTraslados.CurrentRow.Cells["HoraCarga"].Value?.ToString();
+                        txtUsuarioCargaTraslado.Text = dtgvTraslados.CurrentRow.Cells["Usuario"].Value?.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe seleccionar una traslado.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
         }
     }
 }

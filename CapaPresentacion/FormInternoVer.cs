@@ -50,8 +50,6 @@ namespace CapaPresentacion
                 txtNumeroReingreso.Text = this.ingresoInternoGlobal.numero_reingreso.ToString();
                 dtpFechaAlojamiento.Text = this.ingresoInternoGlobal.fecha_alojamiento.ToShortDateString();
 
-
-                                
             }
             else
             {
@@ -107,18 +105,21 @@ namespace CapaPresentacion
             if (this.ingresoInternoGlobal != null)
             {
                 bool trasladoMiunidad = false;
+                //verificar si la unidad tiene autorizacion para ingresar al interno
+                //hacer control al API....
 
-                //el interno esta alojado en otra unidad y no tiene autorizacion para ingresarlo a mi unidad
+                //el interno esta alojado en otra unidad y NO tiene autorizacion para ingresarlo a mi unidad
                 if (!trasladoMiunidad)
                 {
                     MessageBox.Show("El interno ya se encuentra alojado en una unidad", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
-
+                                
                 //el interno esta alojado en otra unidad y SI tiene autorizacion para ingresarlo a mi unidad
                 MessageBox.Show("Tiene autorizacion para ingresar el interno a su unidad", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 chkIngresarMiunidad.Checked = true;
                 chkIngresarMiunidad.Visible = true;
+                lblFechaAlojamientoMiUnidad.Visible = true;
                 dtpFechaAlojamientoMiUnidad.Visible = true;
             }
 
