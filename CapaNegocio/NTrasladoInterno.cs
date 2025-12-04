@@ -66,6 +66,17 @@ namespace CapaNegocio
         }
         //FIN LISTA DE TRASLADOS X OTROS ORGANISMOS..................................
 
+        //LISTA DE TRASLADOS X MI ORGANISMO
+        public async Task<(List<DTrasladoInterno>, string error)> ListaTrasladosXMiOrganismo()
+        {
+            ITrasladoInternoDao trasladoInternoDao = new TrasladoInternoDaoImplement();
+
+            (List<DTrasladoInterno> listaTraslados, string errorResponse) = await trasladoInternoDao.ListaTrasladosXMiOrganismo();
+
+            return (listaTraslados, errorResponse);
+        }
+        //FIN LISTA DE TRASLADOS X MI ORGANISMO..................................
+
         //ACEPTAR UN TRASLADO
         public async Task<(bool, string error)> AceptarTraslado(int idTraslado, string dataAnular)
         {

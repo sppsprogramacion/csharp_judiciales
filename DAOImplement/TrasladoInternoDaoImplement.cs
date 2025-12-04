@@ -119,6 +119,52 @@ namespace DAOImplement
         }
         //FIN BUSCAR X IDTRASLADO...........................................................
 
+        //LISTAR TRASLADOS X MI ORGANISMO
+        public async Task<(List<DTrasladoInterno>, string error)> ListaTrasladosXMiOrganismo()
+        {
+            //variable token
+            string token = SessionManager.Token;
+            List<DTrasladoInterno> listaTrasladoInterno = new List<DTrasladoInterno>();
+
+            try
+            {
+                //agregar tpken a la cabecera
+                this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                HttpResponseMessage httpResponse = await httpClient.GetAsync(url_base + "/traslados-interno/buscar-miorganismo");
+
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var contentRespuesta = await httpResponse.Content.ReadAsStringAsync();
+                    listaTrasladoInterno = JsonConvert.DeserializeObject<List<DTrasladoInterno>>(contentRespuesta);
+                    return (listaTrasladoInterno, null);
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (null, $"Error en la busqueda: {mensaje}");
+                }
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                // Capturar errores de la solicitud HTTP
+                return (null, $"Error de conexión: {httpRequestException.Message}");
+            }
+            catch (JsonException jsonException)
+            {
+                // Capturar errores en la serialización/deserialización de JSON                
+                return (null, $"Error inesperado");
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores (log, mensaje al usuario, etc.)
+                Console.WriteLine($"Error: {ex.Message}");
+                return (null, $"Error inesperado: {ex.Message}");
+            }
+        }
+        //FIN LISTAR TRASLADOS X MI ORGANISMO...........................................
+
         //LISTAR PENDIENTES POR ORGANISMO
         public async Task<(List<DTrasladoInterno>, string error)> ListaTrasladosPendientesXOrganismo(int idOrganismo)
         {

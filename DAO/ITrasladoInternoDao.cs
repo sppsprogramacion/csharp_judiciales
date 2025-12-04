@@ -12,6 +12,7 @@ namespace DAO
         Task<(DTrasladoInterno, string error)> CrearTraslado(string trasladoInterno);        
         Task<(DTrasladoInterno, string error)> BuscarTrasladoXId(int idTraslado);
         Task<(List<DTrasladoInterno>, string error)> ListaTrasladosXIngreso(int idIngreso);
+        Task<(List<DTrasladoInterno>, string error)> ListaTrasladosXMiOrganismo();
         Task<(List<DTrasladoInterno>, string error)> ListaTrasladosPendientesXOrganismo(int idOrganismo);
         Task<(List<DTrasladoInterno>, string error)> ListaTrasladosPendientesXMiOrganismo();
         Task<(bool, string error)> AnularTraslado(int idTraslado, string dataAnular);
