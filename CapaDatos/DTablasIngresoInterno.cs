@@ -13,5 +13,6 @@ namespace CapaDatos
         public List<DJurisdiccion> jurisdiccion { get; set; }
         public List<DEstadoProcesal> estado_procesal { get; set; }
         public List<DReingreso> reingreso { get; set; }
+        public List<DTipoDefensor> tipos_defensor { get; set; }
     }
 }

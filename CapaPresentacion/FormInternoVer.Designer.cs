@@ -211,71 +211,10 @@
             this.txtIdVisitaInterno = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.btnVerParentes = new System.Windows.Forms.Button();
-            this.tabSabana = new System.Windows.Forms.TabPage();
-            this.btnImprimirSabana = new System.Windows.Forms.Button();
-            this.btnVerSabana = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label24 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dtgvSabana = new System.Windows.Forms.DataGridView();
-            this.tabNovedades = new System.Windows.Forms.TabPage();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.btnNuevaNovedad = new System.Windows.Forms.Button();
-            this.btnCancelarNovedad = new System.Windows.Forms.Button();
-            this.btnGuardarNovedad = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txtNuevaNovedad = new System.Windows.Forms.TextBox();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.txtNovedad = new System.Windows.Forms.TextBox();
-            this.txtUsuarioNovedad = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtDetalleNovedad = new System.Windows.Forms.TextBox();
-            this.txtOrganismoNovedad = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.txtFechaNovedad = new System.Windows.Forms.TextBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.txtIdNovedad = new System.Windows.Forms.TextBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.dtgvNovedades = new System.Windows.Forms.DataGridView();
-            this.btnVerNovedades = new System.Windows.Forms.Button();
-            this.tabExepcionIngreso = new System.Windows.Forms.TabPage();
-            this.dtgvExcepcionesIngreso = new System.Windows.Forms.DataGridView();
-            this.btnVerExcepciones = new System.Windows.Forms.Button();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.btnAnularExcepcion = new System.Windows.Forms.Button();
-            this.btnCumplimentarExcepcion = new System.Windows.Forms.Button();
-            this.btnCancelarCumplAnularExcepcion = new System.Windows.Forms.Button();
-            this.btnGuardarCumplAnularExcepcion = new System.Windows.Forms.Button();
-            this.lblDetalleCumplAnularExcepcion = new System.Windows.Forms.Label();
-            this.txtDetalleCumplAnularExcepcion = new System.Windows.Forms.TextBox();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.btnInterno = new System.Windows.Forms.Button();
-            this.txtInternoExcepcion = new System.Windows.Forms.TextBox();
-            this.label56 = new System.Windows.Forms.Label();
-            this.txtIdInternoExcepcion = new System.Windows.Forms.TextBox();
-            this.label57 = new System.Windows.Forms.Label();
-            this.txtFechaCargaExcepcion = new System.Windows.Forms.TextBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.txtIdExcepcion = new System.Windows.Forms.TextBox();
-            this.chkAnuladoExcepcion = new System.Windows.Forms.CheckBox();
-            this.chkCumplimentadoExcepcion = new System.Windows.Forms.CheckBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.txtUsuarioCargaExcepcion = new System.Windows.Forms.TextBox();
-            this.label50 = new System.Windows.Forms.Label();
-            this.txtOrganismoExepcion = new System.Windows.Forms.TextBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.txtDetalleExcepcion = new System.Windows.Forms.TextBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.txtMotivoExcepcion = new System.Windows.Forms.TextBox();
-            this.btnNuevaExcepcion = new System.Windows.Forms.Button();
-            this.btnGuardarExcepcion = new System.Windows.Forms.Button();
-            this.btnCancelarExcepcion = new System.Windows.Forms.Button();
-            this.dtpFechaExcepcion = new System.Windows.Forms.DateTimePicker();
-            this.label52 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.txtAbogado = new System.Windows.Forms.TextBox();
+            this.cmbTipoDefensor = new System.Windows.Forms.ComboBox();
+            this.label71 = new System.Windows.Forms.Label();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -296,16 +235,6 @@
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvParentescos)).BeginInit();
             this.groupBox5.SuspendLayout();
-            this.tabSabana.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvSabana)).BeginInit();
-            this.tabNovedades.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvNovedades)).BeginInit();
-            this.tabExepcionIngreso.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvExcepcionesIngreso)).BeginInit();
-            this.groupBox13.SuspendLayout();
-            this.groupBox12.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabInterno
@@ -314,9 +243,6 @@
             this.tabInterno.Controls.Add(this.tabDatosIngreso);
             this.tabInterno.Controls.Add(this.tabCausas);
             this.tabInterno.Controls.Add(this.tabTraslados);
-            this.tabInterno.Controls.Add(this.tabSabana);
-            this.tabInterno.Controls.Add(this.tabNovedades);
-            this.tabInterno.Controls.Add(this.tabExepcionIngreso);
             this.tabInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabInterno.Location = new System.Drawing.Point(7, 8);
             this.tabInterno.Name = "tabInterno";
@@ -341,6 +267,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label70);
+            this.groupBox1.Controls.Add(this.txtAbogado);
+            this.groupBox1.Controls.Add(this.cmbTipoDefensor);
+            this.groupBox1.Controls.Add(this.label71);
             this.groupBox1.Controls.Add(this.chkIngresarMiunidad);
             this.groupBox1.Controls.Add(this.dtpFechaAlojamientoMiUnidad);
             this.groupBox1.Controls.Add(this.lblFechaAlojamientoMiUnidad);
@@ -368,7 +298,7 @@
             this.groupBox1.Controls.Add(this.label75);
             this.groupBox1.Controls.Add(this.dtpFechaAlojamiento);
             this.groupBox1.Controls.Add(this.label77);
-            this.groupBox1.Location = new System.Drawing.Point(526, 215);
+            this.groupBox1.Location = new System.Drawing.Point(526, 218);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(519, 429);
             this.groupBox1.TabIndex = 216;
@@ -379,7 +309,7 @@
             // 
             this.chkIngresarMiunidad.AutoSize = true;
             this.chkIngresarMiunidad.Enabled = false;
-            this.chkIngresarMiunidad.Location = new System.Drawing.Point(11, 284);
+            this.chkIngresarMiunidad.Location = new System.Drawing.Point(11, 334);
             this.chkIngresarMiunidad.Name = "chkIngresarMiunidad";
             this.chkIngresarMiunidad.Size = new System.Drawing.Size(234, 20);
             this.chkIngresarMiunidad.TabIndex = 248;
@@ -391,7 +321,7 @@
             // 
             this.dtpFechaAlojamientoMiUnidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaAlojamientoMiUnidad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaAlojamientoMiUnidad.Location = new System.Drawing.Point(252, 287);
+            this.dtpFechaAlojamientoMiUnidad.Location = new System.Drawing.Point(252, 337);
             this.dtpFechaAlojamientoMiUnidad.Name = "dtpFechaAlojamientoMiUnidad";
             this.dtpFechaAlojamientoMiUnidad.Size = new System.Drawing.Size(153, 22);
             this.dtpFechaAlojamientoMiUnidad.TabIndex = 246;
@@ -401,7 +331,7 @@
             // 
             this.lblFechaAlojamientoMiUnidad.AutoSize = true;
             this.lblFechaAlojamientoMiUnidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaAlojamientoMiUnidad.Location = new System.Drawing.Point(248, 268);
+            this.lblFechaAlojamientoMiUnidad.Location = new System.Drawing.Point(248, 318);
             this.lblFechaAlojamientoMiUnidad.Name = "lblFechaAlojamientoMiUnidad";
             this.lblFechaAlojamientoMiUnidad.Size = new System.Drawing.Size(135, 15);
             this.lblFechaAlojamientoMiUnidad.TabIndex = 247;
@@ -428,7 +358,7 @@
             this.lblMensajeIngreso.BackColor = System.Drawing.Color.DarkOrange;
             this.lblMensajeIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensajeIngreso.ForeColor = System.Drawing.Color.White;
-            this.lblMensajeIngreso.Location = new System.Drawing.Point(2, 226);
+            this.lblMensajeIngreso.Location = new System.Drawing.Point(2, 276);
             this.lblMensajeIngreso.Name = "lblMensajeIngreso";
             this.lblMensajeIngreso.Size = new System.Drawing.Size(516, 25);
             this.lblMensajeIngreso.TabIndex = 243;
@@ -448,7 +378,6 @@
             // txtNumeroReingreso
             // 
             this.txtNumeroReingreso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNumeroReingreso.Enabled = false;
             this.txtNumeroReingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumeroReingreso.Location = new System.Drawing.Point(177, 190);
             this.txtNumeroReingreso.Name = "txtNumeroReingreso";
@@ -457,7 +386,6 @@
             // 
             // cmbReingreso
             // 
-            this.cmbReingreso.Enabled = false;
             this.cmbReingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbReingreso.FormattingEnabled = true;
             this.cmbReingreso.Location = new System.Drawing.Point(11, 190);
@@ -477,7 +405,6 @@
             // 
             // cmbOtraJurisdiccion
             // 
-            this.cmbOtraJurisdiccion.Enabled = false;
             this.cmbOtraJurisdiccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOtraJurisdiccion.FormattingEnabled = true;
             this.cmbOtraJurisdiccion.Location = new System.Drawing.Point(345, 139);
@@ -497,7 +424,6 @@
             // 
             // dtpFechaIngresoSpps
             // 
-            this.dtpFechaIngresoSpps.Enabled = false;
             this.dtpFechaIngresoSpps.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaIngresoSpps.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaIngresoSpps.Location = new System.Drawing.Point(346, 41);
@@ -527,7 +453,6 @@
             // 
             // cmbOrganismoExternoProcedencia
             // 
-            this.cmbOrganismoExternoProcedencia.Enabled = false;
             this.cmbOrganismoExternoProcedencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOrganismoExternoProcedencia.FormattingEnabled = true;
             this.cmbOrganismoExternoProcedencia.Location = new System.Drawing.Point(11, 41);
@@ -548,6 +473,7 @@
             this.btnGuardarIngreso.TabIndex = 12;
             this.btnGuardarIngreso.Text = "Guardar";
             this.btnGuardarIngreso.UseVisualStyleBackColor = false;
+            this.btnGuardarIngreso.Click += new System.EventHandler(this.btnGuardarIngreso_Click);
             // 
             // btnCancelarIngreso
             // 
@@ -576,7 +502,6 @@
             // txtProntuarioPolicial
             // 
             this.txtProntuarioPolicial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtProntuarioPolicial.Enabled = false;
             this.txtProntuarioPolicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProntuarioPolicial.Location = new System.Drawing.Point(345, 89);
             this.txtProntuarioPolicial.Name = "txtProntuarioPolicial";
@@ -585,7 +510,6 @@
             // 
             // cmbJurisdiccion
             // 
-            this.cmbJurisdiccion.Enabled = false;
             this.cmbJurisdiccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbJurisdiccion.FormattingEnabled = true;
             this.cmbJurisdiccion.Location = new System.Drawing.Point(177, 139);
@@ -615,7 +539,6 @@
             // 
             // cmbEstadoProcesal
             // 
-            this.cmbEstadoProcesal.Enabled = false;
             this.cmbEstadoProcesal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstadoProcesal.FormattingEnabled = true;
             this.cmbEstadoProcesal.Location = new System.Drawing.Point(9, 139);
@@ -625,7 +548,6 @@
             // 
             // cmbOrganismoSppsProcesencia
             // 
-            this.cmbOrganismoSppsProcesencia.Enabled = false;
             this.cmbOrganismoSppsProcesencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOrganismoSppsProcesencia.FormattingEnabled = true;
             this.cmbOrganismoSppsProcesencia.Location = new System.Drawing.Point(9, 89);
@@ -645,7 +567,6 @@
             // 
             // dtpFechaAlojamiento
             // 
-            this.dtpFechaAlojamiento.Enabled = false;
             this.dtpFechaAlojamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaAlojamiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaAlojamiento.Location = new System.Drawing.Point(346, 190);
@@ -2417,772 +2338,43 @@
             this.btnVerParentes.Text = "VER PARENTESCOS";
             this.btnVerParentes.UseVisualStyleBackColor = false;
             // 
-            // tabSabana
-            // 
-            this.tabSabana.Controls.Add(this.btnImprimirSabana);
-            this.tabSabana.Controls.Add(this.btnVerSabana);
-            this.tabSabana.Controls.Add(this.label21);
-            this.tabSabana.Controls.Add(this.dateTimePicker2);
-            this.tabSabana.Controls.Add(this.label24);
-            this.tabSabana.Controls.Add(this.dateTimePicker3);
-            this.tabSabana.Controls.Add(this.dtgvSabana);
-            this.tabSabana.Location = new System.Drawing.Point(4, 25);
-            this.tabSabana.Name = "tabSabana";
-            this.tabSabana.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSabana.Size = new System.Drawing.Size(1072, 666);
-            this.tabSabana.TabIndex = 3;
-            this.tabSabana.Text = "Sabana";
-            this.tabSabana.UseVisualStyleBackColor = true;
-            // 
-            // btnImprimirSabana
-            // 
-            this.btnImprimirSabana.BackColor = System.Drawing.Color.White;
-            this.btnImprimirSabana.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
-            this.btnImprimirSabana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimirSabana.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimirSabana.ForeColor = System.Drawing.Color.Indigo;
-            this.btnImprimirSabana.Location = new System.Drawing.Point(577, 99);
-            this.btnImprimirSabana.Name = "btnImprimirSabana";
-            this.btnImprimirSabana.Size = new System.Drawing.Size(194, 40);
-            this.btnImprimirSabana.TabIndex = 96;
-            this.btnImprimirSabana.Text = "Imprimir";
-            this.btnImprimirSabana.UseVisualStyleBackColor = false;
-            // 
-            // btnVerSabana
-            // 
-            this.btnVerSabana.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnVerSabana.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnVerSabana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerSabana.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerSabana.ForeColor = System.Drawing.Color.White;
-            this.btnVerSabana.Location = new System.Drawing.Point(15, 94);
-            this.btnVerSabana.Name = "btnVerSabana";
-            this.btnVerSabana.Size = new System.Drawing.Size(160, 45);
-            this.btnVerSabana.TabIndex = 51;
-            this.btnVerSabana.Text = "VER SABANAS";
-            this.btnVerSabana.UseVisualStyleBackColor = false;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(12, 34);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(87, 15);
-            this.label21.TabIndex = 50;
-            this.label21.Text = "FECHA INICIO:";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(15, 54);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(115, 21);
-            this.dateTimePicker2.TabIndex = 49;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(147, 34);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(71, 15);
-            this.label24.TabIndex = 48;
-            this.label24.Text = "FECHA FIN:";
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(150, 54);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(115, 21);
-            this.dateTimePicker3.TabIndex = 47;
-            // 
-            // dtgvSabana
-            // 
-            this.dtgvSabana.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvSabana.Location = new System.Drawing.Point(15, 145);
-            this.dtgvSabana.Name = "dtgvSabana";
-            this.dtgvSabana.Size = new System.Drawing.Size(756, 449);
-            this.dtgvSabana.TabIndex = 46;
-            // 
-            // tabNovedades
-            // 
-            this.tabNovedades.Controls.Add(this.groupBox11);
-            this.tabNovedades.Controls.Add(this.groupBox10);
-            this.tabNovedades.Controls.Add(this.dtgvNovedades);
-            this.tabNovedades.Controls.Add(this.btnVerNovedades);
-            this.tabNovedades.Location = new System.Drawing.Point(4, 25);
-            this.tabNovedades.Name = "tabNovedades";
-            this.tabNovedades.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNovedades.Size = new System.Drawing.Size(1072, 666);
-            this.tabNovedades.TabIndex = 4;
-            this.tabNovedades.Text = "Novedades";
-            this.tabNovedades.UseVisualStyleBackColor = true;
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.btnNuevaNovedad);
-            this.groupBox11.Controls.Add(this.btnCancelarNovedad);
-            this.groupBox11.Controls.Add(this.btnGuardarNovedad);
-            this.groupBox11.Controls.Add(this.label22);
-            this.groupBox11.Controls.Add(this.txtNuevaNovedad);
-            this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox11.Location = new System.Drawing.Point(17, 11);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(525, 152);
-            this.groupBox11.TabIndex = 94;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Cargar novedad";
-            // 
-            // btnNuevaNovedad
-            // 
-            this.btnNuevaNovedad.BackColor = System.Drawing.Color.Indigo;
-            this.btnNuevaNovedad.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnNuevaNovedad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevaNovedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevaNovedad.ForeColor = System.Drawing.Color.White;
-            this.btnNuevaNovedad.Location = new System.Drawing.Point(416, 11);
-            this.btnNuevaNovedad.Name = "btnNuevaNovedad";
-            this.btnNuevaNovedad.Size = new System.Drawing.Size(98, 37);
-            this.btnNuevaNovedad.TabIndex = 82;
-            this.btnNuevaNovedad.Text = "NUEVA";
-            this.btnNuevaNovedad.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelarNovedad
-            // 
-            this.btnCancelarNovedad.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarNovedad.Enabled = false;
-            this.btnCancelarNovedad.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCancelarNovedad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarNovedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarNovedad.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarNovedad.Location = new System.Drawing.Point(416, 100);
-            this.btnCancelarNovedad.Name = "btnCancelarNovedad";
-            this.btnCancelarNovedad.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelarNovedad.TabIndex = 80;
-            this.btnCancelarNovedad.Text = "CANCELAR";
-            this.btnCancelarNovedad.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardarNovedad
-            // 
-            this.btnGuardarNovedad.BackColor = System.Drawing.Color.Green;
-            this.btnGuardarNovedad.Enabled = false;
-            this.btnGuardarNovedad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarNovedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarNovedad.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarNovedad.Location = new System.Drawing.Point(416, 54);
-            this.btnGuardarNovedad.Name = "btnGuardarNovedad";
-            this.btnGuardarNovedad.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarNovedad.TabIndex = 79;
-            this.btnGuardarNovedad.Text = "GUARDAR";
-            this.btnGuardarNovedad.UseVisualStyleBackColor = false;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(5, 21);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(63, 15);
-            this.label22.TabIndex = 78;
-            this.label22.Text = "DETALLE:";
-            // 
-            // txtNuevaNovedad
-            // 
-            this.txtNuevaNovedad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNuevaNovedad.Enabled = false;
-            this.txtNuevaNovedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNuevaNovedad.Location = new System.Drawing.Point(8, 40);
-            this.txtNuevaNovedad.Multiline = true;
-            this.txtNuevaNovedad.Name = "txtNuevaNovedad";
-            this.txtNuevaNovedad.Size = new System.Drawing.Size(391, 86);
-            this.txtNuevaNovedad.TabIndex = 77;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.label47);
-            this.groupBox10.Controls.Add(this.txtNovedad);
-            this.groupBox10.Controls.Add(this.txtUsuarioNovedad);
-            this.groupBox10.Controls.Add(this.label23);
-            this.groupBox10.Controls.Add(this.label20);
-            this.groupBox10.Controls.Add(this.txtDetalleNovedad);
-            this.groupBox10.Controls.Add(this.txtOrganismoNovedad);
-            this.groupBox10.Controls.Add(this.label43);
-            this.groupBox10.Controls.Add(this.txtFechaNovedad);
-            this.groupBox10.Controls.Add(this.label45);
-            this.groupBox10.Controls.Add(this.txtIdNovedad);
-            this.groupBox10.Controls.Add(this.label46);
-            this.groupBox10.Location = new System.Drawing.Point(17, 499);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(1035, 152);
-            this.groupBox10.TabIndex = 80;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Novedad";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.Location = new System.Drawing.Point(6, 66);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(68, 15);
-            this.label47.TabIndex = 86;
-            this.label47.Text = "NOVEDAD:";
-            // 
-            // txtNovedad
-            // 
-            this.txtNovedad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNovedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNovedad.Location = new System.Drawing.Point(9, 85);
-            this.txtNovedad.Multiline = true;
-            this.txtNovedad.Name = "txtNovedad";
-            this.txtNovedad.ReadOnly = true;
-            this.txtNovedad.Size = new System.Drawing.Size(317, 55);
-            this.txtNovedad.TabIndex = 85;
-            // 
-            // txtUsuarioNovedad
-            // 
-            this.txtUsuarioNovedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuarioNovedad.Location = new System.Drawing.Point(570, 39);
-            this.txtUsuarioNovedad.Name = "txtUsuarioNovedad";
-            this.txtUsuarioNovedad.ReadOnly = true;
-            this.txtUsuarioNovedad.Size = new System.Drawing.Size(227, 21);
-            this.txtUsuarioNovedad.TabIndex = 84;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(566, 20);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(64, 15);
-            this.label23.TabIndex = 83;
-            this.label23.Text = "USUARIO:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(335, 66);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(63, 15);
-            this.label20.TabIndex = 82;
-            this.label20.Text = "DETALLE:";
-            // 
-            // txtDetalleNovedad
-            // 
-            this.txtDetalleNovedad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDetalleNovedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetalleNovedad.Location = new System.Drawing.Point(338, 85);
-            this.txtDetalleNovedad.Multiline = true;
-            this.txtDetalleNovedad.Name = "txtDetalleNovedad";
-            this.txtDetalleNovedad.ReadOnly = true;
-            this.txtDetalleNovedad.Size = new System.Drawing.Size(682, 55);
-            this.txtDetalleNovedad.TabIndex = 81;
-            // 
-            // txtOrganismoNovedad
-            // 
-            this.txtOrganismoNovedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrganismoNovedad.Location = new System.Drawing.Point(210, 39);
-            this.txtOrganismoNovedad.Name = "txtOrganismoNovedad";
-            this.txtOrganismoNovedad.ReadOnly = true;
-            this.txtOrganismoNovedad.Size = new System.Drawing.Size(349, 21);
-            this.txtOrganismoNovedad.TabIndex = 80;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(6, 20);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(22, 15);
-            this.label43.TabIndex = 78;
-            this.label43.Text = "ID:";
-            // 
-            // txtFechaNovedad
-            // 
-            this.txtFechaNovedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaNovedad.Location = new System.Drawing.Point(103, 40);
-            this.txtFechaNovedad.Name = "txtFechaNovedad";
-            this.txtFechaNovedad.ReadOnly = true;
-            this.txtFechaNovedad.Size = new System.Drawing.Size(95, 21);
-            this.txtFechaNovedad.TabIndex = 64;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(100, 20);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(49, 15);
-            this.label45.TabIndex = 66;
-            this.label45.Text = "FECHA:";
-            // 
-            // txtIdNovedad
-            // 
-            this.txtIdNovedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdNovedad.Location = new System.Drawing.Point(9, 40);
-            this.txtIdNovedad.Name = "txtIdNovedad";
-            this.txtIdNovedad.ReadOnly = true;
-            this.txtIdNovedad.Size = new System.Drawing.Size(80, 21);
-            this.txtIdNovedad.TabIndex = 77;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(206, 20);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(84, 15);
-            this.label46.TabIndex = 72;
-            this.label46.Text = "ORGANISMO:";
-            // 
-            // dtgvNovedades
-            // 
-            this.dtgvNovedades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvNovedades.Location = new System.Drawing.Point(17, 222);
-            this.dtgvNovedades.Name = "dtgvNovedades";
-            this.dtgvNovedades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvNovedades.Size = new System.Drawing.Size(1035, 262);
-            this.dtgvNovedades.TabIndex = 49;
-            // 
-            // btnVerNovedades
-            // 
-            this.btnVerNovedades.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnVerNovedades.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnVerNovedades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerNovedades.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerNovedades.ForeColor = System.Drawing.Color.White;
-            this.btnVerNovedades.Location = new System.Drawing.Point(17, 169);
-            this.btnVerNovedades.Name = "btnVerNovedades";
-            this.btnVerNovedades.Size = new System.Drawing.Size(160, 45);
-            this.btnVerNovedades.TabIndex = 48;
-            this.btnVerNovedades.Text = "VER NOVEDADES";
-            this.btnVerNovedades.UseVisualStyleBackColor = false;
-            // 
-            // tabExepcionIngreso
-            // 
-            this.tabExepcionIngreso.Controls.Add(this.dtgvExcepcionesIngreso);
-            this.tabExepcionIngreso.Controls.Add(this.btnVerExcepciones);
-            this.tabExepcionIngreso.Controls.Add(this.groupBox13);
-            this.tabExepcionIngreso.Controls.Add(this.groupBox12);
-            this.tabExepcionIngreso.Location = new System.Drawing.Point(4, 25);
-            this.tabExepcionIngreso.Name = "tabExepcionIngreso";
-            this.tabExepcionIngreso.Padding = new System.Windows.Forms.Padding(3);
-            this.tabExepcionIngreso.Size = new System.Drawing.Size(1072, 666);
-            this.tabExepcionIngreso.TabIndex = 5;
-            this.tabExepcionIngreso.Text = "Exepcion Ingreso";
-            this.tabExepcionIngreso.UseVisualStyleBackColor = true;
-            // 
-            // dtgvExcepcionesIngreso
-            // 
-            this.dtgvExcepcionesIngreso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvExcepcionesIngreso.Location = new System.Drawing.Point(6, 374);
-            this.dtgvExcepcionesIngreso.Name = "dtgvExcepcionesIngreso";
-            this.dtgvExcepcionesIngreso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvExcepcionesIngreso.Size = new System.Drawing.Size(1055, 246);
-            this.dtgvExcepcionesIngreso.TabIndex = 11;
-            // 
-            // btnVerExcepciones
-            // 
-            this.btnVerExcepciones.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnVerExcepciones.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnVerExcepciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerExcepciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerExcepciones.ForeColor = System.Drawing.Color.White;
-            this.btnVerExcepciones.Location = new System.Drawing.Point(6, 321);
-            this.btnVerExcepciones.Name = "btnVerExcepciones";
-            this.btnVerExcepciones.Size = new System.Drawing.Size(160, 45);
-            this.btnVerExcepciones.TabIndex = 10;
-            this.btnVerExcepciones.Text = "VER EXCEPCIONES";
-            this.btnVerExcepciones.UseVisualStyleBackColor = false;
-            // 
-            // groupBox13
-            // 
-            this.groupBox13.Controls.Add(this.btnAnularExcepcion);
-            this.groupBox13.Controls.Add(this.btnCumplimentarExcepcion);
-            this.groupBox13.Controls.Add(this.btnCancelarCumplAnularExcepcion);
-            this.groupBox13.Controls.Add(this.btnGuardarCumplAnularExcepcion);
-            this.groupBox13.Controls.Add(this.lblDetalleCumplAnularExcepcion);
-            this.groupBox13.Controls.Add(this.txtDetalleCumplAnularExcepcion);
-            this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox13.Location = new System.Drawing.Point(790, 5);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(273, 271);
-            this.groupBox13.TabIndex = 94;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Cumplimentar / Anular";
-            this.groupBox13.Visible = false;
-            // 
-            // btnAnularExcepcion
-            // 
-            this.btnAnularExcepcion.BackColor = System.Drawing.Color.Indigo;
-            this.btnAnularExcepcion.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAnularExcepcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnularExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnularExcepcion.ForeColor = System.Drawing.Color.White;
-            this.btnAnularExcepcion.Location = new System.Drawing.Point(160, 20);
-            this.btnAnularExcepcion.Name = "btnAnularExcepcion";
-            this.btnAnularExcepcion.Size = new System.Drawing.Size(93, 37);
-            this.btnAnularExcepcion.TabIndex = 13;
-            this.btnAnularExcepcion.Text = "ANULAR";
-            this.btnAnularExcepcion.UseVisualStyleBackColor = false;
-            // 
-            // btnCumplimentarExcepcion
-            // 
-            this.btnCumplimentarExcepcion.BackColor = System.Drawing.Color.Indigo;
-            this.btnCumplimentarExcepcion.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCumplimentarExcepcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCumplimentarExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCumplimentarExcepcion.ForeColor = System.Drawing.Color.White;
-            this.btnCumplimentarExcepcion.Location = new System.Drawing.Point(8, 21);
-            this.btnCumplimentarExcepcion.Name = "btnCumplimentarExcepcion";
-            this.btnCumplimentarExcepcion.Size = new System.Drawing.Size(146, 37);
-            this.btnCumplimentarExcepcion.TabIndex = 12;
-            this.btnCumplimentarExcepcion.Text = "CUMPLIMENTAR";
-            this.btnCumplimentarExcepcion.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelarCumplAnularExcepcion
-            // 
-            this.btnCancelarCumplAnularExcepcion.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarCumplAnularExcepcion.Enabled = false;
-            this.btnCancelarCumplAnularExcepcion.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCancelarCumplAnularExcepcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarCumplAnularExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarCumplAnularExcepcion.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarCumplAnularExcepcion.Location = new System.Drawing.Point(109, 217);
-            this.btnCancelarCumplAnularExcepcion.Name = "btnCancelarCumplAnularExcepcion";
-            this.btnCancelarCumplAnularExcepcion.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelarCumplAnularExcepcion.TabIndex = 16;
-            this.btnCancelarCumplAnularExcepcion.Text = "CANCELAR";
-            this.btnCancelarCumplAnularExcepcion.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardarCumplAnularExcepcion
-            // 
-            this.btnGuardarCumplAnularExcepcion.BackColor = System.Drawing.Color.Green;
-            this.btnGuardarCumplAnularExcepcion.Enabled = false;
-            this.btnGuardarCumplAnularExcepcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarCumplAnularExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarCumplAnularExcepcion.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarCumplAnularExcepcion.Location = new System.Drawing.Point(8, 217);
-            this.btnGuardarCumplAnularExcepcion.Name = "btnGuardarCumplAnularExcepcion";
-            this.btnGuardarCumplAnularExcepcion.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarCumplAnularExcepcion.TabIndex = 15;
-            this.btnGuardarCumplAnularExcepcion.Text = "GUARDAR";
-            this.btnGuardarCumplAnularExcepcion.UseVisualStyleBackColor = false;
-            // 
-            // lblDetalleCumplAnularExcepcion
-            // 
-            this.lblDetalleCumplAnularExcepcion.AutoSize = true;
-            this.lblDetalleCumplAnularExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalleCumplAnularExcepcion.Location = new System.Drawing.Point(5, 73);
-            this.lblDetalleCumplAnularExcepcion.Name = "lblDetalleCumplAnularExcepcion";
-            this.lblDetalleCumplAnularExcepcion.Size = new System.Drawing.Size(63, 15);
-            this.lblDetalleCumplAnularExcepcion.TabIndex = 78;
-            this.lblDetalleCumplAnularExcepcion.Text = "DETALLE:";
-            // 
-            // txtDetalleCumplAnularExcepcion
-            // 
-            this.txtDetalleCumplAnularExcepcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDetalleCumplAnularExcepcion.Enabled = false;
-            this.txtDetalleCumplAnularExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetalleCumplAnularExcepcion.Location = new System.Drawing.Point(8, 92);
-            this.txtDetalleCumplAnularExcepcion.Multiline = true;
-            this.txtDetalleCumplAnularExcepcion.Name = "txtDetalleCumplAnularExcepcion";
-            this.txtDetalleCumplAnularExcepcion.Size = new System.Drawing.Size(249, 115);
-            this.txtDetalleCumplAnularExcepcion.TabIndex = 14;
-            // 
-            // groupBox12
-            // 
-            this.groupBox12.Controls.Add(this.btnInterno);
-            this.groupBox12.Controls.Add(this.txtInternoExcepcion);
-            this.groupBox12.Controls.Add(this.label56);
-            this.groupBox12.Controls.Add(this.txtIdInternoExcepcion);
-            this.groupBox12.Controls.Add(this.label57);
-            this.groupBox12.Controls.Add(this.txtFechaCargaExcepcion);
-            this.groupBox12.Controls.Add(this.label54);
-            this.groupBox12.Controls.Add(this.txtIdExcepcion);
-            this.groupBox12.Controls.Add(this.chkAnuladoExcepcion);
-            this.groupBox12.Controls.Add(this.chkCumplimentadoExcepcion);
-            this.groupBox12.Controls.Add(this.label53);
-            this.groupBox12.Controls.Add(this.txtUsuarioCargaExcepcion);
-            this.groupBox12.Controls.Add(this.label50);
-            this.groupBox12.Controls.Add(this.txtOrganismoExepcion);
-            this.groupBox12.Controls.Add(this.label51);
-            this.groupBox12.Controls.Add(this.label48);
-            this.groupBox12.Controls.Add(this.txtDetalleExcepcion);
-            this.groupBox12.Controls.Add(this.label49);
-            this.groupBox12.Controls.Add(this.txtMotivoExcepcion);
-            this.groupBox12.Controls.Add(this.btnNuevaExcepcion);
-            this.groupBox12.Controls.Add(this.btnGuardarExcepcion);
-            this.groupBox12.Controls.Add(this.btnCancelarExcepcion);
-            this.groupBox12.Controls.Add(this.dtpFechaExcepcion);
-            this.groupBox12.Controls.Add(this.label52);
-            this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox12.Location = new System.Drawing.Point(6, 6);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(773, 309);
-            this.groupBox12.TabIndex = 93;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Excepcion para ingreso";
-            // 
-            // btnInterno
-            // 
-            this.btnInterno.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnInterno.Enabled = false;
-            this.btnInterno.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnInterno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInterno.ForeColor = System.Drawing.Color.White;
-            this.btnInterno.Location = new System.Drawing.Point(560, 80);
-            this.btnInterno.Name = "btnInterno";
-            this.btnInterno.Size = new System.Drawing.Size(80, 30);
-            this.btnInterno.TabIndex = 93;
-            this.btnInterno.Text = "BUSCAR";
-            this.btnInterno.UseVisualStyleBackColor = false;
-            // 
-            // txtInternoExcepcion
-            // 
-            this.txtInternoExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInternoExcepcion.Location = new System.Drawing.Point(95, 87);
-            this.txtInternoExcepcion.Name = "txtInternoExcepcion";
-            this.txtInternoExcepcion.ReadOnly = true;
-            this.txtInternoExcepcion.Size = new System.Drawing.Size(457, 21);
-            this.txtInternoExcepcion.TabIndex = 90;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.Location = new System.Drawing.Point(9, 68);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(79, 15);
-            this.label56.TabIndex = 92;
-            this.label56.Text = "ID INTERNO:";
-            // 
-            // txtIdInternoExcepcion
-            // 
-            this.txtIdInternoExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdInternoExcepcion.Location = new System.Drawing.Point(13, 87);
-            this.txtIdInternoExcepcion.Name = "txtIdInternoExcepcion";
-            this.txtIdInternoExcepcion.ReadOnly = true;
-            this.txtIdInternoExcepcion.Size = new System.Drawing.Size(75, 21);
-            this.txtIdInternoExcepcion.TabIndex = 89;
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.Location = new System.Drawing.Point(92, 68);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(64, 15);
-            this.label57.TabIndex = 91;
-            this.label57.Text = "INTERNO:";
-            // 
-            // txtFechaCargaExcepcion
-            // 
-            this.txtFechaCargaExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaCargaExcepcion.Location = new System.Drawing.Point(131, 230);
-            this.txtFechaCargaExcepcion.Name = "txtFechaCargaExcepcion";
-            this.txtFechaCargaExcepcion.ReadOnly = true;
-            this.txtFechaCargaExcepcion.Size = new System.Drawing.Size(105, 21);
-            this.txtFechaCargaExcepcion.TabIndex = 7;
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.Location = new System.Drawing.Point(6, 211);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(94, 15);
-            this.label54.TabIndex = 88;
-            this.label54.Text = "ID EXCEPCION:";
-            // 
-            // txtIdExcepcion
-            // 
-            this.txtIdExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdExcepcion.Location = new System.Drawing.Point(10, 230);
-            this.txtIdExcepcion.Name = "txtIdExcepcion";
-            this.txtIdExcepcion.ReadOnly = true;
-            this.txtIdExcepcion.Size = new System.Drawing.Size(105, 21);
-            this.txtIdExcepcion.TabIndex = 6;
-            // 
-            // chkAnuladoExcepcion
-            // 
-            this.chkAnuladoExcepcion.AutoSize = true;
-            this.chkAnuladoExcepcion.Enabled = false;
-            this.chkAnuladoExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAnuladoExcepcion.Location = new System.Drawing.Point(410, 230);
-            this.chkAnuladoExcepcion.Name = "chkAnuladoExcepcion";
-            this.chkAnuladoExcepcion.Size = new System.Drawing.Size(83, 19);
-            this.chkAnuladoExcepcion.TabIndex = 86;
-            this.chkAnuladoExcepcion.Text = "ANULADO";
-            this.chkAnuladoExcepcion.UseVisualStyleBackColor = true;
-            // 
-            // chkCumplimentadoExcepcion
-            // 
-            this.chkCumplimentadoExcepcion.AutoSize = true;
-            this.chkCumplimentadoExcepcion.Enabled = false;
-            this.chkCumplimentadoExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkCumplimentadoExcepcion.Location = new System.Drawing.Point(253, 230);
-            this.chkCumplimentadoExcepcion.Name = "chkCumplimentadoExcepcion";
-            this.chkCumplimentadoExcepcion.Size = new System.Drawing.Size(132, 19);
-            this.chkCumplimentadoExcepcion.TabIndex = 85;
-            this.chkCumplimentadoExcepcion.Text = "CUMPLIMENTADO";
-            this.chkCumplimentadoExcepcion.UseVisualStyleBackColor = true;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.Location = new System.Drawing.Point(307, 258);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(107, 15);
-            this.label53.TabIndex = 50;
-            this.label53.Text = "USUARIO CARGA:";
-            // 
-            // txtUsuarioCargaExcepcion
-            // 
-            this.txtUsuarioCargaExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuarioCargaExcepcion.Location = new System.Drawing.Point(311, 277);
-            this.txtUsuarioCargaExcepcion.Name = "txtUsuarioCargaExcepcion";
-            this.txtUsuarioCargaExcepcion.ReadOnly = true;
-            this.txtUsuarioCargaExcepcion.Size = new System.Drawing.Size(183, 21);
-            this.txtUsuarioCargaExcepcion.TabIndex = 9;
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(8, 258);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(84, 15);
-            this.label50.TabIndex = 47;
-            this.label50.Text = "ORGANISMO:";
-            // 
-            // txtOrganismoExepcion
-            // 
-            this.txtOrganismoExepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrganismoExepcion.Location = new System.Drawing.Point(12, 277);
-            this.txtOrganismoExepcion.Name = "txtOrganismoExepcion";
-            this.txtOrganismoExepcion.ReadOnly = true;
-            this.txtOrganismoExepcion.Size = new System.Drawing.Size(287, 21);
-            this.txtOrganismoExepcion.TabIndex = 8;
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(128, 211);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(92, 15);
-            this.label51.TabIndex = 48;
-            this.label51.Text = "FECHA CARGA:";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(145, 22);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(120, 15);
-            this.label48.TabIndex = 41;
-            this.label48.Text = "MOTIVO EXEPCION:";
-            // 
-            // txtDetalleExcepcion
-            // 
-            this.txtDetalleExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetalleExcepcion.Location = new System.Drawing.Point(11, 133);
-            this.txtDetalleExcepcion.Multiline = true;
-            this.txtDetalleExcepcion.Name = "txtDetalleExcepcion";
-            this.txtDetalleExcepcion.ReadOnly = true;
-            this.txtDetalleExcepcion.Size = new System.Drawing.Size(639, 70);
-            this.txtDetalleExcepcion.TabIndex = 3;
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(8, 112);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(63, 15);
-            this.label49.TabIndex = 37;
-            this.label49.Text = "DETALLE:";
-            // 
-            // txtMotivoExcepcion
-            // 
-            this.txtMotivoExcepcion.Enabled = false;
-            this.txtMotivoExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMotivoExcepcion.Location = new System.Drawing.Point(149, 41);
-            this.txtMotivoExcepcion.Name = "txtMotivoExcepcion";
-            this.txtMotivoExcepcion.Size = new System.Drawing.Size(501, 21);
-            this.txtMotivoExcepcion.TabIndex = 2;
-            // 
-            // btnNuevaExcepcion
-            // 
-            this.btnNuevaExcepcion.BackColor = System.Drawing.Color.Indigo;
-            this.btnNuevaExcepcion.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnNuevaExcepcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevaExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevaExcepcion.ForeColor = System.Drawing.Color.White;
-            this.btnNuevaExcepcion.Location = new System.Drawing.Point(664, 43);
-            this.btnNuevaExcepcion.Name = "btnNuevaExcepcion";
-            this.btnNuevaExcepcion.Size = new System.Drawing.Size(98, 40);
-            this.btnNuevaExcepcion.TabIndex = 0;
-            this.btnNuevaExcepcion.Text = "NUEVO";
-            this.btnNuevaExcepcion.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardarExcepcion
-            // 
-            this.btnGuardarExcepcion.BackColor = System.Drawing.Color.Green;
-            this.btnGuardarExcepcion.Enabled = false;
-            this.btnGuardarExcepcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarExcepcion.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarExcepcion.Location = new System.Drawing.Point(664, 92);
-            this.btnGuardarExcepcion.Name = "btnGuardarExcepcion";
-            this.btnGuardarExcepcion.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarExcepcion.TabIndex = 4;
-            this.btnGuardarExcepcion.Text = "GUARDAR";
-            this.btnGuardarExcepcion.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelarExcepcion
-            // 
-            this.btnCancelarExcepcion.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarExcepcion.Enabled = false;
-            this.btnCancelarExcepcion.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCancelarExcepcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarExcepcion.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarExcepcion.Location = new System.Drawing.Point(664, 136);
-            this.btnCancelarExcepcion.Name = "btnCancelarExcepcion";
-            this.btnCancelarExcepcion.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelarExcepcion.TabIndex = 5;
-            this.btnCancelarExcepcion.Text = "CANCELAR";
-            this.btnCancelarExcepcion.UseVisualStyleBackColor = false;
-            // 
-            // dtpFechaExcepcion
-            // 
-            this.dtpFechaExcepcion.Enabled = false;
-            this.dtpFechaExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaExcepcion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaExcepcion.Location = new System.Drawing.Point(11, 41);
-            this.dtpFechaExcepcion.Name = "dtpFechaExcepcion";
-            this.dtpFechaExcepcion.Size = new System.Drawing.Size(124, 21);
-            this.dtpFechaExcepcion.TabIndex = 1;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(7, 22);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(113, 15);
-            this.label52.TabIndex = 44;
-            this.label52.Text = "FECHA EXEPCION:";
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label70.Location = new System.Drawing.Point(174, 218);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(65, 15);
+            this.label70.TabIndex = 260;
+            this.label70.Text = "ABOGADO";
+            // 
+            // txtAbogado
+            // 
+            this.txtAbogado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAbogado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAbogado.Location = new System.Drawing.Point(177, 237);
+            this.txtAbogado.Name = "txtAbogado";
+            this.txtAbogado.Size = new System.Drawing.Size(322, 21);
+            this.txtAbogado.TabIndex = 259;
+            // 
+            // cmbTipoDefensor
+            // 
+            this.cmbTipoDefensor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipoDefensor.FormattingEnabled = true;
+            this.cmbTipoDefensor.Location = new System.Drawing.Point(11, 237);
+            this.cmbTipoDefensor.Name = "cmbTipoDefensor";
+            this.cmbTipoDefensor.Size = new System.Drawing.Size(145, 23);
+            this.cmbTipoDefensor.TabIndex = 257;
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label71.Location = new System.Drawing.Point(8, 218);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(74, 15);
+            this.label71.TabIndex = 258;
+            this.label71.Text = "DEFENSOR";
             // 
             // FormInternoVer
             // 
@@ -3222,21 +2414,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvParentescos)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.tabSabana.ResumeLayout(false);
-            this.tabSabana.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvSabana)).EndInit();
-            this.tabNovedades.ResumeLayout(false);
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvNovedades)).EndInit();
-            this.tabExepcionIngreso.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvExcepcionesIngreso)).EndInit();
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox13.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3419,71 +2596,6 @@
         private System.Windows.Forms.TextBox txtIdVisitaInterno;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button btnVerParentes;
-        private System.Windows.Forms.TabPage tabSabana;
-        private System.Windows.Forms.Button btnImprimirSabana;
-        private System.Windows.Forms.Button btnVerSabana;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DataGridView dtgvSabana;
-        private System.Windows.Forms.TabPage tabNovedades;
-        private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.Button btnNuevaNovedad;
-        private System.Windows.Forms.Button btnCancelarNovedad;
-        private System.Windows.Forms.Button btnGuardarNovedad;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox txtNuevaNovedad;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.TextBox txtNovedad;
-        private System.Windows.Forms.TextBox txtUsuarioNovedad;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox txtDetalleNovedad;
-        private System.Windows.Forms.TextBox txtOrganismoNovedad;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.TextBox txtFechaNovedad;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.TextBox txtIdNovedad;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.DataGridView dtgvNovedades;
-        private System.Windows.Forms.Button btnVerNovedades;
-        private System.Windows.Forms.TabPage tabExepcionIngreso;
-        private System.Windows.Forms.DataGridView dtgvExcepcionesIngreso;
-        private System.Windows.Forms.Button btnVerExcepciones;
-        private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.Button btnAnularExcepcion;
-        private System.Windows.Forms.Button btnCumplimentarExcepcion;
-        private System.Windows.Forms.Button btnCancelarCumplAnularExcepcion;
-        private System.Windows.Forms.Button btnGuardarCumplAnularExcepcion;
-        private System.Windows.Forms.Label lblDetalleCumplAnularExcepcion;
-        private System.Windows.Forms.TextBox txtDetalleCumplAnularExcepcion;
-        private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.Button btnInterno;
-        private System.Windows.Forms.TextBox txtInternoExcepcion;
-        private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.TextBox txtIdInternoExcepcion;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.TextBox txtFechaCargaExcepcion;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.TextBox txtIdExcepcion;
-        private System.Windows.Forms.CheckBox chkAnuladoExcepcion;
-        private System.Windows.Forms.CheckBox chkCumplimentadoExcepcion;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.TextBox txtUsuarioCargaExcepcion;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.TextBox txtOrganismoExepcion;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.TextBox txtDetalleExcepcion;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.TextBox txtMotivoExcepcion;
-        private System.Windows.Forms.Button btnNuevaExcepcion;
-        private System.Windows.Forms.Button btnGuardarExcepcion;
-        private System.Windows.Forms.Button btnCancelarExcepcion;
-        private System.Windows.Forms.DateTimePicker dtpFechaExcepcion;
-        private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Button btnGuardarIngreso;
         private System.Windows.Forms.Button btnCancelarIngreso;
         private System.Windows.Forms.Label lblMensajeIngreso;
@@ -3491,5 +2603,9 @@
         private System.Windows.Forms.DateTimePicker dtpFechaAlojamientoMiUnidad;
         private System.Windows.Forms.Label lblFechaAlojamientoMiUnidad;
         private System.Windows.Forms.CheckBox chkIngresarMiunidad;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.TextBox txtAbogado;
+        private System.Windows.Forms.ComboBox cmbTipoDefensor;
+        private System.Windows.Forms.Label label71;
     }
 }

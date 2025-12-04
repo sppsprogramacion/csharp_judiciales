@@ -29,6 +29,9 @@ namespace CapaDatos
         public DReingreso reingreso { get; set; }
         public int numero_reingreso { get; set; }
         public string prontuario_policial { get; set; }
+        public int tipo_defensor_id { get; set; }
+        public DTipoDefensor tipo_defensor { get; set; }
+        public string abogado { get; set; }
         public bool esta_liberado { get; set; }
         public DateTime? fecha_egreso { get; set; }
         public DateTime fecha_carga { get; set; }

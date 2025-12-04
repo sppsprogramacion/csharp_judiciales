@@ -257,6 +257,11 @@ namespace CapaPresentacion
                         cmbReingreso.DisplayMember = "reingreso";
                         cmbReingreso.DataSource = this.tablasIngresoInterno.reingreso;
 
+                        //Tipos defensor
+                        cmbTipoDefensor.ValueMember = "id_tipo_defensor";
+                        cmbTipoDefensor.DisplayMember = "tipo_defensor";
+                        cmbTipoDefensor.DataSource = this.tablasIngresoInterno.tipos_defensor;
+
                     }
                     //fin Carga de combos sobre  listas para ingreso
 
@@ -395,7 +400,9 @@ namespace CapaPresentacion
                 otra_jurisdiccion_id = cmbOtraJurisdiccion.SelectedValue.ToString(),
                 reingreso_id = Convert.ToInt32(cmbReingreso.SelectedValue.ToString()),
                 numero_reingreso = Convert.ToInt32(txtNumeroReingreso.Text),
-                prontuario_policial = txtProntuarioPolicial.Text
+                prontuario_policial = txtProntuarioPolicial.Text,
+                tipo_defensor_id = Convert.ToInt32(cmbTipoDefensor.SelectedValue.ToString()),
+                abogado = txtAbogado.Text
 
             };
 
@@ -434,5 +441,6 @@ namespace CapaPresentacion
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+                
     }
 }
