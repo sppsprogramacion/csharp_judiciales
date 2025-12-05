@@ -40,5 +40,12 @@ namespace CapaPresentacion
             lblEncabezado.Text = lblEncabezado.Text + " - " + CurrentUser.Instance.organismo.organismo;
             lblUsuario.Text = CurrentUser.Instance.nombre.ToUpper() + " " + CurrentUser.Instance.apellido.ToUpper();
         }
+
+        private void btnTraslados_Click(object sender, EventArgs e)
+        {
+            FormTraslados formTraslados = new FormTraslados();
+            formTraslados.ShowDialog();
+
+        }
     }
 }

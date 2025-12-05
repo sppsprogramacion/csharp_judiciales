@@ -33,6 +33,7 @@
             this.btnVerInternos = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnTraslados = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +73,7 @@
             this.btnVerInternos.ForeColor = System.Drawing.Color.White;
             this.btnVerInternos.Location = new System.Drawing.Point(12, 47);
             this.btnVerInternos.Name = "btnVerInternos";
-            this.btnVerInternos.Size = new System.Drawing.Size(93, 45);
+            this.btnVerInternos.Size = new System.Drawing.Size(120, 70);
             this.btnVerInternos.TabIndex = 78;
             this.btnVerInternos.Text = "Internos";
             this.btnVerInternos.UseVisualStyleBackColor = false;
@@ -100,12 +101,28 @@
             this.pictureBox1.TabIndex = 79;
             this.pictureBox1.TabStop = false;
             // 
+            // btnTraslados
+            // 
+            this.btnTraslados.BackColor = System.Drawing.Color.Orange;
+            this.btnTraslados.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnTraslados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTraslados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraslados.ForeColor = System.Drawing.Color.White;
+            this.btnTraslados.Location = new System.Drawing.Point(141, 47);
+            this.btnTraslados.Name = "btnTraslados";
+            this.btnTraslados.Size = new System.Drawing.Size(120, 70);
+            this.btnTraslados.TabIndex = 81;
+            this.btnTraslados.Text = "Traslados";
+            this.btnTraslados.UseVisualStyleBackColor = false;
+            this.btnTraslados.Click += new System.EventHandler(this.btnTraslados_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(813, 495);
+            this.Controls.Add(this.btnTraslados);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnVerInternos);
@@ -127,6 +144,7 @@
         private System.Windows.Forms.Button btnVerInternos;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnTraslados;
     }
 }
 

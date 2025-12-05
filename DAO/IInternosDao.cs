@@ -13,6 +13,7 @@ namespace DAO
         Task<(bool, string error)> EditarInterno(int id, string prohibicionVisita);
         Task<(DInterno, string error)> BuscarInternoXId(int idInterno);
         Task<(List<DInterno>, string error)> ListaInternosXApellido(string apellido);
+        Task<(List<DInterno>, string error)> ListaInternosXApellidoGeneral(string apellido);
         Task<(List<DInterno>, string error)> ListaInternosTodos();
     }
 }

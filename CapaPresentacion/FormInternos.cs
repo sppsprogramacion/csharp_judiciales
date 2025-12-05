@@ -66,14 +66,30 @@ namespace CapaPresentacion
 
         private async void btnBuscarApellido_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(cmbBusqueda.SelectedValue.ToString());
             NInterno nInterno = new NInterno();
-            (List<DInterno> listaInternos, string errorResponse) = await nInterno.ListaInternosXApellido(txtApellidoBusqueda.Text);
+            List<DInterno> listaInternos = new List<DInterno>();
 
-            if (listaInternos == null)
+            if (cmbBusqueda.SelectedValue.ToString() == "unidad")
             {
-                MessageBox.Show(errorResponse, "Internos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                (List<DInterno> listaInternosEncontrados, string errorResponse) = await nInterno.ListaInternosXApellido(txtApellidoBusqueda.Text);
+                if (listaInternosEncontrados == null)
+                {
+                    MessageBox.Show(errorResponse, "Internos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                listaInternos = listaInternosEncontrados;
+            }
+
+            if (cmbBusqueda.SelectedValue.ToString() == "todas")
+            {
+                (List<DInterno> listaInternosEncontrados, string errorResponse) = await nInterno.ListaInternosXApellidoGeneral(txtApellidoBusqueda.Text);
+                if (listaInternosEncontrados == null)
+                {
+                    MessageBox.Show(errorResponse, "Internos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                listaInternos = listaInternosEncontrados;
             }
 
             var datosFiltrados = listaInternos
