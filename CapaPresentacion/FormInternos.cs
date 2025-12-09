@@ -66,7 +66,6 @@ namespace CapaPresentacion
 
         private async void btnBuscarApellido_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(cmbBusqueda.SelectedValue.ToString());
             NInterno nInterno = new NInterno();
             List<DInterno> listaInternos = new List<DInterno>();
 

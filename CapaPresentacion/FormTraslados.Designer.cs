@@ -28,9 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTraslados));
             this.btnImprimirExcepciones = new System.Windows.Forms.Button();
             this.dtgvTraslados = new System.Windows.Forms.DataGridView();
             this.groupAceptarRechazar = new System.Windows.Forms.GroupBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblEstadoTraslado = new System.Windows.Forms.Label();
+            this.btnRechazar = new System.Windows.Forms.Button();
+            this.btnAceptarTraslado = new System.Windows.Forms.Button();
             this.lblDetalleCumplAnularExcepcion = new System.Windows.Forms.Label();
             this.txtObsProcesarTraslado = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -59,11 +65,6 @@
             this.btnVerTraslados = new System.Windows.Forms.Button();
             this.btnPendientesSalieron = new System.Windows.Forms.Button();
             this.btnPendientesIngreso = new System.Windows.Forms.Button();
-            this.btnAceptarTraslado = new System.Windows.Forms.Button();
-            this.btnRechazar = new System.Windows.Forms.Button();
-            this.lblEstadoTraslado = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTraslados)).BeginInit();
             this.groupAceptarRechazar.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -109,6 +110,77 @@
             this.groupAceptarRechazar.TabIndex = 113;
             this.groupAceptarRechazar.TabStop = false;
             this.groupAceptarRechazar.Text = "Aceptar / Rechazar";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.White;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.Green;
+            this.btnGuardar.Location = new System.Drawing.Point(9, 305);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardar.TabIndex = 240;
+            this.btnGuardar.Text = "GUARDAR";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.White;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelar.Location = new System.Drawing.Point(123, 305);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelar.TabIndex = 241;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // lblEstadoTraslado
+            // 
+            this.lblEstadoTraslado.AutoSize = true;
+            this.lblEstadoTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoTraslado.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblEstadoTraslado.Location = new System.Drawing.Point(6, 73);
+            this.lblEstadoTraslado.Name = "lblEstadoTraslado";
+            this.lblEstadoTraslado.Size = new System.Drawing.Size(65, 15);
+            this.lblEstadoTraslado.TabIndex = 239;
+            this.lblEstadoTraslado.Text = "ESTADO:";
+            // 
+            // btnRechazar
+            // 
+            this.btnRechazar.BackColor = System.Drawing.Color.White;
+            this.btnRechazar.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnRechazar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRechazar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRechazar.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnRechazar.Location = new System.Drawing.Point(142, 19);
+            this.btnRechazar.Name = "btnRechazar";
+            this.btnRechazar.Size = new System.Drawing.Size(125, 40);
+            this.btnRechazar.TabIndex = 238;
+            this.btnRechazar.Text = "Rechazar";
+            this.btnRechazar.UseVisualStyleBackColor = false;
+            this.btnRechazar.Click += new System.EventHandler(this.btnRechazar_Click);
+            // 
+            // btnAceptarTraslado
+            // 
+            this.btnAceptarTraslado.BackColor = System.Drawing.Color.White;
+            this.btnAceptarTraslado.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnAceptarTraslado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptarTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptarTraslado.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnAceptarTraslado.Location = new System.Drawing.Point(8, 20);
+            this.btnAceptarTraslado.Name = "btnAceptarTraslado";
+            this.btnAceptarTraslado.Size = new System.Drawing.Size(125, 40);
+            this.btnAceptarTraslado.TabIndex = 237;
+            this.btnAceptarTraslado.Text = "Aceptar";
+            this.btnAceptarTraslado.UseVisualStyleBackColor = false;
+            this.btnAceptarTraslado.Click += new System.EventHandler(this.btnAceptarTraslado_Click);
             // 
             // lblDetalleCumplAnularExcepcion
             // 
@@ -423,77 +495,6 @@
             this.btnPendientesIngreso.UseVisualStyleBackColor = false;
             this.btnPendientesIngreso.Click += new System.EventHandler(this.btnPendientesIngreso_Click);
             // 
-            // btnAceptarTraslado
-            // 
-            this.btnAceptarTraslado.BackColor = System.Drawing.Color.White;
-            this.btnAceptarTraslado.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.btnAceptarTraslado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptarTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptarTraslado.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnAceptarTraslado.Location = new System.Drawing.Point(8, 20);
-            this.btnAceptarTraslado.Name = "btnAceptarTraslado";
-            this.btnAceptarTraslado.Size = new System.Drawing.Size(125, 40);
-            this.btnAceptarTraslado.TabIndex = 237;
-            this.btnAceptarTraslado.Text = "Aceptar";
-            this.btnAceptarTraslado.UseVisualStyleBackColor = false;
-            this.btnAceptarTraslado.Click += new System.EventHandler(this.btnAceptarTraslado_Click);
-            // 
-            // btnRechazar
-            // 
-            this.btnRechazar.BackColor = System.Drawing.Color.White;
-            this.btnRechazar.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.btnRechazar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRechazar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRechazar.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnRechazar.Location = new System.Drawing.Point(142, 19);
-            this.btnRechazar.Name = "btnRechazar";
-            this.btnRechazar.Size = new System.Drawing.Size(125, 40);
-            this.btnRechazar.TabIndex = 238;
-            this.btnRechazar.Text = "Rechazar";
-            this.btnRechazar.UseVisualStyleBackColor = false;
-            this.btnRechazar.Click += new System.EventHandler(this.btnRechazar_Click);
-            // 
-            // lblEstadoTraslado
-            // 
-            this.lblEstadoTraslado.AutoSize = true;
-            this.lblEstadoTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoTraslado.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblEstadoTraslado.Location = new System.Drawing.Point(6, 73);
-            this.lblEstadoTraslado.Name = "lblEstadoTraslado";
-            this.lblEstadoTraslado.Size = new System.Drawing.Size(65, 15);
-            this.lblEstadoTraslado.TabIndex = 239;
-            this.lblEstadoTraslado.Text = "ESTADO:";
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.White;
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardar.Location = new System.Drawing.Point(9, 305);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardar.TabIndex = 240;
-            this.btnGuardar.Text = "GUARDAR";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.White;
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelar.Location = new System.Drawing.Point(123, 305);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelar.TabIndex = 241;
-            this.btnCancelar.Text = "CANCELAR";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // FormTraslados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -507,6 +508,7 @@
             this.Controls.Add(this.btnImprimirExcepciones);
             this.Controls.Add(this.dtgvTraslados);
             this.Controls.Add(this.groupAceptarRechazar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormTraslados";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -7,7 +7,7 @@
     <ProjectGuid>{64276D16-A0A2-4598-8A51-47D42A75451F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>CapaPresentacion</RootNamespace>
-    <AssemblyName>RestriccionVisitas</AssemblyName>
+    <AssemblyName>Judiciales</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -61,7 +61,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>restriccion-logo.ico</ApplicationIcon>
+    <ApplicationIcon>judiciales-icono.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
@@ -242,6 +242,7 @@
   <ItemGroup>
     <None Include="Resources\logo_spps2.png" />
     <None Include="Resources\usuario-verde.png" />
+    <Content Include="judiciales-icono.ico" />
     <Content Include="restriccion-logo.ico" />
   </ItemGroup>
   <ItemGroup>
