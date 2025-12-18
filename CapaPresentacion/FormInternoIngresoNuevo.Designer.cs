@@ -383,7 +383,7 @@
             this.txtNumeroReingreso.Location = new System.Drawing.Point(177, 196);
             this.txtNumeroReingreso.Name = "txtNumeroReingreso";
             this.txtNumeroReingreso.Size = new System.Drawing.Size(155, 21);
-            this.txtNumeroReingreso.TabIndex = 11;
+            this.txtNumeroReingreso.TabIndex = 9;
             // 
             // cmbReingreso
             // 
@@ -392,7 +392,7 @@
             this.cmbReingreso.Location = new System.Drawing.Point(11, 196);
             this.cmbReingreso.Name = "cmbReingreso";
             this.cmbReingreso.Size = new System.Drawing.Size(155, 23);
-            this.cmbReingreso.TabIndex = 10;
+            this.cmbReingreso.TabIndex = 8;
             // 
             // label66
             // 
@@ -411,7 +411,7 @@
             this.cmbOtraJurisdiccion.Location = new System.Drawing.Point(345, 145);
             this.cmbOtraJurisdiccion.Name = "cmbOtraJurisdiccion";
             this.cmbOtraJurisdiccion.Size = new System.Drawing.Size(155, 23);
-            this.cmbOtraJurisdiccion.TabIndex = 9;
+            this.cmbOtraJurisdiccion.TabIndex = 7;
             // 
             // label67
             // 
@@ -438,9 +438,9 @@
             this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label68.Location = new System.Drawing.Point(342, 28);
             this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(155, 15);
+            this.label68.Size = new System.Drawing.Size(139, 15);
             this.label68.TabIndex = 236;
-            this.label68.Text = "FECHA PRIMER INGRESO";
+            this.label68.Text = "FECHA INGRESO SPPS";
             // 
             // label69
             // 
@@ -516,7 +516,7 @@
             this.cmbJurisdiccion.Location = new System.Drawing.Point(177, 145);
             this.cmbJurisdiccion.Name = "cmbJurisdiccion";
             this.cmbJurisdiccion.Size = new System.Drawing.Size(155, 23);
-            this.cmbJurisdiccion.TabIndex = 8;
+            this.cmbJurisdiccion.TabIndex = 6;
             // 
             // label73
             // 
@@ -545,7 +545,7 @@
             this.cmbEstadoProcesal.Location = new System.Drawing.Point(9, 145);
             this.cmbEstadoProcesal.Name = "cmbEstadoProcesal";
             this.cmbEstadoProcesal.Size = new System.Drawing.Size(155, 23);
-            this.cmbEstadoProcesal.TabIndex = 7;
+            this.cmbEstadoProcesal.TabIndex = 5;
             // 
             // cmbOrganismoSppsProcesencia
             // 
@@ -573,7 +573,7 @@
             this.dtpFechaAlojamiento.Location = new System.Drawing.Point(12, 246);
             this.dtpFechaAlojamiento.Name = "dtpFechaAlojamiento";
             this.dtpFechaAlojamiento.Size = new System.Drawing.Size(153, 22);
-            this.dtpFechaAlojamiento.TabIndex = 6;
+            this.dtpFechaAlojamiento.TabIndex = 10;
             // 
             // label77
             // 

@@ -56,5 +56,16 @@ namespace CapaNegocio
             return (dInterno, error);
         }
         //FIN RETORNAR  XID..................................
+
+        //EDITAR DATOS PERSONALES
+        public async Task<(bool, string error)> EditarDatosPersonales(int idInterno, string dataEdicion)
+        {
+            IInternosDao internosDao = new InternoDaoImplement();
+
+            (bool internosResponse, string error) = await internosDao.EditarDatosPersonales(idInterno, dataEdicion);
+
+            return (internosResponse, error);
+        }
+        //FIN EDITAR DATOS PERSONALES..............................................................
     }
 }

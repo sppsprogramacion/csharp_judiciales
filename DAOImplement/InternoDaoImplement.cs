@@ -71,14 +71,7 @@ namespace DAOImplement
             }
         }
         //FIN CREAR..........................................................
-
-        //EDITAR
-        public Task<(bool, string error)> EditarInterno(int id, string prohibicionVisita)
-        {
-            throw new NotImplementedException();
-        }
-        //FIN EDITAR.............................................................
-
+                
 
         //BUSCAR X ID
         public async Task<(DInterno, string error)> BuscarInternoXId(int idInterno)
@@ -222,5 +215,74 @@ namespace DAOImplement
                 return (null, $"Error inesperado: {ex.Message}");
             }
         }
+
+        //EDITAR DATOS PERSONALES
+        public async Task<(bool, string error)> EditarDatosPersonales(int id, string datosPErsonales)
+        {
+            string token = SessionManager.Token; // Aquí pones tu token real
+
+            try
+            {
+                // Agregar el token en los headers
+                this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                // Crear el contenido de la solicitud HTTP
+                StringContent content = new StringContent(datosPErsonales, Encoding.UTF8, "application/json");
+
+                // Enviar la solicitud HTTP POST
+                HttpResponseMessage httpResponse = await this.httpClient.PutAsync(url_base + "/internos/update-datos-personales?id_interno=" + id, content);
+
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var contentRespuesta = await httpResponse.Content.ReadAsStringAsync();
+                    var dataRespuesta = JsonConvert.DeserializeObject<DResponseEditar>(contentRespuesta);
+
+                    if (dataRespuesta.Affected > 0)
+                    {
+                        return (true, null);
+                    }
+                    else
+                    {
+                        return (false, "No se pudo editar");
+                    }
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (false, $"Error al editar: {mensaje}");
+                }
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                // Capturar errores de la solicitud HTTP
+                return (false, $"Error de conexión: {httpRequestException.Message}");
+            }
+            catch (JsonException jsonException)
+            {
+                // Capturar errores en la serialización/deserialización de JSON                
+                return (false, $"Error inesperado");
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores (log, mensaje al usuario, etc.)
+                Console.WriteLine($"Error: {ex.Message}");
+                return (false, $"Error inesperado: {ex.Message}");
+            }
+        }
+        //FIN EDITAR DATOS PERSONALES.....................................................
+
+
+        public Task<(bool, string error)> EditarCaracteristicasPersonales(int id, string caracteristicasPersonales)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<(bool, string error)> EditarDatosFiliatorios(int id, string datosFiliatorios)
+        {
+            throw new NotImplementedException();
+        }
+
+
     }
 }

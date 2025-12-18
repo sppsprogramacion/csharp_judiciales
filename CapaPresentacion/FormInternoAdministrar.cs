@@ -1,6 +1,7 @@
 ﻿using CapaDatos;
 using CapaNegocio;
 using CapaPresentacion.FuncionesGenerales;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -179,6 +180,20 @@ namespace CapaPresentacion
             //pictureFoto.Load(this.dCiudadanoGlo.foto);
 
             tabInterno.Enabled = true;
+
+
+            //cargar datos de ingreso            
+            cmbOrganismoExternoProcedencia.Text = ingresoInternoGlobal.organismo_externo.organismo_externo.ToString();
+            dtpFechaIngresoSpps.Text = this.ingresoInternoGlobal.fecha_primer_ingreso.ToShortDateString();
+            cmbOrganismoSppsProcesencia.Text = ingresoInternoGlobal.organismo_procedencia.organismo.ToString();
+            txtProntuarioPolicial.Text = this.ingresoInternoGlobal.prontuario_policial.ToString();
+            cmbEstadoProcesal.Text = this.ingresoInternoGlobal.estado_procesal.estado_procesal;
+            cmbJurisdiccion.Text = this.ingresoInternoGlobal.jurisdiccion.jurisdiccion;
+            cmbOtraJurisdiccion.Text = this.ingresoInternoGlobal.otra_jurisdiccion.jurisdiccion;
+            cmbReingreso.Text = this.ingresoInternoGlobal.reingreso.reingreso;
+            txtNumeroReingreso.Text = this.ingresoInternoGlobal.numero_reingreso.ToString();
+            dtpFechaAlojamiento.Text = this.ingresoInternoGlobal.fecha_alojamiento.ToShortDateString();
+            cmbTipoDefensor.Text = this.ingresoInternoGlobal.tipo_defensor.tipo_defensor;
         }
 
         private void btnTrasladar_Click(object sender, EventArgs e)
@@ -283,6 +298,84 @@ namespace CapaPresentacion
                     }
                 }
             }
+        }
+
+        private void btnGuardarTrasladoARA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void btnGuardarEditarDatosPrincipales_Click(object sender, EventArgs e)
+        {
+            NInterno nInterno = new NInterno();
+            string dataEnviar;
+
+            if (txtIdInterno.Text == null || txtIdInterno.Text == "")
+            {
+                MessageBox.Show("Debe tener un interno cargado.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var dataInterno = new
+            {
+                prontuario = Convert.ToInt32(txtProntuario.Text),
+                dni = Convert.ToInt32(txtDni.Text),
+                apellido = txtApellido.Text,
+                nombre = txtNombre.Text,
+                alias = txtAlias.Text,
+            };
+
+            dataEnviar = JsonConvert.SerializeObject(dataInterno);
+
+            (bool respuestaEditar, string errorResponse) = await nInterno.EditarDatosPersonales(Convert.ToInt32(txtIdInterno.Text), dataEnviar);
+            
+
+            if (respuestaEditar)
+            {
+                MessageBox.Show("La edición de la prohibición se realizó correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.HabilitarDatosPersonales(false);
+                //this.LimpiarControles();
+                //this.HabilitarControles(false);
+
+
+                //btnNuevo.Enabled = true;
+                //btnEditar.Enabled = true;
+                //btnGuardar.Enabled = false;
+                //btnCancelar.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEditarDatosPrincipales_Click(object sender, EventArgs e)
+        {
+            this.HabilitarDatosPersonales(true);
+        }
+
+
+        //HABILITAR CONTROLES DATOS PERSONALES
+        private void HabilitarDatosPersonales(bool valor)
+        {
+            txtDni.ReadOnly = !valor;
+            txtProntuario.ReadOnly = !valor;
+            txtApellido.ReadOnly = !valor;
+            txtNombre.ReadOnly = !valor;
+            txtAlias.ReadOnly = !valor;
+
+
+            btnEditarDatosPrincipales.Enabled = !valor;
+            btnGuardarEditarDatosPrincipales.Enabled = valor;
+            btnCancelarEditarDatosPrincipales.Enabled = valor;
+
+        }
+
+        //FIN HABILITAR CONTROLES DATOS PERSONALES.......................................
+
+        private void btnCancelarEditarDatosPrincipales_Click(object sender, EventArgs e)
+        {
+            this.HabilitarDatosPersonales(false);
         }
     }
 }
