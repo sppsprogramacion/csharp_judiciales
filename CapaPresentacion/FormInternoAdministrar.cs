@@ -194,6 +194,7 @@ namespace CapaPresentacion
             txtNumeroReingreso.Text = this.ingresoInternoGlobal.numero_reingreso.ToString();
             dtpFechaAlojamiento.Text = this.ingresoInternoGlobal.fecha_alojamiento.ToShortDateString();
             cmbTipoDefensor.Text = this.ingresoInternoGlobal.tipo_defensor.tipo_defensor;
+            txtAbogado.Text = this.ingresoInternoGlobal.abogado;
         }
 
         private void btnTrasladar_Click(object sender, EventArgs e)
