@@ -355,6 +355,16 @@ namespace CapaPresentacion
             this.HabilitarDatosPersonales(true);
         }
 
+        private void btnCancelarEditarDatosPrincipales_Click(object sender, EventArgs e)
+        {
+            this.HabilitarDatosPersonales(false);
+        }
+
+        private void btnEditarCaracteristicasPersonales_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         //HABILITAR CONTROLES DATOS PERSONALES
         private void HabilitarDatosPersonales(bool valor)
@@ -370,13 +380,33 @@ namespace CapaPresentacion
             btnGuardarEditarDatosPrincipales.Enabled = valor;
             btnCancelarEditarDatosPrincipales.Enabled = valor;
 
-        }
+        }//FIN HABILITAR CONTROLES DATOS PERSONALES.......................................
 
-        //FIN HABILITAR CONTROLES DATOS PERSONALES.......................................
 
-        private void btnCancelarEditarDatosPrincipales_Click(object sender, EventArgs e)
+        //HABILITAR CONTROLES CARACTERISTICAS PERSONALES
+        private void HabilitarCarasteristicasPersonales(bool valor)
         {
-            this.HabilitarDatosPersonales(false);
-        }
+            cmbSexo.Enabled = valor;
+            txtTalla.ReadOnly = !valor;
+            cmbPiel.Enabled = valor;
+            cmbOjosColor.Enabled = valor;
+            cmbOjosTamanio.Enabled = valor;
+            cmbNarizForma.Enabled = valor;
+            cmbNarizTamanio.Enabled = valor;
+            cmbPeloTipo.Enabled = valor;
+            cmbPeloColor.Enabled = valor;
+
+
+            btnEditarCaracteristicasPersonales.Enabled = !valor;
+            btnGuardarEditarCaracteristicasPersonales.Enabled = valor;
+            btnCancelarEditarCaracteristicasPersonales.Enabled = valor;
+
+        }//FIN HABILITAR CONTROLES DATOS PERSONALES.......................................
+
+
+
+
+
+
     }
 }
