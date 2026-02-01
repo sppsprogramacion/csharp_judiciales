@@ -32,6 +32,10 @@
             this.tabInterno = new System.Windows.Forms.TabControl();
             this.tabDatosPrincipales = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtDetalleProceSpps = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtDetalleProceExterno = new System.Windows.Forms.TextBox();
             this.label70 = new System.Windows.Forms.Label();
             this.txtAbogado = new System.Windows.Forms.TextBox();
             this.cmbTipoDefensor = new System.Windows.Forms.ComboBox();
@@ -216,10 +220,6 @@
             this.txtIdVisitaInterno = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.btnVerParentes = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtDetalleProceSpps = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.txtDetalleProceExterno = new System.Windows.Forms.TextBox();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -309,10 +309,48 @@
             this.groupBox1.Controls.Add(this.label77);
             this.groupBox1.Location = new System.Drawing.Point(526, 191);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(519, 469);
+            this.groupBox1.Size = new System.Drawing.Size(525, 469);
             this.groupBox1.TabIndex = 216;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingreso de interno";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(6, 160);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(184, 15);
+            this.label20.TabIndex = 264;
+            this.label20.Text = "DETALLE PROCEDENCIA SPPS";
+            // 
+            // txtDetalleProceSpps
+            // 
+            this.txtDetalleProceSpps.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDetalleProceSpps.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetalleProceSpps.Location = new System.Drawing.Point(9, 179);
+            this.txtDetalleProceSpps.Name = "txtDetalleProceSpps";
+            this.txtDetalleProceSpps.Size = new System.Drawing.Size(501, 21);
+            this.txtDetalleProceSpps.TabIndex = 6;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(8, 69);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(210, 15);
+            this.label21.TabIndex = 262;
+            this.label21.Text = "DETALLE PROCEDENCIA EXTERNO";
+            // 
+            // txtDetalleProceExterno
+            // 
+            this.txtDetalleProceExterno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDetalleProceExterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetalleProceExterno.Location = new System.Drawing.Point(11, 87);
+            this.txtDetalleProceExterno.Name = "txtDetalleProceExterno";
+            this.txtDetalleProceExterno.Size = new System.Drawing.Size(499, 21);
+            this.txtDetalleProceExterno.TabIndex = 3;
             // 
             // label70
             // 
@@ -683,7 +721,7 @@
             this.groupBox14.Controls.Add(this.label86);
             this.groupBox14.Controls.Add(this.label88);
             this.groupBox14.Controls.Add(this.txtNombre);
-            this.groupBox14.Location = new System.Drawing.Point(6, 6);
+            this.groupBox14.Location = new System.Drawing.Point(5, 6);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(510, 654);
             this.groupBox14.TabIndex = 214;
@@ -704,7 +742,7 @@
             // 
             this.txtProvinciaNacimiento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProvinciaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProvinciaNacimiento.Location = new System.Drawing.Point(260, 370);
+            this.txtProvinciaNacimiento.Location = new System.Drawing.Point(257, 370);
             this.txtProvinciaNacimiento.Name = "txtProvinciaNacimiento";
             this.txtProvinciaNacimiento.ReadOnly = true;
             this.txtProvinciaNacimiento.Size = new System.Drawing.Size(238, 21);
@@ -865,7 +903,7 @@
             // 
             this.label93.AutoSize = true;
             this.label93.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label93.Location = new System.Drawing.Point(260, 503);
+            this.label93.Location = new System.Drawing.Point(257, 503);
             this.label93.Name = "label93";
             this.label93.Size = new System.Drawing.Size(51, 15);
             this.label93.TabIndex = 221;
@@ -905,7 +943,7 @@
             // 
             this.txtMadre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMadre.Location = new System.Drawing.Point(259, 522);
+            this.txtMadre.Location = new System.Drawing.Point(256, 522);
             this.txtMadre.Name = "txtMadre";
             this.txtMadre.ReadOnly = true;
             this.txtMadre.Size = new System.Drawing.Size(238, 21);
@@ -1165,7 +1203,7 @@
             // 
             this.label86.AutoSize = true;
             this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label86.Location = new System.Drawing.Point(262, 352);
+            this.label86.Location = new System.Drawing.Point(259, 352);
             this.label86.Name = "label86";
             this.label86.Size = new System.Drawing.Size(147, 15);
             this.label86.TabIndex = 208;
@@ -2385,44 +2423,6 @@
             this.btnVerParentes.Text = "VER PARENTESCOS";
             this.btnVerParentes.UseVisualStyleBackColor = false;
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(6, 160);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(184, 15);
-            this.label20.TabIndex = 264;
-            this.label20.Text = "DETALLE PROCEDENCIA SPPS";
-            // 
-            // txtDetalleProceSpps
-            // 
-            this.txtDetalleProceSpps.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDetalleProceSpps.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetalleProceSpps.Location = new System.Drawing.Point(9, 179);
-            this.txtDetalleProceSpps.Name = "txtDetalleProceSpps";
-            this.txtDetalleProceSpps.Size = new System.Drawing.Size(501, 21);
-            this.txtDetalleProceSpps.TabIndex = 6;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(8, 69);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(210, 15);
-            this.label21.TabIndex = 262;
-            this.label21.Text = "DETALLE PROCEDENCIA ESTERNO";
-            // 
-            // txtDetalleProceExterno
-            // 
-            this.txtDetalleProceExterno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDetalleProceExterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetalleProceExterno.Location = new System.Drawing.Point(11, 87);
-            this.txtDetalleProceExterno.Name = "txtDetalleProceExterno";
-            this.txtDetalleProceExterno.Size = new System.Drawing.Size(499, 21);
-            this.txtDetalleProceExterno.TabIndex = 3;
-            // 
             // FormInternoVer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2433,7 +2433,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormInternoVer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ver interno";
+            this.Text = "VER INTERNO";
             this.Load += new System.EventHandler(this.FormInternoVer_Load);
             this.tabInterno.ResumeLayout(false);
             this.tabDatosPrincipales.ResumeLayout(false);

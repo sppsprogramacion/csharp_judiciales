@@ -1,6 +1,10 @@
 ﻿using CapaDatos;
 using CapaNegocio;
 using CapaPresentacion.FuncionesGenerales;
+using CapaPresentacion.Validaciones.InternoAdministrar.Datos;
+using CapaPresentacion.Validaciones.InternoAdministrar.Validacion;
+using CapaPresentacion.Validaciones.NuevoInterno.Datos;
+using CapaPresentacion.Validaciones.NuevoInterno.Validacion;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -17,6 +21,7 @@ namespace CapaPresentacion
     public partial class FormInternoAdministrar : Form
     {
         //VARIABLES GLOBALES
+        private ErrorProvider errorProvider = new ErrorProvider();
         DInterno dInternoGlobal = new DInterno();
         DIngresoInterno ingresoInternoGlobal = new DIngresoInterno();
 
@@ -116,17 +121,8 @@ namespace CapaPresentacion
             }
             //fin Carga de combos sobre DatosFiliatorios
 
-            //CARGAR DATOS DEL INTERNO
-            int idInterno;
-            //acceder a la instancia de FormTramites abierta.
-            FormInternos formInternos = Application.OpenForms["FormInternos"] as FormInternos;
-            NInterno nInterno = new NInterno();
-
-            //BUSCAR INTERNO CON EL ID DEL FORMULARIO DE BUSQUEDA (formVisitas)
+            //CARGAR DATOS DEL INTERNO  
             tabInterno.Enabled = false;
-            //idInterno = Convert.ToInt32(formInternos.idInternoGlobal);
-            //(DInterno dInternoResponse, string errorInternoResponse) = await nInterno.BuscarInternoXID(idInterno);
-
             
             this.dInternoGlobal = this.ingresoInternoGlobal.interno;
 
@@ -134,10 +130,11 @@ namespace CapaPresentacion
             {
                 tabInterno.Enabled = false;
 
-                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No se encontro informaciòn del interno solicitado", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            //datos de ingreso en pestaña DATOS PRINCIPALES
             txtIdIngresoVer.Text = this.ingresoInternoGlobal.id_ingreso_interno.ToString();
             dtpFechaIngresoSppsVer.Text = this.ingresoInternoGlobal.fecha_primer_ingreso.ToShortDateString();
             txtReingresoVer.Text = this.ingresoInternoGlobal.reingreso.reingreso;
@@ -147,8 +144,39 @@ namespace CapaPresentacion
             txtEstadoProcesalVer.Text = this.ingresoInternoGlobal.estado_procesal.estado_procesal;
             txtJurisdiccionVer.Text = this.ingresoInternoGlobal.jurisdiccion.jurisdiccion;
 
+            //cargar datos del interno
+            this.CargarControlesInformacionInterno();
+
+            //txtFechaAlta.Text = this.dCiudadanoGlo.fecha_alta.ToShortDateString();
+            //txtOrganismoAlta.Text = this.dCiudadanoGlo.organismo_alta.organismo;
+            //pictureFoto.Load(this.dCiudadanoGlo.foto);
+
+            tabInterno.Enabled = true;
+
+
+            //cargar datos de ingreso en pestaña DATOS DE INGRESO           
+            cmbOrganismoExternoProcedencia.Text = ingresoInternoGlobal.organismo_externo.organismo_externo.ToString();
+            txtDetalleProceExterno.Text = ingresoInternoGlobal.obs_organismo_externo;
+            dtpFechaIngresoSpps.Text = this.ingresoInternoGlobal.fecha_primer_ingreso.ToShortDateString();
+            cmbOrganismoSppsProcesencia.Text = ingresoInternoGlobal.organismo_procedencia.organismo.ToString();
+            txtProntuarioPolicial.Text = this.ingresoInternoGlobal.prontuario_policial.ToString();
+            txtDetalleProceSpps.Text = this.ingresoInternoGlobal.obs_organismo_procedencia;
+            cmbEstadoProcesal.Text = this.ingresoInternoGlobal.estado_procesal.estado_procesal;
+            cmbJurisdiccion.Text = this.ingresoInternoGlobal.jurisdiccion.jurisdiccion;
+            cmbOtraJurisdiccion.Text = this.ingresoInternoGlobal.otra_jurisdiccion.jurisdiccion;
+            cmbReingreso.Text = this.ingresoInternoGlobal.reingreso.reingreso;
+            txtNumeroReingreso.Text = this.ingresoInternoGlobal.numero_reingreso.ToString();
+            dtpFechaAlojamiento.Text = this.ingresoInternoGlobal.fecha_alojamiento.ToShortDateString();
+            cmbTipoDefensor.Text = this.ingresoInternoGlobal.tipo_defensor.tipo_defensor;
+            txtAbogado.Text = this.ingresoInternoGlobal.abogado;
+        }
+                
+
+        //CARGAR CONTROLES DATOS DE INTERNO
+        private void CargarControlesInformacionInterno()
+        {
             //CARGAR DATOS DEL INTERNO
-            txtIdInterno.Text = this.dInternoGlobal.id_interno.ToString();           
+            txtIdInterno.Text = this.dInternoGlobal.id_interno.ToString();
             txtApellido.Text = this.dInternoGlobal.apellido;
             txtNombre.Text = this.dInternoGlobal.nombre;
             txtProntuario.Text = this.dInternoGlobal.prontuario.ToString();
@@ -166,37 +194,396 @@ namespace CapaPresentacion
             cmbNacionalidad.Text = this.dInternoGlobal.nacionalidad.nacionalidad;
             cmbProvinciaNacimiento.Text = this.dInternoGlobal.provincia_nacimiento.provincia;
             cmbDepartamentoNacimiento.Text = this.dInternoGlobal.departamento_nacimiento.departamento;
+            txtCiudadNacimiento.Text = this.dInternoGlobal.ciudad;
             dtpFechaNacimiento.Text = this.dInternoGlobal.fecha_nacimiento.ToShortDateString();
             cmbEstadoCivil.Text = this.dInternoGlobal.estado_civil.estado_civil;
             cmbZonaResidencia.Text = this.dInternoGlobal.zona_residencia.zona_residencia;
             txtTelefono.Text = this.dInternoGlobal.telefono;
-            
+
             txtPadre.Text = this.dInternoGlobal.padre;
             txtMadre.Text = this.dInternoGlobal.madre;
             txtParientes.Text = this.dInternoGlobal.parientes;
-
-            //txtFechaAlta.Text = this.dCiudadanoGlo.fecha_alta.ToShortDateString();
-            //txtOrganismoAlta.Text = this.dCiudadanoGlo.organismo_alta.organismo;
-            //pictureFoto.Load(this.dCiudadanoGlo.foto);
-
-            tabInterno.Enabled = true;
+        }
+        //FIN CARGAR CONTROLES DATOS DE INTERNO...................................................
 
 
-            //cargar datos de ingreso            
-            cmbOrganismoExternoProcedencia.Text = ingresoInternoGlobal.organismo_externo.organismo_externo.ToString();
-            dtpFechaIngresoSpps.Text = this.ingresoInternoGlobal.fecha_primer_ingreso.ToShortDateString();
-            cmbOrganismoSppsProcesencia.Text = ingresoInternoGlobal.organismo_procedencia.organismo.ToString();
-            txtProntuarioPolicial.Text = this.ingresoInternoGlobal.prontuario_policial.ToString();
-            cmbEstadoProcesal.Text = this.ingresoInternoGlobal.estado_procesal.estado_procesal;
-            cmbJurisdiccion.Text = this.ingresoInternoGlobal.jurisdiccion.jurisdiccion;
-            cmbOtraJurisdiccion.Text = this.ingresoInternoGlobal.otra_jurisdiccion.jurisdiccion;
-            cmbReingreso.Text = this.ingresoInternoGlobal.reingreso.reingreso;
-            txtNumeroReingreso.Text = this.ingresoInternoGlobal.numero_reingreso.ToString();
-            dtpFechaAlojamiento.Text = this.ingresoInternoGlobal.fecha_alojamiento.ToShortDateString();
-            cmbTipoDefensor.Text = this.ingresoInternoGlobal.tipo_defensor.tipo_defensor;
-            txtAbogado.Text = this.ingresoInternoGlobal.abogado;
+        //REGION DATOS_PRINCIPALES
+        #region DATOS_PRINCIPALES
+        private async void btnGuardarEditarDatosPrincipales_Click(object sender, EventArgs e)
+        {
+            NInterno nInterno = new NInterno();
+            string dataEnviar;
+
+            if (txtIdInterno.Text == null || txtIdInterno.Text == "")
+            {
+                MessageBox.Show("Debe tener un interno cargado.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            //limpiar errores de provider
+            errorProvider.Clear();
+
+            //validacion de formulario
+            var datosFormulario = new InternoAdministarDatos
+            {
+                txtApellido = txtApellido.Text,
+                txtNombre = txtNombre.Text,
+                txtProntuario = txtProntuario.Text,
+                txtDni = txtDni.Text,
+                txtAlias = txtAlias.Text
+            };
+
+            var validator = new InternoEditarDatosPrincipalesValidation();
+            var result = validator.Validate(datosFormulario);
+
+            if (!result.IsValid)
+            {
+                MessageBox.Show("Complete correctamente los campos del formulario", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                foreach (var failure in result.Errors)
+                {
+
+                    Control control = Controls.Find(failure.PropertyName, true)[0];
+                    errorProvider.SetError(control, failure.ErrorMessage);
+                }
+                return;
+            }
+            //fin validar formulario
+
+            this.tabInterno.Enabled = false;
+            var dataInterno = new
+            {
+                prontuario = Convert.ToInt32(txtProntuario.Text),
+                dni = Convert.ToInt32(txtDni.Text),
+                apellido = txtApellido.Text,
+                nombre = txtNombre.Text,
+                alias = txtAlias.Text,
+            };
+
+            dataEnviar = JsonConvert.SerializeObject(dataInterno);
+
+            (bool respuestaEditar, string errorResponse) = await nInterno.EditarDatosPersonales(Convert.ToInt32(txtIdInterno.Text), dataEnviar);
+
+            if (respuestaEditar)
+            {
+                MessageBox.Show("La edición de se realizó correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //actualizar el internoClobal
+                this.BuscarInterno();             
+                this.HabilitarDatosPersonales(false);
+                this.tabInterno.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.tabInterno.Enabled = true;
+            }
         }
 
+        private void btnEditarDatosPrincipales_Click(object sender, EventArgs e)
+        {
+            this.HabilitarDatosPersonales(true);
+            txtProntuario.Focus();
+        }
+
+        private void btnCancelarEditarDatosPrincipales_Click(object sender, EventArgs e)
+        {
+            //limpiar errores de provider
+            errorProvider.Clear();
+            //cargar datos del interno
+            this.CargarControlesInformacionInterno();
+            this.HabilitarDatosPersonales(false);
+        }
+
+        private void btnEditarCaracteristicasPersonales_Click(object sender, EventArgs e)
+        {
+            this.HabilitarCarasteristicasPersonales(true);
+            cmbSexo.Focus();
+        }
+
+        private async void btnGuardarEditarCaracteristicasPersonales_Click(object sender, EventArgs e)
+        {
+            NInterno nInterno = new NInterno();
+            string dataEnviar;
+
+            if (txtIdInterno.Text == null || txtIdInterno.Text == "")
+            {
+                MessageBox.Show("Debe tener un interno cargado.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            //limpiar errores de provider
+            errorProvider.Clear();
+
+            //validacion de formulario
+            var datosFormulario = new InternoAdministarDatos
+            {
+                cmbSexo = cmbSexo.SelectedValue?.ToString() ?? string.Empty,
+                txtTalla = txtTalla.Text,
+                cmbPiel = cmbPiel.SelectedValue?.ToString() ?? string.Empty,
+                cmbOjosColor = cmbOjosColor.SelectedValue?.ToString() ?? string.Empty,
+                cmbOjosTamanio = cmbOjosTamanio.SelectedValue?.ToString() ?? string.Empty,
+                cmbNarizForma = cmbNarizForma.SelectedValue?.ToString() ?? string.Empty,
+                cmbNarizTamanio = cmbNarizTamanio.SelectedValue?.ToString() ?? string.Empty,
+                cmbPeloTipo = cmbPeloTipo.SelectedValue?.ToString() ?? string.Empty,
+                cmbPeloColor = cmbPeloColor.SelectedValue?.ToString() ?? string.Empty,
+            };
+
+            var validator = new InternoEditarCaracteristicasPrincipalesValidation();
+            var result = validator.Validate(datosFormulario);
+
+            if (!result.IsValid)
+            {
+                MessageBox.Show("Complete correctamente los campos del formulario", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                foreach (var failure in result.Errors)
+                {
+
+                    Control control = Controls.Find(failure.PropertyName, true)[0];
+                    errorProvider.SetError(control, failure.ErrorMessage);
+                }
+                return;
+            }
+            //fin validar formulario
+
+            this.tabInterno.Enabled = false;
+            var dataInterno = new
+            {
+                sexo_id = Convert.ToInt32(cmbSexo.SelectedValue.ToString()),
+                talla = txtTalla.Text,
+                piel_id = cmbPiel.SelectedValue.ToString(),
+                ojos_color_id = cmbOjosColor.SelectedValue.ToString(),
+                ojos_tamanio_id = cmbOjosTamanio.SelectedValue.ToString(),
+                nariz_forma_id = cmbNarizForma.SelectedValue.ToString(),
+                nariz_tamanio_id = cmbNarizTamanio.SelectedValue.ToString(),
+                pelo_tipo_id = cmbPeloTipo.SelectedValue.ToString(),
+                pelo_color_id = cmbPeloColor.SelectedValue.ToString(),
+            };
+
+            dataEnviar = JsonConvert.SerializeObject(dataInterno);
+
+            (bool respuestaEditar, string errorResponse) = await nInterno.EditarCaracteristicasPersonales(Convert.ToInt32(txtIdInterno.Text), dataEnviar);
+
+
+            if (respuestaEditar)
+            {
+                MessageBox.Show("La edición se realizó correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //actualizar el internoClobal
+                this.BuscarInterno();
+                this.HabilitarCarasteristicasPersonales(false);
+                this.tabInterno.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.tabInterno.Enabled = true;
+            }
+        }
+        private void btnCancelarEditarCaracteristicasPersonales_Click(object sender, EventArgs e)
+        {
+            //limpiar errores de provider
+            errorProvider.Clear();
+            //cargar datos del interno
+            this.CargarControlesInformacionInterno();
+            this.HabilitarCarasteristicasPersonales(false);
+        }
+
+        private async void btnEditarDatosFilatorios_Click(object sender, EventArgs e)
+        {
+
+            //Carga de combo provincia
+            NProvincia nProvincia = new NProvincia();
+            string id_paiss = Convert.ToString(this.cmbNacionalidad.SelectedValue);
+            cmbProvinciaNacimiento.ValueMember = "id_provincia";
+            cmbProvinciaNacimiento.DisplayMember = "provincia";
+            (List<DProvincia> listaProvincia, string errorResponseProvincia) = await nProvincia.RetornarListaProvinciasXPais(id_paiss);
+            cmbProvinciaNacimiento.DataSource = listaProvincia;
+            cmbProvinciaNacimiento.Text = this.dInternoGlobal.provincia_nacimiento.provincia;
+
+            //Carga de combo departamento
+            NDepartamento nDepartamento = new NDepartamento();
+            cmbDepartamentoNacimiento.ValueMember = "id_departamento";
+            cmbDepartamentoNacimiento.DisplayMember = "departamento";
+            (List<DDepartamento> listaDepartamento, string errorResponseDepartamento) = await nDepartamento.RetornarListaDepartamentoXProvincia(this.dInternoGlobal.provincia_nacimiento.id_provincia);
+            cmbDepartamentoNacimiento.DataSource = listaDepartamento;
+            cmbDepartamentoNacimiento.Text = this.dInternoGlobal.departamento_nacimiento.departamento;
+
+            this.HabilitarDatosFiliatorios(true);
+            cmbNacionalidad.Focus();
+        }
+
+        private async void btnGuardarEditarDatosFilatorios_Click(object sender, EventArgs e)
+        {
+            NInterno nInterno = new NInterno();
+            string dataEnviar;
+
+            if (txtIdInterno.Text == null || txtIdInterno.Text == "")
+            {
+                MessageBox.Show("Debe tener un interno cargado.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            //limpiar errores de provider
+            errorProvider.Clear();
+
+            //validacion de formulario
+            var datosFormulario = new InternoAdministarDatos
+            {
+                cmbNacionalidad = cmbNacionalidad.SelectedValue?.ToString() ?? string.Empty,
+                cmbProvinciaNacimiento = cmbProvinciaNacimiento.SelectedValue?.ToString() ?? string.Empty,
+                cmbDepartamentoNacimiento = cmbDepartamentoNacimiento.SelectedValue?.ToString() ?? string.Empty,
+                txtCiudadNacimiento = txtCiudadNacimiento.Text,
+                dtpFechaNacimiento = dtpFechaNacimiento.Value,
+                cmbEstadoCivil = cmbEstadoCivil.SelectedValue?.ToString() ?? string.Empty,
+                cmbZonaResidencia = cmbZonaResidencia.SelectedValue?.ToString() ?? string.Empty,
+                txtTelefono = txtTelefono.Text,
+                txtPadre = txtPadre.Text,
+                txtMadre = txtMadre.Text,
+                txtParientes = txtParientes.Text,
+            };
+
+            var validator = new InternoEditarDatosFiliatoriosValidation();
+            var result = validator.Validate(datosFormulario);
+
+            if (!result.IsValid)
+            {
+                MessageBox.Show("Complete correctamente los campos del formulario", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                foreach (var failure in result.Errors)
+                {
+                    Control control = Controls.Find(failure.PropertyName, true)[0];
+                    errorProvider.SetError(control, failure.ErrorMessage);
+                }
+                return;
+            }
+            //fin validar formulario
+
+            this.tabInterno.Enabled = false;
+            var dataInterno = new
+            {
+                nacionalidad_id = Convert.ToString(cmbNacionalidad.SelectedValue.ToString()),
+                provincia_nacimiento_id = cmbProvinciaNacimiento.SelectedValue.ToString(),
+                departamento_nacimiento_id = Convert.ToInt32(cmbDepartamentoNacimiento.SelectedValue.ToString()),
+                ciudad = txtCiudadNacimiento.Text,
+                fecha_nacimiento = dtpFechaNacimiento.Value,
+                estado_civil_id = Convert.ToInt32(cmbEstadoCivil.SelectedValue.ToString()),
+                zona_residencia_id = cmbZonaResidencia.SelectedValue.ToString(),
+                telefono = txtTelefono.Text,
+                padre = txtPadre.Text,
+                madre = txtMadre.Text,
+                parientes = txtParientes.Text
+            };
+
+            dataEnviar = JsonConvert.SerializeObject(dataInterno);
+
+            (bool respuestaEditar, string errorResponse) = await nInterno.EditarDatosFiliatorios(Convert.ToInt32(txtIdInterno.Text), dataEnviar);
+
+            if (respuestaEditar)
+            {
+                MessageBox.Show("La edición se realizó correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //actualizar el internoClobal
+                this.BuscarInterno();
+                this.HabilitarDatosFiliatorios(false);
+                this.tabInterno.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.tabInterno.Enabled = true;
+            }
+        }
+
+        private void btnCancelarEditarDatosFilatorios_Click(object sender, EventArgs e)
+        {
+            //limpiar errores de provider
+            errorProvider.Clear();
+            //cargar datos del interno
+            this.CargarControlesInformacionInterno();
+            this.HabilitarDatosFiliatorios(false);
+        }
+
+        //BUSCAR INTERNO
+        private async void BuscarInterno()
+        {
+            int idInterno;
+            NInterno nInterno = new NInterno();
+            DInterno dInterno = new DInterno();
+            idInterno = Convert.ToInt32(txtIdInterno.Text);
+            (DInterno dInternoResponse, string errorInternoResponse) = await nInterno.BuscarInternoXID(idInterno);
+
+            dInterno = dInternoResponse;
+
+            if (dInterno == null)
+            {
+                tabInterno.Enabled = false;
+
+                MessageBox.Show("No se encontro informaciòn del interno solicitado: " + errorInternoResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            
+            this.dInternoGlobal = dInterno;
+
+        }
+        //FIN BUSCAR INTERNO................................................................
+
+        //HABILITAR CONTROLES DATOS PERSONALES
+        private void HabilitarDatosPersonales(bool valor)
+        {
+            txtDni.ReadOnly = !valor;
+            txtProntuario.ReadOnly = !valor;
+            txtApellido.ReadOnly = !valor;
+            txtNombre.ReadOnly = !valor;
+            txtAlias.ReadOnly = !valor;
+
+
+            btnEditarDatosPrincipales.Enabled = !valor;
+            btnGuardarEditarDatosPrincipales.Enabled = valor;
+            btnCancelarEditarDatosPrincipales.Enabled = valor;
+
+        }//FIN HABILITAR CONTROLES DATOS PERSONALES.......................................
+
+
+        //HABILITAR CONTROLES CARACTERISTICAS PERSONALES
+        private void HabilitarCarasteristicasPersonales(bool valor)
+        {
+            cmbSexo.Enabled = valor;
+            txtTalla.ReadOnly = !valor;
+            cmbPiel.Enabled = valor;
+            cmbOjosColor.Enabled = valor;
+            cmbOjosTamanio.Enabled = valor;
+            cmbNarizForma.Enabled = valor;
+            cmbNarizTamanio.Enabled = valor;
+            cmbPeloTipo.Enabled = valor;
+            cmbPeloColor.Enabled = valor;
+
+            btnEditarCaracteristicasPersonales.Enabled = !valor;
+            btnGuardarEditarCaracteristicasPersonales.Enabled = valor;
+            btnCancelarEditarCaracteristicasPersonales.Enabled = valor;
+
+        }//FIN HABILITAR CONTROLES DATOS PERSONALES.......................................
+
+        //HABILITAR CONTROLES CARACTERISTICAS PERSONALES
+        private void HabilitarDatosFiliatorios(bool valor)
+        {
+            cmbNacionalidad.Enabled = valor;
+            cmbProvinciaNacimiento.Enabled = valor;
+            cmbDepartamentoNacimiento.Enabled = valor;
+            dtpFechaNacimiento.Enabled = valor;
+            cmbEstadoCivil.Enabled = valor;
+            cmbZonaResidencia.Enabled = valor;
+            txtCiudadNacimiento.ReadOnly = !valor;
+            txtTelefono.ReadOnly = !valor;
+            txtPadre.ReadOnly = !valor;
+            txtMadre.ReadOnly = !valor;
+            txtParientes.ReadOnly = !valor;
+
+            btnEditarDatosFilatorios.Enabled = !valor;
+            btnGuardarEditarDatosFilatorios.Enabled = valor;
+            btnCancelarEditarDatosFilatorios.Enabled = valor;
+
+        }//FIN HABILITAR CONTROLES DATOS PERSONALES.......................................
+
+        #endregion DATOS_PRINCIPALES
+        //FIN REGION DATOS_PRINCIPALES..........................................................
+        //......................................................................................
+
+        #region TRASLADOS
         private void btnTrasladar_Click(object sender, EventArgs e)
         {
             if(txtIdIngresoVer.Text == null || txtIdIngresoVer.Text == "")
@@ -212,6 +599,7 @@ namespace CapaPresentacion
         {
             this.CargarDataGridTraslados();
         }
+
 
         //METODO PARA OBTENER LA LISTA DE TRASLADOS Y CARGARLO EN UN DATA GRID 
         async private void CargarDataGridTraslados()
@@ -306,105 +694,9 @@ namespace CapaPresentacion
 
         }
 
-        private async void btnGuardarEditarDatosPrincipales_Click(object sender, EventArgs e)
-        {
-            NInterno nInterno = new NInterno();
-            string dataEnviar;
-
-            if (txtIdInterno.Text == null || txtIdInterno.Text == "")
-            {
-                MessageBox.Show("Debe tener un interno cargado.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            var dataInterno = new
-            {
-                prontuario = Convert.ToInt32(txtProntuario.Text),
-                dni = Convert.ToInt32(txtDni.Text),
-                apellido = txtApellido.Text,
-                nombre = txtNombre.Text,
-                alias = txtAlias.Text,
-            };
-
-            dataEnviar = JsonConvert.SerializeObject(dataInterno);
-
-            (bool respuestaEditar, string errorResponse) = await nInterno.EditarDatosPersonales(Convert.ToInt32(txtIdInterno.Text), dataEnviar);
-            
-
-            if (respuestaEditar)
-            {
-                MessageBox.Show("La edición de la prohibición se realizó correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.HabilitarDatosPersonales(false);
-                //this.LimpiarControles();
-                //this.HabilitarControles(false);
-
-
-                //btnNuevo.Enabled = true;
-                //btnEditar.Enabled = true;
-                //btnGuardar.Enabled = false;
-                //btnCancelar.Enabled = false;
-            }
-            else
-            {
-                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnEditarDatosPrincipales_Click(object sender, EventArgs e)
-        {
-            this.HabilitarDatosPersonales(true);
-        }
-
-        private void btnCancelarEditarDatosPrincipales_Click(object sender, EventArgs e)
-        {
-            this.HabilitarDatosPersonales(false);
-        }
-
-        private void btnEditarCaracteristicasPersonales_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        //HABILITAR CONTROLES DATOS PERSONALES
-        private void HabilitarDatosPersonales(bool valor)
-        {
-            txtDni.ReadOnly = !valor;
-            txtProntuario.ReadOnly = !valor;
-            txtApellido.ReadOnly = !valor;
-            txtNombre.ReadOnly = !valor;
-            txtAlias.ReadOnly = !valor;
-
-
-            btnEditarDatosPrincipales.Enabled = !valor;
-            btnGuardarEditarDatosPrincipales.Enabled = valor;
-            btnCancelarEditarDatosPrincipales.Enabled = valor;
-
-        }//FIN HABILITAR CONTROLES DATOS PERSONALES.......................................
-
-
-        //HABILITAR CONTROLES CARACTERISTICAS PERSONALES
-        private void HabilitarCarasteristicasPersonales(bool valor)
-        {
-            cmbSexo.Enabled = valor;
-            txtTalla.ReadOnly = !valor;
-            cmbPiel.Enabled = valor;
-            cmbOjosColor.Enabled = valor;
-            cmbOjosTamanio.Enabled = valor;
-            cmbNarizForma.Enabled = valor;
-            cmbNarizTamanio.Enabled = valor;
-            cmbPeloTipo.Enabled = valor;
-            cmbPeloColor.Enabled = valor;
-
-
-            btnEditarCaracteristicasPersonales.Enabled = !valor;
-            btnGuardarEditarCaracteristicasPersonales.Enabled = valor;
-            btnCancelarEditarCaracteristicasPersonales.Enabled = valor;
-
-        }//FIN HABILITAR CONTROLES DATOS PERSONALES.......................................
-
-
-
+        #endregion TRASLADOS
+        //FIN REGION TRASLADOS....................................................................
+        //........................................................................................
 
 
 

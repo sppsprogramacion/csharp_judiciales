@@ -14,8 +14,10 @@ namespace CapaDatos
         public DateTime fecha_primer_ingreso { get; set; }
         public int organismo_externo_id { get; set; }
         public DOrganismoExterno organismo_externo { get; set; }
+        public string obs_organismo_externo { get; set; }
         public int organismo_procedencia_id { get; set; }
         public DOrganismo organismo_procedencia { get; set; }
+        public string obs_organismo_procedencia { get; set; }
         public int organismo_alojamiento_id { get; set; }
         public DOrganismo organismo_alojamiento { get; set; }
         public DateTime fecha_alojamiento { get; set; }

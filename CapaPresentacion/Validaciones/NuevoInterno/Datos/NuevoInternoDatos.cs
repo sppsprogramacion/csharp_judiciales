@@ -27,6 +27,7 @@ namespace CapaPresentacion.Validaciones.NuevoInterno.Datos
         public string cmbNacionalidad { get; set; }
         public string cmbProvinciaNacimiento { get; set; }
         public string cmbDepartamentoNacimiento { get; set; }
+        public string txtCiudadNacimiento { get; set; }
         public DateTime dtpFechaNacimiento { get; set; }
         public string cmbEstadoCivil { get; set; }
         public string cmbZonaResidencia { get; set; }

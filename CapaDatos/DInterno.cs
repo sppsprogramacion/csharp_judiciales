@@ -17,7 +17,7 @@ namespace CapaDatos
         public string alias { get; set; }
         public int sexo_id { get; set; }
         public DSexo sexo { get; set; }
-        public decimal talla { get; set; }
+        public string talla { get; set; }
         public string ojos_color_id { get; set; }
         public DOjosColor ojos_color { get; set; }
         public string ojos_tamanio_id { get; set; }
@@ -38,6 +38,7 @@ namespace CapaDatos
         public DProvincia provincia_nacimiento { get; set; }
         public int departamento_nacimiento_id { get; set; }
         public DDepartamento departamento_nacimiento { get; set; }
+        public string ciudad { get; set; }
         public DateTime fecha_nacimiento { get; set; }
         public int estado_civil_id { get; set; }
         public DEstadoCivil estado_civil { get; set; }

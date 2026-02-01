@@ -84,6 +84,10 @@ namespace CapaPresentacion.Validaciones.NuevoInterno.Validacion
                 .NotNull().WithMessage("Debe ingresar un valor para departamento nacimiento.")
                 .NotEmpty().WithMessage("Debe ingresar un valor para departamento nacimiento.")
                 .Must(BeAnInteger).WithMessage("El departamento nacimiento debe ser valido.");
+            RuleFor(x => x.txtCiudadNacimiento)
+                .Cascade(CascadeMode.Stop)
+                .NotEmpty().WithMessage("La ciudad es obligatoria.")
+                .Length(1, 100).WithMessage("La ciudad debe tener maximo 100 caracteres.");
             RuleFor(x => x.dtpFechaNacimiento.ToString())
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("La fecha de naciminto es obligatoria");            
@@ -102,7 +106,7 @@ namespace CapaPresentacion.Validaciones.NuevoInterno.Validacion
                 .Length(1, 100).WithMessage("El telefono debe tener maximo 100 caracteres.");
             RuleFor(x => x.txtPadre)
                 .Cascade(CascadeMode.Stop)
-                .MaximumLength(200).WithMessage("padre debe tener maximo 100 caracteres.");
+                .MaximumLength(200).WithMessage("padre debe tener maximo 200 caracteres.");
             RuleFor(x => x.txtMadre)
                 .Cascade(CascadeMode.Stop)
                 .MaximumLength(200).WithMessage("madre debe tener maximo 200 caracteres.");

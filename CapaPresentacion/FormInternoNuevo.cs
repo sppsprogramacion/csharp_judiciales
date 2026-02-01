@@ -102,7 +102,6 @@ namespace CapaPresentacion
                 cmbNacionalidad.DisplayMember = "nacionalidad";
                 cmbNacionalidad.DataSource = datosFiliatorios.nacionalidad;
 
-
                 //Carga de combo estado civil
                 cmbEstadoCivil.ValueMember = "id_estado_civil";
                 cmbEstadoCivil.DisplayMember = "estado_civil";
@@ -144,6 +143,7 @@ namespace CapaPresentacion
                 cmbNacionalidad = cmbNacionalidad.SelectedValue?.ToString() ?? string.Empty,
                 cmbProvinciaNacimiento = cmbProvinciaNacimiento.SelectedValue?.ToString() ?? string.Empty,
                 cmbDepartamentoNacimiento = cmbDepartamentoNacimiento.SelectedValue?.ToString() ?? string.Empty,
+                txtCiudadNacimiento = txtCiudadNacimiento.Text,
                 dtpFechaNacimiento = dtpFechaNacimiento.Value,
                 cmbEstadoCivil = cmbEstadoCivil.SelectedValue?.ToString() ?? string.Empty,
                 cmbZonaResidencia = cmbZonaResidencia.SelectedValue?.ToString() ?? string.Empty,
@@ -169,7 +169,6 @@ namespace CapaPresentacion
             }
             //fin validar formulario
 
-
             var data = new
             {
                 prontuario = Convert.ToInt32(txtProntuario.Text),
@@ -189,6 +188,7 @@ namespace CapaPresentacion
                 nacionalidad_id = Convert.ToString(cmbNacionalidad.SelectedValue.ToString()),
                 provincia_nacimiento_id = cmbProvinciaNacimiento.SelectedValue.ToString(),
                 departamento_nacimiento_id = Convert.ToInt32(cmbDepartamentoNacimiento.SelectedValue.ToString()),
+                ciudad = txtCiudadNacimiento.Text,
                 fecha_nacimiento = dtpFechaNacimiento.Value,
                 estado_civil_id = Convert.ToInt32(cmbEstadoCivil.SelectedValue.ToString()),
                 zona_residencia_id = cmbZonaResidencia.SelectedValue.ToString(),
@@ -343,57 +343,45 @@ namespace CapaPresentacion
             errorProvider.Clear();
 
             //validacion de formulario
-            //var datosFormulario = new NuevoInternoDatos
-            //{
-            //    txtApellido = txtApellido.Text,
-            //    txtNombre = txtNombre.Text,
-            //    txtProntuario = txtProntuario.Text,
-            //    txtDni = txtDni.Text,
-            //    txtAlias = txtAlias.Text,
-            //    cmbSexo = cmbSexo.SelectedValue?.ToString() ?? string.Empty,
-            //    txtTalla = txtTalla.Text,
-            //    cmbPiel = cmbPiel.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbOjosColor = cmbOjosColor.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbOjosTamanio = cmbOjosTamanio.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbNarizForma = cmbNarizForma.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbNarizTamanio = cmbNarizTamanio.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbPeloTipo = cmbPeloTipo.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbPeloColor = cmbPeloColor.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbNacionalidad = cmbNacionalidad.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbProvinciaNacimiento = cmbProvinciaNacimiento.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbDepartamentoNacimiento = cmbDepartamentoNacimiento.SelectedValue?.ToString() ?? string.Empty,
-            //    dtpFechaNacimiento = dtpFechaNacimiento.Value,
-            //    cmbEstadoCivil = cmbEstadoCivil.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbZonaResidencia = cmbZonaResidencia.SelectedValue?.ToString() ?? string.Empty,
-            //    txtTelefono = txtTelefono.Text,
-            //    txtPadre = txtPadre.Text,
-            //    txtMadre = txtMadre.Text,
-            //    txtParientes = txtParientes.Text,
-            //};
+            var datosformulario = new NuevoIngresoNuevoIntDatos
+            {
+                cmbOrganismoExternoProcedencia = cmbOrganismoExternoProcedencia.SelectedValue?.ToString() ?? string.Empty,
+                txtDetalleProceExterno = txtDetalleProceExterno.Text,
+                txtProntuarioPolicial = txtProntuarioPolicial.Text,
+                cmbOrganismoSppsProcesencia = cmbOrganismoSppsProcesencia.SelectedValue?.ToString() ?? string.Empty,
+                txtDetalleProceSpps = txtDetalleProceSpps.Text,
+                cmbEstadoProcesal = cmbEstadoProcesal.SelectedValue?.ToString() ?? string.Empty,
+                cmbJurisdiccion = cmbJurisdiccion.SelectedValue?.ToString() ?? string.Empty,
+                cmbOtraJurisdiccion = cmbOtraJurisdiccion.SelectedValue?.ToString() ?? string.Empty,
+                cmbReingreso = cmbReingreso.SelectedValue?.ToString() ?? string.Empty,
+                txtNumeroReingreso = txtNumeroReingreso.Text,
+                cmbTipoDefensor = cmbTipoDefensor.SelectedValue?.ToString() ?? string.Empty,
+                txtAbogado = txtAbogado.Text,
+            };
 
-            //var validator = new CrearInternoValidation();
-            //var result = validator.Validate(datosFormulario);
+            var validator = new CrearIngresoNuevoIntValidation();
+            var result = validator.Validate(datosformulario);
 
-            //if (!result.IsValid)
-            //{
-            //    MessageBox.Show("Complete correctamente los campos del formulario", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    foreach (var failure in result.Errors)
-            //    {
-
-            //        Control control = Controls.Find(failure.PropertyName, true)[0];
-            //        errorProvider.SetError(control, failure.ErrorMessage);
-            //    }
-            //    return;
-            //}
+            if (!result.IsValid)
+            {
+                MessageBox.Show("Complete correctamente los campos del formulario", "judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                foreach (var failure in result.Errors)
+                {
+                    Control control = Controls.Find(failure.PropertyName, true)[0];
+                    errorProvider.SetError(control, failure.ErrorMessage);
+                }
+                return;
+            }
             //fin validar formulario
-
 
             var data = new
             {
                 interno_id = Convert.ToInt32(txtIdInterno.Text),
                 fecha_primer_ingreso = dtpFechaPrimerIngreso.Value,
                 organismo_externo_id = Convert.ToInt32(cmbOrganismoExternoProcedencia.SelectedValue.ToString()),
+                obs_organismo_externo = txtDetalleProceExterno.Text,
                 organismo_procedencia_id = Convert.ToInt32(cmbOrganismoSppsProcesencia.SelectedValue.ToString()),
+                obs_organismo_procedencia = txtDetalleProceSpps.Text,
                 fecha_alojamiento = dtpFechaAlojamiento.Value,
                 estado_procesal_id = cmbEstadoProcesal.SelectedValue.ToString(),
                 jurisdiccion_id = cmbJurisdiccion.SelectedValue.ToString(),
@@ -441,6 +429,6 @@ namespace CapaPresentacion
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-               
+                
     }
 }

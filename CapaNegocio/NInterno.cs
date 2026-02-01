@@ -67,5 +67,27 @@ namespace CapaNegocio
             return (internosResponse, error);
         }
         //FIN EDITAR DATOS PERSONALES..............................................................
+
+        //EDITAR CARACTERISTICAS PERSONALES
+        public async Task<(bool, string error)> EditarCaracteristicasPersonales(int idInterno, string dataEdicion)
+        {
+            IInternosDao internosDao = new InternoDaoImplement();
+
+            (bool internosResponse, string error) = await internosDao.EditarCaracteristicasPersonales(idInterno, dataEdicion);
+
+            return (internosResponse, error);
+        }
+        //FIN EDITAR CARACTERISTICAS PERSONALES..............................................................
+
+        //EDITAR DATOS FILIATORIOS
+        public async Task<(bool, string error)> EditarDatosFiliatorios(int idInterno, string dataEdicion)
+        {
+            IInternosDao internosDao = new InternoDaoImplement();
+
+            (bool internosResponse, string error) = await internosDao.EditarDatosFiliatorios(idInterno, dataEdicion);
+
+            return (internosResponse, error);
+        }
+        //FIN EDITAR DATOS FILIATORIOS..............................................................
     }
 }
