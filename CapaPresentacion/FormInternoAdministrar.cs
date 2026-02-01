@@ -507,16 +507,19 @@ namespace CapaPresentacion
             idInterno = Convert.ToInt32(txtIdInterno.Text);
             (DInterno dInternoResponse, string errorInternoResponse) = await nInterno.BuscarInternoXID(idInterno);
 
+            MessageBox.Show("id: " + idInterno);
             dInterno = dInternoResponse;
-
+                        
             if (dInterno == null)
             {
                 tabInterno.Enabled = false;
-
+                MessageBox.Show("id2: " + idInterno);
                 MessageBox.Show("No se encontro informaciòn del interno solicitado: " + errorInternoResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
+
+            MessageBox.Show("id3: " + idInterno);
+
             this.dInternoGlobal = dInterno;
 
         }

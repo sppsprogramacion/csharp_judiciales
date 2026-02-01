@@ -43,21 +43,7 @@ namespace CapaPresentacion
                 this.dInternoGlobal = this.ingresoInternoGlobal.interno;
 
                 //cargar datos de ingreso
-                lblMensajeIngreso.Text = "Alojado en: " + this.ingresoInternoGlobal.organismo_alojamiento.organismo;
-                cmbOrganismoExternoProcedencia.Text = ingresoInternoGlobal.organismo_externo.organismo_externo.ToString();
-                txtDetalleProceExterno.Text = ingresoInternoGlobal.obs_organismo_externo;
-                dtpFechaIngresoSpps.Text = this.ingresoInternoGlobal.fecha_primer_ingreso.ToShortDateString();
-                cmbOrganismoSppsProcesencia.Text = ingresoInternoGlobal.organismo_procedencia.organismo.ToString();
-                txtDetalleProceSpps.Text = this.ingresoInternoGlobal.obs_organismo_procedencia;
-                txtProntuarioPolicial.Text = this.ingresoInternoGlobal.prontuario_policial.ToString();
-                cmbEstadoProcesal.Text = this.ingresoInternoGlobal.estado_procesal.estado_procesal;
-                cmbJurisdiccion.Text = this.ingresoInternoGlobal.jurisdiccion.jurisdiccion;
-                cmbOtraJurisdiccion.Text = this.ingresoInternoGlobal.otra_jurisdiccion.jurisdiccion;
-                cmbReingreso.Text = this.ingresoInternoGlobal.reingreso.reingreso;
-                txtNumeroReingreso.Text = this.ingresoInternoGlobal.numero_reingreso.ToString();
-                dtpFechaAlojamiento.Text = this.ingresoInternoGlobal.fecha_alojamiento.ToShortDateString();
-                cmbTipoDefensor.Text = this.ingresoInternoGlobal.tipo_defensor.tipo_defensor;
-                txtAbogado.Text = this.ingresoInternoGlobal.abogado;
+                this.CargarDatosIngreso();
             }
             else
             {
@@ -110,6 +96,7 @@ namespace CapaPresentacion
 
         private async void btnDarIngresar_Click(object sender, EventArgs e)
         {
+            //**---cuando el interno esta alojado en otra unidad---**
             if (this.ingresoInternoGlobal != null)
             {
                 bool trasladoMiunidad = false;
@@ -130,9 +117,13 @@ namespace CapaPresentacion
                 chkIngresarMiunidad.Visible = true;
                 lblFechaAlojamientoMiUnidad.Visible = true;
                 dtpFechaAlojamientoMiUnidad.Visible = true;
+                lblDetalleProcedenciaSpps2.Visible = true;
+                txtDetalleProcedenciaSpps2.Visible = true;
+
+                return;
             }
 
-
+            //**---Cuando el interno no esta alojadoe en una unidad---**
             //Carga de combos sobre listas para ingreso
             DTablasIngresoInterno tablasIngresoInterno = null;
 
@@ -184,6 +175,10 @@ namespace CapaPresentacion
 
             }
             //fin Carga de combos sobre  listas para ingreso
+
+            this.HabilitarControlesIngreso(true);
+            //cargar datos de ingreso
+            //this.CargarDatosIngreso();
         }
 
         private async void btnGuardarIngreso_Click(object sender, EventArgs e)
@@ -261,7 +256,7 @@ namespace CapaPresentacion
                 {
 
                     MessageBox.Show("Ingreso creado correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                        
+                    this.HabilitarControlesIngreso(false);                    
                 }
                 else
                 {
@@ -276,5 +271,51 @@ namespace CapaPresentacion
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        //CARGAR DATOS DE INGRESO
+        private void CargarDatosIngreso()
+        {
+            //cargar datos de ingreso
+            lblMensajeIngreso.Text = "Alojado en: " + this.ingresoInternoGlobal.organismo_alojamiento.organismo;
+            cmbOrganismoExternoProcedencia.Text = ingresoInternoGlobal.organismo_externo.organismo_externo.ToString();
+            txtDetalleProceExterno.Text = ingresoInternoGlobal.obs_organismo_externo;
+            dtpFechaIngresoSpps.Text = this.ingresoInternoGlobal.fecha_primer_ingreso.ToShortDateString();
+            cmbOrganismoSppsProcesencia.Text = ingresoInternoGlobal.organismo_procedencia.organismo.ToString();
+            txtDetalleProceSpps.Text = this.ingresoInternoGlobal.obs_organismo_procedencia;
+            txtProntuarioPolicial.Text = this.ingresoInternoGlobal.prontuario_policial.ToString();
+            cmbEstadoProcesal.Text = this.ingresoInternoGlobal.estado_procesal.estado_procesal;
+            cmbJurisdiccion.Text = this.ingresoInternoGlobal.jurisdiccion.jurisdiccion;
+            cmbOtraJurisdiccion.Text = this.ingresoInternoGlobal.otra_jurisdiccion.jurisdiccion;
+            cmbReingreso.Text = this.ingresoInternoGlobal.reingreso.reingreso;
+            txtNumeroReingreso.Text = this.ingresoInternoGlobal.numero_reingreso.ToString();
+            dtpFechaAlojamiento.Text = this.ingresoInternoGlobal.fecha_alojamiento.ToShortDateString();
+            cmbTipoDefensor.Text = this.ingresoInternoGlobal.tipo_defensor.tipo_defensor;
+            txtAbogado.Text = this.ingresoInternoGlobal.abogado;
+        }
+        //FIN CARGAR DATOS DE INGRESO
+
+        //HABILITAR CONTROLES INGRESO
+        private void HabilitarControlesIngreso(bool valor)
+        {
+            cmbOrganismoExternoProcedencia.Enabled = valor;
+            txtDetalleProceExterno.Enabled = valor;
+            cmbOrganismoSppsProcesencia.Enabled = valor;
+            txtDetalleProceSpps.Enabled = valor;
+            txtProntuarioPolicial.Enabled = valor;
+            cmbEstadoProcesal.Enabled = valor;
+            cmbJurisdiccion.Enabled = valor;
+            cmbOtraJurisdiccion.Enabled = valor;
+            cmbReingreso.Enabled = valor;
+            txtNumeroReingreso.Enabled = valor;
+            dtpFechaAlojamiento.Enabled = valor;
+            cmbTipoDefensor.Enabled = valor;
+            txtAbogado.Enabled = valor;
+        }//FIN HABILITAR CONTROLES INGRESO...........................................
+
+        private void btnCancelarIngreso_Click(object sender, EventArgs e)
+        {
+            this.HabilitarControlesIngreso(false);
+        }
+        
     }
 }

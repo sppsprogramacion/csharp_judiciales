@@ -70,6 +70,8 @@
             this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txtCiudadNacimiento = new System.Windows.Forms.TextBox();
             this.btnEditarDatosFilatorios = new System.Windows.Forms.Button();
             this.btnGuardarEditarDatosFilatorios = new System.Windows.Forms.Button();
             this.btnCancelarEditarDatosFilatorios = new System.Windows.Forms.Button();
@@ -208,8 +210,6 @@
             this.label39 = new System.Windows.Forms.Label();
             this.txtIdTraslado = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.txtCiudadNacimiento = new System.Windows.Forms.TextBox();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox15.SuspendLayout();
@@ -726,6 +726,26 @@
             this.groupBox14.TabIndex = 214;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Datos filiatorios";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(264, 66);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(129, 15);
+            this.label28.TabIndex = 234;
+            this.label28.Text = "CIUDAD NACIMIENTO";
+            // 
+            // txtCiudadNacimiento
+            // 
+            this.txtCiudadNacimiento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCiudadNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCiudadNacimiento.Location = new System.Drawing.Point(267, 83);
+            this.txtCiudadNacimiento.Name = "txtCiudadNacimiento";
+            this.txtCiudadNacimiento.ReadOnly = true;
+            this.txtCiudadNacimiento.Size = new System.Drawing.Size(240, 21);
+            this.txtCiudadNacimiento.TabIndex = 207;
             // 
             // btnEditarDatosFilatorios
             // 
@@ -2290,26 +2310,6 @@
             this.label25.Size = new System.Drawing.Size(107, 15);
             this.label25.TabIndex = 72;
             this.label25.Text = "USUARIO CARGA:";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(264, 66);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(52, 15);
-            this.label28.TabIndex = 234;
-            this.label28.Text = "CIUDAD";
-            // 
-            // txtCiudadNacimiento
-            // 
-            this.txtCiudadNacimiento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCiudadNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCiudadNacimiento.Location = new System.Drawing.Point(267, 83);
-            this.txtCiudadNacimiento.Name = "txtCiudadNacimiento";
-            this.txtCiudadNacimiento.ReadOnly = true;
-            this.txtCiudadNacimiento.Size = new System.Drawing.Size(240, 21);
-            this.txtCiudadNacimiento.TabIndex = 207;
             // 
             // FormInternoAdministrar
             // 
