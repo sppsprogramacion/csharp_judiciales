@@ -84,6 +84,7 @@ namespace CapaPresentacion
             txtNacionalidad.Text = this.dInternoGlobal.nacionalidad.nacionalidad;
             txtProvinciaNacimiento.Text = this.dInternoGlobal.provincia_nacimiento.provincia;
             txtDepartamentoNacimiento.Text = this.dInternoGlobal.departamento_nacimiento.departamento;
+            txtCiudadNacimiento.Text = this.dInternoGlobal.ciudad;
             dtpFechaNacimiento.Text = this.dInternoGlobal.fecha_nacimiento.ToShortDateString();
             txtEstadoCivil.Text = this.dInternoGlobal.estado_civil.estado_civil;
             txtZonaResidencia.Text = this.dInternoGlobal.zona_residencia.zona_residencia;
@@ -99,20 +100,6 @@ namespace CapaPresentacion
             //**---cuando el interno esta alojado en otra unidad---**
             if (this.ingresoInternoGlobal != null)
             {
-                bool trasladoMiunidad = false;
-                //verificar si la unidad tiene autorizacion para ingresar al interno
-                //hacer control al API....
-
-                trasladoMiunidad = true;
-                //el interno esta alojado en otra unidad y NO tiene autorizacion para ingresarlo a mi unidad
-                if (!trasladoMiunidad)
-                {
-                    MessageBox.Show("El interno ya se encuentra alojado en una unidad", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
-                                
-                //el interno esta alojado en otra unidad y SI tiene autorizacion para ingresarlo a mi unidad
-                MessageBox.Show("Tiene autorizacion para ingresar el interno a su unidad", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 chkIngresarMiunidad.Checked = true;
                 chkIngresarMiunidad.Visible = true;
                 lblFechaAlojamientoMiUnidad.Visible = true;
@@ -188,9 +175,49 @@ namespace CapaPresentacion
             //limpiar errores de provider
             errorProvider.Clear();
 
-            //limpiar errores de provider
-            errorProvider.Clear();
+            //**---cuando el interno esta alojado en otra unidad---**
+            if (this.ingresoInternoGlobal != null)
+            {
 
+                if (txtIdIngreso.Text == null || txtIdIngreso.Text == "")
+                {
+                    MessageBox.Show("El interno no esta alojado en una unidad.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (txtDetalleProcedenciaSpps2.Text == string.Empty)
+                {
+                    MessageBox.Show("Debe completar el detalle procedencia.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var dataAux = new
+                {                    
+                    fecha_alojamiento = dtpFechaAlojamiento.Value,
+                    obs_organismo_procedencia = txtDetalleProceSpps.Text,                    
+                };
+
+                string dataIngresoOtraUnidad = JsonConvert.SerializeObject(dataAux);
+
+                groupIngresoInterno.Enabled = false;
+                (bool respuestaEditar, string errorResponse) = await nIngreso.InresoDesdeOtraUnidad(Convert.ToInt32(txtIdIngreso.Text), dataIngresoOtraUnidad);
+                groupIngresoInterno.Enabled = true;
+
+                if (respuestaEditar)
+                {
+                    MessageBox.Show("El ingreso se realizo correctamente.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    
+                }
+                else
+                {
+                    MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+
+                return;
+            }
+
+            //**---cuando el interno no esta alojado en una unidad---**
             //validacion de formulario
             var datosformulario = new NuevoIngresoNuevoIntDatos
             {
@@ -241,7 +268,6 @@ namespace CapaPresentacion
                 prontuario_policial = txtProntuarioPolicial.Text,
                 tipo_defensor_id = Convert.ToInt32(cmbTipoDefensor.SelectedValue.ToString()),
                 abogado = txtAbogado.Text
-
             };
 
             string dataIngreso = JsonConvert.SerializeObject(data);
@@ -277,6 +303,7 @@ namespace CapaPresentacion
         {
             //cargar datos de ingreso
             lblMensajeIngreso.Text = "Alojado en: " + this.ingresoInternoGlobal.organismo_alojamiento.organismo;
+            txtIdIngreso.Text = this.ingresoInternoGlobal.id_ingreso_interno.ToString();
             cmbOrganismoExternoProcedencia.Text = ingresoInternoGlobal.organismo_externo.organismo_externo.ToString();
             txtDetalleProceExterno.Text = ingresoInternoGlobal.obs_organismo_externo;
             dtpFechaIngresoSpps.Text = this.ingresoInternoGlobal.fecha_primer_ingreso.ToShortDateString();
@@ -298,6 +325,7 @@ namespace CapaPresentacion
         private void HabilitarControlesIngreso(bool valor)
         {
             cmbOrganismoExternoProcedencia.Enabled = valor;
+            dtpFechaIngresoSpps.Enabled = valor;
             txtDetalleProceExterno.Enabled = valor;
             cmbOrganismoSppsProcesencia.Enabled = valor;
             txtDetalleProceSpps.Enabled = valor;
@@ -314,6 +342,20 @@ namespace CapaPresentacion
 
         private void btnCancelarIngreso_Click(object sender, EventArgs e)
         {
+            //**---cuando el interno esta alojado en otra unidad---**
+            if (this.ingresoInternoGlobal != null)
+            {
+                chkIngresarMiunidad.Checked = false;
+                chkIngresarMiunidad.Visible = false;
+                lblFechaAlojamientoMiUnidad.Visible = false;
+                dtpFechaAlojamientoMiUnidad.Visible = false;
+                dtpFechaAlojamientoMiUnidad.ResetText();
+                lblDetalleProcedenciaSpps2.Visible = false;
+                txtDetalleProcedenciaSpps2.Visible = false;
+                txtDetalleProcedenciaSpps2.Text = string.Empty;
+
+                return;
+            }
             this.HabilitarControlesIngreso(false);
         }
         

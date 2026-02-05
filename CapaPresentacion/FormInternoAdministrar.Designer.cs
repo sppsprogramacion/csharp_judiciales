@@ -40,8 +40,6 @@
             this.label68 = new System.Windows.Forms.Label();
             this.txtNumReingresoVer = new System.Windows.Forms.TextBox();
             this.label72 = new System.Windows.Forms.Label();
-            this.dtpFechaIngresoSppsVer = new System.Windows.Forms.DateTimePicker();
-            this.label66 = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
@@ -255,8 +253,6 @@
             this.tabDatosPrincipales.Controls.Add(this.label68);
             this.tabDatosPrincipales.Controls.Add(this.txtNumReingresoVer);
             this.tabDatosPrincipales.Controls.Add(this.label72);
-            this.tabDatosPrincipales.Controls.Add(this.dtpFechaIngresoSppsVer);
-            this.tabDatosPrincipales.Controls.Add(this.label66);
             this.tabDatosPrincipales.Controls.Add(this.label67);
             this.tabDatosPrincipales.Controls.Add(this.label69);
             this.tabDatosPrincipales.Controls.Add(this.label70);
@@ -280,17 +276,17 @@
             // 
             this.txtIdIngresoVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIdIngresoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdIngresoVer.Location = new System.Drawing.Point(353, 125);
+            this.txtIdIngresoVer.Location = new System.Drawing.Point(16, 26);
             this.txtIdIngresoVer.Name = "txtIdIngresoVer";
             this.txtIdIngresoVer.ReadOnly = true;
-            this.txtIdIngresoVer.Size = new System.Drawing.Size(155, 21);
+            this.txtIdIngresoVer.Size = new System.Drawing.Size(130, 21);
             this.txtIdIngresoVer.TabIndex = 253;
             // 
             // label75
             // 
             this.label75.AutoSize = true;
             this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label75.Location = new System.Drawing.Point(350, 106);
+            this.label75.Location = new System.Drawing.Point(13, 9);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(77, 15);
             this.label75.TabIndex = 252;
@@ -300,7 +296,7 @@
             // 
             this.txtJurisdiccionVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtJurisdiccionVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtJurisdiccionVer.Location = new System.Drawing.Point(184, 125);
+            this.txtJurisdiccionVer.Location = new System.Drawing.Point(184, 111);
             this.txtJurisdiccionVer.Name = "txtJurisdiccionVer";
             this.txtJurisdiccionVer.ReadOnly = true;
             this.txtJurisdiccionVer.Size = new System.Drawing.Size(155, 21);
@@ -310,7 +306,7 @@
             // 
             this.txtEstadoProcesalVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEstadoProcesalVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstadoProcesalVer.Location = new System.Drawing.Point(17, 127);
+            this.txtEstadoProcesalVer.Location = new System.Drawing.Point(17, 112);
             this.txtEstadoProcesalVer.Name = "txtEstadoProcesalVer";
             this.txtEstadoProcesalVer.ReadOnly = true;
             this.txtEstadoProcesalVer.Size = new System.Drawing.Size(155, 21);
@@ -320,17 +316,17 @@
             // 
             this.txtOrganismoAlojamientoVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOrganismoAlojamientoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrganismoAlojamientoVer.Location = new System.Drawing.Point(16, 77);
+            this.txtOrganismoAlojamientoVer.Location = new System.Drawing.Point(158, 26);
             this.txtOrganismoAlojamientoVer.Name = "txtOrganismoAlojamientoVer";
             this.txtOrganismoAlojamientoVer.ReadOnly = true;
-            this.txtOrganismoAlojamientoVer.Size = new System.Drawing.Size(256, 21);
+            this.txtOrganismoAlojamientoVer.Size = new System.Drawing.Size(309, 21);
             this.txtOrganismoAlojamientoVer.TabIndex = 249;
             // 
             // txtReingresoVer
             // 
             this.txtReingresoVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReingresoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReingresoVer.Location = new System.Drawing.Point(185, 31);
+            this.txtReingresoVer.Location = new System.Drawing.Point(158, 69);
             this.txtReingresoVer.Name = "txtReingresoVer";
             this.txtReingresoVer.ReadOnly = true;
             this.txtReingresoVer.Size = new System.Drawing.Size(155, 21);
@@ -340,7 +336,7 @@
             // 
             this.label68.AutoSize = true;
             this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label68.Location = new System.Drawing.Point(350, 12);
+            this.label68.Location = new System.Drawing.Point(323, 52);
             this.label68.Name = "label68";
             this.label68.Size = new System.Drawing.Size(96, 15);
             this.label68.TabIndex = 247;
@@ -350,7 +346,7 @@
             // 
             this.txtNumReingresoVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumReingresoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumReingresoVer.Location = new System.Drawing.Point(353, 31);
+            this.txtNumReingresoVer.Location = new System.Drawing.Point(326, 69);
             this.txtNumReingresoVer.Name = "txtNumReingresoVer";
             this.txtNumReingresoVer.ReadOnly = true;
             this.txtNumReingresoVer.Size = new System.Drawing.Size(93, 21);
@@ -360,37 +356,17 @@
             // 
             this.label72.AutoSize = true;
             this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label72.Location = new System.Drawing.Point(184, 12);
+            this.label72.Location = new System.Drawing.Point(157, 52);
             this.label72.Name = "label72";
             this.label72.Size = new System.Drawing.Size(79, 15);
             this.label72.TabIndex = 245;
             this.label72.Text = "REINGRESO";
             // 
-            // dtpFechaIngresoSppsVer
-            // 
-            this.dtpFechaIngresoSppsVer.Enabled = false;
-            this.dtpFechaIngresoSppsVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaIngresoSppsVer.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaIngresoSppsVer.Location = new System.Drawing.Point(19, 31);
-            this.dtpFechaIngresoSppsVer.Name = "dtpFechaIngresoSppsVer";
-            this.dtpFechaIngresoSppsVer.Size = new System.Drawing.Size(153, 22);
-            this.dtpFechaIngresoSppsVer.TabIndex = 237;
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label66.Location = new System.Drawing.Point(15, 12);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(139, 15);
-            this.label66.TabIndex = 238;
-            this.label66.Text = "FECHA INGRESO SPPS";
-            // 
             // label67
             // 
             this.label67.AutoSize = true;
             this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label67.Location = new System.Drawing.Point(181, 106);
+            this.label67.Location = new System.Drawing.Point(181, 94);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(91, 15);
             this.label67.TabIndex = 229;
@@ -400,7 +376,7 @@
             // 
             this.label69.AutoSize = true;
             this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label69.Location = new System.Drawing.Point(13, 106);
+            this.label69.Location = new System.Drawing.Point(13, 95);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(122, 15);
             this.label69.TabIndex = 227;
@@ -410,7 +386,7 @@
             // 
             this.label70.AutoSize = true;
             this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label70.Location = new System.Drawing.Point(15, 59);
+            this.label70.Location = new System.Drawing.Point(157, 9);
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(167, 15);
             this.label70.TabIndex = 223;
@@ -421,16 +397,16 @@
             this.dtpFechaAlojamientoVer.Enabled = false;
             this.dtpFechaAlojamientoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaAlojamientoVer.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaAlojamientoVer.Location = new System.Drawing.Point(292, 78);
+            this.dtpFechaAlojamientoVer.Location = new System.Drawing.Point(19, 69);
             this.dtpFechaAlojamientoVer.Name = "dtpFechaAlojamientoVer";
-            this.dtpFechaAlojamientoVer.Size = new System.Drawing.Size(153, 22);
+            this.dtpFechaAlojamientoVer.Size = new System.Drawing.Size(128, 22);
             this.dtpFechaAlojamientoVer.TabIndex = 224;
             // 
             // label71
             // 
             this.label71.AutoSize = true;
             this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label71.Location = new System.Drawing.Point(288, 59);
+            this.label71.Location = new System.Drawing.Point(15, 52);
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(132, 15);
             this.label71.TabIndex = 226;
@@ -2007,6 +1983,7 @@
             this.btnAnularTraslado.TabIndex = 236;
             this.btnAnularTraslado.Text = "Anular";
             this.btnAnularTraslado.UseVisualStyleBackColor = false;
+            this.btnAnularTraslado.Click += new System.EventHandler(this.btnAnularTraslado_Click);
             // 
             // label55
             // 
@@ -2316,6 +2293,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1094, 741);
             this.Controls.Add(this.tabInterno);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -2471,8 +2449,6 @@
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.TextBox txtNumReingresoVer;
         private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.DateTimePicker dtpFechaIngresoSppsVer;
-        private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.Label label70;

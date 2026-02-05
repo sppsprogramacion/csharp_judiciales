@@ -136,7 +136,6 @@ namespace CapaPresentacion
 
             //datos de ingreso en pestaña DATOS PRINCIPALES
             txtIdIngresoVer.Text = this.ingresoInternoGlobal.id_ingreso_interno.ToString();
-            dtpFechaIngresoSppsVer.Text = this.ingresoInternoGlobal.fecha_primer_ingreso.ToShortDateString();
             txtReingresoVer.Text = this.ingresoInternoGlobal.reingreso.reingreso;
             txtNumReingresoVer.Text = this.ingresoInternoGlobal.numero_reingreso.ToString();
             txtOrganismoAlojamientoVer.Text = this.ingresoInternoGlobal.organismo_alojamiento.organismo;
@@ -696,6 +695,13 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void btnAnularTraslado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
 
         #endregion TRASLADOS
         //FIN REGION TRASLADOS....................................................................

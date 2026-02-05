@@ -32,9 +32,18 @@ namespace CapaNegocio
 
             return (dIngreso, error);
         }
-
-
         //FIN RETORNAR  XID..................................
+
+        //INGRESO DESDE OTRA UNIDAD
+        public async Task<(bool, string error)> InresoDesdeOtraUnidad(int idIngreso, string dataIngreso)
+        {
+            IIngresoInernoDao ingresoInternoDao = new IngresoInternoDaoImplement();
+
+            (bool ingresoResponse, string error) = await ingresoInternoDao.IngresoDesdeOtraUnidad(idIngreso, dataIngreso);
+
+            return (ingresoResponse, error);
+        }
+        //FIN INGRESO DESDE OTRA UNIDAD..............................................................
 
         //RETORNAR X APELLIDO
         //public async Task<(List<DInterno>, string error)> ListaInternosXApellido(string apellido)
