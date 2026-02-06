@@ -5,6 +5,7 @@ using CapaPresentacion.Validaciones.InternoAdministrar.Datos;
 using CapaPresentacion.Validaciones.InternoAdministrar.Validacion;
 using CapaPresentacion.Validaciones.NuevoInterno.Datos;
 using CapaPresentacion.Validaciones.NuevoInterno.Validacion;
+using CommonCache;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -678,8 +679,38 @@ namespace CapaPresentacion
                 return;
             }
 
-            //limpiar errores de provider
-            errorProvider.Clear();
+
+            //validacion de formulario
+            var datosformulario = new InternoAdministarDatos
+            {
+                cmbOrganismoExternoProcedencia = cmbOrganismoExternoProcedencia.SelectedValue?.ToString() ?? string.Empty,
+                txtDetalleProceExterno = txtDetalleProceExterno.Text,
+                txtProntuarioPolicial = txtProntuarioPolicial.Text,
+                cmbOrganismoSppsProcesencia = cmbOrganismoSppsProcesencia.SelectedValue?.ToString() ?? string.Empty,
+                txtDetalleProceSpps = txtDetalleProceSpps.Text,
+                cmbEstadoProcesal = cmbEstadoProcesal.SelectedValue?.ToString() ?? string.Empty,
+                cmbJurisdiccion = cmbJurisdiccion.SelectedValue?.ToString() ?? string.Empty,
+                cmbOtraJurisdiccion = cmbOtraJurisdiccion.SelectedValue?.ToString() ?? string.Empty,
+                cmbReingreso = cmbReingreso.SelectedValue?.ToString() ?? string.Empty,
+                txtNumeroReingreso = txtNumeroReingreso.Text,
+                cmbTipoDefensor = cmbTipoDefensor.SelectedValue?.ToString() ?? string.Empty,
+                txtAbogado = txtAbogado.Text,
+            };
+
+            var validator = new EditarIngresoValidation();
+            var result = validator.Validate(datosformulario);
+
+            if (!result.IsValid)
+            {
+                MessageBox.Show("Complete correctamente los campos del formulario", "judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                foreach (var failure in result.Errors)
+                {
+                    Control control = Controls.Find(failure.PropertyName, true)[0];
+                    errorProvider.SetError(control, failure.ErrorMessage);
+                }
+                return;
+            }
+            //fin validar formulario
 
 
             this.tabInterno.Enabled = false;
@@ -709,7 +740,8 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("La edición se realizó correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //actualizar el internoClobal
-                //this.BuscarInterno();
+                this.BuscarIngreso();
+                
                 this.HabilitarControlesIngreso(false);
                 this.tabInterno.Enabled = true;
             }
@@ -746,6 +778,32 @@ namespace CapaPresentacion
             btnCancelarIngreso.Enabled = valor;
         }//FIN HABILITAR CONTROLES INGRESO...........................................
 
+        //BUSCAR INGRESO
+        private async void BuscarIngreso()
+        {
+            NIngresoInterno nIngreso = new NIngresoInterno();
+            (DIngresoInterno ingresoInterno, string errorResponse) = await nIngreso.BuscarxIdIngreso(Convert.ToInt32(this.txtIdIngresoVer.Text));
+
+            if (ingresoInterno == null)
+            {
+                MessageBox.Show("El interno no se encuentra alojado en una unidad", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
+            }
+            else
+            {
+                this.ingresoInternoGlobal = ingresoInterno;
+                //datos de ingreso en pestaña DATOS PRINCIPALES
+                txtIdIngresoVer.Text = this.ingresoInternoGlobal.id_ingreso_interno.ToString();
+                txtReingresoVer.Text = this.ingresoInternoGlobal.reingreso.reingreso;
+                txtNumReingresoVer.Text = this.ingresoInternoGlobal.numero_reingreso.ToString();
+                txtOrganismoAlojamientoVer.Text = this.ingresoInternoGlobal.organismo_alojamiento.organismo;
+                dtpFechaAlojamientoVer.Text = this.ingresoInternoGlobal.fecha_alojamiento.ToShortDateString();
+                txtEstadoProcesalVer.Text = this.ingresoInternoGlobal.estado_procesal.estado_procesal;
+                txtJurisdiccionVer.Text = this.ingresoInternoGlobal.jurisdiccion.jurisdiccion;
+
+            }
+        }
+        //FIN BUSCAR INGRESO.....................................................
 
         #endregion DATOS_INGRESO
         //FIN REGION DATOS_INGRESO................................................................

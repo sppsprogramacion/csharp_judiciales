@@ -1938,7 +1938,7 @@
             this.btnImprimirTraslados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimirTraslados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimirTraslados.ForeColor = System.Drawing.Color.Indigo;
-            this.btnImprimirTraslados.Location = new System.Drawing.Point(789, 21);
+            this.btnImprimirTraslados.Location = new System.Drawing.Point(772, 21);
             this.btnImprimirTraslados.Name = "btnImprimirTraslados";
             this.btnImprimirTraslados.Size = new System.Drawing.Size(194, 40);
             this.btnImprimirTraslados.TabIndex = 95;

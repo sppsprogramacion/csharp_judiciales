@@ -197,6 +197,7 @@ namespace CapaPresentacion
                 .Select(c => new
                 {
                     Id = c.id_traslado_interno,
+                    Interno = c.ingreso_interno.interno.apellido + " " + c.ingreso_interno.interno.nombre,
                     Origen = c.organismo_origen.organismo,
                     FechaTraslado = c.fecha_egreso_origen,
                     DetalleTrasaldo = c.detalle_traslado,
@@ -220,9 +221,10 @@ namespace CapaPresentacion
             }
             else
             {
-
-                dtgvTraslados.Columns[1].Width = 200;
-                dtgvTraslados.Columns[4].Width = 200;
+                dtgvTraslados.Columns[0].Width = 80;
+                dtgvTraslados.Columns[1].Width = 150;
+                dtgvTraslados.Columns[2].Width = 180;
+                dtgvTraslados.Columns[5].Width = 180;
             }
 
             //limpiar formulario
@@ -255,6 +257,7 @@ namespace CapaPresentacion
 
                     if (idTraslado > 0)
                     {
+                        txtInterno.Text = dtgvTraslados.CurrentRow.Cells["Interno"].Value.ToString();
                         txtIdTraslado.Text = idTraslado.ToString();
                         txtOrganismoOrigenTraslado.Text = dtgvTraslados.CurrentRow.Cells["Origen"].Value.ToString();
                         txtFechaTraslado.Text = Convert.ToDateTime(dtgvTraslados.CurrentRow.Cells["FechaTraslado"].Value).ToString("dd/MM/yyyy");
