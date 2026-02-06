@@ -122,7 +122,7 @@
             this.txtAbogado = new System.Windows.Forms.TextBox();
             this.cmbTipoDefensor = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnEditarIngreso = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.txtNumeroReingreso = new System.Windows.Forms.TextBox();
             this.cmbReingreso = new System.Windows.Forms.ComboBox();
@@ -1212,7 +1212,7 @@
             this.groupBox2.Controls.Add(this.txtAbogado);
             this.groupBox2.Controls.Add(this.cmbTipoDefensor);
             this.groupBox2.Controls.Add(this.label23);
-            this.groupBox2.Controls.Add(this.btnEditar);
+            this.groupBox2.Controls.Add(this.btnEditarIngreso);
             this.groupBox2.Controls.Add(this.label24);
             this.groupBox2.Controls.Add(this.txtNumeroReingreso);
             this.groupBox2.Controls.Add(this.cmbReingreso);
@@ -1255,6 +1255,7 @@
             // txtDetalleProceSpps
             // 
             this.txtDetalleProceSpps.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDetalleProceSpps.Enabled = false;
             this.txtDetalleProceSpps.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDetalleProceSpps.Location = new System.Drawing.Point(9, 179);
             this.txtDetalleProceSpps.Name = "txtDetalleProceSpps";
@@ -1269,11 +1270,12 @@
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(210, 15);
             this.label21.TabIndex = 262;
-            this.label21.Text = "DETALLE PROCEDENCIA ESTERNO";
+            this.label21.Text = "DETALLE PROCEDENCIA EXTERNO";
             // 
             // txtDetalleProceExterno
             // 
             this.txtDetalleProceExterno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDetalleProceExterno.Enabled = false;
             this.txtDetalleProceExterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDetalleProceExterno.Location = new System.Drawing.Point(11, 87);
             this.txtDetalleProceExterno.Name = "txtDetalleProceExterno";
@@ -1293,6 +1295,7 @@
             // txtAbogado
             // 
             this.txtAbogado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAbogado.Enabled = false;
             this.txtAbogado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAbogado.Location = new System.Drawing.Point(177, 317);
             this.txtAbogado.Name = "txtAbogado";
@@ -1301,6 +1304,7 @@
             // 
             // cmbTipoDefensor
             // 
+            this.cmbTipoDefensor.Enabled = false;
             this.cmbTipoDefensor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoDefensor.FormattingEnabled = true;
             this.cmbTipoDefensor.Location = new System.Drawing.Point(11, 317);
@@ -1318,19 +1322,20 @@
             this.label23.TabIndex = 258;
             this.label23.Text = "DEFENSOR";
             // 
-            // btnEditar
+            // btnEditarIngreso
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.White;
-            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnEditar.Location = new System.Drawing.Point(181, 350);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(98, 40);
-            this.btnEditar.TabIndex = 245;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditarIngreso.BackColor = System.Drawing.Color.White;
+            this.btnEditarIngreso.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarIngreso.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarIngreso.Location = new System.Drawing.Point(181, 350);
+            this.btnEditarIngreso.Name = "btnEditarIngreso";
+            this.btnEditarIngreso.Size = new System.Drawing.Size(98, 40);
+            this.btnEditarIngreso.TabIndex = 245;
+            this.btnEditarIngreso.Text = "Editar";
+            this.btnEditarIngreso.UseVisualStyleBackColor = false;
+            this.btnEditarIngreso.Click += new System.EventHandler(this.btnEditarIngreso_Click);
             // 
             // label24
             // 
@@ -1345,6 +1350,7 @@
             // txtNumeroReingreso
             // 
             this.txtNumeroReingreso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumeroReingreso.Enabled = false;
             this.txtNumeroReingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumeroReingreso.Location = new System.Drawing.Point(177, 270);
             this.txtNumeroReingreso.Name = "txtNumeroReingreso";
@@ -1353,6 +1359,7 @@
             // 
             // cmbReingreso
             // 
+            this.cmbReingreso.Enabled = false;
             this.cmbReingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbReingreso.FormattingEnabled = true;
             this.cmbReingreso.Location = new System.Drawing.Point(11, 270);
@@ -1372,6 +1379,7 @@
             // 
             // cmbOtraJurisdiccion
             // 
+            this.cmbOtraJurisdiccion.Enabled = false;
             this.cmbOtraJurisdiccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOtraJurisdiccion.FormattingEnabled = true;
             this.cmbOtraJurisdiccion.Location = new System.Drawing.Point(345, 224);
@@ -1391,6 +1399,7 @@
             // 
             // dtpFechaIngresoSpps
             // 
+            this.dtpFechaIngresoSpps.Enabled = false;
             this.dtpFechaIngresoSpps.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaIngresoSpps.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaIngresoSpps.Location = new System.Drawing.Point(346, 41);
@@ -1420,6 +1429,7 @@
             // 
             // cmbOrganismoExternoProcedencia
             // 
+            this.cmbOrganismoExternoProcedencia.Enabled = false;
             this.cmbOrganismoExternoProcedencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOrganismoExternoProcedencia.FormattingEnabled = true;
             this.cmbOrganismoExternoProcedencia.Location = new System.Drawing.Point(11, 41);
@@ -1430,6 +1440,7 @@
             // btnGuardarIngreso
             // 
             this.btnGuardarIngreso.BackColor = System.Drawing.Color.White;
+            this.btnGuardarIngreso.Enabled = false;
             this.btnGuardarIngreso.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.btnGuardarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1440,10 +1451,12 @@
             this.btnGuardarIngreso.TabIndex = 12;
             this.btnGuardarIngreso.Text = "Guardar";
             this.btnGuardarIngreso.UseVisualStyleBackColor = false;
+            this.btnGuardarIngreso.Click += new System.EventHandler(this.btnGuardarIngreso_Click);
             // 
             // btnCancelarIngreso
             // 
             this.btnCancelarIngreso.BackColor = System.Drawing.Color.White;
+            this.btnCancelarIngreso.Enabled = false;
             this.btnCancelarIngreso.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
             this.btnCancelarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1454,6 +1467,7 @@
             this.btnCancelarIngreso.TabIndex = 13;
             this.btnCancelarIngreso.Text = "Cancelar";
             this.btnCancelarIngreso.UseVisualStyleBackColor = false;
+            this.btnCancelarIngreso.Click += new System.EventHandler(this.btnCancelarIngreso_Click);
             // 
             // label38
             // 
@@ -1468,6 +1482,7 @@
             // txtProntuarioPolicial
             // 
             this.txtProntuarioPolicial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProntuarioPolicial.Enabled = false;
             this.txtProntuarioPolicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProntuarioPolicial.Location = new System.Drawing.Point(345, 131);
             this.txtProntuarioPolicial.Name = "txtProntuarioPolicial";
@@ -1476,6 +1491,7 @@
             // 
             // cmbJurisdiccion
             // 
+            this.cmbJurisdiccion.Enabled = false;
             this.cmbJurisdiccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbJurisdiccion.FormattingEnabled = true;
             this.cmbJurisdiccion.Location = new System.Drawing.Point(177, 224);
@@ -1499,12 +1515,13 @@
             this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label45.Location = new System.Drawing.Point(6, 113);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(213, 15);
+            this.label45.Size = new System.Drawing.Size(205, 15);
             this.label45.TabIndex = 207;
-            this.label45.Text = "ORGANISMO PROCESDENCIA SPPS";
+            this.label45.Text = "ORGANISMO PROCEDENCIA SPPS";
             // 
             // cmbEstadoProcesal
             // 
+            this.cmbEstadoProcesal.Enabled = false;
             this.cmbEstadoProcesal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstadoProcesal.FormattingEnabled = true;
             this.cmbEstadoProcesal.Location = new System.Drawing.Point(9, 224);
@@ -1514,6 +1531,7 @@
             // 
             // cmbOrganismoSppsProcesencia
             // 
+            this.cmbOrganismoSppsProcesencia.Enabled = false;
             this.cmbOrganismoSppsProcesencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOrganismoSppsProcesencia.FormattingEnabled = true;
             this.cmbOrganismoSppsProcesencia.Location = new System.Drawing.Point(9, 131);
@@ -1533,6 +1551,7 @@
             // 
             // dtpFechaAlojamiento
             // 
+            this.dtpFechaAlojamiento.Enabled = false;
             this.dtpFechaAlojamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaAlojamiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaAlojamiento.Location = new System.Drawing.Point(346, 270);
@@ -2487,7 +2506,7 @@
         private System.Windows.Forms.TextBox txtAbogado;
         private System.Windows.Forms.ComboBox cmbTipoDefensor;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnEditarIngreso;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txtNumeroReingreso;
         private System.Windows.Forms.ComboBox cmbReingreso;

@@ -154,20 +154,7 @@ namespace CapaPresentacion
 
 
             //cargar datos de ingreso en pestaña DATOS DE INGRESO           
-            cmbOrganismoExternoProcedencia.Text = ingresoInternoGlobal.organismo_externo.organismo_externo.ToString();
-            txtDetalleProceExterno.Text = ingresoInternoGlobal.obs_organismo_externo;
-            dtpFechaIngresoSpps.Text = this.ingresoInternoGlobal.fecha_primer_ingreso.ToShortDateString();
-            cmbOrganismoSppsProcesencia.Text = ingresoInternoGlobal.organismo_procedencia.organismo.ToString();
-            txtProntuarioPolicial.Text = this.ingresoInternoGlobal.prontuario_policial.ToString();
-            txtDetalleProceSpps.Text = this.ingresoInternoGlobal.obs_organismo_procedencia;
-            cmbEstadoProcesal.Text = this.ingresoInternoGlobal.estado_procesal.estado_procesal;
-            cmbJurisdiccion.Text = this.ingresoInternoGlobal.jurisdiccion.jurisdiccion;
-            cmbOtraJurisdiccion.Text = this.ingresoInternoGlobal.otra_jurisdiccion.jurisdiccion;
-            cmbReingreso.Text = this.ingresoInternoGlobal.reingreso.reingreso;
-            txtNumeroReingreso.Text = this.ingresoInternoGlobal.numero_reingreso.ToString();
-            dtpFechaAlojamiento.Text = this.ingresoInternoGlobal.fecha_alojamiento.ToShortDateString();
-            cmbTipoDefensor.Text = this.ingresoInternoGlobal.tipo_defensor.tipo_defensor;
-            txtAbogado.Text = this.ingresoInternoGlobal.abogado;
+            this.CargarControlesIngreso();
         }
                 
 
@@ -205,6 +192,26 @@ namespace CapaPresentacion
         }
         //FIN CARGAR CONTROLES DATOS DE INTERNO...................................................
 
+        //CARGAR DATOS DE INGRESO EN PESTAÑA DATOS DE INGRESO
+        private void CargarControlesIngreso()
+        {
+            cmbOrganismoExternoProcedencia.Text = ingresoInternoGlobal.organismo_externo.organismo_externo.ToString();
+            txtDetalleProceExterno.Text = ingresoInternoGlobal.obs_organismo_externo;
+            dtpFechaIngresoSpps.Text = this.ingresoInternoGlobal.fecha_primer_ingreso.ToShortDateString();
+            cmbOrganismoSppsProcesencia.Text = ingresoInternoGlobal.organismo_procedencia.organismo.ToString();
+            txtProntuarioPolicial.Text = this.ingresoInternoGlobal.prontuario_policial.ToString();
+            txtDetalleProceSpps.Text = this.ingresoInternoGlobal.obs_organismo_procedencia;
+            cmbEstadoProcesal.Text = this.ingresoInternoGlobal.estado_procesal.estado_procesal;
+            cmbJurisdiccion.Text = this.ingresoInternoGlobal.jurisdiccion.jurisdiccion;
+            cmbOtraJurisdiccion.Text = this.ingresoInternoGlobal.otra_jurisdiccion.jurisdiccion;
+            cmbReingreso.Text = this.ingresoInternoGlobal.reingreso.reingreso;
+            txtNumeroReingreso.Text = this.ingresoInternoGlobal.numero_reingreso.ToString();
+            dtpFechaAlojamiento.Text = this.ingresoInternoGlobal.fecha_alojamiento.ToShortDateString();
+            cmbTipoDefensor.Text = this.ingresoInternoGlobal.tipo_defensor.tipo_defensor;
+            txtAbogado.Text = this.ingresoInternoGlobal.abogado;
+        }
+
+        //FIN CARGAR DATOS DE INGRESO EN PESTAÑA DATOS DE INGRESO......................................
 
         //REGION DATOS_PRINCIPALES
         #region DATOS_PRINCIPALES
@@ -375,6 +382,7 @@ namespace CapaPresentacion
                 this.tabInterno.Enabled = true;
             }
         }
+        
         private void btnCancelarEditarCaracteristicasPersonales_Click(object sender, EventArgs e)
         {
             //limpiar errores de provider
@@ -585,6 +593,164 @@ namespace CapaPresentacion
         //FIN REGION DATOS_PRINCIPALES..........................................................
         //......................................................................................
 
+        //FIN REGION DATOS_INGRESO
+        #region DATOS_INGRESO
+        private async void btnEditarIngreso_Click(object sender, EventArgs e)
+        {
+            //**---Cuando el interno no esta alojadoe en una unidad---**
+            //Carga de combos sobre listas para ingreso
+            DTablasIngresoInterno tablasIngresoInterno = null;
+
+            NListasGenerales nListasGenerales = new NListasGenerales();
+            (DTablasIngresoInterno tablasIngresoInternoResponse, string errorResponse) = await nListasGenerales.ListasTablasIngresoInterno();
+            tablasIngresoInterno = tablasIngresoInternoResponse;
+
+            if (tablasIngresoInterno == null)
+            {
+                MessageBox.Show("Advertencia al cargar las listas para el ingreso: " + errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+            else
+            {
+                //ORGANISMOS EXTERNOS
+                cmbOrganismoExternoProcedencia.ValueMember = "id_organismo_externo";
+                cmbOrganismoExternoProcedencia.DisplayMember = "organismo_externo";
+                cmbOrganismoExternoProcedencia.DataSource = tablasIngresoInterno.organismos_externos;
+
+                //ORGANISMOS
+                cmbOrganismoSppsProcesencia.ValueMember = "id_organismo";
+                cmbOrganismoSppsProcesencia.DisplayMember = "organismo";
+                cmbOrganismoSppsProcesencia.DataSource = tablasIngresoInterno.organismos_spps.ToList();
+
+                //ESTADO PROCESAL
+                cmbEstadoProcesal.ValueMember = "id_estado_procesal";
+                cmbEstadoProcesal.DisplayMember = "estado_procesal";
+                cmbEstadoProcesal.DataSource = tablasIngresoInterno.estado_procesal;
+
+                //JURISDICCION
+                cmbJurisdiccion.ValueMember = "id_jurisdiccion";
+                cmbJurisdiccion.DisplayMember = "jurisdiccion";
+                cmbJurisdiccion.DataSource = tablasIngresoInterno.jurisdiccion.ToList();
+
+                //OTRA JURISDICCION
+                cmbOtraJurisdiccion.ValueMember = "id_jurisdiccion";
+                cmbOtraJurisdiccion.DisplayMember = "jurisdiccion";
+                cmbOtraJurisdiccion.DataSource = tablasIngresoInterno.jurisdiccion.ToList();
+
+                //REINGRESO
+                cmbReingreso.ValueMember = "id_reingreso";
+                cmbReingreso.DisplayMember = "reingreso";
+                cmbReingreso.DataSource = tablasIngresoInterno.reingreso;
+
+                //Tipos defensor
+                cmbTipoDefensor.ValueMember = "id_tipo_defensor";
+                cmbTipoDefensor.DisplayMember = "tipo_defensor";
+                cmbTipoDefensor.DataSource = tablasIngresoInterno.tipos_defensor;
+
+            }
+            //fin Carga de combos sobre  listas para ingreso
+
+            //cargar datos de ingreso en pestaña DATOS DE INGRESO           
+            this.CargarControlesIngreso();
+
+            this.HabilitarControlesIngreso(true);
+        }
+
+        private void btnCancelarIngreso_Click(object sender, EventArgs e)
+        {
+            //cargar datos de ingreso en pestaña DATOS DE INGRESO           
+            this.CargarControlesIngreso();
+
+            this.HabilitarControlesIngreso(false);
+        }
+
+        private async void btnGuardarIngreso_Click(object sender, EventArgs e)
+        {
+            NIngresoInterno nIngreso = new NIngresoInterno();
+
+            //limpiar errores de provider
+            errorProvider.Clear();
+
+
+            if (txtIdInterno.Text == null || txtIdInterno.Text == "")
+            {
+                MessageBox.Show("Debe tener un interno cargado.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            //limpiar errores de provider
+            errorProvider.Clear();
+
+
+            this.tabInterno.Enabled = false;
+            var data = new
+            {
+                organismo_externo_id = Convert.ToInt32(cmbOrganismoExternoProcedencia.SelectedValue.ToString()),
+                fecha_primer_ingreso = dtpFechaIngresoSpps.Value,
+                obs_organismo_externo = txtDetalleProceExterno.Text,
+                organismo_procedencia_id = Convert.ToInt32(cmbOrganismoSppsProcesencia.SelectedValue.ToString()),
+                obs_organismo_procedencia = txtDetalleProceSpps.Text,
+                prontuario_policial = txtProntuarioPolicial.Text,
+                estado_procesal_id = cmbEstadoProcesal.SelectedValue.ToString(),
+                jurisdiccion_id = cmbJurisdiccion.SelectedValue.ToString(),
+                otra_jurisdiccion_id = cmbOtraJurisdiccion.SelectedValue.ToString(),
+                reingreso_id = Convert.ToInt32(cmbReingreso.SelectedValue.ToString()),
+                numero_reingreso = Convert.ToInt32(txtNumeroReingreso.Text),
+                fecha_alojamiento = dtpFechaAlojamiento.Value,
+                tipo_defensor_id = Convert.ToInt32(cmbTipoDefensor.SelectedValue.ToString()),
+                abogado = txtAbogado.Text
+            };
+
+            string dataIngresoEnviar = JsonConvert.SerializeObject(data);
+
+            (bool respuestaEditar, string errorResponse) = await nIngreso.EditarIngreso(Convert.ToInt32(txtIdIngresoVer.Text), dataIngresoEnviar);
+
+            if (respuestaEditar)
+            {
+                MessageBox.Show("La edición se realizó correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //actualizar el internoClobal
+                //this.BuscarInterno();
+                this.HabilitarControlesIngreso(false);
+                this.tabInterno.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.tabInterno.Enabled = true;
+            }
+        }
+
+
+
+
+        //HABILITAR CONTROLES INGRESO
+        private void HabilitarControlesIngreso(bool valor)
+        {
+            cmbOrganismoExternoProcedencia.Enabled = valor;
+            dtpFechaIngresoSpps.Enabled = valor;
+            txtDetalleProceExterno.Enabled = valor;
+            cmbOrganismoSppsProcesencia.Enabled = valor;
+            txtDetalleProceSpps.Enabled = valor;
+            txtProntuarioPolicial.Enabled = valor;
+            cmbEstadoProcesal.Enabled = valor;
+            cmbJurisdiccion.Enabled = valor;
+            cmbOtraJurisdiccion.Enabled = valor;
+            cmbReingreso.Enabled = valor;
+            txtNumeroReingreso.Enabled = valor;
+            dtpFechaAlojamiento.Enabled = valor;
+            cmbTipoDefensor.Enabled = valor;
+            txtAbogado.Enabled = valor;
+
+            btnEditarIngreso.Enabled = !valor;
+            btnGuardarIngreso.Enabled = valor;
+            btnCancelarIngreso.Enabled = valor;
+        }//FIN HABILITAR CONTROLES INGRESO...........................................
+
+
+        #endregion DATOS_INGRESO
+        //FIN REGION DATOS_INGRESO................................................................
+        //........................................................................................
+
         #region TRASLADOS
         private void btnTrasladar_Click(object sender, EventArgs e)
         {
@@ -701,8 +867,7 @@ namespace CapaPresentacion
 
         }
 
-
-
+        
         #endregion TRASLADOS
         //FIN REGION TRASLADOS....................................................................
         //........................................................................................
