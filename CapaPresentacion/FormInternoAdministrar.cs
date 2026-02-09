@@ -3,8 +3,6 @@ using CapaNegocio;
 using CapaPresentacion.FuncionesGenerales;
 using CapaPresentacion.Validaciones.InternoAdministrar.Datos;
 using CapaPresentacion.Validaciones.InternoAdministrar.Validacion;
-using CapaPresentacion.Validaciones.NuevoInterno.Datos;
-using CapaPresentacion.Validaciones.NuevoInterno.Validacion;
 using CommonCache;
 using Newtonsoft.Json;
 using System;
@@ -515,18 +513,14 @@ namespace CapaPresentacion
             idInterno = Convert.ToInt32(txtIdInterno.Text);
             (DInterno dInternoResponse, string errorInternoResponse) = await nInterno.BuscarInternoXID(idInterno);
 
-            MessageBox.Show("id: " + idInterno);
             dInterno = dInternoResponse;
                         
             if (dInterno == null)
             {
                 tabInterno.Enabled = false;
-                MessageBox.Show("id2: " + idInterno);
                 MessageBox.Show("No se encontro informaciòn del interno solicitado: " + errorInternoResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            MessageBox.Show("id3: " + idInterno);
 
             this.dInternoGlobal = dInterno;
 
@@ -827,6 +821,104 @@ namespace CapaPresentacion
         }
 
 
+        
+        private void dtgvTraslados_KeyDown(object sender, KeyEventArgs e)
+        {
+            //AL PRESIONAR ENTER MOSTRAR
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+
+                if (dtgvTraslados.SelectedRows.Count > 0)
+                {
+                    int idTraslado;
+                    idTraslado = Convert.ToInt32(dtgvTraslados.CurrentRow.Cells["ID"].Value.ToString());
+
+                    
+                    if (idTraslado > 0)
+                    {
+                        txtIdTraslado.Text = idTraslado.ToString();
+                        txtOrganismoOrigenTraslado.Text = dtgvTraslados.CurrentRow.Cells["Origen"].Value.ToString();
+                        txtFechaTraslado.Text = Convert.ToDateTime(dtgvTraslados.CurrentRow.Cells["FechaTraslado"].Value).ToString("dd/MM/yyyy");
+                        txtDetalleTraslado.Text = dtgvTraslados.CurrentRow.Cells["DetalleTrasaldo"].Value?.ToString();
+                        txtOrganismoDestinoTraslado.Text = dtgvTraslados.CurrentRow.Cells["Destino"].Value?.ToString();
+                        //controlar fecha_ingreso
+                        var valor = dtgvTraslados.CurrentRow.Cells["FechaIngreso"].Value;
+
+                        if (valor is DateTime fecha)
+                        {
+                            txtFechaIngresoTraslado.Text = fecha.ToString("dd/MM/yyyy");
+                        }
+                        else
+                        {
+                            txtFechaIngresoTraslado.Text = "";
+                        }
+                        txtEstadoTraslado.Text = dtgvTraslados.CurrentRow.Cells["Estado"].Value?.ToString();
+                        txtObsTraslado.Text = dtgvTraslados.CurrentRow.Cells["ObsTraslado"].Value?.ToString();
+                        txtFechaCargaTraslado.Text = Convert.ToDateTime(dtgvTraslados.CurrentRow.Cells["FechaCarga"].Value).ToString("dd/MM/yyyy");
+                        txtHoraCargaTraslado.Text = dtgvTraslados.CurrentRow.Cells["HoraCarga"].Value?.ToString();
+                        txtUsuarioCargaTraslado.Text = dtgvTraslados.CurrentRow.Cells["Usuario"].Value?.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe seleccionar una traslado.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+        }
+
+
+        private void btnAnularTraslado_Click(object sender, EventArgs e)
+        {
+            this.HabilitarControlesAnularTraslado(true);
+        }
+
+        private void btnCancelarTrasladoARA_Click(object sender, EventArgs e)
+        {
+            this.HabilitarControlesAnularTraslado(false);
+        }
+        private async void btnGuardarTrasladoARA_Click(object sender, EventArgs e)
+        {
+            if (txtIdTraslado.Text == null || txtIdTraslado.Text == "")
+            {
+                MessageBox.Show("Debe seleccionar un traslado para poder anular.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (txtObsProcesarTraslado.Text == string.Empty)
+            {
+                MessageBox.Show("Debe completar el obs traslado.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            NTrasladoInterno nTrasladoInterno = new NTrasladoInterno();
+
+            var dataAnular = new
+            {
+                obs_traslado = txtObsProcesarTraslado.Text,
+            };
+
+            string dataEnviar = JsonConvert.SerializeObject(dataAnular);
+
+            tabInterno.Enabled = false;
+            (bool respuestaEditar, string errorResponse) = await nTrasladoInterno.AnularTraslado(Convert.ToInt32(txtIdTraslado.Text), dataEnviar);
+            tabInterno.Enabled = true;
+
+            //verificar respuesta de la peticion
+            if (respuestaEditar)
+            {
+
+                MessageBox.Show("El traslado se anulo correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                this.HabilitarControlesAnularTraslado(false);
+                this.CargarDataGridTraslados();
+            }
+            else
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         //METODO PARA OBTENER LA LISTA DE TRASLADOS Y CARGARLO EN UN DATA GRID 
         async private void CargarDataGridTraslados()
         {
@@ -869,7 +961,7 @@ namespace CapaPresentacion
             if (listaTraslados.Count == 0)
             {
                 MessageBox.Show("No se encontraron registros.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                
             }
             else
             {
@@ -878,54 +970,33 @@ namespace CapaPresentacion
                 dtgvTraslados.Columns[4].Width = 200;
             }
 
-        } //FIN METODO PARA OBTENER LA LISTA DE PARENTESCOS EN UN DATA GRID ...........
+            //limpiar formulario
+            txtIdTraslado.Text = string.Empty;
+            txtOrganismoOrigenTraslado.Text = string.Empty;
+            txtFechaTraslado.Text = string.Empty;
+            txtDetalleTraslado.Text = string.Empty;
+            txtOrganismoDestinoTraslado.Text = string.Empty;
+            txtFechaIngresoTraslado.Text = string.Empty;
+            txtEstadoTraslado.Text = string.Empty;
+            txtObsTraslado.Text = string.Empty;
+            txtFechaCargaTraslado.Text = string.Empty;
+            txtHoraCargaTraslado.Text = string.Empty;
+            txtUsuarioCargaTraslado.Text = string.Empty;
 
-        private void dtgvTraslados_KeyDown(object sender, KeyEventArgs e)
+        } //FIN METODO PARA OBTENER LA LISTA DE TRASLADOS EN UN DATA GRID ...........
+
+        //METODO HABILITAR CONTROLES ANULAR TRASLADO
+        private void HabilitarControlesAnularTraslado(bool valor)
         {
-            //AL PRESIONAR ENTER MOSTRAR
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.SuppressKeyPress = true;
+            txtObsProcesarTraslado.Enabled = valor;
+            txtObsProcesarTraslado.Text = string.Empty;
 
-                if (dtgvTraslados.SelectedRows.Count > 0)
-                {
-                    int idTraslado;
-                    idTraslado = Convert.ToInt32(dtgvTraslados.CurrentRow.Cells["ID"].Value.ToString());
+            btnAnularTraslado.Enabled = !valor;
 
-                    
-                    if (idTraslado > 0)
-                    {
-                        txtIdTraslado.Text = idTraslado.ToString();
-                        txtOrganismoOrigenTraslado.Text = dtgvTraslados.CurrentRow.Cells["Origen"].Value.ToString();
-                        txtFechaTraslado.Text = Convert.ToDateTime(dtgvTraslados.CurrentRow.Cells["FechaTraslado"].Value).ToString("dd/MM/yyyy");
-                        txtDetalleTraslado.Text = dtgvTraslados.CurrentRow.Cells["DetalleTrasaldo"].Value?.ToString();
-                        txtOrganismoDestinoTraslado.Text = dtgvTraslados.CurrentRow.Cells["Destino"].Value?.ToString();
-                        txtFechaIngresoTraslado.Text = Convert.ToDateTime(dtgvTraslados.CurrentRow.Cells["FechaIngreso"].Value).ToString("dd/MM/yyyy");
-                        txtEstadoTraslado.Text = dtgvTraslados.CurrentRow.Cells["Estado"].Value?.ToString();
-                        txtObsTraslado.Text = dtgvTraslados.CurrentRow.Cells["ObsTraslado"].Value?.ToString();
-                        txtFechaCargaTraslado.Text = Convert.ToDateTime(dtgvTraslados.CurrentRow.Cells["FechaCarga"].Value).ToString("dd/MM/yyyy");
-                        txtHoraCargaTraslado.Text = dtgvTraslados.CurrentRow.Cells["HoraCarga"].Value?.ToString();
-                        txtUsuarioCargaTraslado.Text = dtgvTraslados.CurrentRow.Cells["Usuario"].Value?.ToString();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Debe seleccionar una traslado.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            }
-        }
+            btnGuardarTrasladoARA.Enabled = valor;
+            btnCancelarTrasladoARA.Enabled = valor;
+        }//FIN METODO HABILITAR CONTROLES ANULAR TRASLADO..............................
 
-        private void btnGuardarTrasladoARA_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAnularTraslado_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
         #endregion TRASLADOS
         //FIN REGION TRASLADOS....................................................................
         //........................................................................................

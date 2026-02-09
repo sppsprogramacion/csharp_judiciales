@@ -172,6 +172,7 @@ namespace DAOImplement
         }
         //FIN BUSCAR XAPELLIDO
 
+        //BUSCAR X APELLIDO en TODAS LAS UNIDADES
         public async Task<(List<DInterno>, string error)> ListaInternosXApellidoGeneral(string apellido)
         {
             List<DInterno> listaInternos = new List<DInterno>();
@@ -215,6 +216,53 @@ namespace DAOImplement
                 return (null, $"Error inesperado: {ex.Message}");
             }
         }
+        //fin BUSCAR X APELLIDO EN TODAS LAS UNIDADES......................................................................
+
+        //BUSCAR X PRONTUARIO
+        public async Task<(List<DInterno>, string error)> ListaInternosXProntuario(int prontuario)
+        {
+            List<DInterno> listaInternos = new List<DInterno>();
+            string token = SessionManager.Token; // Aquí pones tu token real
+
+            try
+            {
+                // Agregar el token en los headers
+                this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                HttpResponseMessage httpResponse = await this.httpClient.GetAsync(url_base + "/internos/buscarlista-xprontuario?prontuario=" + prontuario);
+
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var content = await httpResponse.Content.ReadAsStringAsync();
+                    listaInternos = JsonConvert.DeserializeObject<List<DInterno>>(content);
+                    return (listaInternos, null);
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (null, $"Error en la busqueda: {mensaje}");
+                }
+
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                // Capturar errores de la solicitud HTTP
+                return (null, $"Error de conexión: {httpRequestException.Message}");
+            }
+            catch (JsonException jsonException)
+            {
+                // Capturar errores en la serialización/deserialización de JSON                
+                return (null, $"Error inesperado");
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores (log, mensaje al usuario, etc.)
+                Console.WriteLine($"Error: {ex.Message}");
+                return (null, $"Error inesperado: {ex.Message}");
+            }
+        }
+        //FIN BUSCAR X PRONTUARIO.....................................................
 
         //EDITAR DATOS PERSONALES
         public async Task<(bool, string error)> EditarDatosPersonales(int id, string datosPErsonales)
@@ -382,7 +430,7 @@ namespace DAOImplement
                 return (false, $"Error inesperado: {ex.Message}");
             }
         }
-        //FIN EDITAR DATOS FILIATORIOS.............................................................
+           //FIN EDITAR DATOS FILIATORIOS.............................................................
 
     }
 }

@@ -132,7 +132,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sistema Judiciales";
+            this.Text = "SISTEMA JUDICIALES";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

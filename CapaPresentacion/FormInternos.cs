@@ -36,13 +36,19 @@ namespace CapaPresentacion
             listaElegir.Add(new DElegirBusquedaInterno
             {
                 id_busqueda = "unidad",
-                texto = "Mi unidad"
+                texto = "Apellido en: Mi unidad"
             });
 
             listaElegir.Add(new DElegirBusquedaInterno
             {
                 id_busqueda = "todas",
-                texto = "Todas las unidades"
+                texto = "Apellido en: Todas las unidades"
+            });
+
+            listaElegir.Add(new DElegirBusquedaInterno
+            {
+                id_busqueda = "prontuario",
+                texto = "Prontuario"
             });
 
             cmbBusqueda.ValueMember = "id_busqueda";    // id
@@ -66,12 +72,19 @@ namespace CapaPresentacion
 
         private async void btnBuscarApellido_Click(object sender, EventArgs e)
         {
+            if (txtBusqueda.Text.Length < 2){
+                MessageBox.Show("Debe ingresar al menos 2 caracteres en el cuadro de busqueda", "Internos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             NInterno nInterno = new NInterno();
             List<DInterno> listaInternos = new List<DInterno>();
 
             if (cmbBusqueda.SelectedValue.ToString() == "unidad")
             {
-                (List<DInterno> listaInternosEncontrados, string errorResponse) = await nInterno.ListaInternosXApellido(txtApellidoBusqueda.Text);
+                this.Enabled = false;
+                (List<DInterno> listaInternosEncontrados, string errorResponse) = await nInterno.ListaInternosXApellido(txtBusqueda.Text);
+                this.Enabled = true;
+
                 if (listaInternosEncontrados == null)
                 {
                     MessageBox.Show(errorResponse, "Internos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -82,7 +95,35 @@ namespace CapaPresentacion
 
             if (cmbBusqueda.SelectedValue.ToString() == "todas")
             {
-                (List<DInterno> listaInternosEncontrados, string errorResponse) = await nInterno.ListaInternosXApellidoGeneral(txtApellidoBusqueda.Text);
+                this.Enabled = false;
+                (List<DInterno> listaInternosEncontrados, string errorResponse) = await nInterno.ListaInternosXApellidoGeneral(txtBusqueda.Text);
+                this.Enabled = true;
+
+                if (listaInternosEncontrados == null)
+                {
+                    MessageBox.Show(errorResponse, "Internos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                listaInternos = listaInternosEncontrados;
+            }
+
+            if (cmbBusqueda.SelectedValue.ToString() == "prontuario")
+            {
+                int prontuarioX;
+                try
+                {
+                    prontuarioX = int.Parse(txtBusqueda.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("El prontuario debe ser un numero válido", "Internos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                this.Enabled = false;
+                (List<DInterno> listaInternosEncontrados, string errorResponse) = await nInterno.ListaInternosXProntuario(prontuarioX);
+                this.Enabled = true;
+
                 if (listaInternosEncontrados == null)
                 {
                     MessageBox.Show(errorResponse, "Internos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -107,7 +148,7 @@ namespace CapaPresentacion
 
             if (listaInternos.Count == 0)
             {
-                MessageBox.Show("No se encontraron registros", "Restrición Visitas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No se encontraron registros", "Internos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
@@ -134,7 +175,9 @@ namespace CapaPresentacion
                     if (this.idInternoGlobal > 0)
                     {
                         NIngresoInterno nIngreso = new NIngresoInterno();
+                        this.Enabled = false;
                         (DIngresoInterno ingresoInterno, string errorResponse) = await nIngreso.BuscarxInterno(this.idInternoGlobal);
+                        this.Enabled = true;
 
                         if (ingresoInterno == null)
                         {

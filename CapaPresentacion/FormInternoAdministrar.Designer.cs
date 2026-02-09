@@ -1958,7 +1958,7 @@
             this.groupBox9.Size = new System.Drawing.Size(445, 391);
             this.groupBox9.TabIndex = 94;
             this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Aceptar / Rechazar / Anular";
+            this.groupBox9.Text = "Anular";
             // 
             // btnGuardarTrasladoARA
             // 
@@ -1988,6 +1988,7 @@
             this.btnCancelarTrasladoARA.TabIndex = 238;
             this.btnCancelarTrasladoARA.Text = "CANCELAR";
             this.btnCancelarTrasladoARA.UseVisualStyleBackColor = false;
+            this.btnCancelarTrasladoARA.Click += new System.EventHandler(this.btnCancelarTrasladoARA_Click);
             // 
             // btnAnularTraslado
             // 
@@ -2008,7 +2009,7 @@
             // 
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.Location = new System.Drawing.Point(5, 77);
+            this.label55.Location = new System.Drawing.Point(5, 79);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(63, 15);
             this.label55.TabIndex = 78;
@@ -2090,12 +2091,12 @@
             this.groupBox5.Size = new System.Drawing.Size(597, 390);
             this.groupBox5.TabIndex = 79;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Parentesco actual";
+            this.groupBox5.Text = "Traslado";
             // 
             // txtHoraCargaTraslado
             // 
             this.txtHoraCargaTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoraCargaTraslado.Location = new System.Drawing.Point(138, 365);
+            this.txtHoraCargaTraslado.Location = new System.Drawing.Point(133, 189);
             this.txtHoraCargaTraslado.Name = "txtHoraCargaTraslado";
             this.txtHoraCargaTraslado.ReadOnly = true;
             this.txtHoraCargaTraslado.Size = new System.Drawing.Size(112, 21);
@@ -2105,7 +2106,7 @@
             // 
             this.label74.AutoSize = true;
             this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label74.Location = new System.Drawing.Point(135, 345);
+            this.label74.Location = new System.Drawing.Point(130, 172);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(87, 15);
             this.label74.TabIndex = 98;
@@ -2114,7 +2115,7 @@
             // txtFechaCargaTraslado
             // 
             this.txtFechaCargaTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaCargaTraslado.Location = new System.Drawing.Point(15, 365);
+            this.txtFechaCargaTraslado.Location = new System.Drawing.Point(10, 189);
             this.txtFechaCargaTraslado.Name = "txtFechaCargaTraslado";
             this.txtFechaCargaTraslado.ReadOnly = true;
             this.txtFechaCargaTraslado.Size = new System.Drawing.Size(112, 21);
@@ -2124,7 +2125,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(12, 345);
+            this.label26.Location = new System.Drawing.Point(7, 172);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(92, 15);
             this.label26.TabIndex = 96;
@@ -2133,7 +2134,7 @@
             // txtOrganismoDestinoTraslado
             // 
             this.txtOrganismoDestinoTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrganismoDestinoTraslado.Location = new System.Drawing.Point(10, 200);
+            this.txtOrganismoDestinoTraslado.Location = new System.Drawing.Point(10, 235);
             this.txtOrganismoDestinoTraslado.Name = "txtOrganismoDestinoTraslado";
             this.txtOrganismoDestinoTraslado.ReadOnly = true;
             this.txtOrganismoDestinoTraslado.Size = new System.Drawing.Size(349, 21);
@@ -2142,7 +2143,7 @@
             // txtFechaIngresoTraslado
             // 
             this.txtFechaIngresoTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaIngresoTraslado.Location = new System.Drawing.Point(370, 200);
+            this.txtFechaIngresoTraslado.Location = new System.Drawing.Point(370, 235);
             this.txtFechaIngresoTraslado.Name = "txtFechaIngresoTraslado";
             this.txtFechaIngresoTraslado.ReadOnly = true;
             this.txtFechaIngresoTraslado.Size = new System.Drawing.Size(112, 21);
@@ -2152,7 +2153,7 @@
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(367, 181);
+            this.label40.Location = new System.Drawing.Point(367, 218);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(107, 15);
             this.label40.TabIndex = 92;
@@ -2162,7 +2163,7 @@
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(6, 181);
+            this.label41.Location = new System.Drawing.Point(6, 218);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(140, 15);
             this.label41.TabIndex = 93;
@@ -2172,7 +2173,7 @@
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(6, 226);
+            this.label44.Location = new System.Drawing.Point(6, 260);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(101, 15);
             this.label44.TabIndex = 90;
@@ -2183,7 +2184,7 @@
             this.txtObsTraslado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtObsTraslado.Enabled = false;
             this.txtObsTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtObsTraslado.Location = new System.Drawing.Point(9, 245);
+            this.txtObsTraslado.Location = new System.Drawing.Point(10, 277);
             this.txtObsTraslado.Multiline = true;
             this.txtObsTraslado.Name = "txtObsTraslado";
             this.txtObsTraslado.ReadOnly = true;
@@ -2194,7 +2195,7 @@
             // 
             this.label73.AutoSize = true;
             this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label73.Location = new System.Drawing.Point(490, 182);
+            this.label73.Location = new System.Drawing.Point(490, 218);
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(58, 15);
             this.label73.TabIndex = 88;
@@ -2203,7 +2204,7 @@
             // txtEstadoTraslado
             // 
             this.txtEstadoTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstadoTraslado.Location = new System.Drawing.Point(493, 200);
+            this.txtEstadoTraslado.Location = new System.Drawing.Point(493, 235);
             this.txtEstadoTraslado.Name = "txtEstadoTraslado";
             this.txtEstadoTraslado.ReadOnly = true;
             this.txtEstadoTraslado.Size = new System.Drawing.Size(90, 21);
@@ -2212,7 +2213,7 @@
             // txtOrganismoOrigenTraslado
             // 
             this.txtOrganismoOrigenTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrganismoOrigenTraslado.Location = new System.Drawing.Point(111, 38);
+            this.txtOrganismoOrigenTraslado.Location = new System.Drawing.Point(111, 35);
             this.txtOrganismoOrigenTraslado.Name = "txtOrganismoOrigenTraslado";
             this.txtOrganismoOrigenTraslado.ReadOnly = true;
             this.txtOrganismoOrigenTraslado.Size = new System.Drawing.Size(349, 21);
@@ -2221,7 +2222,7 @@
             // txtFechaTraslado
             // 
             this.txtFechaTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFechaTraslado.Location = new System.Drawing.Point(471, 38);
+            this.txtFechaTraslado.Location = new System.Drawing.Point(471, 35);
             this.txtFechaTraslado.Name = "txtFechaTraslado";
             this.txtFechaTraslado.ReadOnly = true;
             this.txtFechaTraslado.Size = new System.Drawing.Size(112, 21);
@@ -2241,7 +2242,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(107, 19);
+            this.label32.Location = new System.Drawing.Point(107, 18);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(134, 15);
             this.label32.TabIndex = 85;
@@ -2251,7 +2252,7 @@
             // 
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(6, 64);
+            this.label42.Location = new System.Drawing.Point(6, 61);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(129, 15);
             this.label42.TabIndex = 82;
@@ -2260,7 +2261,7 @@
             // txtUsuarioCargaTraslado
             // 
             this.txtUsuarioCargaTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuarioCargaTraslado.Location = new System.Drawing.Point(260, 364);
+            this.txtUsuarioCargaTraslado.Location = new System.Drawing.Point(255, 188);
             this.txtUsuarioCargaTraslado.Name = "txtUsuarioCargaTraslado";
             this.txtUsuarioCargaTraslado.ReadOnly = true;
             this.txtUsuarioCargaTraslado.Size = new System.Drawing.Size(193, 21);
@@ -2271,7 +2272,7 @@
             this.txtDetalleTraslado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDetalleTraslado.Enabled = false;
             this.txtDetalleTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetalleTraslado.Location = new System.Drawing.Point(9, 83);
+            this.txtDetalleTraslado.Location = new System.Drawing.Point(8, 78);
             this.txtDetalleTraslado.Multiline = true;
             this.txtDetalleTraslado.Name = "txtDetalleTraslado";
             this.txtDetalleTraslado.ReadOnly = true;
@@ -2291,7 +2292,7 @@
             // txtIdTraslado
             // 
             this.txtIdTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdTraslado.Location = new System.Drawing.Point(9, 39);
+            this.txtIdTraslado.Location = new System.Drawing.Point(9, 36);
             this.txtIdTraslado.Name = "txtIdTraslado";
             this.txtIdTraslado.ReadOnly = true;
             this.txtIdTraslado.Size = new System.Drawing.Size(90, 21);
@@ -2301,7 +2302,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(256, 345);
+            this.label25.Location = new System.Drawing.Point(256, 171);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(107, 15);
             this.label25.TabIndex = 72;

@@ -45,6 +45,17 @@ namespace CapaNegocio
         }
         //FIN RETORNAR X APELLIDO GENERAL..................................
 
+        //RETORNAR X APELLIDO
+        public async Task<(List<DInterno>, string error)> ListaInternosXProntuario(int prontuario)
+        {
+            IInternosDao internoDao = new InternoDaoImplement();
+
+            (List<DInterno> listaInternos, string error) = await internoDao.ListaInternosXProntuario(prontuario);
+
+            return (listaInternos, error);
+        }
+        //FIN RETORNAR X APELLIDO..................................
+
         //RETORNAR  X ID
         public async Task<(DInterno, string error)> BuscarInternoXID(int id)
         {

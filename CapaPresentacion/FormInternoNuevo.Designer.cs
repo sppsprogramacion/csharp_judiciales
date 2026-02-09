@@ -84,7 +84,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
             this.gboxIngresarInterno = new System.Windows.Forms.GroupBox();
             this.label34 = new System.Windows.Forms.Label();
             this.txtDetalleProceSpps = new System.Windows.Forms.TextBox();
@@ -183,7 +182,7 @@
             this.gboxDatosInterno.Controls.Add(this.cmbSexo);
             this.gboxDatosInterno.Controls.Add(this.label7);
             this.gboxDatosInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gboxDatosInterno.Location = new System.Drawing.Point(5, 35);
+            this.gboxDatosInterno.Location = new System.Drawing.Point(5, 5);
             this.gboxDatosInterno.Name = "gboxDatosInterno";
             this.gboxDatosInterno.Size = new System.Drawing.Size(730, 670);
             this.gboxDatosInterno.TabIndex = 120;
@@ -722,18 +721,6 @@
             this.label7.TabIndex = 100;
             this.label7.Text = "SEXO";
             // 
-            // label28
-            // 
-            this.label28.BackColor = System.Drawing.Color.DarkCyan;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(0, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(1094, 29);
-            this.label28.TabIndex = 119;
-            this.label28.Text = "NUEVO INTERNO";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // gboxIngresarInterno
             // 
             this.gboxIngresarInterno.Controls.Add(this.label34);
@@ -774,7 +761,7 @@
             this.gboxIngresarInterno.Controls.Add(this.label77);
             this.gboxIngresarInterno.Enabled = false;
             this.gboxIngresarInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gboxIngresarInterno.Location = new System.Drawing.Point(748, 35);
+            this.gboxIngresarInterno.Location = new System.Drawing.Point(748, 5);
             this.gboxIngresarInterno.Name = "gboxIngresarInterno";
             this.gboxIngresarInterno.Size = new System.Drawing.Size(340, 670);
             this.gboxIngresarInterno.TabIndex = 217;
@@ -1143,12 +1130,11 @@
             this.ClientSize = new System.Drawing.Size(1094, 711);
             this.Controls.Add(this.gboxIngresarInterno);
             this.Controls.Add(this.gboxDatosInterno);
-            this.Controls.Add(this.label28);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormInternoNuevo";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nuevo Interno";
+            this.Text = "NUEVO INTERNO";
             this.Load += new System.EventHandler(this.FormInternoNuevo_Load);
             this.gboxDatosInterno.ResumeLayout(false);
             this.gboxDatosInterno.PerformLayout();
@@ -1179,7 +1165,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.ComboBox cmbSexo;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtAlias;
         private System.Windows.Forms.Label label10;

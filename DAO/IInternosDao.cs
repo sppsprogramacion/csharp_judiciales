@@ -16,6 +16,7 @@ namespace DAO
         Task<(DInterno, string error)> BuscarInternoXId(int idInterno);
         Task<(List<DInterno>, string error)> ListaInternosXApellido(string apellido);
         Task<(List<DInterno>, string error)> ListaInternosXApellidoGeneral(string apellido);
+        Task<(List<DInterno>, string error)> ListaInternosXProntuario(int apellido);
         Task<(List<DInterno>, string error)> ListaInternosTodos();
     }
 }

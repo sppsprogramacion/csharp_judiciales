@@ -46,20 +46,20 @@ namespace CapaPresentacion
         private void btnAceptarTraslado_Click(object sender, EventArgs e)
         {
             lblEstadoTraslado.Text = "Aceptar";
-            this.HabilitarControlesAnularTraslado(true);
+            this.HabilitarControlesAceptarRechazarTraslado(true);
         }
 
         private void btnRechazar_Click(object sender, EventArgs e)
         {
             lblEstadoTraslado.Text = "Rechazar";
-            this.HabilitarControlesAnularTraslado(true);
+            this.HabilitarControlesAceptarRechazarTraslado(true);
         }
 
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             lblEstadoTraslado.Text = "ESTADO:";
-            this.HabilitarControlesAnularTraslado(false);
+            this.HabilitarControlesAceptarRechazarTraslado(false);
 
         }
 
@@ -143,7 +143,7 @@ namespace CapaPresentacion
                 mensajeRespuesta = "";
 
                 lblEstadoTraslado.Text = "ESTADO:";
-                this.HabilitarControlesAnularTraslado(false);
+                this.HabilitarControlesAceptarRechazarTraslado(false);
                 this.CargarDataGridTraslados("todos");
             }
             else
@@ -159,37 +159,55 @@ namespace CapaPresentacion
 
             NTrasladoInterno nTrasladoInterno = new NTrasladoInterno();
             List<DTrasladoInterno> listaTraslados = new List<DTrasladoInterno>();
-
-            if(tipoBusqueda == "todos")
+            string errorObtenido = "";
+            if (tipoBusqueda == "todos")
             {
-
                 (List<DTrasladoInterno> listaTrasladosResponse, string errorResponse) = await nTrasladoInterno.ListaTrasladosXMiOrganismo();
                 listaTraslados = listaTrasladosResponse;
+
+                if (listaTrasladosResponse == null)
+                {
+                    errorObtenido = errorResponse;
+                }
             }
 
             if (tipoBusqueda == "pendiente_ingreso")
             {
-
                 (List<DTrasladoInterno> listaTrasladosResponse, string errorResponse) = await nTrasladoInterno.ListaTrasladosPendientesXMiOrganismo();
                 //listaTraslados = listaTrasladosResponse;
-                listaTraslados = listaTrasladosResponse
-                    .Where(x => x.organismo_destino_id == CurrentUser.Instance.organismo.id_organismo)
-                    .ToList();
+                if (listaTrasladosResponse == null){
+                    listaTraslados = listaTrasladosResponse;
+                    errorObtenido = errorResponse;
+                }
+                else
+                {
+                    listaTraslados = listaTrasladosResponse
+                        .Where(x => x.organismo_destino_id == CurrentUser.Instance.organismo.id_organismo)
+                        .ToList();
+                }
             }
 
             if (tipoBusqueda == "pendiente_salieron")
             {
-
                 (List<DTrasladoInterno> listaTrasladosResponse, string errorResponse) = await nTrasladoInterno.ListaTrasladosPendientesXMiOrganismo();
-                //listaTraslados = listaTrasladosResponse;
-                listaTraslados = listaTrasladosResponse
-                    .Where(x => x.organismo_origen_id == CurrentUser.Instance.organismo.id_organismo)
-                    .ToList();
+
+                if (listaTrasladosResponse == null)
+                {
+                    listaTraslados = listaTrasladosResponse;
+                    errorObtenido = errorResponse;
+                }
+                else
+                {
+                    listaTraslados = listaTrasladosResponse
+                        .Where(x => x.organismo_origen_id == CurrentUser.Instance.organismo.id_organismo)
+                        .ToList();
+                }
             }
 
             if (listaTraslados == null)
             {
-                MessageBox.Show("No se encontraron registros", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se pudo ejecutar la consulta: " + errorObtenido, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                dtgvTraslados.DataSource = listaTraslados;
                 return;
             }
 
@@ -208,7 +226,6 @@ namespace CapaPresentacion
                     FechaCarga = c.fecha_carga,
                     HoraCarga = c.hora_carga,
                     Usuario = c.usuario.apellido + " " + c.usuario.nombre,
-
                 })
                 .ToList();
 
@@ -263,7 +280,17 @@ namespace CapaPresentacion
                         txtFechaTraslado.Text = Convert.ToDateTime(dtgvTraslados.CurrentRow.Cells["FechaTraslado"].Value).ToString("dd/MM/yyyy");
                         txtDetalleTraslado.Text = dtgvTraslados.CurrentRow.Cells["DetalleTrasaldo"].Value?.ToString();
                         txtOrganismoDestinoTraslado.Text = dtgvTraslados.CurrentRow.Cells["Destino"].Value?.ToString();
-                        txtFechaIngresoTraslado.Text = Convert.ToDateTime(dtgvTraslados.CurrentRow.Cells["FechaIngreso"].Value).ToString("dd/MM/yyyy");
+                        //controlar fecha_ingreso
+                        var valor = dtgvTraslados.CurrentRow.Cells["FechaIngreso"].Value;
+
+                        if (valor is DateTime fecha)
+                        {
+                            txtFechaIngresoTraslado.Text = fecha.ToString("dd/MM/yyyy");
+                        }
+                        else
+                        {
+                            txtFechaIngresoTraslado.Text = "";
+                        }
                         txtEstadoTraslado.Text = dtgvTraslados.CurrentRow.Cells["Estado"].Value?.ToString();
                         txtObsTraslado.Text = dtgvTraslados.CurrentRow.Cells["ObsTraslado"].Value?.ToString();
                         txtFechaCargaTraslado.Text = Convert.ToDateTime(dtgvTraslados.CurrentRow.Cells["FechaCarga"].Value).ToString("dd/MM/yyyy");
@@ -276,12 +303,10 @@ namespace CapaPresentacion
                     }
                 }
             }
-        }
-
-        //FIN METODO PARA OBTENER LA LISTA DE TRASLADOS EN UN DATA GRID ........................
+        }//FIN METODO PARA OBTENER LA LISTA DE TRASLADOS EN UN DATA GRID ........................
 
         //METODO HABILITAR CONTROLES ACEPTAR / RECHAZAR TRASLADO
-        private void HabilitarControlesAnularTraslado(bool valor)
+        private void HabilitarControlesAceptarRechazarTraslado(bool valor)
         {           
             lblEstadoTraslado.Visible = valor;
             txtObsProcesarTraslado.Enabled = valor;
@@ -292,8 +317,6 @@ namespace CapaPresentacion
 
             btnGuardar.Enabled = valor;
             btnCancelar.Enabled = valor;            
-        }
-
-        //FIN METODO HABILITAR CONTROLES ACEPTAR / RECHAZAR TRASLADO
+        }//FIN METODO HABILITAR CONTROLES ACEPTAR / RECHAZAR TRASLADO..............................
     }
 }
