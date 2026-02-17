@@ -32,6 +32,8 @@
             this.tabInterno = new System.Windows.Forms.TabControl();
             this.tabDatosPrincipales = new System.Windows.Forms.TabPage();
             this.groupIngresoInterno = new System.Windows.Forms.GroupBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtIdIngreso = new System.Windows.Forms.TextBox();
             this.lblDetalleProcedenciaSpps2 = new System.Windows.Forms.Label();
             this.txtDetalleProcedenciaSpps2 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -70,6 +72,8 @@
             this.dtpFechaAlojamiento = new System.Windows.Forms.DateTimePicker();
             this.label77 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.txtCiudadNacimiento = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.txtDepartamentoNacimiento = new System.Windows.Forms.TextBox();
             this.txtProvinciaNacimiento = new System.Windows.Forms.TextBox();
             this.txtNacionalidad = new System.Windows.Forms.TextBox();
@@ -222,10 +226,6 @@
             this.txtIdVisitaInterno = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.btnVerParentes = new System.Windows.Forms.Button();
-            this.txtCiudadNacimiento = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.txtIdIngreso = new System.Windows.Forms.TextBox();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupIngresoInterno.SuspendLayout();
@@ -323,6 +323,28 @@
             this.groupIngresoInterno.TabIndex = 216;
             this.groupIngresoInterno.TabStop = false;
             this.groupIngresoInterno.Text = "Ingreso de interno";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(8, 421);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(58, 15);
+            this.label23.TabIndex = 268;
+            this.label23.Text = "idIngreso";
+            this.label23.Visible = false;
+            // 
+            // txtIdIngreso
+            // 
+            this.txtIdIngreso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdIngreso.Enabled = false;
+            this.txtIdIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdIngreso.Location = new System.Drawing.Point(11, 437);
+            this.txtIdIngreso.Name = "txtIdIngreso";
+            this.txtIdIngreso.Size = new System.Drawing.Size(134, 21);
+            this.txtIdIngreso.TabIndex = 267;
+            this.txtIdIngreso.Visible = false;
             // 
             // lblDetalleProcedenciaSpps2
             // 
@@ -775,6 +797,26 @@
             this.groupBox14.TabIndex = 214;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Datos del interno";
+            // 
+            // txtCiudadNacimiento
+            // 
+            this.txtCiudadNacimiento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCiudadNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCiudadNacimiento.Location = new System.Drawing.Point(257, 363);
+            this.txtCiudadNacimiento.Name = "txtCiudadNacimiento";
+            this.txtCiudadNacimiento.ReadOnly = true;
+            this.txtCiudadNacimiento.Size = new System.Drawing.Size(238, 21);
+            this.txtCiudadNacimiento.TabIndex = 224;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(255, 347);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(129, 15);
+            this.label22.TabIndex = 225;
+            this.label22.Text = "CIUDAD NACIMIENTO";
             // 
             // txtDepartamentoNacimiento
             // 
@@ -2470,48 +2512,6 @@
             this.btnVerParentes.TabIndex = 1;
             this.btnVerParentes.Text = "VER PARENTESCOS";
             this.btnVerParentes.UseVisualStyleBackColor = false;
-            // 
-            // txtCiudadNacimiento
-            // 
-            this.txtCiudadNacimiento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCiudadNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCiudadNacimiento.Location = new System.Drawing.Point(257, 363);
-            this.txtCiudadNacimiento.Name = "txtCiudadNacimiento";
-            this.txtCiudadNacimiento.ReadOnly = true;
-            this.txtCiudadNacimiento.Size = new System.Drawing.Size(238, 21);
-            this.txtCiudadNacimiento.TabIndex = 224;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(255, 347);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(129, 15);
-            this.label22.TabIndex = 225;
-            this.label22.Text = "CIUDAD NACIMIENTO";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(8, 421);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(58, 15);
-            this.label23.TabIndex = 268;
-            this.label23.Text = "idIngreso";
-            this.label23.Visible = false;
-            // 
-            // txtIdIngreso
-            // 
-            this.txtIdIngreso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdIngreso.Enabled = false;
-            this.txtIdIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdIngreso.Location = new System.Drawing.Point(11, 437);
-            this.txtIdIngreso.Name = "txtIdIngreso";
-            this.txtIdIngreso.Size = new System.Drawing.Size(134, 21);
-            this.txtIdIngreso.TabIndex = 267;
-            this.txtIdIngreso.Visible = false;
             // 
             // FormInternoVer
             // 
