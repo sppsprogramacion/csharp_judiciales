@@ -93,17 +93,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormCausaNueva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCausaNueva.Designer.cs">
+      <DependentUpon>FormCausaNueva.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInternoAdministrar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormInternoAdministrar.Designer.cs">
       <DependentUpon>FormInternoAdministrar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormInternoIngresoNuevo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormInternoIngresoNuevo.Designer.cs">
-      <DependentUpon>FormInternoIngresoNuevo.cs</DependentUpon>
     </Compile>
     <Compile Include="FormInternoNuevo.cs">
       <SubType>Form</SubType>
@@ -167,11 +167,11 @@
     <Compile Include="Validaciones\ProhibicionValidator.cs" />
     <Compile Include="Validaciones\TrasladoNuevo\Datos\TrasladoNuevoDatos.cs" />
     <Compile Include="Validaciones\TrasladoNuevo\Validacion\CrearTrasladoValidacion.cs" />
+    <EmbeddedResource Include="FormCausaNueva.resx">
+      <DependentUpon>FormCausaNueva.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInternoAdministrar.resx">
       <DependentUpon>FormInternoAdministrar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormInternoIngresoNuevo.resx">
-      <DependentUpon>FormInternoIngresoNuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInternoNuevo.resx">
       <DependentUpon>FormInternoNuevo.cs</DependentUpon>

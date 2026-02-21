@@ -1,0 +1,427 @@
+﻿namespace CapaPresentacion
+{
+    partial class FormCausaNueva
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.groupNueva = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtCausa = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtAbogado = new System.Windows.Forms.TextBox();
+            this.cmbTipoDefensor = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.btnEditarIngreso = new System.Windows.Forms.Button();
+            this.cmbReincidencia = new System.Windows.Forms.ComboBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.cmJuzgado = new System.Windows.Forms.ComboBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.btnGuardarIngreso = new System.Windows.Forms.Button();
+            this.btnCancelarIngreso = new System.Windows.Forms.Button();
+            this.label38 = new System.Windows.Forms.Label();
+            this.txtExpediente = new System.Windows.Forms.TextBox();
+            this.cmbJurisdiccion = new System.Windows.Forms.ComboBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.cmbEstadoProcesal = new System.Windows.Forms.ComboBox();
+            this.cmbPrisionReclusion = new System.Windows.Forms.ComboBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.dtpFechaUltimaDetencion = new System.Windows.Forms.DateTimePicker();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbTipoDelito = new System.Windows.Forms.ComboBox();
+            this.cmbOtroJuzgado = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupNueva.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // groupNueva
+            // 
+            this.groupNueva.Controls.Add(this.cmbOtroJuzgado);
+            this.groupNueva.Controls.Add(this.label2);
+            this.groupNueva.Controls.Add(this.label1);
+            this.groupNueva.Controls.Add(this.cmbTipoDelito);
+            this.groupNueva.Controls.Add(this.label21);
+            this.groupNueva.Controls.Add(this.txtCausa);
+            this.groupNueva.Controls.Add(this.label22);
+            this.groupNueva.Controls.Add(this.txtAbogado);
+            this.groupNueva.Controls.Add(this.cmbTipoDefensor);
+            this.groupNueva.Controls.Add(this.label23);
+            this.groupNueva.Controls.Add(this.btnEditarIngreso);
+            this.groupNueva.Controls.Add(this.cmbReincidencia);
+            this.groupNueva.Controls.Add(this.label27);
+            this.groupNueva.Controls.Add(this.cmJuzgado);
+            this.groupNueva.Controls.Add(this.label29);
+            this.groupNueva.Controls.Add(this.btnGuardarIngreso);
+            this.groupNueva.Controls.Add(this.btnCancelarIngreso);
+            this.groupNueva.Controls.Add(this.label38);
+            this.groupNueva.Controls.Add(this.txtExpediente);
+            this.groupNueva.Controls.Add(this.cmbJurisdiccion);
+            this.groupNueva.Controls.Add(this.label43);
+            this.groupNueva.Controls.Add(this.label45);
+            this.groupNueva.Controls.Add(this.cmbEstadoProcesal);
+            this.groupNueva.Controls.Add(this.cmbPrisionReclusion);
+            this.groupNueva.Controls.Add(this.label46);
+            this.groupNueva.Controls.Add(this.dtpFechaUltimaDetencion);
+            this.groupNueva.Controls.Add(this.label77);
+            this.groupNueva.Location = new System.Drawing.Point(9, 4);
+            this.groupNueva.Name = "groupNueva";
+            this.groupNueva.Size = new System.Drawing.Size(529, 451);
+            this.groupNueva.TabIndex = 218;
+            this.groupNueva.TabStop = false;
+            this.groupNueva.Text = "Nueva ";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(8, 19);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(46, 15);
+            this.label21.TabIndex = 262;
+            this.label21.Text = "CAUSA";
+            // 
+            // txtCausa
+            // 
+            this.txtCausa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCausa.Enabled = false;
+            this.txtCausa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCausa.Location = new System.Drawing.Point(11, 37);
+            this.txtCausa.Name = "txtCausa";
+            this.txtCausa.Size = new System.Drawing.Size(499, 21);
+            this.txtCausa.TabIndex = 0;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(174, 342);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(65, 15);
+            this.label22.TabIndex = 260;
+            this.label22.Text = "ABOGADO";
+            // 
+            // txtAbogado
+            // 
+            this.txtAbogado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAbogado.Enabled = false;
+            this.txtAbogado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAbogado.Location = new System.Drawing.Point(177, 361);
+            this.txtAbogado.Name = "txtAbogado";
+            this.txtAbogado.Size = new System.Drawing.Size(332, 21);
+            this.txtAbogado.TabIndex = 11;
+            // 
+            // cmbTipoDefensor
+            // 
+            this.cmbTipoDefensor.Enabled = false;
+            this.cmbTipoDefensor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipoDefensor.FormattingEnabled = true;
+            this.cmbTipoDefensor.Location = new System.Drawing.Point(11, 361);
+            this.cmbTipoDefensor.Name = "cmbTipoDefensor";
+            this.cmbTipoDefensor.Size = new System.Drawing.Size(145, 23);
+            this.cmbTipoDefensor.TabIndex = 10;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(8, 342);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(74, 15);
+            this.label23.TabIndex = 258;
+            this.label23.Text = "DEFENSOR";
+            // 
+            // btnEditarIngreso
+            // 
+            this.btnEditarIngreso.BackColor = System.Drawing.Color.White;
+            this.btnEditarIngreso.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarIngreso.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarIngreso.Location = new System.Drawing.Point(181, 398);
+            this.btnEditarIngreso.Name = "btnEditarIngreso";
+            this.btnEditarIngreso.Size = new System.Drawing.Size(98, 40);
+            this.btnEditarIngreso.TabIndex = 245;
+            this.btnEditarIngreso.Text = "Editar";
+            this.btnEditarIngreso.UseVisualStyleBackColor = false;
+            // 
+            // cmbReincidencia
+            // 
+            this.cmbReincidencia.Enabled = false;
+            this.cmbReincidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbReincidencia.FormattingEnabled = true;
+            this.cmbReincidencia.Location = new System.Drawing.Point(11, 314);
+            this.cmbReincidencia.Name = "cmbReincidencia";
+            this.cmbReincidencia.Size = new System.Drawing.Size(238, 23);
+            this.cmbReincidencia.TabIndex = 8;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(8, 296);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(91, 15);
+            this.label27.TabIndex = 240;
+            this.label27.Text = "REINCIDENCIA";
+            // 
+            // cmJuzgado
+            // 
+            this.cmJuzgado.Enabled = false;
+            this.cmJuzgado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmJuzgado.FormattingEnabled = true;
+            this.cmJuzgado.Location = new System.Drawing.Point(9, 221);
+            this.cmJuzgado.Name = "cmJuzgado";
+            this.cmJuzgado.Size = new System.Drawing.Size(500, 23);
+            this.cmJuzgado.TabIndex = 6;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(6, 202);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(63, 15);
+            this.label29.TabIndex = 238;
+            this.label29.Text = "JUZGADO";
+            // 
+            // btnGuardarIngreso
+            // 
+            this.btnGuardarIngreso.BackColor = System.Drawing.Color.White;
+            this.btnGuardarIngreso.Enabled = false;
+            this.btnGuardarIngreso.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnGuardarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarIngreso.ForeColor = System.Drawing.Color.Green;
+            this.btnGuardarIngreso.Location = new System.Drawing.Point(297, 398);
+            this.btnGuardarIngreso.Name = "btnGuardarIngreso";
+            this.btnGuardarIngreso.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarIngreso.TabIndex = 12;
+            this.btnGuardarIngreso.Text = "Guardar";
+            this.btnGuardarIngreso.UseVisualStyleBackColor = false;
+            // 
+            // btnCancelarIngreso
+            // 
+            this.btnCancelarIngreso.BackColor = System.Drawing.Color.White;
+            this.btnCancelarIngreso.Enabled = false;
+            this.btnCancelarIngreso.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarIngreso.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarIngreso.Location = new System.Drawing.Point(411, 398);
+            this.btnCancelarIngreso.Name = "btnCancelarIngreso";
+            this.btnCancelarIngreso.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarIngreso.TabIndex = 13;
+            this.btnCancelarIngreso.Text = "Cancelar";
+            this.btnCancelarIngreso.UseVisualStyleBackColor = false;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(342, 63);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(83, 15);
+            this.label38.TabIndex = 219;
+            this.label38.Text = "EXPEDIENTE";
+            // 
+            // txtExpediente
+            // 
+            this.txtExpediente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtExpediente.Enabled = false;
+            this.txtExpediente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExpediente.Location = new System.Drawing.Point(345, 81);
+            this.txtExpediente.Name = "txtExpediente";
+            this.txtExpediente.Size = new System.Drawing.Size(165, 21);
+            this.txtExpediente.TabIndex = 2;
+            // 
+            // cmbJurisdiccion
+            // 
+            this.cmbJurisdiccion.Enabled = false;
+            this.cmbJurisdiccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbJurisdiccion.FormattingEnabled = true;
+            this.cmbJurisdiccion.Location = new System.Drawing.Point(269, 174);
+            this.cmbJurisdiccion.Name = "cmbJurisdiccion";
+            this.cmbJurisdiccion.Size = new System.Drawing.Size(240, 23);
+            this.cmbJurisdiccion.TabIndex = 5;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(266, 155);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(91, 15);
+            this.label43.TabIndex = 217;
+            this.label43.Text = "JURISDICCION";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(6, 63);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(129, 15);
+            this.label45.TabIndex = 207;
+            this.label45.Text = "PRISION/RECLUSION";
+            // 
+            // cmbEstadoProcesal
+            // 
+            this.cmbEstadoProcesal.Enabled = false;
+            this.cmbEstadoProcesal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEstadoProcesal.FormattingEnabled = true;
+            this.cmbEstadoProcesal.Location = new System.Drawing.Point(9, 174);
+            this.cmbEstadoProcesal.Name = "cmbEstadoProcesal";
+            this.cmbEstadoProcesal.Size = new System.Drawing.Size(240, 23);
+            this.cmbEstadoProcesal.TabIndex = 4;
+            // 
+            // cmbPrisionReclusion
+            // 
+            this.cmbPrisionReclusion.Enabled = false;
+            this.cmbPrisionReclusion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPrisionReclusion.FormattingEnabled = true;
+            this.cmbPrisionReclusion.Location = new System.Drawing.Point(9, 81);
+            this.cmbPrisionReclusion.Name = "cmbPrisionReclusion";
+            this.cmbPrisionReclusion.Size = new System.Drawing.Size(323, 23);
+            this.cmbPrisionReclusion.TabIndex = 1;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(6, 155);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(122, 15);
+            this.label46.TabIndex = 213;
+            this.label46.Text = "ESTADO PROCESAL";
+            // 
+            // dtpFechaUltimaDetencion
+            // 
+            this.dtpFechaUltimaDetencion.Enabled = false;
+            this.dtpFechaUltimaDetencion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaUltimaDetencion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaUltimaDetencion.Location = new System.Drawing.Point(270, 314);
+            this.dtpFechaUltimaDetencion.Name = "dtpFechaUltimaDetencion";
+            this.dtpFechaUltimaDetencion.Size = new System.Drawing.Size(170, 22);
+            this.dtpFechaUltimaDetencion.TabIndex = 9;
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label77.Location = new System.Drawing.Point(266, 296);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(166, 15);
+            this.label77.TabIndex = 212;
+            this.label77.Text = "FECHA ULTIMA DETENCION";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 108);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 15);
+            this.label1.TabIndex = 264;
+            this.label1.Text = "TIPO DELITO";
+            // 
+            // cmbTipoDelito
+            // 
+            this.cmbTipoDelito.Enabled = false;
+            this.cmbTipoDelito.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipoDelito.FormattingEnabled = true;
+            this.cmbTipoDelito.Location = new System.Drawing.Point(11, 126);
+            this.cmbTipoDelito.Name = "cmbTipoDelito";
+            this.cmbTipoDelito.Size = new System.Drawing.Size(498, 23);
+            this.cmbTipoDelito.TabIndex = 3;
+            // 
+            // cmbOtroJuzgado
+            // 
+            this.cmbOtroJuzgado.Enabled = false;
+            this.cmbOtroJuzgado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbOtroJuzgado.FormattingEnabled = true;
+            this.cmbOtroJuzgado.Location = new System.Drawing.Point(9, 268);
+            this.cmbOtroJuzgado.Name = "cmbOtroJuzgado";
+            this.cmbOtroJuzgado.Size = new System.Drawing.Size(500, 23);
+            this.cmbOtroJuzgado.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 249);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 15);
+            this.label2.TabIndex = 266;
+            this.label2.Text = "OTRO JUZGADO";
+            // 
+            // FormCausaNueva
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 467);
+            this.Controls.Add(this.groupNueva);
+            this.Name = "FormCausaNueva";
+            this.Text = "NUEVA CAUSA";
+            this.groupNueva.ResumeLayout(false);
+            this.groupNueva.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.GroupBox groupNueva;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtCausa;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtAbogado;
+        private System.Windows.Forms.ComboBox cmbTipoDefensor;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button btnEditarIngreso;
+        private System.Windows.Forms.ComboBox cmbReincidencia;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ComboBox cmJuzgado;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Button btnGuardarIngreso;
+        private System.Windows.Forms.Button btnCancelarIngreso;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox txtExpediente;
+        private System.Windows.Forms.ComboBox cmbJurisdiccion;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.ComboBox cmbEstadoProcesal;
+        private System.Windows.Forms.ComboBox cmbPrisionReclusion;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.DateTimePicker dtpFechaUltimaDetencion;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbTipoDelito;
+        private System.Windows.Forms.ComboBox cmbOtroJuzgado;
+        private System.Windows.Forms.Label label2;
+    }
+}
