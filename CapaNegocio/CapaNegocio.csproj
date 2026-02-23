@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NAuth.cs" />
+    <Compile Include="NCausa.cs" />
     <Compile Include="NDepartamento.cs" />
     <Compile Include="NIngresoInterno.cs" />
     <Compile Include="NListasGenerales.cs" />

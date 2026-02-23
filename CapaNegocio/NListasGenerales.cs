@@ -48,5 +48,17 @@ namespace CapaNegocio
         }
         //FIN RETORNAR TABLAS PARA INGRESO DE INTERNO..................................
 
+        //RETORNAR TABLAS PARA CAUSA
+        public async Task<(DTablasCausa, string error)> ListasTablasCausa()
+        {
+            IListasGenerales listasGeneralesDao = new ListasGeneralesDaoImplement();
+
+            (DTablasCausa tablasCausa, string errorResponse) = await listasGeneralesDao.ListasTablasCausa();
+
+
+            return (tablasCausa, errorResponse);
+        }
+        //FIN RETORNAR TABLAS PARA CAUSA..................................
+
     }
 }

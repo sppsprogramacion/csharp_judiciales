@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICausaDao.cs" />
     <Compile Include="ICiudadanoDao.cs" />
     <Compile Include="IDepartamentoDao.cs" />
     <Compile Include="IEstadoCivilDao.cs" />

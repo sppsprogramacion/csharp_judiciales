@@ -1596,6 +1596,7 @@
             this.btnNuevaCausa.TabIndex = 233;
             this.btnNuevaCausa.Text = "Nueva causa";
             this.btnNuevaCausa.UseVisualStyleBackColor = false;
+            this.btnNuevaCausa.Click += new System.EventHandler(this.btnNuevaCausa_Click);
             // 
             // groupBox4
             // 
@@ -1899,6 +1900,7 @@
             this.btnVerCausas.TabIndex = 1;
             this.btnVerCausas.Text = "Ver causas";
             this.btnVerCausas.UseVisualStyleBackColor = false;
+            this.btnVerCausas.Click += new System.EventHandler(this.btnVerCausas_Click);
             // 
             // tabTraslados
             // 

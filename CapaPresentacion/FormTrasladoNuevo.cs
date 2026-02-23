@@ -58,7 +58,6 @@ namespace CapaPresentacion
 
         private async void btnGuardar_Click(object sender, EventArgs e)
         {
-
             NTrasladoInterno nTraslado = new NTrasladoInterno();
 
             //limpiar errores de provider

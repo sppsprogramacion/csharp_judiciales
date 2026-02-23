@@ -803,6 +803,95 @@ namespace CapaPresentacion
         //FIN REGION DATOS_INGRESO................................................................
         //........................................................................................
 
+        //REGION CAUSAS
+        #region CAUSAS
+        private void btnNuevaCausa_Click(object sender, EventArgs e)
+        {
+            if (txtIdIngresoVer.Text == null || txtIdIngresoVer.Text == "")
+            {
+                MessageBox.Show("El interno no tiene un ingreso valido", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            FormCausaNueva formCausaNuevo = new FormCausaNueva(Convert.ToInt32(txtIdIngresoVer.Text));
+            formCausaNuevo.ShowDialog();
+        }
+
+        private void btnVerCausas_Click(object sender, EventArgs e)
+        {
+            this.CargarDataGridCausas();
+        }
+
+        //METODO PARA OBTENER LA LISTA DE CAUSAS Y CARGARLO EN UN DATA GRID 
+        async private void CargarDataGridCausas()
+        {
+            NCausa nCausa = new NCausa();
+
+            if (txtIdIngresoVer.Text == null || txtIdIngresoVer.Text == "")
+            {
+                MessageBox.Show("El interno no tiene un ingreso valido", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            (List<DCausa> listaCausas, string errorResponse) = await nCausa.ListaCausasXIngreso(Convert.ToInt32(txtIdIngresoVer.Text));
+
+            if (listaCausas == null)
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            var datosfiltrados = listaCausas
+                .Select(c => new
+                {
+                    Id = c.id_causa,
+                    Causa = c.causa,
+                    TipoDelito = c.tipo_delito.tipo_delito,
+                    PrisionReclusion = c.prision_reclusion.prision_reclusion,
+                    EstadoProcesal = c.estado_procesal.estado_procesal,
+                    Jurisdiccion = c.jurisdiccion.jurisdiccion,
+                    Juzgado = c.juzgado.juzgado,
+                    Reincidencia = c.reincidencia.reincidencia,
+                    FechaCarga = c.fecha_carga,
+                    OrganismoCarga = c.organismo_carga.organismo,
+                    Usuario = c.usuario_carga.apellido + " " + c.usuario_carga.nombre
+
+                })
+                .ToList();
+
+            dtgvCausas.DataSource = datosfiltrados;
+
+            if (listaCausas.Count == 0)
+            {
+                MessageBox.Show("No se encontraron registros.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+
+                dtgvTraslados.Columns[1].Width = 200;
+            }
+
+            //limpiar formulario
+            //txtIdTraslado.Text = string.Empty;
+            //txtOrganismoOrigenTraslado.Text = string.Empty;
+            //txtFechaTraslado.Text = string.Empty;
+            //txtDetalleTraslado.Text = string.Empty;
+            //txtOrganismoDestinoTraslado.Text = string.Empty;
+            //txtFechaIngresoTraslado.Text = string.Empty;
+            //txtEstadoTraslado.Text = string.Empty;
+            //txtObsTraslado.Text = string.Empty;
+            //txtFechaCargaTraslado.Text = string.Empty;
+            //txtHoraCargaTraslado.Text = string.Empty;
+            //txtUsuarioCargaTraslado.Text = string.Empty;
+
+        } //FIN METODO PARA OBTENER LA LISTA DE CAUSAS EN UN DATA GRID ...........
+
+
+        #endregion CAUSAS
+        //FIN REGION CAUSAS.......................................................................
+        //........................................................................................
+
+        //REGION TRASLADOS
         #region TRASLADOS
         private void btnTrasladar_Click(object sender, EventArgs e)
         {
@@ -996,6 +1085,9 @@ namespace CapaPresentacion
             btnGuardarTrasladoARA.Enabled = valor;
             btnCancelarTrasladoARA.Enabled = valor;
         }//FIN METODO HABILITAR CONTROLES ANULAR TRASLADO..............................
+
+        
+
 
         #endregion TRASLADOS
         //FIN REGION TRASLADOS....................................................................

@@ -8,7 +8,7 @@ namespace CapaDatos
 {
     public class DTipoDefensor
     {
-        public string id_tipo_defensor { get; set; }
+        public int id_tipo_defensor { get; set; }
         public string tipo_defensor { get; set; }
     }
 }
