@@ -93,8 +93,6 @@
             this.label89 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
             this.cmbDepartamentoNacimiento = new System.Windows.Forms.ComboBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEditarDatosPrincipales = new System.Windows.Forms.Button();
             this.btnGuardarEditarDatosPrincipales = new System.Windows.Forms.Button();
@@ -111,7 +109,6 @@
             this.txtProntuario = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtIdInterno = new System.Windows.Forms.TextBox();
-            this.pictureFoto = new System.Windows.Forms.PictureBox();
             this.tabDatosIngreso = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -147,29 +144,6 @@
             this.label77 = new System.Windows.Forms.Label();
             this.tabCausas = new System.Windows.Forms.TabPage();
             this.btnNuevaCausa = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnHistorial = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtDetalle = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtDisposicion = new System.Windows.Forms.TextBox();
-            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtOrganismo = new System.Windows.Forms.TextBox();
-            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.chkAnulado = new System.Windows.Forms.CheckBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.chkVigente = new System.Windows.Forms.CheckBox();
-            this.txtMotivo = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.txtIdProhibicion = new System.Windows.Forms.TextBox();
-            this.dtpFechaProhibicion = new System.Windows.Forms.DateTimePicker();
-            this.label34 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtgvCausas = new System.Windows.Forms.DataGridView();
             this.btnVerCausas = new System.Windows.Forms.Button();
@@ -208,18 +182,20 @@
             this.label39 = new System.Windows.Forms.Label();
             this.txtIdTraslado = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureFoto = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dtgvUnificaciones = new System.Windows.Forms.DataGridView();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox15.SuspendLayout();
             this.groupBox14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).BeginInit();
             this.tabDatosIngreso.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabCausas.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCausas)).BeginInit();
             this.tabTraslados.SuspendLayout();
@@ -227,6 +203,11 @@
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTraslados)).BeginInit();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvUnificaciones)).BeginInit();
             this.SuspendLayout();
             // 
             // tabInterno
@@ -969,28 +950,6 @@
             this.cmbDepartamentoNacimiento.Size = new System.Drawing.Size(240, 23);
             this.cmbDepartamentoNacimiento.TabIndex = 206;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.persona_icono;
-            this.pictureBox2.Location = new System.Drawing.Point(880, 22);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(150, 170);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 70;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.persona_icono;
-            this.pictureBox1.Location = new System.Drawing.Point(705, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 170);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 69;
-            this.pictureBox1.TabStop = false;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnEditarDatosPrincipales);
@@ -1179,17 +1138,6 @@
             this.txtIdInterno.ReadOnly = true;
             this.txtIdInterno.Size = new System.Drawing.Size(140, 21);
             this.txtIdInterno.TabIndex = 54;
-            // 
-            // pictureFoto
-            // 
-            this.pictureFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureFoto.Image = global::CapaPresentacion.Properties.Resources.persona_icono;
-            this.pictureFoto.Location = new System.Drawing.Point(530, 22);
-            this.pictureFoto.Name = "pictureFoto";
-            this.pictureFoto.Size = new System.Drawing.Size(150, 170);
-            this.pictureFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureFoto.TabIndex = 56;
-            this.pictureFoto.TabStop = false;
             // 
             // tabDatosIngreso
             // 
@@ -1571,8 +1519,9 @@
             // 
             // tabCausas
             // 
-            this.tabCausas.Controls.Add(this.btnNuevaCausa);
+            this.tabCausas.Controls.Add(this.button1);
             this.tabCausas.Controls.Add(this.groupBox4);
+            this.tabCausas.Controls.Add(this.btnNuevaCausa);
             this.tabCausas.Controls.Add(this.groupBox3);
             this.tabCausas.Controls.Add(this.btnVerCausas);
             this.tabCausas.Location = new System.Drawing.Point(4, 25);
@@ -1598,282 +1547,13 @@
             this.btnNuevaCausa.UseVisualStyleBackColor = false;
             this.btnNuevaCausa.Click += new System.EventHandler(this.btnNuevaCausa_Click);
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Controls.Add(this.btnHistorial);
-            this.groupBox4.Controls.Add(this.button5);
-            this.groupBox4.Controls.Add(this.label17);
-            this.groupBox4.Controls.Add(this.txtDetalle);
-            this.groupBox4.Controls.Add(this.label19);
-            this.groupBox4.Controls.Add(this.txtDisposicion);
-            this.groupBox4.Controls.Add(this.dtpFechaFin);
-            this.groupBox4.Controls.Add(this.label36);
-            this.groupBox4.Controls.Add(this.label16);
-            this.groupBox4.Controls.Add(this.txtOrganismo);
-            this.groupBox4.Controls.Add(this.dtpFechaInicio);
-            this.groupBox4.Controls.Add(this.chkAnulado);
-            this.groupBox4.Controls.Add(this.label18);
-            this.groupBox4.Controls.Add(this.chkVigente);
-            this.groupBox4.Controls.Add(this.txtMotivo);
-            this.groupBox4.Controls.Add(this.label35);
-            this.groupBox4.Controls.Add(this.label33);
-            this.groupBox4.Controls.Add(this.txtIdProhibicion);
-            this.groupBox4.Controls.Add(this.dtpFechaProhibicion);
-            this.groupBox4.Controls.Add(this.label34);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(9, 259);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1051, 363);
-            this.groupBox4.TabIndex = 92;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Causa";
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.DarkCyan;
-            this.button3.Location = new System.Drawing.Point(745, 103);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(98, 40);
-            this.button3.TabIndex = 232;
-            this.button3.Text = "Editar";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Green;
-            this.button4.Location = new System.Drawing.Point(745, 147);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(98, 40);
-            this.button4.TabIndex = 230;
-            this.button4.Text = "Guardar";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // btnHistorial
-            // 
-            this.btnHistorial.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnHistorial.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistorial.ForeColor = System.Drawing.Color.White;
-            this.btnHistorial.Location = new System.Drawing.Point(745, 239);
-            this.btnHistorial.Name = "btnHistorial";
-            this.btnHistorial.Size = new System.Drawing.Size(98, 40);
-            this.btnHistorial.TabIndex = 12;
-            this.btnHistorial.Text = "Historial";
-            this.btnHistorial.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.DarkOrange;
-            this.button5.Location = new System.Drawing.Point(745, 193);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(98, 40);
-            this.button5.TabIndex = 231;
-            this.button5.Text = "Cancelar";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(6, 66);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(87, 15);
-            this.label17.TabIndex = 41;
-            this.label17.Text = "DISPOSICION:";
-            // 
-            // txtDetalle
-            // 
-            this.txtDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetalle.Location = new System.Drawing.Point(10, 135);
-            this.txtDetalle.Multiline = true;
-            this.txtDetalle.Name = "txtDetalle";
-            this.txtDetalle.ReadOnly = true;
-            this.txtDetalle.Size = new System.Drawing.Size(603, 77);
-            this.txtDetalle.TabIndex = 8;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(7, 114);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(63, 15);
-            this.label19.TabIndex = 37;
-            this.label19.Text = "DETALLE:";
-            // 
-            // txtDisposicion
-            // 
-            this.txtDisposicion.Enabled = false;
-            this.txtDisposicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDisposicion.Location = new System.Drawing.Point(10, 85);
-            this.txtDisposicion.Name = "txtDisposicion";
-            this.txtDisposicion.Size = new System.Drawing.Size(228, 21);
-            this.txtDisposicion.TabIndex = 5;
-            // 
-            // dtpFechaFin
-            // 
-            this.dtpFechaFin.Enabled = false;
-            this.dtpFechaFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaFin.Location = new System.Drawing.Point(398, 84);
-            this.dtpFechaFin.Name = "dtpFechaFin";
-            this.dtpFechaFin.Size = new System.Drawing.Size(115, 21);
-            this.dtpFechaFin.TabIndex = 7;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(55, 21);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(84, 15);
-            this.label36.TabIndex = 87;
-            this.label36.Text = "ORGANISMO:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(395, 67);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(71, 15);
-            this.label16.TabIndex = 42;
-            this.label16.Text = "FECHA FIN:";
-            // 
-            // txtOrganismo
-            // 
-            this.txtOrganismo.Enabled = false;
-            this.txtOrganismo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrganismo.Location = new System.Drawing.Point(58, 40);
-            this.txtOrganismo.Name = "txtOrganismo";
-            this.txtOrganismo.Size = new System.Drawing.Size(213, 21);
-            this.txtOrganismo.TabIndex = 86;
-            // 
-            // dtpFechaInicio
-            // 
-            this.dtpFechaInicio.Enabled = false;
-            this.dtpFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(260, 85);
-            this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(115, 21);
-            this.dtpFechaInicio.TabIndex = 6;
-            // 
-            // chkAnulado
-            // 
-            this.chkAnulado.AutoSize = true;
-            this.chkAnulado.Enabled = false;
-            this.chkAnulado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAnulado.Location = new System.Drawing.Point(516, 40);
-            this.chkAnulado.Name = "chkAnulado";
-            this.chkAnulado.Size = new System.Drawing.Size(83, 19);
-            this.chkAnulado.TabIndex = 85;
-            this.chkAnulado.Text = "ANULADO";
-            this.chkAnulado.UseVisualStyleBackColor = true;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(256, 66);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(87, 15);
-            this.label18.TabIndex = 44;
-            this.label18.Text = "FECHA INICIO:";
-            // 
-            // chkVigente
-            // 
-            this.chkVigente.AutoSize = true;
-            this.chkVigente.Enabled = false;
-            this.chkVigente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkVigente.Location = new System.Drawing.Point(418, 40);
-            this.chkVigente.Name = "chkVigente";
-            this.chkVigente.Size = new System.Drawing.Size(77, 19);
-            this.chkVigente.TabIndex = 84;
-            this.chkVigente.Text = "VIGENTE";
-            this.chkVigente.UseVisualStyleBackColor = true;
-            // 
-            // txtMotivo
-            // 
-            this.txtMotivo.Enabled = false;
-            this.txtMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMotivo.Location = new System.Drawing.Point(9, 234);
-            this.txtMotivo.Multiline = true;
-            this.txtMotivo.Name = "txtMotivo";
-            this.txtMotivo.Size = new System.Drawing.Size(617, 41);
-            this.txtMotivo.TabIndex = 9;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(6, 21);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(22, 15);
-            this.label35.TabIndex = 83;
-            this.label35.Text = "ID:";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(6, 215);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(108, 15);
-            this.label33.TabIndex = 77;
-            this.label33.Text = "MOTIVO EDICION:";
-            // 
-            // txtIdProhibicion
-            // 
-            this.txtIdProhibicion.Enabled = false;
-            this.txtIdProhibicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdProhibicion.Location = new System.Drawing.Point(9, 40);
-            this.txtIdProhibicion.Name = "txtIdProhibicion";
-            this.txtIdProhibicion.Size = new System.Drawing.Size(41, 21);
-            this.txtIdProhibicion.TabIndex = 82;
-            // 
-            // dtpFechaProhibicion
-            // 
-            this.dtpFechaProhibicion.Enabled = false;
-            this.dtpFechaProhibicion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaProhibicion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaProhibicion.Location = new System.Drawing.Point(290, 40);
-            this.dtpFechaProhibicion.Name = "dtpFechaProhibicion";
-            this.dtpFechaProhibicion.Size = new System.Drawing.Size(106, 21);
-            this.dtpFechaProhibicion.TabIndex = 79;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(288, 21);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(98, 15);
-            this.label34.TabIndex = 80;
-            this.label34.Text = "FECHA PROHIB:";
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dtgvCausas);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(9, 69);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1051, 191);
+            this.groupBox3.Size = new System.Drawing.Size(1051, 163);
             this.groupBox3.TabIndex = 91;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Causas";
@@ -1884,8 +1564,9 @@
             this.dtgvCausas.Location = new System.Drawing.Point(6, 20);
             this.dtgvCausas.Name = "dtgvCausas";
             this.dtgvCausas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvCausas.Size = new System.Drawing.Size(1036, 161);
+            this.dtgvCausas.Size = new System.Drawing.Size(1036, 136);
             this.dtgvCausas.TabIndex = 2;
+            this.dtgvCausas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtgvCausas_KeyDown);
             // 
             // btnVerCausas
             // 
@@ -2310,6 +1991,73 @@
             this.label25.TabIndex = 72;
             this.label25.Text = "USUARIO CARGA:";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.persona_icono;
+            this.pictureBox2.Location = new System.Drawing.Point(880, 22);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(150, 170);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 70;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.persona_icono;
+            this.pictureBox1.Location = new System.Drawing.Point(705, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 170);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 69;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureFoto
+            // 
+            this.pictureFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureFoto.Image = global::CapaPresentacion.Properties.Resources.persona_icono;
+            this.pictureFoto.Location = new System.Drawing.Point(530, 22);
+            this.pictureFoto.Name = "pictureFoto";
+            this.pictureFoto.Size = new System.Drawing.Size(150, 170);
+            this.pictureFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureFoto.TabIndex = 56;
+            this.pictureFoto.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.button1.Location = new System.Drawing.Point(15, 247);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 40);
+            this.button1.TabIndex = 235;
+            this.button1.Text = "Nueva unificacion";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dtgvUnificaciones);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(9, 293);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(1051, 163);
+            this.groupBox4.TabIndex = 234;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Unificaciones de causas";
+            // 
+            // dtgvUnificaciones
+            // 
+            this.dtgvUnificaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvUnificaciones.Location = new System.Drawing.Point(6, 20);
+            this.dtgvUnificaciones.Name = "dtgvUnificaciones";
+            this.dtgvUnificaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvUnificaciones.Size = new System.Drawing.Size(1036, 136);
+            this.dtgvUnificaciones.TabIndex = 2;
+            // 
             // FormInternoAdministrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2330,17 +2078,12 @@
             this.groupBox15.PerformLayout();
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).EndInit();
             this.tabDatosIngreso.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabCausas.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCausas)).EndInit();
             this.tabTraslados.ResumeLayout(false);
@@ -2350,6 +2093,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTraslados)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvUnificaciones)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2362,26 +2110,6 @@
         private System.Windows.Forms.TextBox txtIdInterno;
         private System.Windows.Forms.PictureBox pictureFoto;
         private System.Windows.Forms.TabPage tabCausas;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button btnHistorial;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtDetalle;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txtDisposicion;
-        private System.Windows.Forms.DateTimePicker dtpFechaFin;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtOrganismo;
-        private System.Windows.Forms.DateTimePicker dtpFechaInicio;
-        private System.Windows.Forms.CheckBox chkAnulado;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.CheckBox chkVigente;
-        private System.Windows.Forms.TextBox txtMotivo;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox txtIdProhibicion;
-        private System.Windows.Forms.DateTimePicker dtpFechaProhibicion;
-        private System.Windows.Forms.Label label34;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dtgvCausas;
         private System.Windows.Forms.Button btnVerCausas;
@@ -2462,9 +2190,6 @@
         private System.Windows.Forms.Button btnGuardarEditarDatosFilatorios;
         private System.Windows.Forms.Button btnCancelarEditarDatosFilatorios;
         private System.Windows.Forms.Button btnNuevaCausa;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox txtEstadoProcesalVer;
         private System.Windows.Forms.TextBox txtOrganismoAlojamientoVer;
         private System.Windows.Forms.TextBox txtReingresoVer;
@@ -2534,5 +2259,8 @@
         private System.Windows.Forms.Label label77;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox txtCiudadNacimiento;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView dtgvUnificaciones;
     }
 }

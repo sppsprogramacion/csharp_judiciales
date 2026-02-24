@@ -32,5 +32,38 @@ namespace CapaNegocio
             return (listaCausas, errorResponse);
         }
         //FIN LISTA DE CAUSAS X INGRESO..................................
+
+        //RETORNAR  X ID CAUSA
+        public async Task<(DCausa, string error)> BuscarxIdCausa(int idCausa)
+        {
+            ICausaDao causaDao = new CausaDaoImplement();
+
+            (DCausa causaResponse, string errorResponse) = await causaDao.BuscarCausaXId(idCausa);
+
+            return (causaResponse, errorResponse);
+        }
+        //FIN RETORNAR  XID CAUSA.......................................................................
+
+        //MODIFICAR UNA CAUSA
+        public async Task<(bool, string error)> EditarCausa(int idCausa, string dataCausa)
+        {
+            ICausaDao causaDao = new CausaDaoImplement();
+
+            (bool causaResponse, string error) = await causaDao.EditarCausa(idCausa, dataCausa);
+
+            return (causaResponse, error);
+        }
+        //FIN MODIFICAR UNA CAUSA........................................................................
+
+        //MODIFICAR UNA CAUSA
+        public async Task<(bool, string error)> EstablecerCondena(int idCausa, string dataCausa)
+        {
+            ICausaDao causaDao = new CausaDaoImplement();
+
+            (bool causaResponse, string error) = await causaDao.EstablecerCondena(idCausa, dataCausa);
+
+            return (causaResponse, error);
+        }
+        //FIN MODIFICAR UNA CAUSA........................................................................
     }
 }

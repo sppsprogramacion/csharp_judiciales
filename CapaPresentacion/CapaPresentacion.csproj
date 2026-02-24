@@ -93,6 +93,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormCausaAdministrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCausaAdministrar.Designer.cs">
+      <DependentUpon>FormCausaAdministrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCausaNueva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     <Compile Include="Validaciones\ProhibicionValidator.cs" />
     <Compile Include="Validaciones\TrasladoNuevo\Datos\TrasladoNuevoDatos.cs" />
     <Compile Include="Validaciones\TrasladoNuevo\Validacion\CrearTrasladoValidacion.cs" />
+    <EmbeddedResource Include="FormCausaAdministrar.resx">
+      <DependentUpon>FormCausaAdministrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCausaNueva.resx">
       <DependentUpon>FormCausaNueva.cs</DependentUpon>
     </EmbeddedResource>

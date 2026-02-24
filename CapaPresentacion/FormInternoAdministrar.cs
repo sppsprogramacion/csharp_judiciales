@@ -868,7 +868,7 @@ namespace CapaPresentacion
             else
             {
 
-                dtgvTraslados.Columns[1].Width = 200;
+                dtgvCausas.Columns[1].Width = 200;
             }
 
             //limpiar formulario
@@ -1086,7 +1086,32 @@ namespace CapaPresentacion
             btnCancelarTrasladoARA.Enabled = valor;
         }//FIN METODO HABILITAR CONTROLES ANULAR TRASLADO..............................
 
-        
+        private void dtgvCausas_KeyDown(object sender, KeyEventArgs e)
+        {
+            int idCausa = 0;
+            //AL PRESIONAR ENTER MOSTRAR EL TRAMITE
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+
+                idCausa = Convert.ToInt32(dtgvCausas.CurrentRow.Cells["Id"].Value.ToString());
+
+                if (dtgvCausas.SelectedRows.Count > 0)
+                {
+                    if (idCausa > 0)
+                    {
+                        FormCausaAdministrar formCausaAdministrar = new FormCausaAdministrar(idCausa);
+                        formCausaAdministrar.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe seleccionar una causa.");
+                    }
+                }
+            }
+        }
+
+
 
 
         #endregion TRASLADOS
