@@ -55,7 +55,7 @@ namespace CapaNegocio
         }
         //FIN MODIFICAR UNA CAUSA........................................................................
 
-        //MODIFICAR UNA CAUSA
+        //ESTABLECER CONDENA DE UNA CAUSA
         public async Task<(bool, string error)> EstablecerCondena(int idCausa, string dataCausa)
         {
             ICausaDao causaDao = new CausaDaoImplement();
@@ -64,6 +64,17 @@ namespace CapaNegocio
 
             return (causaResponse, error);
         }
-        //FIN MODIFICAR UNA CAUSA........................................................................
+        //FIN ESTABLECER CONDENA DE UNA CAUSA........................................................................
+
+        //QUITAR CONDENA DE UNA CAUSA
+        public async Task<(bool, string error)> QuitarCondena(int idCausa, string dataCausa)
+        {
+            ICausaDao causaDao = new CausaDaoImplement();
+
+            (bool causaResponse, string error) = await causaDao.QuitarCondena(idCausa, dataCausa);
+
+            return (causaResponse, error);
+        }
+        //FIN QUITAR CONDENA DE UNA CAUSA....................................................................
     }
 }

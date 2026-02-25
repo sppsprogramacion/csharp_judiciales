@@ -15,5 +15,6 @@ namespace DAO
         Task<(bool, string error)> EditarCausa(int idCausa, string causa);
         Task<(bool, string error)> AnularCausa(int idCausa, string dataAnular);
         Task<(bool, string error)> EstablecerCondena(int idCausa, string dataCondena);
+        Task<(bool, string error)> QuitarCondena(int idCausa, string dataCondena);
     }
 }

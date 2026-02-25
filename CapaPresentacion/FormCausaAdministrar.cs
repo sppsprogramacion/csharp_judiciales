@@ -120,7 +120,6 @@ namespace CapaPresentacion
             this.gboxDadosCondena.Enabled = false;
             var data = new
             {
-                tiene_computo = chckTieneComputo.Checked,
                 fecha_condena = dtpFechaCondena.Value,
                 tribunal_condena_id = cmbTribunalCondena.SelectedValue.ToString(),
                 pena_anios = Convert.ToInt32(txtPenaAnios.Text),
@@ -131,7 +130,7 @@ namespace CapaPresentacion
 
             string dataCondenaEnviar = JsonConvert.SerializeObject(data);
 
-            (bool respuestaEditar, string errorResponse) = await nCausa.EditarCausa(Convert.ToInt32(txtIdCausa.Text), dataCondenaEnviar);
+            (bool respuestaEditar, string errorResponse) = await nCausa.EstablecerCondena(Convert.ToInt32(txtIdCausa.Text), dataCondenaEnviar);
 
             if (respuestaEditar)
             {
@@ -215,15 +214,14 @@ namespace CapaPresentacion
             cmbTipoDefensor.DisplayMember = "tipo_defensor";
             cmbTipoDefensor.DataSource = this.tablasCausa.tipos_defensor;
 
-            //Juzgado condena
+            //Tribunal condena
             cmbTribunalCondena.ValueMember = "id_juzgado";
             cmbTribunalCondena.DisplayMember = "juzgado";
             cmbTribunalCondena.DataSource = this.tablasCausa.juzgados.ToList();
 
             this.CargarControlesCausa();
             
-            //fin Carga de combos sobre  listas para ingreso
-
+            //fin Carga de combos causa
             
         }
         //FIN CARGAR TABLAS CAUSA.................................................
@@ -291,6 +289,39 @@ namespace CapaPresentacion
         private void btnEditarCondena_Click(object sender, EventArgs e)
         {
             this.CargarTablasCausa();
+        }
+
+        private async void btnQuitarDatosCondena_Click(object sender, EventArgs e)
+        {
+            NCausa nCausa = new NCausa();
+
+            //limpiar errores de provider
+            errorProvider.Clear();
+
+            this.gboxDadosCondena.Enabled = false;
+            var data = new
+            {
+                tiene_computo = chckTieneComputo.Checked
+            };
+
+            string dataCondenaEnviar = JsonConvert.SerializeObject(data);
+
+            (bool respuestaEditar, string errorResponse) = await nCausa.QuitarCondena(Convert.ToInt32(txtIdCausa.Text), dataCondenaEnviar);
+
+            if (respuestaEditar)
+            {
+                MessageBox.Show("Se quito correctamente los datos de condena", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //actualizar el internoClobal
+                //this.BuscarIngreso();
+
+                //this.HabilitarControlesIngreso(false);
+                this.gboxDadosCondena.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.gboxDadosCondena.Enabled = true;
+            }
         }
     }
 }

@@ -167,6 +167,7 @@ namespace DAOImplement
             throw new NotImplementedException();
         }
 
+        //EDITAR CAUSA
         public async Task<(bool, string error)> EditarCausa(int idCausa, string causa)
         {
             string token = SessionManager.Token; // Aquí pones tu token real
@@ -220,7 +221,9 @@ namespace DAOImplement
                 return (false, $"Error inesperado: {ex.Message}");
             }
         }
+        //FIN EDITAR CAUSA.............................................................
 
+        //ESTABLECER CONDENA
         public async Task<(bool, string error)> EstablecerCondena(int idCausa, string dataCondena)
         {
             string token = SessionManager.Token; // Aquí pones tu token real
@@ -274,7 +277,61 @@ namespace DAOImplement
                 return (false, $"Error inesperado: {ex.Message}");
             }
         }
+        //FIN ESTABLECER CONDENA...................................................
 
-        
+        public async Task<(bool, string error)> QuitarCondena(int idCausa, string dataCondena)
+        {
+            string token = SessionManager.Token; // Aquí pones tu token real
+
+            try
+            {
+                // Agregar el token en los headers
+                this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                // Crear el contenido de la solicitud HTTP
+                StringContent content = new StringContent(dataCondena, Encoding.UTF8, "application/json");
+
+                // Enviar la solicitud HTTP POST
+                HttpResponseMessage httpResponse = await this.httpClient.PutAsync(url_base + "/causas/quitar-condena?id_causa=" + idCausa, content);
+
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var contentRespuesta = await httpResponse.Content.ReadAsStringAsync();
+                    var dataRespuesta = JsonConvert.DeserializeObject<DResponseEditar>(contentRespuesta);
+
+                    if (dataRespuesta.Affected > 0)
+                    {
+                        return (true, null);
+                    }
+                    else
+                    {
+                        return (false, "No se pudo quitar los datos de la condena.");
+                    }
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (false, $"Error al quitar los datos de la condena: {mensaje}");
+                }
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                // Capturar errores de la solicitud HTTP
+                return (false, $"Error de conexión: {httpRequestException.Message}");
+            }
+            catch (JsonException jsonException)
+            {
+                // Capturar errores en la serialización/deserialización de JSON                
+                return (false, $"Error inesperado");
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores (log, mensaje al usuario, etc.)
+                Console.WriteLine($"Error: {ex.Message}");
+                return (false, $"Error inesperado: {ex.Message}");
+            }
+        }
+
     }
 }

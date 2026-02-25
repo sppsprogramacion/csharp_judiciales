@@ -126,6 +126,7 @@
             this.btnQuitarDatosCondena.TabIndex = 305;
             this.btnQuitarDatosCondena.Text = "Quitar datos de condena";
             this.btnQuitarDatosCondena.UseVisualStyleBackColor = false;
+            this.btnQuitarDatosCondena.Click += new System.EventHandler(this.btnQuitarDatosCondena_Click);
             // 
             // dtpFechaCumple
             // 
