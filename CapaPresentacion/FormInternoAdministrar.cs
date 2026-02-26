@@ -805,7 +805,13 @@ namespace CapaPresentacion
 
         //REGION CAUSAS
         #region CAUSAS
-        private void btnNuevaCausa_Click(object sender, EventArgs e)
+        
+        private void btnVerCausas_Click_1(object sender, EventArgs e)
+        {
+            this.CargarDataGridCausas();
+        }
+
+        private void btnNuevaCausa_Click_1(object sender, EventArgs e)
         {
             if (txtIdIngresoVer.Text == null || txtIdIngresoVer.Text == "")
             {
@@ -816,10 +822,31 @@ namespace CapaPresentacion
             formCausaNuevo.ShowDialog();
         }
 
-        private void btnVerCausas_Click(object sender, EventArgs e)
+        private void dtgvCausas_KeyDown_1(object sender, KeyEventArgs e)
         {
-            this.CargarDataGridCausas();
+            int idCausa = 0;
+            //AL PRESIONAR ENTER MOSTRAR EL TRAMITE
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+
+                idCausa = Convert.ToInt32(dtgvCausas.CurrentRow.Cells["Id"].Value.ToString());
+
+                if (dtgvCausas.SelectedRows.Count > 0)
+                {
+                    if (idCausa > 0)
+                    {
+                        FormCausaAdministrar formCausaAdministrar = new FormCausaAdministrar(idCausa);
+                        formCausaAdministrar.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe seleccionar una causa.");
+                    }
+                }
+            }
         }
+
 
         //METODO PARA OBTENER LA LISTA DE CAUSAS Y CARGARLO EN UN DATA GRID 
         async private void CargarDataGridCausas()
@@ -1084,36 +1111,9 @@ namespace CapaPresentacion
 
             btnGuardarTrasladoARA.Enabled = valor;
             btnCancelarTrasladoARA.Enabled = valor;
+
         }//FIN METODO HABILITAR CONTROLES ANULAR TRASLADO..............................
-
-        private void dtgvCausas_KeyDown(object sender, KeyEventArgs e)
-        {
-            int idCausa = 0;
-            //AL PRESIONAR ENTER MOSTRAR EL TRAMITE
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.SuppressKeyPress = true;
-
-                idCausa = Convert.ToInt32(dtgvCausas.CurrentRow.Cells["Id"].Value.ToString());
-
-                if (dtgvCausas.SelectedRows.Count > 0)
-                {
-                    if (idCausa > 0)
-                    {
-                        FormCausaAdministrar formCausaAdministrar = new FormCausaAdministrar(idCausa);
-                        formCausaAdministrar.ShowDialog();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Debe seleccionar una causa.");
-                    }
-                }
-            }
-        }
-
-
-
-
+                
         #endregion TRASLADOS
         //FIN REGION TRASLADOS....................................................................
         //........................................................................................

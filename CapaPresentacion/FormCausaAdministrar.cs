@@ -65,6 +65,13 @@ namespace CapaPresentacion
             dtpFechaCumple.Format = DateTimePickerFormat.Short;
         }
 
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            this.CargarTablasCausa();
+
+            this.HabilitarControlesEditarDatosGenerales(true);
+        }
+
         private async void btnGuardar_Click(object sender, EventArgs e)
         {
             NCausa nCausa = new NCausa();
@@ -99,7 +106,7 @@ namespace CapaPresentacion
                 //actualizar el internoClobal
                 //this.BuscarIngreso();
 
-                //this.HabilitarControlesIngreso(false);
+                this.HabilitarControlesEditarDatosGenerales(false);
                 this.gboxDatosGenerales.Enabled = true;
             }
             else
@@ -110,6 +117,45 @@ namespace CapaPresentacion
 
         }
 
+        private async void btnQuitarDatosCondena_Click(object sender, EventArgs e)
+        {
+            NCausa nCausa = new NCausa();
+
+            //limpiar errores de provider
+            errorProvider.Clear();
+
+            this.gboxDadosCondena.Enabled = false;
+            var data = new
+            {
+                tiene_computo = chckTieneComputo.Checked
+            };
+
+            string dataCondenaEnviar = JsonConvert.SerializeObject(data);
+
+            (bool respuestaEditar, string errorResponse) = await nCausa.QuitarCondena(Convert.ToInt32(txtIdCausa.Text), dataCondenaEnviar);
+
+            if (respuestaEditar)
+            {
+                MessageBox.Show("Se quito correctamente los datos de condena", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //actualizar el internoClobal
+                //this.BuscarIngreso();
+
+                //this.HabilitarControlesIngreso(false);
+                this.gboxDadosCondena.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.gboxDadosCondena.Enabled = true;
+            }
+        }
+
+        private void btnEditarCondena_Click(object sender, EventArgs e)
+        {
+            this.CargarTablasCausa();
+
+            this.HabilitarControlesCondena(true);
+        }
         private async void btnGuardarCondena_Click(object sender, EventArgs e)
         {
             NCausa nCausa = new NCausa();
@@ -147,6 +193,29 @@ namespace CapaPresentacion
                 this.gboxDadosCondena.Enabled = true;
             }
         }
+
+
+        //BUSCAR CAUSA
+        private async void BuscarCausa()
+        {
+            NCausa nCausa = new NCausa();
+
+            (DCausa dCausax, string errorResponse) = await nCausa.BuscarxIdCausa(this.idCausaGlobal);
+            this.dCausaGlobal = dCausax;
+
+            if (this.dCausaGlobal == null)
+            {
+                gboxDatosGenerales.Enabled = true;
+                gboxDadosCondena.Enabled = true;
+
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            
+
+        }
+        //FIN BUSCAR CAUSA....................................................................
+
 
         //CARGAR TABLAS CAUSA
         private async void CargarTablasCausa()
@@ -220,14 +289,13 @@ namespace CapaPresentacion
             cmbTribunalCondena.DataSource = this.tablasCausa.juzgados.ToList();
 
             this.CargarControlesCausa();
-            
             //fin Carga de combos causa
             
         }
         //FIN CARGAR TABLAS CAUSA.................................................
 
 
-        //CARGAR DATOS DE INGRESO EN PESTAÑA DATOS DE INGRESO
+        //CARGAR DATOS DE CAUSA 
         private void CargarControlesCausa()
         {
             txtIdCausa.Text = this.idCausaGlobal.ToString();
@@ -279,49 +347,57 @@ namespace CapaPresentacion
             txtPenaMeses.Text = this.dCausaGlobal.pena_meses.ToString();
             txtPenaDias.Text = this.dCausaGlobal.pena_dias.ToString();
 
-        }//FIN CARGAR DATOS DE INGRESO EN PESTAÑA DATOS DE INGRESO......................................
+        }//FIN CARGAR DATOS DE CAUSA ......................................
 
-        private void btnEditarIngreso_Click(object sender, EventArgs e)
+        //HABILITAR CONTROLES INGRESO
+        private void HabilitarControlesEditarDatosGenerales(bool valor)
         {
-            this.CargarTablasCausa();
+            txtCausa.Enabled = valor;
+            cmbPrisionReclusion.Enabled = valor;
+            txtExpediente.Enabled = valor;
+            cmbTipoDelito.Enabled = valor;
+            cmbEstadoProcesal.Enabled = valor;
+            cmbJurisdiccion.Enabled = valor;
+            cmbJuzgado.Enabled = valor;
+            cmbOtroJuzgado.Enabled = valor;
+            cmbReincidencia.Enabled = valor;
+            dtpFechaUltimaDetencion.Enabled = valor;
+            cmbTipoDefensor.Enabled = valor;
+            txtAbogado.Enabled = valor;
+
+            btnEditar.Enabled = !valor;
+            btnGuardar.Enabled = valor;
+            btnCancelar.Enabled = valor;
+            gboxDadosCondena.Enabled = !valor;
+        }//FIN HABILITAR CONTROLES INGRESO...........................................
+
+        //HABILITAR CONTROLES INGRESO
+        private void HabilitarControlesCondena(bool valor)
+        {
+            dtpFechaCondena.Enabled = valor;
+            dtpFechaCumple.Enabled = valor;
+            cmbTribunalCondena.Enabled = valor;
+            txtPenaAnios.Enabled = valor;
+            txtPenaMeses.Enabled = valor;
+            txtPenaDias.Enabled = valor;
+
+            btnQuitarDatosCondena.Enabled = !valor;
+            btnEditarCondena.Enabled = !valor;
+            btnGuardarCondena.Enabled = valor;
+            btnCancelarCondena.Enabled = valor;
+            gboxDatosGenerales.Enabled = !valor;
+        }//FIN HABILITAR CONTROLES INGRESO...........................................
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.CargarControlesCausa();
+            this.HabilitarControlesEditarDatosGenerales(false);
         }
 
-        private void btnEditarCondena_Click(object sender, EventArgs e)
+        private void btnCancelarCondena_Click(object sender, EventArgs e)
         {
-            this.CargarTablasCausa();
-        }
-
-        private async void btnQuitarDatosCondena_Click(object sender, EventArgs e)
-        {
-            NCausa nCausa = new NCausa();
-
-            //limpiar errores de provider
-            errorProvider.Clear();
-
-            this.gboxDadosCondena.Enabled = false;
-            var data = new
-            {
-                tiene_computo = chckTieneComputo.Checked
-            };
-
-            string dataCondenaEnviar = JsonConvert.SerializeObject(data);
-
-            (bool respuestaEditar, string errorResponse) = await nCausa.QuitarCondena(Convert.ToInt32(txtIdCausa.Text), dataCondenaEnviar);
-
-            if (respuestaEditar)
-            {
-                MessageBox.Show("Se quito correctamente los datos de condena", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //actualizar el internoClobal
-                //this.BuscarIngreso();
-
-                //this.HabilitarControlesIngreso(false);
-                this.gboxDadosCondena.Enabled = true;
-            }
-            else
-            {
-                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.gboxDadosCondena.Enabled = true;
-            }
+            this.CargarControlesCausa();
+            this.HabilitarControlesCondena(false);
         }
     }
 }

@@ -47,7 +47,7 @@
             this.btnGuardarCondena = new System.Windows.Forms.Button();
             this.btnCancelarCondena = new System.Windows.Forms.Button();
             this.gboxDatosGenerales = new System.Windows.Forms.GroupBox();
-            this.btnEditarIngreso = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.cmbOtroJuzgado = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -130,6 +130,7 @@
             // 
             // dtpFechaCumple
             // 
+            this.dtpFechaCumple.Enabled = false;
             this.dtpFechaCumple.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaCumple.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaCumple.Location = new System.Drawing.Point(285, 35);
@@ -161,6 +162,7 @@
             // txtPenaMeses
             // 
             this.txtPenaMeses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPenaMeses.Enabled = false;
             this.txtPenaMeses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPenaMeses.Location = new System.Drawing.Point(146, 117);
             this.txtPenaMeses.Name = "txtPenaMeses";
@@ -180,6 +182,7 @@
             // txtPenaDias
             // 
             this.txtPenaDias.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPenaDias.Enabled = false;
             this.txtPenaDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPenaDias.Location = new System.Drawing.Point(284, 117);
             this.txtPenaDias.Name = "txtPenaDias";
@@ -199,6 +202,7 @@
             // txtPenaAnios
             // 
             this.txtPenaAnios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPenaAnios.Enabled = false;
             this.txtPenaAnios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPenaAnios.Location = new System.Drawing.Point(10, 117);
             this.txtPenaAnios.Name = "txtPenaAnios";
@@ -207,6 +211,7 @@
             // 
             // cmbTribunalCondena
             // 
+            this.cmbTribunalCondena.Enabled = false;
             this.cmbTribunalCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTribunalCondena.FormattingEnabled = true;
             this.cmbTribunalCondena.Location = new System.Drawing.Point(10, 75);
@@ -226,6 +231,7 @@
             // 
             // dtpFechaCondena
             // 
+            this.dtpFechaCondena.Enabled = false;
             this.dtpFechaCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaCondena.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaCondena.Location = new System.Drawing.Point(147, 35);
@@ -299,10 +305,11 @@
             this.btnCancelarCondena.TabIndex = 280;
             this.btnCancelarCondena.Text = "Cancelar";
             this.btnCancelarCondena.UseVisualStyleBackColor = false;
+            this.btnCancelarCondena.Click += new System.EventHandler(this.btnCancelarCondena_Click);
             // 
             // gboxDatosGenerales
             // 
-            this.gboxDatosGenerales.Controls.Add(this.btnEditarIngreso);
+            this.gboxDatosGenerales.Controls.Add(this.btnEditar);
             this.gboxDatosGenerales.Controls.Add(this.cmbOtroJuzgado);
             this.gboxDatosGenerales.Controls.Add(this.label16);
             this.gboxDatosGenerales.Controls.Add(this.label17);
@@ -337,23 +344,24 @@
             this.gboxDatosGenerales.TabStop = false;
             this.gboxDatosGenerales.Text = "Datos generales";
             // 
-            // btnEditarIngreso
+            // btnEditar
             // 
-            this.btnEditarIngreso.BackColor = System.Drawing.Color.White;
-            this.btnEditarIngreso.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarIngreso.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarIngreso.Location = new System.Drawing.Point(191, 358);
-            this.btnEditarIngreso.Name = "btnEditarIngreso";
-            this.btnEditarIngreso.Size = new System.Drawing.Size(98, 40);
-            this.btnEditarIngreso.TabIndex = 293;
-            this.btnEditarIngreso.Text = "Editar";
-            this.btnEditarIngreso.UseVisualStyleBackColor = false;
-            this.btnEditarIngreso.Click += new System.EventHandler(this.btnEditarIngreso_Click);
+            this.btnEditar.BackColor = System.Drawing.Color.White;
+            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnEditar.Location = new System.Drawing.Point(182, 359);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(98, 40);
+            this.btnEditar.TabIndex = 294;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // cmbOtroJuzgado
             // 
+            this.cmbOtroJuzgado.Enabled = false;
             this.cmbOtroJuzgado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOtroJuzgado.FormattingEnabled = true;
             this.cmbOtroJuzgado.Location = new System.Drawing.Point(7, 243);
@@ -383,6 +391,7 @@
             // 
             // cmbTipoDelito
             // 
+            this.cmbTipoDelito.Enabled = false;
             this.cmbTipoDelito.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoDelito.FormattingEnabled = true;
             this.cmbTipoDelito.Location = new System.Drawing.Point(9, 116);
@@ -403,6 +412,7 @@
             // txtCausa
             // 
             this.txtCausa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCausa.Enabled = false;
             this.txtCausa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCausa.Location = new System.Drawing.Point(9, 34);
             this.txtCausa.Name = "txtCausa";
@@ -422,6 +432,7 @@
             // txtAbogado
             // 
             this.txtAbogado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAbogado.Enabled = false;
             this.txtAbogado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAbogado.Location = new System.Drawing.Point(175, 328);
             this.txtAbogado.Name = "txtAbogado";
@@ -430,6 +441,7 @@
             // 
             // cmbTipoDefensor
             // 
+            this.cmbTipoDefensor.Enabled = false;
             this.cmbTipoDefensor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoDefensor.FormattingEnabled = true;
             this.cmbTipoDefensor.Location = new System.Drawing.Point(9, 328);
@@ -449,6 +461,7 @@
             // 
             // cmbReincidencia
             // 
+            this.cmbReincidencia.Enabled = false;
             this.cmbReincidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbReincidencia.FormattingEnabled = true;
             this.cmbReincidencia.Location = new System.Drawing.Point(9, 286);
@@ -468,6 +481,7 @@
             // 
             // cmbJuzgado
             // 
+            this.cmbJuzgado.Enabled = false;
             this.cmbJuzgado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbJuzgado.FormattingEnabled = true;
             this.cmbJuzgado.Location = new System.Drawing.Point(7, 201);
@@ -513,6 +527,7 @@
             this.btnCancelar.TabIndex = 280;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // label36
             // 
@@ -527,6 +542,7 @@
             // txtExpediente
             // 
             this.txtExpediente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtExpediente.Enabled = false;
             this.txtExpediente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtExpediente.Location = new System.Drawing.Point(343, 74);
             this.txtExpediente.Name = "txtExpediente";
@@ -535,6 +551,7 @@
             // 
             // cmbJurisdiccion
             // 
+            this.cmbJurisdiccion.Enabled = false;
             this.cmbJurisdiccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbJurisdiccion.FormattingEnabled = true;
             this.cmbJurisdiccion.Location = new System.Drawing.Point(267, 158);
@@ -564,6 +581,7 @@
             // 
             // cmbEstadoProcesal
             // 
+            this.cmbEstadoProcesal.Enabled = false;
             this.cmbEstadoProcesal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstadoProcesal.FormattingEnabled = true;
             this.cmbEstadoProcesal.Location = new System.Drawing.Point(7, 158);
@@ -573,6 +591,7 @@
             // 
             // cmbPrisionReclusion
             // 
+            this.cmbPrisionReclusion.Enabled = false;
             this.cmbPrisionReclusion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPrisionReclusion.FormattingEnabled = true;
             this.cmbPrisionReclusion.Location = new System.Drawing.Point(7, 74);
@@ -592,6 +611,7 @@
             // 
             // dtpFechaUltimaDetencion
             // 
+            this.dtpFechaUltimaDetencion.Enabled = false;
             this.dtpFechaUltimaDetencion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaUltimaDetencion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaUltimaDetencion.Location = new System.Drawing.Point(268, 286);
@@ -748,7 +768,6 @@
         private System.Windows.Forms.DateTimePicker dtpFechaUltimaDetencion;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Button btnEditarCondena;
-        private System.Windows.Forms.Button btnEditarIngreso;
         private System.Windows.Forms.TextBox txtIdCausa;
         private System.Windows.Forms.Label label75;
         private System.Windows.Forms.CheckBox chckTieneComputo;
@@ -771,5 +790,6 @@
         private System.Windows.Forms.TextBox txtOrganismoCarga;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Button btnQuitarDatosCondena;
+        private System.Windows.Forms.Button btnEditar;
     }
 }
