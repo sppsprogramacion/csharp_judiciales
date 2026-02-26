@@ -61,7 +61,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>judiciales-icono.ico</ApplicationIcon>
+    <ApplicationIcon>judiciales-logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
@@ -261,6 +261,7 @@
     <None Include="Resources\logo_spps2.png" />
     <None Include="Resources\usuario-verde.png" />
     <Content Include="judiciales-icono.ico" />
+    <Content Include="judiciales-logo.ico" />
     <Content Include="restriccion-logo.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -390,12 +390,18 @@ namespace CapaPresentacion
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            //limpiar errores de provider
+            errorProvider.Clear();
+
             this.CargarControlesCausa();
             this.HabilitarControlesEditarDatosGenerales(false);
         }
 
         private void btnCancelarCondena_Click(object sender, EventArgs e)
         {
+            //limpiar errores de provider
+            errorProvider.Clear();
+
             this.CargarControlesCausa();
             this.HabilitarControlesCondena(false);
         }

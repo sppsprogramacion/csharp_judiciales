@@ -653,6 +653,9 @@ namespace CapaPresentacion
 
         private void btnCancelarIngreso_Click(object sender, EventArgs e)
         {
+            //limpiar errores de provider
+            errorProvider.Clear();
+
             //cargar datos de ingreso en pestaña DATOS DE INGRESO           
             this.CargarControlesIngreso();
 
@@ -665,7 +668,6 @@ namespace CapaPresentacion
 
             //limpiar errores de provider
             errorProvider.Clear();
-
 
             if (txtIdInterno.Text == null || txtIdInterno.Text == "")
             {
