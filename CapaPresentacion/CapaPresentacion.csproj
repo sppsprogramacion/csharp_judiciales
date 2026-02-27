@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationRevision>12</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -61,7 +61,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>judiciales-logo.ico</ApplicationIcon>
+    <ApplicationIcon>judicial-logo-redondo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
@@ -156,6 +156,8 @@
     <Compile Include="FuncionesGenerales\FormularioAyudas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validaciones\CausaNueva\Datos\CausaNuevaDatos.cs" />
+    <Compile Include="Validaciones\CausaNueva\Validacion\CausaNuevaValidation.cs" />
     <Compile Include="Validaciones\InternoAdministrar\Datos\InternoAdministarDatos.cs" />
     <Compile Include="Validaciones\InternoAdministrar\Validacion\EditarIngresoValidation.cs" />
     <Compile Include="Validaciones\InternoAdministrar\Validacion\InternoEditarCaracteristicasPrincipalesValidation.cs" />
@@ -260,6 +262,7 @@
   <ItemGroup>
     <None Include="Resources\logo_spps2.png" />
     <None Include="Resources\usuario-verde.png" />
+    <Content Include="judicial-logo-redondo.ico" />
     <Content Include="judiciales-icono.ico" />
     <Content Include="judiciales-logo.ico" />
     <Content Include="restriccion-logo.ico" />

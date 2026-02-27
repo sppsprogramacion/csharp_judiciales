@@ -2523,6 +2523,7 @@
             this.Controls.Add(this.tabInterno);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormInternoVer";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VER INTERNO";
             this.Load += new System.EventHandler(this.FormInternoVer_Load);

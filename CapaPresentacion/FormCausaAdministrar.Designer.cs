@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCausaAdministrar));
             this.gboxDadosCondena = new System.Windows.Forms.GroupBox();
             this.btnQuitarDatosCondena = new System.Windows.Forms.Button();
             this.dtpFechaCumple = new System.Windows.Forms.DateTimePicker();
@@ -723,7 +724,9 @@
             this.Controls.Add(this.gboxDadosCondena);
             this.Controls.Add(this.gboxDatosGenerales);
             this.Controls.Add(this.label75);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCausaAdministrar";
+            this.ShowInTaskbar = false;
             this.Text = "ADMINISTRAR CAUSA";
             this.Load += new System.EventHandler(this.FormCausaAdministrar_Load);
             this.gboxDadosCondena.ResumeLayout(false);
