@@ -36,6 +36,8 @@ namespace CapaPresentacion
             txtPassword.PasswordChar = '●';
             txtPassword.TextAlign = HorizontalAlignment.Left;
             txtPassword.Padding = new Padding(15, 15, 15, 15); // Ajusta para que se vea bien
+
+            txtUsuario.Focus();
         }
 
         private async void btnLogin_Click(object sender, EventArgs e)

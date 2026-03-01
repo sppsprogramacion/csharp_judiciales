@@ -70,6 +70,7 @@ namespace CapaPresentacion
             this.CargarTablasCausa();
 
             this.HabilitarControlesEditarDatosGenerales(true);
+            txtCausa.Focus();
         }
 
         private async void btnGuardar_Click(object sender, EventArgs e)
@@ -131,6 +132,8 @@ namespace CapaPresentacion
 
             (bool respuestaEditar, string errorResponse) = await nCausa.EditarCausa(Convert.ToInt32(txtIdCausa.Text), dataCausaEnviar);
 
+            this.gboxDatosGenerales.Enabled = true;
+
             if (respuestaEditar)
             {
                 MessageBox.Show("La edición se realizó correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -138,12 +141,11 @@ namespace CapaPresentacion
                 //this.BuscarIngreso();
 
                 this.HabilitarControlesEditarDatosGenerales(false);
-                this.gboxDatosGenerales.Enabled = true;
+                
             }
             else
             {
                 MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.gboxDatosGenerales.Enabled = true;
             }
 
         }
@@ -221,6 +223,7 @@ namespace CapaPresentacion
             this.gboxDadosCondena.Enabled = false;
             var data = new
             {
+                fecha_ultima_detencion = dtpFechaUltimaDetCondena.Value,
                 fecha_condena = dtpFechaCondena.Value,
                 tribunal_condena_id = cmbTribunalCondena.SelectedValue.ToString(),
                 pena_anios = Convert.ToInt32(txtPenaAnios.Text),
@@ -379,6 +382,24 @@ namespace CapaPresentacion
             //datos de condena
             chckTieneComputo.Checked = this.dCausaGlobal.tiene_computo;
 
+            if (this.dCausaGlobal.fecha_ultima_detencion == null)
+            {
+                if (btnEditarCondena.Enabled)
+                {
+                    dtpFechaUltimaDetCondena.Format = DateTimePickerFormat.Custom;
+                    dtpFechaUltimaDetCondena.CustomFormat = " ";
+                }
+                else
+                {
+                    dtpFechaUltimaDetCondena.Format = DateTimePickerFormat.Short;
+                }
+            }
+            else
+            {
+                dtpFechaUltimaDetCondena.Format = DateTimePickerFormat.Short;
+                dtpFechaUltimaDetCondena.Text = this.dCausaGlobal.fecha_ultima_detencion.ToShortDateString();
+            }
+
             if (this.dCausaGlobal.fecha_condena == null)
             {
                 if (btnEditarCondena.Enabled)
@@ -447,6 +468,7 @@ namespace CapaPresentacion
         //HABILITAR CONTROLES INGRESO
         private void HabilitarControlesCondena(bool valor)
         {
+            dtpFechaUltimaDetCondena.Enabled = valor;
             dtpFechaCondena.Enabled = valor;
             dtpFechaCumple.Enabled = valor;
             cmbTribunalCondena.Enabled = valor;

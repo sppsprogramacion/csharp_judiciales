@@ -23,6 +23,7 @@ namespace CapaPresentacion.Validaciones.CausaAdministrar.Datos
         public string txtAbogado { get; set; }
 
         //datos de condena
+        public DateTime dtpFechaUltimaDetCondena { get; set; }
         public DateTime dtpFechaCondena { get; set; }
         public DateTime dtpFechaCumple { get; set; }
         public string cmbTribunalCondena { get; set; }

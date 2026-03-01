@@ -83,12 +83,16 @@
             this.label25 = new System.Windows.Forms.Label();
             this.txtOrganismoCarga = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
+            this.dtpFechaUltimaDetCondena = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             this.gboxDadosCondena.SuspendLayout();
             this.gboxDatosGenerales.SuspendLayout();
             this.SuspendLayout();
             // 
             // gboxDadosCondena
             // 
+            this.gboxDadosCondena.Controls.Add(this.dtpFechaUltimaDetCondena);
+            this.gboxDadosCondena.Controls.Add(this.label7);
             this.gboxDadosCondena.Controls.Add(this.btnQuitarDatosCondena);
             this.gboxDadosCondena.Controls.Add(this.dtpFechaCumple);
             this.gboxDadosCondena.Controls.Add(this.label6);
@@ -110,7 +114,7 @@
             this.gboxDadosCondena.Location = new System.Drawing.Point(542, 49);
             this.gboxDadosCondena.Name = "gboxDadosCondena";
             this.gboxDadosCondena.Size = new System.Drawing.Size(526, 200);
-            this.gboxDadosCondena.TabIndex = 295;
+            this.gboxDadosCondena.TabIndex = 5;
             this.gboxDadosCondena.TabStop = false;
             this.gboxDadosCondena.Text = "Datos de condena";
             // 
@@ -124,7 +128,7 @@
             this.btnQuitarDatosCondena.Location = new System.Drawing.Point(24, 150);
             this.btnQuitarDatosCondena.Name = "btnQuitarDatosCondena";
             this.btnQuitarDatosCondena.Size = new System.Drawing.Size(161, 40);
-            this.btnQuitarDatosCondena.TabIndex = 305;
+            this.btnQuitarDatosCondena.TabIndex = 9;
             this.btnQuitarDatosCondena.Text = "Quitar datos de condena";
             this.btnQuitarDatosCondena.UseVisualStyleBackColor = false;
             this.btnQuitarDatosCondena.Click += new System.EventHandler(this.btnQuitarDatosCondena_Click);
@@ -134,17 +138,17 @@
             this.dtpFechaCumple.Enabled = false;
             this.dtpFechaCumple.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaCumple.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaCumple.Location = new System.Drawing.Point(285, 35);
+            this.dtpFechaCumple.Location = new System.Drawing.Point(366, 117);
             this.dtpFechaCumple.Name = "dtpFechaCumple";
             this.dtpFechaCumple.Size = new System.Drawing.Size(119, 22);
-            this.dtpFechaCumple.TabIndex = 303;
+            this.dtpFechaCumple.TabIndex = 8;
             this.dtpFechaCumple.ValueChanged += new System.EventHandler(this.dtpFechaCumple_ValueChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(281, 20);
+            this.label6.Location = new System.Drawing.Point(362, 102);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 13);
             this.label6.TabIndex = 304;
@@ -154,7 +158,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(143, 102);
+            this.label5.Location = new System.Drawing.Point(126, 102);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 13);
             this.label5.TabIndex = 302;
@@ -165,16 +169,16 @@
             this.txtPenaMeses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPenaMeses.Enabled = false;
             this.txtPenaMeses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPenaMeses.Location = new System.Drawing.Point(146, 117);
+            this.txtPenaMeses.Location = new System.Drawing.Point(129, 117);
             this.txtPenaMeses.Name = "txtPenaMeses";
-            this.txtPenaMeses.Size = new System.Drawing.Size(120, 21);
-            this.txtPenaMeses.TabIndex = 301;
+            this.txtPenaMeses.Size = new System.Drawing.Size(100, 21);
+            this.txtPenaMeses.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(281, 102);
+            this.label4.Location = new System.Drawing.Point(244, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 300;
@@ -185,10 +189,10 @@
             this.txtPenaDias.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPenaDias.Enabled = false;
             this.txtPenaDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPenaDias.Location = new System.Drawing.Point(284, 117);
+            this.txtPenaDias.Location = new System.Drawing.Point(247, 117);
             this.txtPenaDias.Name = "txtPenaDias";
-            this.txtPenaDias.Size = new System.Drawing.Size(120, 21);
-            this.txtPenaDias.TabIndex = 299;
+            this.txtPenaDias.Size = new System.Drawing.Size(100, 21);
+            this.txtPenaDias.TabIndex = 7;
             // 
             // label3
             // 
@@ -207,8 +211,8 @@
             this.txtPenaAnios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPenaAnios.Location = new System.Drawing.Point(10, 117);
             this.txtPenaAnios.Name = "txtPenaAnios";
-            this.txtPenaAnios.Size = new System.Drawing.Size(120, 21);
-            this.txtPenaAnios.TabIndex = 294;
+            this.txtPenaAnios.Size = new System.Drawing.Size(100, 21);
+            this.txtPenaAnios.TabIndex = 5;
             // 
             // cmbTribunalCondena
             // 
@@ -218,7 +222,7 @@
             this.cmbTribunalCondena.Location = new System.Drawing.Point(10, 75);
             this.cmbTribunalCondena.Name = "cmbTribunalCondena";
             this.cmbTribunalCondena.Size = new System.Drawing.Size(500, 23);
-            this.cmbTribunalCondena.TabIndex = 297;
+            this.cmbTribunalCondena.TabIndex = 4;
             // 
             // label2
             // 
@@ -235,17 +239,17 @@
             this.dtpFechaCondena.Enabled = false;
             this.dtpFechaCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaCondena.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaCondena.Location = new System.Drawing.Point(147, 35);
+            this.dtpFechaCondena.Location = new System.Drawing.Point(321, 35);
             this.dtpFechaCondena.Name = "dtpFechaCondena";
             this.dtpFechaCondena.Size = new System.Drawing.Size(119, 22);
-            this.dtpFechaCondena.TabIndex = 295;
+            this.dtpFechaCondena.TabIndex = 3;
             this.dtpFechaCondena.ValueChanged += new System.EventHandler(this.dtpFechaCondena_ValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(143, 20);
+            this.label1.Location = new System.Drawing.Point(317, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 13);
             this.label1.TabIndex = 296;
@@ -259,7 +263,7 @@
             this.chckTieneComputo.Location = new System.Drawing.Point(10, 35);
             this.chckTieneComputo.Name = "chckTieneComputo";
             this.chckTieneComputo.Size = new System.Drawing.Size(115, 17);
-            this.chckTieneComputo.TabIndex = 294;
+            this.chckTieneComputo.TabIndex = 1;
             this.chckTieneComputo.Text = "TIENE COMPUTO";
             this.chckTieneComputo.UseVisualStyleBackColor = true;
             // 
@@ -273,7 +277,7 @@
             this.btnEditarCondena.Location = new System.Drawing.Point(192, 150);
             this.btnEditarCondena.Name = "btnEditarCondena";
             this.btnEditarCondena.Size = new System.Drawing.Size(98, 40);
-            this.btnEditarCondena.TabIndex = 293;
+            this.btnEditarCondena.TabIndex = 10;
             this.btnEditarCondena.Text = "Editar";
             this.btnEditarCondena.UseVisualStyleBackColor = false;
             this.btnEditarCondena.Click += new System.EventHandler(this.btnEditarCondena_Click);
@@ -289,7 +293,7 @@
             this.btnGuardarCondena.Location = new System.Drawing.Point(301, 150);
             this.btnGuardarCondena.Name = "btnGuardarCondena";
             this.btnGuardarCondena.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarCondena.TabIndex = 279;
+            this.btnGuardarCondena.TabIndex = 11;
             this.btnGuardarCondena.Text = "Guardar";
             this.btnGuardarCondena.UseVisualStyleBackColor = false;
             this.btnGuardarCondena.Click += new System.EventHandler(this.btnGuardarCondena_Click);
@@ -305,7 +309,7 @@
             this.btnCancelarCondena.Location = new System.Drawing.Point(410, 150);
             this.btnCancelarCondena.Name = "btnCancelarCondena";
             this.btnCancelarCondena.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelarCondena.TabIndex = 280;
+            this.btnCancelarCondena.TabIndex = 12;
             this.btnCancelarCondena.Text = "Cancelar";
             this.btnCancelarCondena.UseVisualStyleBackColor = false;
             this.btnCancelarCondena.Click += new System.EventHandler(this.btnCancelarCondena_Click);
@@ -343,7 +347,7 @@
             this.gboxDatosGenerales.Location = new System.Drawing.Point(7, 50);
             this.gboxDatosGenerales.Name = "gboxDatosGenerales";
             this.gboxDatosGenerales.Size = new System.Drawing.Size(526, 405);
-            this.gboxDatosGenerales.TabIndex = 294;
+            this.gboxDatosGenerales.TabIndex = 4;
             this.gboxDatosGenerales.TabStop = false;
             this.gboxDatosGenerales.Text = "Datos generales";
             // 
@@ -357,7 +361,7 @@
             this.btnEditar.Location = new System.Drawing.Point(182, 359);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(98, 40);
-            this.btnEditar.TabIndex = 294;
+            this.btnEditar.TabIndex = 13;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -370,7 +374,7 @@
             this.cmbOtroJuzgado.Location = new System.Drawing.Point(7, 243);
             this.cmbOtroJuzgado.Name = "cmbOtroJuzgado";
             this.cmbOtroJuzgado.Size = new System.Drawing.Size(500, 23);
-            this.cmbOtroJuzgado.TabIndex = 274;
+            this.cmbOtroJuzgado.TabIndex = 8;
             // 
             // label16
             // 
@@ -400,7 +404,7 @@
             this.cmbTipoDelito.Location = new System.Drawing.Point(9, 116);
             this.cmbTipoDelito.Name = "cmbTipoDelito";
             this.cmbTipoDelito.Size = new System.Drawing.Size(498, 23);
-            this.cmbTipoDelito.TabIndex = 270;
+            this.cmbTipoDelito.TabIndex = 4;
             // 
             // label18
             // 
@@ -420,7 +424,7 @@
             this.txtCausa.Location = new System.Drawing.Point(9, 34);
             this.txtCausa.Name = "txtCausa";
             this.txtCausa.Size = new System.Drawing.Size(499, 21);
-            this.txtCausa.TabIndex = 267;
+            this.txtCausa.TabIndex = 1;
             // 
             // label19
             // 
@@ -440,7 +444,7 @@
             this.txtAbogado.Location = new System.Drawing.Point(175, 328);
             this.txtAbogado.Name = "txtAbogado";
             this.txtAbogado.Size = new System.Drawing.Size(332, 21);
-            this.txtAbogado.TabIndex = 278;
+            this.txtAbogado.TabIndex = 12;
             // 
             // cmbTipoDefensor
             // 
@@ -450,7 +454,7 @@
             this.cmbTipoDefensor.Location = new System.Drawing.Point(9, 328);
             this.cmbTipoDefensor.Name = "cmbTipoDefensor";
             this.cmbTipoDefensor.Size = new System.Drawing.Size(145, 23);
-            this.cmbTipoDefensor.TabIndex = 277;
+            this.cmbTipoDefensor.TabIndex = 11;
             // 
             // label33
             // 
@@ -470,7 +474,7 @@
             this.cmbReincidencia.Location = new System.Drawing.Point(9, 286);
             this.cmbReincidencia.Name = "cmbReincidencia";
             this.cmbReincidencia.Size = new System.Drawing.Size(238, 23);
-            this.cmbReincidencia.TabIndex = 275;
+            this.cmbReincidencia.TabIndex = 9;
             // 
             // label34
             // 
@@ -490,7 +494,7 @@
             this.cmbJuzgado.Location = new System.Drawing.Point(7, 201);
             this.cmbJuzgado.Name = "cmbJuzgado";
             this.cmbJuzgado.Size = new System.Drawing.Size(500, 23);
-            this.cmbJuzgado.TabIndex = 273;
+            this.cmbJuzgado.TabIndex = 7;
             // 
             // label35
             // 
@@ -513,7 +517,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(295, 358);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardar.TabIndex = 279;
+            this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -529,7 +533,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(409, 358);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelar.TabIndex = 280;
+            this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -552,7 +556,7 @@
             this.txtExpediente.Location = new System.Drawing.Point(343, 74);
             this.txtExpediente.Name = "txtExpediente";
             this.txtExpediente.Size = new System.Drawing.Size(165, 21);
-            this.txtExpediente.TabIndex = 269;
+            this.txtExpediente.TabIndex = 3;
             // 
             // cmbJurisdiccion
             // 
@@ -562,7 +566,7 @@
             this.cmbJurisdiccion.Location = new System.Drawing.Point(267, 158);
             this.cmbJurisdiccion.Name = "cmbJurisdiccion";
             this.cmbJurisdiccion.Size = new System.Drawing.Size(240, 23);
-            this.cmbJurisdiccion.TabIndex = 272;
+            this.cmbJurisdiccion.TabIndex = 6;
             // 
             // label47
             // 
@@ -592,7 +596,7 @@
             this.cmbEstadoProcesal.Location = new System.Drawing.Point(7, 158);
             this.cmbEstadoProcesal.Name = "cmbEstadoProcesal";
             this.cmbEstadoProcesal.Size = new System.Drawing.Size(240, 23);
-            this.cmbEstadoProcesal.TabIndex = 271;
+            this.cmbEstadoProcesal.TabIndex = 5;
             // 
             // cmbPrisionReclusion
             // 
@@ -602,7 +606,7 @@
             this.cmbPrisionReclusion.Location = new System.Drawing.Point(7, 74);
             this.cmbPrisionReclusion.Name = "cmbPrisionReclusion";
             this.cmbPrisionReclusion.Size = new System.Drawing.Size(323, 23);
-            this.cmbPrisionReclusion.TabIndex = 268;
+            this.cmbPrisionReclusion.TabIndex = 2;
             // 
             // label49
             // 
@@ -622,7 +626,7 @@
             this.dtpFechaUltimaDetencion.Location = new System.Drawing.Point(268, 286);
             this.dtpFechaUltimaDetencion.Name = "dtpFechaUltimaDetencion";
             this.dtpFechaUltimaDetencion.Size = new System.Drawing.Size(170, 22);
-            this.dtpFechaUltimaDetencion.TabIndex = 276;
+            this.dtpFechaUltimaDetencion.TabIndex = 10;
             // 
             // label50
             // 
@@ -642,7 +646,7 @@
             this.txtIdCausa.Name = "txtIdCausa";
             this.txtIdCausa.ReadOnly = true;
             this.txtIdCausa.Size = new System.Drawing.Size(130, 21);
-            this.txtIdCausa.TabIndex = 295;
+            this.txtIdCausa.TabIndex = 0;
             // 
             // label75
             // 
@@ -661,7 +665,7 @@
             this.txtFechaCarga.Name = "txtFechaCarga";
             this.txtFechaCarga.ReadOnly = true;
             this.txtFechaCarga.Size = new System.Drawing.Size(112, 21);
-            this.txtFechaCarga.TabIndex = 298;
+            this.txtFechaCarga.TabIndex = 3;
             // 
             // label26
             // 
@@ -680,7 +684,7 @@
             this.txtUsuarioCarga.Name = "txtUsuarioCarga";
             this.txtUsuarioCarga.ReadOnly = true;
             this.txtUsuarioCarga.Size = new System.Drawing.Size(193, 21);
-            this.txtUsuarioCarga.TabIndex = 297;
+            this.txtUsuarioCarga.TabIndex = 1;
             // 
             // label25
             // 
@@ -700,7 +704,7 @@
             this.txtOrganismoCarga.Name = "txtOrganismoCarga";
             this.txtOrganismoCarga.ReadOnly = true;
             this.txtOrganismoCarga.Size = new System.Drawing.Size(228, 21);
-            this.txtOrganismoCarga.TabIndex = 301;
+            this.txtOrganismoCarga.TabIndex = 2;
             // 
             // label27
             // 
@@ -711,6 +715,26 @@
             this.label27.Size = new System.Drawing.Size(113, 13);
             this.label27.TabIndex = 300;
             this.label27.Text = "ORGANISMO CARGA";
+            // 
+            // dtpFechaUltimaDetCondena
+            // 
+            this.dtpFechaUltimaDetCondena.Enabled = false;
+            this.dtpFechaUltimaDetCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaUltimaDetCondena.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaUltimaDetCondena.Location = new System.Drawing.Point(146, 35);
+            this.dtpFechaUltimaDetCondena.Name = "dtpFechaUltimaDetCondena";
+            this.dtpFechaUltimaDetCondena.Size = new System.Drawing.Size(150, 22);
+            this.dtpFechaUltimaDetCondena.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(142, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(151, 13);
+            this.label7.TabIndex = 307;
+            this.label7.Text = "FECHA ULTIMA DETENCION";
             // 
             // FormCausaAdministrar
             // 
@@ -731,6 +755,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCausaAdministrar";
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ADMINISTRAR CAUSA";
             this.Load += new System.EventHandler(this.FormCausaAdministrar_Load);
             this.gboxDadosCondena.ResumeLayout(false);
@@ -798,5 +823,7 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Button btnQuitarDatosCondena;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.DateTimePicker dtpFechaUltimaDetCondena;
+        private System.Windows.Forms.Label label7;
     }
 }
