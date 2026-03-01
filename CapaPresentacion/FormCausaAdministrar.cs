@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaNegocio;
+using CapaPresentacion.Validaciones.CausaAdministrar.Datos;
 using CapaPresentacion.Validaciones.CausaAdministrar.Validacon;
 using CapaPresentacion.Validaciones.CausaNueva.Datos;
 using CapaPresentacion.Validaciones.CausaNueva.Validacion;
@@ -41,20 +42,16 @@ namespace CapaPresentacion
 
             (DCausa dCausax, string errorResponse) = await nCausa.BuscarxIdCausa(this.idCausaGlobal);
             this.dCausaGlobal = dCausax;
+            gboxDatosGenerales.Enabled = true;
+            gboxDadosCondena.Enabled = true;
 
             if (this.dCausaGlobal == null)
             {
-                gboxDatosGenerales.Enabled = true;
-                gboxDadosCondena.Enabled = true;
-
                 MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             this.CargarControlesCausa();
-
-            gboxDatosGenerales.Enabled = true;
-            gboxDadosCondena.Enabled = true;
         }
 
         private void dtpFechaCondena_ValueChanged(object sender, EventArgs e)
@@ -78,9 +75,6 @@ namespace CapaPresentacion
         private async void btnGuardar_Click(object sender, EventArgs e)
         {
             NCausa nCausa = new NCausa();
-
-            //limpiar errores de provider
-            errorProvider.Clear();
 
             //limpiar errores de provider
             errorProvider.Clear();
@@ -175,9 +169,9 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Se quito correctamente los datos de condena", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //actualizar el internoClobal
-                //this.BuscarIngreso();
+                this.BuscarCausa();
 
-                //this.HabilitarControlesIngreso(false);
+                this.HabilitarControlesCondena(false);
                 this.gboxDadosCondena.Enabled = true;
             }
             else
@@ -189,9 +183,9 @@ namespace CapaPresentacion
 
         private void btnEditarCondena_Click(object sender, EventArgs e)
         {
+            this.HabilitarControlesCondena(true);
             this.CargarTablasCausa();
 
-            this.HabilitarControlesCondena(true);
         }
         private async void btnGuardarCondena_Click(object sender, EventArgs e)
         {
@@ -199,6 +193,30 @@ namespace CapaPresentacion
 
             //limpiar errores de provider
             errorProvider.Clear();
+
+            //validacion de formulario
+            var datosformulario = new CausaAdministrarDatos
+            {
+                cmbTribunalCondena = cmbTribunalCondena.SelectedValue?.ToString() ?? string.Empty,
+                txtPenaAnios = txtPenaAnios.Text,
+                txtPenaMeses = txtPenaMeses.Text,
+                txtPenaDias = txtPenaDias.Text,
+            };
+
+            var validator = new CausaEstablecerCondenaValidation();
+            var result = validator.Validate(datosformulario);
+
+            if (!result.IsValid)
+            {
+                MessageBox.Show("Complete correctamente los campos del formulario", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                foreach (var failure in result.Errors)
+                {
+                    Control control = Controls.Find(failure.PropertyName, true)[0];
+                    errorProvider.SetError(control, failure.ErrorMessage);
+                }
+                return;
+            }
+            //fin validar formulario
 
             this.gboxDadosCondena.Enabled = false;
             var data = new
@@ -219,9 +237,9 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("La edición se realizó correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //actualizar el internoClobal
-                //this.BuscarIngreso();
+                this.BuscarCausa();
 
-                //this.HabilitarControlesIngreso(false);
+                this.HabilitarControlesCondena(false);
                 this.gboxDadosCondena.Enabled = true;
             }
             else
@@ -237,17 +255,21 @@ namespace CapaPresentacion
         {
             NCausa nCausa = new NCausa();
 
+            gboxDatosGenerales.Enabled = false;
+            gboxDadosCondena.Enabled = false;
+
             (DCausa dCausax, string errorResponse) = await nCausa.BuscarxIdCausa(this.idCausaGlobal);
             this.dCausaGlobal = dCausax;
+            gboxDatosGenerales.Enabled = true;
+            gboxDadosCondena.Enabled = true;
 
             if (this.dCausaGlobal == null)
             {
-                gboxDatosGenerales.Enabled = true;
-                gboxDadosCondena.Enabled = true;
-
                 MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            this.CargarControlesCausa();
             
 
         }
@@ -359,8 +381,15 @@ namespace CapaPresentacion
 
             if (this.dCausaGlobal.fecha_condena == null)
             {
-                dtpFechaCondena.Format = DateTimePickerFormat.Custom;
-                dtpFechaCondena.CustomFormat = " ";
+                if (btnEditarCondena.Enabled)
+                {
+                    dtpFechaCondena.Format = DateTimePickerFormat.Custom;
+                    dtpFechaCondena.CustomFormat = " ";
+                }
+                else
+                {
+                    dtpFechaCondena.Format = DateTimePickerFormat.Short;
+                }                
             }
             else
             {
@@ -370,8 +399,15 @@ namespace CapaPresentacion
 
             if (this.dCausaGlobal.fecha_cumple_pena == null)
             {
-                dtpFechaCumple.Format = DateTimePickerFormat.Custom;
-                dtpFechaCumple.CustomFormat = " ";
+                if (btnEditarCondena.Enabled)
+                {
+                    dtpFechaCumple.Format = DateTimePickerFormat.Custom;
+                    dtpFechaCumple.CustomFormat = " ";
+                }
+                else
+                {
+                    dtpFechaCumple.Format = DateTimePickerFormat.Short;
+                }
             }
             else
             {
@@ -439,8 +475,8 @@ namespace CapaPresentacion
             //limpiar errores de provider
             errorProvider.Clear();
 
-            this.CargarControlesCausa();
             this.HabilitarControlesCondena(false);
+            this.CargarControlesCausa();
         }
     }
 }

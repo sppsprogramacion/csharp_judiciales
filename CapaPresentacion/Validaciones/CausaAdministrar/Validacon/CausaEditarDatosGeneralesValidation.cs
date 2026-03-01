@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CapaPresentacion.Validaciones.CausaAdministrar.Validacon
 {
-    public class CausaEditarDatosGeneralesValidation : AbstractValidator<CausaAdministarDatos>
+    public class CausaEditarDatosGeneralesValidation : AbstractValidator<CausaAdministrarDatos>
     {
         public CausaEditarDatosGeneralesValidation()
         {

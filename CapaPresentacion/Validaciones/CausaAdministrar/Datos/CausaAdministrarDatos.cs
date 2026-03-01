@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaPresentacion.Validaciones.CausaAdministrar.Datos
 {
-    public class CausaAdministarDatos
+    public class CausaAdministrarDatos
     {
         public int idtxtIdCausa { get; set; }
         public string txtCausa { get; set; }
@@ -21,5 +21,14 @@ namespace CapaPresentacion.Validaciones.CausaAdministrar.Datos
         public DateTime dtpFechaUltimaDetencion { get; set; }
         public string cmbTipoDefensor { get; set; }
         public string txtAbogado { get; set; }
+
+        //datos de condena
+        public DateTime dtpFechaCondena { get; set; }
+        public DateTime dtpFechaCumple { get; set; }
+        public string cmbTribunalCondena { get; set; }
+        public string txtPenaAnios { get; set; }
+        public string txtPenaMeses { get; set; }
+        public string txtPenaDias { get; set; }
+
     }
 }

@@ -281,6 +281,7 @@
             // btnGuardarCondena
             // 
             this.btnGuardarCondena.BackColor = System.Drawing.Color.White;
+            this.btnGuardarCondena.Enabled = false;
             this.btnGuardarCondena.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.btnGuardarCondena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -296,6 +297,7 @@
             // btnCancelarCondena
             // 
             this.btnCancelarCondena.BackColor = System.Drawing.Color.White;
+            this.btnCancelarCondena.Enabled = false;
             this.btnCancelarCondena.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
             this.btnCancelarCondena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -503,6 +505,7 @@
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.White;
+            this.btnGuardar.Enabled = false;
             this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -518,6 +521,7 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.White;
+            this.btnCancelar.Enabled = false;
             this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
