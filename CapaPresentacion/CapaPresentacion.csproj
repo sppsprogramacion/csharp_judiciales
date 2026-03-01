@@ -156,6 +156,8 @@
     <Compile Include="FuncionesGenerales\FormularioAyudas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validaciones\CausaAdministrar\Datos\CausaAdministarDatos.cs" />
+    <Compile Include="Validaciones\CausaAdministrar\Validacon\CausaEditarDatosGeneralesValidation.cs" />
     <Compile Include="Validaciones\CausaNueva\Datos\CausaNuevaDatos.cs" />
     <Compile Include="Validaciones\CausaNueva\Validacion\CausaNuevaValidation.cs" />
     <Compile Include="Validaciones\InternoAdministrar\Datos\InternoAdministarDatos.cs" />
