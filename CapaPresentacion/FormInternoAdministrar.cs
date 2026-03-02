@@ -188,6 +188,10 @@ namespace CapaPresentacion
             txtPadre.Text = this.dInternoGlobal.padre;
             txtMadre.Text = this.dInternoGlobal.madre;
             txtParientes.Text = this.dInternoGlobal.parientes;
+
+            pictureFoto.Load(this.dInternoGlobal.foto);
+            pictureFotoPI.Load(this.dInternoGlobal.fotoPI);
+            pictureFotoPD.Load(this.dInternoGlobal.fotoPD);
         }
         //FIN CARGAR CONTROLES DATOS DE INTERNO...................................................
 

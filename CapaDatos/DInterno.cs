@@ -51,6 +51,8 @@ namespace CapaDatos
         public int organismo_id { get; set; }
         public DOrganismo organismo { get; set; }        
         public string foto { get; set; }
+        public string fotoPI { get; set; }
+        public string fotoPD { get; set; }
         public DateTime fecha_carga { get; set; }
         public int usuario_carga_id { get; set; }
         public DUsuario usuario_carga { get; set; }
