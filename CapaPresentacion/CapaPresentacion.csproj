@@ -265,6 +265,9 @@
   <ItemGroup>
     <None Include="Resources\logo_spps2.png" />
     <None Include="Resources\usuario-verde.png" />
+    <None Include="interno-pi.jpg" />
+    <None Include="interno-pd.jpg" />
+    <None Include="interno-ff.jpg" />
     <Content Include="judicial-logo-redondo.ico" />
     <Content Include="judiciales-icono.ico" />
     <Content Include="judiciales-logo.ico" />
