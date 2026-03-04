@@ -100,5 +100,16 @@ namespace CapaNegocio
             return (internosResponse, error);
         }
         //FIN EDITAR DATOS FILIATORIOS..............................................................
+
+        //SUBIR IMAGEN
+        public async Task<(bool, string error)> subirImagen(int id, string rutaImagen, string tipo_foto)
+        {
+            IInternosDao internosDao = new InternoDaoImplement();
+
+            (bool internoResponse, string error) = await internosDao.subirImagen(id, rutaImagen, tipo_foto);
+
+            return (internoResponse, error);
+        }
+        //FIN SUBIR IMAGEN..................................
     }
 }

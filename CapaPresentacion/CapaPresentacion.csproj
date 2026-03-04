@@ -111,6 +111,12 @@
     <Compile Include="FormInternoAdministrar.Designer.cs">
       <DependentUpon>FormInternoAdministrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormInternoEditarFotos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInternoEditarFotos.Designer.cs">
+      <DependentUpon>FormInternoEditarFotos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInternoNuevo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormInternoAdministrar.resx">
       <DependentUpon>FormInternoAdministrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInternoEditarFotos.resx">
+      <DependentUpon>FormInternoEditarFotos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInternoNuevo.resx">
       <DependentUpon>FormInternoNuevo.cs</DependentUpon>
@@ -271,6 +280,9 @@
     <Content Include="judicial-logo-redondo.ico" />
     <Content Include="judiciales-icono.ico" />
     <Content Include="judiciales-logo.ico" />
+    <None Include="Resources\buscar.png" />
+    <None Include="Resources\upload.png" />
+    <None Include="Resources\eliminar-basura.png" />
     <Content Include="restriccion-logo.ico" />
   </ItemGroup>
   <ItemGroup>

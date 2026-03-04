@@ -124,9 +124,9 @@
             this.label86 = new System.Windows.Forms.Label();
             this.label88 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureFotoPD = new System.Windows.Forms.PictureBox();
             this.pictureFoto = new System.Windows.Forms.PictureBox();
+            this.pictureFotoPI = new System.Windows.Forms.PictureBox();
             this.tabDatosIngreso = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label65 = new System.Windows.Forms.Label();
@@ -230,9 +230,9 @@
             this.tabDatosPrincipales.SuspendLayout();
             this.groupIngresoInterno.SuspendLayout();
             this.groupBox14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPI)).BeginInit();
             this.tabDatosIngreso.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabCausas.SuspendLayout();
@@ -265,9 +265,9 @@
             // 
             this.tabDatosPrincipales.Controls.Add(this.groupIngresoInterno);
             this.tabDatosPrincipales.Controls.Add(this.groupBox14);
-            this.tabDatosPrincipales.Controls.Add(this.pictureBox2);
-            this.tabDatosPrincipales.Controls.Add(this.pictureBox1);
+            this.tabDatosPrincipales.Controls.Add(this.pictureFotoPD);
             this.tabDatosPrincipales.Controls.Add(this.pictureFoto);
+            this.tabDatosPrincipales.Controls.Add(this.pictureFotoPI);
             this.tabDatosPrincipales.Location = new System.Drawing.Point(4, 25);
             this.tabDatosPrincipales.Name = "tabDatosPrincipales";
             this.tabDatosPrincipales.Padding = new System.Windows.Forms.Padding(3);
@@ -1319,38 +1319,38 @@
             this.txtNombre.Size = new System.Drawing.Size(449, 21);
             this.txtNombre.TabIndex = 5;
             // 
-            // pictureBox2
+            // pictureFotoPD
             // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.persona_icono;
-            this.pictureBox2.Location = new System.Drawing.Point(883, 15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(150, 170);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 70;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.persona_icono;
-            this.pictureBox1.Location = new System.Drawing.Point(708, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 170);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 69;
-            this.pictureBox1.TabStop = false;
+            this.pictureFotoPD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureFotoPD.Image = global::CapaPresentacion.Properties.Resources.persona_icono;
+            this.pictureFotoPD.Location = new System.Drawing.Point(883, 15);
+            this.pictureFotoPD.Name = "pictureFotoPD";
+            this.pictureFotoPD.Size = new System.Drawing.Size(150, 170);
+            this.pictureFotoPD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureFotoPD.TabIndex = 70;
+            this.pictureFotoPD.TabStop = false;
             // 
             // pictureFoto
             // 
             this.pictureFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureFoto.Image = global::CapaPresentacion.Properties.Resources.persona_icono;
-            this.pictureFoto.Location = new System.Drawing.Point(533, 15);
+            this.pictureFoto.Location = new System.Drawing.Point(708, 14);
             this.pictureFoto.Name = "pictureFoto";
             this.pictureFoto.Size = new System.Drawing.Size(150, 170);
             this.pictureFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureFoto.TabIndex = 56;
+            this.pictureFoto.TabIndex = 69;
             this.pictureFoto.TabStop = false;
+            // 
+            // pictureFotoPI
+            // 
+            this.pictureFotoPI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureFotoPI.Image = global::CapaPresentacion.Properties.Resources.persona_icono;
+            this.pictureFotoPI.Location = new System.Drawing.Point(533, 15);
+            this.pictureFotoPI.Name = "pictureFotoPI";
+            this.pictureFotoPI.Size = new System.Drawing.Size(150, 170);
+            this.pictureFotoPI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureFotoPI.TabIndex = 56;
+            this.pictureFotoPI.TabStop = false;
             // 
             // tabDatosIngreso
             // 
@@ -2533,9 +2533,9 @@
             this.groupIngresoInterno.PerformLayout();
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPI)).EndInit();
             this.tabDatosIngreso.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -2635,9 +2635,9 @@
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureFotoPD;
         private System.Windows.Forms.PictureBox pictureFoto;
+        private System.Windows.Forms.PictureBox pictureFotoPI;
         private System.Windows.Forms.TabPage tabDatosIngreso;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label65;

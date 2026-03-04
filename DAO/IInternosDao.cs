@@ -18,5 +18,8 @@ namespace DAO
         Task<(List<DInterno>, string error)> ListaInternosXApellidoGeneral(string apellido);
         Task<(List<DInterno>, string error)> ListaInternosXProntuario(int apellido);
         Task<(List<DInterno>, string error)> ListaInternosTodos();
+
+        Task<(bool, string error)> subirImagen(int id, string rutaImagen, string tipo_foto);
+        Task<(bool, string error)> quitarImagen(int id);
     }
 }

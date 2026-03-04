@@ -93,6 +93,19 @@ namespace CapaPresentacion
             txtMadre.Text = this.dInternoGlobal.madre;
             txtParientes.Text = this.dInternoGlobal.parientes;
 
+            if (!string.IsNullOrEmpty(this.dInternoGlobal.foto))
+            {
+                pictureFoto.Load(this.dInternoGlobal.foto);
+            }
+            if (!string.IsNullOrEmpty(this.dInternoGlobal.fotoPI))
+            {
+                pictureFotoPI.Load(this.dInternoGlobal.fotoPI);
+            }
+            if (!string.IsNullOrEmpty(this.dInternoGlobal.fotoPD))
+            {
+                pictureFotoPD.Load(this.dInternoGlobal.fotoPD);
+            }
+
         }
 
         private async void btnDarIngresar_Click(object sender, EventArgs e)

@@ -189,9 +189,18 @@ namespace CapaPresentacion
             txtMadre.Text = this.dInternoGlobal.madre;
             txtParientes.Text = this.dInternoGlobal.parientes;
 
-            pictureFoto.Load(this.dInternoGlobal.foto);
-            pictureFotoPI.Load(this.dInternoGlobal.fotoPI);
-            pictureFotoPD.Load(this.dInternoGlobal.fotoPD);
+            if (!string.IsNullOrEmpty(this.dInternoGlobal.foto))
+            {
+                pictureFoto.Load(this.dInternoGlobal.foto);
+            }
+            if (!string.IsNullOrEmpty(this.dInternoGlobal.fotoPI))
+            {
+                pictureFotoPI.Load(this.dInternoGlobal.fotoPI);
+            }
+            if (!string.IsNullOrEmpty(this.dInternoGlobal.fotoPD))
+            {
+                pictureFotoPD.Load(this.dInternoGlobal.fotoPD);
+            }
         }
         //FIN CARGAR CONTROLES DATOS DE INTERNO...................................................
 
@@ -1124,7 +1133,39 @@ namespace CapaPresentacion
         //FIN REGION TRASLADOS....................................................................
         //........................................................................................
 
+               
 
+        private void pictureFotoPI_DoubleClick(object sender, EventArgs e)
+        {
+            if (this.dInternoGlobal == null)
+            {
+                MessageBox.Show("El interno no es valido.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            FormInternoEditarFotos form = new FormInternoEditarFotos(this.dInternoGlobal);
+            form.ShowDialog();
+        }
 
+        private void pictureFoto_DoubleClick(object sender, EventArgs e)
+        {
+            if (this.dInternoGlobal == null)
+            {
+                MessageBox.Show("El interno no es valido.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            FormInternoEditarFotos form = new FormInternoEditarFotos(this.dInternoGlobal);
+            form.ShowDialog();
+        }
+
+        private void pictureFotoPD_DoubleClick_1(object sender, EventArgs e)
+        {
+            if (this.dInternoGlobal == null)
+            {
+                MessageBox.Show("El interno no es valido.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            FormInternoEditarFotos form = new FormInternoEditarFotos(this.dInternoGlobal);
+            form.ShowDialog();
+        }
     }
 }

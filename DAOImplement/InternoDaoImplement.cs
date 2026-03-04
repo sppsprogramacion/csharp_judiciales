@@ -11,6 +11,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace DAOImplement
 {
@@ -430,7 +431,56 @@ namespace DAOImplement
                 return (false, $"Error inesperado: {ex.Message}");
             }
         }
-           //FIN EDITAR DATOS FILIATORIOS.............................................................
+
+        //FIN EDITAR DATOS FILIATORIOS.............................................................
+
+        public async Task<(bool, string error)> subirImagen(int id, string rutaImagen, string tipo_foto)
+        {
+            string token = SessionManager.Token;
+
+            if (!File.Exists(rutaImagen))
+                return (false, "No se encontró un archivo de imagen seleccionado.");
+
+            try
+            {
+                using (var form = new MultipartFormDataContent())
+                using (var imageContent = new ByteArrayContent(File.ReadAllBytes(rutaImagen)))
+                {
+                    imageContent.Headers.ContentType = new MediaTypeHeaderValue("image/jpeg");
+                    form.Add(imageContent, "file", Path.GetFileName(rutaImagen));
+
+                    // Agregar token a la cabecera
+                    this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                    string url = $"{url_base}/internos/upload-img-interno?id_interno={id}&tipo_perfil={tipo_foto}";
+                    var response = await this.httpClient.PostAsync(url, form);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return (true, null);
+                    }
+                    else
+                    {
+                        string responseContent = await response.Content.ReadAsStringAsync();
+                        var mensaje = JObject.Parse(responseContent)["message"]?.ToString();
+                        return (false, $"Error al subir la imagen: {mensaje}");
+                    }
+                }
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                return (false, $"Error en la solicitud: {httpRequestException.Message}");
+            }
+            catch (Exception ex)
+            {
+                return (false, $"Error inesperado: {ex.Message}");
+            }
+        }
+
+        public Task<(bool, string error)> quitarImagen(int id)
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }
