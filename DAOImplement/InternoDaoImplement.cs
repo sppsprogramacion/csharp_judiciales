@@ -434,6 +434,7 @@ namespace DAOImplement
 
         //FIN EDITAR DATOS FILIATORIOS.............................................................
 
+        //SUBIR IMAGEN
         public async Task<(bool, string error)> subirImagen(int id, string rutaImagen, string tipo_foto)
         {
             string token = SessionManager.Token;
@@ -476,11 +477,51 @@ namespace DAOImplement
                 return (false, $"Error inesperado: {ex.Message}");
             }
         }
+        //FIN SUBIR IMAGEN.........................................................................
 
-        public Task<(bool, string error)> quitarImagen(int id)
+
+        //QUITAR IMAGEN
+        public async Task<(bool, string error)> quitarImagen(int id, string tipo_foto)
         {
-            throw new NotImplementedException();
+            //variable token
+            string token = SessionManager.Token;
+            try
+            {
+                //agregar tpken a la cabecera
+                this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                // Crear el contenido de la solicitud HTTP
+                HttpResponseMessage httpResponse = await this.httpClient.DeleteAsync($"{url_base}/internos/quitar-imagen?id_interno={id}&tipo_perfil={tipo_foto}");
+
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    return (true, null);
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (false, $"Error en quitar imagen: {mensaje}");
+                }
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                // Capturar errores de la solicitud HTTP
+                throw new Exception($"Error al realizar la solicitud: {httpRequestException.Message}");
+            }
+            catch (JsonException jsonException)
+            {
+                // Capturar errores en la serialización/deserialización de JSON
+                throw new Exception($"Error al serializar/deserializar JSON: {jsonException.Message}");
+            }
+            catch (Exception ex)
+            {
+                // Capturar cualquier otro tipo de excepción
+                Console.WriteLine($"Ocurrió un error inesperado: {ex.Message}");
+                throw new Exception($"Ocurrió un error inesperado: {ex.Message}");
+            }
+
         }
+        //FIN QUITAR IMAGEN..............................................................
 
     }
 }

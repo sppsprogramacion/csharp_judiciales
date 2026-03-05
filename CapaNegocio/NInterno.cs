@@ -111,5 +111,16 @@ namespace CapaNegocio
             return (internoResponse, error);
         }
         //FIN SUBIR IMAGEN..................................
+
+        //QUITAR IMAGEN
+        public async Task<(bool, string error)> quitarImagen(int id, string tipoFoto)
+        {
+            IInternosDao internosDao = new InternoDaoImplement();
+
+            (bool internoResponse, string error) = await internosDao.quitarImagen(id, tipoFoto);
+
+            return (internoResponse, error);
+        }
+        //FIN QUITAR IMAGEN..................................
     }
 }

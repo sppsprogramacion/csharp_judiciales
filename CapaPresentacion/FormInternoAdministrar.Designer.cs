@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInternoAdministrar));
             this.tabInterno = new System.Windows.Forms.TabControl();
             this.tabDatosPrincipales = new System.Windows.Forms.TabPage();
+            this.btnEditarFotos = new System.Windows.Forms.Button();
             this.txtIdIngresoVer = new System.Windows.Forms.TextBox();
             this.label75 = new System.Windows.Forms.Label();
             this.txtJurisdiccionVer = new System.Windows.Forms.TextBox();
@@ -93,6 +94,8 @@
             this.label89 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
             this.cmbDepartamentoNacimiento = new System.Windows.Forms.ComboBox();
+            this.pictureFotoPD = new System.Windows.Forms.PictureBox();
+            this.pictureFoto = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEditarDatosPrincipales = new System.Windows.Forms.Button();
             this.btnGuardarEditarDatosPrincipales = new System.Windows.Forms.Button();
@@ -109,6 +112,7 @@
             this.txtProntuario = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtIdInterno = new System.Windows.Forms.TextBox();
+            this.pictureFotoPI = new System.Windows.Forms.PictureBox();
             this.tabDatosIngreso = new System.Windows.Forms.TabPage();
             this.btnNuevaCausa = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -185,14 +189,14 @@
             this.label39 = new System.Windows.Forms.Label();
             this.txtIdTraslado = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.pictureFotoPD = new System.Windows.Forms.PictureBox();
-            this.pictureFoto = new System.Windows.Forms.PictureBox();
-            this.pictureFotoPI = new System.Windows.Forms.PictureBox();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox15.SuspendLayout();
             this.groupBox14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPI)).BeginInit();
             this.tabDatosIngreso.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCausas)).BeginInit();
@@ -204,9 +208,6 @@
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTraslados)).BeginInit();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPI)).BeginInit();
             this.SuspendLayout();
             // 
             // tabInterno
@@ -224,6 +225,7 @@
             // 
             // tabDatosPrincipales
             // 
+            this.tabDatosPrincipales.Controls.Add(this.btnEditarFotos);
             this.tabDatosPrincipales.Controls.Add(this.txtIdIngresoVer);
             this.tabDatosPrincipales.Controls.Add(this.label75);
             this.tabDatosPrincipales.Controls.Add(this.txtJurisdiccionVer);
@@ -251,6 +253,21 @@
             this.tabDatosPrincipales.TabIndex = 0;
             this.tabDatosPrincipales.Text = "Datos Principales";
             this.tabDatosPrincipales.UseVisualStyleBackColor = true;
+            // 
+            // btnEditarFotos
+            // 
+            this.btnEditarFotos.BackColor = System.Drawing.Color.White;
+            this.btnEditarFotos.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarFotos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarFotos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarFotos.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarFotos.Location = new System.Drawing.Point(530, 8);
+            this.btnEditarFotos.Name = "btnEditarFotos";
+            this.btnEditarFotos.Size = new System.Drawing.Size(122, 22);
+            this.btnEditarFotos.TabIndex = 235;
+            this.btnEditarFotos.Text = "EDITAR FOTOS";
+            this.btnEditarFotos.UseVisualStyleBackColor = false;
+            this.btnEditarFotos.Click += new System.EventHandler(this.btnEditarFotos_Click);
             // 
             // txtIdIngresoVer
             // 
@@ -949,6 +966,30 @@
             this.cmbDepartamentoNacimiento.Size = new System.Drawing.Size(240, 23);
             this.cmbDepartamentoNacimiento.TabIndex = 206;
             // 
+            // pictureFotoPD
+            // 
+            this.pictureFotoPD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureFotoPD.Image = global::CapaPresentacion.Properties.Resources.interno_pd;
+            this.pictureFotoPD.Location = new System.Drawing.Point(880, 37);
+            this.pictureFotoPD.Name = "pictureFotoPD";
+            this.pictureFotoPD.Size = new System.Drawing.Size(147, 165);
+            this.pictureFotoPD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureFotoPD.TabIndex = 70;
+            this.pictureFotoPD.TabStop = false;
+            this.pictureFotoPD.DoubleClick += new System.EventHandler(this.pictureFotoPD_DoubleClick_1);
+            // 
+            // pictureFoto
+            // 
+            this.pictureFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureFoto.Image = global::CapaPresentacion.Properties.Resources.interno_ff;
+            this.pictureFoto.Location = new System.Drawing.Point(705, 36);
+            this.pictureFoto.Name = "pictureFoto";
+            this.pictureFoto.Size = new System.Drawing.Size(147, 165);
+            this.pictureFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureFoto.TabIndex = 69;
+            this.pictureFoto.TabStop = false;
+            this.pictureFoto.DoubleClick += new System.EventHandler(this.pictureFoto_DoubleClick);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnEditarDatosPrincipales);
@@ -1137,6 +1178,18 @@
             this.txtIdInterno.ReadOnly = true;
             this.txtIdInterno.Size = new System.Drawing.Size(140, 21);
             this.txtIdInterno.TabIndex = 54;
+            // 
+            // pictureFotoPI
+            // 
+            this.pictureFotoPI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureFotoPI.Image = global::CapaPresentacion.Properties.Resources.interno_pi;
+            this.pictureFotoPI.Location = new System.Drawing.Point(530, 37);
+            this.pictureFotoPI.Name = "pictureFotoPI";
+            this.pictureFotoPI.Size = new System.Drawing.Size(147, 165);
+            this.pictureFotoPI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureFotoPI.TabIndex = 56;
+            this.pictureFotoPI.TabStop = false;
+            this.pictureFotoPI.DoubleClick += new System.EventHandler(this.pictureFotoPI_DoubleClick);
             // 
             // tabDatosIngreso
             // 
@@ -2024,42 +2077,6 @@
             this.label25.TabIndex = 72;
             this.label25.Text = "USUARIO CARGA:";
             // 
-            // pictureFotoPD
-            // 
-            this.pictureFotoPD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureFotoPD.Image = global::CapaPresentacion.Properties.Resources.interno_pd;
-            this.pictureFotoPD.Location = new System.Drawing.Point(880, 22);
-            this.pictureFotoPD.Name = "pictureFotoPD";
-            this.pictureFotoPD.Size = new System.Drawing.Size(150, 170);
-            this.pictureFotoPD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureFotoPD.TabIndex = 70;
-            this.pictureFotoPD.TabStop = false;
-            this.pictureFotoPD.DoubleClick += new System.EventHandler(this.pictureFotoPD_DoubleClick_1);
-            // 
-            // pictureFoto
-            // 
-            this.pictureFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureFoto.Image = global::CapaPresentacion.Properties.Resources.interno_ff;
-            this.pictureFoto.Location = new System.Drawing.Point(705, 21);
-            this.pictureFoto.Name = "pictureFoto";
-            this.pictureFoto.Size = new System.Drawing.Size(150, 170);
-            this.pictureFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureFoto.TabIndex = 69;
-            this.pictureFoto.TabStop = false;
-            this.pictureFoto.DoubleClick += new System.EventHandler(this.pictureFoto_DoubleClick);
-            // 
-            // pictureFotoPI
-            // 
-            this.pictureFotoPI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureFotoPI.Image = global::CapaPresentacion.Properties.Resources.interno_pi;
-            this.pictureFotoPI.Location = new System.Drawing.Point(530, 22);
-            this.pictureFotoPI.Name = "pictureFotoPI";
-            this.pictureFotoPI.Size = new System.Drawing.Size(150, 170);
-            this.pictureFotoPI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureFotoPI.TabIndex = 56;
-            this.pictureFotoPI.TabStop = false;
-            this.pictureFotoPI.DoubleClick += new System.EventHandler(this.pictureFotoPI_DoubleClick);
-            // 
             // FormInternoAdministrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2081,8 +2098,11 @@
             this.groupBox15.PerformLayout();
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPI)).EndInit();
             this.tabDatosIngreso.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCausas)).EndInit();
@@ -2097,9 +2117,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTraslados)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPI)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2264,5 +2281,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dtgvCausas;
         private System.Windows.Forms.Button btnVerCausas;
+        private System.Windows.Forms.Button btnEditarFotos;
     }
 }

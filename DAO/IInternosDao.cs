@@ -20,6 +20,6 @@ namespace DAO
         Task<(List<DInterno>, string error)> ListaInternosTodos();
 
         Task<(bool, string error)> subirImagen(int id, string rutaImagen, string tipo_foto);
-        Task<(bool, string error)> quitarImagen(int id);
+        Task<(bool, string error)> quitarImagen(int id, string tipo_foto);
     }
 }
