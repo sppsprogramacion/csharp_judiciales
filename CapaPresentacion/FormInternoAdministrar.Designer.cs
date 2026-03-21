@@ -31,21 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInternoAdministrar));
             this.tabInterno = new System.Windows.Forms.TabControl();
             this.tabDatosPrincipales = new System.Windows.Forms.TabPage();
-            this.btnEditarFotos = new System.Windows.Forms.Button();
-            this.txtIdIngresoVer = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label75 = new System.Windows.Forms.Label();
-            this.txtJurisdiccionVer = new System.Windows.Forms.TextBox();
-            this.txtEstadoProcesalVer = new System.Windows.Forms.TextBox();
-            this.txtOrganismoAlojamientoVer = new System.Windows.Forms.TextBox();
-            this.txtReingresoVer = new System.Windows.Forms.TextBox();
-            this.label68 = new System.Windows.Forms.Label();
-            this.txtNumReingresoVer = new System.Windows.Forms.TextBox();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.label69 = new System.Windows.Forms.Label();
-            this.label70 = new System.Windows.Forms.Label();
-            this.dtpFechaAlojamientoVer = new System.Windows.Forms.DateTimePicker();
             this.label71 = new System.Windows.Forms.Label();
+            this.txtIdIngresoVer = new System.Windows.Forms.TextBox();
+            this.dtpFechaAlojamientoVer = new System.Windows.Forms.DateTimePicker();
+            this.label70 = new System.Windows.Forms.Label();
+            this.txtJurisdiccionVer = new System.Windows.Forms.TextBox();
+            this.label69 = new System.Windows.Forms.Label();
+            this.txtEstadoProcesalVer = new System.Windows.Forms.TextBox();
+            this.label67 = new System.Windows.Forms.Label();
+            this.txtOrganismoAlojamientoVer = new System.Windows.Forms.TextBox();
+            this.label72 = new System.Windows.Forms.Label();
+            this.txtReingresoVer = new System.Windows.Forms.TextBox();
+            this.txtNumReingresoVer = new System.Windows.Forms.TextBox();
+            this.label68 = new System.Windows.Forms.Label();
+            this.btnEditarFotos = new System.Windows.Forms.Button();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.btnEditarCaracteristicasPersonales = new System.Windows.Forms.Button();
             this.btnGuardarEditarCaracteristicasPersonales = new System.Windows.Forms.Button();
@@ -190,9 +191,14 @@
             this.txtIdTraslado = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.tabEgreso = new System.Windows.Forms.TabPage();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.tabHistorialProcesal = new System.Windows.Forms.TabPage();
+            this.dtpFechaUltimaDetencion = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtCausa = new System.Windows.Forms.TextBox();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox15.SuspendLayout();
             this.groupBox14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPD)).BeginInit();
@@ -210,7 +216,7 @@
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTraslados)).BeginInit();
             this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
+            this.tabHistorialProcesal.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabInterno
@@ -220,6 +226,7 @@
             this.tabInterno.Controls.Add(this.tabProgresividad);
             this.tabInterno.Controls.Add(this.tabTraslados);
             this.tabInterno.Controls.Add(this.tabEgreso);
+            this.tabInterno.Controls.Add(this.tabHistorialProcesal);
             this.tabInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabInterno.Location = new System.Drawing.Point(7, 7);
             this.tabInterno.Name = "tabInterno";
@@ -245,6 +252,178 @@
             this.tabDatosPrincipales.Text = "Datos Principales";
             this.tabDatosPrincipales.UseVisualStyleBackColor = true;
             // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.Color.DarkCyan;
+            this.groupBox6.Controls.Add(this.label75);
+            this.groupBox6.Controls.Add(this.label71);
+            this.groupBox6.Controls.Add(this.txtIdIngresoVer);
+            this.groupBox6.Controls.Add(this.dtpFechaAlojamientoVer);
+            this.groupBox6.Controls.Add(this.label70);
+            this.groupBox6.Controls.Add(this.txtJurisdiccionVer);
+            this.groupBox6.Controls.Add(this.label69);
+            this.groupBox6.Controls.Add(this.txtEstadoProcesalVer);
+            this.groupBox6.Controls.Add(this.label67);
+            this.groupBox6.Controls.Add(this.txtOrganismoAlojamientoVer);
+            this.groupBox6.Controls.Add(this.label72);
+            this.groupBox6.Controls.Add(this.txtReingresoVer);
+            this.groupBox6.Controls.Add(this.txtNumReingresoVer);
+            this.groupBox6.Controls.Add(this.label68);
+            this.groupBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.groupBox6.Location = new System.Drawing.Point(10, 8);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(500, 144);
+            this.groupBox6.TabIndex = 254;
+            this.groupBox6.TabStop = false;
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label75.ForeColor = System.Drawing.Color.White;
+            this.label75.Location = new System.Drawing.Point(6, 13);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(80, 13);
+            this.label75.TabIndex = 252;
+            this.label75.Text = "ID INGRESO";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label71.ForeColor = System.Drawing.Color.White;
+            this.label71.Location = new System.Drawing.Point(7, 56);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(137, 13);
+            this.label71.TabIndex = 226;
+            this.label71.Text = "FECHA ALOJAMIENTO";
+            // 
+            // txtIdIngresoVer
+            // 
+            this.txtIdIngresoVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdIngresoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdIngresoVer.Location = new System.Drawing.Point(9, 30);
+            this.txtIdIngresoVer.Name = "txtIdIngresoVer";
+            this.txtIdIngresoVer.ReadOnly = true;
+            this.txtIdIngresoVer.Size = new System.Drawing.Size(130, 21);
+            this.txtIdIngresoVer.TabIndex = 253;
+            // 
+            // dtpFechaAlojamientoVer
+            // 
+            this.dtpFechaAlojamientoVer.Enabled = false;
+            this.dtpFechaAlojamientoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaAlojamientoVer.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaAlojamientoVer.Location = new System.Drawing.Point(10, 73);
+            this.dtpFechaAlojamientoVer.Name = "dtpFechaAlojamientoVer";
+            this.dtpFechaAlojamientoVer.Size = new System.Drawing.Size(128, 22);
+            this.dtpFechaAlojamientoVer.TabIndex = 224;
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label70.ForeColor = System.Drawing.Color.White;
+            this.label70.Location = new System.Drawing.Point(150, 13);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(172, 13);
+            this.label70.TabIndex = 223;
+            this.label70.Text = "ORGANISMO ALOJAMIENTO";
+            // 
+            // txtJurisdiccionVer
+            // 
+            this.txtJurisdiccionVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtJurisdiccionVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJurisdiccionVer.Location = new System.Drawing.Point(177, 115);
+            this.txtJurisdiccionVer.Name = "txtJurisdiccionVer";
+            this.txtJurisdiccionVer.ReadOnly = true;
+            this.txtJurisdiccionVer.Size = new System.Drawing.Size(155, 21);
+            this.txtJurisdiccionVer.TabIndex = 251;
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label69.ForeColor = System.Drawing.Color.White;
+            this.label69.Location = new System.Drawing.Point(6, 99);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(126, 13);
+            this.label69.TabIndex = 227;
+            this.label69.Text = "ESTADO PROCESAL";
+            // 
+            // txtEstadoProcesalVer
+            // 
+            this.txtEstadoProcesalVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEstadoProcesalVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstadoProcesalVer.Location = new System.Drawing.Point(10, 116);
+            this.txtEstadoProcesalVer.Name = "txtEstadoProcesalVer";
+            this.txtEstadoProcesalVer.ReadOnly = true;
+            this.txtEstadoProcesalVer.Size = new System.Drawing.Size(155, 21);
+            this.txtEstadoProcesalVer.TabIndex = 250;
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label67.ForeColor = System.Drawing.Color.White;
+            this.label67.Location = new System.Drawing.Point(174, 98);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(94, 13);
+            this.label67.TabIndex = 229;
+            this.label67.Text = "JURISDICCION";
+            // 
+            // txtOrganismoAlojamientoVer
+            // 
+            this.txtOrganismoAlojamientoVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOrganismoAlojamientoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrganismoAlojamientoVer.Location = new System.Drawing.Point(151, 30);
+            this.txtOrganismoAlojamientoVer.Name = "txtOrganismoAlojamientoVer";
+            this.txtOrganismoAlojamientoVer.ReadOnly = true;
+            this.txtOrganismoAlojamientoVer.Size = new System.Drawing.Size(309, 21);
+            this.txtOrganismoAlojamientoVer.TabIndex = 249;
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label72.ForeColor = System.Drawing.Color.White;
+            this.label72.Location = new System.Drawing.Point(150, 56);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(80, 13);
+            this.label72.TabIndex = 245;
+            this.label72.Text = "REINGRESO";
+            // 
+            // txtReingresoVer
+            // 
+            this.txtReingresoVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtReingresoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReingresoVer.Location = new System.Drawing.Point(151, 73);
+            this.txtReingresoVer.Name = "txtReingresoVer";
+            this.txtReingresoVer.ReadOnly = true;
+            this.txtReingresoVer.Size = new System.Drawing.Size(155, 21);
+            this.txtReingresoVer.TabIndex = 248;
+            // 
+            // txtNumReingresoVer
+            // 
+            this.txtNumReingresoVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumReingresoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumReingresoVer.Location = new System.Drawing.Point(319, 73);
+            this.txtNumReingresoVer.Name = "txtNumReingresoVer";
+            this.txtNumReingresoVer.ReadOnly = true;
+            this.txtNumReingresoVer.Size = new System.Drawing.Size(93, 21);
+            this.txtNumReingresoVer.TabIndex = 246;
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label68.ForeColor = System.Drawing.Color.White;
+            this.label68.Location = new System.Drawing.Point(316, 56);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(98, 13);
+            this.label68.TabIndex = 247;
+            this.label68.Text = "N° REINGRESO";
+            // 
             // btnEditarFotos
             // 
             this.btnEditarFotos.BackColor = System.Drawing.Color.White;
@@ -259,153 +438,6 @@
             this.btnEditarFotos.Text = "EDITAR FOTOS";
             this.btnEditarFotos.UseVisualStyleBackColor = false;
             this.btnEditarFotos.Click += new System.EventHandler(this.btnEditarFotos_Click);
-            // 
-            // txtIdIngresoVer
-            // 
-            this.txtIdIngresoVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdIngresoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdIngresoVer.Location = new System.Drawing.Point(9, 30);
-            this.txtIdIngresoVer.Name = "txtIdIngresoVer";
-            this.txtIdIngresoVer.ReadOnly = true;
-            this.txtIdIngresoVer.Size = new System.Drawing.Size(130, 21);
-            this.txtIdIngresoVer.TabIndex = 253;
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label75.ForeColor = System.Drawing.Color.White;
-            this.label75.Location = new System.Drawing.Point(6, 13);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(80, 13);
-            this.label75.TabIndex = 252;
-            this.label75.Text = "ID INGRESO";
-            // 
-            // txtJurisdiccionVer
-            // 
-            this.txtJurisdiccionVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtJurisdiccionVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtJurisdiccionVer.Location = new System.Drawing.Point(177, 115);
-            this.txtJurisdiccionVer.Name = "txtJurisdiccionVer";
-            this.txtJurisdiccionVer.ReadOnly = true;
-            this.txtJurisdiccionVer.Size = new System.Drawing.Size(155, 21);
-            this.txtJurisdiccionVer.TabIndex = 251;
-            // 
-            // txtEstadoProcesalVer
-            // 
-            this.txtEstadoProcesalVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEstadoProcesalVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstadoProcesalVer.Location = new System.Drawing.Point(10, 116);
-            this.txtEstadoProcesalVer.Name = "txtEstadoProcesalVer";
-            this.txtEstadoProcesalVer.ReadOnly = true;
-            this.txtEstadoProcesalVer.Size = new System.Drawing.Size(155, 21);
-            this.txtEstadoProcesalVer.TabIndex = 250;
-            // 
-            // txtOrganismoAlojamientoVer
-            // 
-            this.txtOrganismoAlojamientoVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtOrganismoAlojamientoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrganismoAlojamientoVer.Location = new System.Drawing.Point(151, 30);
-            this.txtOrganismoAlojamientoVer.Name = "txtOrganismoAlojamientoVer";
-            this.txtOrganismoAlojamientoVer.ReadOnly = true;
-            this.txtOrganismoAlojamientoVer.Size = new System.Drawing.Size(309, 21);
-            this.txtOrganismoAlojamientoVer.TabIndex = 249;
-            // 
-            // txtReingresoVer
-            // 
-            this.txtReingresoVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtReingresoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReingresoVer.Location = new System.Drawing.Point(151, 73);
-            this.txtReingresoVer.Name = "txtReingresoVer";
-            this.txtReingresoVer.ReadOnly = true;
-            this.txtReingresoVer.Size = new System.Drawing.Size(155, 21);
-            this.txtReingresoVer.TabIndex = 248;
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label68.ForeColor = System.Drawing.Color.White;
-            this.label68.Location = new System.Drawing.Point(316, 56);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(98, 13);
-            this.label68.TabIndex = 247;
-            this.label68.Text = "N° REINGRESO";
-            // 
-            // txtNumReingresoVer
-            // 
-            this.txtNumReingresoVer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNumReingresoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumReingresoVer.Location = new System.Drawing.Point(319, 73);
-            this.txtNumReingresoVer.Name = "txtNumReingresoVer";
-            this.txtNumReingresoVer.ReadOnly = true;
-            this.txtNumReingresoVer.Size = new System.Drawing.Size(93, 21);
-            this.txtNumReingresoVer.TabIndex = 246;
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label72.ForeColor = System.Drawing.Color.White;
-            this.label72.Location = new System.Drawing.Point(150, 56);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(80, 13);
-            this.label72.TabIndex = 245;
-            this.label72.Text = "REINGRESO";
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label67.ForeColor = System.Drawing.Color.White;
-            this.label67.Location = new System.Drawing.Point(174, 98);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(94, 13);
-            this.label67.TabIndex = 229;
-            this.label67.Text = "JURISDICCION";
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label69.ForeColor = System.Drawing.Color.White;
-            this.label69.Location = new System.Drawing.Point(6, 99);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(126, 13);
-            this.label69.TabIndex = 227;
-            this.label69.Text = "ESTADO PROCESAL";
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label70.ForeColor = System.Drawing.Color.White;
-            this.label70.Location = new System.Drawing.Point(150, 13);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(172, 13);
-            this.label70.TabIndex = 223;
-            this.label70.Text = "ORGANISMO ALOJAMIENTO";
-            // 
-            // dtpFechaAlojamientoVer
-            // 
-            this.dtpFechaAlojamientoVer.Enabled = false;
-            this.dtpFechaAlojamientoVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaAlojamientoVer.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaAlojamientoVer.Location = new System.Drawing.Point(10, 73);
-            this.dtpFechaAlojamientoVer.Name = "dtpFechaAlojamientoVer";
-            this.dtpFechaAlojamientoVer.Size = new System.Drawing.Size(128, 22);
-            this.dtpFechaAlojamientoVer.TabIndex = 224;
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label71.ForeColor = System.Drawing.Color.White;
-            this.label71.Location = new System.Drawing.Point(7, 56);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(137, 13);
-            this.label71.TabIndex = 226;
-            this.label71.Text = "FECHA ALOJAMIENTO";
             // 
             // groupBox15
             // 
@@ -967,7 +999,7 @@
             // pictureFotoPD
             // 
             this.pictureFotoPD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureFotoPD.Image = global::CapaPresentacion.Properties.Resources.interno_pd;
+            this.pictureFotoPD.Image = ((System.Drawing.Image)(resources.GetObject("pictureFotoPD.Image")));
             this.pictureFotoPD.Location = new System.Drawing.Point(880, 37);
             this.pictureFotoPD.Name = "pictureFotoPD";
             this.pictureFotoPD.Size = new System.Drawing.Size(147, 165);
@@ -979,7 +1011,7 @@
             // pictureFoto
             // 
             this.pictureFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureFoto.Image = global::CapaPresentacion.Properties.Resources.interno_ff;
+            this.pictureFoto.Image = ((System.Drawing.Image)(resources.GetObject("pictureFoto.Image")));
             this.pictureFoto.Location = new System.Drawing.Point(705, 36);
             this.pictureFoto.Name = "pictureFoto";
             this.pictureFoto.Size = new System.Drawing.Size(147, 165);
@@ -1180,7 +1212,7 @@
             // pictureFotoPI
             // 
             this.pictureFotoPI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureFotoPI.Image = global::CapaPresentacion.Properties.Resources.interno_pi;
+            this.pictureFotoPI.Image = ((System.Drawing.Image)(resources.GetObject("pictureFotoPI.Image")));
             this.pictureFotoPI.Location = new System.Drawing.Point(530, 37);
             this.pictureFotoPI.Name = "pictureFotoPI";
             this.pictureFotoPI.Size = new System.Drawing.Size(147, 165);
@@ -2085,30 +2117,59 @@
             this.tabEgreso.Text = "Egreso";
             this.tabEgreso.UseVisualStyleBackColor = true;
             // 
-            // groupBox6
+            // tabHistorialProcesal
             // 
-            this.groupBox6.BackColor = System.Drawing.Color.DarkCyan;
-            this.groupBox6.Controls.Add(this.label75);
-            this.groupBox6.Controls.Add(this.label71);
-            this.groupBox6.Controls.Add(this.txtIdIngresoVer);
-            this.groupBox6.Controls.Add(this.dtpFechaAlojamientoVer);
-            this.groupBox6.Controls.Add(this.label70);
-            this.groupBox6.Controls.Add(this.txtJurisdiccionVer);
-            this.groupBox6.Controls.Add(this.label69);
-            this.groupBox6.Controls.Add(this.txtEstadoProcesalVer);
-            this.groupBox6.Controls.Add(this.label67);
-            this.groupBox6.Controls.Add(this.txtOrganismoAlojamientoVer);
-            this.groupBox6.Controls.Add(this.label72);
-            this.groupBox6.Controls.Add(this.txtReingresoVer);
-            this.groupBox6.Controls.Add(this.txtNumReingresoVer);
-            this.groupBox6.Controls.Add(this.label68);
-            this.groupBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox6.Location = new System.Drawing.Point(10, 8);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(500, 144);
-            this.groupBox6.TabIndex = 254;
-            this.groupBox6.TabStop = false;
+            this.tabHistorialProcesal.Controls.Add(this.label18);
+            this.tabHistorialProcesal.Controls.Add(this.txtCausa);
+            this.tabHistorialProcesal.Controls.Add(this.dtpFechaUltimaDetencion);
+            this.tabHistorialProcesal.Controls.Add(this.label16);
+            this.tabHistorialProcesal.Location = new System.Drawing.Point(4, 25);
+            this.tabHistorialProcesal.Name = "tabHistorialProcesal";
+            this.tabHistorialProcesal.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHistorialProcesal.Size = new System.Drawing.Size(1067, 693);
+            this.tabHistorialProcesal.TabIndex = 8;
+            this.tabHistorialProcesal.Text = "Historial procesal";
+            this.tabHistorialProcesal.UseVisualStyleBackColor = true;
+            // 
+            // dtpFechaUltimaDetencion
+            // 
+            this.dtpFechaUltimaDetencion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaUltimaDetencion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaUltimaDetencion.Location = new System.Drawing.Point(10, 26);
+            this.dtpFechaUltimaDetencion.Name = "dtpFechaUltimaDetencion";
+            this.dtpFechaUltimaDetencion.Size = new System.Drawing.Size(170, 22);
+            this.dtpFechaUltimaDetencion.TabIndex = 213;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(6, 9);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(166, 15);
+            this.label16.TabIndex = 214;
+            this.label16.Text = "FECHA ULTIMA DETENCION";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(7, 51);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(43, 13);
+            this.label18.TabIndex = 292;
+            this.label18.Text = "CAUSA";
+            // 
+            // txtCausa
+            // 
+            this.txtCausa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCausa.Enabled = false;
+            this.txtCausa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCausa.Location = new System.Drawing.Point(10, 66);
+            this.txtCausa.Multiline = true;
+            this.txtCausa.Name = "txtCausa";
+            this.txtCausa.Size = new System.Drawing.Size(499, 48);
+            this.txtCausa.TabIndex = 291;
             // 
             // FormInternoAdministrar
             // 
@@ -2126,6 +2187,8 @@
             this.Load += new System.EventHandler(this.FormInternoAdministrar_Load);
             this.tabInterno.ResumeLayout(false);
             this.tabDatosPrincipales.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
             this.groupBox14.ResumeLayout(false);
@@ -2149,8 +2212,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTraslados)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            this.tabHistorialProcesal.ResumeLayout(false);
+            this.tabHistorialProcesal.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2318,5 +2381,10 @@
         private System.Windows.Forms.Button btnEditarFotos;
         private System.Windows.Forms.TabPage tabEgreso;
         private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TabPage tabHistorialProcesal;
+        private System.Windows.Forms.DateTimePicker dtpFechaUltimaDetencion;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtCausa;
     }
 }

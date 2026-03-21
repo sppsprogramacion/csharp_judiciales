@@ -93,7 +93,7 @@
             this.groupNueva.Controls.Add(this.label77);
             this.groupNueva.Location = new System.Drawing.Point(9, 4);
             this.groupNueva.Name = "groupNueva";
-            this.groupNueva.Size = new System.Drawing.Size(529, 471);
+            this.groupNueva.Size = new System.Drawing.Size(529, 490);
             this.groupNueva.TabIndex = 218;
             this.groupNueva.TabStop = false;
             this.groupNueva.Text = "Nueva ";
@@ -122,7 +122,7 @@
             // 
             this.cmbOtroJuzgado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOtroJuzgado.FormattingEnabled = true;
-            this.cmbOtroJuzgado.Location = new System.Drawing.Point(9, 289);
+            this.cmbOtroJuzgado.Location = new System.Drawing.Point(9, 316);
             this.cmbOtroJuzgado.Name = "cmbOtroJuzgado";
             this.cmbOtroJuzgado.Size = new System.Drawing.Size(500, 23);
             this.cmbOtroJuzgado.TabIndex = 7;
@@ -131,7 +131,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 272);
+            this.label2.Location = new System.Drawing.Point(6, 299);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 15);
             this.label2.TabIndex = 266;
@@ -141,7 +141,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 140);
+            this.label1.Location = new System.Drawing.Point(8, 167);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 15);
             this.label1.TabIndex = 264;
@@ -151,7 +151,7 @@
             // 
             this.cmbTipoDelito.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoDelito.FormattingEnabled = true;
-            this.cmbTipoDelito.Location = new System.Drawing.Point(11, 157);
+            this.cmbTipoDelito.Location = new System.Drawing.Point(11, 184);
             this.cmbTipoDelito.Name = "cmbTipoDelito";
             this.cmbTipoDelito.Size = new System.Drawing.Size(498, 23);
             this.cmbTipoDelito.TabIndex = 3;
@@ -171,15 +171,16 @@
             this.txtCausa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCausa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCausa.Location = new System.Drawing.Point(11, 71);
+            this.txtCausa.Multiline = true;
             this.txtCausa.Name = "txtCausa";
-            this.txtCausa.Size = new System.Drawing.Size(499, 21);
+            this.txtCausa.Size = new System.Drawing.Size(499, 48);
             this.txtCausa.TabIndex = 0;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(174, 361);
+            this.label22.Location = new System.Drawing.Point(174, 388);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(65, 15);
             this.label22.TabIndex = 260;
@@ -189,7 +190,7 @@
             // 
             this.txtAbogado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAbogado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAbogado.Location = new System.Drawing.Point(177, 378);
+            this.txtAbogado.Location = new System.Drawing.Point(177, 405);
             this.txtAbogado.Name = "txtAbogado";
             this.txtAbogado.Size = new System.Drawing.Size(332, 21);
             this.txtAbogado.TabIndex = 11;
@@ -198,7 +199,7 @@
             // 
             this.cmbTipoDefensor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoDefensor.FormattingEnabled = true;
-            this.cmbTipoDefensor.Location = new System.Drawing.Point(11, 378);
+            this.cmbTipoDefensor.Location = new System.Drawing.Point(11, 405);
             this.cmbTipoDefensor.Name = "cmbTipoDefensor";
             this.cmbTipoDefensor.Size = new System.Drawing.Size(145, 23);
             this.cmbTipoDefensor.TabIndex = 10;
@@ -207,7 +208,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(8, 361);
+            this.label23.Location = new System.Drawing.Point(8, 388);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(74, 15);
             this.label23.TabIndex = 258;
@@ -217,7 +218,7 @@
             // 
             this.cmbReincidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbReincidencia.FormattingEnabled = true;
-            this.cmbReincidencia.Location = new System.Drawing.Point(11, 333);
+            this.cmbReincidencia.Location = new System.Drawing.Point(11, 360);
             this.cmbReincidencia.Name = "cmbReincidencia";
             this.cmbReincidencia.Size = new System.Drawing.Size(238, 23);
             this.cmbReincidencia.TabIndex = 8;
@@ -226,7 +227,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(8, 316);
+            this.label27.Location = new System.Drawing.Point(8, 343);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(91, 15);
             this.label27.TabIndex = 240;
@@ -236,7 +237,7 @@
             // 
             this.cmbJuzgado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbJuzgado.FormattingEnabled = true;
-            this.cmbJuzgado.Location = new System.Drawing.Point(9, 245);
+            this.cmbJuzgado.Location = new System.Drawing.Point(9, 272);
             this.cmbJuzgado.Name = "cmbJuzgado";
             this.cmbJuzgado.Size = new System.Drawing.Size(500, 23);
             this.cmbJuzgado.TabIndex = 6;
@@ -245,7 +246,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(6, 228);
+            this.label29.Location = new System.Drawing.Point(6, 255);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(63, 15);
             this.label29.TabIndex = 238;
@@ -258,7 +259,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardar.Location = new System.Drawing.Point(297, 419);
+            this.btnGuardar.Location = new System.Drawing.Point(297, 441);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(98, 40);
             this.btnGuardar.TabIndex = 12;
@@ -273,7 +274,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelar.Location = new System.Drawing.Point(411, 419);
+            this.btnCancelar.Location = new System.Drawing.Point(411, 441);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(98, 40);
             this.btnCancelar.TabIndex = 13;
@@ -285,7 +286,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(342, 96);
+            this.label38.Location = new System.Drawing.Point(342, 123);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(83, 15);
             this.label38.TabIndex = 219;
@@ -295,7 +296,7 @@
             // 
             this.txtExpediente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtExpediente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtExpediente.Location = new System.Drawing.Point(345, 113);
+            this.txtExpediente.Location = new System.Drawing.Point(345, 140);
             this.txtExpediente.Name = "txtExpediente";
             this.txtExpediente.Size = new System.Drawing.Size(165, 21);
             this.txtExpediente.TabIndex = 2;
@@ -304,7 +305,7 @@
             // 
             this.cmbJurisdiccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbJurisdiccion.FormattingEnabled = true;
-            this.cmbJurisdiccion.Location = new System.Drawing.Point(269, 201);
+            this.cmbJurisdiccion.Location = new System.Drawing.Point(269, 228);
             this.cmbJurisdiccion.Name = "cmbJurisdiccion";
             this.cmbJurisdiccion.Size = new System.Drawing.Size(240, 23);
             this.cmbJurisdiccion.TabIndex = 5;
@@ -313,7 +314,7 @@
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(266, 184);
+            this.label43.Location = new System.Drawing.Point(266, 211);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(91, 15);
             this.label43.TabIndex = 217;
@@ -323,7 +324,7 @@
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(6, 96);
+            this.label45.Location = new System.Drawing.Point(6, 123);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(129, 15);
             this.label45.TabIndex = 207;
@@ -333,7 +334,7 @@
             // 
             this.cmbEstadoProcesal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstadoProcesal.FormattingEnabled = true;
-            this.cmbEstadoProcesal.Location = new System.Drawing.Point(9, 201);
+            this.cmbEstadoProcesal.Location = new System.Drawing.Point(9, 228);
             this.cmbEstadoProcesal.Name = "cmbEstadoProcesal";
             this.cmbEstadoProcesal.Size = new System.Drawing.Size(240, 23);
             this.cmbEstadoProcesal.TabIndex = 4;
@@ -342,7 +343,7 @@
             // 
             this.cmbPrisionReclusion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPrisionReclusion.FormattingEnabled = true;
-            this.cmbPrisionReclusion.Location = new System.Drawing.Point(9, 113);
+            this.cmbPrisionReclusion.Location = new System.Drawing.Point(9, 140);
             this.cmbPrisionReclusion.Name = "cmbPrisionReclusion";
             this.cmbPrisionReclusion.Size = new System.Drawing.Size(323, 23);
             this.cmbPrisionReclusion.TabIndex = 1;
@@ -351,7 +352,7 @@
             // 
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(6, 184);
+            this.label46.Location = new System.Drawing.Point(6, 211);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(122, 15);
             this.label46.TabIndex = 213;
@@ -361,7 +362,7 @@
             // 
             this.dtpFechaUltimaDetencion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaUltimaDetencion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaUltimaDetencion.Location = new System.Drawing.Point(270, 333);
+            this.dtpFechaUltimaDetencion.Location = new System.Drawing.Point(270, 360);
             this.dtpFechaUltimaDetencion.Name = "dtpFechaUltimaDetencion";
             this.dtpFechaUltimaDetencion.Size = new System.Drawing.Size(170, 22);
             this.dtpFechaUltimaDetencion.TabIndex = 9;
@@ -370,7 +371,7 @@
             // 
             this.label77.AutoSize = true;
             this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label77.Location = new System.Drawing.Point(266, 316);
+            this.label77.Location = new System.Drawing.Point(266, 343);
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(166, 15);
             this.label77.TabIndex = 212;
@@ -381,7 +382,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(553, 481);
+            this.ClientSize = new System.Drawing.Size(553, 501);
             this.Controls.Add(this.groupNueva);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCausaNueva";
