@@ -37,10 +37,10 @@
             this.pictureFoto = new System.Windows.Forms.PictureBox();
             this.pictureFotoPI = new System.Windows.Forms.PictureBox();
             this.groupFotos = new System.Windows.Forms.GroupBox();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.radbtnPerfilDerecho = new System.Windows.Forms.RadioButton();
             this.radbtnFrente = new System.Windows.Forms.RadioButton();
             this.radbtnPerfilIzquierdo = new System.Windows.Forms.RadioButton();
-            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureImagenCargar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).BeginInit();
@@ -52,7 +52,7 @@
             // 
             this.btnCancelarSubirImagen.BackColor = System.Drawing.Color.White;
             this.btnCancelarSubirImagen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarSubirImagen.Location = new System.Drawing.Point(225, 231);
+            this.btnCancelarSubirImagen.Location = new System.Drawing.Point(217, 231);
             this.btnCancelarSubirImagen.Name = "btnCancelarSubirImagen";
             this.btnCancelarSubirImagen.Size = new System.Drawing.Size(77, 37);
             this.btnCancelarSubirImagen.TabIndex = 78;
@@ -65,7 +65,7 @@
             this.btnQuitarImagen.BackColor = System.Drawing.Color.White;
             this.btnQuitarImagen.Image = global::CapaPresentacion.Properties.Resources.eliminar_basura;
             this.btnQuitarImagen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuitarImagen.Location = new System.Drawing.Point(313, 231);
+            this.btnQuitarImagen.Location = new System.Drawing.Point(305, 231);
             this.btnQuitarImagen.Name = "btnQuitarImagen";
             this.btnQuitarImagen.Size = new System.Drawing.Size(134, 37);
             this.btnQuitarImagen.TabIndex = 77;
@@ -78,7 +78,7 @@
             this.btnBuscarImagen.BackColor = System.Drawing.Color.White;
             this.btnBuscarImagen.Image = global::CapaPresentacion.Properties.Resources.buscar;
             this.btnBuscarImagen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarImagen.Location = new System.Drawing.Point(72, 231);
+            this.btnBuscarImagen.Location = new System.Drawing.Point(74, 231);
             this.btnBuscarImagen.Name = "btnBuscarImagen";
             this.btnBuscarImagen.Size = new System.Drawing.Size(54, 37);
             this.btnBuscarImagen.TabIndex = 76;
@@ -90,7 +90,7 @@
             this.btnSubir.BackColor = System.Drawing.Color.White;
             this.btnSubir.Image = global::CapaPresentacion.Properties.Resources.upload;
             this.btnSubir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubir.Location = new System.Drawing.Point(137, 231);
+            this.btnSubir.Location = new System.Drawing.Point(134, 231);
             this.btnSubir.Name = "btnSubir";
             this.btnSubir.Size = new System.Drawing.Size(77, 37);
             this.btnSubir.TabIndex = 75;
@@ -100,7 +100,7 @@
             // 
             // pictureImagenCargar
             // 
-            this.pictureImagenCargar.Location = new System.Drawing.Point(76, 270);
+            this.pictureImagenCargar.Location = new System.Drawing.Point(78, 270);
             this.pictureImagenCargar.Name = "pictureImagenCargar";
             this.pictureImagenCargar.Size = new System.Drawing.Size(45, 37);
             this.pictureImagenCargar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -160,6 +160,21 @@
             this.groupFotos.TabIndex = 79;
             this.groupFotos.TabStop = false;
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.White;
+            this.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCerrar.Location = new System.Drawing.Point(419, 323);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(98, 40);
+            this.btnCerrar.TabIndex = 229;
+            this.btnCerrar.Text = "CERRAR";
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // radbtnPerfilDerecho
             // 
             this.radbtnPerfilDerecho.AutoSize = true;
@@ -198,21 +213,6 @@
             this.radbtnPerfilIzquierdo.Text = "Perfil Izquierdo";
             this.radbtnPerfilIzquierdo.UseVisualStyleBackColor = true;
             this.radbtnPerfilIzquierdo.CheckedChanged += new System.EventHandler(this.radbtnPerfilIzquierdo_CheckedChanged);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.White;
-            this.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCerrar.Location = new System.Drawing.Point(419, 323);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(98, 40);
-            this.btnCerrar.TabIndex = 229;
-            this.btnCerrar.Text = "CERRAR";
-            this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // FormInternoEditarFotos
             // 
