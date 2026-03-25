@@ -58,7 +58,19 @@ namespace CapaNegocio
 
             return (tablasCausa, errorResponse);
         }
-        //FIN RETORNAR TABLAS PARA CAUSA..................................
+        //FIN RETORNAR TABLAS PARA CAUSA
+        
+        //RETORNAR TABLAS PARA HISTORIAL PROCESAL
+        public async Task<(DTablasHistorialProcesal, string error)> ListasTablasHistorialProcesal()
+        {
+            IListasGenerales listasGeneralesDao = new ListasGeneralesDaoImplement();
+
+            (DTablasHistorialProcesal tablasHistorialProcesal, string errorResponse) = await listasGeneralesDao.ListasTablasHistorialProcesal();
+
+
+            return (tablasHistorialProcesal, errorResponse);
+        }
+        //FIN RETORNAR TABLAS PARA HISTORIAL PROCESAL..................................
 
     }
 }

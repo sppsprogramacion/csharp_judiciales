@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInternoAdministrar));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabInterno = new System.Windows.Forms.TabControl();
             this.tabDatosPrincipales = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -192,10 +195,22 @@
             this.label25 = new System.Windows.Forms.Label();
             this.tabEgreso = new System.Windows.Forms.TabPage();
             this.tabHistorialProcesal = new System.Windows.Forms.TabPage();
-            this.dtpFechaUltimaDetencion = new System.Windows.Forms.DateTimePicker();
-            this.label16 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtCausa = new System.Windows.Forms.TextBox();
+            this.txtDetalleNovedad = new System.Windows.Forms.TextBox();
+            this.dtpFechaNovedad = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.cmbTipoNovedad = new System.Windows.Forms.ComboBox();
+            this.dtgHistorialProcesal = new System.Windows.Forms.DataGridView();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.btnNuevoHistorial = new System.Windows.Forms.Button();
+            this.btnGuardarHistorial = new System.Windows.Forms.Button();
+            this.btnCancelarHistorial = new System.Windows.Forms.Button();
+            this.btnEditaHistorial = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.gboxDatosHistorial = new System.Windows.Forms.GroupBox();
+            this.btnVerHistorial = new System.Windows.Forms.Button();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -217,16 +232,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTraslados)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.tabHistorialProcesal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgHistorialProcesal)).BeginInit();
+            this.groupBox8.SuspendLayout();
+            this.gboxDatosHistorial.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabInterno
             // 
             this.tabInterno.Controls.Add(this.tabDatosPrincipales);
             this.tabInterno.Controls.Add(this.tabDatosIngreso);
+            this.tabInterno.Controls.Add(this.tabHistorialProcesal);
             this.tabInterno.Controls.Add(this.tabProgresividad);
             this.tabInterno.Controls.Add(this.tabTraslados);
             this.tabInterno.Controls.Add(this.tabEgreso);
-            this.tabInterno.Controls.Add(this.tabHistorialProcesal);
             this.tabInterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabInterno.Location = new System.Drawing.Point(7, 7);
             this.tabInterno.Name = "tabInterno";
@@ -1551,7 +1569,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(346, 104);
+            this.label29.Location = new System.Drawing.Point(347, 104);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(115, 13);
             this.label29.TabIndex = 238;
@@ -1561,7 +1579,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(189, 20);
+            this.label37.Location = new System.Drawing.Point(173, 20);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(208, 13);
             this.label37.TabIndex = 234;
@@ -1623,7 +1641,7 @@
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(180, 104);
+            this.label43.Location = new System.Drawing.Point(174, 104);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(82, 13);
             this.label43.TabIndex = 217;
@@ -1633,7 +1651,7 @@
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(190, 62);
+            this.label45.Location = new System.Drawing.Point(174, 62);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(184, 13);
             this.label45.TabIndex = 207;
@@ -2119,10 +2137,8 @@
             // 
             // tabHistorialProcesal
             // 
-            this.tabHistorialProcesal.Controls.Add(this.label18);
-            this.tabHistorialProcesal.Controls.Add(this.txtCausa);
-            this.tabHistorialProcesal.Controls.Add(this.dtpFechaUltimaDetencion);
-            this.tabHistorialProcesal.Controls.Add(this.label16);
+            this.tabHistorialProcesal.Controls.Add(this.gboxDatosHistorial);
+            this.tabHistorialProcesal.Controls.Add(this.groupBox8);
             this.tabHistorialProcesal.Location = new System.Drawing.Point(4, 25);
             this.tabHistorialProcesal.Name = "tabHistorialProcesal";
             this.tabHistorialProcesal.Padding = new System.Windows.Forms.Padding(3);
@@ -2131,45 +2147,221 @@
             this.tabHistorialProcesal.Text = "Historial procesal";
             this.tabHistorialProcesal.UseVisualStyleBackColor = true;
             // 
-            // dtpFechaUltimaDetencion
+            // label18
             // 
-            this.dtpFechaUltimaDetencion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaUltimaDetencion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaUltimaDetencion.Location = new System.Drawing.Point(10, 26);
-            this.dtpFechaUltimaDetencion.Name = "dtpFechaUltimaDetencion";
-            this.dtpFechaUltimaDetencion.Size = new System.Drawing.Size(170, 22);
-            this.dtpFechaUltimaDetencion.TabIndex = 213;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(4, 62);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(111, 13);
+            this.label18.TabIndex = 292;
+            this.label18.Text = "DETALLE NOVEDAD";
+            // 
+            // txtDetalleNovedad
+            // 
+            this.txtDetalleNovedad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDetalleNovedad.Enabled = false;
+            this.txtDetalleNovedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetalleNovedad.Location = new System.Drawing.Point(7, 77);
+            this.txtDetalleNovedad.Multiline = true;
+            this.txtDetalleNovedad.Name = "txtDetalleNovedad";
+            this.txtDetalleNovedad.Size = new System.Drawing.Size(518, 97);
+            this.txtDetalleNovedad.TabIndex = 291;
+            // 
+            // dtpFechaNovedad
+            // 
+            this.dtpFechaNovedad.Enabled = false;
+            this.dtpFechaNovedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaNovedad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaNovedad.Location = new System.Drawing.Point(127, 33);
+            this.dtpFechaNovedad.Name = "dtpFechaNovedad";
+            this.dtpFechaNovedad.Size = new System.Drawing.Size(116, 22);
+            this.dtpFechaNovedad.TabIndex = 213;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(6, 9);
+            this.label16.Location = new System.Drawing.Point(123, 16);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(166, 15);
+            this.label16.Size = new System.Drawing.Size(107, 15);
             this.label16.TabIndex = 214;
-            this.label16.Text = "FECHA ULTIMA DETENCION";
+            this.label16.Text = "FECHA NOVEDAD";
             // 
-            // label18
+            // label17
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(7, 51);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(43, 13);
-            this.label18.TabIndex = 292;
-            this.label18.Text = "CAUSA";
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(254, 18);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(88, 13);
+            this.label17.TabIndex = 294;
+            this.label17.Text = "TIPO NOVEDAD";
             // 
-            // txtCausa
+            // cmbTipoNovedad
             // 
-            this.txtCausa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCausa.Enabled = false;
-            this.txtCausa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCausa.Location = new System.Drawing.Point(10, 66);
-            this.txtCausa.Multiline = true;
-            this.txtCausa.Name = "txtCausa";
-            this.txtCausa.Size = new System.Drawing.Size(499, 48);
-            this.txtCausa.TabIndex = 291;
+            this.cmbTipoNovedad.Enabled = false;
+            this.cmbTipoNovedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipoNovedad.FormattingEnabled = true;
+            this.cmbTipoNovedad.Location = new System.Drawing.Point(256, 33);
+            this.cmbTipoNovedad.Name = "cmbTipoNovedad";
+            this.cmbTipoNovedad.Size = new System.Drawing.Size(242, 23);
+            this.cmbTipoNovedad.TabIndex = 293;
+            // 
+            // dtgHistorialProcesal
+            // 
+            this.dtgHistorialProcesal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgHistorialProcesal.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgHistorialProcesal.Location = new System.Drawing.Point(12, 68);
+            this.dtgHistorialProcesal.Name = "dtgHistorialProcesal";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgHistorialProcesal.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgHistorialProcesal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgHistorialProcesal.Size = new System.Drawing.Size(1033, 404);
+            this.dtgHistorialProcesal.TabIndex = 63;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.btnVerHistorial);
+            this.groupBox8.Controls.Add(this.dtgHistorialProcesal);
+            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Location = new System.Drawing.Point(10, 199);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(1051, 485);
+            this.groupBox8.TabIndex = 295;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Historial procesal";
+            // 
+            // btnNuevoHistorial
+            // 
+            this.btnNuevoHistorial.BackColor = System.Drawing.Color.White;
+            this.btnNuevoHistorial.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnNuevoHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoHistorial.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnNuevoHistorial.Location = new System.Drawing.Point(546, 18);
+            this.btnNuevoHistorial.Name = "btnNuevoHistorial";
+            this.btnNuevoHistorial.Size = new System.Drawing.Size(98, 35);
+            this.btnNuevoHistorial.TabIndex = 298;
+            this.btnNuevoHistorial.Text = "Nuevo";
+            this.btnNuevoHistorial.UseVisualStyleBackColor = false;
+            // 
+            // btnGuardarHistorial
+            // 
+            this.btnGuardarHistorial.BackColor = System.Drawing.Color.White;
+            this.btnGuardarHistorial.Enabled = false;
+            this.btnGuardarHistorial.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnGuardarHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarHistorial.ForeColor = System.Drawing.Color.Green;
+            this.btnGuardarHistorial.Location = new System.Drawing.Point(546, 99);
+            this.btnGuardarHistorial.Name = "btnGuardarHistorial";
+            this.btnGuardarHistorial.Size = new System.Drawing.Size(98, 35);
+            this.btnGuardarHistorial.TabIndex = 296;
+            this.btnGuardarHistorial.Text = "Guardar";
+            this.btnGuardarHistorial.UseVisualStyleBackColor = false;
+            // 
+            // btnCancelarHistorial
+            // 
+            this.btnCancelarHistorial.BackColor = System.Drawing.Color.White;
+            this.btnCancelarHistorial.Enabled = false;
+            this.btnCancelarHistorial.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarHistorial.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarHistorial.Location = new System.Drawing.Point(546, 139);
+            this.btnCancelarHistorial.Name = "btnCancelarHistorial";
+            this.btnCancelarHistorial.Size = new System.Drawing.Size(98, 35);
+            this.btnCancelarHistorial.TabIndex = 297;
+            this.btnCancelarHistorial.Text = "Cancelar";
+            this.btnCancelarHistorial.UseVisualStyleBackColor = false;
+            // 
+            // btnEditaHistorial
+            // 
+            this.btnEditaHistorial.BackColor = System.Drawing.Color.White;
+            this.btnEditaHistorial.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnEditaHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditaHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditaHistorial.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnEditaHistorial.Location = new System.Drawing.Point(546, 57);
+            this.btnEditaHistorial.Name = "btnEditaHistorial";
+            this.btnEditaHistorial.Size = new System.Drawing.Size(98, 35);
+            this.btnEditaHistorial.TabIndex = 299;
+            this.btnEditaHistorial.Text = "Editar";
+            this.btnEditaHistorial.UseVisualStyleBackColor = false;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(6, 18);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(78, 13);
+            this.label19.TabIndex = 301;
+            this.label19.Text = "ID HISTORIAL";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(8, 33);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(107, 21);
+            this.textBox1.TabIndex = 300;
+            // 
+            // gboxDatosHistorial
+            // 
+            this.gboxDatosHistorial.Controls.Add(this.label19);
+            this.gboxDatosHistorial.Controls.Add(this.label16);
+            this.gboxDatosHistorial.Controls.Add(this.textBox1);
+            this.gboxDatosHistorial.Controls.Add(this.dtpFechaNovedad);
+            this.gboxDatosHistorial.Controls.Add(this.btnEditaHistorial);
+            this.gboxDatosHistorial.Controls.Add(this.txtDetalleNovedad);
+            this.gboxDatosHistorial.Controls.Add(this.btnNuevoHistorial);
+            this.gboxDatosHistorial.Controls.Add(this.label18);
+            this.gboxDatosHistorial.Controls.Add(this.btnGuardarHistorial);
+            this.gboxDatosHistorial.Controls.Add(this.cmbTipoNovedad);
+            this.gboxDatosHistorial.Controls.Add(this.btnCancelarHistorial);
+            this.gboxDatosHistorial.Controls.Add(this.label17);
+            this.gboxDatosHistorial.Location = new System.Drawing.Point(10, 9);
+            this.gboxDatosHistorial.Name = "gboxDatosHistorial";
+            this.gboxDatosHistorial.Size = new System.Drawing.Size(658, 185);
+            this.gboxDatosHistorial.TabIndex = 302;
+            this.gboxDatosHistorial.TabStop = false;
+            this.gboxDatosHistorial.Text = "Datos historial";
+            // 
+            // btnVerHistorial
+            // 
+            this.btnVerHistorial.BackColor = System.Drawing.Color.White;
+            this.btnVerHistorial.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnVerHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerHistorial.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.btnVerHistorial.Location = new System.Drawing.Point(12, 22);
+            this.btnVerHistorial.Name = "btnVerHistorial";
+            this.btnVerHistorial.Size = new System.Drawing.Size(125, 40);
+            this.btnVerHistorial.TabIndex = 239;
+            this.btnVerHistorial.Text = "Ver historial";
+            this.btnVerHistorial.UseVisualStyleBackColor = false;
+            this.btnVerHistorial.Click += new System.EventHandler(this.btnVerHistorial_Click);
             // 
             // FormInternoAdministrar
             // 
@@ -2213,7 +2405,10 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.tabHistorialProcesal.ResumeLayout(false);
-            this.tabHistorialProcesal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgHistorialProcesal)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.gboxDatosHistorial.ResumeLayout(false);
+            this.gboxDatosHistorial.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2382,9 +2577,21 @@
         private System.Windows.Forms.TabPage tabEgreso;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TabPage tabHistorialProcesal;
-        private System.Windows.Forms.DateTimePicker dtpFechaUltimaDetencion;
+        private System.Windows.Forms.DateTimePicker dtpFechaNovedad;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtCausa;
+        private System.Windows.Forms.TextBox txtDetalleNovedad;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox cmbTipoNovedad;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.DataGridView dtgHistorialProcesal;
+        private System.Windows.Forms.Button btnNuevoHistorial;
+        private System.Windows.Forms.Button btnGuardarHistorial;
+        private System.Windows.Forms.Button btnCancelarHistorial;
+        private System.Windows.Forms.Button btnEditaHistorial;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox gboxDatosHistorial;
+        private System.Windows.Forms.Button btnVerHistorial;
     }
 }

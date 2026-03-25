@@ -44,6 +44,7 @@
     <Compile Include="DCaracteristicasPersonales.cs" />
     <Compile Include="DCausa.cs" />
     <Compile Include="DCiudadano.cs" />
+    <Compile Include="DHistorialProcesal.cs" />
     <Compile Include="DJuzgado.cs" />
     <Compile Include="DPrisionReclusion.cs" />
     <Compile Include="DReincidencia.cs" />
@@ -71,10 +72,12 @@
     <Compile Include="DResponseEditar.cs" />
     <Compile Include="DSexo.cs" />
     <Compile Include="DEstadoCivil.cs" />
+    <Compile Include="DTablasHistorialProcesal.cs" />
     <Compile Include="DTablasIngresoInterno.cs" />
     <Compile Include="DTamanio.cs" />
     <Compile Include="DTipoDefensor.cs" />
     <Compile Include="DTipoDelito.cs" />
+    <Compile Include="DTipoHistorialProcesal.cs" />
     <Compile Include="DTrasladoInterno.cs" />
     <Compile Include="DUsuario.cs" />
     <Compile Include="DPeloTipo.cs" />

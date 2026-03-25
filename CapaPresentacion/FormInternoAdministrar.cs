@@ -120,6 +120,23 @@ namespace CapaPresentacion
             }
             //fin Carga de combos sobre DatosFiliatorios
 
+            //Carga de combos sobre Historial Procesal
+            (DTablasHistorialProcesal tablasHistorialProcesalResponse, string errorResponseHistorialProcesal) = await nListasGenerales.ListasTablasHistorialProcesal();
+
+            if (tablasHistorialProcesalResponse == null)
+            {
+                MessageBox.Show("Advertencia al cargar los datos para historial procesal: " + errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+            else
+            {
+                cmbTipoNovedad.ValueMember = "id_tipo_historial_procesal";
+                cmbTipoNovedad.DisplayMember = "tipo_historial_procesal";
+                cmbTipoNovedad.DataSource = tablasHistorialProcesalResponse.tipos_historial_procesal;
+                                
+            }
+            //fin Carga de combos sobre Historial Procesal
+
             //CARGAR DATOS DEL INTERNO  
             tabInterno.Enabled = false;
             
@@ -1204,9 +1221,80 @@ namespace CapaPresentacion
 
         }//FIN METODO HABILITAR CONTROLES ANULAR TRASLADO..............................
 
+
         #endregion TRASLADOS
         //FIN REGION TRASLADOS....................................................................
         //........................................................................................
+        private void btnVerHistorial_Click(object sender, EventArgs e)
+        {
+            this.CargarDataGridHistorial();
+        }
 
+        //METODO PARA OBTENER LA LISTA DE CAUSAS Y CARGARLO EN UN DATA GRID 
+        async private void CargarDataGridHistorial()
+        {
+            NHistorialPRocesal nHistorialProcesal = new NHistorialPRocesal();
+
+            if (txtIdIngresoVer.Text == null || txtIdIngresoVer.Text == "")
+            {
+                MessageBox.Show("El interno no tiene un ingreso valido", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            (List<DHistorialProcesal> listaHistorialProcesal, string errorResponse) = await nHistorialProcesal.ListaXIngreso(Convert.ToInt32(txtIdIngresoVer.Text));
+
+            if (listaHistorialProcesal == null)
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            var datosfiltrados = listaHistorialProcesal
+                .Select(c => new
+                {
+                    Id = c.id_historial_procesal,
+                    Fecha = c.fecha,
+                    TipoHistorial = c.tipo_historial_procesal.tipo_historial_procesal,
+                    Detalle = c.detalle,
+                    Motivo = c.motivo,
+                    FechaCarga = c.fecha_carga,
+                    OrganismoCarga = c.organismo.organismo,
+                    Usuario = c.usuario.apellido + " " + c.usuario.nombre
+
+                })
+                .ToList();
+
+            dtgHistorialProcesal.DataSource = datosfiltrados;
+
+            if (listaHistorialProcesal.Count == 0)
+            {
+                MessageBox.Show("No se encontraron registros.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                dtgHistorialProcesal.Columns[0].Width = 50;
+                dtgHistorialProcesal.Columns[1].Width = 100;
+                dtgHistorialProcesal.Columns[2].Width = 150;
+                dtgHistorialProcesal.Columns[3].Width = 350;
+                dtgHistorialProcesal.Columns[4].Width = 150;
+                dtgHistorialProcesal.Columns[5].Width = 100;
+                dtgHistorialProcesal.Columns[6].Width = 150;
+            }
+
+            //limpiar formulario
+            //txtIdTraslado.Text = string.Empty;
+            //txtOrganismoOrigenTraslado.Text = string.Empty;
+            //txtFechaTraslado.Text = string.Empty;
+            //txtDetalleTraslado.Text = string.Empty;
+            //txtOrganismoDestinoTraslado.Text = string.Empty;
+            //txtFechaIngresoTraslado.Text = string.Empty;
+            //txtEstadoTraslado.Text = string.Empty;
+            //txtObsTraslado.Text = string.Empty;
+            //txtFechaCargaTraslado.Text = string.Empty;
+            //txtHoraCargaTraslado.Text = string.Empty;
+            //txtUsuarioCargaTraslado.Text = string.Empty;
+
+        } //FIN METODO PARA OBTENER LA LISTA DE CAUSAS EN UN DATA GRID ...........
     }
 }

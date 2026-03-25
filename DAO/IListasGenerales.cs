@@ -14,5 +14,6 @@ namespace DAO
         Task<(DDatosFiliatorios, string error)> ListasDatosFiliatorios();
         Task<(DTablasIngresoInterno, string error)> ListasTablasUngresoInterno();
         Task<(DTablasCausa, string error)> ListasTablasCausa();
+        Task<(DTablasHistorialProcesal, string error)> ListasTablasHistorialProcesal();
     }
 }
