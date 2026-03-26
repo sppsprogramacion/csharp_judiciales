@@ -3,6 +3,8 @@ using CapaNegocio;
 using CapaPresentacion.FuncionesGenerales;
 using CapaPresentacion.Validaciones.CausaAdministrar.Datos;
 using CapaPresentacion.Validaciones.CausaAdministrar.Validacon;
+using CapaPresentacion.Validaciones.HistorialProcesalAdministrar.Datos;
+using CapaPresentacion.Validaciones.HistorialProcesalAdministrar.Validacion;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -99,34 +101,26 @@ namespace CapaPresentacion
             errorProvider.Clear();
 
             //validacion de formulario
-            //var datosformulario = new CausaAdministrarDatos
-            //{
-            //    txtCausa = txtCausa.Text,
-            //    cmbPrisionReclusion = cmbPrisionReclusion.SelectedValue?.ToString() ?? string.Empty,
-            //    txtExpediente = txtExpediente.Text,
-            //    cmbTipoDelito = cmbTipoDelito.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbEstadoProcesal = cmbEstadoProcesal.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbJurisdiccion = cmbJurisdiccion.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbJuzgado = cmbJuzgado.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbOtroJuzgado = cmbOtroJuzgado.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbReincidencia = cmbReincidencia.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbTipoDefensor = cmbTipoDefensor.SelectedValue?.ToString() ?? string.Empty,
-            //    txtAbogado = txtAbogado.Text
-            //};
+            var datosformulario = new HistorialProcesalAdministrarDatos
+            {
+                cmbTipoNovedad = cmbTipoNovedad.SelectedValue?.ToString() ?? string.Empty,
+                txtDetalleNovedad = txtDetalleNovedad.Text,
+                
+            };
 
-            //var validator = new CausaEditarDatosGeneralesValidation();
-            //var result = validator.Validate(datosformulario);
+            var validator = new HistorialProcesalAdministrarValidation();
+            var result = validator.Validate(datosformulario);
 
-            //if (!result.IsValid)
-            //{
-            //    MessageBox.Show("Complete correctamente los campos del formulario", "judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    foreach (var failure in result.Errors)
-            //    {
-            //        Control control = Controls.Find(failure.PropertyName, true)[0];
-            //        errorProvider.SetError(control, failure.ErrorMessage);
-            //    }
-            //    return;
-            //}
+            if (!result.IsValid)
+            {
+                MessageBox.Show("Complete correctamente los campos del formulario", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                foreach (var failure in result.Errors)
+                {
+                    Control control = Controls.Find(failure.PropertyName, true)[0];
+                    errorProvider.SetError(control, failure.ErrorMessage);
+                }
+                return;
+            }
             //fin validar formulario
 
             var data = new

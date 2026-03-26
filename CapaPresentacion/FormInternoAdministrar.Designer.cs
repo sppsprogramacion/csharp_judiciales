@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInternoAdministrar));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabInterno = new System.Windows.Forms.TabControl();
             this.tabDatosPrincipales = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -96,6 +96,8 @@
             this.label89 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
             this.cmbDepartamentoNacimiento = new System.Windows.Forms.ComboBox();
+            this.pictureFotoPD = new System.Windows.Forms.PictureBox();
+            this.pictureFoto = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEditarDatosPrincipales = new System.Windows.Forms.Button();
             this.btnGuardarEditarDatosPrincipales = new System.Windows.Forms.Button();
@@ -112,6 +114,7 @@
             this.txtProntuario = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtIdInterno = new System.Windows.Forms.TextBox();
+            this.pictureFotoPI = new System.Windows.Forms.PictureBox();
             this.tabDatosIngreso = new System.Windows.Forms.TabPage();
             this.btnNuevaCausa = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -153,10 +156,10 @@
             this.dtpFechaAlojamiento = new System.Windows.Forms.DateTimePicker();
             this.label77 = new System.Windows.Forms.Label();
             this.tabHistorialProcesal = new System.Windows.Forms.TabPage();
-            this.btnNuevoHistorial = new System.Windows.Forms.Button();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.btnVerHistorial = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.dtgHistorialProcesal = new System.Windows.Forms.DataGridView();
+            this.btnNuevoHistorial = new System.Windows.Forms.Button();
             this.tabProgresividad = new System.Windows.Forms.TabPage();
             this.tabTraslados = new System.Windows.Forms.TabPage();
             this.btnVerTraslados = new System.Windows.Forms.Button();
@@ -194,15 +197,15 @@
             this.txtIdTraslado = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.tabEgreso = new System.Windows.Forms.TabPage();
-            this.pictureFotoPD = new System.Windows.Forms.PictureBox();
-            this.pictureFoto = new System.Windows.Forms.PictureBox();
-            this.pictureFotoPI = new System.Windows.Forms.PictureBox();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox15.SuspendLayout();
             this.groupBox14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPI)).BeginInit();
             this.tabDatosIngreso.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCausas)).BeginInit();
@@ -217,9 +220,6 @@
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTraslados)).BeginInit();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPI)).BeginInit();
             this.SuspendLayout();
             // 
             // tabInterno
@@ -999,6 +999,30 @@
             this.cmbDepartamentoNacimiento.Size = new System.Drawing.Size(240, 23);
             this.cmbDepartamentoNacimiento.TabIndex = 206;
             // 
+            // pictureFotoPD
+            // 
+            this.pictureFotoPD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureFotoPD.Image = ((System.Drawing.Image)(resources.GetObject("pictureFotoPD.Image")));
+            this.pictureFotoPD.Location = new System.Drawing.Point(880, 37);
+            this.pictureFotoPD.Name = "pictureFotoPD";
+            this.pictureFotoPD.Size = new System.Drawing.Size(147, 165);
+            this.pictureFotoPD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureFotoPD.TabIndex = 70;
+            this.pictureFotoPD.TabStop = false;
+            this.pictureFotoPD.DoubleClick += new System.EventHandler(this.pictureFotoPD_DoubleClick_1);
+            // 
+            // pictureFoto
+            // 
+            this.pictureFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureFoto.Image = ((System.Drawing.Image)(resources.GetObject("pictureFoto.Image")));
+            this.pictureFoto.Location = new System.Drawing.Point(705, 36);
+            this.pictureFoto.Name = "pictureFoto";
+            this.pictureFoto.Size = new System.Drawing.Size(147, 165);
+            this.pictureFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureFoto.TabIndex = 69;
+            this.pictureFoto.TabStop = false;
+            this.pictureFoto.DoubleClick += new System.EventHandler(this.pictureFoto_DoubleClick);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnEditarDatosPrincipales);
@@ -1187,6 +1211,18 @@
             this.txtIdInterno.ReadOnly = true;
             this.txtIdInterno.Size = new System.Drawing.Size(140, 21);
             this.txtIdInterno.TabIndex = 54;
+            // 
+            // pictureFotoPI
+            // 
+            this.pictureFotoPI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureFotoPI.Image = ((System.Drawing.Image)(resources.GetObject("pictureFotoPI.Image")));
+            this.pictureFotoPI.Location = new System.Drawing.Point(530, 37);
+            this.pictureFotoPI.Name = "pictureFotoPI";
+            this.pictureFotoPI.Size = new System.Drawing.Size(147, 165);
+            this.pictureFotoPI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureFotoPI.TabIndex = 56;
+            this.pictureFotoPI.TabStop = false;
+            this.pictureFotoPI.DoubleClick += new System.EventHandler(this.pictureFotoPI_DoubleClick);
             // 
             // tabDatosIngreso
             // 
@@ -1669,32 +1705,6 @@
             this.tabHistorialProcesal.Text = "Historial procesal";
             this.tabHistorialProcesal.UseVisualStyleBackColor = true;
             // 
-            // btnNuevoHistorial
-            // 
-            this.btnNuevoHistorial.BackColor = System.Drawing.Color.White;
-            this.btnNuevoHistorial.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.btnNuevoHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoHistorial.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnNuevoHistorial.Location = new System.Drawing.Point(155, 11);
-            this.btnNuevoHistorial.Name = "btnNuevoHistorial";
-            this.btnNuevoHistorial.Size = new System.Drawing.Size(125, 40);
-            this.btnNuevoHistorial.TabIndex = 298;
-            this.btnNuevoHistorial.Text = "Nuevo";
-            this.btnNuevoHistorial.UseVisualStyleBackColor = false;
-            this.btnNuevoHistorial.Click += new System.EventHandler(this.btnNuevoHistorial_Click);
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.dtgHistorialProcesal);
-            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.Location = new System.Drawing.Point(10, 63);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(1051, 620);
-            this.groupBox8.TabIndex = 295;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Historial procesal";
-            // 
             // btnVerHistorial
             // 
             this.btnVerHistorial.BackColor = System.Drawing.Color.White;
@@ -1710,19 +1720,45 @@
             this.btnVerHistorial.UseVisualStyleBackColor = false;
             this.btnVerHistorial.Click += new System.EventHandler(this.btnVerHistorial_Click);
             // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.dtgHistorialProcesal);
+            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Location = new System.Drawing.Point(10, 63);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(1051, 620);
+            this.groupBox8.TabIndex = 295;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Historial procesal";
+            // 
             // dtgHistorialProcesal
             // 
             this.dtgHistorialProcesal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgHistorialProcesal.Location = new System.Drawing.Point(12, 21);
             this.dtgHistorialProcesal.Name = "dtgHistorialProcesal";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgHistorialProcesal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgHistorialProcesal.Size = new System.Drawing.Size(1033, 588);
             this.dtgHistorialProcesal.TabIndex = 63;
             this.dtgHistorialProcesal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtgHistorialProcesal_KeyDown);
+            // 
+            // btnNuevoHistorial
+            // 
+            this.btnNuevoHistorial.BackColor = System.Drawing.Color.White;
+            this.btnNuevoHistorial.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnNuevoHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoHistorial.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnNuevoHistorial.Location = new System.Drawing.Point(155, 11);
+            this.btnNuevoHistorial.Name = "btnNuevoHistorial";
+            this.btnNuevoHistorial.Size = new System.Drawing.Size(125, 40);
+            this.btnNuevoHistorial.TabIndex = 298;
+            this.btnNuevoHistorial.Text = "Nuevo";
+            this.btnNuevoHistorial.UseVisualStyleBackColor = false;
+            this.btnNuevoHistorial.Click += new System.EventHandler(this.btnNuevoHistorial_Click);
             // 
             // tabProgresividad
             // 
@@ -2152,42 +2188,6 @@
             this.tabEgreso.Text = "Egreso";
             this.tabEgreso.UseVisualStyleBackColor = true;
             // 
-            // pictureFotoPD
-            // 
-            this.pictureFotoPD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureFotoPD.Image = ((System.Drawing.Image)(resources.GetObject("pictureFotoPD.Image")));
-            this.pictureFotoPD.Location = new System.Drawing.Point(880, 37);
-            this.pictureFotoPD.Name = "pictureFotoPD";
-            this.pictureFotoPD.Size = new System.Drawing.Size(147, 165);
-            this.pictureFotoPD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureFotoPD.TabIndex = 70;
-            this.pictureFotoPD.TabStop = false;
-            this.pictureFotoPD.DoubleClick += new System.EventHandler(this.pictureFotoPD_DoubleClick_1);
-            // 
-            // pictureFoto
-            // 
-            this.pictureFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureFoto.Image = ((System.Drawing.Image)(resources.GetObject("pictureFoto.Image")));
-            this.pictureFoto.Location = new System.Drawing.Point(705, 36);
-            this.pictureFoto.Name = "pictureFoto";
-            this.pictureFoto.Size = new System.Drawing.Size(147, 165);
-            this.pictureFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureFoto.TabIndex = 69;
-            this.pictureFoto.TabStop = false;
-            this.pictureFoto.DoubleClick += new System.EventHandler(this.pictureFoto_DoubleClick);
-            // 
-            // pictureFotoPI
-            // 
-            this.pictureFotoPI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureFotoPI.Image = ((System.Drawing.Image)(resources.GetObject("pictureFotoPI.Image")));
-            this.pictureFotoPI.Location = new System.Drawing.Point(530, 37);
-            this.pictureFotoPI.Name = "pictureFotoPI";
-            this.pictureFotoPI.Size = new System.Drawing.Size(147, 165);
-            this.pictureFotoPI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureFotoPI.TabIndex = 56;
-            this.pictureFotoPI.TabStop = false;
-            this.pictureFotoPI.DoubleClick += new System.EventHandler(this.pictureFotoPI_DoubleClick);
-            // 
             // FormInternoAdministrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2197,6 +2197,8 @@
             this.ClientSize = new System.Drawing.Size(1094, 741);
             this.Controls.Add(this.tabInterno);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormInternoAdministrar";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -2210,8 +2212,11 @@
             this.groupBox15.PerformLayout();
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPI)).EndInit();
             this.tabDatosIngreso.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCausas)).EndInit();
@@ -2229,9 +2234,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTraslados)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPI)).EndInit();
             this.ResumeLayout(false);
 
         }

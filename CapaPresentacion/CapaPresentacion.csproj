@@ -179,6 +179,10 @@
     <Compile Include="Validaciones\CausaAdministrar\Validacon\CausaEstablecerCondenaValidation.cs" />
     <Compile Include="Validaciones\CausaNueva\Datos\CausaNuevaDatos.cs" />
     <Compile Include="Validaciones\CausaNueva\Validacion\CausaNuevaValidation.cs" />
+    <Compile Include="Validaciones\HistorialProcesalAdministrar\Datos\HistorialProcesalAdministrarDatos.cs" />
+    <Compile Include="Validaciones\HistorialProcesalAdministrar\Validacion\HistorialProcesalAdministrarValidation.cs" />
+    <Compile Include="Validaciones\HistorialProcesalNuevo\Datos\HistorialProcesalNuevoDatos.cs" />
+    <Compile Include="Validaciones\HistorialProcesalNuevo\Validacion\HistorialProcesalNuevoValidation.cs" />
     <Compile Include="Validaciones\InternoAdministrar\Datos\InternoAdministarDatos.cs" />
     <Compile Include="Validaciones\InternoAdministrar\Validacion\EditarIngresoValidation.cs" />
     <Compile Include="Validaciones\InternoAdministrar\Validacion\InternoEditarCaracteristicasPrincipalesValidation.cs" />

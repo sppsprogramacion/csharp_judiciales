@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHistorialProcesalNuevo));
             this.gboxDatosHistorial = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtIdIngreso = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.dtpFechaNovedad = new System.Windows.Forms.DateTimePicker();
             this.txtDetalleNovedad = new System.Windows.Forms.TextBox();
@@ -38,8 +40,6 @@
             this.cmbTipoNovedad = new System.Windows.Forms.ComboBox();
             this.btnCancelarHistorial = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtIdIngreso = new System.Windows.Forms.TextBox();
             this.gboxDatosHistorial.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,10 +57,30 @@
             this.gboxDatosHistorial.Controls.Add(this.label17);
             this.gboxDatosHistorial.Location = new System.Drawing.Point(9, 4);
             this.gboxDatosHistorial.Name = "gboxDatosHistorial";
-            this.gboxDatosHistorial.Size = new System.Drawing.Size(535, 271);
+            this.gboxDatosHistorial.Size = new System.Drawing.Size(540, 271);
             this.gboxDatosHistorial.TabIndex = 303;
             this.gboxDatosHistorial.TabStop = false;
             this.gboxDatosHistorial.Text = "Nueva";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 15);
+            this.label3.TabIndex = 299;
+            this.label3.Text = "ID INGRESO";
+            // 
+            // txtIdIngreso
+            // 
+            this.txtIdIngreso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdIngreso.Enabled = false;
+            this.txtIdIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdIngreso.Location = new System.Drawing.Point(9, 33);
+            this.txtIdIngreso.Name = "txtIdIngreso";
+            this.txtIdIngreso.Size = new System.Drawing.Size(134, 21);
+            this.txtIdIngreso.TabIndex = 298;
             // 
             // label16
             // 
@@ -150,31 +170,11 @@
             this.label17.TabIndex = 294;
             this.label17.Text = "TIPO NOVEDAD";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 15);
-            this.label3.TabIndex = 299;
-            this.label3.Text = "ID INGRESO";
-            // 
-            // txtIdIngreso
-            // 
-            this.txtIdIngreso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdIngreso.Enabled = false;
-            this.txtIdIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdIngreso.Location = new System.Drawing.Point(9, 33);
-            this.txtIdIngreso.Name = "txtIdIngreso";
-            this.txtIdIngreso.Size = new System.Drawing.Size(134, 21);
-            this.txtIdIngreso.TabIndex = 298;
-            // 
             // FormHistorialProcesalNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 287);
+            this.ClientSize = new System.Drawing.Size(559, 287);
             this.Controls.Add(this.gboxDatosHistorial);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

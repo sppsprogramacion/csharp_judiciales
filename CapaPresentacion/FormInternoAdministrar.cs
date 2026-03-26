@@ -987,20 +987,9 @@ namespace CapaPresentacion
             {
 
                 dtgvCausas.Columns[1].Width = 200;
+                dtgvCausas.Focus();
             }
-
-            //limpiar formulario
-            //txtIdTraslado.Text = string.Empty;
-            //txtOrganismoOrigenTraslado.Text = string.Empty;
-            //txtFechaTraslado.Text = string.Empty;
-            //txtDetalleTraslado.Text = string.Empty;
-            //txtOrganismoDestinoTraslado.Text = string.Empty;
-            //txtFechaIngresoTraslado.Text = string.Empty;
-            //txtEstadoTraslado.Text = string.Empty;
-            //txtObsTraslado.Text = string.Empty;
-            //txtFechaCargaTraslado.Text = string.Empty;
-            //txtHoraCargaTraslado.Text = string.Empty;
-            //txtUsuarioCargaTraslado.Text = string.Empty;
+                        
 
         } //FIN METODO PARA OBTENER LA LISTA DE CAUSAS EN UN DATA GRID ...........
 
@@ -1266,6 +1255,8 @@ namespace CapaPresentacion
                 dtgHistorialProcesal.Columns[4].Width = 150;
                 dtgHistorialProcesal.Columns[5].Width = 100;
                 dtgHistorialProcesal.Columns[6].Width = 150;
+
+                dtgHistorialProcesal.Focus();
             }
             
         } //FIN METODO PARA OBTENER LA LISTA DE CAUSAS EN UN DATA GRID ...........

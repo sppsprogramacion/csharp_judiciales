@@ -39,7 +39,6 @@
             this.label26 = new System.Windows.Forms.Label();
             this.dtpFechaNovedad = new System.Windows.Forms.DateTimePicker();
             this.txtUsuarioCarga = new System.Windows.Forms.TextBox();
-            this.btnEditaHistorial = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.txtDetalleNovedad = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -61,7 +60,6 @@
             this.gboxDatosHistorial.Controls.Add(this.label26);
             this.gboxDatosHistorial.Controls.Add(this.dtpFechaNovedad);
             this.gboxDatosHistorial.Controls.Add(this.txtUsuarioCarga);
-            this.gboxDatosHistorial.Controls.Add(this.btnEditaHistorial);
             this.gboxDatosHistorial.Controls.Add(this.label25);
             this.gboxDatosHistorial.Controls.Add(this.txtDetalleNovedad);
             this.gboxDatosHistorial.Controls.Add(this.label18);
@@ -71,7 +69,7 @@
             this.gboxDatosHistorial.Controls.Add(this.label17);
             this.gboxDatosHistorial.Location = new System.Drawing.Point(9, 4);
             this.gboxDatosHistorial.Name = "gboxDatosHistorial";
-            this.gboxDatosHistorial.Size = new System.Drawing.Size(575, 285);
+            this.gboxDatosHistorial.Size = new System.Drawing.Size(580, 285);
             this.gboxDatosHistorial.TabIndex = 303;
             this.gboxDatosHistorial.TabStop = false;
             this.gboxDatosHistorial.Text = "Datos historial";
@@ -163,20 +161,6 @@
             this.txtUsuarioCarga.Size = new System.Drawing.Size(193, 21);
             this.txtUsuarioCarga.TabIndex = 304;
             // 
-            // btnEditaHistorial
-            // 
-            this.btnEditaHistorial.BackColor = System.Drawing.Color.White;
-            this.btnEditaHistorial.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.btnEditaHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditaHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditaHistorial.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnEditaHistorial.Location = new System.Drawing.Point(248, 235);
-            this.btnEditaHistorial.Name = "btnEditaHistorial";
-            this.btnEditaHistorial.Size = new System.Drawing.Size(98, 35);
-            this.btnEditaHistorial.TabIndex = 299;
-            this.btnEditaHistorial.Text = "Editar";
-            this.btnEditaHistorial.UseVisualStyleBackColor = false;
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -260,9 +244,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 298);
+            this.ClientSize = new System.Drawing.Size(604, 298);
             this.Controls.Add(this.gboxDatosHistorial);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormHistorialProcesalAdministrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -281,7 +266,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtIdHistorial;
         private System.Windows.Forms.DateTimePicker dtpFechaNovedad;
-        private System.Windows.Forms.Button btnEditaHistorial;
         private System.Windows.Forms.TextBox txtDetalleNovedad;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnGuardarHistorial;

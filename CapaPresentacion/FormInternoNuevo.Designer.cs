@@ -270,7 +270,7 @@
             // 
             this.cmbZonaResidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbZonaResidencia.FormattingEnabled = true;
-            this.cmbZonaResidencia.Location = new System.Drawing.Point(336, 444);
+            this.cmbZonaResidencia.Location = new System.Drawing.Point(180, 444);
             this.cmbZonaResidencia.Name = "cmbZonaResidencia";
             this.cmbZonaResidencia.Size = new System.Drawing.Size(130, 23);
             this.cmbZonaResidencia.TabIndex = 20;
@@ -279,7 +279,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(333, 427);
+            this.label23.Location = new System.Drawing.Point(177, 427);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(114, 15);
             this.label23.TabIndex = 149;
@@ -543,7 +543,7 @@
             // 
             this.cmbEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstadoCivil.FormattingEnabled = true;
-            this.cmbEstadoCivil.Location = new System.Drawing.Point(165, 444);
+            this.cmbEstadoCivil.Location = new System.Drawing.Point(9, 444);
             this.cmbEstadoCivil.Name = "cmbEstadoCivil";
             this.cmbEstadoCivil.Size = new System.Drawing.Size(150, 23);
             this.cmbEstadoCivil.TabIndex = 19;
@@ -552,7 +552,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(162, 427);
+            this.label6.Location = new System.Drawing.Point(6, 427);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 15);
             this.label6.TabIndex = 122;
@@ -562,7 +562,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(484, 427);
+            this.label3.Location = new System.Drawing.Point(328, 427);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 15);
             this.label3.TabIndex = 120;
@@ -572,7 +572,7 @@
             // 
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(487, 444);
+            this.txtTelefono.Location = new System.Drawing.Point(331, 444);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(140, 21);
             this.txtTelefono.TabIndex = 21;
@@ -660,7 +660,7 @@
             // 
             this.dtpFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(11, 444);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(494, 401);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(133, 22);
             this.dtpFechaNacimiento.TabIndex = 18;
@@ -669,7 +669,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(7, 427);
+            this.label18.Location = new System.Drawing.Point(490, 384);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(123, 15);
             this.label18.TabIndex = 113;
