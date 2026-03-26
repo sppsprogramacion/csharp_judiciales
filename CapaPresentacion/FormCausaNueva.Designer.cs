@@ -385,6 +385,8 @@
             this.ClientSize = new System.Drawing.Size(553, 501);
             this.Controls.Add(this.groupNueva);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormCausaNueva";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -105,6 +105,18 @@
     <Compile Include="FormCausaNueva.Designer.cs">
       <DependentUpon>FormCausaNueva.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormHistorialProcesalAdministrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHistorialProcesalAdministrar.Designer.cs">
+      <DependentUpon>FormHistorialProcesalAdministrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHistorialProcesalNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHistorialProcesalNuevo.Designer.cs">
+      <DependentUpon>FormHistorialProcesalNuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInternoAdministrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +201,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCausaNueva.resx">
       <DependentUpon>FormCausaNueva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHistorialProcesalAdministrar.resx">
+      <DependentUpon>FormHistorialProcesalAdministrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHistorialProcesalNuevo.resx">
+      <DependentUpon>FormHistorialProcesalNuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInternoAdministrar.resx">
       <DependentUpon>FormInternoAdministrar.cs</DependentUpon>

@@ -119,23 +119,7 @@ namespace CapaPresentacion
                 cmbZonaResidencia.DataSource = datosFiliatorios.zona_residencia;
             }
             //fin Carga de combos sobre DatosFiliatorios
-
-            //Carga de combos sobre Historial Procesal
-            (DTablasHistorialProcesal tablasHistorialProcesalResponse, string errorResponseHistorialProcesal) = await nListasGenerales.ListasTablasHistorialProcesal();
-
-            if (tablasHistorialProcesalResponse == null)
-            {
-                MessageBox.Show("Advertencia al cargar los datos para historial procesal: " + errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-            }
-            else
-            {
-                cmbTipoNovedad.ValueMember = "id_tipo_historial_procesal";
-                cmbTipoNovedad.DisplayMember = "tipo_historial_procesal";
-                cmbTipoNovedad.DataSource = tablasHistorialProcesalResponse.tipos_historial_procesal;
-                                
-            }
-            //fin Carga de combos sobre Historial Procesal
+                       
 
             //CARGAR DATOS DEL INTERNO  
             tabInterno.Enabled = false;
@@ -1227,7 +1211,9 @@ namespace CapaPresentacion
         //........................................................................................
         private void btnVerHistorial_Click(object sender, EventArgs e)
         {
+            tabInterno.Enabled = false;
             this.CargarDataGridHistorial();
+            tabInterno.Enabled = true;
         }
 
         //METODO PARA OBTENER LA LISTA DE CAUSAS Y CARGARLO EN UN DATA GRID 
@@ -1281,20 +1267,73 @@ namespace CapaPresentacion
                 dtgHistorialProcesal.Columns[5].Width = 100;
                 dtgHistorialProcesal.Columns[6].Width = 150;
             }
-
-            //limpiar formulario
-            //txtIdTraslado.Text = string.Empty;
-            //txtOrganismoOrigenTraslado.Text = string.Empty;
-            //txtFechaTraslado.Text = string.Empty;
-            //txtDetalleTraslado.Text = string.Empty;
-            //txtOrganismoDestinoTraslado.Text = string.Empty;
-            //txtFechaIngresoTraslado.Text = string.Empty;
-            //txtEstadoTraslado.Text = string.Empty;
-            //txtObsTraslado.Text = string.Empty;
-            //txtFechaCargaTraslado.Text = string.Empty;
-            //txtHoraCargaTraslado.Text = string.Empty;
-            //txtUsuarioCargaTraslado.Text = string.Empty;
-
+            
         } //FIN METODO PARA OBTENER LA LISTA DE CAUSAS EN UN DATA GRID ...........
+
+        private void btnNuevoHistorial_Click(object sender, EventArgs e)
+        {
+            if (txtIdIngresoVer.Text == null || txtIdIngresoVer.Text == "")
+            {
+                MessageBox.Show("El interno no tiene un ingreso valido", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (FormHistorialProcesalNuevo formHistorialProcesalNuevo = new FormHistorialProcesalNuevo(Convert.ToInt32(txtIdIngresoVer.Text)))
+            {
+
+                // Aquí se abre el FormularioB
+                if (formHistorialProcesalNuevo.ShowDialog() == DialogResult.OK)
+                {
+                    // Recién después de cerrar FormularioB, puedo leer el dato
+                    bool isHistorialCreado = formHistorialProcesalNuevo.isCreadoHistorialGlobal;
+                    if (isHistorialCreado)
+                    {
+
+                        tabInterno.Enabled = false;
+                        this.CargarDataGridHistorial();
+                        tabInterno.Enabled = true;
+                    }
+                }
+            }
+        }
+
+        private void dtgHistorialProcesal_KeyDown(object sender, KeyEventArgs e)
+        {
+            int idHistorial = 0;
+            //AL PRESIONAR ENTER MOSTRAR EL TRAMITE
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+
+                idHistorial = Convert.ToInt32(dtgHistorialProcesal.CurrentRow.Cells["Id"].Value.ToString());
+
+                if (dtgHistorialProcesal.SelectedRows.Count > 0)
+                {
+                    if (idHistorial > 0)
+                    {
+                        using (FormHistorialProcesalAdministrar formHistorialProcesalAdministrar = new FormHistorialProcesalAdministrar(Convert.ToInt32(idHistorial)))
+                        {
+
+                            // Aquí se abre el FormularioB
+                            if (formHistorialProcesalAdministrar.ShowDialog() == DialogResult.OK)
+                            {
+                                // Recién después de cerrar FormularioB, puedo leer el dato
+                                bool isHistorialModificado = formHistorialProcesalAdministrar.isModificadoHistorialGlobal;
+                                if (isHistorialModificado)
+                                {
+                                    tabInterno.Enabled = false;
+                                    this.CargarDataGridHistorial();
+                                    tabInterno.Enabled = true;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe seleccionar una causa.");
+                    }
+                }
+            }
+        }
     }
 }

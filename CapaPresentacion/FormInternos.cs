@@ -158,6 +158,8 @@ namespace CapaPresentacion
                 dtgvInternos.Columns[2].Width = 200;
                 dtgvInternos.Columns[3].Width = 90;
                 dtgvInternos.Columns[4].Width = 90;
+
+                dtgvInternos.Focus();
             }
         }
 

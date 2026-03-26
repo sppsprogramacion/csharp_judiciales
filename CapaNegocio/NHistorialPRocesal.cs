@@ -54,5 +54,17 @@ namespace CapaNegocio
             return (historialProcesalResponse, errorResponse);
         }
         //FIN RETORNAR  XID HISTORIAL.......................................................................
+
+        //MODIFICAR HISTORIAL
+        public async Task<(bool, string error)> EditarHistorial(int idHistorial, string dataHistorial)
+        {
+            IHistorialProcesalDao historialProcesalDao = new HistorialProcesalDaoImplement();
+
+            (bool historialResponse, string error) = await historialProcesalDao.EditarHistorial(idHistorial, dataHistorial);
+
+            return (historialResponse, error);
+        }
+        //FIN MODIFICAR HISTORIAL........................................................................
+
     }
 }

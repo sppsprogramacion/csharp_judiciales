@@ -207,9 +207,58 @@ namespace DAOImplement
         //FIN LISTA HISTORIAL PROCESAL POR ID_INGRESO Y POR ID_TIPO_HISTORIAL
 
 
-        public Task<(bool, string error)> EditarHistorial(int idCausa, string causa)
+        public async Task<(bool, string error)> EditarHistorial(int idHistorial, string historial)
         {
-            throw new NotImplementedException();
+            string token = SessionManager.Token; // Aquí pones tu token real
+
+            try
+            {
+                // Agregar el token en los headers
+                this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                // Crear el contenido de la solicitud HTTP
+                StringContent content = new StringContent(historial, Encoding.UTF8, "application/json");
+
+                // Enviar la solicitud HTTP POST
+                HttpResponseMessage httpResponse = await this.httpClient.PutAsync(url_base + "/historial-procesal/" + idHistorial, content);
+
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var contentRespuesta = await httpResponse.Content.ReadAsStringAsync();
+                    var dataRespuesta = JsonConvert.DeserializeObject<DResponseEditar>(contentRespuesta);
+
+                    if (dataRespuesta.Affected > 0)
+                    {
+                        return (true, null);
+                    }
+                    else
+                    {
+                        return (false, "No se pudo modificar el historial");
+                    }
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (false, $"Error al modificar el historial: {mensaje}");
+                }
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                // Capturar errores de la solicitud HTTP
+                return (false, $"Error de conexión: {httpRequestException.Message}");
+            }
+            catch (JsonException jsonException)
+            {
+                // Capturar errores en la serialización/deserialización de JSON                
+                return (false, $"Error inesperado");
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores (log, mensaje al usuario, etc.)
+                Console.WriteLine($"Error: {ex.Message}");
+                return (false, $"Error inesperado: {ex.Message}");
+            }
         }
 
         public Task<(bool, string error)> AnularHistorial(int idCausa, string dataAnular)
