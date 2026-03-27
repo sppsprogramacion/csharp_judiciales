@@ -96,14 +96,22 @@ namespace CapaPresentacion.Validaciones.NuevoInterno.Validacion
                 .NotNull().WithMessage("Debe ingresar un valor para estado civil.")
                 .NotEmpty().WithMessage("Debe ingresar un valor para estado civil.")
                 .Must(BeAnInteger).WithMessage("El departamento nacimiento debe ser valido.");
-            RuleFor(x => x.cmbZonaResidencia)
+            RuleFor(x => x.cmbNivelEducacion)
                 .Cascade(CascadeMode.Stop)
-                .NotNull().WithMessage("Debe ingresar un valor para zona residencia.")
-                .NotEmpty().WithMessage("Debe ingresar un valor para zona residencia.");
-            RuleFor(x => x.txtTelefono)
+                .NotNull().WithMessage("Debe ingresar un valor para nivel educacion.")
+                .NotEmpty().WithMessage("Debe ingresar un valor para nivel educacion.");
+            RuleFor(x => x.cmbReligion)
                 .Cascade(CascadeMode.Stop)
-                .NotEmpty().WithMessage("El telefono es obligatorio.")
-                .Length(1, 100).WithMessage("El telefono debe tener maximo 100 caracteres.");
+                .NotNull().WithMessage("Debe ingresar un valor para religion.")
+                .NotEmpty().WithMessage("Debe ingresar un valor para religion.");
+            RuleFor(x => x.cmbUltimaOcupacion)
+                .Cascade(CascadeMode.Stop)
+                .NotNull().WithMessage("Debe ingresar un valor para ultima ocupacion.")
+                .NotEmpty().WithMessage("Debe ingresar un valor para ultima ocupacion.");
+            RuleFor(x => x.txtProfesion)
+                .Cascade(CascadeMode.Stop)
+                .NotEmpty().WithMessage("La profesion es obligatorio.")
+                .Length(1, 100).WithMessage("La profesion debe tener maximo 100 caracteres.");
             RuleFor(x => x.txtPadre)
                 .Cascade(CascadeMode.Stop)
                 .MaximumLength(200).WithMessage("padre debe tener maximo 200 caracteres.");

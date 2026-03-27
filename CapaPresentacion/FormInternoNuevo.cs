@@ -92,7 +92,7 @@ namespace CapaPresentacion
 
             if (datosFiliatorios == null)
             {
-                MessageBox.Show("Advertencia al cargar los datos filiatorios: " + errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Advertencia al cargar los datos filiatorios: " + errorResponseDatosFiliatorios, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             }
             else
@@ -107,11 +107,20 @@ namespace CapaPresentacion
                 cmbEstadoCivil.DisplayMember = "estado_civil";
                 cmbEstadoCivil.DataSource = datosFiliatorios.estado_civil;
 
-                //Carga de combo zona residencia
-                NZonaResidencia nZonaResidencia = new NZonaResidencia();
-                cmbZonaResidencia.ValueMember = "id_zona_residencia";
-                cmbZonaResidencia.DisplayMember = "zona_residencia";
-                cmbZonaResidencia.DataSource = datosFiliatorios.zona_residencia;
+                //NIVELES EDUCACION
+                cmbNivelEducacion.ValueMember = "id_nivel_educacion";
+                cmbNivelEducacion.DisplayMember = "nivel_educacion";
+                cmbNivelEducacion.DataSource = datosFiliatorios.niveles_educacion;
+
+                //RELIGIONES
+                cmbReligion.ValueMember = "id_religion";
+                cmbReligion.DisplayMember = "religion";
+                cmbReligion.DataSource = datosFiliatorios.religiones;
+
+                //OCUPACIONES
+                cmbUltimaOcupacion.ValueMember = "id_ocupacion";
+                cmbUltimaOcupacion.DisplayMember = "ocupacion";
+                cmbUltimaOcupacion.DataSource = datosFiliatorios.ocupaciones;
             }
         }
 
@@ -146,8 +155,10 @@ namespace CapaPresentacion
                 txtCiudadNacimiento = txtCiudadNacimiento.Text,
                 dtpFechaNacimiento = dtpFechaNacimiento.Value,
                 cmbEstadoCivil = cmbEstadoCivil.SelectedValue?.ToString() ?? string.Empty,
-                cmbZonaResidencia = cmbZonaResidencia.SelectedValue?.ToString() ?? string.Empty,
-                txtTelefono = txtTelefono.Text,
+                cmbNivelEducacion = cmbNivelEducacion.SelectedValue?.ToString() ?? string.Empty,
+                cmbReligion = cmbReligion.SelectedValue?.ToString() ?? string.Empty,
+                cmbUltimaOcupacion = cmbUltimaOcupacion.SelectedValue?.ToString() ?? string.Empty,
+                txtProfesion = txtProfesion.Text,
                 txtPadre = txtPadre.Text,
                 txtMadre = txtMadre.Text,
                 txtParientes = txtParientes.Text,
@@ -191,8 +202,10 @@ namespace CapaPresentacion
                 ciudad = txtCiudadNacimiento.Text,
                 fecha_nacimiento = dtpFechaNacimiento.Value,
                 estado_civil_id = Convert.ToInt32(cmbEstadoCivil.SelectedValue.ToString()),
-                zona_residencia_id = cmbZonaResidencia.SelectedValue.ToString(),
-                telefono = txtTelefono.Text,
+                nivel_educacion_id = Convert.ToInt32(cmbNivelEducacion.SelectedValue.ToString()),
+                religion_id = Convert.ToInt32(cmbReligion.SelectedValue.ToString()),
+                ocupacion_id = Convert.ToInt32(cmbUltimaOcupacion.SelectedValue.ToString()),
+                profesion = txtProfesion.Text,
                 padre = txtPadre.Text,
                 madre = txtMadre.Text,
                 parientes = txtParientes.Text
@@ -321,8 +334,8 @@ namespace CapaPresentacion
             cmbSexo.Enabled = habilitar;
             dtpFechaNacimiento.Enabled = habilitar;
             dtpFechaNacimiento.ResetText();
-            txtTelefono.Enabled = habilitar;
-            txtTelefono.Text = "";
+            //txtTelefono.Enabled = habilitar;
+            //txtTelefono.Text = "";
             cmbEstadoCivil.Enabled = habilitar;
             cmbNacionalidad.Enabled = habilitar;
 

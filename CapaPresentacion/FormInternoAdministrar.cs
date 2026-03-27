@@ -116,7 +116,7 @@ namespace CapaPresentacion
                 NZonaResidencia nZonaResidencia = new NZonaResidencia();
                 cmbZonaResidencia.ValueMember = "id_zona_residencia";
                 cmbZonaResidencia.DisplayMember = "zona_residencia";
-                cmbZonaResidencia.DataSource = datosFiliatorios.zona_residencia;
+                //cmbZonaResidencia.DataSource = datosFiliatorios.zona_residencia;
             }
             //fin Carga de combos sobre DatosFiliatorios
                        

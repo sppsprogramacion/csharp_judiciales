@@ -30,8 +30,10 @@ namespace CapaPresentacion.Validaciones.NuevoInterno.Datos
         public string txtCiudadNacimiento { get; set; }
         public DateTime dtpFechaNacimiento { get; set; }
         public string cmbEstadoCivil { get; set; }
-        public string cmbZonaResidencia { get; set; }
-        public string txtTelefono { get; set; }
+        public string cmbNivelEducacion { get; set; }
+        public string cmbReligion { get; set; }
+        public string cmbUltimaOcupacion { get; set; }
+        public string txtProfesion { get; set; }
         public string txtPadre { get; set; }
         public string txtMadre { get; set; }
         public string txtParientes { get; set; }

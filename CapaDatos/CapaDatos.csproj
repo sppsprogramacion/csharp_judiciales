@@ -46,8 +46,11 @@
     <Compile Include="DCiudadano.cs" />
     <Compile Include="DHistorialProcesal.cs" />
     <Compile Include="DJuzgado.cs" />
+    <Compile Include="DNivelEducacion.cs" />
+    <Compile Include="DOcupacion.cs" />
     <Compile Include="DPrisionReclusion.cs" />
     <Compile Include="DReincidencia.cs" />
+    <Compile Include="DReligion.cs" />
     <Compile Include="DTablasCausa.cs" />
     <Compile Include="DDatosFiliatorios.cs" />
     <Compile Include="DDepartamento.cs" />
