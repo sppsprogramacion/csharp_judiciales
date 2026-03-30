@@ -44,6 +44,7 @@
     <Compile Include="DCaracteristicasPersonales.cs" />
     <Compile Include="DCausa.cs" />
     <Compile Include="DCiudadano.cs" />
+    <Compile Include="DDomicilioInterno.cs" />
     <Compile Include="DHistorialProcesal.cs" />
     <Compile Include="DJuzgado.cs" />
     <Compile Include="DNivelEducacion.cs" />
