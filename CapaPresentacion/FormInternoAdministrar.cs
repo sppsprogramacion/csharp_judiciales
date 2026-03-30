@@ -111,12 +111,7 @@ namespace CapaPresentacion
                 cmbEstadoCivil.ValueMember = "id_estado_civil";
                 cmbEstadoCivil.DisplayMember = "estado_civil";
                 cmbEstadoCivil.DataSource = datosFiliatorios.estado_civil;
-
-                //Carga de combo zona residencia
-                NZonaResidencia nZonaResidencia = new NZonaResidencia();
-                cmbZonaResidencia.ValueMember = "id_zona_residencia";
-                cmbZonaResidencia.DisplayMember = "zona_residencia";
-                //cmbZonaResidencia.DataSource = datosFiliatorios.zona_residencia;
+                                
             }
             //fin Carga de combos sobre DatosFiliatorios
                        
@@ -183,9 +178,10 @@ namespace CapaPresentacion
             txtCiudadNacimiento.Text = this.dInternoGlobal.ciudad;
             dtpFechaNacimiento.Text = this.dInternoGlobal.fecha_nacimiento.ToShortDateString();
             cmbEstadoCivil.Text = this.dInternoGlobal.estado_civil.estado_civil;
-            cmbZonaResidencia.Text = this.dInternoGlobal.zona_residencia.zona_residencia;
-            txtTelefono.Text = this.dInternoGlobal.telefono;
-
+            cmbNivelEducacion.Text = this.dInternoGlobal.nivel_educacion.nivel_educacion;
+            cmbReligion.Text = this.dInternoGlobal.religion.religion;
+            cmbUltimaOcupacion.Text = this.dInternoGlobal.ocupacion.ocupacion;
+            txtProfesion.Text = this.dInternoGlobal.profesion;
             txtPadre.Text = this.dInternoGlobal.padre;
             txtMadre.Text = this.dInternoGlobal.madre;
             txtParientes.Text = this.dInternoGlobal.parientes;
@@ -452,8 +448,10 @@ namespace CapaPresentacion
                 txtCiudadNacimiento = txtCiudadNacimiento.Text,
                 dtpFechaNacimiento = dtpFechaNacimiento.Value,
                 cmbEstadoCivil = cmbEstadoCivil.SelectedValue?.ToString() ?? string.Empty,
-                cmbZonaResidencia = cmbZonaResidencia.SelectedValue?.ToString() ?? string.Empty,
-                txtTelefono = txtTelefono.Text,
+                cmbNivelEducacion = cmbNivelEducacion.SelectedValue?.ToString() ?? string.Empty,
+                cmbReligion = cmbReligion.SelectedValue?.ToString() ?? string.Empty,
+                cmbUltimaOcupacion = cmbUltimaOcupacion.SelectedValue?.ToString() ?? string.Empty,
+                txtProfesion = txtProfesion.Text,
                 txtPadre = txtPadre.Text,
                 txtMadre = txtMadre.Text,
                 txtParientes = txtParientes.Text,
@@ -483,8 +481,10 @@ namespace CapaPresentacion
                 ciudad = txtCiudadNacimiento.Text,
                 fecha_nacimiento = dtpFechaNacimiento.Value,
                 estado_civil_id = Convert.ToInt32(cmbEstadoCivil.SelectedValue.ToString()),
-                zona_residencia_id = cmbZonaResidencia.SelectedValue.ToString(),
-                telefono = txtTelefono.Text,
+                nivel_educacion_id = Convert.ToInt32(cmbNivelEducacion.SelectedValue.ToString()),
+                religion_id = Convert.ToInt32(cmbReligion.SelectedValue.ToString()),
+                ocupacion_id = Convert.ToInt32(cmbUltimaOcupacion.SelectedValue.ToString()),
+                profesion = txtProfesion.Text,
                 padre = txtPadre.Text,
                 madre = txtMadre.Text,
                 parientes = txtParientes.Text
@@ -658,11 +658,13 @@ namespace CapaPresentacion
             cmbNacionalidad.Enabled = valor;
             cmbProvinciaNacimiento.Enabled = valor;
             cmbDepartamentoNacimiento.Enabled = valor;
+            txtCiudadNacimiento.ReadOnly = !valor;
             dtpFechaNacimiento.Enabled = valor;
             cmbEstadoCivil.Enabled = valor;
-            cmbZonaResidencia.Enabled = valor;
-            txtCiudadNacimiento.ReadOnly = !valor;
-            txtTelefono.ReadOnly = !valor;
+            cmbNivelEducacion.Enabled = valor;
+            cmbReligion.Enabled = valor;
+            cmbUltimaOcupacion.Enabled = valor;
+            txtProfesion.ReadOnly = !valor;
             txtPadre.ReadOnly = !valor;
             txtMadre.ReadOnly = !valor;
             txtParientes.ReadOnly = !valor;

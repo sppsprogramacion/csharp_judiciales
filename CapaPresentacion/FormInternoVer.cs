@@ -87,8 +87,10 @@ namespace CapaPresentacion
             txtCiudadNacimiento.Text = this.dInternoGlobal.ciudad;
             dtpFechaNacimiento.Text = this.dInternoGlobal.fecha_nacimiento.ToShortDateString();
             txtEstadoCivil.Text = this.dInternoGlobal.estado_civil.estado_civil;
-            txtZonaResidencia.Text = this.dInternoGlobal.zona_residencia.zona_residencia;
-            txtTelefono.Text = this.dInternoGlobal.telefono;
+            txtNivelEducacion.Text = this.dInternoGlobal.nivel_educacion.nivel_educacion;
+            txtReligion.Text = this.dInternoGlobal.religion.religion;
+            txtOcupacion.Text = this.dInternoGlobal.ocupacion.ocupacion;
+            txtProfesion.Text = this.dInternoGlobal.profesion;
             txtPadre.Text = this.dInternoGlobal.padre;
             txtMadre.Text = this.dInternoGlobal.madre;
             txtParientes.Text = this.dInternoGlobal.parientes;
@@ -371,6 +373,6 @@ namespace CapaPresentacion
             }
             this.HabilitarControlesIngreso(false);
         }
-        
+
     }
 }

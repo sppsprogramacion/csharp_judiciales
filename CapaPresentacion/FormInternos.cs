@@ -183,6 +183,11 @@ namespace CapaPresentacion
 
                         if (ingresoInterno == null)
                         {
+                            if (errorResponse != null)
+                            {
+                                MessageBox.Show(errorResponse, "Internos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
                             MessageBox.Show("El interno no se encuentra alojado en una unidad", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             FormInternoVer formInternoVer = new FormInternoVer(null, this.idInternoGlobal, "consulta");
                             formInternoVer.ShowDialog();

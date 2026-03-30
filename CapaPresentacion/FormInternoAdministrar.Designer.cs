@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInternoAdministrar));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabInterno = new System.Windows.Forms.TabControl();
             this.tabDatosPrincipales = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -71,6 +71,14 @@
             this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtProfesion = new System.Windows.Forms.TextBox();
+            this.cmbUltimaOcupacion = new System.Windows.Forms.ComboBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.cmbReligion = new System.Windows.Forms.ComboBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.cmbNivelEducacion = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.txtCiudadNacimiento = new System.Windows.Forms.TextBox();
             this.btnEditarDatosFilatorios = new System.Windows.Forms.Button();
@@ -82,10 +90,6 @@
             this.txtMadre = new System.Windows.Forms.TextBox();
             this.label92 = new System.Windows.Forms.Label();
             this.txtPadre = new System.Windows.Forms.TextBox();
-            this.cmbZonaResidencia = new System.Windows.Forms.ComboBox();
-            this.label90 = new System.Windows.Forms.Label();
-            this.label91 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label87 = new System.Windows.Forms.Label();
             this.cmbEstadoCivil = new System.Windows.Forms.ComboBox();
             this.cmbNacionalidad = new System.Windows.Forms.ComboBox();
@@ -474,7 +478,7 @@
             this.groupBox15.Controls.Add(this.label8);
             this.groupBox15.Location = new System.Drawing.Point(9, 426);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(501, 220);
+            this.groupBox15.Size = new System.Drawing.Size(501, 261);
             this.groupBox15.TabIndex = 69;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Caracteristicas personales";
@@ -486,7 +490,7 @@
             this.btnEditarCaracteristicasPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarCaracteristicasPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCaracteristicasPersonales.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarCaracteristicasPersonales.Location = new System.Drawing.Point(10, 171);
+            this.btnEditarCaracteristicasPersonales.Location = new System.Drawing.Point(134, 213);
             this.btnEditarCaracteristicasPersonales.Name = "btnEditarCaracteristicasPersonales";
             this.btnEditarCaracteristicasPersonales.Size = new System.Drawing.Size(98, 40);
             this.btnEditarCaracteristicasPersonales.TabIndex = 232;
@@ -502,7 +506,7 @@
             this.btnGuardarEditarCaracteristicasPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarEditarCaracteristicasPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarEditarCaracteristicasPersonales.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardarEditarCaracteristicasPersonales.Location = new System.Drawing.Point(123, 171);
+            this.btnGuardarEditarCaracteristicasPersonales.Location = new System.Drawing.Point(247, 213);
             this.btnGuardarEditarCaracteristicasPersonales.Name = "btnGuardarEditarCaracteristicasPersonales";
             this.btnGuardarEditarCaracteristicasPersonales.Size = new System.Drawing.Size(98, 40);
             this.btnGuardarEditarCaracteristicasPersonales.TabIndex = 230;
@@ -518,7 +522,7 @@
             this.btnCancelarEditarCaracteristicasPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarEditarCaracteristicasPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarEditarCaracteristicasPersonales.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarEditarCaracteristicasPersonales.Location = new System.Drawing.Point(237, 171);
+            this.btnCancelarEditarCaracteristicasPersonales.Location = new System.Drawing.Point(361, 213);
             this.btnCancelarEditarCaracteristicasPersonales.Name = "btnCancelarEditarCaracteristicasPersonales";
             this.btnCancelarEditarCaracteristicasPersonales.Size = new System.Drawing.Size(98, 40);
             this.btnCancelarEditarCaracteristicasPersonales.TabIndex = 231;
@@ -531,7 +535,7 @@
             this.cmbNarizForma.Enabled = false;
             this.cmbNarizForma.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbNarizForma.FormattingEnabled = true;
-            this.cmbNarizForma.Location = new System.Drawing.Point(319, 87);
+            this.cmbNarizForma.Location = new System.Drawing.Point(319, 83);
             this.cmbNarizForma.Name = "cmbNarizForma";
             this.cmbNarizForma.Size = new System.Drawing.Size(140, 23);
             this.cmbNarizForma.TabIndex = 212;
@@ -540,7 +544,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(316, 68);
+            this.label10.Location = new System.Drawing.Point(316, 66);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(88, 15);
             this.label10.TabIndex = 213;
@@ -551,7 +555,7 @@
             this.cmbPeloColor.Enabled = false;
             this.cmbPeloColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPeloColor.FormattingEnabled = true;
-            this.cmbPeloColor.Location = new System.Drawing.Point(319, 136);
+            this.cmbPeloColor.Location = new System.Drawing.Point(319, 128);
             this.cmbPeloColor.Name = "cmbPeloColor";
             this.cmbPeloColor.Size = new System.Drawing.Size(140, 23);
             this.cmbPeloColor.TabIndex = 208;
@@ -560,7 +564,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(316, 117);
+            this.label3.Location = new System.Drawing.Point(316, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 15);
             this.label3.TabIndex = 211;
@@ -571,7 +575,7 @@
             this.cmbPeloTipo.Enabled = false;
             this.cmbPeloTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPeloTipo.FormattingEnabled = true;
-            this.cmbPeloTipo.Location = new System.Drawing.Point(165, 136);
+            this.cmbPeloTipo.Location = new System.Drawing.Point(165, 128);
             this.cmbPeloTipo.Name = "cmbPeloTipo";
             this.cmbPeloTipo.Size = new System.Drawing.Size(140, 23);
             this.cmbPeloTipo.TabIndex = 207;
@@ -580,7 +584,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(162, 117);
+            this.label4.Location = new System.Drawing.Point(162, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 15);
             this.label4.TabIndex = 210;
@@ -591,7 +595,7 @@
             this.cmbNarizTamanio.Enabled = false;
             this.cmbNarizTamanio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbNarizTamanio.FormattingEnabled = true;
-            this.cmbNarizTamanio.Location = new System.Drawing.Point(10, 136);
+            this.cmbNarizTamanio.Location = new System.Drawing.Point(10, 128);
             this.cmbNarizTamanio.Name = "cmbNarizTamanio";
             this.cmbNarizTamanio.Size = new System.Drawing.Size(140, 23);
             this.cmbNarizTamanio.TabIndex = 206;
@@ -600,7 +604,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(7, 116);
+            this.label9.Location = new System.Drawing.Point(7, 110);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(95, 15);
             this.label9.TabIndex = 209;
@@ -611,7 +615,7 @@
             this.cmbOjosTamanio.Enabled = false;
             this.cmbOjosTamanio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOjosTamanio.FormattingEnabled = true;
-            this.cmbOjosTamanio.Location = new System.Drawing.Point(165, 87);
+            this.cmbOjosTamanio.Location = new System.Drawing.Point(165, 83);
             this.cmbOjosTamanio.Name = "cmbOjosTamanio";
             this.cmbOjosTamanio.Size = new System.Drawing.Size(140, 23);
             this.cmbOjosTamanio.TabIndex = 204;
@@ -620,7 +624,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(162, 68);
+            this.label2.Location = new System.Drawing.Point(162, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 15);
             this.label2.TabIndex = 205;
@@ -631,7 +635,7 @@
             this.cmbOjosColor.Enabled = false;
             this.cmbOjosColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOjosColor.FormattingEnabled = true;
-            this.cmbOjosColor.Location = new System.Drawing.Point(10, 86);
+            this.cmbOjosColor.Location = new System.Drawing.Point(10, 82);
             this.cmbOjosColor.Name = "cmbOjosColor";
             this.cmbOjosColor.Size = new System.Drawing.Size(140, 23);
             this.cmbOjosColor.TabIndex = 199;
@@ -640,7 +644,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(7, 67);
+            this.label5.Location = new System.Drawing.Point(7, 65);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 15);
             this.label5.TabIndex = 203;
@@ -651,7 +655,7 @@
             this.cmbPiel.Enabled = false;
             this.cmbPiel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPiel.FormattingEnabled = true;
-            this.cmbPiel.Location = new System.Drawing.Point(319, 39);
+            this.cmbPiel.Location = new System.Drawing.Point(319, 38);
             this.cmbPiel.Name = "cmbPiel";
             this.cmbPiel.Size = new System.Drawing.Size(140, 23);
             this.cmbPiel.TabIndex = 198;
@@ -660,7 +664,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(316, 20);
+            this.label6.Location = new System.Drawing.Point(316, 21);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 15);
             this.label6.TabIndex = 202;
@@ -670,7 +674,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(162, 19);
+            this.label7.Location = new System.Drawing.Point(162, 20);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 15);
             this.label7.TabIndex = 201;
@@ -680,7 +684,7 @@
             // 
             this.txtTalla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTalla.Location = new System.Drawing.Point(165, 39);
+            this.txtTalla.Location = new System.Drawing.Point(165, 38);
             this.txtTalla.Name = "txtTalla";
             this.txtTalla.ReadOnly = true;
             this.txtTalla.Size = new System.Drawing.Size(135, 21);
@@ -691,7 +695,7 @@
             this.cmbSexo.Enabled = false;
             this.cmbSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSexo.FormattingEnabled = true;
-            this.cmbSexo.Location = new System.Drawing.Point(10, 38);
+            this.cmbSexo.Location = new System.Drawing.Point(10, 37);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(140, 23);
             this.cmbSexo.TabIndex = 196;
@@ -700,7 +704,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(7, 19);
+            this.label8.Location = new System.Drawing.Point(7, 20);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 15);
             this.label8.TabIndex = 200;
@@ -708,6 +712,14 @@
             // 
             // groupBox14
             // 
+            this.groupBox14.Controls.Add(this.label19);
+            this.groupBox14.Controls.Add(this.txtProfesion);
+            this.groupBox14.Controls.Add(this.cmbUltimaOcupacion);
+            this.groupBox14.Controls.Add(this.label33);
+            this.groupBox14.Controls.Add(this.cmbReligion);
+            this.groupBox14.Controls.Add(this.label36);
+            this.groupBox14.Controls.Add(this.cmbNivelEducacion);
+            this.groupBox14.Controls.Add(this.label18);
             this.groupBox14.Controls.Add(this.label28);
             this.groupBox14.Controls.Add(this.txtCiudadNacimiento);
             this.groupBox14.Controls.Add(this.btnEditarDatosFilatorios);
@@ -719,10 +731,6 @@
             this.groupBox14.Controls.Add(this.txtMadre);
             this.groupBox14.Controls.Add(this.label92);
             this.groupBox14.Controls.Add(this.txtPadre);
-            this.groupBox14.Controls.Add(this.cmbZonaResidencia);
-            this.groupBox14.Controls.Add(this.label90);
-            this.groupBox14.Controls.Add(this.label91);
-            this.groupBox14.Controls.Add(this.txtTelefono);
             this.groupBox14.Controls.Add(this.label87);
             this.groupBox14.Controls.Add(this.cmbEstadoCivil);
             this.groupBox14.Controls.Add(this.cmbNacionalidad);
@@ -735,16 +743,100 @@
             this.groupBox14.Controls.Add(this.cmbDepartamentoNacimiento);
             this.groupBox14.Location = new System.Drawing.Point(522, 209);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(535, 437);
+            this.groupBox14.Size = new System.Drawing.Size(535, 478);
             this.groupBox14.TabIndex = 214;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Datos filiatorios";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Enabled = false;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(264, 196);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(77, 15);
+            this.label19.TabIndex = 242;
+            this.label19.Text = "PROFESION";
+            // 
+            // txtProfesion
+            // 
+            this.txtProfesion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProfesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProfesion.Location = new System.Drawing.Point(266, 213);
+            this.txtProfesion.Name = "txtProfesion";
+            this.txtProfesion.ReadOnly = true;
+            this.txtProfesion.Size = new System.Drawing.Size(239, 21);
+            this.txtProfesion.TabIndex = 241;
+            // 
+            // cmbUltimaOcupacion
+            // 
+            this.cmbUltimaOcupacion.Enabled = false;
+            this.cmbUltimaOcupacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbUltimaOcupacion.FormattingEnabled = true;
+            this.cmbUltimaOcupacion.Location = new System.Drawing.Point(11, 213);
+            this.cmbUltimaOcupacion.Name = "cmbUltimaOcupacion";
+            this.cmbUltimaOcupacion.Size = new System.Drawing.Size(238, 23);
+            this.cmbUltimaOcupacion.TabIndex = 239;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Enabled = false;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(8, 196);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(124, 15);
+            this.label33.TabIndex = 240;
+            this.label33.Text = "ULTIMA OCUPACION";
+            // 
+            // cmbReligion
+            // 
+            this.cmbReligion.Enabled = false;
+            this.cmbReligion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbReligion.FormattingEnabled = true;
+            this.cmbReligion.Location = new System.Drawing.Point(267, 169);
+            this.cmbReligion.Name = "cmbReligion";
+            this.cmbReligion.Size = new System.Drawing.Size(240, 23);
+            this.cmbReligion.TabIndex = 237;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Enabled = false;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(264, 152);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(64, 15);
+            this.label36.TabIndex = 238;
+            this.label36.Text = "RELIGION";
+            // 
+            // cmbNivelEducacion
+            // 
+            this.cmbNivelEducacion.Enabled = false;
+            this.cmbNivelEducacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNivelEducacion.FormattingEnabled = true;
+            this.cmbNivelEducacion.Location = new System.Drawing.Point(11, 169);
+            this.cmbNivelEducacion.Name = "cmbNivelEducacion";
+            this.cmbNivelEducacion.Size = new System.Drawing.Size(238, 23);
+            this.cmbNivelEducacion.TabIndex = 235;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Enabled = false;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(8, 152);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(114, 15);
+            this.label18.TabIndex = 236;
+            this.label18.Text = "NIVEL EDUCACION";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(264, 66);
+            this.label28.Location = new System.Drawing.Point(264, 64);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(129, 15);
             this.label28.TabIndex = 234;
@@ -754,7 +846,7 @@
             // 
             this.txtCiudadNacimiento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCiudadNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCiudadNacimiento.Location = new System.Drawing.Point(267, 83);
+            this.txtCiudadNacimiento.Location = new System.Drawing.Point(267, 81);
             this.txtCiudadNacimiento.Name = "txtCiudadNacimiento";
             this.txtCiudadNacimiento.ReadOnly = true;
             this.txtCiudadNacimiento.Size = new System.Drawing.Size(240, 21);
@@ -767,7 +859,7 @@
             this.btnEditarDatosFilatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarDatosFilatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarDatosFilatorios.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarDatosFilatorios.Location = new System.Drawing.Point(9, 388);
+            this.btnEditarDatosFilatorios.Location = new System.Drawing.Point(182, 432);
             this.btnEditarDatosFilatorios.Name = "btnEditarDatosFilatorios";
             this.btnEditarDatosFilatorios.Size = new System.Drawing.Size(98, 40);
             this.btnEditarDatosFilatorios.TabIndex = 215;
@@ -782,7 +874,7 @@
             this.btnGuardarEditarDatosFilatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarEditarDatosFilatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarEditarDatosFilatorios.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardarEditarDatosFilatorios.Location = new System.Drawing.Point(122, 388);
+            this.btnGuardarEditarDatosFilatorios.Location = new System.Drawing.Point(295, 432);
             this.btnGuardarEditarDatosFilatorios.Name = "btnGuardarEditarDatosFilatorios";
             this.btnGuardarEditarDatosFilatorios.Size = new System.Drawing.Size(98, 40);
             this.btnGuardarEditarDatosFilatorios.TabIndex = 216;
@@ -797,7 +889,7 @@
             this.btnCancelarEditarDatosFilatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarEditarDatosFilatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarEditarDatosFilatorios.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarEditarDatosFilatorios.Location = new System.Drawing.Point(236, 388);
+            this.btnCancelarEditarDatosFilatorios.Location = new System.Drawing.Point(409, 432);
             this.btnCancelarEditarDatosFilatorios.Name = "btnCancelarEditarDatosFilatorios";
             this.btnCancelarEditarDatosFilatorios.Size = new System.Drawing.Size(98, 40);
             this.btnCancelarEditarDatosFilatorios.TabIndex = 217;
@@ -809,7 +901,7 @@
             // 
             this.label94.AutoSize = true;
             this.label94.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label94.Location = new System.Drawing.Point(7, 287);
+            this.label94.Location = new System.Drawing.Point(7, 325);
             this.label94.Name = "label94";
             this.label94.Size = new System.Drawing.Size(74, 15);
             this.label94.TabIndex = 223;
@@ -819,7 +911,7 @@
             // 
             this.txtParientes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtParientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtParientes.Location = new System.Drawing.Point(9, 304);
+            this.txtParientes.Location = new System.Drawing.Point(9, 342);
             this.txtParientes.Multiline = true;
             this.txtParientes.Name = "txtParientes";
             this.txtParientes.ReadOnly = true;
@@ -830,7 +922,7 @@
             // 
             this.label93.AutoSize = true;
             this.label93.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label93.Location = new System.Drawing.Point(7, 244);
+            this.label93.Location = new System.Drawing.Point(7, 282);
             this.label93.Name = "label93";
             this.label93.Size = new System.Drawing.Size(51, 15);
             this.label93.TabIndex = 221;
@@ -840,7 +932,7 @@
             // 
             this.txtMadre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMadre.Location = new System.Drawing.Point(10, 261);
+            this.txtMadre.Location = new System.Drawing.Point(10, 299);
             this.txtMadre.Name = "txtMadre";
             this.txtMadre.ReadOnly = true;
             this.txtMadre.Size = new System.Drawing.Size(385, 21);
@@ -850,7 +942,7 @@
             // 
             this.label92.AutoSize = true;
             this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label92.Location = new System.Drawing.Point(7, 201);
+            this.label92.Location = new System.Drawing.Point(7, 240);
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(48, 15);
             this.label92.TabIndex = 219;
@@ -860,51 +952,11 @@
             // 
             this.txtPadre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPadre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPadre.Location = new System.Drawing.Point(10, 218);
+            this.txtPadre.Location = new System.Drawing.Point(10, 257);
             this.txtPadre.Name = "txtPadre";
             this.txtPadre.ReadOnly = true;
             this.txtPadre.Size = new System.Drawing.Size(385, 21);
             this.txtPadre.TabIndex = 212;
-            // 
-            // cmbZonaResidencia
-            // 
-            this.cmbZonaResidencia.Enabled = false;
-            this.cmbZonaResidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbZonaResidencia.FormattingEnabled = true;
-            this.cmbZonaResidencia.Location = new System.Drawing.Point(11, 173);
-            this.cmbZonaResidencia.Name = "cmbZonaResidencia";
-            this.cmbZonaResidencia.Size = new System.Drawing.Size(238, 23);
-            this.cmbZonaResidencia.TabIndex = 210;
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label90.Location = new System.Drawing.Point(8, 156);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(114, 15);
-            this.label90.TabIndex = 217;
-            this.label90.Text = "ZONA RESIDENCIA";
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label91.Location = new System.Drawing.Point(264, 156);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(71, 15);
-            this.label91.TabIndex = 216;
-            this.label91.Text = "TELEFONO";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(267, 173);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.ReadOnly = true;
-            this.txtTelefono.Size = new System.Drawing.Size(240, 21);
-            this.txtTelefono.TabIndex = 211;
             // 
             // label87
             // 
@@ -921,7 +973,7 @@
             this.cmbEstadoCivil.Enabled = false;
             this.cmbEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstadoCivil.FormattingEnabled = true;
-            this.cmbEstadoCivil.Location = new System.Drawing.Point(267, 128);
+            this.cmbEstadoCivil.Location = new System.Drawing.Point(267, 125);
             this.cmbEstadoCivil.Name = "cmbEstadoCivil";
             this.cmbEstadoCivil.Size = new System.Drawing.Size(240, 23);
             this.cmbEstadoCivil.TabIndex = 209;
@@ -940,7 +992,7 @@
             // 
             this.label88.AutoSize = true;
             this.label88.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label88.Location = new System.Drawing.Point(264, 111);
+            this.label88.Location = new System.Drawing.Point(264, 108);
             this.label88.Name = "label88";
             this.label88.Size = new System.Drawing.Size(86, 15);
             this.label88.TabIndex = 213;
@@ -961,7 +1013,7 @@
             this.dtpFechaNacimiento.Enabled = false;
             this.dtpFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(11, 128);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(11, 125);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(238, 22);
             this.dtpFechaNacimiento.TabIndex = 208;
@@ -980,7 +1032,7 @@
             // 
             this.label89.AutoSize = true;
             this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label89.Location = new System.Drawing.Point(7, 111);
+            this.label89.Location = new System.Drawing.Point(7, 108);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(123, 15);
             this.label89.TabIndex = 212;
@@ -990,7 +1042,7 @@
             // 
             this.label85.AutoSize = true;
             this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label85.Location = new System.Drawing.Point(6, 66);
+            this.label85.Location = new System.Drawing.Point(6, 64);
             this.label85.Name = "label85";
             this.label85.Size = new System.Drawing.Size(183, 15);
             this.label85.TabIndex = 209;
@@ -1001,7 +1053,7 @@
             this.cmbDepartamentoNacimiento.Enabled = false;
             this.cmbDepartamentoNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDepartamentoNacimiento.FormattingEnabled = true;
-            this.cmbDepartamentoNacimiento.Location = new System.Drawing.Point(9, 83);
+            this.cmbDepartamentoNacimiento.Location = new System.Drawing.Point(9, 81);
             this.cmbDepartamentoNacimiento.Name = "cmbDepartamentoNacimiento";
             this.cmbDepartamentoNacimiento.Size = new System.Drawing.Size(240, 23);
             this.cmbDepartamentoNacimiento.TabIndex = 206;
@@ -1061,7 +1113,7 @@
             this.btnEditarDatosPrincipales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarDatosPrincipales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarDatosPrincipales.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarDatosPrincipales.Location = new System.Drawing.Point(10, 209);
+            this.btnEditarDatosPrincipales.Location = new System.Drawing.Point(134, 211);
             this.btnEditarDatosPrincipales.Name = "btnEditarDatosPrincipales";
             this.btnEditarDatosPrincipales.Size = new System.Drawing.Size(98, 40);
             this.btnEditarDatosPrincipales.TabIndex = 229;
@@ -1076,7 +1128,7 @@
             this.btnGuardarEditarDatosPrincipales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarEditarDatosPrincipales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarEditarDatosPrincipales.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardarEditarDatosPrincipales.Location = new System.Drawing.Point(123, 209);
+            this.btnGuardarEditarDatosPrincipales.Location = new System.Drawing.Point(247, 211);
             this.btnGuardarEditarDatosPrincipales.Name = "btnGuardarEditarDatosPrincipales";
             this.btnGuardarEditarDatosPrincipales.Size = new System.Drawing.Size(98, 40);
             this.btnGuardarEditarDatosPrincipales.TabIndex = 227;
@@ -1091,7 +1143,7 @@
             this.btnCancelarEditarDatosPrincipales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarEditarDatosPrincipales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarEditarDatosPrincipales.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarEditarDatosPrincipales.Location = new System.Drawing.Point(237, 209);
+            this.btnCancelarEditarDatosPrincipales.Location = new System.Drawing.Point(361, 211);
             this.btnCancelarEditarDatosPrincipales.Name = "btnCancelarEditarDatosPrincipales";
             this.btnCancelarEditarDatosPrincipales.Size = new System.Drawing.Size(98, 40);
             this.btnCancelarEditarDatosPrincipales.TabIndex = 228;
@@ -1743,10 +1795,10 @@
             this.dtgHistorialProcesal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgHistorialProcesal.Location = new System.Drawing.Point(12, 21);
             this.dtgHistorialProcesal.Name = "dtgHistorialProcesal";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgHistorialProcesal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgHistorialProcesal.Size = new System.Drawing.Size(1033, 588);
             this.dtgHistorialProcesal.TabIndex = 63;
@@ -2335,10 +2387,6 @@
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.Label label89;
-        private System.Windows.Forms.ComboBox cmbZonaResidencia;
-        private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.Label label91;
-        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label92;
         private System.Windows.Forms.TextBox txtPadre;
         private System.Windows.Forms.Label label93;
@@ -2472,5 +2520,13 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cmbReligion;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.ComboBox cmbNivelEducacion;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtProfesion;
+        private System.Windows.Forms.ComboBox cmbUltimaOcupacion;
+        private System.Windows.Forms.Label label33;
     }
 }

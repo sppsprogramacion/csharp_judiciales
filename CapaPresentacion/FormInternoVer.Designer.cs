@@ -72,6 +72,10 @@
             this.dtpFechaAlojamiento = new System.Windows.Forms.DateTimePicker();
             this.label77 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txtProfesion = new System.Windows.Forms.TextBox();
+            this.txtNivelEducacion = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.txtCiudadNacimiento = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.txtDepartamentoNacimiento = new System.Windows.Forms.TextBox();
@@ -79,7 +83,7 @@
             this.txtNacionalidad = new System.Windows.Forms.TextBox();
             this.txtEstadoCivil = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtZonaResidencia = new System.Windows.Forms.TextBox();
+            this.txtReligion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label92 = new System.Windows.Forms.Label();
             this.txtProntuario = new System.Windows.Forms.TextBox();
@@ -113,7 +117,7 @@
             this.label85 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtOcupacion = new System.Windows.Forms.TextBox();
             this.label89 = new System.Windows.Forms.Label();
             this.txtOjosTamanio = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -739,6 +743,10 @@
             // 
             // groupBox14
             // 
+            this.groupBox14.Controls.Add(this.label43);
+            this.groupBox14.Controls.Add(this.txtProfesion);
+            this.groupBox14.Controls.Add(this.txtNivelEducacion);
+            this.groupBox14.Controls.Add(this.label24);
             this.groupBox14.Controls.Add(this.txtCiudadNacimiento);
             this.groupBox14.Controls.Add(this.label22);
             this.groupBox14.Controls.Add(this.txtDepartamentoNacimiento);
@@ -746,7 +754,7 @@
             this.groupBox14.Controls.Add(this.txtNacionalidad);
             this.groupBox14.Controls.Add(this.txtEstadoCivil);
             this.groupBox14.Controls.Add(this.label15);
-            this.groupBox14.Controls.Add(this.txtZonaResidencia);
+            this.groupBox14.Controls.Add(this.txtReligion);
             this.groupBox14.Controls.Add(this.label8);
             this.groupBox14.Controls.Add(this.label92);
             this.groupBox14.Controls.Add(this.txtProntuario);
@@ -780,7 +788,7 @@
             this.groupBox14.Controls.Add(this.label85);
             this.groupBox14.Controls.Add(this.label13);
             this.groupBox14.Controls.Add(this.label12);
-            this.groupBox14.Controls.Add(this.txtTelefono);
+            this.groupBox14.Controls.Add(this.txtOcupacion);
             this.groupBox14.Controls.Add(this.label89);
             this.groupBox14.Controls.Add(this.txtOjosTamanio);
             this.groupBox14.Controls.Add(this.label10);
@@ -797,6 +805,46 @@
             this.groupBox14.TabIndex = 214;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Datos del interno";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(325, 431);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(77, 15);
+            this.label43.TabIndex = 229;
+            this.label43.Text = "PROFESION";
+            // 
+            // txtProfesion
+            // 
+            this.txtProfesion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProfesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProfesion.Location = new System.Drawing.Point(328, 447);
+            this.txtProfesion.Name = "txtProfesion";
+            this.txtProfesion.ReadOnly = true;
+            this.txtProfesion.Size = new System.Drawing.Size(167, 21);
+            this.txtProfesion.TabIndex = 228;
+            // 
+            // txtNivelEducacion
+            // 
+            this.txtNivelEducacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNivelEducacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNivelEducacion.Location = new System.Drawing.Point(328, 405);
+            this.txtNivelEducacion.Name = "txtNivelEducacion";
+            this.txtNivelEducacion.ReadOnly = true;
+            this.txtNivelEducacion.Size = new System.Drawing.Size(167, 21);
+            this.txtNivelEducacion.TabIndex = 226;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(326, 388);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(114, 15);
+            this.label24.TabIndex = 227;
+            this.label24.Text = "NIVEL EDUCACION";
             // 
             // txtCiudadNacimiento
             // 
@@ -868,15 +916,15 @@
             this.label15.TabIndex = 55;
             this.label15.Text = "ID:";
             // 
-            // txtZonaResidencia
+            // txtReligion
             // 
-            this.txtZonaResidencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtZonaResidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtZonaResidencia.Location = new System.Drawing.Point(10, 447);
-            this.txtZonaResidencia.Name = "txtZonaResidencia";
-            this.txtZonaResidencia.ReadOnly = true;
-            this.txtZonaResidencia.Size = new System.Drawing.Size(140, 21);
-            this.txtZonaResidencia.TabIndex = 21;
+            this.txtReligion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtReligion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReligion.Location = new System.Drawing.Point(10, 447);
+            this.txtReligion.Name = "txtReligion";
+            this.txtReligion.ReadOnly = true;
+            this.txtReligion.Size = new System.Drawing.Size(140, 21);
+            this.txtReligion.TabIndex = 21;
             // 
             // label8
             // 
@@ -1145,9 +1193,9 @@
             this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label90.Location = new System.Drawing.Point(7, 431);
             this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(114, 15);
+            this.label90.Size = new System.Drawing.Size(64, 15);
             this.label90.TabIndex = 217;
-            this.label90.Text = "ZONA RESIDENCIA";
+            this.label90.Text = "RELIGION";
             // 
             // txtOjosColor
             // 
@@ -1175,9 +1223,9 @@
             this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label91.Location = new System.Drawing.Point(164, 431);
             this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(71, 15);
+            this.label91.Size = new System.Drawing.Size(124, 15);
             this.label91.TabIndex = 216;
-            this.label91.Text = "TELEFONO";
+            this.label91.Text = "ULTIMA OCUPACION";
             // 
             // label85
             // 
@@ -1209,15 +1257,15 @@
             this.label12.TabIndex = 193;
             this.label12.Text = "APELLIDO";
             // 
-            // txtTelefono
+            // txtOcupacion
             // 
-            this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(167, 447);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.ReadOnly = true;
-            this.txtTelefono.Size = new System.Drawing.Size(140, 21);
-            this.txtTelefono.TabIndex = 22;
+            this.txtOcupacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOcupacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOcupacion.Location = new System.Drawing.Point(167, 447);
+            this.txtOcupacion.Name = "txtOcupacion";
+            this.txtOcupacion.ReadOnly = true;
+            this.txtOcupacion.Size = new System.Drawing.Size(148, 21);
+            this.txtOcupacion.TabIndex = 22;
             // 
             // label89
             // 
@@ -2590,7 +2638,7 @@
         private System.Windows.Forms.TextBox txtNacionalidad;
         private System.Windows.Forms.TextBox txtEstadoCivil;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtZonaResidencia;
+        private System.Windows.Forms.TextBox txtReligion;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label92;
         private System.Windows.Forms.TextBox txtProntuario;
@@ -2624,7 +2672,7 @@
         private System.Windows.Forms.Label label85;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.TextBox txtOcupacion;
         private System.Windows.Forms.Label label89;
         private System.Windows.Forms.TextBox txtOjosTamanio;
         private System.Windows.Forms.Label label10;
@@ -2758,5 +2806,9 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txtIdIngreso;
+        private System.Windows.Forms.TextBox txtNivelEducacion;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox txtProfesion;
     }
 }

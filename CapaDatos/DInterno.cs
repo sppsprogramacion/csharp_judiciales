@@ -42,9 +42,13 @@ namespace CapaDatos
         public DateTime fecha_nacimiento { get; set; }
         public int estado_civil_id { get; set; }
         public DEstadoCivil estado_civil { get; set; }
-        public string zona_residencia_id { get; set; }
-        public DZonaResidencia zona_residencia { get; set; }
-        public string telefono { get; set; }
+        public int nivel_educacion_id { get; set; }
+        public DNivelEducacion nivel_educacion { get; set; }
+        public int religion_id { get; set; }
+        public DReligion religion { get; set; }
+        public int ocupacion_id { get; set; }
+        public DOcupacion ocupacion { get; set; }
+        public string profesion { get; set; }
         public string padre { get; set; }
         public string madre { get; set; }
         public string parientes { get; set; }
