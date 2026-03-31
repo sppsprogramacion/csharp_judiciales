@@ -44,6 +44,7 @@
     <Compile Include="ICausaDao.cs" />
     <Compile Include="ICiudadanoDao.cs" />
     <Compile Include="IDepartamentoDao.cs" />
+    <Compile Include="IDomicilioInternoDao.cs" />
     <Compile Include="IEstadoCivilDao.cs" />
     <Compile Include="IAuthDao.cs" />
     <Compile Include="IHistorialProcesalDao.cs" />

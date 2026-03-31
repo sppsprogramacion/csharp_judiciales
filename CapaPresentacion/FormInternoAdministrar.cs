@@ -1328,5 +1328,72 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void btnVerDomicilios_Click(object sender, EventArgs e)
+        {
+            tabInterno.Enabled = false;
+            this.CargarDataGridDomicilios();
+            tabInterno.Enabled = true;
+        }
+
+        //METODO PARA OBTENER LA LISTA DE DOMICILIOS Y CARGARLO EN UN DATA GRID 
+        async private void CargarDataGridDomicilios()
+        {
+            NDomicilioInterno nDomicilioInterno = new NDomicilioInterno();
+
+            if (txtIdInterno.Text == null || txtIdInterno.Text == "")
+            {
+                MessageBox.Show("El interno no esta cargado", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            (List<DDomicilioInterno> listaDomicilios, string errorResponse) = await nDomicilioInterno.ListaDomiciliosXInterno(Convert.ToInt32(txtIdInterno.Text));
+
+            if (listaDomicilios == null)
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            var datosfiltrados = listaDomicilios
+                .Select(c => new
+                {
+                    Id = c.id_domicilio_interno,
+                    Barrio = c.barrio,
+                    Direccion = c.direccion + " N° " + c.numero_dom,
+                    Ciudad = c.ciudad,
+                    Municipio = c.municipio.municipio,
+                    Departamento = c.departamento.departamento,
+                    Provincia = c.provincia.provincia,
+                    Pais = c.pais.pais,                                       
+                    FechaCarga = c.fecha_carga,
+                    OrganismoCarga = c.organismo.organismo,
+                    Usuario = c.usuario.apellido + " " + c.usuario.nombre
+
+                })
+                .ToList();
+
+            dtgDomicilios.DataSource = datosfiltrados;
+
+            if (listaDomicilios.Count == 0)
+            {
+                MessageBox.Show("No se encontraron registros.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                dtgDomicilios.Columns[0].Width = 30;
+                dtgDomicilios.Columns[1].Width = 100;
+                dtgDomicilios.Columns[2].Width = 200;
+                dtgDomicilios.Columns[3].Width = 100;
+                dtgDomicilios.Columns[4].Width = 100;
+                dtgDomicilios.Columns[5].Width = 100;
+                dtgDomicilios.Columns[6].Width = 100;
+
+                dtgDomicilios.Focus();
+            }
+
+        } //FIN METODO PARA OBTENER LA LISTA DE CAUSAS EN UN DATA GRID ...........
+
     }
 }

@@ -279,6 +279,7 @@ namespace DAOImplement
         }
         //FIN ESTABLECER CONDENA...................................................
 
+        //QUITAR CONDENA
         public async Task<(bool, string error)> QuitarCondena(int idCausa, string dataCondena)
         {
             string token = SessionManager.Token; // Aquí pones tu token real
@@ -332,6 +333,7 @@ namespace DAOImplement
                 return (false, $"Error inesperado: {ex.Message}");
             }
         }
+        //FIN QUITAR CONDENA..................................................
 
     }
 }
