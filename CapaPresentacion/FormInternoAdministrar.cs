@@ -1395,5 +1395,9 @@ namespace CapaPresentacion
 
         } //FIN METODO PARA OBTENER LA LISTA DE CAUSAS EN UN DATA GRID ...........
 
+        private void btnNuevoDomicilio_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
