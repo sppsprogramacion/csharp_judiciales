@@ -106,12 +106,27 @@ namespace CapaPresentacion
                 cmbNacionalidad.DisplayMember = "nacionalidad";
                 cmbNacionalidad.DataSource = datosFiliatorios.nacionalidad;
 
-
                 //Carga de combo estado civil
                 cmbEstadoCivil.ValueMember = "id_estado_civil";
                 cmbEstadoCivil.DisplayMember = "estado_civil";
                 cmbEstadoCivil.DataSource = datosFiliatorios.estado_civil;
-                                
+
+                //Carga de combo estado civil
+                cmbNivelEducacion.ValueMember = "id_nivel_educacion";
+                cmbNivelEducacion.DisplayMember = "nivel_educacion";
+                cmbNivelEducacion.DataSource = datosFiliatorios.niveles_educacion;
+
+                //Carga de combo estado civil
+                cmbReligion.ValueMember = "id_religion";
+                cmbReligion.DisplayMember = "religion";
+                cmbReligion.DataSource = datosFiliatorios.religiones;
+
+                //Carga de combo estado civil
+                cmbUltimaOcupacion.ValueMember = "id_ocupacion";
+                cmbUltimaOcupacion.DisplayMember = "ocupacion";
+                cmbUltimaOcupacion.DataSource = datosFiliatorios.ocupaciones;
+
+
             }
             //fin Carga de combos sobre DatosFiliatorios
                        
@@ -516,6 +531,30 @@ namespace CapaPresentacion
             //cargar datos del interno
             this.CargarControlesInformacionInterno();
             this.HabilitarDatosFiliatorios(false);
+        }
+
+        private async void cmbNacionalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Carga de combo provincia
+            NProvincia nProvincia = new NProvincia();
+            string id_paiss = Convert.ToString(this.cmbNacionalidad.SelectedValue);
+            cmbProvinciaNacimiento.ValueMember = "id_provincia";
+            cmbProvinciaNacimiento.DisplayMember = "provincia";
+            (List<DProvincia> listaProvincia, string errorResponseProvincia) = await nProvincia.RetornarListaProvinciasXPais(id_paiss);
+
+            cmbProvinciaNacimiento.DataSource = listaProvincia;
+        }
+
+        private async void cmbProvinciaNacimiento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Carga de combo departamento
+            NDepartamento nDepartamento = new NDepartamento();
+            string provincia_identificador = Convert.ToString(this.cmbProvinciaNacimiento.SelectedValue);
+            cmbDepartamentoNacimiento.ValueMember = "id_departamento";
+            cmbDepartamentoNacimiento.DisplayMember = "departamento";
+            (List<DDepartamento> listaDepartamento, string errorResponseDepartamento) = await nDepartamento.RetornarListaDepartamentoXProvincia(provincia_identificador);
+            //MessageBox.Show("el paramentro es: " + provincia_identificador);
+            cmbDepartamentoNacimiento.DataSource = listaDepartamento;
         }
 
         private void pictureFotoPI_DoubleClick(object sender, EventArgs e)
@@ -1200,68 +1239,16 @@ namespace CapaPresentacion
         #endregion TRASLADOS
         //FIN REGION TRASLADOS....................................................................
         //........................................................................................
+
+        //REGION HISTORIAL PROCESAL
+        #region HISTORIAL_PROCESAL
+        
         private void btnVerHistorial_Click(object sender, EventArgs e)
         {
             tabInterno.Enabled = false;
             this.CargarDataGridHistorial();
             tabInterno.Enabled = true;
         }
-
-        //METODO PARA OBTENER LA LISTA DE CAUSAS Y CARGARLO EN UN DATA GRID 
-        async private void CargarDataGridHistorial()
-        {
-            NHistorialPRocesal nHistorialProcesal = new NHistorialPRocesal();
-
-            if (txtIdIngresoVer.Text == null || txtIdIngresoVer.Text == "")
-            {
-                MessageBox.Show("El interno no tiene un ingreso valido", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            (List<DHistorialProcesal> listaHistorialProcesal, string errorResponse) = await nHistorialProcesal.ListaXIngreso(Convert.ToInt32(txtIdIngresoVer.Text));
-
-            if (listaHistorialProcesal == null)
-            {
-                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            var datosfiltrados = listaHistorialProcesal
-                .Select(c => new
-                {
-                    Id = c.id_historial_procesal,
-                    Fecha = c.fecha,
-                    TipoHistorial = c.tipo_historial_procesal.tipo_historial_procesal,
-                    Detalle = c.detalle,
-                    Motivo = c.motivo,
-                    FechaCarga = c.fecha_carga,
-                    OrganismoCarga = c.organismo.organismo,
-                    Usuario = c.usuario.apellido + " " + c.usuario.nombre
-
-                })
-                .ToList();
-
-            dtgHistorialProcesal.DataSource = datosfiltrados;
-
-            if (listaHistorialProcesal.Count == 0)
-            {
-                MessageBox.Show("No se encontraron registros.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-            else
-            {
-                dtgHistorialProcesal.Columns[0].Width = 50;
-                dtgHistorialProcesal.Columns[1].Width = 100;
-                dtgHistorialProcesal.Columns[2].Width = 150;
-                dtgHistorialProcesal.Columns[3].Width = 350;
-                dtgHistorialProcesal.Columns[4].Width = 150;
-                dtgHistorialProcesal.Columns[5].Width = 100;
-                dtgHistorialProcesal.Columns[6].Width = 150;
-
-                dtgHistorialProcesal.Focus();
-            }
-            
-        } //FIN METODO PARA OBTENER LA LISTA DE CAUSAS EN UN DATA GRID ...........
 
         private void btnNuevoHistorial_Click(object sender, EventArgs e)
         {
@@ -1329,11 +1316,101 @@ namespace CapaPresentacion
             }
         }
 
+        //METODO PARA OBTENER LA LISTA DE historial Y CARGARLO EN UN DATA GRID 
+        async private void CargarDataGridHistorial()
+        {
+            NHistorialPRocesal nHistorialProcesal = new NHistorialPRocesal();
+
+            if (txtIdIngresoVer.Text == null || txtIdIngresoVer.Text == "")
+            {
+                MessageBox.Show("El interno no tiene un ingreso valido", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            (List<DHistorialProcesal> listaHistorialProcesal, string errorResponse) = await nHistorialProcesal.ListaXIngreso(Convert.ToInt32(txtIdIngresoVer.Text));
+
+            if (listaHistorialProcesal == null)
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            var datosfiltrados = listaHistorialProcesal
+                .Select(c => new
+                {
+                    Id = c.id_historial_procesal,
+                    Fecha = c.fecha,
+                    TipoHistorial = c.tipo_historial_procesal.tipo_historial_procesal,
+                    Detalle = c.detalle,
+                    Motivo = c.motivo,
+                    FechaCarga = c.fecha_carga,
+                    OrganismoCarga = c.organismo.organismo,
+                    Usuario = c.usuario.apellido + " " + c.usuario.nombre
+
+                })
+                .ToList();
+
+            dtgHistorialProcesal.DataSource = datosfiltrados;
+
+            if (listaHistorialProcesal.Count == 0)
+            {
+                MessageBox.Show("No se encontraron registros.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                dtgHistorialProcesal.Columns[0].Width = 50;
+                dtgHistorialProcesal.Columns[1].Width = 100;
+                dtgHistorialProcesal.Columns[2].Width = 150;
+                dtgHistorialProcesal.Columns[3].Width = 350;
+                dtgHistorialProcesal.Columns[4].Width = 150;
+                dtgHistorialProcesal.Columns[5].Width = 100;
+                dtgHistorialProcesal.Columns[6].Width = 150;
+
+                dtgHistorialProcesal.Focus();
+            }
+
+        }
+        //FIN METODO PARA OBTENER LA LISTA DE CAUSAS EN UN DATA GRID ...........
+
+
+        #endregion HISTORIAL_PROCESAL
+        //FIN REGION HISTORIAL PROCESAL...........................................................
+        //.......................................................................................
+
+        //REGION DOMICILIOS
+        #region DOMICILIOS
         private void btnVerDomicilios_Click(object sender, EventArgs e)
         {
             tabInterno.Enabled = false;
             this.CargarDataGridDomicilios();
             tabInterno.Enabled = true;
+        }
+
+        private void btnNuevoDomicilio_Click(object sender, EventArgs e)
+        {
+            if (txtIdInterno.Text == null || txtIdInterno.Text == "")
+            {
+                MessageBox.Show("El interno no se encuentra cargado", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (FormDomicilioNuevo formDomicilioNuevo = new FormDomicilioNuevo(Convert.ToInt32(txtIdInterno.Text)))
+            {  
+                // Aquí se abre el FormularioB
+                if (formDomicilioNuevo.ShowDialog() == DialogResult.OK)
+                {
+                    // Recién después de cerrar FormularioB, puedo leer el dato
+                    bool isDomicilioCreado = formDomicilioNuevo.isCreadoDomicilioGlobal;
+                    if (isDomicilioCreado)
+                    {
+
+                        tabInterno.Enabled = false;
+                        this.CargarDataGridDomicilios();
+                        tabInterno.Enabled = true;
+                    }
+                }
+            }
         }
 
         //METODO PARA OBTENER LA LISTA DE DOMICILIOS Y CARGARLO EN UN DATA GRID 
@@ -1359,13 +1436,16 @@ namespace CapaPresentacion
                 .Select(c => new
                 {
                     Id = c.id_domicilio_interno,
+                    Vigente = c.vigente,
                     Barrio = c.barrio,
                     Direccion = c.direccion + " N° " + c.numero_dom,
                     Ciudad = c.ciudad,
                     Municipio = c.municipio.municipio,
                     Departamento = c.departamento.departamento,
                     Provincia = c.provincia.provincia,
-                    Pais = c.pais.pais,                                       
+                    Pais = c.pais.pais,
+                    DZonaResidencia = c.zona_residencia.zona_residencia,
+                    Telefono = c.telefono,
                     FechaCarga = c.fecha_carga,
                     OrganismoCarga = c.organismo.organismo,
                     Usuario = c.usuario.apellido + " " + c.usuario.nombre
@@ -1392,12 +1472,13 @@ namespace CapaPresentacion
 
                 dtgDomicilios.Focus();
             }
-
-        } //FIN METODO PARA OBTENER LA LISTA DE CAUSAS EN UN DATA GRID ...........
-
-        private void btnNuevoDomicilio_Click(object sender, EventArgs e)
-        {
-
         }
+        //FIN METODO PARA OBTENER LA LISTA DE CAUSAS EN UN DATA GRID .............................
+
+        #endregion DOMICILIOS
+        //FIN REGION DOMICILIOS.......................................................
+        //........................................................................
+
+
     }
 }

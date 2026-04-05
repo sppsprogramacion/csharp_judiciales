@@ -23,6 +23,9 @@ namespace CapaDatos
         public string barrio { get; set; }
         public string direccion { get; set; }
         public int numero_dom { get; set; }
+        public string zona_residencia_id { get; set; }
+        public DZonaResidencia zona_residencia { get; set; }
+        public string telefono { get; set; }
         public bool vigente { get; set; }
         public bool is_eliminado { get; set; }
         public string detalle_eliminado { get; set; }

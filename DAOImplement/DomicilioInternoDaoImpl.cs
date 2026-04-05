@@ -34,7 +34,7 @@ namespace DAOImplement
                 StringContent content = new StringContent(domicilioInterno, Encoding.UTF8, "application/json");
 
                 // Enviar la solicitud HTTP POST
-                HttpResponseMessage httpResponse = await this.httpClient.PostAsync(url_base + "/causas", content);
+                HttpResponseMessage httpResponse = await this.httpClient.PostAsync(url_base + "/domicilios-interno", content);
 
                 if (httpResponse.IsSuccessStatusCode)
                 {

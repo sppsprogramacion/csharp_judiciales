@@ -76,6 +76,7 @@
     <Compile Include="DResponseEditar.cs" />
     <Compile Include="DSexo.cs" />
     <Compile Include="DEstadoCivil.cs" />
+    <Compile Include="DTablasDomicilioInterno.cs" />
     <Compile Include="DTablasHistorialProcesal.cs" />
     <Compile Include="DTablasIngresoInterno.cs" />
     <Compile Include="DTamanio.cs" />

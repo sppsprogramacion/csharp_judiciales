@@ -318,8 +318,6 @@ namespace CapaPresentacion
             cmbDepartamentoNacimiento.DataSource = listaDepartamento;
         }
 
-
-
         //HABILITAR CONTROLES
         private void HabilitarControlesNuevo(bool habilitar)
         {
@@ -442,6 +440,5 @@ namespace CapaPresentacion
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-
     }
 }

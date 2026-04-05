@@ -72,5 +72,17 @@ namespace CapaNegocio
         }
         //FIN RETORNAR TABLAS PARA HISTORIAL PROCESAL..................................
 
+        //RETORNAR TABLAS PARA DOMICILIO INTERNO
+        public async Task<(DTablasDomicilioInterno, string error)> ListasTablasDomicilioInterno()
+        {
+            IListasGenerales listasGeneralesDao = new ListasGeneralesDaoImplement();
+
+            (DTablasDomicilioInterno dTablasDomicilioInterno, string errorResponse) = await listasGeneralesDao.ListasTablasDomicilioInterno();
+
+
+            return (dTablasDomicilioInterno, errorResponse);
+        }
+        //FIN RETORNAR TABLAS PARA DOMICILIO INTERNO..................................
+
     }
 }
