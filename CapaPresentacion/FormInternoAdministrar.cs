@@ -1413,6 +1413,44 @@ namespace CapaPresentacion
             }
         }
 
+        private void dtgDomicilios_KeyDown(object sender, KeyEventArgs e)
+        {
+            //AL PRESIONAR ENTER MOSTRAR
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+
+                if (dtgDomicilios.SelectedRows.Count > 0)
+                {
+                    int idDomiciio;
+                    idDomiciio = Convert.ToInt32(dtgDomicilios.CurrentRow.Cells["ID"].Value.ToString());
+
+
+                    if (idDomiciio > 0)
+                    {
+                        txtIdDomicilio.Text = idDomiciio.ToString();
+                        txtDireccion.Text = "Barrio: " + dtgDomicilios.CurrentRow.Cells["Barrio"].Value.ToString()
+                            + " - " + dtgDomicilios.CurrentRow.Cells["Direccion"].Value.ToString();
+                        txtCiudad.Text = dtgDomicilios.CurrentRow.Cells["Ciudad"].Value?.ToString();
+                        txtMunicipio.Text = dtgDomicilios.CurrentRow.Cells["Municipio"].Value?.ToString();
+                        txtDepartamento .Text = dtgDomicilios.CurrentRow.Cells["Departamento"].Value?.ToString();
+                        txtProvincia.Text = dtgDomicilios.CurrentRow.Cells["Provincia"].Value?.ToString();
+                        txtPais.Text = dtgDomicilios.CurrentRow.Cells["Pais"].Value?.ToString();
+                        txtZonaResidencia.Text = dtgDomicilios.CurrentRow.Cells["ZonaResidencia"].Value?.ToString();
+                        txtTelefono.Text = dtgDomicilios.CurrentRow.Cells["Telefono"].Value?.ToString();
+                        chkVigente.Checked = Convert.ToBoolean(dtgDomicilios.CurrentRow.Cells["Vigente"].Value.ToString());
+                        txtFechaCarga.Text = Convert.ToDateTime(dtgDomicilios.CurrentRow.Cells["FechaCarga"].Value).ToString("dd/MM/yyyy");
+                        txtOrganismoCarga.Text = dtgDomicilios.CurrentRow.Cells["OrganismoCarga"].Value?.ToString();
+                        txtUsuarioCarga.Text = dtgDomicilios.CurrentRow.Cells["Usuario"].Value?.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe seleccionar una traslado.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+        }
+
         //METODO PARA OBTENER LA LISTA DE DOMICILIOS Y CARGARLO EN UN DATA GRID 
         async private void CargarDataGridDomicilios()
         {
@@ -1444,7 +1482,7 @@ namespace CapaPresentacion
                     Departamento = c.departamento.departamento,
                     Provincia = c.provincia.provincia,
                     Pais = c.pais.pais,
-                    DZonaResidencia = c.zona_residencia.zona_residencia,
+                    ZonaResidencia = c.zona_residencia.zona_residencia,
                     Telefono = c.telefono,
                     FechaCarga = c.fecha_carga,
                     OrganismoCarga = c.organismo.organismo,
@@ -1463,14 +1501,46 @@ namespace CapaPresentacion
             else
             {
                 dtgDomicilios.Columns[0].Width = 30;
-                dtgDomicilios.Columns[1].Width = 100;
-                dtgDomicilios.Columns[2].Width = 200;
-                dtgDomicilios.Columns[3].Width = 100;
+                dtgDomicilios.Columns[1].Width = 60;
+                dtgDomicilios.Columns[2].Width = 150;
+                dtgDomicilios.Columns[3].Width = 200;
                 dtgDomicilios.Columns[4].Width = 100;
                 dtgDomicilios.Columns[5].Width = 100;
                 dtgDomicilios.Columns[6].Width = 100;
 
                 dtgDomicilios.Focus();
+            }
+        }
+
+        private void btnEditarDomicilio_Click(object sender, EventArgs e)
+        {
+            if (txtIdDomicilio.Text == null || txtIdDomicilio.Text == "")
+            {
+                MessageBox.Show("Debe seleccionar un domicilio", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (chkVigente.Checked == false)
+            {
+                MessageBox.Show("Solo se puede modificar el domicilio vigente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (FormDomiclioEditar formDomicilioEditar = new FormDomiclioEditar(Convert.ToInt32(txtIdDomicilio.Text)))
+            {
+                // Aquí se abre el FormularioB
+                if (formDomicilioEditar.ShowDialog() == DialogResult.OK)
+                {
+                    // Recién después de cerrar FormularioB, puedo leer el dato
+                    bool isDomicilioEditado = formDomicilioEditar.isEditadoDomicilioGlobal;
+                    if (isDomicilioEditado)
+                    {
+
+                        tabInterno.Enabled = false;
+                        this.CargarDataGridDomicilios();
+                        tabInterno.Enabled = true;
+                    }
+                }
             }
         }
         //FIN METODO PARA OBTENER LA LISTA DE CAUSAS EN UN DATA GRID .............................

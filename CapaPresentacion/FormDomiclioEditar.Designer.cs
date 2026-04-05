@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDomiclioEditar));
             this.label2 = new System.Windows.Forms.Label();
             this.txtIdDomicilio = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnGuardarHistorial = new System.Windows.Forms.Button();
-            this.btnCancelarHistorial = new System.Windows.Forms.Button();
+            this.gboxDomicilio = new System.Windows.Forms.GroupBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.cmbZonaResidencia = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.groupBox2.SuspendLayout();
+            this.gboxDomicilio.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -77,65 +77,67 @@
             this.txtIdDomicilio.Size = new System.Drawing.Size(140, 21);
             this.txtIdDomicilio.TabIndex = 59;
             // 
-            // groupBox2
+            // gboxDomicilio
             // 
-            this.groupBox2.Controls.Add(this.btnGuardarHistorial);
-            this.groupBox2.Controls.Add(this.btnCancelarHistorial);
-            this.groupBox2.Controls.Add(this.cmbZonaResidencia);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.txtTelefono);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.txtBarrio);
-            this.groupBox2.Controls.Add(this.txtDireccion);
-            this.groupBox2.Controls.Add(this.txtNumDomicilio);
-            this.groupBox2.Controls.Add(this.cmbPais);
-            this.groupBox2.Controls.Add(this.cmbProvincia);
-            this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.cmbDepartamento);
-            this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.cmbMunicipio);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.txtCiudad);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(7, 47);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(594, 297);
-            this.groupBox2.TabIndex = 58;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Domicilio";
+            this.gboxDomicilio.Controls.Add(this.btnGuardar);
+            this.gboxDomicilio.Controls.Add(this.btnCancelar);
+            this.gboxDomicilio.Controls.Add(this.cmbZonaResidencia);
+            this.gboxDomicilio.Controls.Add(this.label1);
+            this.gboxDomicilio.Controls.Add(this.label17);
+            this.gboxDomicilio.Controls.Add(this.txtTelefono);
+            this.gboxDomicilio.Controls.Add(this.label9);
+            this.gboxDomicilio.Controls.Add(this.txtBarrio);
+            this.gboxDomicilio.Controls.Add(this.txtDireccion);
+            this.gboxDomicilio.Controls.Add(this.txtNumDomicilio);
+            this.gboxDomicilio.Controls.Add(this.cmbPais);
+            this.gboxDomicilio.Controls.Add(this.cmbProvincia);
+            this.gboxDomicilio.Controls.Add(this.label16);
+            this.gboxDomicilio.Controls.Add(this.cmbDepartamento);
+            this.gboxDomicilio.Controls.Add(this.label15);
+            this.gboxDomicilio.Controls.Add(this.cmbMunicipio);
+            this.gboxDomicilio.Controls.Add(this.label14);
+            this.gboxDomicilio.Controls.Add(this.txtCiudad);
+            this.gboxDomicilio.Controls.Add(this.label13);
+            this.gboxDomicilio.Controls.Add(this.label10);
+            this.gboxDomicilio.Controls.Add(this.label12);
+            this.gboxDomicilio.Controls.Add(this.label11);
+            this.gboxDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gboxDomicilio.Location = new System.Drawing.Point(7, 47);
+            this.gboxDomicilio.Name = "gboxDomicilio";
+            this.gboxDomicilio.Size = new System.Drawing.Size(594, 297);
+            this.gboxDomicilio.TabIndex = 58;
+            this.gboxDomicilio.TabStop = false;
+            this.gboxDomicilio.Text = "Domicilio";
             // 
-            // btnGuardarHistorial
+            // btnGuardar
             // 
-            this.btnGuardarHistorial.BackColor = System.Drawing.Color.White;
-            this.btnGuardarHistorial.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnGuardarHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarHistorial.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardarHistorial.Location = new System.Drawing.Point(368, 245);
-            this.btnGuardarHistorial.Name = "btnGuardarHistorial";
-            this.btnGuardarHistorial.Size = new System.Drawing.Size(98, 35);
-            this.btnGuardarHistorial.TabIndex = 298;
-            this.btnGuardarHistorial.Text = "Guardar";
-            this.btnGuardarHistorial.UseVisualStyleBackColor = false;
+            this.btnGuardar.BackColor = System.Drawing.Color.White;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.Green;
+            this.btnGuardar.Location = new System.Drawing.Point(368, 245);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(98, 35);
+            this.btnGuardar.TabIndex = 298;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnCancelarHistorial
+            // btnCancelar
             // 
-            this.btnCancelarHistorial.BackColor = System.Drawing.Color.White;
-            this.btnCancelarHistorial.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarHistorial.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarHistorial.Location = new System.Drawing.Point(472, 245);
-            this.btnCancelarHistorial.Name = "btnCancelarHistorial";
-            this.btnCancelarHistorial.Size = new System.Drawing.Size(98, 35);
-            this.btnCancelarHistorial.TabIndex = 299;
-            this.btnCancelarHistorial.Text = "Cancelar";
-            this.btnCancelarHistorial.UseVisualStyleBackColor = false;
+            this.btnCancelar.BackColor = System.Drawing.Color.White;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelar.Location = new System.Drawing.Point(472, 245);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(98, 35);
+            this.btnCancelar.TabIndex = 299;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // cmbZonaResidencia
             // 
@@ -213,6 +215,7 @@
             this.cmbPais.Name = "cmbPais";
             this.cmbPais.Size = new System.Drawing.Size(265, 23);
             this.cmbPais.TabIndex = 8;
+            this.cmbPais.SelectedIndexChanged += new System.EventHandler(this.cmbPais_SelectedIndexChanged);
             // 
             // cmbProvincia
             // 
@@ -221,6 +224,7 @@
             this.cmbProvincia.Name = "cmbProvincia";
             this.cmbProvincia.Size = new System.Drawing.Size(265, 23);
             this.cmbProvincia.TabIndex = 9;
+            this.cmbProvincia.SelectedIndexChanged += new System.EventHandler(this.cmbProvincia_SelectedIndexChanged);
             // 
             // label16
             // 
@@ -239,6 +243,7 @@
             this.cmbDepartamento.Name = "cmbDepartamento";
             this.cmbDepartamento.Size = new System.Drawing.Size(265, 23);
             this.cmbDepartamento.TabIndex = 10;
+            this.cmbDepartamento.SelectedIndexChanged += new System.EventHandler(this.cmbDepartamento_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -323,12 +328,14 @@
             this.ClientSize = new System.Drawing.Size(609, 350);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtIdDomicilio);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gboxDomicilio);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDomiclioEditar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EDITAR DOMICILIO";
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.Load += new System.EventHandler(this.FormDomiclioEditar_Load);
+            this.gboxDomicilio.ResumeLayout(false);
+            this.gboxDomicilio.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,9 +345,9 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtIdDomicilio;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnGuardarHistorial;
-        private System.Windows.Forms.Button btnCancelarHistorial;
+        private System.Windows.Forms.GroupBox gboxDomicilio;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cmbZonaResidencia;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label17;

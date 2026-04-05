@@ -331,6 +331,7 @@
             this.Controls.Add(this.gboxDomicilio);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDomicilioNuevo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NUEVO DOMICILIO";
             this.Load += new System.EventHandler(this.FormDomicilioNuevo_Load);
             this.gboxDomicilio.ResumeLayout(false);
