@@ -90,7 +90,9 @@ namespace CapaPresentacion
 
         private void btnCancelarHistorial_Click(object sender, EventArgs e)
         {
-            this.CargarControlesHistorial();
+            this.DialogResult = DialogResult.OK; // Para indicar que cerró bien
+            this.Close();
+            //this.CargarControlesHistorial();
         }
 
         private async void btnGuardarHistorial_Click(object sender, EventArgs e)

@@ -1395,6 +1395,8 @@ namespace CapaPresentacion
                 return;
             }
 
+            this.LimpiarControlesDomicilio();
+
             using (FormDomicilioNuevo formDomicilioNuevo = new FormDomicilioNuevo(Convert.ToInt32(txtIdInterno.Text)))
             {  
                 // Aquí se abre el FormularioB
@@ -1407,6 +1409,20 @@ namespace CapaPresentacion
 
                         tabInterno.Enabled = false;
                         this.CargarDataGridDomicilios();
+                        txtIdDomicilio.Text = string.Empty;
+                        txtDireccion.Text = string.Empty;
+                        txtCiudad.Text = string.Empty;
+                        txtMunicipio.Text = string.Empty;
+                        txtDepartamento.Text = string.Empty;
+                        txtProvincia.Text = string.Empty;
+                        txtPais.Text = string.Empty;
+                        txtZonaResidencia.Text = string.Empty;
+                        txtTelefono.Text = string.Empty;
+                        chkVigente.Checked = false;
+                        txtFechaCarga.Text = string.Empty;
+                        txtOrganismoCarga.Text = string.Empty;
+                        txtUsuarioCarga.Text = string.Empty;
+                        tabInterno.Enabled = true;
                         tabInterno.Enabled = true;
                     }
                 }
@@ -1450,6 +1466,83 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void btnEditarDomicilio_Click(object sender, EventArgs e)
+        {
+            if (txtIdDomicilio.Text == null || txtIdDomicilio.Text == "")
+            {
+                MessageBox.Show("Debe seleccionar un domicilio", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (chkVigente.Checked == false)
+            {
+                MessageBox.Show("Solo se puede modificar el domicilio vigente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (FormDomiclioEditar formDomicilioEditar = new FormDomiclioEditar(Convert.ToInt32(txtIdDomicilio.Text)))
+            {
+                // Aquí se abre el FormularioB
+                if (formDomicilioEditar.ShowDialog() == DialogResult.OK)
+                {
+                    // Recién después de cerrar FormularioB, puedo leer el dato
+                    bool isDomicilioEditado = formDomicilioEditar.isEditadoDomicilioGlobal;
+                    if (isDomicilioEditado)
+                    {
+
+                        tabInterno.Enabled = false;
+                        this.CargarDataGridDomicilios();
+                        
+                        this.LimpiarControlesDomicilio();
+                    }
+                }
+            }
+        }
+
+        private void btnAnularDomicilio_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtIdDomicilio.Text))
+            {
+                MessageBox.Show("Debe seleccionar un domicilio", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            txtDetalleAnulardomicilio.Enabled = true;
+            btnGuardarAnulardomicilio.Enabled = true;
+            btnCancelarAnulardomicilio.Enabled = true;
+            btnAnularDomicilio.Enabled = false;
+        }
+
+        private void btnCancelarAnulardomicilio_Click(object sender, EventArgs e)
+        {
+            txtDetalleAnulardomicilio.Text = string.Empty;
+            txtDetalleAnulardomicilio.Enabled = false;
+            btnGuardarAnulardomicilio.Enabled = false;
+            btnCancelarAnulardomicilio.Enabled = false;
+            btnAnularDomicilio.Enabled = true;
+
+        }
+
+        //METODO LIMPIAR CONTROLES DOMICILIO
+        private void LimpiarControlesDomicilio()
+        {
+            txtIdDomicilio.Text = string.Empty;
+            txtDireccion.Text = string.Empty;
+            txtCiudad.Text = string.Empty;
+            txtMunicipio.Text = string.Empty;
+            txtDepartamento.Text = string.Empty;
+            txtProvincia.Text = string.Empty;
+            txtPais.Text = string.Empty;
+            txtZonaResidencia.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
+            chkVigente.Checked = false;
+            txtFechaCarga.Text = string.Empty;
+            txtOrganismoCarga.Text = string.Empty;
+            txtUsuarioCarga.Text = string.Empty;
+            tabInterno.Enabled = true;
+        }
+        //FIN METODO LIMPIAR CONTROLES DOMICILIO
 
         //METODO PARA OBTENER LA LISTA DE DOMICILIOS Y CARGARLO EN UN DATA GRID 
         async private void CargarDataGridDomicilios()
@@ -1512,35 +1605,60 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnEditarDomicilio_Click(object sender, EventArgs e)
+        private async void btnGuardarAnulardomicilio_Click(object sender, EventArgs e)
         {
-            if (txtIdDomicilio.Text == null || txtIdDomicilio.Text == "")
+            if (string.IsNullOrEmpty(txtIdDomicilio.Text))
             {
                 MessageBox.Show("Debe seleccionar un domicilio", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (chkVigente.Checked == false)
+            if (txtDetalleAnulardomicilio.Text == string.Empty)
             {
-                MessageBox.Show("Solo se puede modificar el domicilio vigente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debe completar el detalle.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtDetalleAnulardomicilio.Focus();
                 return;
             }
 
-            using (FormDomiclioEditar formDomicilioEditar = new FormDomiclioEditar(Convert.ToInt32(txtIdDomicilio.Text)))
+            if (txtDetalleAnulardomicilio.Text.Length > 200)
             {
-                // Aquí se abre el FormularioB
-                if (formDomicilioEditar.ShowDialog() == DialogResult.OK)
-                {
-                    // Recién después de cerrar FormularioB, puedo leer el dato
-                    bool isDomicilioEditado = formDomicilioEditar.isEditadoDomicilioGlobal;
-                    if (isDomicilioEditado)
-                    {
+                MessageBox.Show("El detalle debe tener hasta 200 caracteres.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtDetalleAnulardomicilio.Focus();
+                return;
+            }
 
-                        tabInterno.Enabled = false;
-                        this.CargarDataGridDomicilios();
-                        tabInterno.Enabled = true;
-                    }
-                }
+            NDomicilioInterno nDomicilioInterno = new NDomicilioInterno();
+
+            var dataAnular = new
+            {
+                detalle_eliminado = txtDetalleAnulardomicilio.Text
+            };
+
+            string dataEnviar = JsonConvert.SerializeObject(dataAnular);
+
+            tabInterno.Enabled = false;
+            (bool respuestaEditar, string errorResponse) = await nDomicilioInterno.AnularDomicilio(Convert.ToInt32(txtIdDomicilio.Text), dataEnviar);
+            tabInterno.Enabled = true;
+
+            //verificar respuesta de la peticion
+            if (respuestaEditar)
+            {
+
+                MessageBox.Show("El domicilio se anulo correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.LimpiarControlesDomicilio();
+
+                txtDetalleAnulardomicilio.Text = string.Empty;
+                txtDetalleAnulardomicilio.Enabled = false;
+                btnGuardarAnulardomicilio.Enabled = false;
+                btnCancelarAnulardomicilio.Enabled = false;
+                btnAnularDomicilio.Enabled = true;
+
+                this.CargarDataGridDomicilios();
+            }
+            else
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         //FIN METODO PARA OBTENER LA LISTA DE CAUSAS EN UN DATA GRID .............................

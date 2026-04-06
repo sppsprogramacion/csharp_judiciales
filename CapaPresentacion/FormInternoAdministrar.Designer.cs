@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInternoAdministrar));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabInterno = new System.Windows.Forms.TabControl();
             this.tabDatosPrincipales = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -203,12 +203,12 @@
             this.tabEgreso = new System.Windows.Forms.TabPage();
             this.tabDomicilio = new System.Windows.Forms.TabPage();
             this.btnVerDomicilios = new System.Windows.Forms.Button();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.gboxAnularDomicilio = new System.Windows.Forms.GroupBox();
+            this.btnAnularDomicilio = new System.Windows.Forms.Button();
+            this.btnGuardarAnulardomicilio = new System.Windows.Forms.Button();
+            this.btnCancelarAnulardomicilio = new System.Windows.Forms.Button();
             this.label34 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDetalleAnulardomicilio = new System.Windows.Forms.TextBox();
             this.btnNuevoDomicilio = new System.Windows.Forms.Button();
             this.gboxDomicilios = new System.Windows.Forms.GroupBox();
             this.dtgDomicilios = new System.Windows.Forms.DataGridView();
@@ -263,7 +263,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTraslados)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.tabDomicilio.SuspendLayout();
-            this.groupBox10.SuspendLayout();
+            this.gboxAnularDomicilio.SuspendLayout();
             this.gboxDomicilios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDomicilios)).BeginInit();
             this.gboxDomicilio.SuspendLayout();
@@ -1834,10 +1834,10 @@
             this.dtgHistorialProcesal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgHistorialProcesal.Location = new System.Drawing.Point(12, 21);
             this.dtgHistorialProcesal.Name = "dtgHistorialProcesal";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtgHistorialProcesal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgHistorialProcesal.Size = new System.Drawing.Size(1033, 588);
             this.dtgHistorialProcesal.TabIndex = 63;
@@ -2289,7 +2289,7 @@
             // tabDomicilio
             // 
             this.tabDomicilio.Controls.Add(this.btnVerDomicilios);
-            this.tabDomicilio.Controls.Add(this.groupBox10);
+            this.tabDomicilio.Controls.Add(this.gboxAnularDomicilio);
             this.tabDomicilio.Controls.Add(this.btnNuevoDomicilio);
             this.tabDomicilio.Controls.Add(this.gboxDomicilios);
             this.tabDomicilio.Controls.Add(this.gboxDomicilio);
@@ -2316,62 +2316,67 @@
             this.btnVerDomicilios.UseVisualStyleBackColor = false;
             this.btnVerDomicilios.Click += new System.EventHandler(this.btnVerDomicilios_Click);
             // 
-            // groupBox10
+            // gboxAnularDomicilio
             // 
-            this.groupBox10.Controls.Add(this.button4);
-            this.groupBox10.Controls.Add(this.button5);
-            this.groupBox10.Controls.Add(this.button6);
-            this.groupBox10.Controls.Add(this.label34);
-            this.groupBox10.Controls.Add(this.textBox2);
-            this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox10.Location = new System.Drawing.Point(623, 305);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(366, 330);
-            this.groupBox10.TabIndex = 238;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Anular";
+            this.gboxAnularDomicilio.Controls.Add(this.btnAnularDomicilio);
+            this.gboxAnularDomicilio.Controls.Add(this.btnGuardarAnulardomicilio);
+            this.gboxAnularDomicilio.Controls.Add(this.btnCancelarAnulardomicilio);
+            this.gboxAnularDomicilio.Controls.Add(this.label34);
+            this.gboxAnularDomicilio.Controls.Add(this.txtDetalleAnulardomicilio);
+            this.gboxAnularDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gboxAnularDomicilio.Location = new System.Drawing.Point(623, 305);
+            this.gboxAnularDomicilio.Name = "gboxAnularDomicilio";
+            this.gboxAnularDomicilio.Size = new System.Drawing.Size(366, 227);
+            this.gboxAnularDomicilio.TabIndex = 238;
+            this.gboxAnularDomicilio.TabStop = false;
+            this.gboxAnularDomicilio.Text = "Anular";
             // 
-            // button4
+            // btnAnularDomicilio
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Green;
-            this.button4.Location = new System.Drawing.Point(10, 249);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(98, 40);
-            this.button4.TabIndex = 237;
-            this.button4.Text = "GUARDAR";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnAnularDomicilio.BackColor = System.Drawing.Color.White;
+            this.btnAnularDomicilio.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnAnularDomicilio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnularDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnularDomicilio.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnAnularDomicilio.Location = new System.Drawing.Point(10, 27);
+            this.btnAnularDomicilio.Name = "btnAnularDomicilio";
+            this.btnAnularDomicilio.Size = new System.Drawing.Size(125, 40);
+            this.btnAnularDomicilio.TabIndex = 239;
+            this.btnAnularDomicilio.Text = "Anular";
+            this.btnAnularDomicilio.UseVisualStyleBackColor = false;
+            this.btnAnularDomicilio.Click += new System.EventHandler(this.btnAnularDomicilio_Click);
             // 
-            // button5
+            // btnGuardarAnulardomicilio
             // 
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.DarkOrange;
-            this.button5.Location = new System.Drawing.Point(124, 249);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(98, 40);
-            this.button5.TabIndex = 238;
-            this.button5.Text = "CANCELAR";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnGuardarAnulardomicilio.BackColor = System.Drawing.Color.White;
+            this.btnGuardarAnulardomicilio.Enabled = false;
+            this.btnGuardarAnulardomicilio.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnGuardarAnulardomicilio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarAnulardomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarAnulardomicilio.ForeColor = System.Drawing.Color.Green;
+            this.btnGuardarAnulardomicilio.Location = new System.Drawing.Point(10, 175);
+            this.btnGuardarAnulardomicilio.Name = "btnGuardarAnulardomicilio";
+            this.btnGuardarAnulardomicilio.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarAnulardomicilio.TabIndex = 237;
+            this.btnGuardarAnulardomicilio.Text = "GUARDAR";
+            this.btnGuardarAnulardomicilio.UseVisualStyleBackColor = false;
+            this.btnGuardarAnulardomicilio.Click += new System.EventHandler(this.btnGuardarAnulardomicilio_Click);
             // 
-            // button6
+            // btnCancelarAnulardomicilio
             // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.DarkCyan;
-            this.button6.Location = new System.Drawing.Point(8, 30);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(125, 40);
-            this.button6.TabIndex = 236;
-            this.button6.Text = "Anular";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnCancelarAnulardomicilio.BackColor = System.Drawing.Color.White;
+            this.btnCancelarAnulardomicilio.Enabled = false;
+            this.btnCancelarAnulardomicilio.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarAnulardomicilio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarAnulardomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarAnulardomicilio.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarAnulardomicilio.Location = new System.Drawing.Point(124, 175);
+            this.btnCancelarAnulardomicilio.Name = "btnCancelarAnulardomicilio";
+            this.btnCancelarAnulardomicilio.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarAnulardomicilio.TabIndex = 238;
+            this.btnCancelarAnulardomicilio.Text = "CANCELAR";
+            this.btnCancelarAnulardomicilio.UseVisualStyleBackColor = false;
+            this.btnCancelarAnulardomicilio.Click += new System.EventHandler(this.btnCancelarAnulardomicilio_Click);
             // 
             // label34
             // 
@@ -2383,16 +2388,16 @@
             this.label34.TabIndex = 78;
             this.label34.Text = "DETALLE:";
             // 
-            // textBox2
+            // txtDetalleAnulardomicilio
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(10, 96);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(335, 134);
-            this.textBox2.TabIndex = 77;
+            this.txtDetalleAnulardomicilio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDetalleAnulardomicilio.Enabled = false;
+            this.txtDetalleAnulardomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetalleAnulardomicilio.Location = new System.Drawing.Point(10, 96);
+            this.txtDetalleAnulardomicilio.Multiline = true;
+            this.txtDetalleAnulardomicilio.Name = "txtDetalleAnulardomicilio";
+            this.txtDetalleAnulardomicilio.Size = new System.Drawing.Size(335, 67);
+            this.txtDetalleAnulardomicilio.TabIndex = 77;
             // 
             // btnNuevoDomicilio
             // 
@@ -2766,8 +2771,8 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.tabDomicilio.ResumeLayout(false);
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
+            this.gboxAnularDomicilio.ResumeLayout(false);
+            this.gboxAnularDomicilio.PerformLayout();
             this.gboxDomicilios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDomicilios)).EndInit();
             this.gboxDomicilio.ResumeLayout(false);
@@ -2950,12 +2955,11 @@
         private System.Windows.Forms.ComboBox cmbUltimaOcupacion;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Button btnVerDomicilios;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.GroupBox gboxAnularDomicilio;
+        private System.Windows.Forms.Button btnGuardarAnulardomicilio;
+        private System.Windows.Forms.Button btnCancelarAnulardomicilio;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDetalleAnulardomicilio;
         private System.Windows.Forms.Button btnNuevoDomicilio;
         private System.Windows.Forms.GroupBox gboxDomicilios;
         private System.Windows.Forms.DataGridView dtgDomicilios;
@@ -2986,5 +2990,6 @@
         private System.Windows.Forms.CheckBox chkVigente;
         private System.Windows.Forms.TextBox txtDepartamento;
         private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Button btnAnularDomicilio;
     }
 }

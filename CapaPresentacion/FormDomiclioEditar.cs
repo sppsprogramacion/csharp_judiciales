@@ -1,5 +1,9 @@
 ﻿using CapaDatos;
 using CapaNegocio;
+using CapaPresentacion.DomicilioEditar.Datos;
+using CapaPresentacion.DomicilioEditar.Validacion;
+using CapaPresentacion.DomicilioNuevo.Datos;
+using CapaPresentacion.DomicilioNuevo.Validacion;
 using CapaPresentacion.FuncionesGenerales;
 using CapaPresentacion.Validaciones.HistorialProcesalAdministrar.Datos;
 using CapaPresentacion.Validaciones.HistorialProcesalAdministrar.Validacion;
@@ -122,27 +126,35 @@ namespace CapaPresentacion
             errorProvider.Clear();
 
             //validacion de formulario
-            //var datosformulario = new HistorialProcesalAdministrarDatos
-            //{
-            //    cmbTipoNovedad = cmbTipoNovedad.SelectedValue?.ToString() ?? string.Empty,
-            //    txtDetalleNovedad = txtDetalleNovedad.Text,
+            var datosformulario = new DomicilioInternoEditarDatos
+            {
+                cmbPais = cmbPais.SelectedValue?.ToString() ?? string.Empty,
+                cmbProvincia = cmbProvincia.SelectedValue?.ToString() ?? string.Empty,
+                cmbDepartamento = cmbDepartamento.SelectedValue?.ToString() ?? string.Empty,
+                cmbMunicipio = cmbMunicipio.SelectedValue?.ToString() ?? string.Empty,
+                txtCiudad = txtCiudad.Text,
+                txtBarrio = txtBarrio.Text,
+                txtDireccion = txtDireccion.Text,
+                txtNumDomicilio = txtNumDomicilio.Text,
+                cmbZonaResidencia = cmbZonaResidencia.SelectedValue?.ToString() ?? string.Empty,
+                txtTelefono = txtTelefono.Text
+            };
 
-            //};
+            var validator = new DomicilioInternoEditarValidacion();
+            var result = validator.Validate(datosformulario);
 
-            //var validator = new HistorialProcesalAdministrarValidation();
-            //var result = validator.Validate(datosformulario);
-
-            //if (!result.IsValid)
-            //{
-            //    MessageBox.Show("Complete correctamente los campos del formulario", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    foreach (var failure in result.Errors)
-            //    {
-            //        Control control = Controls.Find(failure.PropertyName, true)[0];
-            //        errorProvider.SetError(control, failure.ErrorMessage);
-            //    }
-            //    return;
-            //}
+            if (!result.IsValid)
+            {
+                MessageBox.Show("Complete correctamente los campos del formulario", "judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                foreach (var failure in result.Errors)
+                {
+                    Control control = Controls.Find(failure.PropertyName, true)[0];
+                    errorProvider.SetError(control, failure.ErrorMessage);
+                }
+                return;
+            }
             //fin validar formulario
+
 
             var data = new
             {

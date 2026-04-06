@@ -54,5 +54,16 @@ namespace CapaNegocio
             return (domicilioResponse, error);
         }
         //FIN MODIFICAR UN DOMICILIO........................................................................
+
+        //ANULAR UN DOMICILIO
+        public async Task<(bool, string error)> AnularDomicilio(int idDomicilio, string dataAnular)
+        {
+            IDomicilioInternoDao domicilioDao = new DomicilioInternoDaoImpl();
+
+            (bool domicilioResponse, string error) = await domicilioDao.AnularDomicilio(idDomicilio, dataAnular);
+
+            return (domicilioResponse, error);
+        }
+        //FIN ANULAR UN DOMICILIO...........................................................
     }
 }

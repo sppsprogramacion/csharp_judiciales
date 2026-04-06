@@ -1,5 +1,7 @@
 ﻿using CapaDatos;
 using CapaNegocio;
+using CapaPresentacion.DomicilioNuevo.Datos;
+using CapaPresentacion.DomicilioNuevo.Validacion;
 using CapaPresentacion.FuncionesGenerales;
 using CapaPresentacion.Validaciones.CausaNueva.Datos;
 using CapaPresentacion.Validaciones.CausaNueva.Validacion;
@@ -75,34 +77,33 @@ namespace CapaPresentacion
             errorProvider.Clear();
 
             //validacion de formulario
-            //var datosformulario = new CausaNuevaDatos
-            //{
-            //    txtCausa = txtCausa.Text,
-            //    cmbPrisionReclusion = cmbPrisionReclusion.SelectedValue?.ToString() ?? string.Empty,
-            //    txtExpediente = txtExpediente.Text,
-            //    cmbTipoDelito = cmbTipoDelito.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbEstadoProcesal = cmbEstadoProcesal.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbJurisdiccion = cmbJurisdiccion.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbJuzgado = cmbJuzgado.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbOtroJuzgado = cmbOtroJuzgado.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbReincidencia = cmbReincidencia.SelectedValue?.ToString() ?? string.Empty,
-            //    cmbTipoDefensor = cmbTipoDefensor.SelectedValue?.ToString() ?? string.Empty,
-            //    txtAbogado = txtAbogado.Text
-            //};
+            var datosformulario = new DomicilioInternoNuevoDatos
+            {
+                cmbPais = cmbPais.SelectedValue?.ToString() ?? string.Empty,
+                cmbProvincia = cmbProvincia.SelectedValue?.ToString() ?? string.Empty,
+                cmbDepartamento = cmbDepartamento.SelectedValue?.ToString() ?? string.Empty,
+                cmbMunicipio = cmbMunicipio.SelectedValue?.ToString() ?? string.Empty,
+                txtCiudad = txtCiudad.Text,
+                txtBarrio = txtBarrio.Text,
+                txtDireccion = txtDireccion.Text,
+                txtNumDomicilio = txtNumDomicilio.Text,                
+                cmbZonaResidencia = cmbZonaResidencia.SelectedValue?.ToString() ?? string.Empty,
+                txtTelefono = txtTelefono.Text
+            };
 
-            //var validator = new CausaNuevaValidation();
-            //var result = validator.Validate(datosformulario);
+            var validator = new DomicilioInternoNuevoValidacion();
+            var result = validator.Validate(datosformulario);
 
-            //if (!result.IsValid)
-            //{
-            //    MessageBox.Show("Complete correctamente los campos del formulario", "judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    foreach (var failure in result.Errors)
-            //    {
-            //        Control control = Controls.Find(failure.PropertyName, true)[0];
-            //        errorProvider.SetError(control, failure.ErrorMessage);
-            //    }
-            //    return;
-            //}
+            if (!result.IsValid)
+            {
+                MessageBox.Show("Complete correctamente los campos del formulario", "judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                foreach (var failure in result.Errors)
+                {
+                    Control control = Controls.Find(failure.PropertyName, true)[0];
+                    errorProvider.SetError(control, failure.ErrorMessage);
+                }
+                return;
+            }
             //fin validar formulario
 
             var data = new
@@ -154,10 +155,21 @@ namespace CapaPresentacion
             string id_pais = Convert.ToString(this.cmbPais.SelectedValue);
             cmbProvincia.ValueMember = "id_provincia";
             cmbProvincia.DisplayMember = "provincia";
-            List<DProvincia> provinciasFiltradas = dTablasDomicilioInternoGlobal.provincias
+            if (id_pais == "AR")
+            {
+                List<DProvincia> provinciasFiltradas = dTablasDomicilioInternoGlobal.provincias
                     .Where(p => p.pais_id == id_pais)
                     .ToList();
-            cmbProvincia.DataSource = provinciasFiltradas;
+                cmbProvincia.DataSource = provinciasFiltradas;
+            }
+            else
+            {
+                List<DProvincia> provinciasFiltradas = dTablasDomicilioInternoGlobal.provincias
+                    .Where(p => p.pais_id == id_pais || p.pais_id == null)
+                    .ToList();
+                cmbProvincia.DataSource = provinciasFiltradas;
+            }
+            
         }
 
         private void cmbProvincia_SelectedIndexChanged(object sender, EventArgs e)

@@ -19,7 +19,7 @@ namespace CapaPresentacion.Validaciones.CausaNueva.Validacion
                 .MaximumLength(300).WithMessage("La causa debe tener maximo 300 caracteres.");
             RuleFor(x => x.cmbPrisionReclusion)
                 .Cascade(CascadeMode.Stop)
-                .NotNull().WithMessage("Debe ingresar un valor para prision/reclusion procedencia.")
+                .NotNull().WithMessage("Debe ingresar un valor para prision/reclusion.")
                 .NotEmpty().WithMessage("Debe ingresar un valor para prision/reclusio.");
             RuleFor(x => x.txtExpediente)
                 .Cascade(CascadeMode.Stop)
@@ -29,7 +29,7 @@ namespace CapaPresentacion.Validaciones.CausaNueva.Validacion
                 .Cascade(CascadeMode.Stop)
                 .NotNull().WithMessage("Debe ingresar un valor para tipo delito.")
                 .NotEmpty().WithMessage("Debe ingresar un valor para tipo delito.")            
-                .Must(BeAnInteger).WithMessage("prision/reclusio debe ser valido.");
+                .Must(BeAnInteger).WithMessage("tipo delito debe ser valido.");
             RuleFor(x => x.cmbEstadoProcesal)
                 .Cascade(CascadeMode.Stop)
                 .NotNull().WithMessage("Debe ingresar un valor para estado procesal.")
