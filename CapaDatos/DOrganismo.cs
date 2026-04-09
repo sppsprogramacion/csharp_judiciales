@@ -10,5 +10,7 @@ namespace CapaDatos
     {
         public int id_organismo { get; set; }
         public string organismo { get; set; }
+        public bool es_unidad_carcelaria { get; set; }
+        public bool es_alcaidia { get; set; }
     }
 }
