@@ -37,23 +37,7 @@ namespace CapaPresentacion
             //// Ajustar el tamaño del formulario            
             FormularioAyudas.AjustarFormulario(this);
 
-            //Carga de combos sobre Historial Procesal
-            NListasGenerales nListasGenerales = new NListasGenerales();
-            (DTablasHistorialProcesal tablasHistorialProcesalResponse, string errorResponseHistorialProcesal) = await nListasGenerales.ListasTablasHistorialProcesal();
-
-            isModificadoHistorialGlobal = false;
-
-            if (tablasHistorialProcesalResponse == null)
-            {
-                MessageBox.Show("Advertencia al cargar los datos para historial procesal: " + errorResponseHistorialProcesal, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-            }
-            else
-            {
-                cmbTipoNovedad.ValueMember = "id_tipo_historial_procesal";
-                cmbTipoNovedad.DisplayMember = "tipo_historial_procesal";
-                cmbTipoNovedad.DataSource = tablasHistorialProcesalResponse.tipos_historial_procesal;
-            }
+            
 
             //carga de datos del historial
             NHistorialPRocesal nHistorialPRocesal = new NHistorialPRocesal();
@@ -83,7 +67,8 @@ namespace CapaPresentacion
 
             //datos generales
             dtpFechaNovedad.Text = this.dHistorialProcesalGlobal.fecha.ToShortDateString();
-            cmbTipoNovedad.Text = this.dHistorialProcesalGlobal.tipo_historial_procesal.tipo_historial_procesal;
+            txtMotivo.Text = this.dHistorialProcesalGlobal.motivo.ToString();
+            txtTipoNovedad.Text = this.dHistorialProcesalGlobal.tipo_historial_procesal.tipo_historial_procesal;
             txtDetalleNovedad.Text = this.dHistorialProcesalGlobal.detalle;
 
         }//FIN CARGAR DATOS DE HISTORIAL ......................................
@@ -105,7 +90,7 @@ namespace CapaPresentacion
             //validacion de formulario
             var datosformulario = new HistorialProcesalAdministrarDatos
             {
-                cmbTipoNovedad = cmbTipoNovedad.SelectedValue?.ToString() ?? string.Empty,
+                //cmbTipoNovedad = cmbTipoNovedad.SelectedValue?.ToString() ?? string.Empty,
                 txtDetalleNovedad = txtDetalleNovedad.Text,
                 
             };
@@ -127,7 +112,7 @@ namespace CapaPresentacion
 
             var data = new
             {
-                tipo_historial_procesal_id = Convert.ToInt32(cmbTipoNovedad.SelectedValue.ToString()),
+                
                 fecha = dtpFechaNovedad.Value,
                 detalle = txtDetalleNovedad.Text,
             };
@@ -150,6 +135,11 @@ namespace CapaPresentacion
             {
                 MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void gboxDatosHistorial_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

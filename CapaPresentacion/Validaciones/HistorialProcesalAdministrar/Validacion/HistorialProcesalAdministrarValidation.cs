@@ -14,10 +14,10 @@ namespace CapaPresentacion.Validaciones.HistorialProcesalAdministrar.Validacion
     {
         public HistorialProcesalAdministrarValidation()
         {
-            RuleFor(x => x.cmbTipoNovedad)
-                .Cascade(CascadeMode.Stop)
-                .NotNull().WithMessage("Debe ingresar un valor para tipo novedad.")
-                .NotEmpty().WithMessage("Debe ingresar un valor para tipo novedad.");
+            //RuleFor(x => x.cmbTipoNovedad)
+            //    .Cascade(CascadeMode.Stop)
+            //    .NotNull().WithMessage("Debe ingresar un valor para tipo novedad.")
+            //    .NotEmpty().WithMessage("Debe ingresar un valor para tipo novedad.");
             RuleFor(x => x.txtDetalleNovedad)
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("El detalle es obligatoria.")

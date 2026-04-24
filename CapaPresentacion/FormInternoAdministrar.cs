@@ -1360,11 +1360,11 @@ namespace CapaPresentacion
             else
             {
                 dtgHistorialProcesal.Columns[0].Width = 50;
-                dtgHistorialProcesal.Columns[1].Width = 100;
+                dtgHistorialProcesal.Columns[1].Width = 70;
                 dtgHistorialProcesal.Columns[2].Width = 150;
                 dtgHistorialProcesal.Columns[3].Width = 350;
-                dtgHistorialProcesal.Columns[4].Width = 150;
-                dtgHistorialProcesal.Columns[5].Width = 100;
+                dtgHistorialProcesal.Columns[4].Width = 200;
+                dtgHistorialProcesal.Columns[5].Width = 80;
                 dtgHistorialProcesal.Columns[6].Width = 150;
 
                 dtgHistorialProcesal.Focus();
