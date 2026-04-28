@@ -909,9 +909,10 @@ namespace CapaPresentacion
         {
             NIngresoInterno nIngreso = new NIngresoInterno();
             (DIngresoInterno ingresoInterno, string errorResponse) = await nIngreso.BuscarxIdIngreso(Convert.ToInt32(this.txtIdIngresoVer.Text));
-
+            
             if (ingresoInterno == null)
             {
+                
                 MessageBox.Show("El interno no se encuentra alojado en una unidad", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 
             }

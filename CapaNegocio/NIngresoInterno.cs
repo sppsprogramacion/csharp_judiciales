@@ -39,7 +39,7 @@ namespace CapaNegocio
         {
             IIngresoInernoDao ingresoInernoDao = new IngresoInternoDaoImplement();
 
-            (DIngresoInterno dIngreso, string error) = await ingresoInernoDao.BuscarIngresoXInterno(idIngreso);
+            (DIngresoInterno dIngreso, string error) = await ingresoInernoDao.BuscarIngresoXId(idIngreso);
 
 
             return (dIngreso, error);
