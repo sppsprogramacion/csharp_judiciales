@@ -34,8 +34,35 @@ namespace CapaDatos
         public int tipo_defensor_id { get; set; }
         public DTipoDefensor tipo_defensor { get; set; }
         public string abogado { get; set; }
+        public int pabellon_id { get; set; }
+        public DPabellon pabellon { get; set; }
+        public string celda { get; set; }
+        public bool tiene_programa_puerta { get; set; }
+        public int situacion_provisoria_id { get; set; }
+        public DSituacionProvisoria situacion_provisoria { get; set; }
+        public string situacion_provisoria_detalle { get; set; }
+        public int trimestre_id { get; set; }
+        public DTrimestre trimestre { get; set; }
+        public int conducta_id { get; set; }
+        public DConducta conducta { get; set; }
+        public int concepto_id { get; set; }
+        public DConcepto concepto { get; set; }
+        public int progresividad_id { get; set; }
+        public DProgresividad progresividad { get; set; }
+        public int fase_id { get; set; }
+        public DFase fase { get; set; }
+        public bool tiene_extramuro { get; set; }
+        public bool tiene_granja { get; set; }
+        public bool tiene_semilibertad { get; set; }
         public bool esta_liberado { get; set; }
         public DateTime? fecha_egreso { get; set; }
+        public int motivo_egreso_id { get; set; }
+        public DMotivoEgreso motivo_egreso { get; set; }
+        public string juzgado_libera_id { get; set; }
+        public DJuzgado juzgado_libera { get; set; }
+        public string domicilio_libertad { get; set; }
+        public string detalles_egreso { get; set; }
+
         public DateTime fecha_carga { get; set; }
         public int organismo_carga_id { get; set; }
         public DOrganismo organismo_carga { get; set; }
