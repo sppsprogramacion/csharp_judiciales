@@ -84,8 +84,10 @@
     <Compile Include="DSexo.cs" />
     <Compile Include="DEstadoCivil.cs" />
     <Compile Include="DTablasDomicilioInterno.cs" />
+    <Compile Include="DTablasEgreso.cs" />
     <Compile Include="DTablasHistorialProcesal.cs" />
     <Compile Include="DTablasIngresoInterno.cs" />
+    <Compile Include="DTablasProgresividad.cs" />
     <Compile Include="DTamanio.cs" />
     <Compile Include="DTipoDefensor.cs" />
     <Compile Include="DTipoDelito.cs" />

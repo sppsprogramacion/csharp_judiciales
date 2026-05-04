@@ -165,6 +165,37 @@
             this.dtgHistorialProcesal = new System.Windows.Forms.DataGridView();
             this.btnNuevoHistorial = new System.Windows.Forms.Button();
             this.tabProgresividad = new System.Windows.Forms.TabPage();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.chkTransitoria = new System.Windows.Forms.CheckBox();
+            this.chkSemilibertad = new System.Windows.Forms.CheckBox();
+            this.chkGranja = new System.Windows.Forms.CheckBox();
+            this.cmbFase = new System.Windows.Forms.ComboBox();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label83 = new System.Windows.Forms.Label();
+            this.cmbConcepto = new System.Windows.Forms.ComboBox();
+            this.label82 = new System.Windows.Forms.Label();
+            this.cmbConducta = new System.Windows.Forms.ComboBox();
+            this.btnEditarProgresividad = new System.Windows.Forms.Button();
+            this.chckExtramuro = new System.Windows.Forms.CheckBox();
+            this.cmbProgresividad = new System.Windows.Forms.ComboBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.btnGuardarProgresividad = new System.Windows.Forms.Button();
+            this.btnCancelarProgresividad = new System.Windows.Forms.Button();
+            this.label80 = new System.Windows.Forms.Label();
+            this.cmbTrimestre = new System.Windows.Forms.ComboBox();
+            this.gboxAlojamiento = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.chckProgramaPuerta = new System.Windows.Forms.CheckBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtDetalleSituacionProvisoria = new System.Windows.Forms.TextBox();
+            this.cmbSituacionProvisoria = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label59 = new System.Windows.Forms.Label();
+            this.txtCelda = new System.Windows.Forms.TextBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.cmbPabellon = new System.Windows.Forms.ComboBox();
             this.tabTraslados = new System.Windows.Forms.TabPage();
             this.btnVerTraslados = new System.Windows.Forms.Button();
             this.btnImprimirTraslados = new System.Windows.Forms.Button();
@@ -201,6 +232,21 @@
             this.txtIdTraslado = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.tabEgreso = new System.Windows.Forms.TabPage();
+            this.gboxDatosEgreso = new System.Windows.Forms.GroupBox();
+            this.btnEditarEgreso = new System.Windows.Forms.Button();
+            this.chkEstaLiberado = new System.Windows.Forms.CheckBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.txtDetallesEgreso = new System.Windows.Forms.TextBox();
+            this.cmbJuzgadoLibera = new System.Windows.Forms.ComboBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.btnGuardarEgreso = new System.Windows.Forms.Button();
+            this.btnCancelarEgreso = new System.Windows.Forms.Button();
+            this.label65 = new System.Windows.Forms.Label();
+            this.txtDomicilioLibertad = new System.Windows.Forms.TextBox();
+            this.label76 = new System.Windows.Forms.Label();
+            this.cmbMotivoEgreso = new System.Windows.Forms.ComboBox();
+            this.dtpFechaEgreso = new System.Windows.Forms.DateTimePicker();
+            this.label79 = new System.Windows.Forms.Label();
             this.tabDomicilio = new System.Windows.Forms.TabPage();
             this.btnVerDomicilios = new System.Windows.Forms.Button();
             this.gboxAnularDomicilio = new System.Windows.Forms.GroupBox();
@@ -239,58 +285,8 @@
             this.label56 = new System.Windows.Forms.Label();
             this.txtIdDomicilio = new System.Windows.Forms.TextBox();
             this.label57 = new System.Windows.Forms.Label();
-            this.groupDatosEgreso = new System.Windows.Forms.GroupBox();
-            this.label60 = new System.Windows.Forms.Label();
-            this.txtDetallesEgreso = new System.Windows.Forms.TextBox();
-            this.cmbJuzgadoLibera = new System.Windows.Forms.ComboBox();
-            this.label64 = new System.Windows.Forms.Label();
-            this.btnGuardarEgreso = new System.Windows.Forms.Button();
-            this.btnCancelarEgreso = new System.Windows.Forms.Button();
-            this.label65 = new System.Windows.Forms.Label();
-            this.txtDomicilioLibertad = new System.Windows.Forms.TextBox();
-            this.label76 = new System.Windows.Forms.Label();
-            this.cmbMotivoEgreso = new System.Windows.Forms.ComboBox();
-            this.dtpFechaEgreso = new System.Windows.Forms.DateTimePicker();
-            this.label79 = new System.Windows.Forms.Label();
-            this.chkEstaLiberado = new System.Windows.Forms.CheckBox();
-            this.btnEditarEgreso = new System.Windows.Forms.Button();
-            this.gboxAlojamiento = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.chckProgramaPuerta = new System.Windows.Forms.CheckBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtDetalleSituacionProvisoria = new System.Windows.Forms.TextBox();
-            this.cmbSituacionProvisoria = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label59 = new System.Windows.Forms.Label();
-            this.txtCelda = new System.Windows.Forms.TextBox();
-            this.label61 = new System.Windows.Forms.Label();
-            this.cmbPabellon = new System.Windows.Forms.ComboBox();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.chckExtramuro = new System.Windows.Forms.CheckBox();
             this.label63 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cmbProgresividad = new System.Windows.Forms.ComboBox();
-            this.label66 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label78 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label80 = new System.Windows.Forms.Label();
-            this.cmbTrimestre = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label81 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
-            this.cmbConducta = new System.Windows.Forms.ComboBox();
-            this.label83 = new System.Windows.Forms.Label();
-            this.cmbConcepto = new System.Windows.Forms.ComboBox();
-            this.cmbFase = new System.Windows.Forms.ComboBox();
-            this.label62 = new System.Windows.Forms.Label();
-            this.chkGranja = new System.Windows.Forms.CheckBox();
-            this.chkSemilibertad = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtDetalleProgresividad = new System.Windows.Forms.TextBox();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -310,20 +306,20 @@
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgHistorialProcesal)).BeginInit();
             this.tabProgresividad.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.gboxAlojamiento.SuspendLayout();
             this.tabTraslados.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTraslados)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.tabEgreso.SuspendLayout();
+            this.gboxDatosEgreso.SuspendLayout();
             this.tabDomicilio.SuspendLayout();
             this.gboxAnularDomicilio.SuspendLayout();
             this.gboxDomicilios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDomicilios)).BeginInit();
             this.gboxDomicilio.SuspendLayout();
-            this.groupDatosEgreso.SuspendLayout();
-            this.gboxAlojamiento.SuspendLayout();
-            this.groupBox10.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabInterno
@@ -1869,7 +1865,7 @@
             this.btnVerHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerHistorial.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnVerHistorial.Location = new System.Drawing.Point(22, 12);
+            this.btnVerHistorial.Location = new System.Drawing.Point(276, 12);
             this.btnVerHistorial.Name = "btnVerHistorial";
             this.btnVerHistorial.Size = new System.Drawing.Size(125, 40);
             this.btnVerHistorial.TabIndex = 239;
@@ -1909,7 +1905,7 @@
             this.btnNuevoHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoHistorial.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnNuevoHistorial.Location = new System.Drawing.Point(155, 11);
+            this.btnNuevoHistorial.Location = new System.Drawing.Point(409, 11);
             this.btnNuevoHistorial.Name = "btnNuevoHistorial";
             this.btnNuevoHistorial.Size = new System.Drawing.Size(125, 40);
             this.btnNuevoHistorial.TabIndex = 298;
@@ -1928,6 +1924,371 @@
             this.tabProgresividad.TabIndex = 1;
             this.tabProgresividad.Text = "Progresividad";
             this.tabProgresividad.UseVisualStyleBackColor = true;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.label63);
+            this.groupBox10.Controls.Add(this.txtDetalleProgresividad);
+            this.groupBox10.Controls.Add(this.chkTransitoria);
+            this.groupBox10.Controls.Add(this.chkSemilibertad);
+            this.groupBox10.Controls.Add(this.chkGranja);
+            this.groupBox10.Controls.Add(this.cmbFase);
+            this.groupBox10.Controls.Add(this.label62);
+            this.groupBox10.Controls.Add(this.label83);
+            this.groupBox10.Controls.Add(this.cmbConcepto);
+            this.groupBox10.Controls.Add(this.label82);
+            this.groupBox10.Controls.Add(this.cmbConducta);
+            this.groupBox10.Controls.Add(this.btnEditarProgresividad);
+            this.groupBox10.Controls.Add(this.chckExtramuro);
+            this.groupBox10.Controls.Add(this.cmbProgresividad);
+            this.groupBox10.Controls.Add(this.label66);
+            this.groupBox10.Controls.Add(this.btnGuardarProgresividad);
+            this.groupBox10.Controls.Add(this.btnCancelarProgresividad);
+            this.groupBox10.Controls.Add(this.label80);
+            this.groupBox10.Controls.Add(this.cmbTrimestre);
+            this.groupBox10.Location = new System.Drawing.Point(10, 225);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(657, 280);
+            this.groupBox10.TabIndex = 269;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Progresividad";
+            // 
+            // chkTransitoria
+            // 
+            this.chkTransitoria.AutoSize = true;
+            this.chkTransitoria.Enabled = false;
+            this.chkTransitoria.Location = new System.Drawing.Point(192, 157);
+            this.chkTransitoria.Name = "chkTransitoria";
+            this.chkTransitoria.Size = new System.Drawing.Size(167, 20);
+            this.chkTransitoria.TabIndex = 277;
+            this.chkTransitoria.Text = "TIENE TRANSITORIA?";
+            this.chkTransitoria.UseVisualStyleBackColor = true;
+            // 
+            // chkSemilibertad
+            // 
+            this.chkSemilibertad.AutoSize = true;
+            this.chkSemilibertad.Enabled = false;
+            this.chkSemilibertad.Location = new System.Drawing.Point(10, 157);
+            this.chkSemilibertad.Name = "chkSemilibertad";
+            this.chkSemilibertad.Size = new System.Drawing.Size(174, 20);
+            this.chkSemilibertad.TabIndex = 276;
+            this.chkSemilibertad.Text = "TIENE SEMILIBERTAD?";
+            this.chkSemilibertad.UseVisualStyleBackColor = true;
+            // 
+            // chkGranja
+            // 
+            this.chkGranja.AutoSize = true;
+            this.chkGranja.Enabled = false;
+            this.chkGranja.Location = new System.Drawing.Point(192, 121);
+            this.chkGranja.Name = "chkGranja";
+            this.chkGranja.Size = new System.Drawing.Size(131, 20);
+            this.chkGranja.TabIndex = 275;
+            this.chkGranja.Text = "TIENE GRANJA?";
+            this.chkGranja.UseVisualStyleBackColor = true;
+            // 
+            // cmbFase
+            // 
+            this.cmbFase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFase.FormattingEnabled = true;
+            this.cmbFase.Location = new System.Drawing.Point(287, 86);
+            this.cmbFase.Name = "cmbFase";
+            this.cmbFase.Size = new System.Drawing.Size(221, 23);
+            this.cmbFase.TabIndex = 273;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label62.Location = new System.Drawing.Point(284, 69);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(37, 15);
+            this.label62.TabIndex = 274;
+            this.label62.Text = "FASE";
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label83.Location = new System.Drawing.Point(326, 22);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(73, 15);
+            this.label83.TabIndex = 272;
+            this.label83.Text = "CONCEPTO";
+            // 
+            // cmbConcepto
+            // 
+            this.cmbConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbConcepto.FormattingEnabled = true;
+            this.cmbConcepto.Location = new System.Drawing.Point(329, 39);
+            this.cmbConcepto.Name = "cmbConcepto";
+            this.cmbConcepto.Size = new System.Drawing.Size(141, 23);
+            this.cmbConcepto.TabIndex = 271;
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label82.Location = new System.Drawing.Point(165, 22);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(73, 15);
+            this.label82.TabIndex = 270;
+            this.label82.Text = "CONDUCTA";
+            // 
+            // cmbConducta
+            // 
+            this.cmbConducta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbConducta.FormattingEnabled = true;
+            this.cmbConducta.Location = new System.Drawing.Point(168, 39);
+            this.cmbConducta.Name = "cmbConducta";
+            this.cmbConducta.Size = new System.Drawing.Size(141, 23);
+            this.cmbConducta.TabIndex = 269;
+            // 
+            // btnEditarProgresividad
+            // 
+            this.btnEditarProgresividad.BackColor = System.Drawing.Color.White;
+            this.btnEditarProgresividad.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarProgresividad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarProgresividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarProgresividad.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarProgresividad.Location = new System.Drawing.Point(548, 21);
+            this.btnEditarProgresividad.Name = "btnEditarProgresividad";
+            this.btnEditarProgresividad.Size = new System.Drawing.Size(98, 40);
+            this.btnEditarProgresividad.TabIndex = 268;
+            this.btnEditarProgresividad.Text = "EDITAR";
+            this.btnEditarProgresividad.UseVisualStyleBackColor = false;
+            // 
+            // chckExtramuro
+            // 
+            this.chckExtramuro.AutoSize = true;
+            this.chckExtramuro.Enabled = false;
+            this.chckExtramuro.Location = new System.Drawing.Point(10, 121);
+            this.chckExtramuro.Name = "chckExtramuro";
+            this.chckExtramuro.Size = new System.Drawing.Size(162, 20);
+            this.chckExtramuro.TabIndex = 267;
+            this.chckExtramuro.Text = "TIENE EXTRAMURO?";
+            this.chckExtramuro.UseVisualStyleBackColor = true;
+            // 
+            // cmbProgresividad
+            // 
+            this.cmbProgresividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProgresividad.FormattingEnabled = true;
+            this.cmbProgresividad.Location = new System.Drawing.Point(9, 86);
+            this.cmbProgresividad.Name = "cmbProgresividad";
+            this.cmbProgresividad.Size = new System.Drawing.Size(258, 23);
+            this.cmbProgresividad.TabIndex = 6;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label66.Location = new System.Drawing.Point(6, 69);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(105, 15);
+            this.label66.TabIndex = 238;
+            this.label66.Text = "PROGRESIVIDAD";
+            // 
+            // btnGuardarProgresividad
+            // 
+            this.btnGuardarProgresividad.BackColor = System.Drawing.Color.White;
+            this.btnGuardarProgresividad.Enabled = false;
+            this.btnGuardarProgresividad.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnGuardarProgresividad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarProgresividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarProgresividad.ForeColor = System.Drawing.Color.Green;
+            this.btnGuardarProgresividad.Location = new System.Drawing.Point(548, 69);
+            this.btnGuardarProgresividad.Name = "btnGuardarProgresividad";
+            this.btnGuardarProgresividad.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarProgresividad.TabIndex = 12;
+            this.btnGuardarProgresividad.Text = "Guardar";
+            this.btnGuardarProgresividad.UseVisualStyleBackColor = false;
+            // 
+            // btnCancelarProgresividad
+            // 
+            this.btnCancelarProgresividad.BackColor = System.Drawing.Color.White;
+            this.btnCancelarProgresividad.Enabled = false;
+            this.btnCancelarProgresividad.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarProgresividad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarProgresividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarProgresividad.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarProgresividad.Location = new System.Drawing.Point(548, 115);
+            this.btnCancelarProgresividad.Name = "btnCancelarProgresividad";
+            this.btnCancelarProgresividad.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarProgresividad.TabIndex = 13;
+            this.btnCancelarProgresividad.Text = "Cancelar";
+            this.btnCancelarProgresividad.UseVisualStyleBackColor = false;
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label80.Location = new System.Drawing.Point(6, 22);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(74, 15);
+            this.label80.TabIndex = 207;
+            this.label80.Text = "TRMESTRE";
+            // 
+            // cmbTrimestre
+            // 
+            this.cmbTrimestre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTrimestre.FormattingEnabled = true;
+            this.cmbTrimestre.Location = new System.Drawing.Point(9, 39);
+            this.cmbTrimestre.Name = "cmbTrimestre";
+            this.cmbTrimestre.Size = new System.Drawing.Size(141, 23);
+            this.cmbTrimestre.TabIndex = 1;
+            // 
+            // gboxAlojamiento
+            // 
+            this.gboxAlojamiento.Controls.Add(this.button2);
+            this.gboxAlojamiento.Controls.Add(this.chckProgramaPuerta);
+            this.gboxAlojamiento.Controls.Add(this.label16);
+            this.gboxAlojamiento.Controls.Add(this.txtDetalleSituacionProvisoria);
+            this.gboxAlojamiento.Controls.Add(this.cmbSituacionProvisoria);
+            this.gboxAlojamiento.Controls.Add(this.label17);
+            this.gboxAlojamiento.Controls.Add(this.button3);
+            this.gboxAlojamiento.Controls.Add(this.button4);
+            this.gboxAlojamiento.Controls.Add(this.label59);
+            this.gboxAlojamiento.Controls.Add(this.txtCelda);
+            this.gboxAlojamiento.Controls.Add(this.label61);
+            this.gboxAlojamiento.Controls.Add(this.cmbPabellon);
+            this.gboxAlojamiento.Location = new System.Drawing.Point(10, 12);
+            this.gboxAlojamiento.Name = "gboxAlojamiento";
+            this.gboxAlojamiento.Size = new System.Drawing.Size(657, 203);
+            this.gboxAlojamiento.TabIndex = 220;
+            this.gboxAlojamiento.TabStop = false;
+            this.gboxAlojamiento.Text = "Alojamiento";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.DarkCyan;
+            this.button2.Location = new System.Drawing.Point(548, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(98, 40);
+            this.button2.TabIndex = 268;
+            this.button2.Text = "EDITAR";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // chckProgramaPuerta
+            // 
+            this.chckProgramaPuerta.AutoSize = true;
+            this.chckProgramaPuerta.Enabled = false;
+            this.chckProgramaPuerta.Location = new System.Drawing.Point(286, 39);
+            this.chckProgramaPuerta.Name = "chckProgramaPuerta";
+            this.chckProgramaPuerta.Size = new System.Drawing.Size(213, 20);
+            this.chckProgramaPuerta.TabIndex = 267;
+            this.chckProgramaPuerta.Text = "TIENE PROGRAMA PUERTA?";
+            this.chckProgramaPuerta.UseVisualStyleBackColor = true;
+            this.chckProgramaPuerta.Visible = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(6, 113);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(201, 15);
+            this.label16.TabIndex = 262;
+            this.label16.Text = "DETALLE SITUACION PROVISORIA";
+            // 
+            // txtDetalleSituacionProvisoria
+            // 
+            this.txtDetalleSituacionProvisoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDetalleSituacionProvisoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetalleSituacionProvisoria.Location = new System.Drawing.Point(9, 130);
+            this.txtDetalleSituacionProvisoria.Multiline = true;
+            this.txtDetalleSituacionProvisoria.Name = "txtDetalleSituacionProvisoria";
+            this.txtDetalleSituacionProvisoria.Size = new System.Drawing.Size(499, 57);
+            this.txtDetalleSituacionProvisoria.TabIndex = 0;
+            // 
+            // cmbSituacionProvisoria
+            // 
+            this.cmbSituacionProvisoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSituacionProvisoria.FormattingEnabled = true;
+            this.cmbSituacionProvisoria.Location = new System.Drawing.Point(9, 85);
+            this.cmbSituacionProvisoria.Name = "cmbSituacionProvisoria";
+            this.cmbSituacionProvisoria.Size = new System.Drawing.Size(258, 23);
+            this.cmbSituacionProvisoria.TabIndex = 6;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(6, 68);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(145, 15);
+            this.label17.TabIndex = 238;
+            this.label17.Text = "SITUACION PROVISORIA";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Enabled = false;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Green;
+            this.button3.Location = new System.Drawing.Point(548, 71);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(98, 40);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Guardar";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.Enabled = false;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.DarkOrange;
+            this.button4.Location = new System.Drawing.Point(548, 123);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(98, 40);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "Cancelar";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label59.Location = new System.Drawing.Point(165, 22);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(46, 15);
+            this.label59.TabIndex = 219;
+            this.label59.Text = "CELDA";
+            // 
+            // txtCelda
+            // 
+            this.txtCelda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCelda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCelda.Location = new System.Drawing.Point(168, 39);
+            this.txtCelda.Name = "txtCelda";
+            this.txtCelda.Size = new System.Drawing.Size(99, 21);
+            this.txtCelda.TabIndex = 2;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label61.Location = new System.Drawing.Point(6, 22);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(70, 15);
+            this.label61.TabIndex = 207;
+            this.label61.Text = "PABELLON";
+            // 
+            // cmbPabellon
+            // 
+            this.cmbPabellon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPabellon.FormattingEnabled = true;
+            this.cmbPabellon.Location = new System.Drawing.Point(9, 39);
+            this.cmbPabellon.Name = "cmbPabellon";
+            this.cmbPabellon.Size = new System.Drawing.Size(141, 23);
+            this.cmbPabellon.TabIndex = 1;
             // 
             // tabTraslados
             // 
@@ -2339,7 +2700,7 @@
             // 
             // tabEgreso
             // 
-            this.tabEgreso.Controls.Add(this.groupDatosEgreso);
+            this.tabEgreso.Controls.Add(this.gboxDatosEgreso);
             this.tabEgreso.Location = new System.Drawing.Point(4, 25);
             this.tabEgreso.Name = "tabEgreso";
             this.tabEgreso.Padding = new System.Windows.Forms.Padding(3);
@@ -2347,6 +2708,188 @@
             this.tabEgreso.TabIndex = 7;
             this.tabEgreso.Text = "Egreso";
             this.tabEgreso.UseVisualStyleBackColor = true;
+            // 
+            // gboxDatosEgreso
+            // 
+            this.gboxDatosEgreso.Controls.Add(this.btnEditarEgreso);
+            this.gboxDatosEgreso.Controls.Add(this.chkEstaLiberado);
+            this.gboxDatosEgreso.Controls.Add(this.label60);
+            this.gboxDatosEgreso.Controls.Add(this.txtDetallesEgreso);
+            this.gboxDatosEgreso.Controls.Add(this.cmbJuzgadoLibera);
+            this.gboxDatosEgreso.Controls.Add(this.label64);
+            this.gboxDatosEgreso.Controls.Add(this.btnGuardarEgreso);
+            this.gboxDatosEgreso.Controls.Add(this.btnCancelarEgreso);
+            this.gboxDatosEgreso.Controls.Add(this.label65);
+            this.gboxDatosEgreso.Controls.Add(this.txtDomicilioLibertad);
+            this.gboxDatosEgreso.Controls.Add(this.label76);
+            this.gboxDatosEgreso.Controls.Add(this.cmbMotivoEgreso);
+            this.gboxDatosEgreso.Controls.Add(this.dtpFechaEgreso);
+            this.gboxDatosEgreso.Controls.Add(this.label79);
+            this.gboxDatosEgreso.Location = new System.Drawing.Point(9, 10);
+            this.gboxDatosEgreso.Name = "gboxDatosEgreso";
+            this.gboxDatosEgreso.Size = new System.Drawing.Size(533, 356);
+            this.gboxDatosEgreso.TabIndex = 219;
+            this.gboxDatosEgreso.TabStop = false;
+            this.gboxDatosEgreso.Text = "Datos para egreso";
+            // 
+            // btnEditarEgreso
+            // 
+            this.btnEditarEgreso.BackColor = System.Drawing.Color.White;
+            this.btnEditarEgreso.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarEgreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarEgreso.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarEgreso.Location = new System.Drawing.Point(187, 304);
+            this.btnEditarEgreso.Name = "btnEditarEgreso";
+            this.btnEditarEgreso.Size = new System.Drawing.Size(98, 40);
+            this.btnEditarEgreso.TabIndex = 268;
+            this.btnEditarEgreso.Text = "EDITAR";
+            this.btnEditarEgreso.UseVisualStyleBackColor = false;
+            this.btnEditarEgreso.Click += new System.EventHandler(this.btnEditarEgreso_Click);
+            // 
+            // chkEstaLiberado
+            // 
+            this.chkEstaLiberado.AutoSize = true;
+            this.chkEstaLiberado.Enabled = false;
+            this.chkEstaLiberado.Location = new System.Drawing.Point(11, 23);
+            this.chkEstaLiberado.Name = "chkEstaLiberado";
+            this.chkEstaLiberado.Size = new System.Drawing.Size(139, 20);
+            this.chkEstaLiberado.TabIndex = 267;
+            this.chkEstaLiberado.Text = "ESTA LIBERADO?";
+            this.chkEstaLiberado.UseVisualStyleBackColor = true;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label60.Location = new System.Drawing.Point(6, 182);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(122, 15);
+            this.label60.TabIndex = 262;
+            this.label60.Text = "DETALLES EGRESO";
+            // 
+            // txtDetallesEgreso
+            // 
+            this.txtDetallesEgreso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDetallesEgreso.Enabled = false;
+            this.txtDetallesEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetallesEgreso.Location = new System.Drawing.Point(9, 199);
+            this.txtDetallesEgreso.Multiline = true;
+            this.txtDetallesEgreso.Name = "txtDetallesEgreso";
+            this.txtDetallesEgreso.Size = new System.Drawing.Size(499, 95);
+            this.txtDetallesEgreso.TabIndex = 0;
+            // 
+            // cmbJuzgadoLibera
+            // 
+            this.cmbJuzgadoLibera.Enabled = false;
+            this.cmbJuzgadoLibera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbJuzgadoLibera.FormattingEnabled = true;
+            this.cmbJuzgadoLibera.Location = new System.Drawing.Point(9, 110);
+            this.cmbJuzgadoLibera.Name = "cmbJuzgadoLibera";
+            this.cmbJuzgadoLibera.Size = new System.Drawing.Size(500, 23);
+            this.cmbJuzgadoLibera.TabIndex = 6;
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.Location = new System.Drawing.Point(6, 93);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(108, 15);
+            this.label64.TabIndex = 238;
+            this.label64.Text = "JUZGADO LIBERA";
+            // 
+            // btnGuardarEgreso
+            // 
+            this.btnGuardarEgreso.BackColor = System.Drawing.Color.White;
+            this.btnGuardarEgreso.Enabled = false;
+            this.btnGuardarEgreso.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnGuardarEgreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarEgreso.ForeColor = System.Drawing.Color.Green;
+            this.btnGuardarEgreso.Location = new System.Drawing.Point(295, 304);
+            this.btnGuardarEgreso.Name = "btnGuardarEgreso";
+            this.btnGuardarEgreso.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarEgreso.TabIndex = 12;
+            this.btnGuardarEgreso.Text = "Guardar";
+            this.btnGuardarEgreso.UseVisualStyleBackColor = false;
+            this.btnGuardarEgreso.Click += new System.EventHandler(this.btnGuardarEgreso_Click);
+            // 
+            // btnCancelarEgreso
+            // 
+            this.btnCancelarEgreso.BackColor = System.Drawing.Color.White;
+            this.btnCancelarEgreso.Enabled = false;
+            this.btnCancelarEgreso.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarEgreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarEgreso.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarEgreso.Location = new System.Drawing.Point(409, 304);
+            this.btnCancelarEgreso.Name = "btnCancelarEgreso";
+            this.btnCancelarEgreso.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarEgreso.TabIndex = 13;
+            this.btnCancelarEgreso.Text = "Cancelar";
+            this.btnCancelarEgreso.UseVisualStyleBackColor = false;
+            this.btnCancelarEgreso.Click += new System.EventHandler(this.btnCancelarEgreso_Click);
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.Location = new System.Drawing.Point(7, 139);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(130, 15);
+            this.label65.TabIndex = 219;
+            this.label65.Text = "DOMICILIO LIBERTAD";
+            // 
+            // txtDomicilioLibertad
+            // 
+            this.txtDomicilioLibertad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDomicilioLibertad.Enabled = false;
+            this.txtDomicilioLibertad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDomicilioLibertad.Location = new System.Drawing.Point(10, 156);
+            this.txtDomicilioLibertad.Name = "txtDomicilioLibertad";
+            this.txtDomicilioLibertad.Size = new System.Drawing.Size(499, 21);
+            this.txtDomicilioLibertad.TabIndex = 2;
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label76.Location = new System.Drawing.Point(150, 48);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(107, 15);
+            this.label76.TabIndex = 207;
+            this.label76.Text = "MOTIVO EGRESO";
+            // 
+            // cmbMotivoEgreso
+            // 
+            this.cmbMotivoEgreso.Enabled = false;
+            this.cmbMotivoEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMotivoEgreso.FormattingEnabled = true;
+            this.cmbMotivoEgreso.Location = new System.Drawing.Point(153, 65);
+            this.cmbMotivoEgreso.Name = "cmbMotivoEgreso";
+            this.cmbMotivoEgreso.Size = new System.Drawing.Size(355, 23);
+            this.cmbMotivoEgreso.TabIndex = 1;
+            // 
+            // dtpFechaEgreso
+            // 
+            this.dtpFechaEgreso.Enabled = false;
+            this.dtpFechaEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaEgreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaEgreso.Location = new System.Drawing.Point(10, 65);
+            this.dtpFechaEgreso.Name = "dtpFechaEgreso";
+            this.dtpFechaEgreso.Size = new System.Drawing.Size(125, 22);
+            this.dtpFechaEgreso.TabIndex = 9;
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label79.Location = new System.Drawing.Point(6, 48);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(100, 15);
+            this.label79.TabIndex = 212;
+            this.label79.Text = "FECHA EGRESO";
             // 
             // tabDomicilio
             // 
@@ -2786,611 +3329,25 @@
             this.label57.TabIndex = 72;
             this.label57.Text = "USUARIO CARGA:";
             // 
-            // groupDatosEgreso
-            // 
-            this.groupDatosEgreso.Controls.Add(this.btnEditarEgreso);
-            this.groupDatosEgreso.Controls.Add(this.chkEstaLiberado);
-            this.groupDatosEgreso.Controls.Add(this.label60);
-            this.groupDatosEgreso.Controls.Add(this.txtDetallesEgreso);
-            this.groupDatosEgreso.Controls.Add(this.cmbJuzgadoLibera);
-            this.groupDatosEgreso.Controls.Add(this.label64);
-            this.groupDatosEgreso.Controls.Add(this.btnGuardarEgreso);
-            this.groupDatosEgreso.Controls.Add(this.btnCancelarEgreso);
-            this.groupDatosEgreso.Controls.Add(this.label65);
-            this.groupDatosEgreso.Controls.Add(this.txtDomicilioLibertad);
-            this.groupDatosEgreso.Controls.Add(this.label76);
-            this.groupDatosEgreso.Controls.Add(this.cmbMotivoEgreso);
-            this.groupDatosEgreso.Controls.Add(this.dtpFechaEgreso);
-            this.groupDatosEgreso.Controls.Add(this.label79);
-            this.groupDatosEgreso.Location = new System.Drawing.Point(9, 10);
-            this.groupDatosEgreso.Name = "groupDatosEgreso";
-            this.groupDatosEgreso.Size = new System.Drawing.Size(533, 323);
-            this.groupDatosEgreso.TabIndex = 219;
-            this.groupDatosEgreso.TabStop = false;
-            this.groupDatosEgreso.Text = "Datos para egreso";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(6, 182);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(122, 15);
-            this.label60.TabIndex = 262;
-            this.label60.Text = "DETALLES EGRESO";
-            // 
-            // txtDetallesEgreso
-            // 
-            this.txtDetallesEgreso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDetallesEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetallesEgreso.Location = new System.Drawing.Point(9, 199);
-            this.txtDetallesEgreso.Multiline = true;
-            this.txtDetallesEgreso.Name = "txtDetallesEgreso";
-            this.txtDetallesEgreso.Size = new System.Drawing.Size(499, 48);
-            this.txtDetallesEgreso.TabIndex = 0;
-            // 
-            // cmbJuzgadoLibera
-            // 
-            this.cmbJuzgadoLibera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbJuzgadoLibera.FormattingEnabled = true;
-            this.cmbJuzgadoLibera.Location = new System.Drawing.Point(9, 110);
-            this.cmbJuzgadoLibera.Name = "cmbJuzgadoLibera";
-            this.cmbJuzgadoLibera.Size = new System.Drawing.Size(500, 23);
-            this.cmbJuzgadoLibera.TabIndex = 6;
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.Location = new System.Drawing.Point(6, 93);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(108, 15);
-            this.label64.TabIndex = 238;
-            this.label64.Text = "JUZGADO LIBERA";
-            // 
-            // btnGuardarEgreso
-            // 
-            this.btnGuardarEgreso.BackColor = System.Drawing.Color.White;
-            this.btnGuardarEgreso.Enabled = false;
-            this.btnGuardarEgreso.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnGuardarEgreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarEgreso.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardarEgreso.Location = new System.Drawing.Point(295, 264);
-            this.btnGuardarEgreso.Name = "btnGuardarEgreso";
-            this.btnGuardarEgreso.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarEgreso.TabIndex = 12;
-            this.btnGuardarEgreso.Text = "Guardar";
-            this.btnGuardarEgreso.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelarEgreso
-            // 
-            this.btnCancelarEgreso.BackColor = System.Drawing.Color.White;
-            this.btnCancelarEgreso.Enabled = false;
-            this.btnCancelarEgreso.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarEgreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarEgreso.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarEgreso.Location = new System.Drawing.Point(409, 264);
-            this.btnCancelarEgreso.Name = "btnCancelarEgreso";
-            this.btnCancelarEgreso.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelarEgreso.TabIndex = 13;
-            this.btnCancelarEgreso.Text = "Cancelar";
-            this.btnCancelarEgreso.UseVisualStyleBackColor = false;
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.Location = new System.Drawing.Point(7, 139);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(130, 15);
-            this.label65.TabIndex = 219;
-            this.label65.Text = "DOMICILIO LIBERTAD";
-            // 
-            // txtDomicilioLibertad
-            // 
-            this.txtDomicilioLibertad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDomicilioLibertad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDomicilioLibertad.Location = new System.Drawing.Point(10, 156);
-            this.txtDomicilioLibertad.Name = "txtDomicilioLibertad";
-            this.txtDomicilioLibertad.Size = new System.Drawing.Size(499, 21);
-            this.txtDomicilioLibertad.TabIndex = 2;
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label76.Location = new System.Drawing.Point(150, 48);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(107, 15);
-            this.label76.TabIndex = 207;
-            this.label76.Text = "MOTIVO EGRESO";
-            // 
-            // cmbMotivoEgreso
-            // 
-            this.cmbMotivoEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMotivoEgreso.FormattingEnabled = true;
-            this.cmbMotivoEgreso.Location = new System.Drawing.Point(153, 65);
-            this.cmbMotivoEgreso.Name = "cmbMotivoEgreso";
-            this.cmbMotivoEgreso.Size = new System.Drawing.Size(355, 23);
-            this.cmbMotivoEgreso.TabIndex = 1;
-            // 
-            // dtpFechaEgreso
-            // 
-            this.dtpFechaEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaEgreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaEgreso.Location = new System.Drawing.Point(10, 65);
-            this.dtpFechaEgreso.Name = "dtpFechaEgreso";
-            this.dtpFechaEgreso.Size = new System.Drawing.Size(125, 22);
-            this.dtpFechaEgreso.TabIndex = 9;
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label79.Location = new System.Drawing.Point(6, 48);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(100, 15);
-            this.label79.TabIndex = 212;
-            this.label79.Text = "FECHA EGRESO";
-            // 
-            // chkEstaLiberado
-            // 
-            this.chkEstaLiberado.AutoSize = true;
-            this.chkEstaLiberado.Enabled = false;
-            this.chkEstaLiberado.Location = new System.Drawing.Point(11, 23);
-            this.chkEstaLiberado.Name = "chkEstaLiberado";
-            this.chkEstaLiberado.Size = new System.Drawing.Size(139, 20);
-            this.chkEstaLiberado.TabIndex = 267;
-            this.chkEstaLiberado.Text = "ESTA LIBERADO?";
-            this.chkEstaLiberado.UseVisualStyleBackColor = true;
-            this.chkEstaLiberado.Visible = false;
-            // 
-            // btnEditarEgreso
-            // 
-            this.btnEditarEgreso.BackColor = System.Drawing.Color.White;
-            this.btnEditarEgreso.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarEgreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarEgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarEgreso.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarEgreso.Location = new System.Drawing.Point(187, 264);
-            this.btnEditarEgreso.Name = "btnEditarEgreso";
-            this.btnEditarEgreso.Size = new System.Drawing.Size(98, 40);
-            this.btnEditarEgreso.TabIndex = 268;
-            this.btnEditarEgreso.Text = "EDITAR";
-            this.btnEditarEgreso.UseVisualStyleBackColor = false;
-            // 
-            // gboxAlojamiento
-            // 
-            this.gboxAlojamiento.Controls.Add(this.button2);
-            this.gboxAlojamiento.Controls.Add(this.chckProgramaPuerta);
-            this.gboxAlojamiento.Controls.Add(this.label16);
-            this.gboxAlojamiento.Controls.Add(this.txtDetalleSituacionProvisoria);
-            this.gboxAlojamiento.Controls.Add(this.cmbSituacionProvisoria);
-            this.gboxAlojamiento.Controls.Add(this.label17);
-            this.gboxAlojamiento.Controls.Add(this.button3);
-            this.gboxAlojamiento.Controls.Add(this.button4);
-            this.gboxAlojamiento.Controls.Add(this.label59);
-            this.gboxAlojamiento.Controls.Add(this.txtCelda);
-            this.gboxAlojamiento.Controls.Add(this.label61);
-            this.gboxAlojamiento.Controls.Add(this.cmbPabellon);
-            this.gboxAlojamiento.Location = new System.Drawing.Point(10, 12);
-            this.gboxAlojamiento.Name = "gboxAlojamiento";
-            this.gboxAlojamiento.Size = new System.Drawing.Size(657, 203);
-            this.gboxAlojamiento.TabIndex = 220;
-            this.gboxAlojamiento.TabStop = false;
-            this.gboxAlojamiento.Text = "Alojamiento";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.DarkCyan;
-            this.button2.Location = new System.Drawing.Point(548, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 40);
-            this.button2.TabIndex = 268;
-            this.button2.Text = "EDITAR";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // chckProgramaPuerta
-            // 
-            this.chckProgramaPuerta.AutoSize = true;
-            this.chckProgramaPuerta.Enabled = false;
-            this.chckProgramaPuerta.Location = new System.Drawing.Point(286, 39);
-            this.chckProgramaPuerta.Name = "chckProgramaPuerta";
-            this.chckProgramaPuerta.Size = new System.Drawing.Size(213, 20);
-            this.chckProgramaPuerta.TabIndex = 267;
-            this.chckProgramaPuerta.Text = "TIENE PROGRAMA PUERTA?";
-            this.chckProgramaPuerta.UseVisualStyleBackColor = true;
-            this.chckProgramaPuerta.Visible = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(6, 113);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(145, 15);
-            this.label16.TabIndex = 262;
-            this.label16.Text = "SITUACION PROVISORIA";
-            // 
-            // txtDetalleSituacionProvisoria
-            // 
-            this.txtDetalleSituacionProvisoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDetalleSituacionProvisoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetalleSituacionProvisoria.Location = new System.Drawing.Point(9, 130);
-            this.txtDetalleSituacionProvisoria.Multiline = true;
-            this.txtDetalleSituacionProvisoria.Name = "txtDetalleSituacionProvisoria";
-            this.txtDetalleSituacionProvisoria.Size = new System.Drawing.Size(499, 57);
-            this.txtDetalleSituacionProvisoria.TabIndex = 0;
-            // 
-            // cmbSituacionProvisoria
-            // 
-            this.cmbSituacionProvisoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSituacionProvisoria.FormattingEnabled = true;
-            this.cmbSituacionProvisoria.Location = new System.Drawing.Point(9, 85);
-            this.cmbSituacionProvisoria.Name = "cmbSituacionProvisoria";
-            this.cmbSituacionProvisoria.Size = new System.Drawing.Size(258, 23);
-            this.cmbSituacionProvisoria.TabIndex = 6;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(6, 68);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(145, 15);
-            this.label17.TabIndex = 238;
-            this.label17.Text = "SITUACION PROVISORIA";
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Enabled = false;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Green;
-            this.button3.Location = new System.Drawing.Point(548, 71);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(98, 40);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Guardar";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.Enabled = false;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.DarkOrange;
-            this.button4.Location = new System.Drawing.Point(548, 123);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(98, 40);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Cancelar";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.Location = new System.Drawing.Point(165, 22);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(46, 15);
-            this.label59.TabIndex = 219;
-            this.label59.Text = "CELDA";
-            // 
-            // txtCelda
-            // 
-            this.txtCelda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCelda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCelda.Location = new System.Drawing.Point(168, 39);
-            this.txtCelda.Name = "txtCelda";
-            this.txtCelda.Size = new System.Drawing.Size(99, 21);
-            this.txtCelda.TabIndex = 2;
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.Location = new System.Drawing.Point(6, 22);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(70, 15);
-            this.label61.TabIndex = 207;
-            this.label61.Text = "PABELLON";
-            // 
-            // cmbPabellon
-            // 
-            this.cmbPabellon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbPabellon.FormattingEnabled = true;
-            this.cmbPabellon.Location = new System.Drawing.Point(9, 39);
-            this.cmbPabellon.Name = "cmbPabellon";
-            this.cmbPabellon.Size = new System.Drawing.Size(141, 23);
-            this.cmbPabellon.TabIndex = 1;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.checkBox1);
-            this.groupBox10.Controls.Add(this.chkSemilibertad);
-            this.groupBox10.Controls.Add(this.chkGranja);
-            this.groupBox10.Controls.Add(this.cmbFase);
-            this.groupBox10.Controls.Add(this.label62);
-            this.groupBox10.Controls.Add(this.label83);
-            this.groupBox10.Controls.Add(this.cmbConcepto);
-            this.groupBox10.Controls.Add(this.label82);
-            this.groupBox10.Controls.Add(this.cmbConducta);
-            this.groupBox10.Controls.Add(this.button5);
-            this.groupBox10.Controls.Add(this.chckExtramuro);
-            this.groupBox10.Controls.Add(this.label63);
-            this.groupBox10.Controls.Add(this.textBox1);
-            this.groupBox10.Controls.Add(this.cmbProgresividad);
-            this.groupBox10.Controls.Add(this.label66);
-            this.groupBox10.Controls.Add(this.button6);
-            this.groupBox10.Controls.Add(this.button7);
-            this.groupBox10.Controls.Add(this.label78);
-            this.groupBox10.Controls.Add(this.textBox2);
-            this.groupBox10.Controls.Add(this.label80);
-            this.groupBox10.Controls.Add(this.cmbTrimestre);
-            this.groupBox10.Controls.Add(this.dateTimePicker2);
-            this.groupBox10.Controls.Add(this.label81);
-            this.groupBox10.Location = new System.Drawing.Point(10, 225);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(833, 299);
-            this.groupBox10.TabIndex = 269;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Progresividad";
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.DarkCyan;
-            this.button5.Location = new System.Drawing.Point(188, 246);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(98, 40);
-            this.button5.TabIndex = 268;
-            this.button5.Text = "EDITAR";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // chckExtramuro
-            // 
-            this.chckExtramuro.AutoSize = true;
-            this.chckExtramuro.Enabled = false;
-            this.chckExtramuro.Location = new System.Drawing.Point(10, 121);
-            this.chckExtramuro.Name = "chckExtramuro";
-            this.chckExtramuro.Size = new System.Drawing.Size(162, 20);
-            this.chckExtramuro.TabIndex = 267;
-            this.chckExtramuro.Text = "TIENE EXTRAMURO?";
-            this.chckExtramuro.UseVisualStyleBackColor = true;
-            this.chckExtramuro.Visible = false;
-            // 
             // label63
             // 
             this.label63.AutoSize = true;
             this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label63.Location = new System.Drawing.Point(6, 157);
+            this.label63.Location = new System.Drawing.Point(10, 192);
             this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(145, 15);
-            this.label63.TabIndex = 262;
-            this.label63.Text = "SITUACION PROVISORIA";
+            this.label63.Size = new System.Drawing.Size(161, 15);
+            this.label63.TabIndex = 279;
+            this.label63.Text = "DETALLE PROGRESIVIDAD";
             // 
-            // textBox1
+            // txtDetalleProgresividad
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(9, 174);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(499, 57);
-            this.textBox1.TabIndex = 0;
-            // 
-            // cmbProgresividad
-            // 
-            this.cmbProgresividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbProgresividad.FormattingEnabled = true;
-            this.cmbProgresividad.Location = new System.Drawing.Point(9, 86);
-            this.cmbProgresividad.Name = "cmbProgresividad";
-            this.cmbProgresividad.Size = new System.Drawing.Size(258, 23);
-            this.cmbProgresividad.TabIndex = 6;
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label66.Location = new System.Drawing.Point(6, 69);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(105, 15);
-            this.label66.TabIndex = 238;
-            this.label66.Text = "PROGRESIVIDAD";
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.Enabled = false;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Green;
-            this.button6.Location = new System.Drawing.Point(296, 246);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(98, 40);
-            this.button6.TabIndex = 12;
-            this.button6.Text = "Guardar";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.White;
-            this.button7.Enabled = false;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.DarkOrange;
-            this.button7.Location = new System.Drawing.Point(410, 246);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(98, 40);
-            this.button7.TabIndex = 13;
-            this.button7.Text = "Cancelar";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label78.Location = new System.Drawing.Point(495, 22);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(46, 15);
-            this.label78.TabIndex = 219;
-            this.label78.Text = "CELDA";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(498, 39);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(99, 21);
-            this.textBox2.TabIndex = 2;
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label80.Location = new System.Drawing.Point(6, 22);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(74, 15);
-            this.label80.TabIndex = 207;
-            this.label80.Text = "TRMESTRE";
-            // 
-            // cmbTrimestre
-            // 
-            this.cmbTrimestre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTrimestre.FormattingEnabled = true;
-            this.cmbTrimestre.Location = new System.Drawing.Point(9, 39);
-            this.cmbTrimestre.Name = "cmbTrimestre";
-            this.cmbTrimestre.Size = new System.Drawing.Size(141, 23);
-            this.cmbTrimestre.TabIndex = 1;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(10, 263);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(125, 22);
-            this.dateTimePicker2.TabIndex = 9;
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label81.Location = new System.Drawing.Point(6, 246);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(100, 15);
-            this.label81.TabIndex = 212;
-            this.label81.Text = "FECHA EGRESO";
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label82.Location = new System.Drawing.Point(165, 22);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(73, 15);
-            this.label82.TabIndex = 270;
-            this.label82.Text = "CONDUCTA";
-            // 
-            // cmbConducta
-            // 
-            this.cmbConducta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbConducta.FormattingEnabled = true;
-            this.cmbConducta.Location = new System.Drawing.Point(168, 39);
-            this.cmbConducta.Name = "cmbConducta";
-            this.cmbConducta.Size = new System.Drawing.Size(141, 23);
-            this.cmbConducta.TabIndex = 269;
-            // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label83.Location = new System.Drawing.Point(326, 22);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(73, 15);
-            this.label83.TabIndex = 272;
-            this.label83.Text = "CONCEPTO";
-            // 
-            // cmbConcepto
-            // 
-            this.cmbConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbConcepto.FormattingEnabled = true;
-            this.cmbConcepto.Location = new System.Drawing.Point(329, 39);
-            this.cmbConcepto.Name = "cmbConcepto";
-            this.cmbConcepto.Size = new System.Drawing.Size(141, 23);
-            this.cmbConcepto.TabIndex = 271;
-            // 
-            // cmbFase
-            // 
-            this.cmbFase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbFase.FormattingEnabled = true;
-            this.cmbFase.Location = new System.Drawing.Point(287, 86);
-            this.cmbFase.Name = "cmbFase";
-            this.cmbFase.Size = new System.Drawing.Size(258, 23);
-            this.cmbFase.TabIndex = 273;
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label62.Location = new System.Drawing.Point(284, 69);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(37, 15);
-            this.label62.TabIndex = 274;
-            this.label62.Text = "FASE";
-            // 
-            // chkGranja
-            // 
-            this.chkGranja.AutoSize = true;
-            this.chkGranja.Enabled = false;
-            this.chkGranja.Location = new System.Drawing.Point(192, 121);
-            this.chkGranja.Name = "chkGranja";
-            this.chkGranja.Size = new System.Drawing.Size(162, 20);
-            this.chkGranja.TabIndex = 275;
-            this.chkGranja.Text = "TIENE EXTRAMURO?";
-            this.chkGranja.UseVisualStyleBackColor = true;
-            this.chkGranja.Visible = false;
-            // 
-            // chkSemilibertad
-            // 
-            this.chkSemilibertad.AutoSize = true;
-            this.chkSemilibertad.Enabled = false;
-            this.chkSemilibertad.Location = new System.Drawing.Point(366, 121);
-            this.chkSemilibertad.Name = "chkSemilibertad";
-            this.chkSemilibertad.Size = new System.Drawing.Size(162, 20);
-            this.chkSemilibertad.TabIndex = 276;
-            this.chkSemilibertad.Text = "TIENE EXTRAMURO?";
-            this.chkSemilibertad.UseVisualStyleBackColor = true;
-            this.chkSemilibertad.Visible = false;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(548, 121);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(162, 20);
-            this.checkBox1.TabIndex = 277;
-            this.checkBox1.Text = "TIENE EXTRAMURO?";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.Visible = false;
+            this.txtDetalleProgresividad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDetalleProgresividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetalleProgresividad.Location = new System.Drawing.Point(13, 209);
+            this.txtDetalleProgresividad.Multiline = true;
+            this.txtDetalleProgresividad.Name = "txtDetalleProgresividad";
+            this.txtDetalleProgresividad.Size = new System.Drawing.Size(499, 57);
+            this.txtDetalleProgresividad.TabIndex = 278;
             // 
             // FormInternoAdministrar
             // 
@@ -3432,6 +3389,10 @@
             this.groupBox8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgHistorialProcesal)).EndInit();
             this.tabProgresividad.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.gboxAlojamiento.ResumeLayout(false);
+            this.gboxAlojamiento.PerformLayout();
             this.tabTraslados.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
@@ -3440,6 +3401,8 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.tabEgreso.ResumeLayout(false);
+            this.gboxDatosEgreso.ResumeLayout(false);
+            this.gboxDatosEgreso.PerformLayout();
             this.tabDomicilio.ResumeLayout(false);
             this.gboxAnularDomicilio.ResumeLayout(false);
             this.gboxAnularDomicilio.PerformLayout();
@@ -3447,12 +3410,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgDomicilios)).EndInit();
             this.gboxDomicilio.ResumeLayout(false);
             this.gboxDomicilio.PerformLayout();
-            this.groupDatosEgreso.ResumeLayout(false);
-            this.groupDatosEgreso.PerformLayout();
-            this.gboxAlojamiento.ResumeLayout(false);
-            this.gboxAlojamiento.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3667,7 +3624,7 @@
         private System.Windows.Forms.TextBox txtDepartamento;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Button btnAnularDomicilio;
-        private System.Windows.Forms.GroupBox groupDatosEgreso;
+        private System.Windows.Forms.GroupBox gboxDatosEgreso;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.TextBox txtDetallesEgreso;
         private System.Windows.Forms.ComboBox cmbJuzgadoLibera;
@@ -3696,20 +3653,14 @@
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.ComboBox cmbPabellon;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnEditarProgresividad;
         private System.Windows.Forms.CheckBox chckExtramuro;
-        private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox cmbProgresividad;
         private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label78;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnGuardarProgresividad;
+        private System.Windows.Forms.Button btnCancelarProgresividad;
         private System.Windows.Forms.Label label80;
         private System.Windows.Forms.ComboBox cmbTrimestre;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label81;
         private System.Windows.Forms.Label label83;
         private System.Windows.Forms.ComboBox cmbConcepto;
         private System.Windows.Forms.Label label82;
@@ -3718,6 +3669,8 @@
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.CheckBox chkSemilibertad;
         private System.Windows.Forms.CheckBox chkGranja;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkTransitoria;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.TextBox txtDetalleProgresividad;
     }
 }

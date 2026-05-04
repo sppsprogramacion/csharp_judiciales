@@ -15,5 +15,6 @@ namespace DAO
         Task<(DIngresoInterno, string error)> BuscarIngresoXInterno(int idInterno);
         Task<(List<DIngresoInterno>, string error)> ListaIngresosXInterno(int idInterno);
         Task<(bool, string error)> IngresoDesdeOtraUnidad(int idIngreso, string dataIngreso);
+        Task<(bool, string error)> EgresoInterno(int idIngreso, string dataEgreso);
     }
 }

@@ -36,18 +36,6 @@ namespace CapaNegocio
         }
         //FIN RETORNAR LISTAS DATOS FILIATORIOS..................................
 
-        //RETORNAR TABLAS PARA INGRESO DE INTERNO
-        public async Task<(DTablasIngresoInterno, string error)> ListasTablasIngresoInterno()
-        {
-            IListasGenerales listasGeneralesDao = new ListasGeneralesDaoImplement();
-
-            (DTablasIngresoInterno tablasIngresoInterno, string errorResponse) = await listasGeneralesDao.ListasTablasUngresoInterno();
-
-
-            return (tablasIngresoInterno, errorResponse);
-        }
-        //FIN RETORNAR TABLAS PARA INGRESO DE INTERNO..................................
-
         //RETORNAR TABLAS PARA CAUSA
         public async Task<(DTablasCausa, string error)> ListasTablasCausa()
         {
@@ -59,18 +47,6 @@ namespace CapaNegocio
             return (tablasCausa, errorResponse);
         }
         //FIN RETORNAR TABLAS PARA CAUSA
-        
-        //RETORNAR TABLAS PARA HISTORIAL PROCESAL
-        public async Task<(DTablasHistorialProcesal, string error)> ListasTablasHistorialProcesal()
-        {
-            IListasGenerales listasGeneralesDao = new ListasGeneralesDaoImplement();
-
-            (DTablasHistorialProcesal tablasHistorialProcesal, string errorResponse) = await listasGeneralesDao.ListasTablasHistorialProcesal();
-
-
-            return (tablasHistorialProcesal, errorResponse);
-        }
-        //FIN RETORNAR TABLAS PARA HISTORIAL PROCESAL..................................
 
         //RETORNAR TABLAS PARA DOMICILIO INTERNO
         public async Task<(DTablasDomicilioInterno, string error)> ListasTablasDomicilioInterno()
@@ -83,6 +59,55 @@ namespace CapaNegocio
             return (dTablasDomicilioInterno, errorResponse);
         }
         //FIN RETORNAR TABLAS PARA DOMICILIO INTERNO..................................
+
+        //RETORNAR TABLAS PARA EGRESO
+        public async Task<(DTablasEgreso, string error)> ListasTablasEgreso()
+        {
+            IListasGenerales listasGeneralesDao = new ListasGeneralesDaoImplement();
+
+            (DTablasEgreso dTablasEgreso, string errorResponse) = await listasGeneralesDao.ListasTablasEgreso();
+
+
+            return (dTablasEgreso, errorResponse);
+        }
+        //FIN RETORNAR TABLAS PARA EGRESO..................................
+
+
+        //RETORNAR TABLAS PARA HISTORIAL PROCESAL
+        public async Task<(DTablasHistorialProcesal, string error)> ListasTablasHistorialProcesal()
+        {
+            IListasGenerales listasGeneralesDao = new ListasGeneralesDaoImplement();
+
+            (DTablasHistorialProcesal tablasHistorialProcesal, string errorResponse) = await listasGeneralesDao.ListasTablasHistorialProcesal();
+
+
+            return (tablasHistorialProcesal, errorResponse);
+        }
+        //FIN RETORNAR TABLAS PARA HISTORIAL PROCESAL..................................
+
+        //RETORNAR TABLAS PARA INGRESO DE INTERNO
+        public async Task<(DTablasIngresoInterno, string error)> ListasTablasIngresoInterno()
+        {
+            IListasGenerales listasGeneralesDao = new ListasGeneralesDaoImplement();
+
+            (DTablasIngresoInterno tablasIngresoInterno, string errorResponse) = await listasGeneralesDao.ListasTablasUngresoInterno();
+
+
+            return (tablasIngresoInterno, errorResponse);
+        }
+        //FIN RETORNAR TABLAS PARA INGRESO DE INTERNO..................................
+
+        //RETORNAR TABLAS PARA PROGRESIVIDAD
+        public async Task<(DTablasProgresividad, string error)> ListasTablasProgresividad()
+        {
+            IListasGenerales listasGeneralesDao = new ListasGeneralesDaoImplement();
+
+            (DTablasProgresividad dTablasProgresividad, string errorResponse) = await listasGeneralesDao.ListasTablasProgresividad();
+
+
+            return (dTablasProgresividad, errorResponse);
+        }
+        //FIN RETORNAR TABLAS PARA PROGRESIVIDAD..................................
 
     }
 }

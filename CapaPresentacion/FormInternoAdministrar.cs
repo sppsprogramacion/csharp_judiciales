@@ -233,6 +233,13 @@ namespace CapaPresentacion
             dtpFechaAlojamiento.Text = this.ingresoInternoGlobal.fecha_alojamiento.ToShortDateString();
             cmbTipoDefensor.Text = this.ingresoInternoGlobal.tipo_defensor.tipo_defensor;
             txtAbogado.Text = this.ingresoInternoGlobal.abogado;
+
+            //datos egreso
+            dtpFechaEgreso.Text = this.ingresoInternoGlobal.fecha_egreso?.ToShortDateString();
+            cmbMotivoEgreso.Text = this.ingresoInternoGlobal.motivo_egreso.motivo_egreso;
+            cmbJuzgadoLibera.Text = this.ingresoInternoGlobal.juzgado_libera.juzgado;
+            txtDomicilioLibertad.Text = this.ingresoInternoGlobal.domicilio_libertad;
+            txtDetallesEgreso.Text = this.ingresoInternoGlobal.detalles_egreso;
         }
 
         //FIN CARGAR DATOS DE INGRESO EN PESTAÑA DATOS DE INGRESO......................................
@@ -879,8 +886,6 @@ namespace CapaPresentacion
         }
 
 
-
-
         //HABILITAR CONTROLES INGRESO
         private void HabilitarControlesIngreso(bool valor)
         {
@@ -1379,6 +1384,145 @@ namespace CapaPresentacion
         //FIN REGION HISTORIAL PROCESAL...........................................................
         //.......................................................................................
 
+        //REGION EGRESO
+        #region EGRESO
+        private async void btnEditarEgreso_Click(object sender, EventArgs e)
+        {
+            //Carga de combos sobre egreso
+            NListasGenerales nListasGenerales = new NListasGenerales();
+            tabInterno.Enabled = false;
+            (DTablasEgreso dTablasEgreso, string errorResponseEgreso) = await nListasGenerales.ListasTablasEgreso();
+            tabInterno.Enabled = true;
+
+            if (dTablasEgreso == null)
+            {
+                MessageBox.Show("Advertencia al cargar los datos para egreso: " + errorResponseEgreso, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+            else
+            {
+                //dTablasDomicilioInternoGlobal = dTablasDomicilioInterno;
+
+                cmbJuzgadoLibera.ValueMember = "id_juzgado";
+                cmbJuzgadoLibera.DisplayMember = "juzgado";
+                cmbJuzgadoLibera.DataSource = dTablasEgreso.juzgados;
+
+                cmbMotivoEgreso.ValueMember = "id_motivo_egreso";
+                cmbMotivoEgreso.DisplayMember = "motivo_egreso";
+                cmbMotivoEgreso.DataSource = dTablasEgreso.motivos_egreso;
+
+            }
+            //fin Carga de combos sobre egreso
+
+            this.HabilitarControlesEgreso(true);
+        }
+
+        private async void btnGuardarEgreso_Click(object sender, EventArgs e)
+        {
+            NIngresoInterno nIngreso = new NIngresoInterno();
+
+            //limpiar errores de provider
+            errorProvider.Clear();
+
+            if (txtIdInterno.Text == null || txtIdInterno.Text == "")
+            {
+                MessageBox.Show("Debe tener un interno cargado.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            //validacion de formulario
+            //var datosformulario = new InternoAdministarDatos
+            //{
+            //    cmbOrganismoExternoProcedencia = cmbOrganismoExternoProcedencia.SelectedValue?.ToString() ?? string.Empty,
+            //    txtDetalleProceExterno = txtDetalleProceExterno.Text,
+            //    txtProntuarioPolicial = txtProntuarioPolicial.Text,
+            //    cmbOrganismoSppsProcesencia = cmbOrganismoSppsProcesencia.SelectedValue?.ToString() ?? string.Empty,
+            //    txtDetalleProceSpps = txtDetalleProceSpps.Text,
+            //    cmbEstadoProcesal = cmbEstadoProcesal.SelectedValue?.ToString() ?? string.Empty,
+            //    cmbJurisdiccion = cmbJurisdiccion.SelectedValue?.ToString() ?? string.Empty,
+            //    cmbOtraJurisdiccion = cmbOtraJurisdiccion.SelectedValue?.ToString() ?? string.Empty,
+            //    cmbReingreso = cmbReingreso.SelectedValue?.ToString() ?? string.Empty,
+            //    txtNumeroReingreso = txtNumeroReingreso.Text,
+            //    cmbTipoDefensor = cmbTipoDefensor.SelectedValue?.ToString() ?? string.Empty,
+            //    txtAbogado = txtAbogado.Text,
+            //};
+
+            //var validator = new EditarIngresoValidation();
+            //var result = validator.Validate(datosformulario);
+
+            //if (!result.IsValid)
+            //{
+            //    MessageBox.Show("Complete correctamente los campos del formulario", "judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    foreach (var failure in result.Errors)
+            //    {
+            //        Control control = Controls.Find(failure.PropertyName, true)[0];
+            //        errorProvider.SetError(control, failure.ErrorMessage);
+            //    }
+            //    return;
+            //}
+            //fin validar formulario
+
+
+            this.tabInterno.Enabled = false;
+            var data = new
+            {
+                fecha_egreso = dtpFechaEgreso.Value,
+                motivo_egreso_id = Convert.ToInt32(cmbMotivoEgreso.SelectedValue.ToString()),
+                juzgado_libera_id = cmbJuzgadoLibera.SelectedValue.ToString(),
+                domicilio_libertad = txtDomicilioLibertad.Text,
+                detalles_egreso = txtDetallesEgreso.Text
+                
+            };
+
+            string dataEgresoEnviar = JsonConvert.SerializeObject(data);
+
+            (bool respuestaEditar, string errorResponse) = await nIngreso.EgresoInterno(Convert.ToInt32(txtIdIngresoVer.Text), dataEgresoEnviar);
+
+            if (respuestaEditar)
+            {
+                MessageBox.Show("El egreso se realizo correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //actualizar el internoClobal
+                this.BuscarIngreso();
+
+                this.HabilitarControlesEgreso(false);
+                this.tabInterno.Enabled = true;
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.tabInterno.Enabled = true;
+            }
+        }
+
+
+        private void btnCancelarEgreso_Click(object sender, EventArgs e)
+        {
+            this.HabilitarControlesEgreso(true);
+        }
+
+
+        //HABILITAR CONTROLES EGRESO
+        private void HabilitarControlesEgreso(bool valor)
+        {
+            dtpFechaEgreso.Enabled = valor;
+            cmbMotivoEgreso.Enabled = valor;
+            cmbJuzgadoLibera.Enabled = valor;
+            txtDomicilioLibertad.Enabled = valor;
+            txtDetallesEgreso.Enabled = valor;
+
+            btnEditarEgreso.Enabled = !valor;
+            btnGuardarEgreso.Enabled = valor;
+            btnCancelarEgreso.Enabled = valor;
+        }//FIN HABILITAR CONTROLES EGRESO...........................................
+        
+        #endregion EGRESO
+        //FIN REGION EGRESO........................................................................
+        //.........................................................................................
+
+
         //REGION DOMICILIOS
         #region DOMICILIOS
         private void btnVerDomicilios_Click(object sender, EventArgs e)
@@ -1605,6 +1749,7 @@ namespace CapaPresentacion
                 dtgDomicilios.Focus();
             }
         }
+        //FIN METODO PARA OBTENER LA LISTA DE CAUSAS EN UN DATA GRID .............................
 
         private async void btnGuardarAnulardomicilio_Click(object sender, EventArgs e)
         {
@@ -1662,11 +1807,10 @@ namespace CapaPresentacion
                 MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        //FIN METODO PARA OBTENER LA LISTA DE CAUSAS EN UN DATA GRID .............................
-
         #endregion DOMICILIOS
         //FIN REGION DOMICILIOS.......................................................
         //........................................................................
+
 
 
     }

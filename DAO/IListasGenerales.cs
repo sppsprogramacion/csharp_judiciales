@@ -10,11 +10,12 @@ namespace DAO
     public interface IListasGenerales
     {
         Task<(DCaracteristicasPersonales, string error)> ListasCaracteristicasPersonales();
-
         Task<(DDatosFiliatorios, string error)> ListasDatosFiliatorios();
-        Task<(DTablasIngresoInterno, string error)> ListasTablasUngresoInterno();
         Task<(DTablasCausa, string error)> ListasTablasCausa();
-        Task<(DTablasHistorialProcesal, string error)> ListasTablasHistorialProcesal();
         Task<(DTablasDomicilioInterno, string error)> ListasTablasDomicilioInterno();
+        Task<(DTablasEgreso, string error)> ListasTablasEgreso();
+        Task<(DTablasHistorialProcesal, string error)> ListasTablasHistorialProcesal();
+        Task<(DTablasIngresoInterno, string error)> ListasTablasUngresoInterno();
+        Task<(DTablasProgresividad, string error)> ListasTablasProgresividad();
     }
 }

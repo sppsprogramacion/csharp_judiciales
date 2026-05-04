@@ -158,10 +158,10 @@ namespace DAOImplement
             }
         }
 
-        //LISTAS TABLAS INRGESO INTERNO
-        public async Task<(DTablasIngresoInterno, string error)> ListasTablasUngresoInterno()
+        //LISTAS TABLAS DOMICILIO INTERNO
+        public async Task<(DTablasDomicilioInterno, string error)> ListasTablasDomicilioInterno()
         {
-            DTablasIngresoInterno tablasIngresoInterno = new DTablasIngresoInterno();
+            DTablasDomicilioInterno dTablasDomicilioInterno = new DTablasDomicilioInterno();
 
             string token = SessionManager.Token; // Aquí pones tu token real
 
@@ -170,13 +170,13 @@ namespace DAOImplement
                 // Agregar el token en los headers
                 this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-                HttpResponseMessage httpResponse = await this.httpClient.GetAsync(url_base + "/listas-generales-tablas/tablas-ingreso-interno");
+                HttpResponseMessage httpResponse = await this.httpClient.GetAsync(url_base + "/listas-generales-tablas/tablas-domicilio-interno");
 
                 if (httpResponse.IsSuccessStatusCode)
                 {
                     var content = await httpResponse.Content.ReadAsStringAsync();
-                    tablasIngresoInterno = JsonConvert.DeserializeObject<DTablasIngresoInterno>(content);
-                    return (tablasIngresoInterno, null);
+                    dTablasDomicilioInterno = JsonConvert.DeserializeObject<DTablasDomicilioInterno>(content);
+                    return (dTablasDomicilioInterno, null);
                 }
                 else
                 {
@@ -203,6 +203,54 @@ namespace DAOImplement
                 return (null, $"Error inesperado: {ex.Message}");
             }
         }
+        //FIN LISTAS TABLAS DOMICILIO INTERNO...........................
+
+        //LISTAS TABLAS EGRESO
+        public async Task<(DTablasEgreso, string error)> ListasTablasEgreso()
+        {
+            DTablasEgreso tablasEgreso = new DTablasEgreso();
+
+            string token = SessionManager.Token; // Aquí pones tu token real
+
+            try
+            {
+                // Agregar el token en los headers
+                this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                HttpResponseMessage httpResponse = await this.httpClient.GetAsync(url_base + "/listas-generales-tablas/tablas-egreso");
+
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var content = await httpResponse.Content.ReadAsStringAsync();
+                    tablasEgreso = JsonConvert.DeserializeObject<DTablasEgreso>(content);
+                    return (tablasEgreso, null);
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (null, $"Error en la busqueda: {mensaje}");
+                }
+
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                // Capturar errores de la solicitud HTTP
+                return (null, $"Error de conexión: {httpRequestException.Message}");
+            }
+            catch (JsonException jsonException)
+            {
+                // Capturar errores en la serialización/deserialización de JSON                
+                return (null, $"Error inesperado");
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores (log, mensaje al usuario, etc.)
+                Console.WriteLine($"Error: {ex.Message}");
+                return (null, $"Error inesperado: {ex.Message}");
+            }
+        }
+        //FIN LISTAS TABLAS EGRESO.................................
 
         //LISTAS TABLAS HISTORIAL PROCESAL
         public async Task<(DTablasHistorialProcesal, string error)> ListasTablasHistorialProcesal()
@@ -251,10 +299,10 @@ namespace DAOImplement
         }
         //FIN LISTAS TABLAS HISTORIAL PROCESAL.................................
 
-        //LISTAS TABLAS DOMICILIO INTERNO
-        public async Task<(DTablasDomicilioInterno, string error)> ListasTablasDomicilioInterno()
+        //LISTAS TABLAS INRGESO INTERNO
+        public async Task<(DTablasIngresoInterno, string error)> ListasTablasUngresoInterno()
         {
-            DTablasDomicilioInterno dTablasDomicilioInterno = new DTablasDomicilioInterno();
+            DTablasIngresoInterno tablasIngresoInterno = new DTablasIngresoInterno();
 
             string token = SessionManager.Token; // Aquí pones tu token real
 
@@ -263,13 +311,13 @@ namespace DAOImplement
                 // Agregar el token en los headers
                 this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-                HttpResponseMessage httpResponse = await this.httpClient.GetAsync(url_base + "/listas-generales-tablas/tablas-domicilio-interno");
+                HttpResponseMessage httpResponse = await this.httpClient.GetAsync(url_base + "/listas-generales-tablas/tablas-ingreso-interno");
 
                 if (httpResponse.IsSuccessStatusCode)
                 {
                     var content = await httpResponse.Content.ReadAsStringAsync();
-                    dTablasDomicilioInterno = JsonConvert.DeserializeObject<DTablasDomicilioInterno>(content);
-                    return (dTablasDomicilioInterno, null);
+                    tablasIngresoInterno = JsonConvert.DeserializeObject<DTablasIngresoInterno>(content);
+                    return (tablasIngresoInterno, null);
                 }
                 else
                 {
@@ -296,6 +344,57 @@ namespace DAOImplement
                 return (null, $"Error inesperado: {ex.Message}");
             }
         }
-        //FIN LISTAS TABLAS DOMICILIO INTERNO...........................
+        //FIN LISTAS TABLAS INRGESO INTERNO.................................
+
+        //LISTAS TABLAS PROGRESIVIDAD
+        public async Task<(DTablasProgresividad, string error)> ListasTablasProgresividad()
+        {
+            DTablasProgresividad tablasProgresividad = new DTablasProgresividad();
+
+            string token = SessionManager.Token; // Aquí pones tu token real
+
+            try
+            {
+                // Agregar el token en los headers
+                this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                HttpResponseMessage httpResponse = await this.httpClient.GetAsync(url_base + "/listas-generales-tablas/tablas-progresividad");
+
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var content = await httpResponse.Content.ReadAsStringAsync();
+                    tablasProgresividad = JsonConvert.DeserializeObject<DTablasProgresividad>(content);
+                    return (tablasProgresividad, null);
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (null, $"Error en la busqueda: {mensaje}");
+                }
+
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                // Capturar errores de la solicitud HTTP
+                return (null, $"Error de conexión: {httpRequestException.Message}");
+            }
+            catch (JsonException jsonException)
+            {
+                // Capturar errores en la serialización/deserialización de JSON                
+                return (null, $"Error inesperado");
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores (log, mensaje al usuario, etc.)
+                Console.WriteLine($"Error: {ex.Message}");
+                return (null, $"Error inesperado: {ex.Message}");
+            }
+        }
+        //FIN LISTAS TABLAS PROGRESIVIDAD.........................................................
+
+
+
+
     }
 }
