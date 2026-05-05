@@ -244,6 +244,7 @@ namespace CapaPresentacion
 
         //FIN CARGAR DATOS DE INGRESO EN PESTAÑA DATOS DE INGRESO......................................
 
+
         //REGION DATOS_PRINCIPALES
         #region DATOS_PRINCIPALES
         private async void btnGuardarEditarDatosPrincipales_Click(object sender, EventArgs e)
@@ -725,7 +726,8 @@ namespace CapaPresentacion
         //FIN REGION DATOS_PRINCIPALES..........................................................
         //......................................................................................
 
-        //FIN REGION DATOS_INGRESO
+
+        //REGION DATOS_INGRESO
         #region DATOS_INGRESO
         private async void btnEditarIngreso_Click(object sender, EventArgs e)
         {
@@ -941,6 +943,7 @@ namespace CapaPresentacion
         //FIN REGION DATOS_INGRESO................................................................
         //........................................................................................
 
+
         //REGION CAUSAS
         #region CAUSAS
         
@@ -1045,210 +1048,10 @@ namespace CapaPresentacion
         //FIN REGION CAUSAS.......................................................................
         //........................................................................................
 
-        //REGION TRASLADOS
-        #region TRASLADOS
-        private void btnTrasladar_Click(object sender, EventArgs e)
-        {
-            if(txtIdIngresoVer.Text == null || txtIdIngresoVer.Text == "")
-            {
-                MessageBox.Show("El interno no tiene un ingreso valido", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            FormTrasladoNuevo formTrasladoNuevo = new FormTrasladoNuevo(Convert.ToInt32(txtIdIngresoVer.Text));
-            formTrasladoNuevo.ShowDialog();
-        }
-
-        private void btnVerTraslados_Click(object sender, EventArgs e)
-        {
-            this.CargarDataGridTraslados();
-        }
-
-
-        
-        private void dtgvTraslados_KeyDown(object sender, KeyEventArgs e)
-        {
-            //AL PRESIONAR ENTER MOSTRAR
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.SuppressKeyPress = true;
-
-                if (dtgvTraslados.SelectedRows.Count > 0)
-                {
-                    int idTraslado;
-                    idTraslado = Convert.ToInt32(dtgvTraslados.CurrentRow.Cells["ID"].Value.ToString());
-
-                    
-                    if (idTraslado > 0)
-                    {
-                        txtIdTraslado.Text = idTraslado.ToString();
-                        txtOrganismoOrigenTraslado.Text = dtgvTraslados.CurrentRow.Cells["Origen"].Value.ToString();
-                        txtFechaTraslado.Text = Convert.ToDateTime(dtgvTraslados.CurrentRow.Cells["FechaTraslado"].Value).ToString("dd/MM/yyyy");
-                        txtDetalleTraslado.Text = dtgvTraslados.CurrentRow.Cells["DetalleTrasaldo"].Value?.ToString();
-                        txtOrganismoDestinoTraslado.Text = dtgvTraslados.CurrentRow.Cells["Destino"].Value?.ToString();
-                        //controlar fecha_ingreso
-                        var valor = dtgvTraslados.CurrentRow.Cells["FechaIngreso"].Value;
-
-                        if (valor is DateTime fecha)
-                        {
-                            txtFechaIngresoTraslado.Text = fecha.ToString("dd/MM/yyyy");
-                        }
-                        else
-                        {
-                            txtFechaIngresoTraslado.Text = "";
-                        }
-                        txtEstadoTraslado.Text = dtgvTraslados.CurrentRow.Cells["Estado"].Value?.ToString();
-                        txtObsTraslado.Text = dtgvTraslados.CurrentRow.Cells["ObsTraslado"].Value?.ToString();
-                        txtFechaCargaTraslado.Text = Convert.ToDateTime(dtgvTraslados.CurrentRow.Cells["FechaCarga"].Value).ToString("dd/MM/yyyy");
-                        txtHoraCargaTraslado.Text = dtgvTraslados.CurrentRow.Cells["HoraCarga"].Value?.ToString();
-                        txtUsuarioCargaTraslado.Text = dtgvTraslados.CurrentRow.Cells["Usuario"].Value?.ToString();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Debe seleccionar una traslado.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            }
-        }
-
-
-        private void btnAnularTraslado_Click(object sender, EventArgs e)
-        {
-            this.HabilitarControlesAnularTraslado(true);
-        }
-
-        private void btnCancelarTrasladoARA_Click(object sender, EventArgs e)
-        {
-            this.HabilitarControlesAnularTraslado(false);
-        }
-        private async void btnGuardarTrasladoARA_Click(object sender, EventArgs e)
-        {
-            if (txtIdTraslado.Text == null || txtIdTraslado.Text == "")
-            {
-                MessageBox.Show("Debe seleccionar un traslado para poder anular.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (txtObsProcesarTraslado.Text == string.Empty)
-            {
-                MessageBox.Show("Debe completar el obs traslado.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            NTrasladoInterno nTrasladoInterno = new NTrasladoInterno();
-
-            var dataAnular = new
-            {
-                obs_traslado = txtObsProcesarTraslado.Text,
-            };
-
-            string dataEnviar = JsonConvert.SerializeObject(dataAnular);
-
-            tabInterno.Enabled = false;
-            (bool respuestaEditar, string errorResponse) = await nTrasladoInterno.AnularTraslado(Convert.ToInt32(txtIdTraslado.Text), dataEnviar);
-            tabInterno.Enabled = true;
-
-            //verificar respuesta de la peticion
-            if (respuestaEditar)
-            {
-
-                MessageBox.Show("El traslado se anulo correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
-                this.HabilitarControlesAnularTraslado(false);
-                this.CargarDataGridTraslados();
-            }
-            else
-            {
-                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        //METODO PARA OBTENER LA LISTA DE TRASLADOS Y CARGARLO EN UN DATA GRID 
-        async private void CargarDataGridTraslados()
-        {
-            NTrasladoInterno nTrasladoInterno = new NTrasladoInterno();
-
-            if (txtIdIngresoVer.Text == null || txtIdIngresoVer.Text == "")
-            {
-                MessageBox.Show("El interno no tiene un ingreso valido", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            (List<DTrasladoInterno> listaTraslados, string errorResponse) = await nTrasladoInterno.ListaTrasladosXIngreso(Convert.ToInt32(txtIdIngresoVer.Text));
-
-            if (listaTraslados == null)
-            {
-                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            var datosfiltrados = listaTraslados
-                .Select(c => new
-                {
-                    Id = c.id_traslado_interno,
-                    Origen = c.organismo_origen.organismo,
-                    FechaTraslado = c.fecha_egreso_origen,
-                    DetalleTrasaldo = c.detalle_traslado,
-                    Destino = c.organismo_destino.organismo,
-                    FechaIngreso = c.fecha_ingreso_destino,
-                    Estado = c.estado_traslado,
-                    ObsTraslado = c.obs_traslado,
-                    FechaCarga = c.fecha_carga,
-                    HoraCarga = c.hora_carga,
-                    Usuario = c.usuario.apellido + " " + c.usuario.nombre,
-
-                })
-                .ToList();
-
-            dtgvTraslados.DataSource = datosfiltrados;
-
-            if (listaTraslados.Count == 0)
-            {
-                MessageBox.Show("No se encontraron registros.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
-            }
-            else
-            {
-
-                dtgvTraslados.Columns[1].Width = 200;
-                dtgvTraslados.Columns[4].Width = 200;
-            }
-
-            //limpiar formulario
-            txtIdTraslado.Text = string.Empty;
-            txtOrganismoOrigenTraslado.Text = string.Empty;
-            txtFechaTraslado.Text = string.Empty;
-            txtDetalleTraslado.Text = string.Empty;
-            txtOrganismoDestinoTraslado.Text = string.Empty;
-            txtFechaIngresoTraslado.Text = string.Empty;
-            txtEstadoTraslado.Text = string.Empty;
-            txtObsTraslado.Text = string.Empty;
-            txtFechaCargaTraslado.Text = string.Empty;
-            txtHoraCargaTraslado.Text = string.Empty;
-            txtUsuarioCargaTraslado.Text = string.Empty;
-
-        } //FIN METODO PARA OBTENER LA LISTA DE TRASLADOS EN UN DATA GRID ...........
-
-        //METODO HABILITAR CONTROLES ANULAR TRASLADO
-        private void HabilitarControlesAnularTraslado(bool valor)
-        {
-            txtObsProcesarTraslado.Enabled = valor;
-            txtObsProcesarTraslado.Text = string.Empty;
-
-            btnAnularTraslado.Enabled = !valor;
-
-            btnGuardarTrasladoARA.Enabled = valor;
-            btnCancelarTrasladoARA.Enabled = valor;
-
-        }//FIN METODO HABILITAR CONTROLES ANULAR TRASLADO..............................
-
-
-        #endregion TRASLADOS
-        //FIN REGION TRASLADOS....................................................................
-        //........................................................................................
 
         //REGION HISTORIAL PROCESAL
         #region HISTORIAL_PROCESAL
-        
+
         private void btnVerHistorial_Click(object sender, EventArgs e)
         {
             tabInterno.Enabled = false;
@@ -1383,6 +1186,291 @@ namespace CapaPresentacion
         #endregion HISTORIAL_PROCESAL
         //FIN REGION HISTORIAL PROCESAL...........................................................
         //.......................................................................................
+        
+
+        //REGION PROGRESIVIDAD
+        #region PROGRESIVIDAD
+        private async void btnEditarProgresividad_Click(object sender, EventArgs e)
+        {
+            //Carga de combos sobre egreso
+            NListasGenerales nListasGenerales = new NListasGenerales();
+            tabInterno.Enabled = false;
+            (DTablasProgresividad dTablasProgresividad, string errorResponseEgreso) = await nListasGenerales.ListasTablasProgresividad();
+            tabInterno.Enabled = true;
+
+            if (dTablasProgresividad == null)
+            {
+                MessageBox.Show("Advertencia al cargar los datos para progresividad: " + errorResponseEgreso, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+            else
+            {
+                //dTablasDomicilioInternoGlobal = dTablasDomicilioInterno;
+
+                cmbTrimestre.ValueMember = "id_trimestre";
+                cmbTrimestre.DisplayMember = "trimestre";
+                cmbTrimestre.DataSource = dTablasProgresividad.trimestres;
+
+                cmbConducta.ValueMember = "id_conducta";
+                cmbConducta.DisplayMember = "conducta";
+                cmbConducta.DataSource = dTablasProgresividad.conducta;
+
+                cmbConcepto.ValueMember = "id_concepto";
+                cmbConcepto.DisplayMember = "concepto";
+                cmbConcepto.DataSource = dTablasProgresividad.concepto;
+
+                cmbProgresividad.ValueMember = "id_progresividad";
+                cmbProgresividad.DisplayMember = "progresividad";
+                cmbProgresividad.DataSource = dTablasProgresividad.progresividad;
+
+                //cmbConducta.ValueMember = "id_motivo_egreso";
+                //cmbConducta.DisplayMember = "motivo_egreso";
+                //cmbConducta.DataSource = dTablasProgresividad.conducta;
+
+                this.HabilitarControlesProgresividad(true);
+            }
+            //fin Carga de combos sobre egreso
+
+            this.HabilitarControlesEgreso(true);
+        }
+
+        private void btnGuardarProgresividad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelarProgresividad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //HABILITAR CONTROLES PROGRESIVIDAD
+        private void HabilitarControlesProgresividad(bool valor)
+        {
+            cmbTrimestre.Enabled = valor;
+            cmbConducta.Enabled = valor;
+            cmbConcepto.Enabled = valor;
+            cmbProgresividad.Enabled = valor;
+            cmbFase.Enabled = valor;
+            chckExtramuro.Enabled = valor;
+            chkGranja.Enabled = valor;
+            chkSemilibertad.Enabled = valor;
+            chkTransitoria.Enabled = valor;
+
+            txtDetalleProgresividad.Enabled = valor;
+            //dtpFechaEgreso.Enabled = valor;
+
+            btnEditarProgresividad.Enabled = !valor;
+            btnGuardarProgresividad.Enabled = valor;
+            btnCancelarProgresividad.Enabled = valor;
+        }//FIN HABILITAR CONTROLES EGRESO...........................................
+
+        #endregion PROGRESIVIDAD
+        //FIN REGION PROGRESIVIDAD........................................................
+        //...................................................................................
+
+
+        //REGION TRASLADOS
+        #region TRASLADOS
+        private void btnTrasladar_Click(object sender, EventArgs e)
+        {
+            if (txtIdIngresoVer.Text == null || txtIdIngresoVer.Text == "")
+            {
+                MessageBox.Show("El interno no tiene un ingreso valido", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            FormTrasladoNuevo formTrasladoNuevo = new FormTrasladoNuevo(Convert.ToInt32(txtIdIngresoVer.Text));
+            formTrasladoNuevo.ShowDialog();
+        }
+
+        private void btnVerTraslados_Click(object sender, EventArgs e)
+        {
+            this.CargarDataGridTraslados();
+        }
+
+
+
+        private void dtgvTraslados_KeyDown(object sender, KeyEventArgs e)
+        {
+            //AL PRESIONAR ENTER MOSTRAR
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+
+                if (dtgvTraslados.SelectedRows.Count > 0)
+                {
+                    int idTraslado;
+                    idTraslado = Convert.ToInt32(dtgvTraslados.CurrentRow.Cells["ID"].Value.ToString());
+
+
+                    if (idTraslado > 0)
+                    {
+                        txtIdTraslado.Text = idTraslado.ToString();
+                        txtOrganismoOrigenTraslado.Text = dtgvTraslados.CurrentRow.Cells["Origen"].Value.ToString();
+                        txtFechaTraslado.Text = Convert.ToDateTime(dtgvTraslados.CurrentRow.Cells["FechaTraslado"].Value).ToString("dd/MM/yyyy");
+                        txtDetalleTraslado.Text = dtgvTraslados.CurrentRow.Cells["DetalleTrasaldo"].Value?.ToString();
+                        txtOrganismoDestinoTraslado.Text = dtgvTraslados.CurrentRow.Cells["Destino"].Value?.ToString();
+                        //controlar fecha_ingreso
+                        var valor = dtgvTraslados.CurrentRow.Cells["FechaIngreso"].Value;
+
+                        if (valor is DateTime fecha)
+                        {
+                            txtFechaIngresoTraslado.Text = fecha.ToString("dd/MM/yyyy");
+                        }
+                        else
+                        {
+                            txtFechaIngresoTraslado.Text = "";
+                        }
+                        txtEstadoTraslado.Text = dtgvTraslados.CurrentRow.Cells["Estado"].Value?.ToString();
+                        txtObsTraslado.Text = dtgvTraslados.CurrentRow.Cells["ObsTraslado"].Value?.ToString();
+                        txtFechaCargaTraslado.Text = Convert.ToDateTime(dtgvTraslados.CurrentRow.Cells["FechaCarga"].Value).ToString("dd/MM/yyyy");
+                        txtHoraCargaTraslado.Text = dtgvTraslados.CurrentRow.Cells["HoraCarga"].Value?.ToString();
+                        txtUsuarioCargaTraslado.Text = dtgvTraslados.CurrentRow.Cells["Usuario"].Value?.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe seleccionar una traslado.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+            }
+        }
+
+
+        private void btnAnularTraslado_Click(object sender, EventArgs e)
+        {
+            this.HabilitarControlesAnularTraslado(true);
+        }
+
+        private void btnCancelarTrasladoARA_Click(object sender, EventArgs e)
+        {
+            this.HabilitarControlesAnularTraslado(false);
+        }
+        private async void btnGuardarTrasladoARA_Click(object sender, EventArgs e)
+        {
+            if (txtIdTraslado.Text == null || txtIdTraslado.Text == "")
+            {
+                MessageBox.Show("Debe seleccionar un traslado para poder anular.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (txtObsProcesarTraslado.Text == string.Empty)
+            {
+                MessageBox.Show("Debe completar el obs traslado.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            NTrasladoInterno nTrasladoInterno = new NTrasladoInterno();
+
+            var dataAnular = new
+            {
+                obs_traslado = txtObsProcesarTraslado.Text,
+            };
+
+            string dataEnviar = JsonConvert.SerializeObject(dataAnular);
+
+            tabInterno.Enabled = false;
+            (bool respuestaEditar, string errorResponse) = await nTrasladoInterno.AnularTraslado(Convert.ToInt32(txtIdTraslado.Text), dataEnviar);
+            tabInterno.Enabled = true;
+
+            //verificar respuesta de la peticion
+            if (respuestaEditar)
+            {
+
+                MessageBox.Show("El traslado se anulo correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.HabilitarControlesAnularTraslado(false);
+                this.CargarDataGridTraslados();
+            }
+            else
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //METODO PARA OBTENER LA LISTA DE TRASLADOS Y CARGARLO EN UN DATA GRID 
+        async private void CargarDataGridTraslados()
+        {
+            NTrasladoInterno nTrasladoInterno = new NTrasladoInterno();
+
+            if (txtIdIngresoVer.Text == null || txtIdIngresoVer.Text == "")
+            {
+                MessageBox.Show("El interno no tiene un ingreso valido", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            (List<DTrasladoInterno> listaTraslados, string errorResponse) = await nTrasladoInterno.ListaTrasladosXIngreso(Convert.ToInt32(txtIdIngresoVer.Text));
+
+            if (listaTraslados == null)
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            var datosfiltrados = listaTraslados
+                .Select(c => new
+                {
+                    Id = c.id_traslado_interno,
+                    Origen = c.organismo_origen.organismo,
+                    FechaTraslado = c.fecha_egreso_origen,
+                    DetalleTrasaldo = c.detalle_traslado,
+                    Destino = c.organismo_destino.organismo,
+                    FechaIngreso = c.fecha_ingreso_destino,
+                    Estado = c.estado_traslado,
+                    ObsTraslado = c.obs_traslado,
+                    FechaCarga = c.fecha_carga,
+                    HoraCarga = c.hora_carga,
+                    Usuario = c.usuario.apellido + " " + c.usuario.nombre,
+
+                })
+                .ToList();
+
+            dtgvTraslados.DataSource = datosfiltrados;
+
+            if (listaTraslados.Count == 0)
+            {
+                MessageBox.Show("No se encontraron registros.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+            {
+
+                dtgvTraslados.Columns[1].Width = 200;
+                dtgvTraslados.Columns[4].Width = 200;
+            }
+
+            //limpiar formulario
+            txtIdTraslado.Text = string.Empty;
+            txtOrganismoOrigenTraslado.Text = string.Empty;
+            txtFechaTraslado.Text = string.Empty;
+            txtDetalleTraslado.Text = string.Empty;
+            txtOrganismoDestinoTraslado.Text = string.Empty;
+            txtFechaIngresoTraslado.Text = string.Empty;
+            txtEstadoTraslado.Text = string.Empty;
+            txtObsTraslado.Text = string.Empty;
+            txtFechaCargaTraslado.Text = string.Empty;
+            txtHoraCargaTraslado.Text = string.Empty;
+            txtUsuarioCargaTraslado.Text = string.Empty;
+
+        } //FIN METODO PARA OBTENER LA LISTA DE TRASLADOS EN UN DATA GRID ...........
+
+        //METODO HABILITAR CONTROLES ANULAR TRASLADO
+        private void HabilitarControlesAnularTraslado(bool valor)
+        {
+            txtObsProcesarTraslado.Enabled = valor;
+            txtObsProcesarTraslado.Text = string.Empty;
+
+            btnAnularTraslado.Enabled = !valor;
+
+            btnGuardarTrasladoARA.Enabled = valor;
+            btnCancelarTrasladoARA.Enabled = valor;
+
+        }//FIN METODO HABILITAR CONTROLES ANULAR TRASLADO..............................
+
+
+        #endregion TRASLADOS
+        //FIN REGION TRASLADOS....................................................................
+        //........................................................................................
+
 
         //REGION EGRESO
         #region EGRESO
@@ -1806,7 +1894,7 @@ namespace CapaPresentacion
             {
                 MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        }        
         #endregion DOMICILIOS
         //FIN REGION DOMICILIOS.......................................................
         //........................................................................

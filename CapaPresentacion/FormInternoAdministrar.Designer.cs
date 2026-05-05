@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInternoAdministrar));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabInterno = new System.Windows.Forms.TabControl();
             this.tabDatosPrincipales = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -166,6 +166,8 @@
             this.btnNuevoHistorial = new System.Windows.Forms.Button();
             this.tabProgresividad = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.txtDetalleProgresividad = new System.Windows.Forms.TextBox();
             this.chkTransitoria = new System.Windows.Forms.CheckBox();
             this.chkSemilibertad = new System.Windows.Forms.CheckBox();
             this.chkGranja = new System.Windows.Forms.CheckBox();
@@ -285,8 +287,6 @@
             this.label56 = new System.Windows.Forms.Label();
             this.txtIdDomicilio = new System.Windows.Forms.TextBox();
             this.label57 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
-            this.txtDetalleProgresividad = new System.Windows.Forms.TextBox();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -1889,10 +1889,10 @@
             this.dtgHistorialProcesal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgHistorialProcesal.Location = new System.Drawing.Point(12, 21);
             this.dtgHistorialProcesal.Name = "dtgHistorialProcesal";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgHistorialProcesal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgHistorialProcesal.Size = new System.Drawing.Size(1033, 588);
             this.dtgHistorialProcesal.TabIndex = 63;
@@ -1953,6 +1953,27 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Progresividad";
             // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label63.Location = new System.Drawing.Point(10, 192);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(161, 15);
+            this.label63.TabIndex = 279;
+            this.label63.Text = "DETALLE PROGRESIVIDAD";
+            // 
+            // txtDetalleProgresividad
+            // 
+            this.txtDetalleProgresividad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDetalleProgresividad.Enabled = false;
+            this.txtDetalleProgresividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetalleProgresividad.Location = new System.Drawing.Point(13, 209);
+            this.txtDetalleProgresividad.Multiline = true;
+            this.txtDetalleProgresividad.Name = "txtDetalleProgresividad";
+            this.txtDetalleProgresividad.Size = new System.Drawing.Size(499, 57);
+            this.txtDetalleProgresividad.TabIndex = 278;
+            // 
             // chkTransitoria
             // 
             this.chkTransitoria.AutoSize = true;
@@ -1988,6 +2009,7 @@
             // 
             // cmbFase
             // 
+            this.cmbFase.Enabled = false;
             this.cmbFase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFase.FormattingEnabled = true;
             this.cmbFase.Location = new System.Drawing.Point(287, 86);
@@ -2017,6 +2039,7 @@
             // 
             // cmbConcepto
             // 
+            this.cmbConcepto.Enabled = false;
             this.cmbConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbConcepto.FormattingEnabled = true;
             this.cmbConcepto.Location = new System.Drawing.Point(329, 39);
@@ -2036,6 +2059,7 @@
             // 
             // cmbConducta
             // 
+            this.cmbConducta.Enabled = false;
             this.cmbConducta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbConducta.FormattingEnabled = true;
             this.cmbConducta.Location = new System.Drawing.Point(168, 39);
@@ -2056,6 +2080,7 @@
             this.btnEditarProgresividad.TabIndex = 268;
             this.btnEditarProgresividad.Text = "EDITAR";
             this.btnEditarProgresividad.UseVisualStyleBackColor = false;
+            this.btnEditarProgresividad.Click += new System.EventHandler(this.btnEditarProgresividad_Click);
             // 
             // chckExtramuro
             // 
@@ -2070,6 +2095,7 @@
             // 
             // cmbProgresividad
             // 
+            this.cmbProgresividad.Enabled = false;
             this.cmbProgresividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProgresividad.FormattingEnabled = true;
             this.cmbProgresividad.Location = new System.Drawing.Point(9, 86);
@@ -2101,6 +2127,7 @@
             this.btnGuardarProgresividad.TabIndex = 12;
             this.btnGuardarProgresividad.Text = "Guardar";
             this.btnGuardarProgresividad.UseVisualStyleBackColor = false;
+            this.btnGuardarProgresividad.Click += new System.EventHandler(this.btnGuardarProgresividad_Click);
             // 
             // btnCancelarProgresividad
             // 
@@ -2116,6 +2143,7 @@
             this.btnCancelarProgresividad.TabIndex = 13;
             this.btnCancelarProgresividad.Text = "Cancelar";
             this.btnCancelarProgresividad.UseVisualStyleBackColor = false;
+            this.btnCancelarProgresividad.Click += new System.EventHandler(this.btnCancelarProgresividad_Click);
             // 
             // label80
             // 
@@ -2123,12 +2151,13 @@
             this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label80.Location = new System.Drawing.Point(6, 22);
             this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(74, 15);
+            this.label80.Size = new System.Drawing.Size(77, 15);
             this.label80.TabIndex = 207;
-            this.label80.Text = "TRMESTRE";
+            this.label80.Text = "TRIMESTRE";
             // 
             // cmbTrimestre
             // 
+            this.cmbTrimestre.Enabled = false;
             this.cmbTrimestre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTrimestre.FormattingEnabled = true;
             this.cmbTrimestre.Location = new System.Drawing.Point(9, 39);
@@ -3328,26 +3357,6 @@
             this.label57.Size = new System.Drawing.Size(107, 15);
             this.label57.TabIndex = 72;
             this.label57.Text = "USUARIO CARGA:";
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label63.Location = new System.Drawing.Point(10, 192);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(161, 15);
-            this.label63.TabIndex = 279;
-            this.label63.Text = "DETALLE PROGRESIVIDAD";
-            // 
-            // txtDetalleProgresividad
-            // 
-            this.txtDetalleProgresividad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDetalleProgresividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetalleProgresividad.Location = new System.Drawing.Point(13, 209);
-            this.txtDetalleProgresividad.Multiline = true;
-            this.txtDetalleProgresividad.Name = "txtDetalleProgresividad";
-            this.txtDetalleProgresividad.Size = new System.Drawing.Size(499, 57);
-            this.txtDetalleProgresividad.TabIndex = 278;
             // 
             // FormInternoAdministrar
             // 
