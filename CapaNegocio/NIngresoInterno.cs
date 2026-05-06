@@ -62,11 +62,23 @@ namespace CapaNegocio
         {
             IIngresoInernoDao ingresoInternoDao = new IngresoInternoDaoImplement();
 
-            (bool ingresoResponse, string error) = await ingresoInternoDao.EgresoInterno(idIngreso, dataEgreso);
+            (bool egresoResponse, string error) = await ingresoInternoDao.EgresoInterno(idIngreso, dataEgreso);
 
-            return (ingresoResponse, error);
+            return (egresoResponse, error);
         }
         //FIN EGRESO..............................................................
+
+
+        //ESTABLECER PROGRESIVIDAD
+        public async Task<(bool, string error)> EstablecerProgresividad(int idIngreso, string dataProgresividad)
+        {
+            IIngresoInernoDao ingresoInternoDao = new IngresoInternoDaoImplement();
+
+            (bool progresividadResponse, string error) = await ingresoInternoDao.EstablecerProgresividad(idIngreso, dataProgresividad);
+
+            return (progresividadResponse, error);
+        }
+        //FIN ESTABLECER PROGRESIVIDAD..............................................................
 
         //EDITAR INGRESO
         public async Task<(bool, string error)> EditarIngreso(int idIngreso, string dataIngreso)

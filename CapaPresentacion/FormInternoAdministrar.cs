@@ -240,6 +240,15 @@ namespace CapaPresentacion
             cmbJuzgadoLibera.Text = this.ingresoInternoGlobal.juzgado_libera.juzgado;
             txtDomicilioLibertad.Text = this.ingresoInternoGlobal.domicilio_libertad;
             txtDetallesEgreso.Text = this.ingresoInternoGlobal.detalles_egreso;
+
+            //datos progresividad
+            cmbProgresividad.Text = this.ingresoInternoGlobal.progresividad.progresividad;
+            cmbFase.Text = this.ingresoInternoGlobal.fase.fase;
+            chkExtramuro.Checked = this.ingresoInternoGlobal.tiene_extramuro;
+            chkGranja.Checked = this.ingresoInternoGlobal.tiene_granja;
+            chkSemilibertad.Checked = this.ingresoInternoGlobal.tiene_semilibertad;
+            chkTransitoria.Checked = this.ingresoInternoGlobal.tiene_transitoria;
+
         }
 
         //FIN CARGAR DATOS DE INGRESO EN PESTAÑA DATOS DE INGRESO......................................
@@ -1223,25 +1232,101 @@ namespace CapaPresentacion
                 cmbProgresividad.DisplayMember = "progresividad";
                 cmbProgresividad.DataSource = dTablasProgresividad.progresividad;
 
-                //cmbConducta.ValueMember = "id_motivo_egreso";
-                //cmbConducta.DisplayMember = "motivo_egreso";
-                //cmbConducta.DataSource = dTablasProgresividad.conducta;
+                cmbFase.ValueMember = "id_fase";
+                cmbFase.DisplayMember = "fase";
+                cmbFase.DataSource = dTablasProgresividad.fases;
 
                 this.HabilitarControlesProgresividad(true);
             }
             //fin Carga de combos sobre egreso
 
-            this.HabilitarControlesEgreso(true);
         }
 
-        private void btnGuardarProgresividad_Click(object sender, EventArgs e)
+        private async void btnGuardarProgresividad_Click(object sender, EventArgs e)
         {
+            NIngresoInterno nIngreso = new NIngresoInterno();
 
+            //limpiar errores de provider
+            errorProvider.Clear();
+
+            if (txtIdInterno.Text == null || txtIdInterno.Text == "")
+            {
+                MessageBox.Show("Debe tener un interno cargado.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            //validacion de formulario
+            //var datosformulario = new InternoAdministarDatos
+            //{
+            //    cmbOrganismoExternoProcedencia = cmbOrganismoExternoProcedencia.SelectedValue?.ToString() ?? string.Empty,
+            //    txtDetalleProceExterno = txtDetalleProceExterno.Text,
+            //    txtProntuarioPolicial = txtProntuarioPolicial.Text,
+            //    cmbOrganismoSppsProcesencia = cmbOrganismoSppsProcesencia.SelectedValue?.ToString() ?? string.Empty,
+            //    txtDetalleProceSpps = txtDetalleProceSpps.Text,
+            //    cmbEstadoProcesal = cmbEstadoProcesal.SelectedValue?.ToString() ?? string.Empty,
+            //    cmbJurisdiccion = cmbJurisdiccion.SelectedValue?.ToString() ?? string.Empty,
+            //    cmbOtraJurisdiccion = cmbOtraJurisdiccion.SelectedValue?.ToString() ?? string.Empty,
+            //    cmbReingreso = cmbReingreso.SelectedValue?.ToString() ?? string.Empty,
+            //    txtNumeroReingreso = txtNumeroReingreso.Text,
+            //    cmbTipoDefensor = cmbTipoDefensor.SelectedValue?.ToString() ?? string.Empty,
+            //    txtAbogado = txtAbogado.Text,
+            //};
+
+            //var validator = new EditarIngresoValidation();
+            //var result = validator.Validate(datosformulario);
+
+            //if (!result.IsValid)
+            //{
+            //    MessageBox.Show("Complete correctamente los campos del formulario", "judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    foreach (var failure in result.Errors)
+            //    {
+            //        Control control = Controls.Find(failure.PropertyName, true)[0];
+            //        errorProvider.SetError(control, failure.ErrorMessage);
+            //    }
+            //    return;
+            //}
+            //fin validar formulario
+
+
+            this.tabInterno.Enabled = false;
+            var data = new
+            {
+                progresividad_id = Convert.ToInt32(cmbProgresividad.SelectedValue.ToString()),
+                fase_id = Convert.ToInt32(cmbFase.SelectedValue.ToString()),
+                tiene_extramuro = chkExtramuro.Checked,
+                tiene_granja = chkGranja.Checked,
+                tiene_semilibertad = chkSemilibertad.Checked,
+                tiene_transitoria = chkTransitoria.Checked,
+                fecha = dtpFechaProgresividad.Value,
+                detalle = txtDetalleProgresividad.Text,
+
+            };
+
+            string dataProgresividadEnviar = JsonConvert.SerializeObject(data);
+
+            (bool respuestaEditar, string errorResponse) = await nIngreso.EstablecerProgresividad(Convert.ToInt32(txtIdIngresoVer.Text), dataProgresividadEnviar);
+
+            if (respuestaEditar)
+            {
+                MessageBox.Show("El egreso se realizo correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //actualizar el internoClobal
+                this.BuscarIngreso();
+
+                this.HabilitarControlesProgresividad(false);
+                this.tabInterno.Enabled = true;
+
+            }
+            else
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.tabInterno.Enabled = true;
+            }
         }
 
         private void btnCancelarProgresividad_Click(object sender, EventArgs e)
         {
-
+            this.HabilitarControlesProgresividad(false);
         }
 
         //HABILITAR CONTROLES PROGRESIVIDAD
@@ -1252,17 +1337,28 @@ namespace CapaPresentacion
             cmbConcepto.Enabled = valor;
             cmbProgresividad.Enabled = valor;
             cmbFase.Enabled = valor;
-            chckExtramuro.Enabled = valor;
+            chkExtramuro.Enabled = valor;
             chkGranja.Enabled = valor;
             chkSemilibertad.Enabled = valor;
             chkTransitoria.Enabled = valor;
-
+            dtpFechaProgresividad.Enabled = valor;
             txtDetalleProgresividad.Enabled = valor;
-            //dtpFechaEgreso.Enabled = valor;
 
             btnEditarProgresividad.Enabled = !valor;
             btnGuardarProgresividad.Enabled = valor;
             btnCancelarProgresividad.Enabled = valor;
+        }//FIN HABILITAR CONTROLES EGRESO...........................................
+
+        //HABILITAR CONTROLES CONDUCTA CONCEPTO
+        private void HabilitarControlesConductaConcepto(bool valor)
+        {
+            cmbTrimestre.Enabled = valor;
+            cmbConducta.Enabled = valor;
+            cmbConcepto.Enabled = valor;  
+
+            btnEditarConductaConcepto.Enabled = !valor;
+            btnGuardarConductaConepto.Enabled = valor;
+            btnCancelarConductaConcepto.Enabled = valor;
         }//FIN HABILITAR CONTROLES EGRESO...........................................
 
         #endregion PROGRESIVIDAD
@@ -1894,7 +1990,8 @@ namespace CapaPresentacion
             {
                 MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }        
+        }
+               
         #endregion DOMICILIOS
         //FIN REGION DOMICILIOS.......................................................
         //........................................................................

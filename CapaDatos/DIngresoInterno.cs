@@ -54,6 +54,7 @@ namespace CapaDatos
         public bool tiene_extramuro { get; set; }
         public bool tiene_granja { get; set; }
         public bool tiene_semilibertad { get; set; }
+        public bool tiene_transitoria { get; set; }
         public bool esta_liberado { get; set; }
         public DateTime? fecha_egreso { get; set; }
         public int motivo_egreso_id { get; set; }

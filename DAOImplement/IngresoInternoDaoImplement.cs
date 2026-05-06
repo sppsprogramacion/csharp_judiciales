@@ -283,6 +283,63 @@ namespace DAOImplement
         }
         //FIN EGRESO....................................................................
 
+        //ESTABLECER PROGRESIVIDAD
+        public async Task<(bool, string error)> EstablecerProgresividad(int idIngreso, string dataProgresividad)
+        {
+            string token = SessionManager.Token; // Aquí pones tu token real
+
+            try
+            {
+                // Agregar el token en los headers
+                this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                // Crear el contenido de la solicitud HTTP
+                StringContent content = new StringContent(dataProgresividad, Encoding.UTF8, "application/json");
+
+                // Enviar la solicitud HTTP POST
+                HttpResponseMessage httpResponse = await this.httpClient.PutAsync(url_base + "/ingresos-interno/establecer-progresividad?id_ingreso=" + idIngreso, content);
+
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var contentRespuesta = await httpResponse.Content.ReadAsStringAsync();
+                    var dataRespuesta = JsonConvert.DeserializeObject<DResponseEditar>(contentRespuesta);
+
+                    if (dataRespuesta.Affected > 0)
+                    {
+                        return (true, null);
+                    }
+                    else
+                    {
+                        return (false, "No se pudo establecer la progresividad");
+                    }
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (false, $"Error al dar ingreso: {mensaje}");
+                }
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                // Capturar errores de la solicitud HTTP
+                return (false, $"Error de conexión: {httpRequestException.Message}");
+            }
+            catch (JsonException jsonException)
+            {
+                // Capturar errores en la serialización/deserialización de JSON                
+                return (false, $"Error inesperado");
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores (log, mensaje al usuario, etc.)
+                Console.WriteLine($"Error: {ex.Message}");
+                return (false, $"Error inesperado: {ex.Message}");
+            }
+        }
+        //FIN ESTABLECER PROGRESIVIDAD.....................................................................
+
+
         //EDITAR INGRESO
         public async Task<(bool, string error)> EditarIngreso(int id, string ingresoInterno)
         {
@@ -337,8 +394,9 @@ namespace DAOImplement
                 return (false, $"Error inesperado: {ex.Message}");
             }
         }
+                
         //FIN EDITAR INGRESO..........................................
 
-        
+
     }
 }
