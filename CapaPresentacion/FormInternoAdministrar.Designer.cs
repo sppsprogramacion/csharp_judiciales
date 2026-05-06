@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInternoAdministrar));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabInterno = new System.Windows.Forms.TabControl();
             this.tabDatosPrincipales = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -165,7 +165,19 @@
             this.dtgHistorialProcesal = new System.Windows.Forms.DataGridView();
             this.btnNuevoHistorial = new System.Windows.Forms.Button();
             this.tabProgresividad = new System.Windows.Forms.TabPage();
+            this.gboxCondutaConcepto = new System.Windows.Forms.GroupBox();
+            this.label82 = new System.Windows.Forms.Label();
+            this.cmbTrimestre = new System.Windows.Forms.ComboBox();
+            this.label80 = new System.Windows.Forms.Label();
+            this.cmbConducta = new System.Windows.Forms.ComboBox();
+            this.cmbConcepto = new System.Windows.Forms.ComboBox();
+            this.label83 = new System.Windows.Forms.Label();
+            this.btnEditarConductaConcepto = new System.Windows.Forms.Button();
+            this.btnGuardarConductaConepto = new System.Windows.Forms.Button();
+            this.btnCancelarConductaConcepto = new System.Windows.Forms.Button();
             this.gboxProgresividad = new System.Windows.Forms.GroupBox();
+            this.dtpFechaProgresividad = new System.Windows.Forms.DateTimePicker();
+            this.label78 = new System.Windows.Forms.Label();
             this.label63 = new System.Windows.Forms.Label();
             this.txtDetalleProgresividad = new System.Windows.Forms.TextBox();
             this.chkTransitoria = new System.Windows.Forms.CheckBox();
@@ -173,18 +185,12 @@
             this.chkGranja = new System.Windows.Forms.CheckBox();
             this.cmbFase = new System.Windows.Forms.ComboBox();
             this.label62 = new System.Windows.Forms.Label();
-            this.label83 = new System.Windows.Forms.Label();
-            this.cmbConcepto = new System.Windows.Forms.ComboBox();
-            this.label82 = new System.Windows.Forms.Label();
-            this.cmbConducta = new System.Windows.Forms.ComboBox();
             this.btnEditarProgresividad = new System.Windows.Forms.Button();
             this.chkExtramuro = new System.Windows.Forms.CheckBox();
             this.cmbProgresividad = new System.Windows.Forms.ComboBox();
             this.label66 = new System.Windows.Forms.Label();
             this.btnGuardarProgresividad = new System.Windows.Forms.Button();
             this.btnCancelarProgresividad = new System.Windows.Forms.Button();
-            this.label80 = new System.Windows.Forms.Label();
-            this.cmbTrimestre = new System.Windows.Forms.ComboBox();
             this.gboxAlojamiento = new System.Windows.Forms.GroupBox();
             this.btnEditarAlojamiento = new System.Windows.Forms.Button();
             this.chckProgramaPuerta = new System.Windows.Forms.CheckBox();
@@ -287,12 +293,6 @@
             this.label56 = new System.Windows.Forms.Label();
             this.txtIdDomicilio = new System.Windows.Forms.TextBox();
             this.label57 = new System.Windows.Forms.Label();
-            this.gboxCondutaConcepto = new System.Windows.Forms.GroupBox();
-            this.btnEditarConductaConcepto = new System.Windows.Forms.Button();
-            this.btnGuardarConductaConepto = new System.Windows.Forms.Button();
-            this.btnCancelarConductaConcepto = new System.Windows.Forms.Button();
-            this.dtpFechaProgresividad = new System.Windows.Forms.DateTimePicker();
-            this.label78 = new System.Windows.Forms.Label();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -312,6 +312,7 @@
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgHistorialProcesal)).BeginInit();
             this.tabProgresividad.SuspendLayout();
+            this.gboxCondutaConcepto.SuspendLayout();
             this.gboxProgresividad.SuspendLayout();
             this.gboxAlojamiento.SuspendLayout();
             this.tabTraslados.SuspendLayout();
@@ -326,7 +327,6 @@
             this.gboxDomicilios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDomicilios)).BeginInit();
             this.gboxDomicilio.SuspendLayout();
-            this.gboxCondutaConcepto.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabInterno
@@ -1896,10 +1896,10 @@
             this.dtgHistorialProcesal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgHistorialProcesal.Location = new System.Drawing.Point(12, 21);
             this.dtgHistorialProcesal.Name = "dtgHistorialProcesal";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgHistorialProcesal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgHistorialProcesal.Size = new System.Drawing.Size(1033, 588);
             this.dtgHistorialProcesal.TabIndex = 63;
@@ -1933,6 +1933,129 @@
             this.tabProgresividad.Text = "Progresividad";
             this.tabProgresividad.UseVisualStyleBackColor = true;
             // 
+            // gboxCondutaConcepto
+            // 
+            this.gboxCondutaConcepto.Controls.Add(this.label82);
+            this.gboxCondutaConcepto.Controls.Add(this.cmbTrimestre);
+            this.gboxCondutaConcepto.Controls.Add(this.label80);
+            this.gboxCondutaConcepto.Controls.Add(this.cmbConducta);
+            this.gboxCondutaConcepto.Controls.Add(this.cmbConcepto);
+            this.gboxCondutaConcepto.Controls.Add(this.label83);
+            this.gboxCondutaConcepto.Controls.Add(this.btnEditarConductaConcepto);
+            this.gboxCondutaConcepto.Controls.Add(this.btnGuardarConductaConepto);
+            this.gboxCondutaConcepto.Controls.Add(this.btnCancelarConductaConcepto);
+            this.gboxCondutaConcepto.Location = new System.Drawing.Point(10, 228);
+            this.gboxCondutaConcepto.Name = "gboxCondutaConcepto";
+            this.gboxCondutaConcepto.Size = new System.Drawing.Size(657, 170);
+            this.gboxCondutaConcepto.TabIndex = 280;
+            this.gboxCondutaConcepto.TabStop = false;
+            this.gboxCondutaConcepto.Text = "Conducta / Concepto";
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label82.Location = new System.Drawing.Point(166, 21);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(73, 15);
+            this.label82.TabIndex = 270;
+            this.label82.Text = "CONDUCTA";
+            // 
+            // cmbTrimestre
+            // 
+            this.cmbTrimestre.Enabled = false;
+            this.cmbTrimestre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTrimestre.FormattingEnabled = true;
+            this.cmbTrimestre.Location = new System.Drawing.Point(10, 38);
+            this.cmbTrimestre.Name = "cmbTrimestre";
+            this.cmbTrimestre.Size = new System.Drawing.Size(141, 23);
+            this.cmbTrimestre.TabIndex = 1;
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label80.Location = new System.Drawing.Point(7, 21);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(77, 15);
+            this.label80.TabIndex = 207;
+            this.label80.Text = "TRIMESTRE";
+            // 
+            // cmbConducta
+            // 
+            this.cmbConducta.Enabled = false;
+            this.cmbConducta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbConducta.FormattingEnabled = true;
+            this.cmbConducta.Location = new System.Drawing.Point(169, 38);
+            this.cmbConducta.Name = "cmbConducta";
+            this.cmbConducta.Size = new System.Drawing.Size(141, 23);
+            this.cmbConducta.TabIndex = 269;
+            // 
+            // cmbConcepto
+            // 
+            this.cmbConcepto.Enabled = false;
+            this.cmbConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbConcepto.FormattingEnabled = true;
+            this.cmbConcepto.Location = new System.Drawing.Point(330, 38);
+            this.cmbConcepto.Name = "cmbConcepto";
+            this.cmbConcepto.Size = new System.Drawing.Size(141, 23);
+            this.cmbConcepto.TabIndex = 271;
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label83.Location = new System.Drawing.Point(327, 21);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(73, 15);
+            this.label83.TabIndex = 272;
+            this.label83.Text = "CONCEPTO";
+            // 
+            // btnEditarConductaConcepto
+            // 
+            this.btnEditarConductaConcepto.BackColor = System.Drawing.Color.White;
+            this.btnEditarConductaConcepto.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarConductaConcepto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarConductaConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarConductaConcepto.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarConductaConcepto.Location = new System.Drawing.Point(548, 21);
+            this.btnEditarConductaConcepto.Name = "btnEditarConductaConcepto";
+            this.btnEditarConductaConcepto.Size = new System.Drawing.Size(98, 40);
+            this.btnEditarConductaConcepto.TabIndex = 268;
+            this.btnEditarConductaConcepto.Text = "EDITAR";
+            this.btnEditarConductaConcepto.UseVisualStyleBackColor = false;
+            // 
+            // btnGuardarConductaConepto
+            // 
+            this.btnGuardarConductaConepto.BackColor = System.Drawing.Color.White;
+            this.btnGuardarConductaConepto.Enabled = false;
+            this.btnGuardarConductaConepto.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnGuardarConductaConepto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarConductaConepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarConductaConepto.ForeColor = System.Drawing.Color.Green;
+            this.btnGuardarConductaConepto.Location = new System.Drawing.Point(548, 69);
+            this.btnGuardarConductaConepto.Name = "btnGuardarConductaConepto";
+            this.btnGuardarConductaConepto.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarConductaConepto.TabIndex = 12;
+            this.btnGuardarConductaConepto.Text = "Guardar";
+            this.btnGuardarConductaConepto.UseVisualStyleBackColor = false;
+            this.btnGuardarConductaConepto.Click += new System.EventHandler(this.btnGuardarConductaConepto_Click);
+            // 
+            // btnCancelarConductaConcepto
+            // 
+            this.btnCancelarConductaConcepto.BackColor = System.Drawing.Color.White;
+            this.btnCancelarConductaConcepto.Enabled = false;
+            this.btnCancelarConductaConcepto.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarConductaConcepto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarConductaConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarConductaConcepto.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarConductaConcepto.Location = new System.Drawing.Point(548, 115);
+            this.btnCancelarConductaConcepto.Name = "btnCancelarConductaConcepto";
+            this.btnCancelarConductaConcepto.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarConductaConcepto.TabIndex = 13;
+            this.btnCancelarConductaConcepto.Text = "Cancelar";
+            this.btnCancelarConductaConcepto.UseVisualStyleBackColor = false;
+            // 
             // gboxProgresividad
             // 
             this.gboxProgresividad.Controls.Add(this.dtpFechaProgresividad);
@@ -1956,6 +2079,26 @@
             this.gboxProgresividad.TabIndex = 269;
             this.gboxProgresividad.TabStop = false;
             this.gboxProgresividad.Text = "Progresividad";
+            // 
+            // dtpFechaProgresividad
+            // 
+            this.dtpFechaProgresividad.Enabled = false;
+            this.dtpFechaProgresividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaProgresividad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaProgresividad.Location = new System.Drawing.Point(11, 147);
+            this.dtpFechaProgresividad.Name = "dtpFechaProgresividad";
+            this.dtpFechaProgresividad.Size = new System.Drawing.Size(192, 22);
+            this.dtpFechaProgresividad.TabIndex = 280;
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label78.Location = new System.Drawing.Point(7, 130);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(196, 15);
+            this.label78.TabIndex = 281;
+            this.label78.Text = "FECHA CAMBIO PROGRESIVIDAD";
             // 
             // label63
             // 
@@ -2030,46 +2173,6 @@
             this.label62.Size = new System.Drawing.Size(37, 15);
             this.label62.TabIndex = 274;
             this.label62.Text = "FASE";
-            // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label83.Location = new System.Drawing.Point(327, 21);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(73, 15);
-            this.label83.TabIndex = 272;
-            this.label83.Text = "CONCEPTO";
-            // 
-            // cmbConcepto
-            // 
-            this.cmbConcepto.Enabled = false;
-            this.cmbConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbConcepto.FormattingEnabled = true;
-            this.cmbConcepto.Location = new System.Drawing.Point(330, 38);
-            this.cmbConcepto.Name = "cmbConcepto";
-            this.cmbConcepto.Size = new System.Drawing.Size(141, 23);
-            this.cmbConcepto.TabIndex = 271;
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label82.Location = new System.Drawing.Point(166, 21);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(73, 15);
-            this.label82.TabIndex = 270;
-            this.label82.Text = "CONDUCTA";
-            // 
-            // cmbConducta
-            // 
-            this.cmbConducta.Enabled = false;
-            this.cmbConducta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbConducta.FormattingEnabled = true;
-            this.cmbConducta.Location = new System.Drawing.Point(169, 38);
-            this.cmbConducta.Name = "cmbConducta";
-            this.cmbConducta.Size = new System.Drawing.Size(141, 23);
-            this.cmbConducta.TabIndex = 269;
             // 
             // btnEditarProgresividad
             // 
@@ -2148,26 +2251,6 @@
             this.btnCancelarProgresividad.Text = "Cancelar";
             this.btnCancelarProgresividad.UseVisualStyleBackColor = false;
             this.btnCancelarProgresividad.Click += new System.EventHandler(this.btnCancelarProgresividad_Click);
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label80.Location = new System.Drawing.Point(7, 21);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(77, 15);
-            this.label80.TabIndex = 207;
-            this.label80.Text = "TRIMESTRE";
-            // 
-            // cmbTrimestre
-            // 
-            this.cmbTrimestre.Enabled = false;
-            this.cmbTrimestre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTrimestre.FormattingEnabled = true;
-            this.cmbTrimestre.Location = new System.Drawing.Point(10, 38);
-            this.cmbTrimestre.Name = "cmbTrimestre";
-            this.cmbTrimestre.Size = new System.Drawing.Size(141, 23);
-            this.cmbTrimestre.TabIndex = 1;
             // 
             // gboxAlojamiento
             // 
@@ -3362,88 +3445,6 @@
             this.label57.TabIndex = 72;
             this.label57.Text = "USUARIO CARGA:";
             // 
-            // gboxCondutaConcepto
-            // 
-            this.gboxCondutaConcepto.Controls.Add(this.label82);
-            this.gboxCondutaConcepto.Controls.Add(this.cmbTrimestre);
-            this.gboxCondutaConcepto.Controls.Add(this.label80);
-            this.gboxCondutaConcepto.Controls.Add(this.cmbConducta);
-            this.gboxCondutaConcepto.Controls.Add(this.cmbConcepto);
-            this.gboxCondutaConcepto.Controls.Add(this.label83);
-            this.gboxCondutaConcepto.Controls.Add(this.btnEditarConductaConcepto);
-            this.gboxCondutaConcepto.Controls.Add(this.btnGuardarConductaConepto);
-            this.gboxCondutaConcepto.Controls.Add(this.btnCancelarConductaConcepto);
-            this.gboxCondutaConcepto.Location = new System.Drawing.Point(10, 228);
-            this.gboxCondutaConcepto.Name = "gboxCondutaConcepto";
-            this.gboxCondutaConcepto.Size = new System.Drawing.Size(657, 170);
-            this.gboxCondutaConcepto.TabIndex = 280;
-            this.gboxCondutaConcepto.TabStop = false;
-            this.gboxCondutaConcepto.Text = "Conducta / Concepto";
-            // 
-            // btnEditarConductaConcepto
-            // 
-            this.btnEditarConductaConcepto.BackColor = System.Drawing.Color.White;
-            this.btnEditarConductaConcepto.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarConductaConcepto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarConductaConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarConductaConcepto.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarConductaConcepto.Location = new System.Drawing.Point(548, 21);
-            this.btnEditarConductaConcepto.Name = "btnEditarConductaConcepto";
-            this.btnEditarConductaConcepto.Size = new System.Drawing.Size(98, 40);
-            this.btnEditarConductaConcepto.TabIndex = 268;
-            this.btnEditarConductaConcepto.Text = "EDITAR";
-            this.btnEditarConductaConcepto.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardarConductaConepto
-            // 
-            this.btnGuardarConductaConepto.BackColor = System.Drawing.Color.White;
-            this.btnGuardarConductaConepto.Enabled = false;
-            this.btnGuardarConductaConepto.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.btnGuardarConductaConepto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarConductaConepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarConductaConepto.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardarConductaConepto.Location = new System.Drawing.Point(548, 69);
-            this.btnGuardarConductaConepto.Name = "btnGuardarConductaConepto";
-            this.btnGuardarConductaConepto.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarConductaConepto.TabIndex = 12;
-            this.btnGuardarConductaConepto.Text = "Guardar";
-            this.btnGuardarConductaConepto.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelarConductaConcepto
-            // 
-            this.btnCancelarConductaConcepto.BackColor = System.Drawing.Color.White;
-            this.btnCancelarConductaConcepto.Enabled = false;
-            this.btnCancelarConductaConcepto.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarConductaConcepto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarConductaConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarConductaConcepto.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarConductaConcepto.Location = new System.Drawing.Point(548, 115);
-            this.btnCancelarConductaConcepto.Name = "btnCancelarConductaConcepto";
-            this.btnCancelarConductaConcepto.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelarConductaConcepto.TabIndex = 13;
-            this.btnCancelarConductaConcepto.Text = "Cancelar";
-            this.btnCancelarConductaConcepto.UseVisualStyleBackColor = false;
-            // 
-            // dtpFechaProgresividad
-            // 
-            this.dtpFechaProgresividad.Enabled = false;
-            this.dtpFechaProgresividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaProgresividad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaProgresividad.Location = new System.Drawing.Point(11, 147);
-            this.dtpFechaProgresividad.Name = "dtpFechaProgresividad";
-            this.dtpFechaProgresividad.Size = new System.Drawing.Size(192, 22);
-            this.dtpFechaProgresividad.TabIndex = 280;
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label78.Location = new System.Drawing.Point(7, 130);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(196, 15);
-            this.label78.TabIndex = 281;
-            this.label78.Text = "FECHA CAMBIO PROGRESIVIDAD";
-            // 
             // FormInternoAdministrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3484,6 +3485,8 @@
             this.groupBox8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgHistorialProcesal)).EndInit();
             this.tabProgresividad.ResumeLayout(false);
+            this.gboxCondutaConcepto.ResumeLayout(false);
+            this.gboxCondutaConcepto.PerformLayout();
             this.gboxProgresividad.ResumeLayout(false);
             this.gboxProgresividad.PerformLayout();
             this.gboxAlojamiento.ResumeLayout(false);
@@ -3505,8 +3508,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgDomicilios)).EndInit();
             this.gboxDomicilio.ResumeLayout(false);
             this.gboxDomicilio.PerformLayout();
-            this.gboxCondutaConcepto.ResumeLayout(false);
-            this.gboxCondutaConcepto.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -216,12 +216,12 @@ namespace CapaPresentacion
         }
         //FIN CARGAR CONTROLES DATOS DE INTERNO...................................................
 
-        //CARGAR DATOS DE INGRESO EN PESTAÑA DATOS DE INGRESO
+        //CARGAR DATOS DE INGRESO EN PESTAÑA DATOS DE INGRESO, EGRESO, PROGRESIVIDAD
         private void CargarControlesIngreso()
         {
             cmbOrganismoExternoProcedencia.Text = ingresoInternoGlobal.organismo_externo.organismo_externo.ToString();
             txtDetalleProceExterno.Text = ingresoInternoGlobal.obs_organismo_externo;
-            dtpFechaIngresoSpps.Text = this.ingresoInternoGlobal.fecha_primer_ingreso.ToShortDateString();
+            dtpFechaIngresoSpps.Value = this.ingresoInternoGlobal.fecha_primer_ingreso;
             cmbOrganismoSppsProcesencia.Text = ingresoInternoGlobal.organismo_procedencia.organismo.ToString();
             txtProntuarioPolicial.Text = this.ingresoInternoGlobal.prontuario_policial.ToString();
             txtDetalleProceSpps.Text = this.ingresoInternoGlobal.obs_organismo_procedencia;
@@ -230,10 +230,23 @@ namespace CapaPresentacion
             cmbOtraJurisdiccion.Text = this.ingresoInternoGlobal.otra_jurisdiccion.jurisdiccion;
             cmbReingreso.Text = this.ingresoInternoGlobal.reingreso.reingreso;
             txtNumeroReingreso.Text = this.ingresoInternoGlobal.numero_reingreso.ToString();
-            dtpFechaAlojamiento.Text = this.ingresoInternoGlobal.fecha_alojamiento.ToShortDateString();
+            dtpFechaAlojamiento.Value = this.ingresoInternoGlobal.fecha_alojamiento;
             cmbTipoDefensor.Text = this.ingresoInternoGlobal.tipo_defensor.tipo_defensor;
             txtAbogado.Text = this.ingresoInternoGlobal.abogado;
 
+            //datos egreso
+            this.CargarControlesEgreso();
+
+            //datos progresividad
+            this.CargarControlesProgresividad();
+
+        }
+
+        //FIN CARGAR DATOS DE INGRESO EN PESTAÑA DATOS DE INGRESO......................................
+
+        //CARGAR DATOS DE EGRESO EN PESTAÑA EGRESOS
+        private void CargarControlesEgreso()
+        {
             //datos egreso
             dtpFechaEgreso.Text = this.ingresoInternoGlobal.fecha_egreso?.ToShortDateString();
             cmbMotivoEgreso.Text = this.ingresoInternoGlobal.motivo_egreso.motivo_egreso;
@@ -241,6 +254,13 @@ namespace CapaPresentacion
             txtDomicilioLibertad.Text = this.ingresoInternoGlobal.domicilio_libertad;
             txtDetallesEgreso.Text = this.ingresoInternoGlobal.detalles_egreso;
 
+        }
+        //FIN CARGAR DATOS DE EGRESO EN PESTAÑA EGRESOS......................................
+
+        //CARGAR DATOS DE PROGRESIVIDAD EN PESTAÑA PROGRESIVIDAD
+        private void CargarControlesProgresividad()
+        {
+            
             //datos progresividad
             cmbProgresividad.Text = this.ingresoInternoGlobal.progresividad.progresividad;
             cmbFase.Text = this.ingresoInternoGlobal.fase.fase;
@@ -250,8 +270,7 @@ namespace CapaPresentacion
             chkTransitoria.Checked = this.ingresoInternoGlobal.tiene_transitoria;
 
         }
-
-        //FIN CARGAR DATOS DE INGRESO EN PESTAÑA DATOS DE INGRESO......................................
+        //FIN CARGAR DATOS DE INGRESO EN PESTAÑA PROGRESIVIDAD......................................
 
 
         //REGION DATOS_PRINCIPALES
@@ -1237,6 +1256,7 @@ namespace CapaPresentacion
                 cmbFase.DataSource = dTablasProgresividad.fases;
 
                 this.HabilitarControlesProgresividad(true);
+                this.CargarControlesProgresividad();
             }
             //fin Carga de combos sobre egreso
 
@@ -1327,14 +1347,13 @@ namespace CapaPresentacion
         private void btnCancelarProgresividad_Click(object sender, EventArgs e)
         {
             this.HabilitarControlesProgresividad(false);
+            this.CargarControlesProgresividad();
         }
 
         //HABILITAR CONTROLES PROGRESIVIDAD
         private void HabilitarControlesProgresividad(bool valor)
         {
-            cmbTrimestre.Enabled = valor;
-            cmbConducta.Enabled = valor;
-            cmbConcepto.Enabled = valor;
+            
             cmbProgresividad.Enabled = valor;
             cmbFase.Enabled = valor;
             chkExtramuro.Enabled = valor;
@@ -1685,6 +1704,7 @@ namespace CapaPresentacion
         private void btnCancelarEgreso_Click(object sender, EventArgs e)
         {
             this.HabilitarControlesEgreso(true);
+            this.CargarControlesEgreso();
         }
 
 
@@ -1991,11 +2011,15 @@ namespace CapaPresentacion
                 MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-               
+
         #endregion DOMICILIOS
         //FIN REGION DOMICILIOS.......................................................
         //........................................................................
 
+        private void btnGuardarConductaConepto_Click(object sender, EventArgs e)
+        {
+
+        }
 
 
     }
