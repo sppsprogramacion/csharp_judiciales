@@ -12,6 +12,7 @@ namespace DAO
         Task<(DCaracteristicasPersonales, string error)> ListasCaracteristicasPersonales();
         Task<(DDatosFiliatorios, string error)> ListasDatosFiliatorios();
         Task<(DTablasCausa, string error)> ListasTablasCausa();
+        Task<(DTablasConductaConcepto, string error)> ListasTablasConductaConcepto();
         Task<(DTablasDomicilioInterno, string error)> ListasTablasDomicilioInterno();
         Task<(DTablasEgreso, string error)> ListasTablasEgreso();
         Task<(DTablasHistorialProcesal, string error)> ListasTablasHistorialProcesal();

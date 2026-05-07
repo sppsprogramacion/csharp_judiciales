@@ -68,6 +68,17 @@ namespace CapaNegocio
         }
         //FIN EGRESO..............................................................
 
+        //ESTABLECER CONDUCTA-CONCEPTO
+        public async Task<(bool, string error)> EstablecerConductaConcepto(int idIngreso, string dataConductaconcepto)
+        {
+            IIngresoInernoDao ingresoInternoDao = new IngresoInternoDaoImplement();
+
+            (bool conductaConceptoResponse, string error) = await ingresoInternoDao.EstablecerConductaConcepto(idIngreso, dataConductaconcepto);
+
+            return (conductaConceptoResponse, error);
+        }
+        //FIN ESTABLECER CONDUCTA-CONCEPTO..............................................................
+
 
         //ESTABLECER PROGRESIVIDAD
         public async Task<(bool, string error)> EstablecerProgresividad(int idIngreso, string dataProgresividad)

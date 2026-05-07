@@ -64,7 +64,54 @@ namespace DAOImplement
                 return (null, $"Error inesperado: {ex.Message}");
             }
         }
+        //FIN LISTAS CARACTERISTICAS PERSONALES ..........................................................
 
+        //LISTA CONDUCTA CONCEPTO
+        public async Task<(DTablasConductaConcepto, string error)> ListasTablasConductaConcepto()
+        {
+            DTablasConductaConcepto tablasConductaConcepto = new DTablasConductaConcepto();
+
+            string token = SessionManager.Token; // Aquí pones tu token real
+
+            try
+            {
+                // Agregar el token en los headers
+                this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                HttpResponseMessage httpResponse = await this.httpClient.GetAsync(url_base + "/listas-generales-tablas/tablas-conducta-concepto");
+
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var content = await httpResponse.Content.ReadAsStringAsync();
+                    tablasConductaConcepto = JsonConvert.DeserializeObject<DTablasConductaConcepto>(content);
+                    return (tablasConductaConcepto, null);
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (null, $"Error en la busqueda: {mensaje}");
+                }
+
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                // Capturar errores de la solicitud HTTP
+                return (null, $"Error de conexión: {httpRequestException.Message}");
+            }
+            catch (JsonException jsonException)
+            {
+                // Capturar errores en la serialización/deserialización de JSON                
+                return (null, $"Error inesperado");
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores (log, mensaje al usuario, etc.)
+                Console.WriteLine($"Error: {ex.Message}");
+                return (null, $"Error inesperado: {ex.Message}");
+            }
+        }
+        //FIN LISTA CONDUCTA CONCEPTO....................................................
 
         //LISTAS DATOS FILIATORIOS
         public async Task<(DDatosFiliatorios, string error)> ListasDatosFiliatorios()
@@ -111,6 +158,7 @@ namespace DAOImplement
                 return (null, $"Error inesperado: {ex.Message}");
             }
         }
+        //FIN LISTAS DATOS FILIATORIOS................................................................
 
         //LISTAS TABLAS CAUSA
         public async Task<(DTablasCausa, string error)> ListasTablasCausa()
@@ -157,6 +205,7 @@ namespace DAOImplement
                 return (null, $"Error inesperado: {ex.Message}");
             }
         }
+        //FIN LISTAS TABLAS CAUSA.....................................................................
 
         //LISTAS TABLAS DOMICILIO INTERNO
         public async Task<(DTablasDomicilioInterno, string error)> ListasTablasDomicilioInterno()

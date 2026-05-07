@@ -8,9 +8,7 @@ namespace CapaDatos
 {
     public class DTablasProgresividad
     {
-        public List<DTrimestre> trimestres { get; set; }
-        public List<DConducta> conducta { get; set; }
-        public List<DConcepto> concepto { get; set; }
+        
         public List<DProgresividad> progresividad { get; set; }
         public List<DFase> fases { get; set; }
     }

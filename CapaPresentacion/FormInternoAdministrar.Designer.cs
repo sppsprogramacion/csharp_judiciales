@@ -193,7 +193,6 @@
             this.btnCancelarProgresividad = new System.Windows.Forms.Button();
             this.gboxAlojamiento = new System.Windows.Forms.GroupBox();
             this.btnEditarAlojamiento = new System.Windows.Forms.Button();
-            this.chckProgramaPuerta = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtDetalleSituacionProvisoria = new System.Windows.Forms.TextBox();
             this.cmbSituacionProvisoria = new System.Windows.Forms.ComboBox();
@@ -293,6 +292,9 @@
             this.label56 = new System.Windows.Forms.Label();
             this.txtIdDomicilio = new System.Windows.Forms.TextBox();
             this.label57 = new System.Windows.Forms.Label();
+            this.chkProgramaPuerta = new System.Windows.Forms.CheckBox();
+            this.dtpFechaCambioAlojamiento = new System.Windows.Forms.DateTimePicker();
+            this.label81 = new System.Windows.Forms.Label();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -2024,6 +2026,7 @@
             this.btnEditarConductaConcepto.TabIndex = 268;
             this.btnEditarConductaConcepto.Text = "EDITAR";
             this.btnEditarConductaConcepto.UseVisualStyleBackColor = false;
+            this.btnEditarConductaConcepto.Click += new System.EventHandler(this.btnEditarConductaConcepto_Click);
             // 
             // btnGuardarConductaConepto
             // 
@@ -2055,6 +2058,7 @@
             this.btnCancelarConductaConcepto.TabIndex = 13;
             this.btnCancelarConductaConcepto.Text = "Cancelar";
             this.btnCancelarConductaConcepto.UseVisualStyleBackColor = false;
+            this.btnCancelarConductaConcepto.Click += new System.EventHandler(this.btnCancelarConductaConcepto_Click);
             // 
             // gboxProgresividad
             // 
@@ -2254,8 +2258,10 @@
             // 
             // gboxAlojamiento
             // 
+            this.gboxAlojamiento.Controls.Add(this.dtpFechaCambioAlojamiento);
+            this.gboxAlojamiento.Controls.Add(this.label81);
             this.gboxAlojamiento.Controls.Add(this.btnEditarAlojamiento);
-            this.gboxAlojamiento.Controls.Add(this.chckProgramaPuerta);
+            this.gboxAlojamiento.Controls.Add(this.chkProgramaPuerta);
             this.gboxAlojamiento.Controls.Add(this.label16);
             this.gboxAlojamiento.Controls.Add(this.txtDetalleSituacionProvisoria);
             this.gboxAlojamiento.Controls.Add(this.cmbSituacionProvisoria);
@@ -2287,27 +2293,15 @@
             this.btnEditarAlojamiento.Text = "EDITAR";
             this.btnEditarAlojamiento.UseVisualStyleBackColor = false;
             // 
-            // chckProgramaPuerta
-            // 
-            this.chckProgramaPuerta.AutoSize = true;
-            this.chckProgramaPuerta.Enabled = false;
-            this.chckProgramaPuerta.Location = new System.Drawing.Point(286, 39);
-            this.chckProgramaPuerta.Name = "chckProgramaPuerta";
-            this.chckProgramaPuerta.Size = new System.Drawing.Size(213, 20);
-            this.chckProgramaPuerta.TabIndex = 267;
-            this.chckProgramaPuerta.Text = "TIENE PROGRAMA PUERTA?";
-            this.chckProgramaPuerta.UseVisualStyleBackColor = true;
-            this.chckProgramaPuerta.Visible = false;
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(6, 113);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(201, 15);
+            this.label16.Size = new System.Drawing.Size(146, 15);
             this.label16.TabIndex = 262;
-            this.label16.Text = "DETALLE SITUACION PROVISORIA";
+            this.label16.Text = "DETALLE ALOJAMIENTO";
             // 
             // txtDetalleSituacionProvisoria
             // 
@@ -3445,6 +3439,37 @@
             this.label57.TabIndex = 72;
             this.label57.Text = "USUARIO CARGA:";
             // 
+            // chkProgramaPuerta
+            // 
+            this.chkProgramaPuerta.AutoSize = true;
+            this.chkProgramaPuerta.Enabled = false;
+            this.chkProgramaPuerta.Location = new System.Drawing.Point(286, 39);
+            this.chkProgramaPuerta.Name = "chkProgramaPuerta";
+            this.chkProgramaPuerta.Size = new System.Drawing.Size(213, 20);
+            this.chkProgramaPuerta.TabIndex = 267;
+            this.chkProgramaPuerta.Text = "TIENE PROGRAMA PUERTA?";
+            this.chkProgramaPuerta.UseVisualStyleBackColor = true;
+            // 
+            // dtpFechaCambioAlojamiento
+            // 
+            this.dtpFechaCambioAlojamiento.Enabled = false;
+            this.dtpFechaCambioAlojamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaCambioAlojamiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaCambioAlojamiento.Location = new System.Drawing.Point(287, 88);
+            this.dtpFechaCambioAlojamiento.Name = "dtpFechaCambioAlojamiento";
+            this.dtpFechaCambioAlojamiento.Size = new System.Drawing.Size(192, 22);
+            this.dtpFechaCambioAlojamiento.TabIndex = 282;
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label81.Location = new System.Drawing.Point(283, 71);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(181, 15);
+            this.label81.TabIndex = 283;
+            this.label81.Text = "FECHA CAMBIO ALOJAMIENTO";
+            // 
             // FormInternoAdministrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3739,7 +3764,6 @@
         private System.Windows.Forms.Button btnEditarEgreso;
         private System.Windows.Forms.GroupBox gboxAlojamiento;
         private System.Windows.Forms.Button btnEditarAlojamiento;
-        private System.Windows.Forms.CheckBox chckProgramaPuerta;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtDetalleSituacionProvisoria;
         private System.Windows.Forms.ComboBox cmbSituacionProvisoria;
@@ -3776,5 +3800,8 @@
         private System.Windows.Forms.Button btnCancelarConductaConcepto;
         private System.Windows.Forms.DateTimePicker dtpFechaProgresividad;
         private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.CheckBox chkProgramaPuerta;
+        private System.Windows.Forms.DateTimePicker dtpFechaCambioAlojamiento;
+        private System.Windows.Forms.Label label81;
     }
 }
