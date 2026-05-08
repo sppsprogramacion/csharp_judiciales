@@ -68,6 +68,18 @@ namespace CapaNegocio
         }
         //FIN EGRESO..............................................................
 
+
+        //ESTABLECER ALOJAMIENTO
+        public async Task<(bool, string error)> EstablecerAlojamiento(int idIngreso, string dataAlojamiento)
+        {
+            IIngresoInernoDao ingresoInternoDao = new IngresoInternoDaoImplement();
+
+            (bool alojamientoResponse, string error) = await ingresoInternoDao.EstablecerAlojamiento(idIngreso, dataAlojamiento);
+
+            return (alojamientoResponse, error);
+        }
+        //FIN ESTABLECER ALOJAMIENTO..............................................................
+
         //ESTABLECER CONDUCTA-CONCEPTO
         public async Task<(bool, string error)> EstablecerConductaConcepto(int idIngreso, string dataConductaconcepto)
         {

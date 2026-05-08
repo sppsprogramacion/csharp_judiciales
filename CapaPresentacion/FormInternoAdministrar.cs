@@ -1248,6 +1248,126 @@ namespace CapaPresentacion
         //REGION PROGRESIVIDAD
         #region PROGRESIVIDAD
 
+        private async void btnEditarAlojamiento_Click(object sender, EventArgs e)
+        {
+            //Carga de combos sobre alojamiento
+            NListasGenerales nListasGenerales = new NListasGenerales();
+            tabInterno.Enabled = false;
+            (DTablasAlojamiento dTablasAlojamiento, string errorResponseEgreso) = await nListasGenerales.ListasTablasAlojamiento();
+            tabInterno.Enabled = true;
+
+            if (dTablasAlojamiento == null)
+            {
+                MessageBox.Show("Advertencia al cargar los datos para alojamiento: " + errorResponseEgreso, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+            else
+            {
+                //dTablasDomicilioInternoGlobal = dTablasDomicilioInterno;
+
+                cmbPabellon.ValueMember = "id_pabellon";
+                cmbPabellon.DisplayMember = "pabellon";
+                cmbPabellon.DataSource = dTablasAlojamiento.pabellones;
+
+                cmbSituacionProvisoria.ValueMember = "id_situacion_provisoria";
+                cmbSituacionProvisoria.DisplayMember = "situacion_provisoria";
+                cmbSituacionProvisoria.DataSource = dTablasAlojamiento.situacion_provisoria;
+
+
+
+                this.HabilitarControlesAlojamiento(true);
+                this.CargarControlesAlojamiento();
+            }
+            //fin Carga de combos sobre egreso
+        }
+
+        private async void  btnGuardarAlojamiento_Click(object sender, EventArgs e)
+        {
+            NIngresoInterno nIngreso = new NIngresoInterno();
+
+            //limpiar errores de provider
+            errorProvider.Clear();
+
+            if (txtIdInterno.Text == null || txtIdInterno.Text == "")
+            {
+                MessageBox.Show("Debe tener un interno cargado.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            //validacion de formulario
+            //var datosformulario = new InternoAdministarDatos
+            //{
+            //    cmbOrganismoExternoProcedencia = cmbOrganismoExternoProcedencia.SelectedValue?.ToString() ?? string.Empty,
+            //    txtDetalleProceExterno = txtDetalleProceExterno.Text,
+            //    txtProntuarioPolicial = txtProntuarioPolicial.Text,
+            //    cmbOrganismoSppsProcesencia = cmbOrganismoSppsProcesencia.SelectedValue?.ToString() ?? string.Empty,
+            //    txtDetalleProceSpps = txtDetalleProceSpps.Text,
+            //    cmbEstadoProcesal = cmbEstadoProcesal.SelectedValue?.ToString() ?? string.Empty,
+            //    cmbJurisdiccion = cmbJurisdiccion.SelectedValue?.ToString() ?? string.Empty,
+            //    cmbOtraJurisdiccion = cmbOtraJurisdiccion.SelectedValue?.ToString() ?? string.Empty,
+            //    cmbReingreso = cmbReingreso.SelectedValue?.ToString() ?? string.Empty,
+            //    txtNumeroReingreso = txtNumeroReingreso.Text,
+            //    cmbTipoDefensor = cmbTipoDefensor.SelectedValue?.ToString() ?? string.Empty,
+            //    txtAbogado = txtAbogado.Text,
+            //};
+
+            //var validator = new EditarIngresoValidation();
+            //var result = validator.Validate(datosformulario);
+
+            //if (!result.IsValid)
+            //{
+            //    MessageBox.Show("Complete correctamente los campos del formulario", "judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    foreach (var failure in result.Errors)
+            //    {
+            //        Control control = Controls.Find(failure.PropertyName, true)[0];
+            //        errorProvider.SetError(control, failure.ErrorMessage);
+            //    }
+            //    return;
+            //}
+            //fin validar formulario
+
+
+            this.tabInterno.Enabled = false;
+            var data = new
+            {
+                pabellon_id = Convert.ToInt32(cmbPabellon.SelectedValue.ToString()),
+                celda = txtCelda.Text.Trim(),
+                tiene_programa_puerta = chkProgramaPuerta.Checked,
+                situacion_provisoria_id = Convert.ToInt32(cmbSituacionProvisoria.SelectedValue.ToString()),
+                fecha = dtpFechaCambioAlojamiento.Value,
+                detalle = txtDetalleCambioAlojamiento.Text,
+
+            };
+
+            string dataAlojamientoEnviar = JsonConvert.SerializeObject(data);
+
+            (bool respuestaEditar, string errorResponse) = await nIngreso.EstablecerAlojamiento(Convert.ToInt32(txtIdIngresoVer.Text), dataAlojamientoEnviar);
+
+            if (respuestaEditar)
+            {
+                MessageBox.Show("Se modifico correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //actualizar el internoClobal
+                this.BuscarIngreso();
+
+                this.HabilitarControlesAlojamiento(false);
+                this.tabInterno.Enabled = true;
+
+            }
+            else
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.tabInterno.Enabled = true;
+            }
+        }
+
+        private void btnCancelarAlojamiento_Click(object sender, EventArgs e)
+        {
+            this.HabilitarControlesAlojamiento(false);
+            this.CargarControlesAlojamiento();
+        }
+
+
         private async void btnGuardarConductaConepto_Click(object sender, EventArgs e)
         {
             NIngresoInterno nIngreso = new NIngresoInterno();
@@ -1524,8 +1644,8 @@ namespace CapaPresentacion
             txtCelda.Enabled = valor;
             chkProgramaPuerta.Enabled = valor;
             cmbSituacionProvisoria.Enabled = valor;
-            dtpFechaAlojamiento.Enabled = valor;
-            txtDetalleAlojamiento.Enabled = valor;
+            dtpFechaCambioAlojamiento.Enabled = valor;
+            txtDetalleCambioAlojamiento.Enabled = valor;
 
             btnEditarAlojamiento.Enabled = !valor;
             btnGuardarAlojamiento.Enabled = valor;
@@ -2163,46 +2283,6 @@ namespace CapaPresentacion
                 MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private async void btnEditarAlojamiento_Click(object sender, EventArgs e)
-        {
-            //Carga de combos sobre alojamiento
-            NListasGenerales nListasGenerales = new NListasGenerales();
-            tabInterno.Enabled = false;
-            (DTablasAlojamiento dTablasAlojamiento, string errorResponseEgreso) = await nListasGenerales.ListasTablasAlojamiento();
-            tabInterno.Enabled = true;
-
-            if (dTablasAlojamiento == null)
-            {
-                MessageBox.Show("Advertencia al cargar los datos para alojamiento: " + errorResponseEgreso, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-            }
-            else
-            {
-                //dTablasDomicilioInternoGlobal = dTablasDomicilioInterno;
-
-                cmbPabellon.ValueMember = "id_pabellon";
-                cmbPabellon.DisplayMember = "pabellon";
-                cmbPabellon.DataSource = dTablasAlojamiento.pabellones;
-
-                cmbSituacionProvisoria.ValueMember = "id_situacion_provisoria";
-                cmbSituacionProvisoria.DisplayMember = "situacion_provisoria";
-                cmbSituacionProvisoria.DataSource = dTablasAlojamiento.situacion_provisoria;
-
-
-
-                this.HabilitarControlesAlojamiento(true);
-                this.CargarControlesAlojamiento();
-            }
-            //fin Carga de combos sobre egreso
-        }
-
-        private void btnCancelarAlojamiento_Click(object sender, EventArgs e)
-        {
-            this.HabilitarControlesAlojamiento(false);
-            this.CargarControlesAlojamiento();
-        }
-
         #endregion DOMICILIOS
         //FIN REGION DOMICILIOS.......................................................
         //........................................................................
