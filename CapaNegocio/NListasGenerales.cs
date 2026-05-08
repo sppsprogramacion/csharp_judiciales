@@ -24,6 +24,18 @@ namespace CapaNegocio
         }
         //FIN RETORNAR LISTA CARACTERISTICAS PERSONALES..................................
 
+        //RETORNAR TABLAS PARA ALOJAMIENTO
+        public async Task<(DTablasAlojamiento, string error)> ListasTablasAlojamiento()
+        {
+            IListasGenerales listasGeneralesDao = new ListasGeneralesDaoImplement();
+
+            (DTablasAlojamiento dTablasAlojamiento, string errorResponse) = await listasGeneralesDao.ListasTablasAlojamiento();
+
+
+            return (dTablasAlojamiento, errorResponse);
+        }
+        //FIN RETORNAR TABLAS PARA ALOJAMIENTO..................................
+
         //RETORNAR TABLAS PARA CONDUCTA CONCEPTO
         public async Task<(DTablasConductaConcepto, string error)> ListasTablasConductaConcepto()
         {

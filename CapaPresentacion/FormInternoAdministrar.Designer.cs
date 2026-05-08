@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInternoAdministrar));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabInterno = new System.Windows.Forms.TabControl();
             this.tabDatosPrincipales = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -192,9 +192,12 @@
             this.btnGuardarProgresividad = new System.Windows.Forms.Button();
             this.btnCancelarProgresividad = new System.Windows.Forms.Button();
             this.gboxAlojamiento = new System.Windows.Forms.GroupBox();
+            this.dtpFechaCambioAlojamiento = new System.Windows.Forms.DateTimePicker();
+            this.label81 = new System.Windows.Forms.Label();
             this.btnEditarAlojamiento = new System.Windows.Forms.Button();
+            this.chkProgramaPuerta = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtDetalleSituacionProvisoria = new System.Windows.Forms.TextBox();
+            this.txtDetalleAlojamiento = new System.Windows.Forms.TextBox();
             this.cmbSituacionProvisoria = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.btnGuardarAlojamiento = new System.Windows.Forms.Button();
@@ -292,9 +295,6 @@
             this.label56 = new System.Windows.Forms.Label();
             this.txtIdDomicilio = new System.Windows.Forms.TextBox();
             this.label57 = new System.Windows.Forms.Label();
-            this.chkProgramaPuerta = new System.Windows.Forms.CheckBox();
-            this.dtpFechaCambioAlojamiento = new System.Windows.Forms.DateTimePicker();
-            this.label81 = new System.Windows.Forms.Label();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -1898,10 +1898,10 @@
             this.dtgHistorialProcesal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgHistorialProcesal.Location = new System.Drawing.Point(12, 21);
             this.dtgHistorialProcesal.Name = "dtgHistorialProcesal";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgHistorialProcesal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgHistorialProcesal.Size = new System.Drawing.Size(1033, 588);
             this.dtgHistorialProcesal.TabIndex = 63;
@@ -2263,7 +2263,7 @@
             this.gboxAlojamiento.Controls.Add(this.btnEditarAlojamiento);
             this.gboxAlojamiento.Controls.Add(this.chkProgramaPuerta);
             this.gboxAlojamiento.Controls.Add(this.label16);
-            this.gboxAlojamiento.Controls.Add(this.txtDetalleSituacionProvisoria);
+            this.gboxAlojamiento.Controls.Add(this.txtDetalleAlojamiento);
             this.gboxAlojamiento.Controls.Add(this.cmbSituacionProvisoria);
             this.gboxAlojamiento.Controls.Add(this.label17);
             this.gboxAlojamiento.Controls.Add(this.btnGuardarAlojamiento);
@@ -2279,6 +2279,26 @@
             this.gboxAlojamiento.TabStop = false;
             this.gboxAlojamiento.Text = "Alojamiento";
             // 
+            // dtpFechaCambioAlojamiento
+            // 
+            this.dtpFechaCambioAlojamiento.Enabled = false;
+            this.dtpFechaCambioAlojamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaCambioAlojamiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaCambioAlojamiento.Location = new System.Drawing.Point(287, 88);
+            this.dtpFechaCambioAlojamiento.Name = "dtpFechaCambioAlojamiento";
+            this.dtpFechaCambioAlojamiento.Size = new System.Drawing.Size(192, 22);
+            this.dtpFechaCambioAlojamiento.TabIndex = 282;
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label81.Location = new System.Drawing.Point(283, 71);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(181, 15);
+            this.label81.TabIndex = 283;
+            this.label81.Text = "FECHA CAMBIO ALOJAMIENTO";
+            // 
             // btnEditarAlojamiento
             // 
             this.btnEditarAlojamiento.BackColor = System.Drawing.Color.White;
@@ -2292,6 +2312,18 @@
             this.btnEditarAlojamiento.TabIndex = 268;
             this.btnEditarAlojamiento.Text = "EDITAR";
             this.btnEditarAlojamiento.UseVisualStyleBackColor = false;
+            this.btnEditarAlojamiento.Click += new System.EventHandler(this.btnEditarAlojamiento_Click);
+            // 
+            // chkProgramaPuerta
+            // 
+            this.chkProgramaPuerta.AutoSize = true;
+            this.chkProgramaPuerta.Enabled = false;
+            this.chkProgramaPuerta.Location = new System.Drawing.Point(286, 39);
+            this.chkProgramaPuerta.Name = "chkProgramaPuerta";
+            this.chkProgramaPuerta.Size = new System.Drawing.Size(213, 20);
+            this.chkProgramaPuerta.TabIndex = 267;
+            this.chkProgramaPuerta.Text = "TIENE PROGRAMA PUERTA?";
+            this.chkProgramaPuerta.UseVisualStyleBackColor = true;
             // 
             // label16
             // 
@@ -2303,15 +2335,15 @@
             this.label16.TabIndex = 262;
             this.label16.Text = "DETALLE ALOJAMIENTO";
             // 
-            // txtDetalleSituacionProvisoria
+            // txtDetalleAlojamiento
             // 
-            this.txtDetalleSituacionProvisoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDetalleSituacionProvisoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetalleSituacionProvisoria.Location = new System.Drawing.Point(9, 130);
-            this.txtDetalleSituacionProvisoria.Multiline = true;
-            this.txtDetalleSituacionProvisoria.Name = "txtDetalleSituacionProvisoria";
-            this.txtDetalleSituacionProvisoria.Size = new System.Drawing.Size(499, 70);
-            this.txtDetalleSituacionProvisoria.TabIndex = 0;
+            this.txtDetalleAlojamiento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDetalleAlojamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetalleAlojamiento.Location = new System.Drawing.Point(9, 130);
+            this.txtDetalleAlojamiento.Multiline = true;
+            this.txtDetalleAlojamiento.Name = "txtDetalleAlojamiento";
+            this.txtDetalleAlojamiento.Size = new System.Drawing.Size(499, 70);
+            this.txtDetalleAlojamiento.TabIndex = 0;
             // 
             // cmbSituacionProvisoria
             // 
@@ -2361,6 +2393,7 @@
             this.btnCancelarAlojamiento.TabIndex = 13;
             this.btnCancelarAlojamiento.Text = "Cancelar";
             this.btnCancelarAlojamiento.UseVisualStyleBackColor = false;
+            this.btnCancelarAlojamiento.Click += new System.EventHandler(this.btnCancelarAlojamiento_Click);
             // 
             // label59
             // 
@@ -3439,37 +3472,6 @@
             this.label57.TabIndex = 72;
             this.label57.Text = "USUARIO CARGA:";
             // 
-            // chkProgramaPuerta
-            // 
-            this.chkProgramaPuerta.AutoSize = true;
-            this.chkProgramaPuerta.Enabled = false;
-            this.chkProgramaPuerta.Location = new System.Drawing.Point(286, 39);
-            this.chkProgramaPuerta.Name = "chkProgramaPuerta";
-            this.chkProgramaPuerta.Size = new System.Drawing.Size(213, 20);
-            this.chkProgramaPuerta.TabIndex = 267;
-            this.chkProgramaPuerta.Text = "TIENE PROGRAMA PUERTA?";
-            this.chkProgramaPuerta.UseVisualStyleBackColor = true;
-            // 
-            // dtpFechaCambioAlojamiento
-            // 
-            this.dtpFechaCambioAlojamiento.Enabled = false;
-            this.dtpFechaCambioAlojamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaCambioAlojamiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaCambioAlojamiento.Location = new System.Drawing.Point(287, 88);
-            this.dtpFechaCambioAlojamiento.Name = "dtpFechaCambioAlojamiento";
-            this.dtpFechaCambioAlojamiento.Size = new System.Drawing.Size(192, 22);
-            this.dtpFechaCambioAlojamiento.TabIndex = 282;
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label81.Location = new System.Drawing.Point(283, 71);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(181, 15);
-            this.label81.TabIndex = 283;
-            this.label81.Text = "FECHA CAMBIO ALOJAMIENTO";
-            // 
             // FormInternoAdministrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3765,7 +3767,7 @@
         private System.Windows.Forms.GroupBox gboxAlojamiento;
         private System.Windows.Forms.Button btnEditarAlojamiento;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtDetalleSituacionProvisoria;
+        private System.Windows.Forms.TextBox txtDetalleAlojamiento;
         private System.Windows.Forms.ComboBox cmbSituacionProvisoria;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnGuardarAlojamiento;

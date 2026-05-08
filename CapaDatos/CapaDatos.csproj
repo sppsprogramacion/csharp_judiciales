@@ -59,6 +59,7 @@
     <Compile Include="DReincidencia.cs" />
     <Compile Include="DReligion.cs" />
     <Compile Include="DSituacionProvisoria.cs" />
+    <Compile Include="DTablasAlojamiento.cs" />
     <Compile Include="DTablasCausa.cs" />
     <Compile Include="DDatosFiliatorios.cs" />
     <Compile Include="DDepartamento.cs" />

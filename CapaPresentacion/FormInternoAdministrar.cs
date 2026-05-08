@@ -1517,6 +1517,21 @@ namespace CapaPresentacion
             btnCancelarConductaConcepto.Enabled = valor;
         }//FIN HABILITAR CONTROLES EGRESO...........................................
 
+        //HABILITAR CONTROLES CONDUCTA CONCEPTO
+        private void HabilitarControlesAlojamiento(bool valor)
+        {
+            cmbPabellon.Enabled = valor;
+            txtCelda.Enabled = valor;
+            chkProgramaPuerta.Enabled = valor;
+            cmbSituacionProvisoria.Enabled = valor;
+            dtpFechaAlojamiento.Enabled = valor;
+            txtDetalleAlojamiento.Enabled = valor;
+
+            btnEditarAlojamiento.Enabled = !valor;
+            btnGuardarAlojamiento.Enabled = valor;
+            btnCancelarAlojamiento.Enabled = valor;
+        }//FIN HABILITAR CONTROLES EGRESO...........................................
+
         #endregion PROGRESIVIDAD
         //FIN REGION PROGRESIVIDAD........................................................
         //...................................................................................
@@ -2149,10 +2164,49 @@ namespace CapaPresentacion
             }
         }
 
+        private async void btnEditarAlojamiento_Click(object sender, EventArgs e)
+        {
+            //Carga de combos sobre alojamiento
+            NListasGenerales nListasGenerales = new NListasGenerales();
+            tabInterno.Enabled = false;
+            (DTablasAlojamiento dTablasAlojamiento, string errorResponseEgreso) = await nListasGenerales.ListasTablasAlojamiento();
+            tabInterno.Enabled = true;
+
+            if (dTablasAlojamiento == null)
+            {
+                MessageBox.Show("Advertencia al cargar los datos para alojamiento: " + errorResponseEgreso, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+            else
+            {
+                //dTablasDomicilioInternoGlobal = dTablasDomicilioInterno;
+
+                cmbPabellon.ValueMember = "id_pabellon";
+                cmbPabellon.DisplayMember = "pabellon";
+                cmbPabellon.DataSource = dTablasAlojamiento.pabellones;
+
+                cmbSituacionProvisoria.ValueMember = "id_situacion_provisoria";
+                cmbSituacionProvisoria.DisplayMember = "situacion_provisoria";
+                cmbSituacionProvisoria.DataSource = dTablasAlojamiento.situacion_provisoria;
+
+
+
+                this.HabilitarControlesAlojamiento(true);
+                this.CargarControlesAlojamiento();
+            }
+            //fin Carga de combos sobre egreso
+        }
+
+        private void btnCancelarAlojamiento_Click(object sender, EventArgs e)
+        {
+            this.HabilitarControlesAlojamiento(false);
+            this.CargarControlesAlojamiento();
+        }
+
         #endregion DOMICILIOS
         //FIN REGION DOMICILIOS.......................................................
         //........................................................................
 
-        
+
     }
 }

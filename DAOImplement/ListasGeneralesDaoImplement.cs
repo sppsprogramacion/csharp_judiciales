@@ -66,6 +66,50 @@ namespace DAOImplement
         }
         //FIN LISTAS CARACTERISTICAS PERSONALES ..........................................................
 
+        public async Task<(DTablasAlojamiento, string error)> ListasTablasAlojamiento()
+        {
+            DTablasAlojamiento dTablasAlojamiento = new DTablasAlojamiento();
+
+            string token = SessionManager.Token; // Aquí pones tu token real
+
+            try
+            {
+                // Agregar el token en los headers
+                this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                HttpResponseMessage httpResponse = await this.httpClient.GetAsync(url_base + "/listas-generales-tablas/tablas-alojamiento");
+
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var content = await httpResponse.Content.ReadAsStringAsync();
+                    dTablasAlojamiento = JsonConvert.DeserializeObject<DTablasAlojamiento>(content);
+                    return (dTablasAlojamiento, null);
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (null, $"Error en la busqueda: {mensaje}");
+                }
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                // Capturar errores de la solicitud HTTP
+                return (null, $"Error de conexión: {httpRequestException.Message}");
+            }
+            catch (JsonException jsonException)
+            {
+                // Capturar errores en la serialización/deserialización de JSON                
+                return (null, $"Error inesperado");
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores (log, mensaje al usuario, etc.)
+                Console.WriteLine($"Error: {ex.Message}");
+                return (null, $"Error inesperado: {ex.Message}");
+            }
+        }
+
         //LISTA CONDUCTA CONCEPTO
         public async Task<(DTablasConductaConcepto, string error)> ListasTablasConductaConcepto()
         {
