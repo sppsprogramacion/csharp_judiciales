@@ -32,7 +32,6 @@
             this.gboxDadosCondena = new System.Windows.Forms.GroupBox();
             this.dtpFechaUltimaDetCondena = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnQuitarDatosCondena = new System.Windows.Forms.Button();
             this.dtpFechaCumple = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@
             this.btnEditarCondena = new System.Windows.Forms.Button();
             this.btnGuardarCondena = new System.Windows.Forms.Button();
             this.btnCancelarCondena = new System.Windows.Forms.Button();
+            this.btnQuitarDatosCondena = new System.Windows.Forms.Button();
             this.gboxDatosGenerales = new System.Windows.Forms.GroupBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.cmbOtroJuzgado = new System.Windows.Forms.ComboBox();
@@ -85,15 +85,21 @@
             this.label25 = new System.Windows.Forms.Label();
             this.txtOrganismoCarga = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
+            this.gboxQuitarCondena = new System.Windows.Forms.GroupBox();
+            this.cmbQuitarEstadoProcesal = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnGuardarQuitarCondena = new System.Windows.Forms.Button();
+            this.btnCancelarQuitarCondena = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.gboxDadosCondena.SuspendLayout();
             this.gboxDatosGenerales.SuspendLayout();
+            this.gboxQuitarCondena.SuspendLayout();
             this.SuspendLayout();
             // 
             // gboxDadosCondena
             // 
             this.gboxDadosCondena.Controls.Add(this.dtpFechaUltimaDetCondena);
             this.gboxDadosCondena.Controls.Add(this.label7);
-            this.gboxDadosCondena.Controls.Add(this.btnQuitarDatosCondena);
             this.gboxDadosCondena.Controls.Add(this.dtpFechaCumple);
             this.gboxDadosCondena.Controls.Add(this.label6);
             this.gboxDadosCondena.Controls.Add(this.label5);
@@ -137,21 +143,6 @@
             this.label7.Size = new System.Drawing.Size(151, 13);
             this.label7.TabIndex = 307;
             this.label7.Text = "FECHA ULTIMA DETENCION";
-            // 
-            // btnQuitarDatosCondena
-            // 
-            this.btnQuitarDatosCondena.BackColor = System.Drawing.Color.White;
-            this.btnQuitarDatosCondena.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
-            this.btnQuitarDatosCondena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuitarDatosCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitarDatosCondena.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnQuitarDatosCondena.Location = new System.Drawing.Point(24, 150);
-            this.btnQuitarDatosCondena.Name = "btnQuitarDatosCondena";
-            this.btnQuitarDatosCondena.Size = new System.Drawing.Size(161, 40);
-            this.btnQuitarDatosCondena.TabIndex = 9;
-            this.btnQuitarDatosCondena.Text = "Quitar datos de condena";
-            this.btnQuitarDatosCondena.UseVisualStyleBackColor = false;
-            this.btnQuitarDatosCondena.Click += new System.EventHandler(this.btnQuitarDatosCondena_Click);
             // 
             // dtpFechaCumple
             // 
@@ -333,6 +324,21 @@
             this.btnCancelarCondena.Text = "Cancelar";
             this.btnCancelarCondena.UseVisualStyleBackColor = false;
             this.btnCancelarCondena.Click += new System.EventHandler(this.btnCancelarCondena_Click);
+            // 
+            // btnQuitarDatosCondena
+            // 
+            this.btnQuitarDatosCondena.BackColor = System.Drawing.Color.White;
+            this.btnQuitarDatosCondena.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnQuitarDatosCondena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitarDatosCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitarDatosCondena.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnQuitarDatosCondena.Location = new System.Drawing.Point(130, 84);
+            this.btnQuitarDatosCondena.Name = "btnQuitarDatosCondena";
+            this.btnQuitarDatosCondena.Size = new System.Drawing.Size(161, 40);
+            this.btnQuitarDatosCondena.TabIndex = 9;
+            this.btnQuitarDatosCondena.Text = "Quitar datos de condena";
+            this.btnQuitarDatosCondena.UseVisualStyleBackColor = false;
+            this.btnQuitarDatosCondena.Click += new System.EventHandler(this.btnQuitarDatosCondena_Click);
             // 
             // gboxDatosGenerales
             // 
@@ -737,12 +743,97 @@
             this.label27.TabIndex = 300;
             this.label27.Text = "ORGANISMO CARGA";
             // 
+            // gboxQuitarCondena
+            // 
+            this.gboxQuitarCondena.Controls.Add(this.cmbQuitarEstadoProcesal);
+            this.gboxQuitarCondena.Controls.Add(this.label8);
+            this.gboxQuitarCondena.Controls.Add(this.btnGuardarQuitarCondena);
+            this.gboxQuitarCondena.Controls.Add(this.btnCancelarQuitarCondena);
+            this.gboxQuitarCondena.Controls.Add(this.btnQuitarDatosCondena);
+            this.gboxQuitarCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gboxQuitarCondena.Location = new System.Drawing.Point(542, 259);
+            this.gboxQuitarCondena.Name = "gboxQuitarCondena";
+            this.gboxQuitarCondena.Size = new System.Drawing.Size(526, 135);
+            this.gboxQuitarCondena.TabIndex = 308;
+            this.gboxQuitarCondena.TabStop = false;
+            this.gboxQuitarCondena.Text = "Quitar condena";
+            // 
+            // cmbQuitarEstadoProcesal
+            // 
+            this.cmbQuitarEstadoProcesal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbQuitarEstadoProcesal.Enabled = false;
+            this.cmbQuitarEstadoProcesal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbQuitarEstadoProcesal.FormattingEnabled = true;
+            this.cmbQuitarEstadoProcesal.Location = new System.Drawing.Point(10, 40);
+            this.cmbQuitarEstadoProcesal.Name = "cmbQuitarEstadoProcesal";
+            this.cmbQuitarEstadoProcesal.Size = new System.Drawing.Size(240, 23);
+            this.cmbQuitarEstadoProcesal.TabIndex = 284;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(7, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(170, 13);
+            this.label8.TabIndex = 285;
+            this.label8.Text = "ESTADO PROCESAL ANTERIOR";
+            // 
+            // btnGuardarQuitarCondena
+            // 
+            this.btnGuardarQuitarCondena.BackColor = System.Drawing.Color.White;
+            this.btnGuardarQuitarCondena.Enabled = false;
+            this.btnGuardarQuitarCondena.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btnGuardarQuitarCondena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarQuitarCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarQuitarCondena.ForeColor = System.Drawing.Color.Green;
+            this.btnGuardarQuitarCondena.Location = new System.Drawing.Point(301, 84);
+            this.btnGuardarQuitarCondena.Name = "btnGuardarQuitarCondena";
+            this.btnGuardarQuitarCondena.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarQuitarCondena.TabIndex = 11;
+            this.btnGuardarQuitarCondena.Text = "Guardar";
+            this.btnGuardarQuitarCondena.UseVisualStyleBackColor = false;
+            this.btnGuardarQuitarCondena.Click += new System.EventHandler(this.btnGuardarQuitarCondena_Click);
+            // 
+            // btnCancelarQuitarCondena
+            // 
+            this.btnCancelarQuitarCondena.BackColor = System.Drawing.Color.White;
+            this.btnCancelarQuitarCondena.Enabled = false;
+            this.btnCancelarQuitarCondena.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarQuitarCondena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarQuitarCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarQuitarCondena.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelarQuitarCondena.Location = new System.Drawing.Point(410, 84);
+            this.btnCancelarQuitarCondena.Name = "btnCancelarQuitarCondena";
+            this.btnCancelarQuitarCondena.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarQuitarCondena.TabIndex = 12;
+            this.btnCancelarQuitarCondena.Text = "Cancelar";
+            this.btnCancelarQuitarCondena.UseVisualStyleBackColor = false;
+            this.btnCancelarQuitarCondena.Click += new System.EventHandler(this.btnCancelarQuitarCondena_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.White;
+            this.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.Color.Red;
+            this.btnCerrar.Location = new System.Drawing.Point(970, 444);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(98, 35);
+            this.btnCerrar.TabIndex = 309;
+            this.btnCerrar.Text = "Cancelar";
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // FormCausaAdministrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1094, 491);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.gboxQuitarCondena);
             this.Controls.Add(this.txtOrganismoCarga);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.txtFechaCarga);
@@ -763,6 +854,8 @@
             this.gboxDadosCondena.PerformLayout();
             this.gboxDatosGenerales.ResumeLayout(false);
             this.gboxDatosGenerales.PerformLayout();
+            this.gboxQuitarCondena.ResumeLayout(false);
+            this.gboxQuitarCondena.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -826,5 +919,11 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.DateTimePicker dtpFechaUltimaDetCondena;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox gboxQuitarCondena;
+        private System.Windows.Forms.Button btnGuardarQuitarCondena;
+        private System.Windows.Forms.Button btnCancelarQuitarCondena;
+        private System.Windows.Forms.ComboBox cmbQuitarEstadoProcesal;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

@@ -295,6 +295,8 @@
             this.label56 = new System.Windows.Forms.Label();
             this.txtIdDomicilio = new System.Windows.Forms.TextBox();
             this.label57 = new System.Windows.Forms.Label();
+            this.cmbTipoNovedad = new System.Windows.Forms.ComboBox();
+            this.label84 = new System.Windows.Forms.Label();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -1856,6 +1858,8 @@
             // 
             // tabHistorialProcesal
             // 
+            this.tabHistorialProcesal.Controls.Add(this.cmbTipoNovedad);
+            this.tabHistorialProcesal.Controls.Add(this.label84);
             this.tabHistorialProcesal.Controls.Add(this.btnVerHistorial);
             this.tabHistorialProcesal.Controls.Add(this.groupBox8);
             this.tabHistorialProcesal.Controls.Add(this.btnNuevoHistorial);
@@ -1874,7 +1878,7 @@
             this.btnVerHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerHistorial.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnVerHistorial.Location = new System.Drawing.Point(276, 12);
+            this.btnVerHistorial.Location = new System.Drawing.Point(27, 12);
             this.btnVerHistorial.Name = "btnVerHistorial";
             this.btnVerHistorial.Size = new System.Drawing.Size(125, 40);
             this.btnVerHistorial.TabIndex = 239;
@@ -1914,7 +1918,7 @@
             this.btnNuevoHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoHistorial.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnNuevoHistorial.Location = new System.Drawing.Point(409, 11);
+            this.btnNuevoHistorial.Location = new System.Drawing.Point(160, 11);
             this.btnNuevoHistorial.Name = "btnNuevoHistorial";
             this.btnNuevoHistorial.Size = new System.Drawing.Size(125, 40);
             this.btnNuevoHistorial.TabIndex = 298;
@@ -1991,7 +1995,7 @@
             this.cmbConducta.Location = new System.Drawing.Point(169, 38);
             this.cmbConducta.Name = "cmbConducta";
             this.cmbConducta.Size = new System.Drawing.Size(141, 23);
-            this.cmbConducta.TabIndex = 269;
+            this.cmbConducta.TabIndex = 2;
             // 
             // cmbConcepto
             // 
@@ -2001,7 +2005,7 @@
             this.cmbConcepto.Location = new System.Drawing.Point(330, 38);
             this.cmbConcepto.Name = "cmbConcepto";
             this.cmbConcepto.Size = new System.Drawing.Size(141, 23);
-            this.cmbConcepto.TabIndex = 271;
+            this.cmbConcepto.TabIndex = 3;
             // 
             // label83
             // 
@@ -2023,7 +2027,7 @@
             this.btnEditarConductaConcepto.Location = new System.Drawing.Point(219, 77);
             this.btnEditarConductaConcepto.Name = "btnEditarConductaConcepto";
             this.btnEditarConductaConcepto.Size = new System.Drawing.Size(98, 40);
-            this.btnEditarConductaConcepto.TabIndex = 268;
+            this.btnEditarConductaConcepto.TabIndex = 0;
             this.btnEditarConductaConcepto.Text = "EDITAR";
             this.btnEditarConductaConcepto.UseVisualStyleBackColor = false;
             this.btnEditarConductaConcepto.Click += new System.EventHandler(this.btnEditarConductaConcepto_Click);
@@ -2039,7 +2043,7 @@
             this.btnGuardarConductaConepto.Location = new System.Drawing.Point(329, 77);
             this.btnGuardarConductaConepto.Name = "btnGuardarConductaConepto";
             this.btnGuardarConductaConepto.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarConductaConepto.TabIndex = 12;
+            this.btnGuardarConductaConepto.TabIndex = 4;
             this.btnGuardarConductaConepto.Text = "Guardar";
             this.btnGuardarConductaConepto.UseVisualStyleBackColor = false;
             this.btnGuardarConductaConepto.Click += new System.EventHandler(this.btnGuardarConductaConepto_Click);
@@ -2055,7 +2059,7 @@
             this.btnCancelarConductaConcepto.Location = new System.Drawing.Point(437, 77);
             this.btnCancelarConductaConcepto.Name = "btnCancelarConductaConcepto";
             this.btnCancelarConductaConcepto.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelarConductaConcepto.TabIndex = 13;
+            this.btnCancelarConductaConcepto.TabIndex = 5;
             this.btnCancelarConductaConcepto.Text = "Cancelar";
             this.btnCancelarConductaConcepto.UseVisualStyleBackColor = false;
             this.btnCancelarConductaConcepto.Click += new System.EventHandler(this.btnCancelarConductaConcepto_Click);
@@ -2092,7 +2096,7 @@
             this.dtpFechaProgresividad.Location = new System.Drawing.Point(11, 147);
             this.dtpFechaProgresividad.Name = "dtpFechaProgresividad";
             this.dtpFechaProgresividad.Size = new System.Drawing.Size(192, 22);
-            this.dtpFechaProgresividad.TabIndex = 280;
+            this.dtpFechaProgresividad.TabIndex = 7;
             // 
             // label78
             // 
@@ -2123,7 +2127,7 @@
             this.txtDetalleProgresividad.Multiline = true;
             this.txtDetalleProgresividad.Name = "txtDetalleProgresividad";
             this.txtDetalleProgresividad.Size = new System.Drawing.Size(499, 70);
-            this.txtDetalleProgresividad.TabIndex = 278;
+            this.txtDetalleProgresividad.TabIndex = 8;
             // 
             // chkTransitoria
             // 
@@ -2132,7 +2136,7 @@
             this.chkTransitoria.Location = new System.Drawing.Point(192, 103);
             this.chkTransitoria.Name = "chkTransitoria";
             this.chkTransitoria.Size = new System.Drawing.Size(167, 20);
-            this.chkTransitoria.TabIndex = 277;
+            this.chkTransitoria.TabIndex = 6;
             this.chkTransitoria.Text = "TIENE TRANSITORIA?";
             this.chkTransitoria.UseVisualStyleBackColor = true;
             // 
@@ -2143,7 +2147,7 @@
             this.chkSemilibertad.Location = new System.Drawing.Point(10, 103);
             this.chkSemilibertad.Name = "chkSemilibertad";
             this.chkSemilibertad.Size = new System.Drawing.Size(174, 20);
-            this.chkSemilibertad.TabIndex = 276;
+            this.chkSemilibertad.TabIndex = 5;
             this.chkSemilibertad.Text = "TIENE SEMILIBERTAD?";
             this.chkSemilibertad.UseVisualStyleBackColor = true;
             // 
@@ -2154,7 +2158,7 @@
             this.chkGranja.Location = new System.Drawing.Point(192, 73);
             this.chkGranja.Name = "chkGranja";
             this.chkGranja.Size = new System.Drawing.Size(131, 20);
-            this.chkGranja.TabIndex = 275;
+            this.chkGranja.TabIndex = 4;
             this.chkGranja.Text = "TIENE GRANJA?";
             this.chkGranja.UseVisualStyleBackColor = true;
             // 
@@ -2166,7 +2170,7 @@
             this.cmbFase.Location = new System.Drawing.Point(287, 38);
             this.cmbFase.Name = "cmbFase";
             this.cmbFase.Size = new System.Drawing.Size(221, 23);
-            this.cmbFase.TabIndex = 273;
+            this.cmbFase.TabIndex = 2;
             // 
             // label62
             // 
@@ -2188,7 +2192,7 @@
             this.btnEditarProgresividad.Location = new System.Drawing.Point(548, 21);
             this.btnEditarProgresividad.Name = "btnEditarProgresividad";
             this.btnEditarProgresividad.Size = new System.Drawing.Size(98, 40);
-            this.btnEditarProgresividad.TabIndex = 268;
+            this.btnEditarProgresividad.TabIndex = 0;
             this.btnEditarProgresividad.Text = "EDITAR";
             this.btnEditarProgresividad.UseVisualStyleBackColor = false;
             this.btnEditarProgresividad.Click += new System.EventHandler(this.btnEditarProgresividad_Click);
@@ -2200,7 +2204,7 @@
             this.chkExtramuro.Location = new System.Drawing.Point(10, 73);
             this.chkExtramuro.Name = "chkExtramuro";
             this.chkExtramuro.Size = new System.Drawing.Size(162, 20);
-            this.chkExtramuro.TabIndex = 267;
+            this.chkExtramuro.TabIndex = 3;
             this.chkExtramuro.Text = "TIENE EXTRAMURO?";
             this.chkExtramuro.UseVisualStyleBackColor = true;
             // 
@@ -2212,7 +2216,7 @@
             this.cmbProgresividad.Location = new System.Drawing.Point(9, 38);
             this.cmbProgresividad.Name = "cmbProgresividad";
             this.cmbProgresividad.Size = new System.Drawing.Size(258, 23);
-            this.cmbProgresividad.TabIndex = 6;
+            this.cmbProgresividad.TabIndex = 1;
             // 
             // label66
             // 
@@ -2235,7 +2239,7 @@
             this.btnGuardarProgresividad.Location = new System.Drawing.Point(548, 69);
             this.btnGuardarProgresividad.Name = "btnGuardarProgresividad";
             this.btnGuardarProgresividad.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarProgresividad.TabIndex = 12;
+            this.btnGuardarProgresividad.TabIndex = 9;
             this.btnGuardarProgresividad.Text = "Guardar";
             this.btnGuardarProgresividad.UseVisualStyleBackColor = false;
             this.btnGuardarProgresividad.Click += new System.EventHandler(this.btnGuardarProgresividad_Click);
@@ -2251,7 +2255,7 @@
             this.btnCancelarProgresividad.Location = new System.Drawing.Point(548, 115);
             this.btnCancelarProgresividad.Name = "btnCancelarProgresividad";
             this.btnCancelarProgresividad.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelarProgresividad.TabIndex = 13;
+            this.btnCancelarProgresividad.TabIndex = 10;
             this.btnCancelarProgresividad.Text = "Cancelar";
             this.btnCancelarProgresividad.UseVisualStyleBackColor = false;
             this.btnCancelarProgresividad.Click += new System.EventHandler(this.btnCancelarProgresividad_Click);
@@ -2287,7 +2291,7 @@
             this.dtpFechaCambioAlojamiento.Location = new System.Drawing.Point(10, 127);
             this.dtpFechaCambioAlojamiento.Name = "dtpFechaCambioAlojamiento";
             this.dtpFechaCambioAlojamiento.Size = new System.Drawing.Size(192, 22);
-            this.dtpFechaCambioAlojamiento.TabIndex = 282;
+            this.dtpFechaCambioAlojamiento.TabIndex = 5;
             // 
             // label81
             // 
@@ -2309,7 +2313,7 @@
             this.btnEditarAlojamiento.Location = new System.Drawing.Point(548, 19);
             this.btnEditarAlojamiento.Name = "btnEditarAlojamiento";
             this.btnEditarAlojamiento.Size = new System.Drawing.Size(98, 40);
-            this.btnEditarAlojamiento.TabIndex = 268;
+            this.btnEditarAlojamiento.TabIndex = 0;
             this.btnEditarAlojamiento.Text = "EDITAR";
             this.btnEditarAlojamiento.UseVisualStyleBackColor = false;
             this.btnEditarAlojamiento.Click += new System.EventHandler(this.btnEditarAlojamiento_Click);
@@ -2321,7 +2325,7 @@
             this.chkProgramaPuerta.Location = new System.Drawing.Point(286, 39);
             this.chkProgramaPuerta.Name = "chkProgramaPuerta";
             this.chkProgramaPuerta.Size = new System.Drawing.Size(213, 20);
-            this.chkProgramaPuerta.TabIndex = 267;
+            this.chkProgramaPuerta.TabIndex = 3;
             this.chkProgramaPuerta.Text = "TIENE PROGRAMA PUERTA?";
             this.chkProgramaPuerta.UseVisualStyleBackColor = true;
             // 
@@ -2344,7 +2348,7 @@
             this.txtDetalleCambioAlojamiento.Multiline = true;
             this.txtDetalleCambioAlojamiento.Name = "txtDetalleCambioAlojamiento";
             this.txtDetalleCambioAlojamiento.Size = new System.Drawing.Size(499, 70);
-            this.txtDetalleCambioAlojamiento.TabIndex = 0;
+            this.txtDetalleCambioAlojamiento.TabIndex = 6;
             // 
             // cmbSituacionProvisoria
             // 
@@ -2354,7 +2358,7 @@
             this.cmbSituacionProvisoria.Location = new System.Drawing.Point(9, 83);
             this.cmbSituacionProvisoria.Name = "cmbSituacionProvisoria";
             this.cmbSituacionProvisoria.Size = new System.Drawing.Size(258, 23);
-            this.cmbSituacionProvisoria.TabIndex = 6;
+            this.cmbSituacionProvisoria.TabIndex = 4;
             // 
             // label17
             // 
@@ -2377,7 +2381,7 @@
             this.btnGuardarAlojamiento.Location = new System.Drawing.Point(548, 71);
             this.btnGuardarAlojamiento.Name = "btnGuardarAlojamiento";
             this.btnGuardarAlojamiento.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarAlojamiento.TabIndex = 12;
+            this.btnGuardarAlojamiento.TabIndex = 7;
             this.btnGuardarAlojamiento.Text = "Guardar";
             this.btnGuardarAlojamiento.UseVisualStyleBackColor = false;
             this.btnGuardarAlojamiento.Click += new System.EventHandler(this.btnGuardarAlojamiento_Click);
@@ -2393,7 +2397,7 @@
             this.btnCancelarAlojamiento.Location = new System.Drawing.Point(548, 123);
             this.btnCancelarAlojamiento.Name = "btnCancelarAlojamiento";
             this.btnCancelarAlojamiento.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelarAlojamiento.TabIndex = 13;
+            this.btnCancelarAlojamiento.TabIndex = 8;
             this.btnCancelarAlojamiento.Text = "Cancelar";
             this.btnCancelarAlojamiento.UseVisualStyleBackColor = false;
             this.btnCancelarAlojamiento.Click += new System.EventHandler(this.btnCancelarAlojamiento_Click);
@@ -2890,7 +2894,7 @@
             this.btnEditarEgreso.Location = new System.Drawing.Point(187, 304);
             this.btnEditarEgreso.Name = "btnEditarEgreso";
             this.btnEditarEgreso.Size = new System.Drawing.Size(98, 40);
-            this.btnEditarEgreso.TabIndex = 268;
+            this.btnEditarEgreso.TabIndex = 0;
             this.btnEditarEgreso.Text = "EDITAR";
             this.btnEditarEgreso.UseVisualStyleBackColor = false;
             this.btnEditarEgreso.Click += new System.EventHandler(this.btnEditarEgreso_Click);
@@ -2925,7 +2929,7 @@
             this.txtDetallesEgreso.Multiline = true;
             this.txtDetallesEgreso.Name = "txtDetallesEgreso";
             this.txtDetallesEgreso.Size = new System.Drawing.Size(499, 95);
-            this.txtDetallesEgreso.TabIndex = 0;
+            this.txtDetallesEgreso.TabIndex = 5;
             // 
             // cmbJuzgadoLibera
             // 
@@ -2935,7 +2939,7 @@
             this.cmbJuzgadoLibera.Location = new System.Drawing.Point(9, 110);
             this.cmbJuzgadoLibera.Name = "cmbJuzgadoLibera";
             this.cmbJuzgadoLibera.Size = new System.Drawing.Size(500, 23);
-            this.cmbJuzgadoLibera.TabIndex = 6;
+            this.cmbJuzgadoLibera.TabIndex = 3;
             // 
             // label64
             // 
@@ -2958,7 +2962,7 @@
             this.btnGuardarEgreso.Location = new System.Drawing.Point(295, 304);
             this.btnGuardarEgreso.Name = "btnGuardarEgreso";
             this.btnGuardarEgreso.Size = new System.Drawing.Size(98, 40);
-            this.btnGuardarEgreso.TabIndex = 12;
+            this.btnGuardarEgreso.TabIndex = 6;
             this.btnGuardarEgreso.Text = "Guardar";
             this.btnGuardarEgreso.UseVisualStyleBackColor = false;
             this.btnGuardarEgreso.Click += new System.EventHandler(this.btnGuardarEgreso_Click);
@@ -2974,7 +2978,7 @@
             this.btnCancelarEgreso.Location = new System.Drawing.Point(409, 304);
             this.btnCancelarEgreso.Name = "btnCancelarEgreso";
             this.btnCancelarEgreso.Size = new System.Drawing.Size(98, 40);
-            this.btnCancelarEgreso.TabIndex = 13;
+            this.btnCancelarEgreso.TabIndex = 7;
             this.btnCancelarEgreso.Text = "Cancelar";
             this.btnCancelarEgreso.UseVisualStyleBackColor = false;
             this.btnCancelarEgreso.Click += new System.EventHandler(this.btnCancelarEgreso_Click);
@@ -2997,7 +3001,7 @@
             this.txtDomicilioLibertad.Location = new System.Drawing.Point(10, 156);
             this.txtDomicilioLibertad.Name = "txtDomicilioLibertad";
             this.txtDomicilioLibertad.Size = new System.Drawing.Size(499, 21);
-            this.txtDomicilioLibertad.TabIndex = 2;
+            this.txtDomicilioLibertad.TabIndex = 4;
             // 
             // label76
             // 
@@ -3017,7 +3021,7 @@
             this.cmbMotivoEgreso.Location = new System.Drawing.Point(153, 65);
             this.cmbMotivoEgreso.Name = "cmbMotivoEgreso";
             this.cmbMotivoEgreso.Size = new System.Drawing.Size(355, 23);
-            this.cmbMotivoEgreso.TabIndex = 1;
+            this.cmbMotivoEgreso.TabIndex = 2;
             // 
             // dtpFechaEgreso
             // 
@@ -3027,7 +3031,7 @@
             this.dtpFechaEgreso.Location = new System.Drawing.Point(10, 65);
             this.dtpFechaEgreso.Name = "dtpFechaEgreso";
             this.dtpFechaEgreso.Size = new System.Drawing.Size(125, 22);
-            this.dtpFechaEgreso.TabIndex = 9;
+            this.dtpFechaEgreso.TabIndex = 1;
             // 
             // label79
             // 
@@ -3477,6 +3481,25 @@
             this.label57.TabIndex = 72;
             this.label57.Text = "USUARIO CARGA:";
             // 
+            // cmbTipoNovedad
+            // 
+            this.cmbTipoNovedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipoNovedad.FormattingEnabled = true;
+            this.cmbTipoNovedad.Location = new System.Drawing.Point(343, 26);
+            this.cmbTipoNovedad.Name = "cmbTipoNovedad";
+            this.cmbTipoNovedad.Size = new System.Drawing.Size(242, 23);
+            this.cmbTipoNovedad.TabIndex = 299;
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label84.Location = new System.Drawing.Point(341, 11);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(136, 13);
+            this.label84.TabIndex = 300;
+            this.label84.Text = "FILTRAR TIPO NOVEDAD";
+            // 
             // FormInternoAdministrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3514,6 +3537,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabHistorialProcesal.ResumeLayout(false);
+            this.tabHistorialProcesal.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgHistorialProcesal)).EndInit();
             this.tabProgresividad.ResumeLayout(false);
@@ -3810,5 +3834,7 @@
         private System.Windows.Forms.CheckBox chkProgramaPuerta;
         private System.Windows.Forms.DateTimePicker dtpFechaCambioAlojamiento;
         private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.ComboBox cmbTipoNovedad;
+        private System.Windows.Forms.Label label84;
     }
 }

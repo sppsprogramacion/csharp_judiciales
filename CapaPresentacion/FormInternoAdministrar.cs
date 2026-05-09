@@ -1016,8 +1016,23 @@ namespace CapaPresentacion
                 MessageBox.Show("El interno no tiene un ingreso valido", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            FormCausaNueva formCausaNuevo = new FormCausaNueva(Convert.ToInt32(txtIdIngresoVer.Text));
-            formCausaNuevo.ShowDialog();
+
+            using (FormCausaNueva formCausaNuevo = new FormCausaNueva(Convert.ToInt32(txtIdIngresoVer.Text)))
+            {
+                // Aquí se abre el FormularioB
+                if (formCausaNuevo.ShowDialog() == DialogResult.OK)
+                {
+                    // Recién después de cerrar FormularioB, puedo leer el dato
+                    bool isCausaCreada = formCausaNuevo.isCreadoCausa;
+                    if (isCausaCreada)
+                    {
+
+                        tabInterno.Enabled = false;
+                        this.CargarDataGridCausas();
+                        tabInterno.Enabled = true;
+                    }
+                }
+            }
         }
 
         private void dtgvCausas_KeyDown_1(object sender, KeyEventArgs e)
@@ -1034,8 +1049,22 @@ namespace CapaPresentacion
                 {
                     if (idCausa > 0)
                     {
-                        FormCausaAdministrar formCausaAdministrar = new FormCausaAdministrar(idCausa);
-                        formCausaAdministrar.ShowDialog();
+                        using (FormCausaAdministrar formCausaAdministrar = new FormCausaAdministrar(Convert.ToInt32(idCausa)))
+                        {
+
+                            // Aquí se abre el FormularioB
+                            if (formCausaAdministrar.ShowDialog() == DialogResult.OK)
+                            {
+                                // Recién después de cerrar FormularioB, puedo leer el dato
+                                bool isCausaCreado = formCausaAdministrar.isModificadoCausaGlobal;
+                                if (isCausaCreado)
+                                {
+                                    tabInterno.Enabled = false;
+                                    this.CargarDataGridCausas();
+                                    tabInterno.Enabled = true;
+                                }
+                            }
+                        }
                     }
                     else
                     {
@@ -1126,7 +1155,6 @@ namespace CapaPresentacion
 
             using (FormHistorialProcesalNuevo formHistorialProcesalNuevo = new FormHistorialProcesalNuevo(Convert.ToInt32(txtIdIngresoVer.Text)))
             {
-
                 // Aquí se abre el FormularioB
                 if (formHistorialProcesalNuevo.ShowDialog() == DialogResult.OK)
                 {

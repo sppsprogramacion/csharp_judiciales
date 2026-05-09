@@ -19,6 +19,8 @@ namespace CapaPresentacion
 {
     public partial class FormCausaAdministrar : Form
     {
+        public bool isModificadoCausaGlobal { get; private set; }
+
         int idCausaGlobal = 0;
         DCausa dCausaGlobal = new DCausa();
         DTablasCausa tablasCausa = null;
@@ -137,9 +139,8 @@ namespace CapaPresentacion
             if (respuestaEditar)
             {
                 MessageBox.Show("La edición se realizó correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //actualizar el internoClobal
-                //this.BuscarIngreso();
-
+                isModificadoCausaGlobal = true;
+                this.DialogResult = DialogResult.OK; // Para indicar que cerró bien
                 this.HabilitarControlesEditarDatosGenerales(false);
                 
             }
@@ -150,43 +151,21 @@ namespace CapaPresentacion
 
         }
 
-        private async void btnQuitarDatosCondena_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            NCausa nCausa = new NCausa();
-
             //limpiar errores de provider
             errorProvider.Clear();
 
-            this.gboxDadosCondena.Enabled = false;
-            var data = new
-            {
-                tiene_computo = chckTieneComputo.Checked
-            };
-
-            string dataCondenaEnviar = JsonConvert.SerializeObject(data);
-
-            (bool respuestaEditar, string errorResponse) = await nCausa.QuitarCondena(Convert.ToInt32(txtIdCausa.Text), dataCondenaEnviar);
-
-            if (respuestaEditar)
-            {
-                MessageBox.Show("Se quito correctamente los datos de condena", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //actualizar el internoClobal
-                this.BuscarCausa();
-
-                this.HabilitarControlesCondena(false);
-                this.gboxDadosCondena.Enabled = true;
-            }
-            else
-            {
-                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.gboxDadosCondena.Enabled = true;
-            }
+            this.CargarControlesCausa();
+            this.HabilitarControlesEditarDatosGenerales(false);
         }
 
+        
+        
         private void btnEditarCondena_Click(object sender, EventArgs e)
         {
-            this.HabilitarControlesCondena(true);
             this.CargarTablasCausa();
+            this.HabilitarControlesCondena(true);
 
         }
         private async void btnGuardarCondena_Click(object sender, EventArgs e)
@@ -240,6 +219,8 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("La edición se realizó correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //actualizar el internoClobal
+                isModificadoCausaGlobal = true;
+                this.DialogResult = DialogResult.OK; // Para indicar que cerró bien
                 this.BuscarCausa();
 
                 this.HabilitarControlesCondena(false);
@@ -250,6 +231,64 @@ namespace CapaPresentacion
                 MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.gboxDadosCondena.Enabled = true;
             }
+        }
+
+        private void btnCancelarCondena_Click(object sender, EventArgs e)
+        {
+            //limpiar errores de provider
+            errorProvider.Clear();
+
+            this.CargarControlesCausa();
+            this.HabilitarControlesCondena(false);
+        }
+
+        private void btnQuitarDatosCondena_Click(object sender, EventArgs e)
+        {
+            this.CargarTablasCausa();
+            this.HabilitarControlesQuitarCondena(true);
+        }
+
+        private async void btnGuardarQuitarCondena_Click(object sender, EventArgs e)
+        {
+            NCausa nCausa = new NCausa();
+
+            //limpiar errores de provider
+            errorProvider.Clear();
+
+            this.gboxDadosCondena.Enabled = false;
+            var data = new
+            {
+                estado_procesal_id = cmbQuitarEstadoProcesal.SelectedValue?.ToString() ?? string.Empty,
+            };
+
+            string dataCondenaEnviar = JsonConvert.SerializeObject(data);
+
+            (bool respuestaEditar, string errorResponse) = await nCausa.QuitarCondena(Convert.ToInt32(txtIdCausa.Text), dataCondenaEnviar);
+
+            if (respuestaEditar)
+            {
+                MessageBox.Show("Se quito correctamente los datos de condena", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //actualizar el internoClobal
+                isModificadoCausaGlobal = true;
+                this.DialogResult = DialogResult.OK; // Para indicar que cerró bien
+                this.BuscarCausa();
+                this.HabilitarControlesCondena(false);
+                this.gboxDadosCondena.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.gboxDadosCondena.Enabled = true;
+            }
+        }
+
+        private void btnCancelarQuitarCondena_Click(object sender, EventArgs e)
+        {
+            //limpiar errores de provider
+            errorProvider.Clear();
+
+            this.HabilitarControlesQuitarCondena(false);
+            this.CargarControlesCausa();
         }
 
 
@@ -318,7 +357,7 @@ namespace CapaPresentacion
             //ESTADO PROCESAL
             cmbEstadoProcesal.ValueMember = "id_estado_procesal";
             cmbEstadoProcesal.DisplayMember = "estado_procesal";
-            cmbEstadoProcesal.DataSource = this.tablasCausa.estado_procesal;
+            cmbEstadoProcesal.DataSource = this.tablasCausa.estado_procesal.ToList();
 
             //JURISDICCION
             cmbJurisdiccion.ValueMember = "id_jurisdiccion";
@@ -349,6 +388,11 @@ namespace CapaPresentacion
             cmbTribunalCondena.ValueMember = "id_juzgado";
             cmbTribunalCondena.DisplayMember = "juzgado";
             cmbTribunalCondena.DataSource = this.tablasCausa.juzgados.ToList();
+
+            //ESTADO PROCESAL PARA QUITAR CONDENA
+            cmbQuitarEstadoProcesal.ValueMember = "id_estado_procesal";
+            cmbQuitarEstadoProcesal.DisplayMember = "estado_procesal";
+            cmbQuitarEstadoProcesal.DataSource = this.tablasCausa.estado_procesal.ToList();
 
             this.CargarControlesCausa();
             //fin Carga de combos causa
@@ -465,7 +509,7 @@ namespace CapaPresentacion
             gboxDadosCondena.Enabled = !valor;
         }//FIN HABILITAR CONTROLES INGRESO...........................................
 
-        //HABILITAR CONTROLES INGRESO
+        //HABILITAR CONTROLES CONDENA
         private void HabilitarControlesCondena(bool valor)
         {
             dtpFechaUltimaDetCondena.Enabled = valor;
@@ -481,24 +525,24 @@ namespace CapaPresentacion
             btnGuardarCondena.Enabled = valor;
             btnCancelarCondena.Enabled = valor;
             gboxDatosGenerales.Enabled = !valor;
-        }//FIN HABILITAR CONTROLES INGRESO...........................................
+        }//FIN HABILITAR CONTROLES CONDENA...........................................
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        //HABILITAR CONTROLES CONDENA
+        private void HabilitarControlesQuitarCondena(bool valor)
         {
-            //limpiar errores de provider
-            errorProvider.Clear();
+            
+            cmbQuitarEstadoProcesal.Enabled = valor;
 
-            this.CargarControlesCausa();
-            this.HabilitarControlesEditarDatosGenerales(false);
-        }
+            btnQuitarDatosCondena.Enabled = !valor;
+            btnGuardarQuitarCondena.Enabled = valor;
+            btnCancelarQuitarCondena.Enabled = valor;
+            gboxDatosGenerales.Enabled = !valor;
+        }//FIN HABILITAR CONTROLES CONDENA...........................................
 
-        private void btnCancelarCondena_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
-            //limpiar errores de provider
-            errorProvider.Clear();
-
-            this.HabilitarControlesCondena(false);
-            this.CargarControlesCausa();
+            this.DialogResult = DialogResult.OK; // Para indicar que cerró bien
+            this.Close();
         }
     }
 }

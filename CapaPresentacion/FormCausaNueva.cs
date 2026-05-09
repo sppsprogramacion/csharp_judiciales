@@ -19,6 +19,8 @@ namespace CapaPresentacion
 {
     public partial class FormCausaNueva : Form
     {
+        public bool isCreadoCausa { get; private set; }
+
         int idIngresoGlobal = 0;
         private ErrorProvider errorProvider = new ErrorProvider();
 
@@ -161,6 +163,8 @@ namespace CapaPresentacion
                 {
 
                     MessageBox.Show("Causa creada correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    isCreadoCausa = true;
+                    this.DialogResult = DialogResult.OK; // Para indicar que cerró bien
                     this.Close();
                 }
                 else
