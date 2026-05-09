@@ -140,7 +140,7 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("La edición se realizó correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 isModificadoCausaGlobal = true;
-                this.DialogResult = DialogResult.OK; // Para indicar que cerró bien
+                //this.DialogResult = DialogResult.OK; // Para indicar que cerró bien
                 this.HabilitarControlesEditarDatosGenerales(false);
                 
             }
@@ -220,7 +220,7 @@ namespace CapaPresentacion
                 MessageBox.Show("La edición se realizó correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //actualizar el internoClobal
                 isModificadoCausaGlobal = true;
-                this.DialogResult = DialogResult.OK; // Para indicar que cerró bien
+                //this.DialogResult = DialogResult.OK; // Para indicar que cerró bien
                 this.BuscarCausa();
 
                 this.HabilitarControlesCondena(false);
@@ -270,7 +270,7 @@ namespace CapaPresentacion
                 MessageBox.Show("Se quito correctamente los datos de condena", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //actualizar el internoClobal
                 isModificadoCausaGlobal = true;
-                this.DialogResult = DialogResult.OK; // Para indicar que cerró bien
+                //this.DialogResult = DialogResult.OK; // Para indicar que cerró bien
                 this.BuscarCausa();
                 this.HabilitarControlesCondena(false);
                 this.gboxDadosCondena.Enabled = true;

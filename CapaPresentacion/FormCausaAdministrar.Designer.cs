@@ -822,7 +822,7 @@
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(98, 35);
             this.btnCerrar.TabIndex = 309;
-            this.btnCerrar.Text = "Cancelar";
+            this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
@@ -845,6 +845,8 @@
             this.Controls.Add(this.gboxDatosGenerales);
             this.Controls.Add(this.label75);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormCausaAdministrar";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

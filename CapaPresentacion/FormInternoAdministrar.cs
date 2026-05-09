@@ -23,6 +23,8 @@ namespace CapaPresentacion
         private ErrorProvider errorProvider = new ErrorProvider();
         DInterno dInternoGlobal = new DInterno();
         DIngresoInterno ingresoInternoGlobal = new DIngresoInterno();
+        DCaracteristicasPersonales tablasCaracteristicasPersonalesGlogal = null;
+        DDatosFiliatorios  tablasDatosFiliatoriosGlobal = null;
 
         public FormInternoAdministrar(DIngresoInterno ingresoInternox)
         {
@@ -36,100 +38,7 @@ namespace CapaPresentacion
             //// Ajustar el tamaño del formulario            
             FormularioAyudas.AjustarFormulario(this);
 
-            //Carga de combos sobre Caracteristicas generales
-            NListasGenerales nListasGenerales = new NListasGenerales();
-            (DCaracteristicasPersonales caracteristicasPersonales, string errorResponse) = await nListasGenerales.ListaCaracteristicasPersonales();
-
-            if (caracteristicasPersonales == null)
-            {
-                MessageBox.Show("Advertencia al cargar las caracteristicas personales: " + errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-            }
-            else
-            {
-                //PIEL
-                cmbPiel.ValueMember = "id_piel";
-                cmbPiel.DisplayMember = "piel";
-                cmbPiel.DataSource = caracteristicasPersonales.piel;
-
-                //OJOS COLOR
-                cmbOjosColor.ValueMember = "id_ojo_color";
-                cmbOjosColor.DisplayMember = "ojo_color";
-                cmbOjosColor.DataSource = caracteristicasPersonales.ojos_color;
-
-                //OJOS TAMAÑO
-                cmbOjosTamanio.ValueMember = "id_tamanio";
-                cmbOjosTamanio.DisplayMember = "tamanio";
-                cmbOjosTamanio.DataSource = caracteristicasPersonales.tamanio;
-
-                //NARIZ FORMA
-                cmbNarizForma.ValueMember = "id_nariz_forma";
-                cmbNarizForma.DisplayMember = "nariz_forma";
-                cmbNarizForma.DataSource = caracteristicasPersonales.nariz_forma;
-
-                //NARIZ TAMAÑO
-                cmbNarizTamanio.ValueMember = "id_tamanio";
-                cmbNarizTamanio.DisplayMember = "tamanio";
-                cmbNarizTamanio.DataSource = caracteristicasPersonales.tamanio;
-
-                //PELO COLOR
-                cmbPeloColor.ValueMember = "id_pelo_color";
-                cmbPeloColor.DisplayMember = "pelo_color";
-                cmbPeloColor.DataSource = caracteristicasPersonales.pelo_color;
-
-                //PELO TIPO
-                cmbPeloTipo.ValueMember = "id_pelo_tipo";
-                cmbPeloTipo.DisplayMember = "pelo_tipo";
-                cmbPeloTipo.DataSource = caracteristicasPersonales.pelo_tipo;
-
-                //SEXO
-                cmbSexo.ValueMember = "id_sexo";
-                cmbSexo.DisplayMember = "sexo";
-                cmbSexo.DataSource = caracteristicasPersonales.sexo;
-
-
-            }
-            //fin Carga de combos sobre Caracteristicas generales
-
-            //Carga de combos sobre DatosFiliatorios
-            (DDatosFiliatorios datosFiliatorios, string errorResponseDatosFiliatorios) = await nListasGenerales.ListasDatosFilistorios();
-
-            if (datosFiliatorios == null)
-            {
-                MessageBox.Show("Advertencia al cargar los datos filiatorios: " + errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-            }
-            else
-            {
-                //Carga de combo nacionalidad
-                cmbNacionalidad.ValueMember = "id_nacionalidad";
-                cmbNacionalidad.DisplayMember = "nacionalidad";
-                cmbNacionalidad.DataSource = datosFiliatorios.nacionalidad;
-
-                //Carga de combo estado civil
-                cmbEstadoCivil.ValueMember = "id_estado_civil";
-                cmbEstadoCivil.DisplayMember = "estado_civil";
-                cmbEstadoCivil.DataSource = datosFiliatorios.estado_civil;
-
-                //Carga de combo estado civil
-                cmbNivelEducacion.ValueMember = "id_nivel_educacion";
-                cmbNivelEducacion.DisplayMember = "nivel_educacion";
-                cmbNivelEducacion.DataSource = datosFiliatorios.niveles_educacion;
-
-                //Carga de combo estado civil
-                cmbReligion.ValueMember = "id_religion";
-                cmbReligion.DisplayMember = "religion";
-                cmbReligion.DataSource = datosFiliatorios.religiones;
-
-                //Carga de combo estado civil
-                cmbUltimaOcupacion.ValueMember = "id_ocupacion";
-                cmbUltimaOcupacion.DisplayMember = "ocupacion";
-                cmbUltimaOcupacion.DataSource = datosFiliatorios.ocupaciones;
-
-
-            }
-            //fin Carga de combos sobre DatosFiliatorios
-                       
+            
 
             //CARGAR DATOS DEL INTERNO  
             tabInterno.Enabled = false;
@@ -155,6 +64,19 @@ namespace CapaPresentacion
 
             //cargar datos del interno
             this.CargarControlesInformacionInterno();
+            //cargar fotos del interno
+            if (!string.IsNullOrEmpty(this.dInternoGlobal.foto))
+            {
+                pictureFoto.Load(this.dInternoGlobal.foto);
+            }
+            if (!string.IsNullOrEmpty(this.dInternoGlobal.fotoPI))
+            {
+                pictureFotoPI.Load(this.dInternoGlobal.fotoPI);
+            }
+            if (!string.IsNullOrEmpty(this.dInternoGlobal.fotoPD))
+            {
+                pictureFotoPD.Load(this.dInternoGlobal.fotoPD);
+            }
 
             //txtFechaAlta.Text = this.dCiudadanoGlo.fecha_alta.ToShortDateString();
             //txtOrganismoAlta.Text = this.dCiudadanoGlo.organismo_alta.organismo;
@@ -201,18 +123,18 @@ namespace CapaPresentacion
             txtMadre.Text = this.dInternoGlobal.madre;
             txtParientes.Text = this.dInternoGlobal.parientes;
 
-            if (!string.IsNullOrEmpty(this.dInternoGlobal.foto))
-            {
-                pictureFoto.Load(this.dInternoGlobal.foto);
-            }
-            if (!string.IsNullOrEmpty(this.dInternoGlobal.fotoPI))
-            {
-                pictureFotoPI.Load(this.dInternoGlobal.fotoPI);
-            }
-            if (!string.IsNullOrEmpty(this.dInternoGlobal.fotoPD))
-            {
-                pictureFotoPD.Load(this.dInternoGlobal.fotoPD);
-            }
+            //if (!string.IsNullOrEmpty(this.dInternoGlobal.foto))
+            //{
+            //    pictureFoto.Load(this.dInternoGlobal.foto);
+            //}
+            //if (!string.IsNullOrEmpty(this.dInternoGlobal.fotoPI))
+            //{
+            //    pictureFotoPI.Load(this.dInternoGlobal.fotoPI);
+            //}
+            //if (!string.IsNullOrEmpty(this.dInternoGlobal.fotoPD))
+            //{
+            //    pictureFotoPD.Load(this.dInternoGlobal.fotoPD);
+            //}
         }
         //FIN CARGAR CONTROLES DATOS DE INTERNO...................................................
 
@@ -388,8 +310,71 @@ namespace CapaPresentacion
             this.HabilitarDatosPersonales(false);
         }
 
-        private void btnEditarCaracteristicasPersonales_Click(object sender, EventArgs e)
+        private async void btnEditarCaracteristicasPersonales_Click(object sender, EventArgs e)
         {
+            if (this.tablasCaracteristicasPersonalesGlogal == null)
+            {
+
+                tabInterno.Enabled = false;
+
+                //Carga de combos sobre listas para ingreso
+                NListasGenerales nListasGenerales = new NListasGenerales();
+                (DCaracteristicasPersonales caracteristicasPersonales, string errorResponse) = await nListasGenerales.ListaCaracteristicasPersonales();
+
+                this.tablasCaracteristicasPersonalesGlogal = caracteristicasPersonales;
+
+                tabInterno.Enabled = true;
+
+                if (this.tablasCaracteristicasPersonalesGlogal == null)
+                {
+                    MessageBox.Show("Advertencia al cargar las listas: " + errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+
+            //PIEL
+            cmbPiel.ValueMember = "id_piel";
+            cmbPiel.DisplayMember = "piel";
+            cmbPiel.DataSource = tablasCaracteristicasPersonalesGlogal.piel;
+
+            //OJOS COLOR
+            cmbOjosColor.ValueMember = "id_ojo_color";
+            cmbOjosColor.DisplayMember = "ojo_color";
+            cmbOjosColor.DataSource = tablasCaracteristicasPersonalesGlogal.ojos_color;
+
+            //OJOS TAMAÑO
+            cmbOjosTamanio.ValueMember = "id_tamanio";
+            cmbOjosTamanio.DisplayMember = "tamanio";
+            cmbOjosTamanio.DataSource = tablasCaracteristicasPersonalesGlogal.tamanio;
+
+            //NARIZ FORMA
+            cmbNarizForma.ValueMember = "id_nariz_forma";
+            cmbNarizForma.DisplayMember = "nariz_forma";
+            cmbNarizForma.DataSource = tablasCaracteristicasPersonalesGlogal.nariz_forma;
+
+            //NARIZ TAMAÑO
+            cmbNarizTamanio.ValueMember = "id_tamanio";
+            cmbNarizTamanio.DisplayMember = "tamanio";
+            cmbNarizTamanio.DataSource = tablasCaracteristicasPersonalesGlogal.tamanio;
+
+            //PELO COLOR
+            cmbPeloColor.ValueMember = "id_pelo_color";
+            cmbPeloColor.DisplayMember = "pelo_color";
+            cmbPeloColor.DataSource = tablasCaracteristicasPersonalesGlogal.pelo_color;
+
+            //PELO TIPO
+            cmbPeloTipo.ValueMember = "id_pelo_tipo";
+            cmbPeloTipo.DisplayMember = "pelo_tipo";
+            cmbPeloTipo.DataSource = tablasCaracteristicasPersonalesGlogal.pelo_tipo;
+
+            //SEXO
+            cmbSexo.ValueMember = "id_sexo";
+            cmbSexo.DisplayMember = "sexo";
+            cmbSexo.DataSource = tablasCaracteristicasPersonalesGlogal.sexo;
+
+            //fin Carga de combos sobre Caracteristicas generales
+
+            this.CargarControlesInformacionInterno();
             this.HabilitarCarasteristicasPersonales(true);
             cmbSexo.Focus();
         }
@@ -483,6 +468,56 @@ namespace CapaPresentacion
 
         private async void btnEditarDatosFilatorios_Click(object sender, EventArgs e)
         {
+
+            if (this.tablasDatosFiliatoriosGlobal == null)
+            {
+
+                tabInterno.Enabled = false;
+
+                //Carga de combos sobre listas para ingreso
+                NListasGenerales nListasGenerales = new NListasGenerales();
+                //Carga de combos sobre DatosFiliatorios
+                (DDatosFiliatorios datosFiliatorios, string errorResponseDatosFiliatorios) = await nListasGenerales.ListasDatosFilistorios();
+
+
+                this.tablasDatosFiliatoriosGlobal = datosFiliatorios;
+
+                tabInterno.Enabled = true;
+
+                if (this.tablasDatosFiliatoriosGlobal == null)
+                {
+                    MessageBox.Show("Advertencia al cargar las listas: " + errorResponseDatosFiliatorios, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+
+            //Carga de combo nacionalidad
+            cmbNacionalidad.ValueMember = "id_nacionalidad";
+            cmbNacionalidad.DisplayMember = "nacionalidad";
+            cmbNacionalidad.DataSource = tablasDatosFiliatoriosGlobal.nacionalidad;
+
+            //Carga de combo estado civil
+            cmbEstadoCivil.ValueMember = "id_estado_civil";
+            cmbEstadoCivil.DisplayMember = "estado_civil";
+            cmbEstadoCivil.DataSource = tablasDatosFiliatoriosGlobal.estado_civil;
+
+            //Carga de combo estado civil
+            cmbNivelEducacion.ValueMember = "id_nivel_educacion";
+            cmbNivelEducacion.DisplayMember = "nivel_educacion";
+            cmbNivelEducacion.DataSource = tablasDatosFiliatoriosGlobal.niveles_educacion;
+
+            //Carga de combo estado civil
+            cmbReligion.ValueMember = "id_religion";
+            cmbReligion.DisplayMember = "religion";
+            cmbReligion.DataSource = tablasDatosFiliatoriosGlobal.religiones;
+
+            //Carga de combo estado civil
+            cmbUltimaOcupacion.ValueMember = "id_ocupacion";
+            cmbUltimaOcupacion.DisplayMember = "ocupacion";
+            cmbUltimaOcupacion.DataSource = tablasDatosFiliatoriosGlobal.ocupaciones;
+            //fin Carga de combos sobre DatosFiliatorios
+
+            this.CargarControlesInformacionInterno();
 
             //Carga de combo provincia
             NProvincia nProvincia = new NProvincia();
