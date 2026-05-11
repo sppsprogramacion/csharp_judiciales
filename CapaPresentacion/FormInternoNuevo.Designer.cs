@@ -30,6 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInternoNuevo));
             this.gboxDatosInterno = new System.Windows.Forms.GroupBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.txtProfesion = new System.Windows.Forms.TextBox();
+            this.cmbUltimaOcupacion = new System.Windows.Forms.ComboBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.cmbReligion = new System.Windows.Forms.ComboBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.cmbNivelEducacion = new System.Windows.Forms.ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.txtCiudadNacimiento = new System.Windows.Forms.TextBox();
             this.lblDetalleCumplAnularExcepcion = new System.Windows.Forms.Label();
@@ -117,14 +125,6 @@
             this.label75 = new System.Windows.Forms.Label();
             this.dtpFechaAlojamiento = new System.Windows.Forms.DateTimePicker();
             this.label77 = new System.Windows.Forms.Label();
-            this.cmbNivelEducacion = new System.Windows.Forms.ComboBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.cmbReligion = new System.Windows.Forms.ComboBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.cmbUltimaOcupacion = new System.Windows.Forms.ComboBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.txtProfesion = new System.Windows.Forms.TextBox();
             this.gboxDatosInterno.SuspendLayout();
             this.gboxIngresarInterno.SuspendLayout();
             this.SuspendLayout();
@@ -196,6 +196,82 @@
             this.gboxDatosInterno.TabIndex = 120;
             this.gboxDatosInterno.TabStop = false;
             this.gboxDatosInterno.Text = "Nuevo Interno";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(509, 427);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(77, 15);
+            this.label38.TabIndex = 165;
+            this.label38.Text = "PROFESION";
+            // 
+            // txtProfesion
+            // 
+            this.txtProfesion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProfesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProfesion.Location = new System.Drawing.Point(511, 444);
+            this.txtProfesion.Name = "txtProfesion";
+            this.txtProfesion.Size = new System.Drawing.Size(202, 21);
+            this.txtProfesion.TabIndex = 164;
+            // 
+            // cmbUltimaOcupacion
+            // 
+            this.cmbUltimaOcupacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbUltimaOcupacion.FormattingEnabled = true;
+            this.cmbUltimaOcupacion.Location = new System.Drawing.Point(345, 444);
+            this.cmbUltimaOcupacion.Name = "cmbUltimaOcupacion";
+            this.cmbUltimaOcupacion.Size = new System.Drawing.Size(150, 23);
+            this.cmbUltimaOcupacion.TabIndex = 162;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(342, 427);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(124, 15);
+            this.label37.TabIndex = 163;
+            this.label37.Text = "ULTIMA OCUPACION";
+            // 
+            // cmbReligion
+            // 
+            this.cmbReligion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbReligion.FormattingEnabled = true;
+            this.cmbReligion.Location = new System.Drawing.Point(177, 444);
+            this.cmbReligion.Name = "cmbReligion";
+            this.cmbReligion.Size = new System.Drawing.Size(150, 23);
+            this.cmbReligion.TabIndex = 160;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(174, 427);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(64, 15);
+            this.label36.TabIndex = 161;
+            this.label36.Text = "RELIGION";
+            // 
+            // cmbNivelEducacion
+            // 
+            this.cmbNivelEducacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNivelEducacion.FormattingEnabled = true;
+            this.cmbNivelEducacion.Location = new System.Drawing.Point(10, 444);
+            this.cmbNivelEducacion.Name = "cmbNivelEducacion";
+            this.cmbNivelEducacion.Size = new System.Drawing.Size(150, 23);
+            this.cmbNivelEducacion.TabIndex = 158;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(7, 427);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(114, 15);
+            this.label28.TabIndex = 159;
+            this.label28.Text = "NIVEL EDUCACION";
             // 
             // label35
             // 
@@ -575,7 +651,7 @@
             this.btnGuardar.ForeColor = System.Drawing.Color.Green;
             this.btnGuardar.Location = new System.Drawing.Point(497, 622);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardar.Size = new System.Drawing.Size(98, 30);
             this.btnGuardar.TabIndex = 114;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -590,7 +666,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnCancelar.Location = new System.Drawing.Point(611, 622);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelar.Size = new System.Drawing.Size(98, 30);
             this.btnCancelar.TabIndex = 115;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -977,7 +1053,7 @@
             this.btnGuardarIngreso.ForeColor = System.Drawing.Color.Green;
             this.btnGuardarIngreso.Location = new System.Drawing.Point(116, 528);
             this.btnGuardarIngreso.Name = "btnGuardarIngreso";
-            this.btnGuardarIngreso.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarIngreso.Size = new System.Drawing.Size(98, 30);
             this.btnGuardarIngreso.TabIndex = 15;
             this.btnGuardarIngreso.Text = "GUARDAR";
             this.btnGuardarIngreso.UseVisualStyleBackColor = false;
@@ -992,7 +1068,7 @@
             this.btnCancelarIngreso.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnCancelarIngreso.Location = new System.Drawing.Point(229, 528);
             this.btnCancelarIngreso.Name = "btnCancelarIngreso";
-            this.btnCancelarIngreso.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarIngreso.Size = new System.Drawing.Size(98, 30);
             this.btnCancelarIngreso.TabIndex = 16;
             this.btnCancelarIngreso.Text = "CANCELAR";
             this.btnCancelarIngreso.UseVisualStyleBackColor = false;
@@ -1091,82 +1167,6 @@
             this.label77.Size = new System.Drawing.Size(132, 15);
             this.label77.TabIndex = 212;
             this.label77.Text = "FECHA ALOJAMIENTO";
-            // 
-            // cmbNivelEducacion
-            // 
-            this.cmbNivelEducacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbNivelEducacion.FormattingEnabled = true;
-            this.cmbNivelEducacion.Location = new System.Drawing.Point(10, 444);
-            this.cmbNivelEducacion.Name = "cmbNivelEducacion";
-            this.cmbNivelEducacion.Size = new System.Drawing.Size(150, 23);
-            this.cmbNivelEducacion.TabIndex = 158;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(7, 427);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(114, 15);
-            this.label28.TabIndex = 159;
-            this.label28.Text = "NIVEL EDUCACION";
-            // 
-            // cmbReligion
-            // 
-            this.cmbReligion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbReligion.FormattingEnabled = true;
-            this.cmbReligion.Location = new System.Drawing.Point(177, 444);
-            this.cmbReligion.Name = "cmbReligion";
-            this.cmbReligion.Size = new System.Drawing.Size(150, 23);
-            this.cmbReligion.TabIndex = 160;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(174, 427);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(64, 15);
-            this.label36.TabIndex = 161;
-            this.label36.Text = "RELIGION";
-            // 
-            // cmbUltimaOcupacion
-            // 
-            this.cmbUltimaOcupacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbUltimaOcupacion.FormattingEnabled = true;
-            this.cmbUltimaOcupacion.Location = new System.Drawing.Point(345, 444);
-            this.cmbUltimaOcupacion.Name = "cmbUltimaOcupacion";
-            this.cmbUltimaOcupacion.Size = new System.Drawing.Size(150, 23);
-            this.cmbUltimaOcupacion.TabIndex = 162;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(342, 427);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(124, 15);
-            this.label37.TabIndex = 163;
-            this.label37.Text = "ULTIMA OCUPACION";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(509, 427);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(77, 15);
-            this.label38.TabIndex = 165;
-            this.label38.Text = "PROFESION";
-            // 
-            // txtProfesion
-            // 
-            this.txtProfesion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtProfesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProfesion.Location = new System.Drawing.Point(511, 444);
-            this.txtProfesion.Name = "txtProfesion";
-            this.txtProfesion.Size = new System.Drawing.Size(202, 21);
-            this.txtProfesion.TabIndex = 164;
             // 
             // FormInternoNuevo
             // 

@@ -287,7 +287,7 @@
             this.btnEditarCondena.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnEditarCondena.Location = new System.Drawing.Point(192, 150);
             this.btnEditarCondena.Name = "btnEditarCondena";
-            this.btnEditarCondena.Size = new System.Drawing.Size(98, 40);
+            this.btnEditarCondena.Size = new System.Drawing.Size(98, 30);
             this.btnEditarCondena.TabIndex = 10;
             this.btnEditarCondena.Text = "Editar";
             this.btnEditarCondena.UseVisualStyleBackColor = false;
@@ -303,7 +303,7 @@
             this.btnGuardarCondena.ForeColor = System.Drawing.Color.Green;
             this.btnGuardarCondena.Location = new System.Drawing.Point(301, 150);
             this.btnGuardarCondena.Name = "btnGuardarCondena";
-            this.btnGuardarCondena.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarCondena.Size = new System.Drawing.Size(98, 30);
             this.btnGuardarCondena.TabIndex = 11;
             this.btnGuardarCondena.Text = "Guardar";
             this.btnGuardarCondena.UseVisualStyleBackColor = false;
@@ -319,7 +319,7 @@
             this.btnCancelarCondena.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnCancelarCondena.Location = new System.Drawing.Point(410, 150);
             this.btnCancelarCondena.Name = "btnCancelarCondena";
-            this.btnCancelarCondena.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarCondena.Size = new System.Drawing.Size(98, 30);
             this.btnCancelarCondena.TabIndex = 12;
             this.btnCancelarCondena.Text = "Cancelar";
             this.btnCancelarCondena.UseVisualStyleBackColor = false;
@@ -332,9 +332,9 @@
             this.btnQuitarDatosCondena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuitarDatosCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitarDatosCondena.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnQuitarDatosCondena.Location = new System.Drawing.Point(130, 84);
+            this.btnQuitarDatosCondena.Location = new System.Drawing.Point(107, 84);
             this.btnQuitarDatosCondena.Name = "btnQuitarDatosCondena";
-            this.btnQuitarDatosCondena.Size = new System.Drawing.Size(161, 40);
+            this.btnQuitarDatosCondena.Size = new System.Drawing.Size(184, 30);
             this.btnQuitarDatosCondena.TabIndex = 9;
             this.btnQuitarDatosCondena.Text = "Quitar datos de condena";
             this.btnQuitarDatosCondena.UseVisualStyleBackColor = false;
@@ -384,9 +384,9 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnEditar.Location = new System.Drawing.Point(182, 386);
+            this.btnEditar.Location = new System.Drawing.Point(201, 386);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(98, 40);
+            this.btnEditar.Size = new System.Drawing.Size(98, 30);
             this.btnEditar.TabIndex = 13;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -541,9 +541,9 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardar.Location = new System.Drawing.Point(295, 385);
+            this.btnGuardar.Location = new System.Drawing.Point(305, 385);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardar.Size = new System.Drawing.Size(98, 30);
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -559,7 +559,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnCancelar.Location = new System.Drawing.Point(409, 385);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelar.Size = new System.Drawing.Size(98, 30);
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -789,7 +789,7 @@
             this.btnGuardarQuitarCondena.ForeColor = System.Drawing.Color.Green;
             this.btnGuardarQuitarCondena.Location = new System.Drawing.Point(301, 84);
             this.btnGuardarQuitarCondena.Name = "btnGuardarQuitarCondena";
-            this.btnGuardarQuitarCondena.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarQuitarCondena.Size = new System.Drawing.Size(98, 30);
             this.btnGuardarQuitarCondena.TabIndex = 11;
             this.btnGuardarQuitarCondena.Text = "Guardar";
             this.btnGuardarQuitarCondena.UseVisualStyleBackColor = false;
@@ -805,7 +805,7 @@
             this.btnCancelarQuitarCondena.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnCancelarQuitarCondena.Location = new System.Drawing.Point(410, 84);
             this.btnCancelarQuitarCondena.Name = "btnCancelarQuitarCondena";
-            this.btnCancelarQuitarCondena.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarQuitarCondena.Size = new System.Drawing.Size(98, 30);
             this.btnCancelarQuitarCondena.TabIndex = 12;
             this.btnCancelarQuitarCondena.Text = "Cancelar";
             this.btnCancelarQuitarCondena.UseVisualStyleBackColor = false;
@@ -820,7 +820,7 @@
             this.btnCerrar.ForeColor = System.Drawing.Color.Red;
             this.btnCerrar.Location = new System.Drawing.Point(970, 444);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(98, 35);
+            this.btnCerrar.Size = new System.Drawing.Size(98, 30);
             this.btnCerrar.TabIndex = 309;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
@@ -832,6 +832,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1094, 491);
+            this.ControlBox = false;
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.gboxQuitarCondena);
             this.Controls.Add(this.txtOrganismoCarga);

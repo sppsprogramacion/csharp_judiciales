@@ -235,7 +235,7 @@
             this.btnGuardarHistorial.ForeColor = System.Drawing.Color.Green;
             this.btnGuardarHistorial.Location = new System.Drawing.Point(358, 286);
             this.btnGuardarHistorial.Name = "btnGuardarHistorial";
-            this.btnGuardarHistorial.Size = new System.Drawing.Size(98, 35);
+            this.btnGuardarHistorial.Size = new System.Drawing.Size(98, 30);
             this.btnGuardarHistorial.TabIndex = 296;
             this.btnGuardarHistorial.Text = "Guardar";
             this.btnGuardarHistorial.UseVisualStyleBackColor = false;
@@ -250,7 +250,7 @@
             this.btnCancelarHistorial.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnCancelarHistorial.Location = new System.Drawing.Point(464, 286);
             this.btnCancelarHistorial.Name = "btnCancelarHistorial";
-            this.btnCancelarHistorial.Size = new System.Drawing.Size(98, 35);
+            this.btnCancelarHistorial.Size = new System.Drawing.Size(98, 30);
             this.btnCancelarHistorial.TabIndex = 297;
             this.btnCancelarHistorial.Text = "Cancelar";
             this.btnCancelarHistorial.UseVisualStyleBackColor = false;
@@ -272,6 +272,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(604, 358);
+            this.ControlBox = false;
             this.Controls.Add(this.gboxDatosHistorial);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

@@ -130,7 +130,7 @@
             this.btnGuardarHistorial.ForeColor = System.Drawing.Color.Green;
             this.btnGuardarHistorial.Location = new System.Drawing.Point(323, 226);
             this.btnGuardarHistorial.Name = "btnGuardarHistorial";
-            this.btnGuardarHistorial.Size = new System.Drawing.Size(98, 35);
+            this.btnGuardarHistorial.Size = new System.Drawing.Size(98, 30);
             this.btnGuardarHistorial.TabIndex = 296;
             this.btnGuardarHistorial.Text = "Guardar";
             this.btnGuardarHistorial.UseVisualStyleBackColor = false;
@@ -154,7 +154,7 @@
             this.btnCancelarHistorial.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnCancelarHistorial.Location = new System.Drawing.Point(427, 226);
             this.btnCancelarHistorial.Name = "btnCancelarHistorial";
-            this.btnCancelarHistorial.Size = new System.Drawing.Size(98, 35);
+            this.btnCancelarHistorial.Size = new System.Drawing.Size(98, 30);
             this.btnCancelarHistorial.TabIndex = 297;
             this.btnCancelarHistorial.Text = "Cancelar";
             this.btnCancelarHistorial.UseVisualStyleBackColor = false;

@@ -259,9 +259,9 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardar.Location = new System.Drawing.Point(297, 441);
+            this.btnGuardar.Location = new System.Drawing.Point(306, 441);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardar.Size = new System.Drawing.Size(98, 30);
             this.btnGuardar.TabIndex = 12;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -276,7 +276,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnCancelar.Location = new System.Drawing.Point(411, 441);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelar.Size = new System.Drawing.Size(98, 30);
             this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;

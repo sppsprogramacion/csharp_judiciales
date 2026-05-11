@@ -52,7 +52,10 @@ namespace CapaPresentacion.Validaciones.InternoAdministrar.Validacion
                 .Cascade(CascadeMode.Stop)
                 .NotNull().WithMessage("Debe ingresar un valor para pelo color.")
                 .NotEmpty().WithMessage("Debe ingresar un valor para pelo color.");
-            
+            RuleFor(x => x.txtMarcasCorporales)
+                .Cascade(CascadeMode.Stop)
+                .MaximumLength(500).WithMessage("parientes debe tener maximo 1000 caracteres.");
+
         }
 
 

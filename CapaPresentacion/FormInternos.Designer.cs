@@ -118,9 +118,9 @@
             this.btnBuscarApellido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscarApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarApellido.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnBuscarApellido.Location = new System.Drawing.Point(571, 21);
+            this.btnBuscarApellido.Location = new System.Drawing.Point(571, 33);
             this.btnBuscarApellido.Name = "btnBuscarApellido";
-            this.btnBuscarApellido.Size = new System.Drawing.Size(130, 45);
+            this.btnBuscarApellido.Size = new System.Drawing.Size(98, 30);
             this.btnBuscarApellido.TabIndex = 2;
             this.btnBuscarApellido.Text = "Buscar";
             this.btnBuscarApellido.UseVisualStyleBackColor = false;

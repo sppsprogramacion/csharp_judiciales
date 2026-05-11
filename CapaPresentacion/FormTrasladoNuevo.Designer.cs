@@ -108,7 +108,7 @@
             this.btnGuardar.ForeColor = System.Drawing.Color.Green;
             this.btnGuardar.Location = new System.Drawing.Point(379, 302);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardar.Size = new System.Drawing.Size(98, 30);
             this.btnGuardar.TabIndex = 253;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -123,7 +123,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnCancelar.Location = new System.Drawing.Point(492, 302);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelar.Size = new System.Drawing.Size(98, 30);
             this.btnCancelar.TabIndex = 254;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -154,7 +154,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(619, 365);
+            this.ClientSize = new System.Drawing.Size(619, 348);
             this.Controls.Add(this.label42);
             this.Controls.Add(this.txtDetalleTraslado);
             this.Controls.Add(this.btnGuardar);

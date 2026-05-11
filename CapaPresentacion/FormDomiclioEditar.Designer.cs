@@ -118,7 +118,7 @@
             this.btnGuardar.ForeColor = System.Drawing.Color.Green;
             this.btnGuardar.Location = new System.Drawing.Point(368, 245);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(98, 35);
+            this.btnGuardar.Size = new System.Drawing.Size(98, 30);
             this.btnGuardar.TabIndex = 298;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -133,7 +133,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnCancelar.Location = new System.Drawing.Point(472, 245);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(98, 35);
+            this.btnCancelar.Size = new System.Drawing.Size(98, 30);
             this.btnCancelar.TabIndex = 299;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;

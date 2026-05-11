@@ -78,9 +78,9 @@
             this.btnImprimirExcepciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimirExcepciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimirExcepciones.ForeColor = System.Drawing.Color.Indigo;
-            this.btnImprimirExcepciones.Location = new System.Drawing.Point(756, 19);
+            this.btnImprimirExcepciones.Location = new System.Drawing.Point(852, 19);
             this.btnImprimirExcepciones.Name = "btnImprimirExcepciones";
-            this.btnImprimirExcepciones.Size = new System.Drawing.Size(194, 40);
+            this.btnImprimirExcepciones.Size = new System.Drawing.Size(98, 30);
             this.btnImprimirExcepciones.TabIndex = 117;
             this.btnImprimirExcepciones.Text = "Imprimir";
             this.btnImprimirExcepciones.UseVisualStyleBackColor = false;
@@ -119,9 +119,9 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardar.Location = new System.Drawing.Point(9, 305);
+            this.btnGuardar.Location = new System.Drawing.Point(55, 289);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardar.Size = new System.Drawing.Size(98, 30);
             this.btnGuardar.TabIndex = 240;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -134,9 +134,9 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelar.Location = new System.Drawing.Point(123, 305);
+            this.btnCancelar.Location = new System.Drawing.Point(159, 289);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelar.Size = new System.Drawing.Size(98, 30);
             this.btnCancelar.TabIndex = 241;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -147,7 +147,7 @@
             this.lblEstadoTraslado.AutoSize = true;
             this.lblEstadoTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadoTraslado.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblEstadoTraslado.Location = new System.Drawing.Point(6, 73);
+            this.lblEstadoTraslado.Location = new System.Drawing.Point(6, 60);
             this.lblEstadoTraslado.Name = "lblEstadoTraslado";
             this.lblEstadoTraslado.Size = new System.Drawing.Size(65, 15);
             this.lblEstadoTraslado.TabIndex = 239;
@@ -162,7 +162,7 @@
             this.btnRechazar.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnRechazar.Location = new System.Drawing.Point(142, 19);
             this.btnRechazar.Name = "btnRechazar";
-            this.btnRechazar.Size = new System.Drawing.Size(125, 40);
+            this.btnRechazar.Size = new System.Drawing.Size(98, 30);
             this.btnRechazar.TabIndex = 238;
             this.btnRechazar.Text = "Rechazar";
             this.btnRechazar.UseVisualStyleBackColor = false;
@@ -177,7 +177,7 @@
             this.btnAceptarTraslado.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnAceptarTraslado.Location = new System.Drawing.Point(8, 20);
             this.btnAceptarTraslado.Name = "btnAceptarTraslado";
-            this.btnAceptarTraslado.Size = new System.Drawing.Size(125, 40);
+            this.btnAceptarTraslado.Size = new System.Drawing.Size(98, 30);
             this.btnAceptarTraslado.TabIndex = 237;
             this.btnAceptarTraslado.Text = "Aceptar";
             this.btnAceptarTraslado.UseVisualStyleBackColor = false;
@@ -187,7 +187,7 @@
             // 
             this.lblDetalleCumplAnularExcepcion.AutoSize = true;
             this.lblDetalleCumplAnularExcepcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalleCumplAnularExcepcion.Location = new System.Drawing.Point(5, 97);
+            this.lblDetalleCumplAnularExcepcion.Location = new System.Drawing.Point(5, 84);
             this.lblDetalleCumplAnularExcepcion.Name = "lblDetalleCumplAnularExcepcion";
             this.lblDetalleCumplAnularExcepcion.Size = new System.Drawing.Size(101, 15);
             this.lblDetalleCumplAnularExcepcion.TabIndex = 78;
@@ -198,7 +198,7 @@
             this.txtObsProcesarTraslado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtObsProcesarTraslado.Enabled = false;
             this.txtObsProcesarTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtObsProcesarTraslado.Location = new System.Drawing.Point(8, 117);
+            this.txtObsProcesarTraslado.Location = new System.Drawing.Point(8, 104);
             this.txtObsProcesarTraslado.Multiline = true;
             this.txtObsProcesarTraslado.Name = "txtObsProcesarTraslado";
             this.txtObsProcesarTraslado.Size = new System.Drawing.Size(249, 176);
@@ -470,7 +470,7 @@
             this.btnVerTraslados.ForeColor = System.Drawing.Color.RoyalBlue;
             this.btnVerTraslados.Location = new System.Drawing.Point(12, 19);
             this.btnVerTraslados.Name = "btnVerTraslados";
-            this.btnVerTraslados.Size = new System.Drawing.Size(125, 40);
+            this.btnVerTraslados.Size = new System.Drawing.Size(125, 30);
             this.btnVerTraslados.TabIndex = 119;
             this.btnVerTraslados.Text = "Ver traslados";
             this.btnVerTraslados.UseVisualStyleBackColor = false;
@@ -485,7 +485,7 @@
             this.btnPendientesSalieron.ForeColor = System.Drawing.Color.RoyalBlue;
             this.btnPendientesSalieron.Location = new System.Drawing.Point(150, 19);
             this.btnPendientesSalieron.Name = "btnPendientesSalieron";
-            this.btnPendientesSalieron.Size = new System.Drawing.Size(171, 40);
+            this.btnPendientesSalieron.Size = new System.Drawing.Size(171, 30);
             this.btnPendientesSalieron.TabIndex = 120;
             this.btnPendientesSalieron.Text = "Pendientes salieron";
             this.btnPendientesSalieron.UseVisualStyleBackColor = false;
@@ -500,7 +500,7 @@
             this.btnPendientesIngreso.ForeColor = System.Drawing.Color.RoyalBlue;
             this.btnPendientesIngreso.Location = new System.Drawing.Point(340, 19);
             this.btnPendientesIngreso.Name = "btnPendientesIngreso";
-            this.btnPendientesIngreso.Size = new System.Drawing.Size(171, 40);
+            this.btnPendientesIngreso.Size = new System.Drawing.Size(171, 30);
             this.btnPendientesIngreso.TabIndex = 121;
             this.btnPendientesIngreso.Text = "Pendientes Ingreso";
             this.btnPendientesIngreso.UseVisualStyleBackColor = false;

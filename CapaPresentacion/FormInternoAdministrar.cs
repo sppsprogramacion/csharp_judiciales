@@ -25,6 +25,8 @@ namespace CapaPresentacion
         DIngresoInterno ingresoInternoGlobal = new DIngresoInterno();
         DCaracteristicasPersonales tablasCaracteristicasPersonalesGlogal = null;
         DDatosFiliatorios  tablasDatosFiliatoriosGlobal = null;
+        bool establecerProvinciaInterno = false;
+        bool establecerDepartamentoInterno = false;
 
         public FormInternoAdministrar(DIngresoInterno ingresoInternox)
         {
@@ -91,7 +93,7 @@ namespace CapaPresentacion
                 
 
         //CARGAR CONTROLES DATOS DE INTERNO
-        private void CargarControlesInformacionInterno()
+        private async void CargarControlesInformacionInterno()
         {
             //CARGAR DATOS DEL INTERNO
             txtIdInterno.Text = this.dInternoGlobal.id_interno.ToString();
@@ -109,6 +111,7 @@ namespace CapaPresentacion
             cmbNarizTamanio.Text = this.dInternoGlobal.nariz_tamanio.tamanio;
             cmbPeloTipo.Text = this.dInternoGlobal.pelo_tipo.pelo_tipo;
             cmbPeloColor.Text = this.dInternoGlobal.pelo_color.pelo_color;
+            txtMarcasCorporales.Text = this.dInternoGlobal.marcas_corporales;
             cmbNacionalidad.Text = this.dInternoGlobal.nacionalidad.nacionalidad;
             cmbProvinciaNacimiento.Text = this.dInternoGlobal.provincia_nacimiento.provincia;
             cmbDepartamentoNacimiento.Text = this.dInternoGlobal.departamento_nacimiento.departamento;
@@ -405,6 +408,7 @@ namespace CapaPresentacion
                 cmbNarizTamanio = cmbNarizTamanio.SelectedValue?.ToString() ?? string.Empty,
                 cmbPeloTipo = cmbPeloTipo.SelectedValue?.ToString() ?? string.Empty,
                 cmbPeloColor = cmbPeloColor.SelectedValue?.ToString() ?? string.Empty,
+                txtMarcasCorporales = txtMarcasCorporales.Text
             };
 
             var validator = new InternoEditarCaracteristicasPrincipalesValidation();
@@ -435,6 +439,7 @@ namespace CapaPresentacion
                 nariz_tamanio_id = cmbNarizTamanio.SelectedValue.ToString(),
                 pelo_tipo_id = cmbPeloTipo.SelectedValue.ToString(),
                 pelo_color_id = cmbPeloColor.SelectedValue.ToString(),
+                marcas_corporales = txtMarcasCorporales.Text
             };
 
             dataEnviar = JsonConvert.SerializeObject(dataInterno);
@@ -494,7 +499,12 @@ namespace CapaPresentacion
             //Carga de combo nacionalidad
             cmbNacionalidad.ValueMember = "id_nacionalidad";
             cmbNacionalidad.DisplayMember = "nacionalidad";
-            cmbNacionalidad.DataSource = tablasDatosFiliatoriosGlobal.nacionalidad;
+            cmbNacionalidad.DataSource = this.tablasDatosFiliatoriosGlobal.nacionalidad;
+
+            //para provincia y departamento
+            this.establecerProvinciaInterno = true;
+            this.establecerDepartamentoInterno = true;
+            this.cargarProvinciasDepartamentosEditar();
 
             //Carga de combo estado civil
             cmbEstadoCivil.ValueMember = "id_estado_civil";
@@ -518,23 +528,6 @@ namespace CapaPresentacion
             //fin Carga de combos sobre DatosFiliatorios
 
             this.CargarControlesInformacionInterno();
-
-            //Carga de combo provincia
-            NProvincia nProvincia = new NProvincia();
-            string id_paiss = Convert.ToString(this.cmbNacionalidad.SelectedValue);
-            cmbProvinciaNacimiento.ValueMember = "id_provincia";
-            cmbProvinciaNacimiento.DisplayMember = "provincia";
-            (List<DProvincia> listaProvincia, string errorResponseProvincia) = await nProvincia.RetornarListaProvinciasXPais(id_paiss);
-            cmbProvinciaNacimiento.DataSource = listaProvincia;
-            cmbProvinciaNacimiento.Text = this.dInternoGlobal.provincia_nacimiento.provincia;
-
-            //Carga de combo departamento
-            NDepartamento nDepartamento = new NDepartamento();
-            cmbDepartamentoNacimiento.ValueMember = "id_departamento";
-            cmbDepartamentoNacimiento.DisplayMember = "departamento";
-            (List<DDepartamento> listaDepartamento, string errorResponseDepartamento) = await nDepartamento.RetornarListaDepartamentoXProvincia(this.dInternoGlobal.provincia_nacimiento.id_provincia);
-            cmbDepartamentoNacimiento.DataSource = listaDepartamento;
-            cmbDepartamentoNacimiento.Text = this.dInternoGlobal.departamento_nacimiento.departamento;
 
             this.HabilitarDatosFiliatorios(true);
             cmbNacionalidad.Focus();
@@ -629,31 +622,74 @@ namespace CapaPresentacion
             //limpiar errores de provider
             errorProvider.Clear();
             //cargar datos del interno
+            this.establecerProvinciaInterno = true;
+            this.establecerDepartamentoInterno = true;
+            
             this.CargarControlesInformacionInterno();
             this.HabilitarDatosFiliatorios(false);
         }
 
-        private async void cmbNacionalidad_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbNacionalidad_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            this.seleccionarNacionalidad(Convert.ToString(this.cmbNacionalidad.SelectedValue));
+            
+        }
+
+        private void cmbProvinciaNacimiento_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            this.seleccionarProvincia(Convert.ToString(this.cmbProvinciaNacimiento.SelectedValue));
+        }
+
+
+        //SELECCIONAR NACIONALIDAD
+        private async void seleccionarNacionalidad(string idNacionalidad)
         {
             //Carga de combo provincia
             NProvincia nProvincia = new NProvincia();
-            string id_paiss = Convert.ToString(this.cmbNacionalidad.SelectedValue);
             cmbProvinciaNacimiento.ValueMember = "id_provincia";
             cmbProvinciaNacimiento.DisplayMember = "provincia";
+            MessageBox.Show("en nacionalidad2");
+            string id_paiss = idNacionalidad;
             (List<DProvincia> listaProvincia, string errorResponseProvincia) = await nProvincia.RetornarListaProvinciasXPais(id_paiss);
-
             cmbProvinciaNacimiento.DataSource = listaProvincia;
+
+            this.seleccionarProvincia(Convert.ToString(this.cmbProvinciaNacimiento.SelectedValue));
         }
 
-        private async void cmbProvinciaNacimiento_SelectedIndexChanged(object sender, EventArgs e)
+        //CARGAR PROVINCIAS
+        private async void cargarProvinciasDepartamentosEditar()
+        {
+            //Carga de combo provincia
+            NProvincia nProvincia = new NProvincia();
+            cmbProvinciaNacimiento.ValueMember = "id_provincia";
+            cmbProvinciaNacimiento.DisplayMember = "provincia";
+            MessageBox.Show("en nacionalidad2");
+            string id_paiss = this.dInternoGlobal.nacionalidad_id;
+            (List<DProvincia> listaProvincia, string errorResponseProvincia) = await nProvincia.RetornarListaProvinciasXPais(id_paiss);
+            cmbProvinciaNacimiento.DataSource = listaProvincia;
+            cmbProvinciaNacimiento.Text = this.dInternoGlobal.provincia_nacimiento.provincia;
+
+            //Carga de combo departamento
+            NDepartamento nDepartamento = new NDepartamento();
+            cmbDepartamentoNacimiento.ValueMember = "id_departamento";
+            cmbDepartamentoNacimiento.DisplayMember = "departamento";
+            MessageBox.Show("en provincia2");
+            string provincia_identificador = this.dInternoGlobal.provincia_nacimiento_id;
+            (List<DDepartamento> listaDepartamento, string errorResponseDepartamento) = await nDepartamento.RetornarListaDepartamentoXProvincia(provincia_identificador);
+            cmbDepartamentoNacimiento.DataSource = listaDepartamento;
+            cmbDepartamentoNacimiento.Text = this.dInternoGlobal.departamento_nacimiento.departamento;
+        }
+
+        //SELECCIONAR PROVINCIA
+        private async void seleccionarProvincia(string idProvincia)
         {
             //Carga de combo departamento
             NDepartamento nDepartamento = new NDepartamento();
-            string provincia_identificador = Convert.ToString(this.cmbProvinciaNacimiento.SelectedValue);
             cmbDepartamentoNacimiento.ValueMember = "id_departamento";
             cmbDepartamentoNacimiento.DisplayMember = "departamento";
+            MessageBox.Show("en provincia2");
+            string provincia_identificador = idProvincia;
             (List<DDepartamento> listaDepartamento, string errorResponseDepartamento) = await nDepartamento.RetornarListaDepartamentoXProvincia(provincia_identificador);
-            //MessageBox.Show("el paramentro es: " + provincia_identificador);
             cmbDepartamentoNacimiento.DataSource = listaDepartamento;
         }
 
@@ -784,6 +820,7 @@ namespace CapaPresentacion
             cmbNarizTamanio.Enabled = valor;
             cmbPeloTipo.Enabled = valor;
             cmbPeloColor.Enabled = valor;
+            txtMarcasCorporales.ReadOnly = !valor;
 
             btnEditarCaracteristicasPersonales.Enabled = !valor;
             btnGuardarEditarCaracteristicasPersonales.Enabled = valor;

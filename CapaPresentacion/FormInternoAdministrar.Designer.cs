@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInternoAdministrar));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabInterno = new System.Windows.Forms.TabControl();
             this.tabDatosPrincipales = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -49,6 +49,8 @@
             this.label68 = new System.Windows.Forms.Label();
             this.btnEditarFotos = new System.Windows.Forms.Button();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.label90 = new System.Windows.Forms.Label();
+            this.txtMarcasCorporales = new System.Windows.Forms.TextBox();
             this.btnEditarCaracteristicasPersonales = new System.Windows.Forms.Button();
             this.btnGuardarEditarCaracteristicasPersonales = new System.Windows.Forms.Button();
             this.btnCancelarEditarCaracteristicasPersonales = new System.Windows.Forms.Button();
@@ -159,11 +161,11 @@
             this.dtpFechaAlojamiento = new System.Windows.Forms.DateTimePicker();
             this.label77 = new System.Windows.Forms.Label();
             this.tabHistorialProcesal = new System.Windows.Forms.TabPage();
-            this.cmbTipoNovedad = new System.Windows.Forms.ComboBox();
-            this.label84 = new System.Windows.Forms.Label();
             this.btnVerHistorial = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.cmbTipoNovedad = new System.Windows.Forms.ComboBox();
             this.dtgHistorialProcesal = new System.Windows.Forms.DataGridView();
+            this.label84 = new System.Windows.Forms.Label();
             this.btnNuevoHistorial = new System.Windows.Forms.Button();
             this.tabProgresividad = new System.Windows.Forms.TabPage();
             this.gboxCondutaConcepto = new System.Windows.Forms.GroupBox();
@@ -296,8 +298,6 @@
             this.label56 = new System.Windows.Forms.Label();
             this.txtIdDomicilio = new System.Windows.Forms.TextBox();
             this.label57 = new System.Windows.Forms.Label();
-            this.label90 = new System.Windows.Forms.Label();
-            this.txtMarcasCorporales = new System.Windows.Forms.TextBox();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -586,6 +586,27 @@
             this.groupBox15.TabIndex = 69;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Caracteristicas personales";
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label90.Location = new System.Drawing.Point(8, 157);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(142, 15);
+            this.label90.TabIndex = 234;
+            this.label90.Text = "MARCAS CORPORALES";
+            // 
+            // txtMarcasCorporales
+            // 
+            this.txtMarcasCorporales.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMarcasCorporales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMarcasCorporales.Location = new System.Drawing.Point(10, 174);
+            this.txtMarcasCorporales.Multiline = true;
+            this.txtMarcasCorporales.Name = "txtMarcasCorporales";
+            this.txtMarcasCorporales.ReadOnly = true;
+            this.txtMarcasCorporales.Size = new System.Drawing.Size(470, 85);
+            this.txtMarcasCorporales.TabIndex = 233;
             // 
             // btnEditarCaracteristicasPersonales
             // 
@@ -1091,7 +1112,7 @@
             this.cmbNacionalidad.Name = "cmbNacionalidad";
             this.cmbNacionalidad.Size = new System.Drawing.Size(240, 23);
             this.cmbNacionalidad.TabIndex = 204;
-            this.cmbNacionalidad.SelectedIndexChanged += new System.EventHandler(this.cmbNacionalidad_SelectedIndexChanged);
+            this.cmbNacionalidad.SelectionChangeCommitted += new System.EventHandler(this.cmbNacionalidad_SelectionChangeCommitted);
             // 
             // label88
             // 
@@ -1132,7 +1153,7 @@
             this.cmbProvinciaNacimiento.Name = "cmbProvinciaNacimiento";
             this.cmbProvinciaNacimiento.Size = new System.Drawing.Size(240, 23);
             this.cmbProvinciaNacimiento.TabIndex = 205;
-            this.cmbProvinciaNacimiento.SelectedIndexChanged += new System.EventHandler(this.cmbProvinciaNacimiento_SelectedIndexChanged);
+            this.cmbProvinciaNacimiento.SelectionChangeCommitted += new System.EventHandler(this.cmbProvinciaNacimiento_SelectionChangeCommitted);
             // 
             // label89
             // 
@@ -1846,8 +1867,6 @@
             // 
             // tabHistorialProcesal
             // 
-            this.tabHistorialProcesal.Controls.Add(this.cmbTipoNovedad);
-            this.tabHistorialProcesal.Controls.Add(this.label84);
             this.tabHistorialProcesal.Controls.Add(this.btnVerHistorial);
             this.tabHistorialProcesal.Controls.Add(this.groupBox8);
             this.tabHistorialProcesal.Controls.Add(this.btnNuevoHistorial);
@@ -1859,25 +1878,6 @@
             this.tabHistorialProcesal.Text = "Historial procesal";
             this.tabHistorialProcesal.UseVisualStyleBackColor = true;
             // 
-            // cmbTipoNovedad
-            // 
-            this.cmbTipoNovedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTipoNovedad.FormattingEnabled = true;
-            this.cmbTipoNovedad.Location = new System.Drawing.Point(343, 26);
-            this.cmbTipoNovedad.Name = "cmbTipoNovedad";
-            this.cmbTipoNovedad.Size = new System.Drawing.Size(242, 23);
-            this.cmbTipoNovedad.TabIndex = 299;
-            // 
-            // label84
-            // 
-            this.label84.AutoSize = true;
-            this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label84.Location = new System.Drawing.Point(341, 11);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(136, 13);
-            this.label84.TabIndex = 300;
-            this.label84.Text = "FILTRAR TIPO NOVEDAD";
-            // 
             // btnVerHistorial
             // 
             this.btnVerHistorial.BackColor = System.Drawing.Color.White;
@@ -1887,7 +1887,7 @@
             this.btnVerHistorial.ForeColor = System.Drawing.Color.RoyalBlue;
             this.btnVerHistorial.Location = new System.Drawing.Point(27, 12);
             this.btnVerHistorial.Name = "btnVerHistorial";
-            this.btnVerHistorial.Size = new System.Drawing.Size(125, 40);
+            this.btnVerHistorial.Size = new System.Drawing.Size(98, 30);
             this.btnVerHistorial.TabIndex = 239;
             this.btnVerHistorial.Text = "Ver historial";
             this.btnVerHistorial.UseVisualStyleBackColor = false;
@@ -1895,28 +1895,49 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.cmbTipoNovedad);
             this.groupBox8.Controls.Add(this.dtgHistorialProcesal);
+            this.groupBox8.Controls.Add(this.label84);
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.Location = new System.Drawing.Point(10, 63);
+            this.groupBox8.Location = new System.Drawing.Point(10, 51);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(1051, 620);
+            this.groupBox8.Size = new System.Drawing.Size(1051, 632);
             this.groupBox8.TabIndex = 295;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Historial procesal";
             // 
+            // cmbTipoNovedad
+            // 
+            this.cmbTipoNovedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipoNovedad.FormattingEnabled = true;
+            this.cmbTipoNovedad.Location = new System.Drawing.Point(11, 33);
+            this.cmbTipoNovedad.Name = "cmbTipoNovedad";
+            this.cmbTipoNovedad.Size = new System.Drawing.Size(271, 23);
+            this.cmbTipoNovedad.TabIndex = 299;
+            // 
             // dtgHistorialProcesal
             // 
             this.dtgHistorialProcesal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgHistorialProcesal.Location = new System.Drawing.Point(12, 21);
+            this.dtgHistorialProcesal.Location = new System.Drawing.Point(12, 68);
             this.dtgHistorialProcesal.Name = "dtgHistorialProcesal";
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgHistorialProcesal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgHistorialProcesal.Size = new System.Drawing.Size(1033, 588);
+            this.dtgHistorialProcesal.Size = new System.Drawing.Size(1033, 579);
             this.dtgHistorialProcesal.TabIndex = 63;
             this.dtgHistorialProcesal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtgHistorialProcesal_KeyDown);
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label84.Location = new System.Drawing.Point(9, 18);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(136, 13);
+            this.label84.TabIndex = 300;
+            this.label84.Text = "FILTRAR TIPO NOVEDAD";
             // 
             // btnNuevoHistorial
             // 
@@ -1925,9 +1946,9 @@
             this.btnNuevoHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevoHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoHistorial.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnNuevoHistorial.Location = new System.Drawing.Point(160, 11);
+            this.btnNuevoHistorial.Location = new System.Drawing.Point(131, 11);
             this.btnNuevoHistorial.Name = "btnNuevoHistorial";
-            this.btnNuevoHistorial.Size = new System.Drawing.Size(125, 40);
+            this.btnNuevoHistorial.Size = new System.Drawing.Size(98, 30);
             this.btnNuevoHistorial.TabIndex = 298;
             this.btnNuevoHistorial.Text = "Nuevo";
             this.btnNuevoHistorial.UseVisualStyleBackColor = false;
@@ -1959,7 +1980,7 @@
             this.gboxCondutaConcepto.Controls.Add(this.btnCancelarConductaConcepto);
             this.gboxCondutaConcepto.Location = new System.Drawing.Point(10, 272);
             this.gboxCondutaConcepto.Name = "gboxCondutaConcepto";
-            this.gboxCondutaConcepto.Size = new System.Drawing.Size(549, 128);
+            this.gboxCondutaConcepto.Size = new System.Drawing.Size(657, 135);
             this.gboxCondutaConcepto.TabIndex = 280;
             this.gboxCondutaConcepto.TabStop = false;
             this.gboxCondutaConcepto.Text = "Conducta / Concepto";
@@ -2031,9 +2052,9 @@
             this.btnEditarConductaConcepto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarConductaConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarConductaConcepto.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarConductaConcepto.Location = new System.Drawing.Point(219, 77);
+            this.btnEditarConductaConcepto.Location = new System.Drawing.Point(548, 21);
             this.btnEditarConductaConcepto.Name = "btnEditarConductaConcepto";
-            this.btnEditarConductaConcepto.Size = new System.Drawing.Size(98, 40);
+            this.btnEditarConductaConcepto.Size = new System.Drawing.Size(98, 30);
             this.btnEditarConductaConcepto.TabIndex = 0;
             this.btnEditarConductaConcepto.Text = "EDITAR";
             this.btnEditarConductaConcepto.UseVisualStyleBackColor = false;
@@ -2047,9 +2068,9 @@
             this.btnGuardarConductaConepto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarConductaConepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarConductaConepto.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardarConductaConepto.Location = new System.Drawing.Point(329, 77);
+            this.btnGuardarConductaConepto.Location = new System.Drawing.Point(548, 57);
             this.btnGuardarConductaConepto.Name = "btnGuardarConductaConepto";
-            this.btnGuardarConductaConepto.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarConductaConepto.Size = new System.Drawing.Size(98, 30);
             this.btnGuardarConductaConepto.TabIndex = 4;
             this.btnGuardarConductaConepto.Text = "Guardar";
             this.btnGuardarConductaConepto.UseVisualStyleBackColor = false;
@@ -2063,9 +2084,9 @@
             this.btnCancelarConductaConcepto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarConductaConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarConductaConcepto.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarConductaConcepto.Location = new System.Drawing.Point(437, 77);
+            this.btnCancelarConductaConcepto.Location = new System.Drawing.Point(548, 92);
             this.btnCancelarConductaConcepto.Name = "btnCancelarConductaConcepto";
-            this.btnCancelarConductaConcepto.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarConductaConcepto.Size = new System.Drawing.Size(98, 30);
             this.btnCancelarConductaConcepto.TabIndex = 5;
             this.btnCancelarConductaConcepto.Text = "Cancelar";
             this.btnCancelarConductaConcepto.UseVisualStyleBackColor = false;
@@ -2088,7 +2109,7 @@
             this.gboxProgresividad.Controls.Add(this.label66);
             this.gboxProgresividad.Controls.Add(this.btnGuardarProgresividad);
             this.gboxProgresividad.Controls.Add(this.btnCancelarProgresividad);
-            this.gboxProgresividad.Location = new System.Drawing.Point(10, 408);
+            this.gboxProgresividad.Location = new System.Drawing.Point(10, 413);
             this.gboxProgresividad.Name = "gboxProgresividad";
             this.gboxProgresividad.Size = new System.Drawing.Size(657, 270);
             this.gboxProgresividad.TabIndex = 269;
@@ -2198,7 +2219,7 @@
             this.btnEditarProgresividad.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnEditarProgresividad.Location = new System.Drawing.Point(548, 21);
             this.btnEditarProgresividad.Name = "btnEditarProgresividad";
-            this.btnEditarProgresividad.Size = new System.Drawing.Size(98, 40);
+            this.btnEditarProgresividad.Size = new System.Drawing.Size(98, 30);
             this.btnEditarProgresividad.TabIndex = 0;
             this.btnEditarProgresividad.Text = "EDITAR";
             this.btnEditarProgresividad.UseVisualStyleBackColor = false;
@@ -2243,9 +2264,9 @@
             this.btnGuardarProgresividad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarProgresividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarProgresividad.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardarProgresividad.Location = new System.Drawing.Point(548, 69);
+            this.btnGuardarProgresividad.Location = new System.Drawing.Point(548, 57);
             this.btnGuardarProgresividad.Name = "btnGuardarProgresividad";
-            this.btnGuardarProgresividad.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarProgresividad.Size = new System.Drawing.Size(98, 30);
             this.btnGuardarProgresividad.TabIndex = 9;
             this.btnGuardarProgresividad.Text = "Guardar";
             this.btnGuardarProgresividad.UseVisualStyleBackColor = false;
@@ -2259,9 +2280,9 @@
             this.btnCancelarProgresividad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarProgresividad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarProgresividad.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarProgresividad.Location = new System.Drawing.Point(548, 115);
+            this.btnCancelarProgresividad.Location = new System.Drawing.Point(548, 93);
             this.btnCancelarProgresividad.Name = "btnCancelarProgresividad";
-            this.btnCancelarProgresividad.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarProgresividad.Size = new System.Drawing.Size(98, 30);
             this.btnCancelarProgresividad.TabIndex = 10;
             this.btnCancelarProgresividad.Text = "Cancelar";
             this.btnCancelarProgresividad.UseVisualStyleBackColor = false;
@@ -2319,7 +2340,7 @@
             this.btnEditarAlojamiento.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnEditarAlojamiento.Location = new System.Drawing.Point(548, 19);
             this.btnEditarAlojamiento.Name = "btnEditarAlojamiento";
-            this.btnEditarAlojamiento.Size = new System.Drawing.Size(98, 40);
+            this.btnEditarAlojamiento.Size = new System.Drawing.Size(98, 30);
             this.btnEditarAlojamiento.TabIndex = 0;
             this.btnEditarAlojamiento.Text = "EDITAR";
             this.btnEditarAlojamiento.UseVisualStyleBackColor = false;
@@ -2385,9 +2406,9 @@
             this.btnGuardarAlojamiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarAlojamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarAlojamiento.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardarAlojamiento.Location = new System.Drawing.Point(548, 71);
+            this.btnGuardarAlojamiento.Location = new System.Drawing.Point(548, 54);
             this.btnGuardarAlojamiento.Name = "btnGuardarAlojamiento";
-            this.btnGuardarAlojamiento.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarAlojamiento.Size = new System.Drawing.Size(98, 30);
             this.btnGuardarAlojamiento.TabIndex = 7;
             this.btnGuardarAlojamiento.Text = "Guardar";
             this.btnGuardarAlojamiento.UseVisualStyleBackColor = false;
@@ -2401,9 +2422,9 @@
             this.btnCancelarAlojamiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarAlojamiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarAlojamiento.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarAlojamiento.Location = new System.Drawing.Point(548, 123);
+            this.btnCancelarAlojamiento.Location = new System.Drawing.Point(548, 89);
             this.btnCancelarAlojamiento.Name = "btnCancelarAlojamiento";
-            this.btnCancelarAlojamiento.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarAlojamiento.Size = new System.Drawing.Size(98, 30);
             this.btnCancelarAlojamiento.TabIndex = 8;
             this.btnCancelarAlojamiento.Text = "Cancelar";
             this.btnCancelarAlojamiento.UseVisualStyleBackColor = false;
@@ -2474,7 +2495,7 @@
             this.btnVerTraslados.ForeColor = System.Drawing.Color.RoyalBlue;
             this.btnVerTraslados.Location = new System.Drawing.Point(15, 15);
             this.btnVerTraslados.Name = "btnVerTraslados";
-            this.btnVerTraslados.Size = new System.Drawing.Size(125, 40);
+            this.btnVerTraslados.Size = new System.Drawing.Size(115, 30);
             this.btnVerTraslados.TabIndex = 96;
             this.btnVerTraslados.Text = "Ver traslados";
             this.btnVerTraslados.UseVisualStyleBackColor = false;
@@ -2487,9 +2508,9 @@
             this.btnImprimirTraslados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimirTraslados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimirTraslados.ForeColor = System.Drawing.Color.Indigo;
-            this.btnImprimirTraslados.Location = new System.Drawing.Point(772, 21);
+            this.btnImprimirTraslados.Location = new System.Drawing.Point(772, 15);
             this.btnImprimirTraslados.Name = "btnImprimirTraslados";
-            this.btnImprimirTraslados.Size = new System.Drawing.Size(194, 40);
+            this.btnImprimirTraslados.Size = new System.Drawing.Size(98, 30);
             this.btnImprimirTraslados.TabIndex = 95;
             this.btnImprimirTraslados.Text = "Imprimir";
             this.btnImprimirTraslados.UseVisualStyleBackColor = false;
@@ -2502,7 +2523,7 @@
             this.groupBox9.Controls.Add(this.label55);
             this.groupBox9.Controls.Add(this.txtObsProcesarTraslado);
             this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox9.Location = new System.Drawing.Point(623, 255);
+            this.groupBox9.Location = new System.Drawing.Point(619, 274);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(445, 391);
             this.groupBox9.TabIndex = 94;
@@ -2516,9 +2537,9 @@
             this.btnGuardarTrasladoARA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarTrasladoARA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarTrasladoARA.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardarTrasladoARA.Location = new System.Drawing.Point(8, 249);
+            this.btnGuardarTrasladoARA.Location = new System.Drawing.Point(211, 246);
             this.btnGuardarTrasladoARA.Name = "btnGuardarTrasladoARA";
-            this.btnGuardarTrasladoARA.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarTrasladoARA.Size = new System.Drawing.Size(98, 30);
             this.btnGuardarTrasladoARA.TabIndex = 237;
             this.btnGuardarTrasladoARA.Text = "GUARDAR";
             this.btnGuardarTrasladoARA.UseVisualStyleBackColor = false;
@@ -2531,9 +2552,9 @@
             this.btnCancelarTrasladoARA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarTrasladoARA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarTrasladoARA.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarTrasladoARA.Location = new System.Drawing.Point(122, 249);
+            this.btnCancelarTrasladoARA.Location = new System.Drawing.Point(325, 246);
             this.btnCancelarTrasladoARA.Name = "btnCancelarTrasladoARA";
-            this.btnCancelarTrasladoARA.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarTrasladoARA.Size = new System.Drawing.Size(98, 30);
             this.btnCancelarTrasladoARA.TabIndex = 238;
             this.btnCancelarTrasladoARA.Text = "CANCELAR";
             this.btnCancelarTrasladoARA.UseVisualStyleBackColor = false;
@@ -2548,7 +2569,7 @@
             this.btnAnularTraslado.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnAnularTraslado.Location = new System.Drawing.Point(6, 30);
             this.btnAnularTraslado.Name = "btnAnularTraslado";
-            this.btnAnularTraslado.Size = new System.Drawing.Size(125, 40);
+            this.btnAnularTraslado.Size = new System.Drawing.Size(98, 30);
             this.btnAnularTraslado.TabIndex = 236;
             this.btnAnularTraslado.Text = "Anular";
             this.btnAnularTraslado.UseVisualStyleBackColor = false;
@@ -2558,7 +2579,7 @@
             // 
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.Location = new System.Drawing.Point(5, 79);
+            this.label55.Location = new System.Drawing.Point(5, 72);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(63, 15);
             this.label55.TabIndex = 78;
@@ -2569,7 +2590,7 @@
             this.txtObsProcesarTraslado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtObsProcesarTraslado.Enabled = false;
             this.txtObsProcesarTraslado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtObsProcesarTraslado.Location = new System.Drawing.Point(8, 96);
+            this.txtObsProcesarTraslado.Location = new System.Drawing.Point(8, 89);
             this.txtObsProcesarTraslado.Multiline = true;
             this.txtObsProcesarTraslado.Name = "txtObsProcesarTraslado";
             this.txtObsProcesarTraslado.Size = new System.Drawing.Size(415, 134);
@@ -2584,7 +2605,7 @@
             this.btnTrasladar.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnTrasladar.Location = new System.Drawing.Point(151, 15);
             this.btnTrasladar.Name = "btnTrasladar";
-            this.btnTrasladar.Size = new System.Drawing.Size(125, 40);
+            this.btnTrasladar.Size = new System.Drawing.Size(98, 30);
             this.btnTrasladar.TabIndex = 235;
             this.btnTrasladar.Text = "Trasladar";
             this.btnTrasladar.UseVisualStyleBackColor = false;
@@ -2594,9 +2615,9 @@
             // 
             this.groupBox7.Controls.Add(this.dtgvTraslados);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(15, 66);
+            this.groupBox7.Location = new System.Drawing.Point(15, 52);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(974, 183);
+            this.groupBox7.Size = new System.Drawing.Size(974, 215);
             this.groupBox7.TabIndex = 92;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Traslados";
@@ -2607,7 +2628,7 @@
             this.dtgvTraslados.Location = new System.Drawing.Point(12, 20);
             this.dtgvTraslados.Name = "dtgvTraslados";
             this.dtgvTraslados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvTraslados.Size = new System.Drawing.Size(939, 151);
+            this.dtgvTraslados.Size = new System.Drawing.Size(939, 185);
             this.dtgvTraslados.TabIndex = 63;
             this.dtgvTraslados.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtgvTraslados_KeyDown);
             // 
@@ -2635,7 +2656,7 @@
             this.groupBox5.Controls.Add(this.label39);
             this.groupBox5.Controls.Add(this.txtIdTraslado);
             this.groupBox5.Controls.Add(this.label25);
-            this.groupBox5.Location = new System.Drawing.Point(13, 256);
+            this.groupBox5.Location = new System.Drawing.Point(13, 274);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(597, 390);
             this.groupBox5.TabIndex = 79;
@@ -2900,7 +2921,7 @@
             this.btnEditarEgreso.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnEditarEgreso.Location = new System.Drawing.Point(187, 304);
             this.btnEditarEgreso.Name = "btnEditarEgreso";
-            this.btnEditarEgreso.Size = new System.Drawing.Size(98, 40);
+            this.btnEditarEgreso.Size = new System.Drawing.Size(98, 30);
             this.btnEditarEgreso.TabIndex = 0;
             this.btnEditarEgreso.Text = "EDITAR";
             this.btnEditarEgreso.UseVisualStyleBackColor = false;
@@ -2968,7 +2989,7 @@
             this.btnGuardarEgreso.ForeColor = System.Drawing.Color.Green;
             this.btnGuardarEgreso.Location = new System.Drawing.Point(295, 304);
             this.btnGuardarEgreso.Name = "btnGuardarEgreso";
-            this.btnGuardarEgreso.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarEgreso.Size = new System.Drawing.Size(98, 30);
             this.btnGuardarEgreso.TabIndex = 6;
             this.btnGuardarEgreso.Text = "Guardar";
             this.btnGuardarEgreso.UseVisualStyleBackColor = false;
@@ -2984,7 +3005,7 @@
             this.btnCancelarEgreso.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnCancelarEgreso.Location = new System.Drawing.Point(409, 304);
             this.btnCancelarEgreso.Name = "btnCancelarEgreso";
-            this.btnCancelarEgreso.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarEgreso.Size = new System.Drawing.Size(98, 30);
             this.btnCancelarEgreso.TabIndex = 7;
             this.btnCancelarEgreso.Text = "Cancelar";
             this.btnCancelarEgreso.UseVisualStyleBackColor = false;
@@ -3074,7 +3095,7 @@
             this.btnVerDomicilios.ForeColor = System.Drawing.Color.RoyalBlue;
             this.btnVerDomicilios.Location = new System.Drawing.Point(15, 15);
             this.btnVerDomicilios.Name = "btnVerDomicilios";
-            this.btnVerDomicilios.Size = new System.Drawing.Size(125, 40);
+            this.btnVerDomicilios.Size = new System.Drawing.Size(125, 30);
             this.btnVerDomicilios.TabIndex = 240;
             this.btnVerDomicilios.Text = "Ver Domicilios";
             this.btnVerDomicilios.UseVisualStyleBackColor = false;
@@ -3088,7 +3109,7 @@
             this.gboxAnularDomicilio.Controls.Add(this.label34);
             this.gboxAnularDomicilio.Controls.Add(this.txtDetalleAnulardomicilio);
             this.gboxAnularDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gboxAnularDomicilio.Location = new System.Drawing.Point(623, 305);
+            this.gboxAnularDomicilio.Location = new System.Drawing.Point(623, 301);
             this.gboxAnularDomicilio.Name = "gboxAnularDomicilio";
             this.gboxAnularDomicilio.Size = new System.Drawing.Size(366, 227);
             this.gboxAnularDomicilio.TabIndex = 238;
@@ -3104,7 +3125,7 @@
             this.btnAnularDomicilio.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnAnularDomicilio.Location = new System.Drawing.Point(10, 27);
             this.btnAnularDomicilio.Name = "btnAnularDomicilio";
-            this.btnAnularDomicilio.Size = new System.Drawing.Size(125, 40);
+            this.btnAnularDomicilio.Size = new System.Drawing.Size(98, 30);
             this.btnAnularDomicilio.TabIndex = 239;
             this.btnAnularDomicilio.Text = "Anular";
             this.btnAnularDomicilio.UseVisualStyleBackColor = false;
@@ -3118,9 +3139,9 @@
             this.btnGuardarAnulardomicilio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarAnulardomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarAnulardomicilio.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardarAnulardomicilio.Location = new System.Drawing.Point(10, 175);
+            this.btnGuardarAnulardomicilio.Location = new System.Drawing.Point(132, 161);
             this.btnGuardarAnulardomicilio.Name = "btnGuardarAnulardomicilio";
-            this.btnGuardarAnulardomicilio.Size = new System.Drawing.Size(98, 40);
+            this.btnGuardarAnulardomicilio.Size = new System.Drawing.Size(98, 30);
             this.btnGuardarAnulardomicilio.TabIndex = 237;
             this.btnGuardarAnulardomicilio.Text = "GUARDAR";
             this.btnGuardarAnulardomicilio.UseVisualStyleBackColor = false;
@@ -3134,9 +3155,9 @@
             this.btnCancelarAnulardomicilio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarAnulardomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarAnulardomicilio.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarAnulardomicilio.Location = new System.Drawing.Point(124, 175);
+            this.btnCancelarAnulardomicilio.Location = new System.Drawing.Point(246, 161);
             this.btnCancelarAnulardomicilio.Name = "btnCancelarAnulardomicilio";
-            this.btnCancelarAnulardomicilio.Size = new System.Drawing.Size(98, 40);
+            this.btnCancelarAnulardomicilio.Size = new System.Drawing.Size(98, 30);
             this.btnCancelarAnulardomicilio.TabIndex = 238;
             this.btnCancelarAnulardomicilio.Text = "CANCELAR";
             this.btnCancelarAnulardomicilio.UseVisualStyleBackColor = false;
@@ -3146,7 +3167,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(7, 79);
+            this.label34.Location = new System.Drawing.Point(7, 65);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(63, 15);
             this.label34.TabIndex = 78;
@@ -3157,7 +3178,7 @@
             this.txtDetalleAnulardomicilio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDetalleAnulardomicilio.Enabled = false;
             this.txtDetalleAnulardomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetalleAnulardomicilio.Location = new System.Drawing.Point(10, 96);
+            this.txtDetalleAnulardomicilio.Location = new System.Drawing.Point(10, 82);
             this.txtDetalleAnulardomicilio.Multiline = true;
             this.txtDetalleAnulardomicilio.Name = "txtDetalleAnulardomicilio";
             this.txtDetalleAnulardomicilio.Size = new System.Drawing.Size(335, 67);
@@ -3172,7 +3193,7 @@
             this.btnNuevoDomicilio.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnNuevoDomicilio.Location = new System.Drawing.Point(151, 15);
             this.btnNuevoDomicilio.Name = "btnNuevoDomicilio";
-            this.btnNuevoDomicilio.Size = new System.Drawing.Size(125, 40);
+            this.btnNuevoDomicilio.Size = new System.Drawing.Size(98, 30);
             this.btnNuevoDomicilio.TabIndex = 241;
             this.btnNuevoDomicilio.Text = "Nuevo ";
             this.btnNuevoDomicilio.UseVisualStyleBackColor = false;
@@ -3182,7 +3203,7 @@
             // 
             this.gboxDomicilios.Controls.Add(this.dtgDomicilios);
             this.gboxDomicilios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gboxDomicilios.Location = new System.Drawing.Point(15, 66);
+            this.gboxDomicilios.Location = new System.Drawing.Point(15, 58);
             this.gboxDomicilios.Name = "gboxDomicilios";
             this.gboxDomicilios.Size = new System.Drawing.Size(974, 233);
             this.gboxDomicilios.TabIndex = 237;
@@ -3227,7 +3248,7 @@
             this.gboxDomicilio.Controls.Add(this.label56);
             this.gboxDomicilio.Controls.Add(this.txtIdDomicilio);
             this.gboxDomicilio.Controls.Add(this.label57);
-            this.gboxDomicilio.Location = new System.Drawing.Point(13, 306);
+            this.gboxDomicilio.Location = new System.Drawing.Point(13, 302);
             this.gboxDomicilio.Name = "gboxDomicilio";
             this.gboxDomicilio.Size = new System.Drawing.Size(597, 330);
             this.gboxDomicilio.TabIndex = 236;
@@ -3273,7 +3294,7 @@
             this.btnEditarDomicilio.ForeColor = System.Drawing.Color.DarkCyan;
             this.btnEditarDomicilio.Location = new System.Drawing.Point(455, 280);
             this.btnEditarDomicilio.Name = "btnEditarDomicilio";
-            this.btnEditarDomicilio.Size = new System.Drawing.Size(125, 40);
+            this.btnEditarDomicilio.Size = new System.Drawing.Size(98, 30);
             this.btnEditarDomicilio.TabIndex = 237;
             this.btnEditarDomicilio.Text = "EDITAR";
             this.btnEditarDomicilio.UseVisualStyleBackColor = false;
@@ -3488,27 +3509,6 @@
             this.label57.TabIndex = 72;
             this.label57.Text = "USUARIO CARGA:";
             // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label90.Location = new System.Drawing.Point(8, 157);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(142, 15);
-            this.label90.TabIndex = 234;
-            this.label90.Text = "MARCAS CORPORALES";
-            // 
-            // txtMarcasCorporales
-            // 
-            this.txtMarcasCorporales.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMarcasCorporales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMarcasCorporales.Location = new System.Drawing.Point(10, 174);
-            this.txtMarcasCorporales.Multiline = true;
-            this.txtMarcasCorporales.Name = "txtMarcasCorporales";
-            this.txtMarcasCorporales.ReadOnly = true;
-            this.txtMarcasCorporales.Size = new System.Drawing.Size(470, 85);
-            this.txtMarcasCorporales.TabIndex = 233;
-            // 
             // FormInternoAdministrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3546,8 +3546,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabHistorialProcesal.ResumeLayout(false);
-            this.tabHistorialProcesal.PerformLayout();
             this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgHistorialProcesal)).EndInit();
             this.tabProgresividad.ResumeLayout(false);
             this.gboxCondutaConcepto.ResumeLayout(false);

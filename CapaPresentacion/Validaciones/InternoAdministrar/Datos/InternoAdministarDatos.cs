@@ -23,6 +23,7 @@ namespace CapaPresentacion.Validaciones.InternoAdministrar.Datos
         public string cmbNarizTamanio { get; set; }
         public string cmbPeloTipo { get; set; }
         public string cmbPeloColor { get; set; }
+        public string txtMarcasCorporales { get; set; }
         public string cmbNacionalidad { get; set; }
         public string cmbProvinciaNacimiento { get; set; }
         public string cmbDepartamentoNacimiento { get; set; }

@@ -32,6 +32,8 @@ namespace CapaDatos
         public DPeloColor pelo_color { get; set; }
         public string piel_id { get; set; }
         public DPiel piel { get; set; }
+        public string marcas_corporales { get; set; }
+
         public string nacionalidad_id { get; set; }
         public DNacionalidad nacionalidad { get; set; }
         public string provincia_nacimiento_id { get; set; }

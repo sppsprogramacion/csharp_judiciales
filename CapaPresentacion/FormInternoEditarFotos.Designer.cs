@@ -156,7 +156,7 @@
             this.groupFotos.Controls.Add(this.btnSubir);
             this.groupFotos.Location = new System.Drawing.Point(15, 8);
             this.groupFotos.Name = "groupFotos";
-            this.groupFotos.Size = new System.Drawing.Size(523, 374);
+            this.groupFotos.Size = new System.Drawing.Size(523, 364);
             this.groupFotos.TabIndex = 79;
             this.groupFotos.TabStop = false;
             // 
@@ -169,7 +169,7 @@
             this.btnCerrar.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnCerrar.Location = new System.Drawing.Point(419, 323);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(98, 40);
+            this.btnCerrar.Size = new System.Drawing.Size(98, 30);
             this.btnCerrar.TabIndex = 229;
             this.btnCerrar.Text = "CERRAR";
             this.btnCerrar.UseVisualStyleBackColor = false;
@@ -219,7 +219,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(549, 394);
+            this.ClientSize = new System.Drawing.Size(549, 379);
             this.Controls.Add(this.groupFotos);
             this.Name = "FormInternoEditarFotos";
             this.ShowInTaskbar = false;
