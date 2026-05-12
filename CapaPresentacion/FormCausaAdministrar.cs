@@ -182,6 +182,7 @@ namespace CapaPresentacion
                 txtPenaAnios = txtPenaAnios.Text,
                 txtPenaMeses = txtPenaMeses.Text,
                 txtPenaDias = txtPenaDias.Text,
+                
             };
 
             var validator = new CausaEstablecerCondenaValidation();
@@ -208,7 +209,9 @@ namespace CapaPresentacion
                 pena_anios = Convert.ToInt32(txtPenaAnios.Text),
                 pena_meses = Convert.ToInt32(txtPenaMeses.Text),
                 pena_dias = Convert.ToInt32(txtPenaDias.Text),
-                fecha_cumple_pena = dtpFechaCondena.Value
+                fecha_cumple_pena = dtpFechaCondena.Value,
+                esta_unificada = chkUnificado.Checked,
+                agoto_condena = chkAgotoCondena.Checked,
             };
 
             string dataCondenaEnviar = JsonConvert.SerializeObject(data);
@@ -484,6 +487,8 @@ namespace CapaPresentacion
             txtPenaAnios.Text = this.dCausaGlobal.pena_anios.ToString();
             txtPenaMeses.Text = this.dCausaGlobal.pena_meses.ToString();
             txtPenaDias.Text = this.dCausaGlobal.pena_dias.ToString();
+            chkUnificado.Checked = this.dCausaGlobal.esta_unificada;
+            chkAgotoCondena.Checked = this.dCausaGlobal.agoto_condena;
 
         }//FIN CARGAR DATOS DE CAUSA ......................................
 
@@ -519,6 +524,8 @@ namespace CapaPresentacion
             txtPenaAnios.Enabled = valor;
             txtPenaMeses.Enabled = valor;
             txtPenaDias.Enabled = valor;
+            chkUnificado.Enabled = valor;
+            chkAgotoCondena.Enabled = valor;
 
             btnQuitarDatosCondena.Enabled = !valor;
             btnEditarCondena.Enabled = !valor;

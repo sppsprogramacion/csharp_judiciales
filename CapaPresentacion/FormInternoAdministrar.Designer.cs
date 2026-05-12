@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInternoAdministrar));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabInterno = new System.Windows.Forms.TabControl();
             this.tabDatosPrincipales = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -298,6 +298,8 @@
             this.label56 = new System.Windows.Forms.Label();
             this.txtIdDomicilio = new System.Windows.Forms.TextBox();
             this.label57 = new System.Windows.Forms.Label();
+            this.gboxCausasAgotoCondena = new System.Windows.Forms.GroupBox();
+            this.dtgAgotoCondena = new System.Windows.Forms.DataGridView();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -332,6 +334,8 @@
             this.gboxDomicilios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDomicilios)).BeginInit();
             this.gboxDomicilio.SuspendLayout();
+            this.gboxCausasAgotoCondena.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgAgotoCondena)).BeginInit();
             this.SuspendLayout();
             // 
             // tabInterno
@@ -1414,6 +1418,7 @@
             // 
             // tabDatosIngreso
             // 
+            this.tabDatosIngreso.Controls.Add(this.gboxCausasAgotoCondena);
             this.tabDatosIngreso.Controls.Add(this.btnNuevaCausa);
             this.tabDatosIngreso.Controls.Add(this.groupBox3);
             this.tabDatosIngreso.Controls.Add(this.btnVerCausas);
@@ -1434,7 +1439,7 @@
             this.btnNuevaCausa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevaCausa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevaCausa.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnNuevaCausa.Location = new System.Drawing.Point(119, 246);
+            this.btnNuevaCausa.Location = new System.Drawing.Point(119, 237);
             this.btnNuevaCausa.Name = "btnNuevaCausa";
             this.btnNuevaCausa.Size = new System.Drawing.Size(110, 30);
             this.btnNuevaCausa.TabIndex = 240;
@@ -1446,9 +1451,9 @@
             // 
             this.groupBox3.Controls.Add(this.dtgvCausas);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(8, 285);
+            this.groupBox3.Location = new System.Drawing.Point(8, 273);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1051, 163);
+            this.groupBox3.Size = new System.Drawing.Size(1051, 144);
             this.groupBox3.TabIndex = 239;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Causas";
@@ -1459,7 +1464,7 @@
             this.dtgvCausas.Location = new System.Drawing.Point(6, 20);
             this.dtgvCausas.Name = "dtgvCausas";
             this.dtgvCausas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvCausas.Size = new System.Drawing.Size(1036, 136);
+            this.dtgvCausas.Size = new System.Drawing.Size(1036, 115);
             this.dtgvCausas.TabIndex = 2;
             this.dtgvCausas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtgvCausas_KeyDown_1);
             // 
@@ -1470,7 +1475,7 @@
             this.btnVerCausas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerCausas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerCausas.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.btnVerCausas.Location = new System.Drawing.Point(14, 246);
+            this.btnVerCausas.Location = new System.Drawing.Point(14, 237);
             this.btnVerCausas.Name = "btnVerCausas";
             this.btnVerCausas.Size = new System.Drawing.Size(98, 30);
             this.btnVerCausas.TabIndex = 238;
@@ -1482,9 +1487,9 @@
             // 
             this.groupBox4.Controls.Add(this.dtgvUnificaciones);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(8, 461);
+            this.groupBox4.Location = new System.Drawing.Point(8, 423);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1051, 163);
+            this.groupBox4.Size = new System.Drawing.Size(1051, 143);
             this.groupBox4.TabIndex = 236;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Causas unificada";
@@ -1495,7 +1500,7 @@
             this.dtgvUnificaciones.Location = new System.Drawing.Point(6, 20);
             this.dtgvUnificaciones.Name = "dtgvUnificaciones";
             this.dtgvUnificaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvUnificaciones.Size = new System.Drawing.Size(1036, 136);
+            this.dtgvUnificaciones.Size = new System.Drawing.Size(1036, 115);
             this.dtgvUnificaciones.TabIndex = 2;
             // 
             // groupBox2
@@ -1533,7 +1538,7 @@
             this.groupBox2.Controls.Add(this.label77);
             this.groupBox2.Location = new System.Drawing.Point(6, 7);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1055, 230);
+            this.groupBox2.Size = new System.Drawing.Size(1055, 220);
             this.groupBox2.TabIndex = 217;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ingreso de interno";
@@ -1665,7 +1670,7 @@
             this.btnEditarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarIngreso.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarIngreso.Location = new System.Drawing.Point(699, 188);
+            this.btnEditarIngreso.Location = new System.Drawing.Point(699, 183);
             this.btnEditarIngreso.Name = "btnEditarIngreso";
             this.btnEditarIngreso.Size = new System.Drawing.Size(98, 30);
             this.btnEditarIngreso.TabIndex = 245;
@@ -1761,7 +1766,7 @@
             this.btnGuardarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarIngreso.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardarIngreso.Location = new System.Drawing.Point(815, 188);
+            this.btnGuardarIngreso.Location = new System.Drawing.Point(815, 183);
             this.btnGuardarIngreso.Name = "btnGuardarIngreso";
             this.btnGuardarIngreso.Size = new System.Drawing.Size(98, 30);
             this.btnGuardarIngreso.TabIndex = 12;
@@ -1777,7 +1782,7 @@
             this.btnCancelarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarIngreso.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarIngreso.Location = new System.Drawing.Point(929, 188);
+            this.btnCancelarIngreso.Location = new System.Drawing.Point(929, 183);
             this.btnCancelarIngreso.Name = "btnCancelarIngreso";
             this.btnCancelarIngreso.Size = new System.Drawing.Size(98, 30);
             this.btnCancelarIngreso.TabIndex = 13;
@@ -1920,10 +1925,10 @@
             this.dtgHistorialProcesal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgHistorialProcesal.Location = new System.Drawing.Point(12, 68);
             this.dtgHistorialProcesal.Name = "dtgHistorialProcesal";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgHistorialProcesal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgHistorialProcesal.Size = new System.Drawing.Size(1033, 579);
             this.dtgHistorialProcesal.TabIndex = 63;
@@ -3509,6 +3514,26 @@
             this.label57.TabIndex = 72;
             this.label57.Text = "USUARIO CARGA:";
             // 
+            // gboxCausasAgotoCondena
+            // 
+            this.gboxCausasAgotoCondena.Controls.Add(this.dtgAgotoCondena);
+            this.gboxCausasAgotoCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gboxCausasAgotoCondena.Location = new System.Drawing.Point(10, 572);
+            this.gboxCausasAgotoCondena.Name = "gboxCausasAgotoCondena";
+            this.gboxCausasAgotoCondena.Size = new System.Drawing.Size(1051, 115);
+            this.gboxCausasAgotoCondena.TabIndex = 240;
+            this.gboxCausasAgotoCondena.TabStop = false;
+            this.gboxCausasAgotoCondena.Text = "Agoto Condena";
+            // 
+            // dtgAgotoCondena
+            // 
+            this.dtgAgotoCondena.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgAgotoCondena.Location = new System.Drawing.Point(6, 20);
+            this.dtgAgotoCondena.Name = "dtgAgotoCondena";
+            this.dtgAgotoCondena.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgAgotoCondena.Size = new System.Drawing.Size(1036, 89);
+            this.dtgAgotoCondena.TabIndex = 2;
+            // 
             // FormInternoAdministrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3573,6 +3598,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgDomicilios)).EndInit();
             this.gboxDomicilio.ResumeLayout(false);
             this.gboxDomicilio.PerformLayout();
+            this.gboxCausasAgotoCondena.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgAgotoCondena)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3846,5 +3873,7 @@
         private System.Windows.Forms.Label label84;
         private System.Windows.Forms.Label label90;
         private System.Windows.Forms.TextBox txtMarcasCorporales;
+        private System.Windows.Forms.GroupBox gboxCausasAgotoCondena;
+        private System.Windows.Forms.DataGridView dtgAgotoCondena;
     }
 }

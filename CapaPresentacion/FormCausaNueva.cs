@@ -156,9 +156,10 @@ namespace CapaPresentacion
 
             try
             {
+                groupNueva.Enabled = false;
                 //HttpResponseMessage httpResponse = await nCiudadano.crearCiudadano(dataCiudadano);
                 (DCausa causa, string errorCausa) = await nCausa.CrearCausa(dataCausa);
-
+                groupNueva.Enabled = true;
                 if (causa != null)
                 {
 

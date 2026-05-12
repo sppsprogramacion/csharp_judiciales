@@ -1179,12 +1179,20 @@ namespace CapaPresentacion
                     Reincidencia = c.reincidencia.reincidencia,
                     FechaCarga = c.fecha_carga,
                     OrganismoCarga = c.organismo_carga.organismo,
-                    Usuario = c.usuario_carga.apellido + " " + c.usuario_carga.nombre
+                    Usuario = c.usuario_carga.apellido + " " + c.usuario_carga.nombre,
+                    Unificada = c.esta_unificada,
+                    AgotoCondena = c.agoto_condena
 
                 })
                 .ToList();
 
-            dtgvCausas.DataSource = datosfiltrados;
+            //dtgvCausas.DataSource = datosfiltrados;
+
+            dtgvCausas.DataSource = datosfiltrados.Where(x => !x.Unificada && !x.AgotoCondena).ToList();
+
+            dtgvUnificaciones.DataSource = datosfiltrados.Where(x => x.Unificada).ToList();
+
+            dtgAgotoCondena.DataSource = datosfiltrados.Where(x => !x.Unificada && x.AgotoCondena).ToList();
 
             if (listaCausas.Count == 0)
             {

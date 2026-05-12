@@ -36,6 +36,8 @@ namespace CapaDatos
         public int pena_meses { get; set; }
         public int pena_dias { get; set; }
         public DateTime? fecha_cumple_pena { get; set; }
+        public bool esta_unificada { get; set; }
+        public bool agoto_condena { get; set; }
         public int tipo_defensor_id { get; set; }
         public DTipoDefensor tipo_defensor { get; set; }
         public string abogado { get; set; }
