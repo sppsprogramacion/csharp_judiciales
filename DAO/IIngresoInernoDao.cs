@@ -13,6 +13,7 @@ namespace DAO
         Task<(bool, string error)> EditarIngreso(int id, string ingresoInterno);
         Task<(DIngresoInterno, string error)> BuscarIngresoXId(int idIngreso);
         Task<(DIngresoInterno, string error)> BuscarIngresoXInterno(int idInterno);
+        Task<(List<DConteoIngresos>, string error)> ContarIngresosXOrganismo();
         Task<(List<DIngresoInterno>, string error)> ListaIngresosXInterno(int idInterno);
         Task<(bool, string error)> EgresoInterno(int idIngreso, string dataEgreso);
         Task<(bool, string error)> EstablecerAlojamiento(int idIngreso, string dataAlojamiento);

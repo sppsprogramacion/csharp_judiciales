@@ -165,6 +165,52 @@ namespace DAOImplement
         }
         //FIN BUSCAR INGRESO XINTERNO................................................
 
+        //CONTAR INGRESOS PRO UNIDAD
+        public async Task<(List<DConteoIngresos>, string error)> ContarIngresosXOrganismo()
+        {
+            List<DConteoIngresos> listaConteo = new List<DConteoIngresos>();
+            string token = SessionManager.Token; // Aquí pones tu token real
+
+            try
+            {
+                // Agregar el token en los headers
+                this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                HttpResponseMessage httpResponse = await this.httpClient.GetAsync(url_base + "/ingresos-interno/contaringresos-xorganismo");
+
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    var content = await httpResponse.Content.ReadAsStringAsync();
+                    listaConteo = JsonConvert.DeserializeObject<List<DConteoIngresos>>(content);
+                    return (listaConteo, null);
+                }
+                else
+                {
+                    string errorMessage = await httpResponse.Content.ReadAsStringAsync();
+                    var mensaje = JObject.Parse(errorMessage)["message"]?.ToString();
+                    return (null, $"Error en la busqueda: {mensaje}");
+                }
+
+            }
+            catch (HttpRequestException httpRequestException)
+            {
+                // Capturar errores de la solicitud HTTP
+                return (null, $"Error de conexión: {httpRequestException.Message}");
+            }
+            catch (JsonException jsonException)
+            {
+                // Capturar errores en la serialización/deserialización de JSON                
+                return (null, $"Error inesperado");
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores (log, mensaje al usuario, etc.)
+                Console.WriteLine($"Error: {ex.Message}");
+                return (null, $"Error inesperado: {ex.Message}");
+            }
+        }
+        //FIN CONTAR INGRESOS PRO UNIDAD............................................
+
 
         public Task<(List<DIngresoInterno>, string error)> ListaIngresosXInterno(int idInterno)
         {
@@ -507,7 +553,6 @@ namespace DAOImplement
             }
         }
 
-        
         //FIN EDITAR INGRESO..........................................
 
 

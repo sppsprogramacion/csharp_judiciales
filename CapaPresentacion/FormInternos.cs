@@ -57,6 +57,8 @@ namespace CapaPresentacion
 
             // Seleccionar algo por defecto
             cmbBusqueda.SelectedIndex = 0;
+
+            this.contarIngresos();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -217,23 +219,64 @@ namespace CapaPresentacion
             }
         }
 
-        private void btnBuscarProntuario_Click(object sender, EventArgs e)
+        private void btnActualizarPoblacion_Click(object sender, EventArgs e)
         {
-            var opcion = cmbBusqueda.SelectedItem as DElegirBusquedaInterno;
-            string id = opcion.id_busqueda;  // "unidad" o "todas"
-
-            MessageBox.Show(id);
-
-            //if (cmbBusqueda.SelectedValue != null)
-            //{
-
-            //    MessageBox.Show(cmbBusqueda.SelectedValue.ToString());
-            //}
-            //else
-            //{
-            //    MessageBox.Show("No hay selección.");
-            //}
+            this.contarIngresos();
         }
+                
+
+        //CONTAR INGRESOS
+        private async void contarIngresos() {
+            NIngresoInterno nIngreso = new NIngresoInterno();
+            
+            (List<DConteoIngresos> listaConteoingresoInterno, string errorResponse) = await nIngreso.ListaConteoIngresosXOrganismo();
+            
+
+            if (listaConteoingresoInterno == null)
+            {
+                if (errorResponse != null)
+                {
+                    MessageBox.Show(errorResponse, "Internos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                MessageBox.Show("No se pudo actualizar la cantidad de poblacion", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
+            }
+
+            int totalGeneral = listaConteoingresoInterno
+                .Sum(x => x.cantidad);
+            txtProblacion.Text = totalGeneral.ToString();
+
+            txtAgregados.Text = Convert.ToString(listaConteoingresoInterno
+                .Where(x => x.estado_procesal_id == "A")
+                .Sum(x => x.cantidad));
+
+            txtProcesadosProvinciales.Text = Convert.ToString(listaConteoingresoInterno
+                .FirstOrDefault(x =>
+                    x.estado_procesal_id == "PROC" &&
+                    x.jurisdiccion_id == "P")
+                ?.cantidad ?? 0);
+
+            txtPenadosProvinciales.Text = Convert.ToString(listaConteoingresoInterno
+                .FirstOrDefault(x =>
+                    x.estado_procesal_id == "P" &&
+                    x.jurisdiccion_id == "P")
+                ?.cantidad ?? 0);
+
+            txtProcesadosFederales.Text = Convert.ToString(listaConteoingresoInterno
+                .FirstOrDefault(x =>
+                    x.estado_procesal_id == "PROC" &&
+                    x.jurisdiccion_id == "F")
+                ?.cantidad ?? 0);
+
+            txtPenadosFederales.Text = Convert.ToString( listaConteoingresoInterno
+                .FirstOrDefault(x =>
+                    x.estado_procesal_id == "P" &&
+                    x.jurisdiccion_id == "F")
+                ?.cantidad ?? 0);
+
+        }
+        //FIN CONTAR INGRESOS........................................................
     }
 
 }

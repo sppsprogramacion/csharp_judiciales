@@ -46,6 +46,17 @@ namespace CapaNegocio
         }
         //FIN BUSCAR POR ID INGRESO..............................................................
 
+        //CONTAR INGRESOS POR ORGANISMO
+        public async Task<(List<DConteoIngresos>, string error)> ListaConteoIngresosXOrganismo()
+        {
+            IIngresoInernoDao ingresoInernoDao = new IngresoInternoDaoImplement();
+
+            (List<DConteoIngresos> listaConteo, string error) = await ingresoInernoDao.ContarIngresosXOrganismo();
+
+            return (listaConteo, error);
+        }
+        //FIN CONTAR INGRESOS POR ORGANISMO..................................
+
         //INGRESO DESDE OTRA UNIDAD
         public async Task<(bool, string error)> InresoDesdeOtraUnidad(int idIngreso, string dataIngreso)
         {

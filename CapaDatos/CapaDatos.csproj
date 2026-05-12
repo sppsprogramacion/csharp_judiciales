@@ -46,6 +46,7 @@
     <Compile Include="DCiudadano.cs" />
     <Compile Include="DConcepto.cs" />
     <Compile Include="DConducta.cs" />
+    <Compile Include="DConteoIngresos.cs" />
     <Compile Include="DDomicilioInterno.cs" />
     <Compile Include="DFase.cs" />
     <Compile Include="DHistorialProcesal.cs" />
