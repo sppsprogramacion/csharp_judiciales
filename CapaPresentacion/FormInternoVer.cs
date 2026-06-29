@@ -193,7 +193,6 @@ namespace CapaPresentacion
             //**---cuando el interno esta alojado en otra unidad---**
             if (this.ingresoInternoGlobal != null)
             {
-
                 if (txtIdIngreso.Text == null || txtIdIngreso.Text == "")
                 {
                     MessageBox.Show("El interno no esta alojado en una unidad.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -289,21 +288,21 @@ namespace CapaPresentacion
 
             try
             {
+                tabInterno.Enabled = false;
                 //HttpResponseMessage httpResponse = await nCiudadano.crearCiudadano(dataCiudadano);
                 (DIngresoInterno ingreso, string errorIngreso) = await nIngreso.CrearIngreso(dataIngreso);
-
-
+                tabInterno.Enabled = true;
                 if (ingreso != null)
                 {
-
                     MessageBox.Show("Ingreso creado correctamente", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lblMensajeIngreso.Text = "Interno alojado";
                     this.HabilitarControlesIngreso(false);                    
                 }
                 else
                 {
-
                     MessageBox.Show(errorIngreso, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+                
 
             }
             catch (Exception ex)
