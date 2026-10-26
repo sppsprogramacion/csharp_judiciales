@@ -71,7 +71,8 @@ namespace DAOImplement
                 return (null, $"Error inesperado: {ex.Message}");
             }
         }
-        //FIN CREAR..........................................................
+        //FIN CREAR
+        //..........................................................
                 
 
         //BUSCAR X ID
@@ -119,7 +120,8 @@ namespace DAOImplement
                 return (null, $"Error inesperado: {ex.Message}");
             }
         }
-        //BUSCAR X ID
+        //FIN BUSCAR X ID
+        //--------------------------------------------------------------------------------
 
         public Task<(List<DInterno>, string error)> ListaInternosTodos()
         {
@@ -172,6 +174,7 @@ namespace DAOImplement
             }
         }
         //FIN BUSCAR XAPELLIDO
+        //---------------------------------------------------------------------------------------
 
         //BUSCAR X APELLIDO en TODAS LAS UNIDADES
         public async Task<(List<DInterno>, string error)> ListaInternosXApellidoGeneral(string apellido)
@@ -217,7 +220,8 @@ namespace DAOImplement
                 return (null, $"Error inesperado: {ex.Message}");
             }
         }
-        //fin BUSCAR X APELLIDO EN TODAS LAS UNIDADES......................................................................
+        //fin BUSCAR X APELLIDO EN TODAS LAS UNIDADES
+        //......................................................................................
 
         //BUSCAR X PRONTUARIO
         public async Task<(List<DInterno>, string error)> ListaInternosXProntuario(int prontuario)
