@@ -57,6 +57,7 @@
     <Compile Include="IProvinciaDao.cs" />
     <Compile Include="ISexoDao.cs" />
     <Compile Include="ITrasladoInternoDao.cs" />
+    <Compile Include="IUsuarioDao.cs" />
     <Compile Include="IVisitaInternoDao.cs" />
     <Compile Include="IZonaResidencia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

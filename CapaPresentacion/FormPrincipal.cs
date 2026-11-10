@@ -17,6 +17,17 @@ namespace CapaPresentacion
         public FormPrincipal()
         {
             InitializeComponent();
+
+            bool esAdmin = CurrentUser.Instance.roles != null && CurrentUser.Instance.roles.Contains("restriccionAdmin");
+
+            if (esAdmin)
+            {
+                btnAdministrarUsuarios.Visible = true;
+            }
+            else
+            {
+                btnAdministrarUsuarios.Visible = false;
+            }
         }
               
 
@@ -46,6 +57,20 @@ namespace CapaPresentacion
             FormTraslados formTraslados = new FormTraslados();
             formTraslados.ShowDialog();
 
+        }
+
+        private void btnAdministrarUsuarios_Click(object sender, EventArgs e)
+        {
+
+            FormAdministrarUsuarios formAdministrarUsuarios = new FormAdministrarUsuarios();
+            formAdministrarUsuarios.ShowDialog();
+        }
+
+        private void picUsuario_Click(object sender, EventArgs e)
+        {
+            FormCuentaUsuario formCuentaUsuario = new FormCuentaUsuario();
+
+            formCuentaUsuario.ShowDialog();
         }
     }
 }

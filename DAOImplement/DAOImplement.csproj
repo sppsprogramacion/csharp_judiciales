@@ -61,6 +61,7 @@
     <Compile Include="ProvinciaDaoImpl.cs" />
     <Compile Include="SexoDaoImpl.cs" />
     <Compile Include="TrasladoInternoDaoImplement.cs" />
+    <Compile Include="UsuarioDaoImplement.cs" />
     <Compile Include="VisitaInternoDaoImpl.cs" />
     <Compile Include="ZonaResidenciaDaoImplement.cs" />
   </ItemGroup>

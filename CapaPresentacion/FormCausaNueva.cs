@@ -125,7 +125,7 @@ namespace CapaPresentacion
 
             if (!result.IsValid)
             {
-                MessageBox.Show("Complete correctamente los campos del formulario", "judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Complete correctamente los campos del formulario", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 foreach (var failure in result.Errors)
                 {
                     Control control = Controls.Find(failure.PropertyName, true)[0];
