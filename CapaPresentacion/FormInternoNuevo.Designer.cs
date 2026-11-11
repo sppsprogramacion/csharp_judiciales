@@ -627,7 +627,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(159, 115);
+            this.label2.Location = new System.Drawing.Point(188, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 15);
             this.label2.TabIndex = 118;
@@ -637,9 +637,9 @@
             // 
             this.txtDni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDni.Location = new System.Drawing.Point(162, 134);
+            this.txtDni.Location = new System.Drawing.Point(191, 134);
             this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(135, 21);
+            this.txtDni.Size = new System.Drawing.Size(116, 21);
             this.txtDni.TabIndex = 3;
             // 
             // btnGuardar
@@ -688,9 +688,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(6, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 15);
+            this.label1.Size = new System.Drawing.Size(172, 15);
             this.label1.TabIndex = 94;
-            this.label1.Text = "PRONTUARIO";
+            this.label1.Text = "PRONTUARIO/NUM ALCAIDIA";
             // 
             // label5
             // 
@@ -727,7 +727,7 @@
             this.txtProntuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProntuario.Location = new System.Drawing.Point(9, 134);
             this.txtProntuario.Name = "txtProntuario";
-            this.txtProntuario.Size = new System.Drawing.Size(135, 21);
+            this.txtProntuario.Size = new System.Drawing.Size(173, 21);
             this.txtProntuario.TabIndex = 2;
             // 
             // txtApellido

@@ -141,6 +141,9 @@ namespace CapaPresentacion
                     Apellido = c.apellido,
                     Nombre = c.nombre,
                     Prontuario = c.prontuario,
+                    NumAlc1 = c.num_alc_1,
+                    NumAlc2 = c.num_alc_2,
+                    NumAlc3 = c.num_alc_3,
                     Sexo = c.sexo.sexo
                     
                 })
@@ -160,6 +163,9 @@ namespace CapaPresentacion
                 dtgvInternos.Columns[2].Width = 200;
                 dtgvInternos.Columns[3].Width = 90;
                 dtgvInternos.Columns[4].Width = 90;
+                dtgvInternos.Columns[5].Width = 90;
+                dtgvInternos.Columns[6].Width = 90;
+                dtgvInternos.Columns[7].Width = 90;
 
                 dtgvInternos.Focus();
             }

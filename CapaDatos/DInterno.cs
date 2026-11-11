@@ -10,7 +10,10 @@ namespace CapaDatos
     {
         public int id_interno { get; set; }
         public string codigo { get; set; }
-        public int prontuario { get; set; }
+        public int? prontuario { get; set; }
+        public int? num_alc_1 { get; set; }
+        public int? num_alc_2 { get; set; }
+        public int? num_alc_3 { get; set; }
         public int dni { get; set; }
         public string apellido { get; set; }
         public string nombre { get; set; }

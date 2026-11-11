@@ -78,7 +78,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(8, 281);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(850, 454);
+            this.groupBox2.Size = new System.Drawing.Size(920, 454);
             this.groupBox2.TabIndex = 117;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Internos";
@@ -89,7 +89,7 @@
             this.dtgvInternos.Location = new System.Drawing.Point(9, 24);
             this.dtgvInternos.Name = "dtgvInternos";
             this.dtgvInternos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvInternos.Size = new System.Drawing.Size(830, 416);
+            this.dtgvInternos.Size = new System.Drawing.Size(899, 416);
             this.dtgvInternos.TabIndex = 16;
             this.dtgvInternos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtgvInternos_KeyDown);
             // 
@@ -311,7 +311,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(865, 749);
+            this.ClientSize = new System.Drawing.Size(939, 749);
             this.Controls.Add(this.btnActualizarPoblacion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtAgregados);
