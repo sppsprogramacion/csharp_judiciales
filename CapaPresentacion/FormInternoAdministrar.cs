@@ -100,6 +100,9 @@ namespace CapaPresentacion
             txtApellido.Text = this.dInternoGlobal.apellido;
             txtNombre.Text = this.dInternoGlobal.nombre;
             txtProntuario.Text = this.dInternoGlobal.prontuario.ToString();
+            txtNumAlcaidia1.Text = this.dInternoGlobal.num_alc_1.ToString();
+            txtNumAlcaidia2.Text = this.dInternoGlobal.num_alc_2.ToString();
+            txtNumAlcaidia3.Text = this.dInternoGlobal.num_alc_3.ToString();
             txtDni.Text = this.dInternoGlobal.dni.ToString();
             txtAlias.Text = this.dInternoGlobal.alias;
             cmbSexo.Text = this.dInternoGlobal.sexo.sexo;
@@ -248,7 +251,7 @@ namespace CapaPresentacion
             {
                 txtApellido = txtApellido.Text,
                 txtNombre = txtNombre.Text,
-                txtProntuario = txtProntuario.Text,
+                //txtProntuario = txtProntuario.Text,
                 txtDni = txtDni.Text,
                 txtAlias = txtAlias.Text
             };
@@ -272,7 +275,7 @@ namespace CapaPresentacion
             this.tabInterno.Enabled = false;
             var dataInterno = new
             {
-                prontuario = Convert.ToInt32(txtProntuario.Text),
+                //prontuario = Convert.ToInt32(txtProntuario.Text),
                 dni = Convert.ToInt32(txtDni.Text),
                 apellido = txtApellido.Text,
                 nombre = txtNombre.Text,
@@ -311,6 +314,44 @@ namespace CapaPresentacion
             //cargar datos del interno
             this.CargarControlesInformacionInterno();
             this.HabilitarDatosPersonales(false);
+        }
+
+        private void btnEditarProntuario_Click(object sender, EventArgs e)
+        {
+            
+
+            if (this.dInternoGlobal == null)
+            {
+                MessageBox.Show("El interno no es valido.", "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int.TryParse(txtIdInterno.Text, out int idInterno);
+            int.TryParse(txtProntuario.Text, out int prontuario);
+            int.TryParse(txtNumAlcaidia1.Text, out int numAlcaidia1);
+            int.TryParse(txtNumAlcaidia2.Text, out int numAlcaidia2);
+            int.TryParse(txtNumAlcaidia3.Text, out int numAlcaidia3);
+
+            using (FormInternoProntuario formInternoProntuario = new FormInternoProntuario(idInterno, prontuario, numAlcaidia1, numAlcaidia2, numAlcaidia3))
+            {
+
+                // Aquí se abre el FormularioB
+                if (formInternoProntuario.ShowDialog() == DialogResult.OK)
+                {
+                    // Recién después de cerrar FormularioB, puedo leer el dato
+                    bool isModificado = formInternoProntuario.isPronturarioModificado;
+                    if (isModificado)
+                    {
+                        this.dInternoGlobal = formInternoProntuario.dInternoGlobal;
+                        txtProntuario.Text = this.dInternoGlobal.prontuario.ToString();
+                        txtNumAlcaidia1.Text = this.dInternoGlobal.num_alc_1.ToString();
+                        txtNumAlcaidia2.Text = this.dInternoGlobal.num_alc_2.ToString();
+                        txtNumAlcaidia3.Text = this.dInternoGlobal.num_alc_3.ToString();
+
+                    }
+                }
+            }
+
         }
 
         private async void btnEditarCaracteristicasPersonales_Click(object sender, EventArgs e)
@@ -795,7 +836,7 @@ namespace CapaPresentacion
         private void HabilitarDatosPersonales(bool valor)
         {
             txtDni.ReadOnly = !valor;
-            txtProntuario.ReadOnly = !valor;
+            //txtProntuario.ReadOnly = !valor;
             txtApellido.ReadOnly = !valor;
             txtNombre.ReadOnly = !valor;
             txtAlias.ReadOnly = !valor;
@@ -2391,6 +2432,8 @@ namespace CapaPresentacion
                 MessageBox.Show(errorResponse, "Judiciales", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        
         #endregion DOMICILIOS
         //FIN REGION DOMICILIOS.......................................................
         //........................................................................

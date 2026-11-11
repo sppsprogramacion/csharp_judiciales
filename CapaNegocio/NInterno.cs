@@ -79,6 +79,19 @@ namespace CapaNegocio
         }
         //FIN EDITAR DATOS PERSONALES..............................................................
 
+        //EDITAR PRONTUARIO
+        public async Task<(bool, string error)> EditarProntuario(int idInterno, string dataEdicion)
+        {
+            IInternosDao internosDao = new InternoDaoImplement();
+
+            (bool internosResponse, string error) = await internosDao.EditarPronturario(idInterno, dataEdicion);
+
+            return (internosResponse, error);
+        }
+        //FIN EDITAR PRONTUARIO
+        //..............................................................
+
+
         //EDITAR CARACTERISTICAS PERSONALES
         public async Task<(bool, string error)> EditarCaracteristicasPersonales(int idInterno, string dataEdicion)
         {

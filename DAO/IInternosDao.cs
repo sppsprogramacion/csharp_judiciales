@@ -11,6 +11,7 @@ namespace DAO
     {
         Task<(DInterno, string error)> CrearInterno(string interno);
         Task<(bool, string error)> EditarDatosPersonales(int id, string datosPErsonales);
+        Task<(bool, string error)> EditarPronturario(int id, string datos);
         Task<(bool, string error)> EditarCaracteristicasPersonales(int id, string caracteristicasPersonales);
         Task<(bool, string error)> EditarDatosFiliatorios(int id, string datosFiliatorios);
         Task<(DInterno, string error)> BuscarInternoXId(int idInterno);

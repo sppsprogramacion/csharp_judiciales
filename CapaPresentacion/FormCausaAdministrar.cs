@@ -178,6 +178,9 @@ namespace CapaPresentacion
             //validacion de formulario
             var datosformulario = new CausaAdministrarDatos
             {
+                txtDetAnteriorAnios = txtDetAnteriorAnios.Text,
+                txtDetAnteriorMeses = txtDetAnteriorMeses.Text,
+                txtDetAnteriorDias = txtDetAnteriorDias.Text,
                 cmbTribunalCondena = cmbTribunalCondena.SelectedValue?.ToString() ?? string.Empty,
                 txtPenaAnios = txtPenaAnios.Text,
                 txtPenaMeses = txtPenaMeses.Text,
@@ -205,11 +208,14 @@ namespace CapaPresentacion
             {
                 fecha_ultima_detencion = dtpFechaUltimaDetCondena.Value,
                 fecha_condena = dtpFechaCondena.Value,
+                detencion_anterior_anios = Convert.ToInt32(txtDetAnteriorAnios.Text),
+                detencion_anterior_meses = Convert.ToInt32(txtDetAnteriorMeses.Text),
+                detencion_anterior_dias = Convert.ToInt32(txtDetAnteriorDias.Text),
                 tribunal_condena_id = cmbTribunalCondena.SelectedValue.ToString(),
                 pena_anios = Convert.ToInt32(txtPenaAnios.Text),
                 pena_meses = Convert.ToInt32(txtPenaMeses.Text),
                 pena_dias = Convert.ToInt32(txtPenaDias.Text),
-                fecha_cumple_pena = dtpFechaCondena.Value,
+                fecha_cumple_pena = dtpFechaCumple.Value,
                 esta_unificada = chkUnificado.Checked,
                 agoto_condena = chkAgotoCondena.Checked,
             };
@@ -482,7 +488,11 @@ namespace CapaPresentacion
                 dtpFechaCumple.Format = DateTimePickerFormat.Short;
                 dtpFechaCumple.Text = this.dCausaGlobal.fecha_cumple_pena?.ToShortDateString();
             }
-                        
+
+
+            txtDetAnteriorAnios.Text = this.dCausaGlobal.detencion_anterior_anios.ToString();
+            txtDetAnteriorMeses.Text = this.dCausaGlobal.detencion_anterior_meses.ToString();
+            txtDetAnteriorDias.Text = this.dCausaGlobal.detencion_anterior_dias.ToString();
             cmbTribunalCondena.Text = this.dCausaGlobal.tribunal_condena.juzgado.ToString();
             txtPenaAnios.Text = this.dCausaGlobal.pena_anios.ToString();
             txtPenaMeses.Text = this.dCausaGlobal.pena_meses.ToString();
@@ -520,6 +530,9 @@ namespace CapaPresentacion
             dtpFechaUltimaDetCondena.Enabled = valor;
             dtpFechaCondena.Enabled = valor;
             dtpFechaCumple.Enabled = valor;
+            txtDetAnteriorAnios.Enabled = valor;
+            txtDetAnteriorMeses.Enabled = valor;
+            txtDetAnteriorDias.Enabled = valor;
             cmbTribunalCondena.Enabled = valor;
             txtPenaAnios.Enabled = valor;
             txtPenaMeses.Enabled = valor;

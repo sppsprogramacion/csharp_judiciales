@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCausaAdministrar));
             this.gboxDadosCondena = new System.Windows.Forms.GroupBox();
+            this.chkAgotoCondena = new System.Windows.Forms.CheckBox();
+            this.chkUnificado = new System.Windows.Forms.CheckBox();
             this.dtpFechaUltimaDetCondena = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.dtpFechaCumple = new System.Windows.Forms.DateTimePicker();
@@ -91,8 +93,12 @@
             this.btnGuardarQuitarCondena = new System.Windows.Forms.Button();
             this.btnCancelarQuitarCondena = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.chkUnificado = new System.Windows.Forms.CheckBox();
-            this.chkAgotoCondena = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtDetAnteriorMeses = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtDetAnteriorDias = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtDetAnteriorAnios = new System.Windows.Forms.TextBox();
             this.gboxDadosCondena.SuspendLayout();
             this.gboxDatosGenerales.SuspendLayout();
             this.gboxQuitarCondena.SuspendLayout();
@@ -100,6 +106,12 @@
             // 
             // gboxDadosCondena
             // 
+            this.gboxDadosCondena.Controls.Add(this.label9);
+            this.gboxDadosCondena.Controls.Add(this.txtDetAnteriorMeses);
+            this.gboxDadosCondena.Controls.Add(this.label10);
+            this.gboxDadosCondena.Controls.Add(this.txtDetAnteriorDias);
+            this.gboxDadosCondena.Controls.Add(this.label11);
+            this.gboxDadosCondena.Controls.Add(this.txtDetAnteriorAnios);
             this.gboxDadosCondena.Controls.Add(this.chkAgotoCondena);
             this.gboxDadosCondena.Controls.Add(this.chkUnificado);
             this.gboxDadosCondena.Controls.Add(this.dtpFechaUltimaDetCondena);
@@ -123,10 +135,34 @@
             this.gboxDadosCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gboxDadosCondena.Location = new System.Drawing.Point(542, 49);
             this.gboxDadosCondena.Name = "gboxDadosCondena";
-            this.gboxDadosCondena.Size = new System.Drawing.Size(526, 227);
+            this.gboxDadosCondena.Size = new System.Drawing.Size(526, 282);
             this.gboxDadosCondena.TabIndex = 5;
             this.gboxDadosCondena.TabStop = false;
             this.gboxDadosCondena.Text = "Datos de condena";
+            // 
+            // chkAgotoCondena
+            // 
+            this.chkAgotoCondena.AutoSize = true;
+            this.chkAgotoCondena.Enabled = false;
+            this.chkAgotoCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAgotoCondena.Location = new System.Drawing.Point(174, 204);
+            this.chkAgotoCondena.Name = "chkAgotoCondena";
+            this.chkAgotoCondena.Size = new System.Drawing.Size(120, 17);
+            this.chkAgotoCondena.TabIndex = 13;
+            this.chkAgotoCondena.Text = "AGOTO CONDENA";
+            this.chkAgotoCondena.UseVisualStyleBackColor = true;
+            // 
+            // chkUnificado
+            // 
+            this.chkUnificado.AutoSize = true;
+            this.chkUnificado.Enabled = false;
+            this.chkUnificado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkUnificado.Location = new System.Drawing.Point(11, 204);
+            this.chkUnificado.Name = "chkUnificado";
+            this.chkUnificado.Size = new System.Drawing.Size(114, 17);
+            this.chkUnificado.TabIndex = 12;
+            this.chkUnificado.Text = "ESTA UNIFICADA";
+            this.chkUnificado.UseVisualStyleBackColor = true;
             // 
             // dtpFechaUltimaDetCondena
             // 
@@ -153,17 +189,17 @@
             this.dtpFechaCumple.Enabled = false;
             this.dtpFechaCumple.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaCumple.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaCumple.Location = new System.Drawing.Point(366, 117);
+            this.dtpFechaCumple.Location = new System.Drawing.Point(366, 170);
             this.dtpFechaCumple.Name = "dtpFechaCumple";
             this.dtpFechaCumple.Size = new System.Drawing.Size(119, 22);
-            this.dtpFechaCumple.TabIndex = 8;
+            this.dtpFechaCumple.TabIndex = 11;
             this.dtpFechaCumple.ValueChanged += new System.EventHandler(this.dtpFechaCumple_ValueChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(362, 102);
+            this.label6.Location = new System.Drawing.Point(362, 155);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 13);
             this.label6.TabIndex = 304;
@@ -173,7 +209,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(126, 102);
+            this.label5.Location = new System.Drawing.Point(126, 155);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 13);
             this.label5.TabIndex = 302;
@@ -184,16 +220,16 @@
             this.txtPenaMeses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPenaMeses.Enabled = false;
             this.txtPenaMeses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPenaMeses.Location = new System.Drawing.Point(129, 117);
+            this.txtPenaMeses.Location = new System.Drawing.Point(129, 170);
             this.txtPenaMeses.Name = "txtPenaMeses";
             this.txtPenaMeses.Size = new System.Drawing.Size(100, 21);
-            this.txtPenaMeses.TabIndex = 6;
+            this.txtPenaMeses.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(244, 102);
+            this.label4.Location = new System.Drawing.Point(244, 155);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 13);
             this.label4.TabIndex = 300;
@@ -204,16 +240,16 @@
             this.txtPenaDias.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPenaDias.Enabled = false;
             this.txtPenaDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPenaDias.Location = new System.Drawing.Point(247, 117);
+            this.txtPenaDias.Location = new System.Drawing.Point(247, 170);
             this.txtPenaDias.Name = "txtPenaDias";
             this.txtPenaDias.Size = new System.Drawing.Size(100, 21);
-            this.txtPenaDias.TabIndex = 7;
+            this.txtPenaDias.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 102);
+            this.label3.Location = new System.Drawing.Point(7, 155);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 295;
@@ -224,26 +260,26 @@
             this.txtPenaAnios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPenaAnios.Enabled = false;
             this.txtPenaAnios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPenaAnios.Location = new System.Drawing.Point(10, 117);
+            this.txtPenaAnios.Location = new System.Drawing.Point(10, 170);
             this.txtPenaAnios.Name = "txtPenaAnios";
             this.txtPenaAnios.Size = new System.Drawing.Size(100, 21);
-            this.txtPenaAnios.TabIndex = 5;
+            this.txtPenaAnios.TabIndex = 8;
             // 
             // cmbTribunalCondena
             // 
             this.cmbTribunalCondena.Enabled = false;
             this.cmbTribunalCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTribunalCondena.FormattingEnabled = true;
-            this.cmbTribunalCondena.Location = new System.Drawing.Point(10, 75);
+            this.cmbTribunalCondena.Location = new System.Drawing.Point(10, 123);
             this.cmbTribunalCondena.Name = "cmbTribunalCondena";
             this.cmbTribunalCondena.Size = new System.Drawing.Size(500, 23);
-            this.cmbTribunalCondena.TabIndex = 4;
+            this.cmbTribunalCondena.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 60);
+            this.label2.Location = new System.Drawing.Point(7, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 13);
             this.label2.TabIndex = 298;
@@ -289,10 +325,10 @@
             this.btnEditarCondena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCondena.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnEditarCondena.Location = new System.Drawing.Point(192, 186);
+            this.btnEditarCondena.Location = new System.Drawing.Point(192, 239);
             this.btnEditarCondena.Name = "btnEditarCondena";
             this.btnEditarCondena.Size = new System.Drawing.Size(98, 30);
-            this.btnEditarCondena.TabIndex = 10;
+            this.btnEditarCondena.TabIndex = 14;
             this.btnEditarCondena.Text = "Editar";
             this.btnEditarCondena.UseVisualStyleBackColor = false;
             this.btnEditarCondena.Click += new System.EventHandler(this.btnEditarCondena_Click);
@@ -305,10 +341,10 @@
             this.btnGuardarCondena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarCondena.ForeColor = System.Drawing.Color.Green;
-            this.btnGuardarCondena.Location = new System.Drawing.Point(301, 186);
+            this.btnGuardarCondena.Location = new System.Drawing.Point(301, 239);
             this.btnGuardarCondena.Name = "btnGuardarCondena";
             this.btnGuardarCondena.Size = new System.Drawing.Size(98, 30);
-            this.btnGuardarCondena.TabIndex = 11;
+            this.btnGuardarCondena.TabIndex = 15;
             this.btnGuardarCondena.Text = "Guardar";
             this.btnGuardarCondena.UseVisualStyleBackColor = false;
             this.btnGuardarCondena.Click += new System.EventHandler(this.btnGuardarCondena_Click);
@@ -321,10 +357,10 @@
             this.btnCancelarCondena.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelarCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarCondena.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnCancelarCondena.Location = new System.Drawing.Point(410, 186);
+            this.btnCancelarCondena.Location = new System.Drawing.Point(410, 239);
             this.btnCancelarCondena.Name = "btnCancelarCondena";
             this.btnCancelarCondena.Size = new System.Drawing.Size(98, 30);
-            this.btnCancelarCondena.TabIndex = 12;
+            this.btnCancelarCondena.TabIndex = 16;
             this.btnCancelarCondena.Text = "Cancelar";
             this.btnCancelarCondena.UseVisualStyleBackColor = false;
             this.btnCancelarCondena.Click += new System.EventHandler(this.btnCancelarCondena_Click);
@@ -755,7 +791,7 @@
             this.gboxQuitarCondena.Controls.Add(this.btnCancelarQuitarCondena);
             this.gboxQuitarCondena.Controls.Add(this.btnQuitarDatosCondena);
             this.gboxQuitarCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gboxQuitarCondena.Location = new System.Drawing.Point(542, 285);
+            this.gboxQuitarCondena.Location = new System.Drawing.Point(542, 349);
             this.gboxQuitarCondena.Name = "gboxQuitarCondena";
             this.gboxQuitarCondena.Size = new System.Drawing.Size(526, 135);
             this.gboxQuitarCondena.TabIndex = 308;
@@ -822,7 +858,7 @@
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.Red;
-            this.btnCerrar.Location = new System.Drawing.Point(970, 444);
+            this.btnCerrar.Location = new System.Drawing.Point(970, 508);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(98, 30);
             this.btnCerrar.TabIndex = 309;
@@ -830,36 +866,72 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // chkUnificado
+            // label9
             // 
-            this.chkUnificado.AutoSize = true;
-            this.chkUnificado.Enabled = false;
-            this.chkUnificado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkUnificado.Location = new System.Drawing.Point(11, 151);
-            this.chkUnificado.Name = "chkUnificado";
-            this.chkUnificado.Size = new System.Drawing.Size(114, 17);
-            this.chkUnificado.TabIndex = 308;
-            this.chkUnificado.Text = "ESTA UNIFICADA";
-            this.chkUnificado.UseVisualStyleBackColor = true;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(127, 65);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(94, 13);
+            this.label9.TabIndex = 315;
+            this.label9.Text = "DET ANT MESES";
             // 
-            // chkAgotoCondena
+            // txtDetAnteriorMeses
             // 
-            this.chkAgotoCondena.AutoSize = true;
-            this.chkAgotoCondena.Enabled = false;
-            this.chkAgotoCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAgotoCondena.Location = new System.Drawing.Point(174, 151);
-            this.chkAgotoCondena.Name = "chkAgotoCondena";
-            this.chkAgotoCondena.Size = new System.Drawing.Size(120, 17);
-            this.chkAgotoCondena.TabIndex = 309;
-            this.chkAgotoCondena.Text = "AGOTO CONDENA";
-            this.chkAgotoCondena.UseVisualStyleBackColor = true;
+            this.txtDetAnteriorMeses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDetAnteriorMeses.Enabled = false;
+            this.txtDetAnteriorMeses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetAnteriorMeses.Location = new System.Drawing.Point(130, 80);
+            this.txtDetAnteriorMeses.Name = "txtDetAnteriorMeses";
+            this.txtDetAnteriorMeses.Size = new System.Drawing.Size(100, 21);
+            this.txtDetAnteriorMeses.TabIndex = 5;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(245, 65);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 13);
+            this.label10.TabIndex = 314;
+            this.label10.Text = "DET ANT DIAS";
+            // 
+            // txtDetAnteriorDias
+            // 
+            this.txtDetAnteriorDias.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDetAnteriorDias.Enabled = false;
+            this.txtDetAnteriorDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetAnteriorDias.Location = new System.Drawing.Point(248, 80);
+            this.txtDetAnteriorDias.Name = "txtDetAnteriorDias";
+            this.txtDetAnteriorDias.Size = new System.Drawing.Size(100, 21);
+            this.txtDetAnteriorDias.TabIndex = 6;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(8, 65);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(87, 13);
+            this.label11.TabIndex = 313;
+            this.label11.Text = "DET ANT AÑOS";
+            // 
+            // txtDetAnteriorAnios
+            // 
+            this.txtDetAnteriorAnios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDetAnteriorAnios.Enabled = false;
+            this.txtDetAnteriorAnios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetAnteriorAnios.Location = new System.Drawing.Point(11, 80);
+            this.txtDetAnteriorAnios.Name = "txtDetAnteriorAnios";
+            this.txtDetAnteriorAnios.Size = new System.Drawing.Size(100, 21);
+            this.txtDetAnteriorAnios.TabIndex = 4;
             // 
             // FormCausaAdministrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1094, 491);
+            this.ClientSize = new System.Drawing.Size(1094, 559);
             this.ControlBox = false;
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.gboxQuitarCondena);
@@ -958,5 +1030,11 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.CheckBox chkUnificado;
         private System.Windows.Forms.CheckBox chkAgotoCondena;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtDetAnteriorMeses;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtDetAnteriorDias;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtDetAnteriorAnios;
     }
 }

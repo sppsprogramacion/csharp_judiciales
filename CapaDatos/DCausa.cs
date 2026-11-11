@@ -30,11 +30,14 @@ namespace CapaDatos
         public DateTime fecha_ultima_detencion { get; set; }
         public bool tiene_computo { get; set; }
         public DateTime? fecha_condena { get; set; }
-        public string tribunal_condena_id { get; set; }
-        public DJuzgado tribunal_condena { get; set; }
         public int pena_anios { get; set; }
         public int pena_meses { get; set; }
         public int pena_dias { get; set; }
+        public string tribunal_condena_id { get; set; }
+        public DJuzgado tribunal_condena { get; set; }
+        public int detencion_anterior_anios { get; set; }
+        public int detencion_anterior_meses { get; set; }
+        public int detencion_anterior_dias { get; set; }
         public DateTime? fecha_cumple_pena { get; set; }
         public bool esta_unificada { get; set; }
         public bool agoto_condena { get; set; }

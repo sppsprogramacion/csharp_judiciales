@@ -26,10 +26,10 @@ namespace CapaPresentacion.Validaciones.InternoAdministrar.Validacion
             RuleFor(x => x.txtAlias)
                 .Cascade(CascadeMode.Stop)
                 .MaximumLength(200).WithMessage("El alias debe tener maximo 200 caracteres.");
-            RuleFor(x => x.txtProntuario)
-                .Cascade(CascadeMode.Stop)
-                .NotEmpty().WithMessage("Debe ingresar un valor para prontuario.")
-                .Must(BeAnInteger).WithMessage("El prontuario debe ser un numero entero.");
+            //RuleFor(x => x.txtProntuario)
+            //    .Cascade(CascadeMode.Stop)
+            //    .NotEmpty().WithMessage("Debe ingresar un valor para prontuario.")
+            //    .Must(BeAnInteger).WithMessage("El prontuario debe ser un numero entero.");
             RuleFor(x => x.txtDni)
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("Debe ingresar un valor para dni.")

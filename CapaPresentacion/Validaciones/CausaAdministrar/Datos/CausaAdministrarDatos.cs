@@ -26,6 +26,9 @@ namespace CapaPresentacion.Validaciones.CausaAdministrar.Datos
         public DateTime dtpFechaUltimaDetCondena { get; set; }
         public DateTime dtpFechaCondena { get; set; }
         public DateTime dtpFechaCumple { get; set; }
+        public string txtDetAnteriorAnios { get; set; }
+        public string txtDetAnteriorMeses { get; set; }
+        public string txtDetAnteriorDias { get; set; }
         public string cmbTribunalCondena { get; set; }
         public string txtPenaAnios { get; set; }
         public string txtPenaMeses { get; set; }

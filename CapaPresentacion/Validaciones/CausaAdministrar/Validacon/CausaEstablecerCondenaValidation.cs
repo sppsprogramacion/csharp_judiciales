@@ -14,6 +14,22 @@ namespace CapaPresentacion.Validaciones.CausaAdministrar.Validacon
     {
         public CausaEstablecerCondenaValidation()
         {
+            RuleFor(x => x.txtDetAnteriorAnios)
+                .Cascade(CascadeMode.Stop)
+                .NotNull().WithMessage("Debe ingresar un valor para detencion anterior años.")
+                .NotEmpty().WithMessage("Debe ingresar un valor para detencion anterior meses.")
+                .Must(BeAnInteger).WithMessage("detencion anterior meses debe ser un numero entero.");
+            RuleFor(x => x.txtDetAnteriorMeses)
+                .Cascade(CascadeMode.Stop)
+                .NotNull().WithMessage("Debe ingresar un valor para detencion anterior meses.")
+                .NotEmpty().WithMessage("Debe ingresar un valor para detencion anterior meses.")
+                .Must(BeAnInteger).WithMessage("detencion anterior meses debe ser un numero entero.");
+            RuleFor(x => x.txtDetAnteriorDias)
+                .Cascade(CascadeMode.Stop)
+                .NotNull().WithMessage("Debe ingresar un valor para detencion anterior dias.")
+                .NotEmpty().WithMessage("Debe ingresar un valor para detencion anterior dias.")
+                .Must(BeAnInteger).WithMessage("detencion anterior dias debe ser un numero entero.");
+
             RuleFor(x => x.cmbTribunalCondena)
                 .Cascade(CascadeMode.Stop)
                 .NotNull().WithMessage("Debe ingresar un valor para tribunal que condena.")
@@ -21,14 +37,14 @@ namespace CapaPresentacion.Validaciones.CausaAdministrar.Validacon
                 .NotEqual("0SINESP").WithMessage("Debe seleccionar un tribunal que condena.");
             RuleFor(x => x.txtPenaAnios)
                 .Cascade(CascadeMode.Stop)
+                .NotNull().WithMessage("Debe ingresar un valor para pena años.")
+                .NotEmpty().WithMessage("Debe ingresar un valor para pena años.")
+                .Must(BeAnInteger).WithMessage("pena meses debe ser un numero años.");
+            RuleFor(x => x.txtPenaMeses)
+                .Cascade(CascadeMode.Stop)
                 .NotNull().WithMessage("Debe ingresar un valor para pena meses.")
                 .NotEmpty().WithMessage("Debe ingresar un valor para pena meses.")
                 .Must(BeAnInteger).WithMessage("pena meses debe ser un numero entero.");
-            RuleFor(x => x.txtPenaMeses)
-                .Cascade(CascadeMode.Stop)
-                .NotNull().WithMessage("Debe ingresar un valor para pena dias.")
-                .NotEmpty().WithMessage("Debe ingresar un valor para pena dias.")
-                .Must(BeAnInteger).WithMessage("pena dias debe ser un numero entero.");
             RuleFor(x => x.txtPenaDias)
                 .Cascade(CascadeMode.Stop)
                 .NotNull().WithMessage("Debe ingresar un valor para pena dias.")

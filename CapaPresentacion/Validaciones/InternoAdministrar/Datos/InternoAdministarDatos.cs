@@ -11,7 +11,7 @@ namespace CapaPresentacion.Validaciones.InternoAdministrar.Datos
         public int id_interno { get; set; }
         public string txtApellido { get; set; }
         public string txtNombre { get; set; }
-        public string txtProntuario { get; set; }
+        //public string txtProntuario { get; set; }
         public string txtDni { get; set; }
         public string txtAlias { get; set; }
         public string cmbSexo { get; set; }

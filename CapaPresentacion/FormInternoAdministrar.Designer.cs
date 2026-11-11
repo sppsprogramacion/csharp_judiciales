@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInternoAdministrar));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabInterno = new System.Windows.Forms.TabControl();
             this.tabDatosPrincipales = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -122,6 +122,8 @@
             this.txtIdInterno = new System.Windows.Forms.TextBox();
             this.pictureFotoPI = new System.Windows.Forms.PictureBox();
             this.tabDatosIngreso = new System.Windows.Forms.TabPage();
+            this.gboxCausasAgotoCondena = new System.Windows.Forms.GroupBox();
+            this.dtgAgotoCondena = new System.Windows.Forms.DataGridView();
             this.btnNuevaCausa = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtgvCausas = new System.Windows.Forms.DataGridView();
@@ -298,8 +300,13 @@
             this.label56 = new System.Windows.Forms.Label();
             this.txtIdDomicilio = new System.Windows.Forms.TextBox();
             this.label57 = new System.Windows.Forms.Label();
-            this.gboxCausasAgotoCondena = new System.Windows.Forms.GroupBox();
-            this.dtgAgotoCondena = new System.Windows.Forms.DataGridView();
+            this.label91 = new System.Windows.Forms.Label();
+            this.txtNumAlcaidia1 = new System.Windows.Forms.TextBox();
+            this.label95 = new System.Windows.Forms.Label();
+            this.txtNumAlcaidia2 = new System.Windows.Forms.TextBox();
+            this.label96 = new System.Windows.Forms.Label();
+            this.txtNumAlcaidia3 = new System.Windows.Forms.TextBox();
+            this.btnEditarProntuario = new System.Windows.Forms.Button();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -310,6 +317,8 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPI)).BeginInit();
             this.tabDatosIngreso.SuspendLayout();
+            this.gboxCausasAgotoCondena.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgAgotoCondena)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCausas)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -334,8 +343,6 @@
             this.gboxDomicilios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDomicilios)).BeginInit();
             this.gboxDomicilio.SuspendLayout();
-            this.gboxCausasAgotoCondena.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgAgotoCondena)).BeginInit();
             this.SuspendLayout();
             // 
             // tabInterno
@@ -1215,6 +1222,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEditarProntuario);
+            this.groupBox1.Controls.Add(this.label96);
+            this.groupBox1.Controls.Add(this.txtNumAlcaidia3);
+            this.groupBox1.Controls.Add(this.label95);
+            this.groupBox1.Controls.Add(this.txtNumAlcaidia2);
+            this.groupBox1.Controls.Add(this.label91);
+            this.groupBox1.Controls.Add(this.txtNumAlcaidia1);
             this.groupBox1.Controls.Add(this.btnEditarDatosPrincipales);
             this.groupBox1.Controls.Add(this.btnGuardarEditarDatosPrincipales);
             this.groupBox1.Controls.Add(this.btnCancelarEditarDatosPrincipales);
@@ -1288,7 +1302,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(7, 156);
+            this.label14.Location = new System.Drawing.Point(123, 154);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(39, 15);
             this.label14.TabIndex = 197;
@@ -1298,10 +1312,10 @@
             // 
             this.txtAlias.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAlias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAlias.Location = new System.Drawing.Point(10, 175);
+            this.txtAlias.Location = new System.Drawing.Point(126, 173);
             this.txtAlias.Name = "txtAlias";
             this.txtAlias.ReadOnly = true;
-            this.txtAlias.Size = new System.Drawing.Size(449, 21);
+            this.txtAlias.Size = new System.Drawing.Size(350, 21);
             this.txtAlias.TabIndex = 196;
             // 
             // label13
@@ -1321,7 +1335,7 @@
             this.txtNombre.Location = new System.Drawing.Point(10, 128);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.ReadOnly = true;
-            this.txtNombre.Size = new System.Drawing.Size(449, 21);
+            this.txtNombre.Size = new System.Drawing.Size(466, 21);
             this.txtNombre.TabIndex = 194;
             // 
             // label12
@@ -1341,14 +1355,14 @@
             this.txtApellido.Location = new System.Drawing.Point(10, 83);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.ReadOnly = true;
-            this.txtApellido.Size = new System.Drawing.Size(449, 21);
+            this.txtApellido.Size = new System.Drawing.Size(466, 21);
             this.txtApellido.TabIndex = 192;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(316, 18);
+            this.label1.Location = new System.Drawing.Point(6, 154);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 15);
             this.label1.TabIndex = 191;
@@ -1358,17 +1372,17 @@
             // 
             this.txtDni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDni.Location = new System.Drawing.Point(319, 37);
+            this.txtDni.Location = new System.Drawing.Point(9, 173);
             this.txtDni.Name = "txtDni";
             this.txtDni.ReadOnly = true;
-            this.txtDni.Size = new System.Drawing.Size(140, 21);
+            this.txtDni.Size = new System.Drawing.Size(111, 21);
             this.txtDni.TabIndex = 189;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(162, 18);
+            this.label11.Location = new System.Drawing.Point(73, 18);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(86, 15);
             this.label11.TabIndex = 190;
@@ -1378,10 +1392,10 @@
             // 
             this.txtProntuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProntuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProntuario.Location = new System.Drawing.Point(165, 37);
+            this.txtProntuario.Location = new System.Drawing.Point(76, 37);
             this.txtProntuario.Name = "txtProntuario";
             this.txtProntuario.ReadOnly = true;
-            this.txtProntuario.Size = new System.Drawing.Size(140, 21);
+            this.txtProntuario.Size = new System.Drawing.Size(85, 21);
             this.txtProntuario.TabIndex = 188;
             // 
             // label15
@@ -1401,7 +1415,7 @@
             this.txtIdInterno.Location = new System.Drawing.Point(10, 37);
             this.txtIdInterno.Name = "txtIdInterno";
             this.txtIdInterno.ReadOnly = true;
-            this.txtIdInterno.Size = new System.Drawing.Size(140, 21);
+            this.txtIdInterno.Size = new System.Drawing.Size(58, 21);
             this.txtIdInterno.TabIndex = 54;
             // 
             // pictureFotoPI
@@ -1431,6 +1445,26 @@
             this.tabDatosIngreso.TabIndex = 6;
             this.tabDatosIngreso.Text = "Datos de ingreso";
             this.tabDatosIngreso.UseVisualStyleBackColor = true;
+            // 
+            // gboxCausasAgotoCondena
+            // 
+            this.gboxCausasAgotoCondena.Controls.Add(this.dtgAgotoCondena);
+            this.gboxCausasAgotoCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gboxCausasAgotoCondena.Location = new System.Drawing.Point(10, 572);
+            this.gboxCausasAgotoCondena.Name = "gboxCausasAgotoCondena";
+            this.gboxCausasAgotoCondena.Size = new System.Drawing.Size(1051, 115);
+            this.gboxCausasAgotoCondena.TabIndex = 240;
+            this.gboxCausasAgotoCondena.TabStop = false;
+            this.gboxCausasAgotoCondena.Text = "Agoto Condena";
+            // 
+            // dtgAgotoCondena
+            // 
+            this.dtgAgotoCondena.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgAgotoCondena.Location = new System.Drawing.Point(6, 20);
+            this.dtgAgotoCondena.Name = "dtgAgotoCondena";
+            this.dtgAgotoCondena.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgAgotoCondena.Size = new System.Drawing.Size(1036, 89);
+            this.dtgAgotoCondena.TabIndex = 2;
             // 
             // btnNuevaCausa
             // 
@@ -1925,10 +1959,10 @@
             this.dtgHistorialProcesal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgHistorialProcesal.Location = new System.Drawing.Point(12, 68);
             this.dtgHistorialProcesal.Name = "dtgHistorialProcesal";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dtgHistorialProcesal.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgHistorialProcesal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgHistorialProcesal.Size = new System.Drawing.Size(1033, 579);
             this.dtgHistorialProcesal.TabIndex = 63;
@@ -3514,25 +3548,81 @@
             this.label57.TabIndex = 72;
             this.label57.Text = "USUARIO CARGA:";
             // 
-            // gboxCausasAgotoCondena
+            // label91
             // 
-            this.gboxCausasAgotoCondena.Controls.Add(this.dtgAgotoCondena);
-            this.gboxCausasAgotoCondena.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gboxCausasAgotoCondena.Location = new System.Drawing.Point(10, 572);
-            this.gboxCausasAgotoCondena.Name = "gboxCausasAgotoCondena";
-            this.gboxCausasAgotoCondena.Size = new System.Drawing.Size(1051, 115);
-            this.gboxCausasAgotoCondena.TabIndex = 240;
-            this.gboxCausasAgotoCondena.TabStop = false;
-            this.gboxCausasAgotoCondena.Text = "Agoto Condena";
+            this.label91.AutoSize = true;
+            this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label91.Location = new System.Drawing.Point(164, 18);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(82, 15);
+            this.label91.TabIndex = 231;
+            this.label91.Text = "N°ALCAIDIA 1";
             // 
-            // dtgAgotoCondena
+            // txtNumAlcaidia1
             // 
-            this.dtgAgotoCondena.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgAgotoCondena.Location = new System.Drawing.Point(6, 20);
-            this.dtgAgotoCondena.Name = "dtgAgotoCondena";
-            this.dtgAgotoCondena.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgAgotoCondena.Size = new System.Drawing.Size(1036, 89);
-            this.dtgAgotoCondena.TabIndex = 2;
+            this.txtNumAlcaidia1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumAlcaidia1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumAlcaidia1.Location = new System.Drawing.Point(167, 37);
+            this.txtNumAlcaidia1.Name = "txtNumAlcaidia1";
+            this.txtNumAlcaidia1.ReadOnly = true;
+            this.txtNumAlcaidia1.Size = new System.Drawing.Size(85, 21);
+            this.txtNumAlcaidia1.TabIndex = 230;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label95.Location = new System.Drawing.Point(255, 18);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(82, 15);
+            this.label95.TabIndex = 233;
+            this.label95.Text = "N°ALCAIDIA 2";
+            // 
+            // txtNumAlcaidia2
+            // 
+            this.txtNumAlcaidia2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumAlcaidia2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumAlcaidia2.Location = new System.Drawing.Point(258, 37);
+            this.txtNumAlcaidia2.Name = "txtNumAlcaidia2";
+            this.txtNumAlcaidia2.ReadOnly = true;
+            this.txtNumAlcaidia2.Size = new System.Drawing.Size(85, 21);
+            this.txtNumAlcaidia2.TabIndex = 232;
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label96.Location = new System.Drawing.Point(346, 18);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(82, 15);
+            this.label96.TabIndex = 235;
+            this.label96.Text = "N°ALCAIDIA 3";
+            // 
+            // txtNumAlcaidia3
+            // 
+            this.txtNumAlcaidia3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumAlcaidia3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumAlcaidia3.Location = new System.Drawing.Point(349, 37);
+            this.txtNumAlcaidia3.Name = "txtNumAlcaidia3";
+            this.txtNumAlcaidia3.ReadOnly = true;
+            this.txtNumAlcaidia3.Size = new System.Drawing.Size(85, 21);
+            this.txtNumAlcaidia3.TabIndex = 234;
+            // 
+            // btnEditarProntuario
+            // 
+            this.btnEditarProntuario.BackColor = System.Drawing.Color.White;
+            this.btnEditarProntuario.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarProntuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarProntuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarProntuario.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnEditarProntuario.Location = new System.Drawing.Point(440, 29);
+            this.btnEditarProntuario.Margin = new System.Windows.Forms.Padding(1);
+            this.btnEditarProntuario.Name = "btnEditarProntuario";
+            this.btnEditarProntuario.Size = new System.Drawing.Size(52, 30);
+            this.btnEditarProntuario.TabIndex = 236;
+            this.btnEditarProntuario.Text = "EDIT";
+            this.btnEditarProntuario.UseVisualStyleBackColor = false;
+            this.btnEditarProntuario.Click += new System.EventHandler(this.btnEditarProntuario_Click);
             // 
             // FormInternoAdministrar
             // 
@@ -3564,6 +3654,8 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFotoPI)).EndInit();
             this.tabDatosIngreso.ResumeLayout(false);
+            this.gboxCausasAgotoCondena.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgAgotoCondena)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCausas)).EndInit();
             this.groupBox4.ResumeLayout(false);
@@ -3598,8 +3690,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgDomicilios)).EndInit();
             this.gboxDomicilio.ResumeLayout(false);
             this.gboxDomicilio.PerformLayout();
-            this.gboxCausasAgotoCondena.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgAgotoCondena)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3875,5 +3965,12 @@
         private System.Windows.Forms.TextBox txtMarcasCorporales;
         private System.Windows.Forms.GroupBox gboxCausasAgotoCondena;
         private System.Windows.Forms.DataGridView dtgAgotoCondena;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.TextBox txtNumAlcaidia3;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.TextBox txtNumAlcaidia2;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.TextBox txtNumAlcaidia1;
+        private System.Windows.Forms.Button btnEditarProntuario;
     }
 }

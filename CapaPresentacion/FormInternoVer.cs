@@ -70,6 +70,9 @@ namespace CapaPresentacion
             txtApellido.Text = this.dInternoGlobal.apellido;
             txtNombre.Text = this.dInternoGlobal.nombre;
             txtProntuario.Text = this.dInternoGlobal.prontuario.ToString();
+            txtNumAlcaidia1.Text = this.dInternoGlobal.num_alc_1.ToString();
+            txtNumAlcaidia2.Text = this.dInternoGlobal.num_alc_2.ToString();
+            txtNumAlcaidia3.Text = this.dInternoGlobal.num_alc_3.ToString();
             txtDni.Text = this.dInternoGlobal.dni.ToString();
             txtAlias.Text = this.dInternoGlobal.alias;
             txtSexo.Text = this.dInternoGlobal.sexo.sexo;

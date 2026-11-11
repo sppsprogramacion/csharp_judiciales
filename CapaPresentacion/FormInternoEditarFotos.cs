@@ -139,6 +139,8 @@ namespace CapaPresentacion
         }
 
         //FIN BUSCAR INTERNO................................................................
+
+
         private void radbtnPerfilIzquierdo_CheckedChanged(object sender, EventArgs e)
         {
             this.tipoFoto = "FPI";

@@ -134,6 +134,12 @@
             this.tabDatosIngreso = new System.Windows.Forms.TabPage();
             this.tabCausas = new System.Windows.Forms.TabPage();
             this.tabTraslados = new System.Windows.Forms.TabPage();
+            this.label96 = new System.Windows.Forms.Label();
+            this.txtNumAlcaidia3 = new System.Windows.Forms.TextBox();
+            this.label95 = new System.Windows.Forms.Label();
+            this.txtNumAlcaidia2 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtNumAlcaidia1 = new System.Windows.Forms.TextBox();
             this.tabInterno.SuspendLayout();
             this.tabDatosPrincipales.SuspendLayout();
             this.groupIngresoInterno.SuspendLayout();
@@ -634,6 +640,12 @@
             // 
             // groupBox14
             // 
+            this.groupBox14.Controls.Add(this.label96);
+            this.groupBox14.Controls.Add(this.txtNumAlcaidia3);
+            this.groupBox14.Controls.Add(this.label95);
+            this.groupBox14.Controls.Add(this.txtNumAlcaidia2);
+            this.groupBox14.Controls.Add(this.label16);
+            this.groupBox14.Controls.Add(this.txtNumAlcaidia1);
             this.groupBox14.Controls.Add(this.label43);
             this.groupBox14.Controls.Add(this.txtProfesion);
             this.groupBox14.Controls.Add(this.txtNivelEducacion);
@@ -841,10 +853,10 @@
             // 
             this.txtProntuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProntuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProntuario.Location = new System.Drawing.Point(164, 33);
+            this.txtProntuario.Location = new System.Drawing.Point(57, 33);
             this.txtProntuario.Name = "txtProntuario";
             this.txtProntuario.ReadOnly = true;
-            this.txtProntuario.Size = new System.Drawing.Size(140, 21);
+            this.txtProntuario.Size = new System.Drawing.Size(93, 21);
             this.txtProntuario.TabIndex = 2;
             // 
             // label94
@@ -881,7 +893,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(161, 16);
+            this.label11.Location = new System.Drawing.Point(54, 16);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(86, 15);
             this.label11.TabIndex = 190;
@@ -925,7 +937,7 @@
             this.txtIdInterno.Location = new System.Drawing.Point(9, 33);
             this.txtIdInterno.Name = "txtIdInterno";
             this.txtIdInterno.ReadOnly = true;
-            this.txtIdInterno.Size = new System.Drawing.Size(140, 21);
+            this.txtIdInterno.Size = new System.Drawing.Size(37, 21);
             this.txtIdInterno.TabIndex = 1;
             // 
             // label93
@@ -962,7 +974,7 @@
             // 
             this.txtDni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDni.Location = new System.Drawing.Point(318, 33);
+            this.txtDni.Location = new System.Drawing.Point(10, 74);
             this.txtDni.Name = "txtDni";
             this.txtDni.ReadOnly = true;
             this.txtDni.Size = new System.Drawing.Size(140, 21);
@@ -1022,7 +1034,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(315, 16);
+            this.label1.Location = new System.Drawing.Point(7, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 15);
             this.label1.TabIndex = 191;
@@ -1072,10 +1084,10 @@
             // 
             this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(9, 73);
+            this.txtApellido.Location = new System.Drawing.Point(164, 73);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.ReadOnly = true;
-            this.txtApellido.Size = new System.Drawing.Size(449, 21);
+            this.txtApellido.Size = new System.Drawing.Size(295, 21);
             this.txtApellido.TabIndex = 4;
             // 
             // label90
@@ -1142,7 +1154,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(6, 57);
+            this.label12.Location = new System.Drawing.Point(161, 57);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(65, 15);
             this.label12.TabIndex = 193;
@@ -1321,6 +1333,66 @@
             this.tabTraslados.Text = "Traslados";
             this.tabTraslados.UseVisualStyleBackColor = true;
             // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label96.Location = new System.Drawing.Point(361, 14);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(82, 15);
+            this.label96.TabIndex = 241;
+            this.label96.Text = "N°ALCAIDIA 3";
+            // 
+            // txtNumAlcaidia3
+            // 
+            this.txtNumAlcaidia3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumAlcaidia3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumAlcaidia3.Location = new System.Drawing.Point(364, 33);
+            this.txtNumAlcaidia3.Name = "txtNumAlcaidia3";
+            this.txtNumAlcaidia3.ReadOnly = true;
+            this.txtNumAlcaidia3.Size = new System.Drawing.Size(85, 21);
+            this.txtNumAlcaidia3.TabIndex = 240;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label95.Location = new System.Drawing.Point(261, 14);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(82, 15);
+            this.label95.TabIndex = 239;
+            this.label95.Text = "N°ALCAIDIA 2";
+            // 
+            // txtNumAlcaidia2
+            // 
+            this.txtNumAlcaidia2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumAlcaidia2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumAlcaidia2.Location = new System.Drawing.Point(264, 33);
+            this.txtNumAlcaidia2.Name = "txtNumAlcaidia2";
+            this.txtNumAlcaidia2.ReadOnly = true;
+            this.txtNumAlcaidia2.Size = new System.Drawing.Size(85, 21);
+            this.txtNumAlcaidia2.TabIndex = 238;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(162, 14);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(82, 15);
+            this.label16.TabIndex = 237;
+            this.label16.Text = "N°ALCAIDIA 1";
+            // 
+            // txtNumAlcaidia1
+            // 
+            this.txtNumAlcaidia1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNumAlcaidia1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumAlcaidia1.Location = new System.Drawing.Point(165, 33);
+            this.txtNumAlcaidia1.Name = "txtNumAlcaidia1";
+            this.txtNumAlcaidia1.ReadOnly = true;
+            this.txtNumAlcaidia1.Size = new System.Drawing.Size(85, 21);
+            this.txtNumAlcaidia1.TabIndex = 236;
+            // 
             // FormInternoVer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1455,5 +1527,11 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox txtProfesion;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.TextBox txtNumAlcaidia3;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.TextBox txtNumAlcaidia2;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtNumAlcaidia1;
     }
 }
